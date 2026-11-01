@@ -1,0 +1,30 @@
+{
+  "chapter": 1,
+  "errors": [],
+  "expectedPages": 28,
+  "sourcePages": 28,
+  "renderedPages": 28,
+  "duplicateIds": [],
+  "missingIds": [],
+  "pagesWithMultipleIds": [],
+  "overflow": [],
+  "rawPlaceholders": [],
+  "rawLatex": [],
+  "katexErrors": 0,
+  "pageSizes": [
+    {
+      "w": 793.6875,
+      "h": 1122.515625
+    },
+    {
+      "w": 793.6875,
+      "h": 1122.515625
+    },
+    {
+      "w": 793.6875,
+      "h": 1122.515625
+    }
+  ],
+  "textLength": 38331,
+  "status": "PASS"
+}

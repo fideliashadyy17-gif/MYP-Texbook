@@ -1,0 +1,8 @@
+{
+  "chapter": 1,
+  "independent_checks": 69,
+  "passed": 69,
+  "failed": [],
+  "status": "PASS",
+  "note": "Open-ended items are checked as valid samples where applicable; all numeric results are recomputed independently."
+}
