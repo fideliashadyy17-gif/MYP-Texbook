@@ -1,6 +1,8 @@
 {
   "file": "/home/user/MYP-Texbook/second-edition/exports/myp1/MYP1-Chapter-01-Revision-Proof.pdf",
   "pages": 28,
+  "expected_pages": 28,
+  "answer_start_page": 22,
   "page_sizes": [
     [
       594.96,
@@ -214,6 +216,8 @@
     1035,
     1432
   ],
+  "missing_question_ids": [],
+  "missing_answer_ids": [],
   "exercise_ids_missing_or_unpaired": [],
   "status": "PASS"
 }

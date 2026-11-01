@@ -1,0 +1,35 @@
+{
+  "chapter": 2,
+  "errors": [],
+  "expectedPages": 32,
+  "sourcePages": 32,
+  "renderedPages": 32,
+  "duplicateIds": [],
+  "missingIds": [],
+  "pagesWithMultipleIds": [],
+  "pagesWithoutSourceId": [],
+  "missingQuestionIds": [],
+  "duplicateQuestionIds": [],
+  "missingAnswerIds": [],
+  "duplicateAnswerIds": [],
+  "overflow": [],
+  "rawPlaceholders": [],
+  "rawLatex": [],
+  "katexErrors": 0,
+  "pageSizes": [
+    {
+      "w": 793.6875,
+      "h": 1122.515625
+    },
+    {
+      "w": 793.6875,
+      "h": 1122.515625
+    },
+    {
+      "w": 793.6875,
+      "h": 1122.515625
+    }
+  ],
+  "textLength": 44242,
+  "status": "PASS"
+}
