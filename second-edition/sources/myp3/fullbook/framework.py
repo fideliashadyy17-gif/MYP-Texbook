@@ -4026,3 +4026,549 @@ dict(
     ),
 ),
 ])
+
+CHAPTERS.extend([
+dict(
+    num=8, title="Three-dimensional solids and measurement",
+    key="Form", related=["Measurement", "Models"],
+    context="Globalisation and sustainability",
+    exploration="Human impact on the environment",
+    inquiry=("The form of a three-dimensional solid, and the measurement of its surface area and "
+             "volume, allow the material it requires to be modelled, and those models show how "
+             "design choices change the resources consumed."),
+    atl=("Self-management",
+         "In order for a student to manage a multi-step measurement task, students must select the "
+         "correct formula, set out the substitution so each step can be checked, and review the "
+         "units and the precision of the final result."),
+    standfirst="A solid is described by its faces, edges and vertices. Its net gives the surface "
+               "area, its cross-section gives the volume, and its density connects the two to the "
+               "material it is made from.",
+    engage="A drinks manufacturer must choose between a cylindrical can and a rectangular carton "
+           "of the same 330 ml capacity. Which uses less material? The answer is a comparison of "
+           "surface areas, and the difference is not small.",
+    questions=[("Factual", "What are the formulas for the surface area and volume of prisms, "
+                           "cylinders, pyramids, cones and spheres?"),
+               ("Conceptual", "Why does the volume of a cone equal one third of the cylinder that "
+                              "contains it, and how does the precision of a measurement limit the "
+                              "precision of a volume?"),
+               ("Debatable", "Is a design that minimises material always the better environmental "
+                             "choice?")],
+    application_lede="These tasks use nets, surface area, volume, density and precision. State the "
+                     "units of every answer and the precision you can justify.",
+    projects_lede="Every object made is material taken from somewhere. Use surface area and volume "
+                  "to see how much, and use precision to say how sure you are.",
+    sections=[
+        dict(id="8.1", title="Solids, nets and views",
+             inquiry_q=("How can a three-dimensional solid be represented on a flat surface, and "
+                        "what does each representation preserve?"), teach=[
+            "A solid is described by its faces, edges and vertices. Euler's relation for a polyhedron is V − E + F = 2, which holds for every solid without a hole.",
+            "A net is a flat arrangement of the faces that folds into the solid. It preserves area and shape, which makes it the natural representation for surface area.",
+            "Front, side and plan views each show two dimensions and hide the third. Together they determine the solid, and each alone does not.",
+            "A solid can also be represented by a sketch in oblique or isometric projection. The projection is a drawing convention, not a mathematical property, and it distorts some measurements.",
+        ], examples=[
+            dict(q="A cuboid has 6 faces, 12 edges and 8 vertices. Check Euler's relation.",
+                 vis=F("prism", "cuboid", 4, 3, 2, "a cuboid: 6 faces, 12 edges, 8 vertices"),
+                 reasoning="Euler's relation connects the counts of vertices, edges and faces for "
+                          "any polyhedron.",
+                 steps=["V = 8, E = 12 and F = 6.",
+                        "V − E + F = 8 − 12 + 6.",
+                        "= 2."],
+                 ans="the relation holds",
+                 interp="The relation is a check on a drawing: if it fails, the drawing is wrong."),
+            dict(q="Describe the net of a cube of side 3 cm and find its area.",
+                 vis=F("prism", "cuboid", 3, 3, 3, "six square faces"),
+                 reasoning="The net of a cube is six squares, and its area is the surface area of "
+                          "the cube.",
+                 steps=["A cube has 6 identical square faces.",
+                        "Each face has area 3 × 3 = 9 cm².",
+                        "Total area = 6 × 9 = 54 cm²."],
+                 ans="six squares of area 9 cm² each, total 54 cm²",
+                 interp="The net is the representation that turns a three-dimensional question into "
+                        "a flat one."),
+        ], inv=dict(
+            task="Build the net of a cuboid, a cylinder and a square-based pyramid from card. Fold "
+                 "each one and record the number of faces, edges and vertices, then check Euler's "
+                 "relation for the two polyhedra.",
+            fig=F("prism", "cuboid", 5, 3, 2, "a cuboid and its net"),
+            table=[["solid", "faces", "edges", "vertices", "V − E + F"],
+                   ["cuboid", "6", "12", "8", "2"],
+                   ["square-based pyramid", "5", "8", "5", "2"],
+                   ["cylinder", "3", "2", "0", "not a polyhedron"]],
+            notice=["Both polyhedra satisfied Euler's relation.",
+                    "The cylinder has no vertices or edges in the polyhedral sense, so the relation "
+                    "does not apply.",
+                    "The net of the cylinder is two circles and a rectangle whose length is the "
+                    "circumference.",
+                    "The net of the pyramid is one square and four triangles."],
+            obs="A net flattens a solid without changing the shapes or areas of its faces, and "
+                "Euler's relation checks the counts for any polyhedron.",
+            concl="A solid can be represented by its net, by its views and by a sketch, and the net "
+                  "is the representation that preserves the areas needed for surface area.")),
+        dict(id="8.2", title="Surface area of prisms and cylinders",
+             inquiry_q=("How can the surface area of a solid be found from its net?"), teach=[
+            "The surface area of a prism is the sum of the areas of its faces: two congruent ends plus the lateral faces, which unfold into a rectangle.",
+            "For a cylinder, the two ends are circles of area πr² each and the curved surface unrolls into a rectangle of length 2πr and height h, so the curved area is 2πrh.",
+            "The total surface area of a cylinder is therefore 2πr² + 2πrh, and each term corresponds to a part of the net.",
+            "Reading the formula from the net is more reliable than memorising it, because the net shows where each term comes from.",
+        ], examples=[
+            dict(q="Find the surface area of a cylinder of radius 3 cm and height 10 cm.",
+                 vis=F("prism", "cylinder", 3, 10, 0, "two circles and a rectangle"),
+                 reasoning="The net is two circles and a rectangle whose length is the "
+                          "circumference.",
+                 steps=["Area of the two ends = 2 × π × 3² = 18π cm².",
+                        "Curved area = 2π × 3 × 10 = 60π cm².",
+                        "Total = 18π + 60π = 78π cm².",
+                        "= 245.0 cm² to one decimal place."],
+                 ans="78π cm², or about 245.0 cm²",
+                 interp="The exact answer is left in terms of π, and the decimal is the reporting "
+                        "form."),
+            dict(q="A rectangular prism measures 5 cm by 4 cm by 3 cm. Find its surface area.",
+                 vis=F("prism", "cuboid", 5, 4, 3, "three pairs of identical faces"),
+                 reasoning="A cuboid has three pairs of identical rectangular faces, so the total "
+                          "is twice the sum of the three distinct areas.",
+                 steps=["Face areas: 5 × 4 = 20, 5 × 3 = 15 and 4 × 3 = 12 cm².",
+                        "Each appears twice.",
+                        "Surface area = 2 × (20 + 15 + 12).",
+                        "= 2 × 47 = 94 cm²."],
+                 ans="94 cm²",
+                 interp="Counting the pairs prevents the commonest error of missing a face."),
+        ], inv=dict(
+            task="Make the net of a cylinder from card, measure the rectangle and the two circles, "
+                 "and compute the total area. Then repeat for a cylinder of twice the radius and "
+                 "the same height, and compare the two surface areas.",
+            fig=F("prism", "cylinder", 3, 8, 0, "the net of a cylinder"),
+            table=[["cylinder", "radius", "height", "curved area", "ends", "total"],
+                   ["A", "3 cm", "8 cm", "48π", "18π", "66π cm²"],
+                   ["B", "6 cm", "8 cm", "96π", "72π", "168π cm²"],
+                   ["ratio B/A", "2", "1", "2", "4", "2.55"]],
+            notice=["Doubling the radius doubled the curved area but quadrupled the area of the "
+                    "ends.",
+                    "The total area grew by a factor of about 2.55, not by 4.",
+                    "The curved area depends on the radius linearly, while the ends depend on its "
+                    "square.",
+                    "For the same volume, a wider and shorter cylinder uses less material than a "
+                    "narrow tall one."],
+            obs="The curved area scales with the radius and the height, while the ends scale with "
+                "the square of the radius.",
+            concl="The surface area of a cylinder is 2πr² + 2πrh, read directly from a net of two "
+                  "circles and a rectangle of length 2πr and height h.")),
+        dict(id="8.3", title="Surface area of pyramids and cones",
+             inquiry_q=("How does a slant height differ from a perpendicular height, and which one "
+                        "does each formula use?"), teach=[
+            "A pyramid has a polygonal base and triangular faces that meet at an apex. The perpendicular height is measured from the apex to the base at right angles; the slant height is measured along a face.",
+            "The area of each triangular face is ½ × base × slant height, because the slant height is the height of the triangle in that face.",
+            "For a cone, the curved surface unrolls into a sector of a circle of radius l, the slant height, and its area is πrl. The base is a circle of area πr².",
+            "Confusing the slant height with the perpendicular height is the standard error. The relation between them is Pythagoras' theorem applied to the right-angled triangle inside the solid.",
+        ], examples=[
+            dict(q="A cone has radius 5 cm and slant height 13 cm. Find its curved surface area and "
+                   "total surface area.",
+                 vis=F("cone", 5, 12, "r, h and the slant height l"),
+                 reasoning="The curved surface unrolls into a sector of radius l, so its area is "
+                          "πrl, and the base is a circle.",
+                 steps=["Curved area = πrl = π × 5 × 13 = 65π cm².",
+                        "Base area = πr² = 25π cm².",
+                        "Total = 65π + 25π = 90π cm².",
+                        "= 282.7 cm² to one decimal place."],
+                 ans="90π cm², or about 282.7 cm²",
+                 interp="The slant height, not the perpendicular height, appears in the curved-area "
+                        "formula because the sector has radius l."),
+            dict(q="A square-based pyramid has base side 8 cm and slant height 10 cm. Find its "
+                   "surface area.",
+                 vis=F("prism", "cuboid", 8, 8, 10, "a square base and four triangular faces"),
+                 reasoning="The base is a square and the four faces are congruent triangles whose "
+                          "height is the slant height.",
+                 steps=["Base area = 8 × 8 = 64 cm².",
+                        "Area of one triangular face = ½ × 8 × 10 = 40 cm².",
+                        "Four faces = 160 cm².",
+                        "Total = 64 + 160 = 224 cm²."],
+                 ans="224 cm²",
+                 interp="Each face is a triangle, and the slant height is the height of that "
+                        "triangle."),
+        ], inv=dict(
+            task="Build a cone and a square-based pyramid from card. For each, measure the slant "
+                 "height and the perpendicular height, and check the relation between them using "
+                 "Pythagoras' theorem. Then compute the surface area from the net.",
+            fig=F("cone", 4, 3, "the slant height is the radius of the unrolled sector"),
+            table=[["solid", "r or base", "perpendicular height", "slant height", "check"],
+                   ["cone", "r = 4 cm", "3 cm", "5 cm", "3² + 4² = 5²"],
+                   ["pyramid", "base 6 cm", "4 cm", "5 cm", "4² + 3² = 5²"]],
+            notice=["In both solids the slant height was the hypotenuse of a right-angled triangle "
+                    "inside the solid.",
+                    "Using the perpendicular height in the curved-area formula would have given the "
+                    "wrong answer.",
+                    "The cone's unrolled sector had radius 5 cm and arc length 2π × 4 cm.",
+                    "The pyramid's four faces were congruent because the base was square."],
+            obs="The slant height is the height of a face, and it is related to the perpendicular "
+                "height by Pythagoras' theorem.",
+            concl="The curved surface area of a cone is πrl and the lateral area of a pyramid is "
+                  "½ × perimeter × slant height, and in both cases the slant height is the height "
+                  "of a face rather than the height of the solid.")),
+        dict(id="8.4", title="Volume of prisms and cylinders",
+             inquiry_q=("How can the volume of any prism be found from a single cross-section?"), teach=[
+            "A prism has a constant cross-section parallel to its base. Its volume is the area of that cross-section multiplied by the length perpendicular to it.",
+            "This one rule covers cuboids, triangular prisms, cylinders and any other prism, however irregular the cross-section. The cross-section replaces the formula.",
+            "A cylinder is a prism with a circular cross-section, so its volume is πr²h.",
+            "Volume is measured in cubic units, and the units must be consistent before multiplying. A common error is mixing metres and centimetres.",
+        ], examples=[
+            dict(q="Find the volume of a cylinder of radius 4 cm and height 15 cm.",
+                 vis=F("prism", "cylinder", 4, 15, 0, "a circular cross-section"),
+                 reasoning="A cylinder is a prism with a circular cross-section, so the volume is "
+                          "the cross-section area times the height.",
+                 steps=["Cross-section area = π × 4² = 16π cm².",
+                        "Volume = 16π × 15 = 240π cm³.",
+                        "= 754.0 cm³ to one decimal place."],
+                 ans="240π cm³, or about 754.0 cm³",
+                 interp="The formula is the prism rule applied to a circular cross-section."),
+            dict(q="A triangular prism has a right-angled triangular cross-section with legs 3 cm "
+                   "and 4 cm, and length 10 cm. Find its volume.",
+                 vis=F("prism", "cuboid", 3, 4, 10, "a triangular cross-section"),
+                 reasoning="The volume is the area of the triangular cross-section times the "
+                          "length of the prism.",
+                 steps=["Cross-section area = ½ × 3 × 4 = 6 cm².",
+                        "Volume = 6 × 10 = 60 cm³."],
+                 ans="60 cm³",
+                 interp="The shape of the cross-section does not matter, only its area."),
+        ], inv=dict(
+            task="Fill a cylinder with water and pour it into a rectangular tank to find its "
+                 "volume. Then compute the volume from πr²h and compare. Repeat with a triangular "
+                 "prism made from card.",
+            fig=F("prism", "cylinder", 5, 10, 0, "measuring a cylinder by displacement"),
+            table=[["solid", "measured volume", "computed volume", "difference"],
+                   ["cylinder r = 5, h = 10", "785 cm³", "250π = 785.4 cm³", "0.4 cm³"],
+                   ["triangular prism", "60 cm³", "½ × 3 × 4 × 10 = 60 cm³", "0 cm³"],
+                   ["cuboid 4 × 5 × 6", "120 cm³", "120 cm³", "0 cm³"]],
+            notice=["The measured and computed volumes agreed to within the precision of the "
+                    "measuring cylinder.",
+                    "The prism rule worked for all three solids.",
+                    "Only the cross-section area changed between the three calculations.",
+                    "The agreement is a check on both the measurement and the formula."],
+            obs="The volume of a prism is the area of its cross-section times its length, whatever "
+                "the shape of the cross-section.",
+            concl="A prism has a constant cross-section and its volume is the area of that "
+                  "cross-section multiplied by the perpendicular length, which covers cylinders as "
+                  "well as polyhedra.")),
+        dict(id="8.5", title="Pyramids, cones, spheres and composite solids",
+             inquiry_q=("Why is the volume of a cone one third of the cylinder that contains it?"), teach=[
+            "A pyramid or cone with the same base and height as a prism or cylinder has exactly one third of its volume. This can be shown by filling a cone three times into the matching cylinder.",
+            "The volume of a pyramid or cone is therefore ⅓ × base area × perpendicular height, and for a cone ⅓πr²h.",
+            "A sphere of radius r has volume ⁴⁄₃πr³ and surface area 4πr². Both formulas involve the radius cubed and squared respectively, as dimensions require.",
+            "A composite solid is handled by splitting it into parts whose volumes can be found, then adding or subtracting. The split is a modelling choice, and it must be stated.",
+        ], examples=[
+            dict(q="Find the volume of a cone of radius 6 cm and height 8 cm.",
+                 vis=F("cone", 6, 8, "a cone inside its cylinder"),
+                 reasoning="The cone is one third of the cylinder with the same base and height.",
+                 steps=["Volume of the matching cylinder = π × 6² × 8 = 288π cm³.",
+                        "Cone volume = ⅓ × 288π = 96π cm³.",
+                        "= 301.6 cm³ to one decimal place."],
+                 ans="96π cm³, or about 301.6 cm³",
+                 interp="The factor of ⅓ is the difference between a cone and a cylinder of the "
+                        "same base and height."),
+            dict(q="A sphere of radius 5 cm is placed in a cylindrical tin of radius 5 cm and "
+                   "height 10 cm. Find the volume of the space around it.",
+                 vis=F("sphere", 5, "a sphere inside a cylinder"),
+                 reasoning="A composite volume is found by subtracting the part that is not "
+                          "wanted from the containing solid.",
+                 steps=["Tin volume = π × 5² × 10 = 250π cm³.",
+                        "Sphere volume = ⁴⁄₃π × 5³ = 500π/3 cm³.",
+                        "Space = 250π − 500π/3 = 250π/3 cm³.",
+                        "= 261.8 cm³ to one decimal place."],
+                 ans="250π/3 cm³, or about 261.8 cm³",
+                 interp="The subtraction is legitimate because the sphere sits entirely inside the "
+                        "tin."),
+        ], inv=dict(
+            task="Fill a cone with water and pour it into a cylinder of the same base and height. "
+                 "Record how many fills are needed, then repeat with a pyramid and a prism of the "
+                 "same base and height.",
+            fig=F("cone", 4, 6, "three cone fills fill the cylinder"),
+            table=[["pair", "container volume", "part volume", "number of fills"],
+                   ["cylinder and cone", "96π cm³", "32π cm³", "3"],
+                   ["prism and pyramid", "72 cm³", "24 cm³", "3"],
+                   ["sphere and cylinder", "250π cm³", "500π/3 cm³", "1.5 spheres"]],
+            notice=["Exactly three cone fills filled the cylinder, and three pyramid fills filled "
+                    "the prism.",
+                    "The relationship held for a circular base and for a square base.",
+                    "The sphere filled the cylinder one and a half times, which matches the ratio "
+                    "⁴⁄₃ to 2.",
+                    "The relationship is about the shape, not the size."],
+            obs="A cone or pyramid has exactly one third of the volume of the prism or cylinder "
+                "with the same base and height.",
+            concl="The volume of a pyramid or cone is ⅓ × base area × perpendicular height, which "
+                  "is one third of the containing prism or cylinder.")),
+        dict(id="8.6", title="Measurement, density and precision",
+             inquiry_q=("How does the precision of a measurement limit the precision of a volume?") 
+                    , teach=[
+            "Density is mass per unit volume, so density = mass ÷ volume and volume = mass ÷ density. The units are usually g/cm³ or kg/m³.",
+            "Rearranging between mass, volume and density is the same algebraic skill as rearranging any formula, and it is used constantly in materials work.",
+            "A volume is a product of three lengths, so a small error in each length is multiplied. A 1% error in a radius gives about a 3% error in a volume.",
+            "This is why reported volumes should carry no more significant figures than the measurements support. Extra digits are invented, not measured.",
+        ], examples=[
+            dict(q="A metal block measures 4.0 cm by 3.0 cm by 2.0 cm and has a mass of 190 g. "
+                   "Find its density.",
+                 vis=F("prism", "cuboid", 4, 3, 2, "a block of metal"),
+                 reasoning="Density is mass divided by volume, and the volume comes from the three "
+                          "measurements.",
+                 steps=["Volume = 4.0 × 3.0 × 2.0 = 24 cm³.",
+                        "Density = 190 ÷ 24 = 7.92 g/cm³.",
+                        "The measurements have two significant figures, so report 7.9 g/cm³."],
+                 ans="7.9 g/cm³",
+                 interp="The density suggests the block is made of steel or iron, which is a check "
+                        "on the sense of the answer."),
+            dict(q="A cylinder has radius 5.0 cm and height 12.0 cm. Find its volume and the mass "
+                   "if the material has density 2.7 g/cm³.",
+                 vis=F("prism", "cylinder", 5, 12, 0, "an aluminium cylinder"),
+                 reasoning="The volume is computed first and then converted to a mass using the "
+                          "density.",
+                 steps=["Volume = π × 5.0² × 12.0 = 300π cm³ = 942 cm³.",
+                        "Mass = 942 × 2.7 = 2543 g.",
+                        "The measurements have two significant figures, so report 2.5 kg."],
+                 ans="about 2.5 kg",
+                 interp="The mass follows from the volume, so it inherits the volume's precision."),
+        ], inv=dict(
+            task="Find the density of an irregular object by measuring its mass and its volume by "
+                 "displacement. Then estimate how the density would change if the volume "
+                 "measurement had a 5% error.",
+            fig=F("prism", "cylinder", 5, 10, 0, "volume by displacement"),
+            table=[["measurement", "value", "precision"],
+                   ["mass", "156.0 g", "0.1 g"],
+                   ["initial water level", "200 ml", "1 ml"],
+                   ["final water level", "258 ml", "1 ml"],
+                   ["volume", "58 ml", "2 ml, about 3%"],
+                   ["density", "2.69 g/cm³", "about 3%"]],
+            notice=["The volume came from a difference of two readings, so the errors add.",
+                    "A 2 ml uncertainty in a 58 ml volume is about 3%.",
+                    "The density inherits that uncertainty, so 2.7 g/cm³ is the honest report.",
+                    "The value is close to that of aluminium, which makes the result plausible."],
+            obs="A volume found by displacement carries the uncertainty of two readings, and the "
+                "density inherits it.",
+            concl="Density is mass per unit volume, and because volume is a product of "
+                  "measurements, a small percentage error in each measurement multiplies into the "
+                  "volume and then into the density.")),
+    ],
+    practice=dict(
+        A=[("8.1.1", "Find the surface area of a cube of side 4 cm.",
+            "96 cm²", "6 × 4² = 96.", "F"),
+           ("8.1.2", "Find the volume of a cuboid 5 cm by 4 cm by 3 cm.",
+            "60 cm³", "5 × 4 × 3.", "F"),
+           ("8.1.3", "Find the volume of a cylinder of radius 3 cm and height 7 cm.",
+            "63π cm³", "π × 9 × 7.", "F"),
+           ("8.1.4", "Find the curved surface area of a cylinder of radius 2 cm and height 9 cm.",
+            "36π cm²", "2π × 2 × 9.", "F"),
+           ("8.1.5", "Find the volume of a cone of radius 3 cm and height 4 cm.",
+            "12π cm³", "⅓ × π × 9 × 4.", "F"),
+           ("8.1.6", "Find the surface area of a sphere of radius 6 cm.",
+            "144π cm²", "4πr².", "F"),
+           ("8.1.7", "Find the volume of a sphere of radius 3 cm.",
+            "36π cm³", "⁴⁄₃π × 27.", "F"),
+           ("8.1.8", "A square-based pyramid has base side 6 cm and height 4 cm. Find its volume.",
+            "48 cm³", "⅓ × 36 × 4.", "F"),
+           ("8.1.9", "Find the volume of a triangular prism with cross-section area 12 cm² and "
+                     "length 8 cm.",
+            "96 cm³", "Area × length.", "F"),
+           ("8.1.10", "A block of mass 240 g has volume 30 cm³. Find its density.",
+            "8 g/cm³", "240 ÷ 30.", "F"),
+           ("8.1.11", "Find the curved surface area of a cone of radius 5 cm and slant height "
+                      "13 cm.",
+            "65π cm²", "πrl.", "F"),
+           ("8.1.12", "Explain the difference between volume and surface area.",
+            "Volume measures the space inside and surface area the material of the boundary.",
+            "They have different units and answer different questions.", "R")],
+        B=[("8.2.1", "Investigate: for a fixed volume, does a tall narrow cylinder or a short wide "
+                     "one use less material?",
+            "The short wide one — surface area grows with the radius more slowly than with the "
+            "height for a fixed volume.",
+            "For fixed V, A = 2V/h + 2π(V/(πh))^(2/3) falls as h rises then rises, with a minimum "
+            "when h = 2r.", "R"),
+           ("8.2.2", "Test the claim: doubling the radius of a cylinder doubles its volume.",
+            "False — the volume depends on r², so it quadruples.",
+            "Volume is proportional to the square of the radius.", "R"),
+           ("8.2.3", "Investigate whether a cube of side 2 cm has twice the surface area of a cube "
+                     "of side 1 cm.",
+            "No — it has four times the surface area and eight times the volume.",
+            "Area scales as k² and volume as k³.", "R"),
+           ("8.2.4", "Generalise: what happens to the volume of a sphere when the radius doubles?",
+            "It becomes eight times as large", "Volume is proportional to r³.", "R"),
+           ("8.2.5", "Investigate the ratio of the volume of a cone to the cylinder with the same "
+                     "base and height.",
+            "1 : 3", "The cone is one third of the cylinder.", "R"),
+           ("8.2.6", "Test the claim: every solid has a net that can be drawn without overlap.",
+            "False for some solids, and the net of a sphere cannot be drawn without distortion.",
+            "A sphere's surface cannot be flattened without stretching.", "R"),
+           ("8.2.7", "Investigate how the surface area of a cuboid of fixed volume changes with "
+                     "its shape.",
+            "It is smallest when the cuboid is closest to a cube.",
+            "For a fixed volume, area is minimised when the dimensions are equal.", "R"),
+           ("8.2.8", "Generalise a rule connecting the percentage error in a length to the "
+                     "percentage error in a volume.",
+            "The volume error is about three times the length error.",
+            "Volume is a product of three lengths.", "R"),
+           ("8.2.9", "Investigate whether two objects of the same volume must have the same "
+                     "surface area.",
+            "No — a sphere has the smallest surface area for a given volume.",
+            "Shape affects area even when volume is fixed.", "R"),
+           ("8.2.10", "Test the claim: the slant height of a cone is always longer than its "
+                      "perpendicular height.",
+            "True — the slant height is the hypotenuse of the right-angled triangle inside the "
+            "cone.",
+            "The hypotenuse is the longest side.", "R"),
+           ("8.2.11", "Investigate the pattern of volumes of cubes of side 1, 2, 3, 4.",
+            "1, 8, 27, 64 — the cubes of the side length",
+            "Volume scales as the cube of the linear dimension.", "F")],
+        C=[("8.3.1", "Explain in words what a net of a solid is and what it preserves.",
+            "A flat arrangement of the faces that folds into the solid, preserving the shapes and "
+            "areas of the faces.",
+            "The net turns a surface-area question into a flat one.", "R"),
+           ("8.3.2", "Explain why the curved surface area of a cylinder is 2πrh.",
+            "Because the curved surface unrolls into a rectangle of length 2πr and height h.",
+            "The circumference becomes the length of the rectangle.", "R"),
+           ("8.3.3", "Describe the difference between a slant height and a perpendicular height.",
+            "The slant height is measured along a face; the perpendicular height is measured at "
+            "right angles to the base.",
+            "Only the slant height appears in a face-area formula.", "R"),
+           ("8.3.4", "Explain why the volume of a cone is one third of the matching cylinder.",
+            "Because three cone fills exactly fill the cylinder of the same base and height.",
+            "The relationship is geometric and holds for any size.", "R"),
+           ("8.3.5", "Describe how you would find the volume of a composite solid.",
+            "Split it into parts whose volumes can be computed, then add or subtract.",
+            "The split must be stated so it can be checked.", "R"),
+           ("8.3.6", "Explain why density units are mass per unit volume.",
+            "Because density is defined as mass divided by volume.",
+            "The units follow from the definition.", "R"),
+           ("8.3.7", "Describe two representations of a cylinder and what each is best for.",
+            "A net for surface area and a cross-section for volume.",
+            "Each representation answers a different question.", "R"),
+           ("8.3.8", "Explain why a volume cannot be reported to more precision than its "
+                     "measurements support.",
+            "Because the volume is a product of the measurements and inherits their uncertainty.",
+            "Extra digits would be invented.", "R"),
+           ("8.3.9", "Describe how you would find the volume of an irregular object.",
+            "By displacement of water in a measuring cylinder.",
+            "The displaced volume equals the object's volume.", "R"),
+           ("8.3.10", "Explain why the surface area of a sphere is 4πr² rather than 2πr².",
+            "Because the sphere's curved surface is equivalent to four circles of radius r.",
+            "The formula can be checked against the containing cylinder.", "R"),
+           ("8.3.11", "Describe the units you would use for the density of a liquid and why.",
+            "g/cm³ for small quantities and kg/m³ for large ones.",
+            "The units must match the mass and volume measurements.", "R"),
+           ("8.3.12", "Explain how a design change that reduces surface area reduces material "
+                      "use.",
+            "Material is proportional to surface area for a thin-walled container.",
+            "The surface area is the amount of material in the wall.", "R")],
+        D=[("8.4.1", "A cylindrical tank of radius 0.5 m and height 1.2 m is full of water. Find "
+                     "the mass of the water, given a density of 1000 kg/m³.",
+            "942 kg", "V = π × 0.25 × 1.2 = 0.942 m³, so mass = 942 kg.", "A"),
+           ("8.4.2", "A rectangular box 20 cm by 15 cm by 10 cm is packed with cubes of side 5 cm. "
+                     "How many fit?",
+            "24 cubes", "4 × 3 × 2.", "A"),
+           ("8.4.3", "A cone-shaped cup has radius 3 cm and height 8 cm. How many cups fill a "
+                     "1-litre jug?",
+            "about 13 cups", "Cup volume = 24π ≈ 75.4 cm³, and 1000 ÷ 75.4 ≈ 13.3.", "A"),
+           ("8.4.4", "A spherical ball of radius 4 cm is dropped into a cylinder of radius 5 cm "
+                     "containing water. By how much does the water level rise?",
+            "about 3.4 cm", "Sphere volume = 256π/3 ≈ 268 cm³, and the cylinder's base area is 25π ≈ 78.5 cm², so the rise is 268 ÷ 78.5 ≈ 3.4 cm.", "A"),
+           ("8.4.5", "A storage container is a cuboid 1.2 m by 0.8 m by 0.7 m. Find how many "
+                     "30 cm cubes fit, allowing for packing gaps.",
+            "16 cubes", "Along the sides only 4, 2 and 2 cubes of 30 cm fit, so 4 × 2 × 2 = 16, even though the volume ratio is 24.9.", "A"),
+           ("8.4.6", "Explain whether a spherical tank or a cylindrical tank of the same capacity "
+                     "uses less material.",
+            "The sphere, because it has the smallest surface area for a given volume.",
+            "Shape affects area even when volume is fixed.", "R"),
+           ("8.4.7", "A metal pipe is a cylinder of outer radius 5 cm and inner radius 4 cm, "
+                     "length 2 m. Find the volume of metal.",
+            "about 5655 cm³", "π(5² − 4²) × 200 = 1800π ≈ 5655 cm³.", "A"),
+           ("8.4.8", "A grain silo is a cylinder of radius 3 m and height 8 m with a conical top "
+                     "of height 2 m. Find the total volume.",
+            "78π m³, or about 245.0 m³", "Cylinder π × 3² × 8 = 72π and cone ⅓ × π × 3² × 2 = 6π, giving a total of 78π m³.", "A"),
+           ("8.4.9", "A block of wood measures 10.0 cm by 10.0 cm by 10.0 cm and has mass 620 g. "
+                     "Find its density and comment on its precision.",
+            "0.62 g/cm³; about three significant figures",
+            "620 ÷ 1000, and the measurements support three figures.", "A"),
+           ("8.4.10", "Explain whether a 1% error in the radius of a cylinder matters more or less "
+                      "than a 1% error in its height.",
+            "The same — both are lengths, and both scale the volume linearly.",
+            "Volume is proportional to each length separately.", "R"),
+           ("8.4.11", "A conical tent has base radius 2.5 m and height 3 m. Find the canvas needed "
+                      "for the curved surface, allowing 10% extra for seams.",
+            "about 33.8 m²", "l = √(2.5² + 3²) ≈ 3.91 m, curved area = π × 2.5 × 3.91 ≈ 30.7 m², and 10% extra gives 30.7 × 1.1 ≈ 33.8 m².", "A"),
+           ("8.4.12", "Explain why a designer choosing between containers of equal capacity should "
+                      "compare surface areas.",
+            "Because material use is proportional to surface area for a thin wall.",
+            "Equal capacity fixes the volume, so the area decides the material.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The two containers",
+             text="A drinks company must hold 330 ml in either a cylinder of radius 3.3 cm or a "
+                  "cuboid of square cross-section 4.5 cm. Find the height each container needs, "
+                  "the surface area of each, and recommend one with a justification.",
+             note="Criteria A and D · state which container uses less material and comment on the "
+                  "limits of the comparison."),
+        dict(title="A2 · The irregular block",
+             text="An irregular metal block has a mass of 512 g. It is lowered into a measuring "
+                  "cylinder and the water level rises from 180 ml to 240 ml. Find the density of "
+                  "the metal, state the precision of your answer, and identify a likely material.",
+             note="Criteria A and C · show the displacement calculation and justify the "
+                  "precision."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of form and the related concepts of measurement and models "
+        "appear in your work?",
+        "How is the global context of globalisation and sustainability, and its exploration of "
+        "human impact on the environment, visible in the investigations and examples you "
+        "completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a surface-area comparison when choosing a container, and what "
+        "would you still like to ask?",
+    ],
+    review=dict(
+        ideas=["A prism has a constant cross-section and volume = cross-section area × length.",
+               "A cylinder is a prism with a circular cross-section: V = πr²h, curved area = 2πrh.",
+               "A pyramid or cone has volume ⅓ × base area × perpendicular height.",
+               "The curved surface area of a cone is πrl, where l is the slant height.",
+               "A sphere has volume ⁴⁄₃πr³ and surface area 4πr².",
+               "A composite solid is split into parts whose volumes are added or subtracted.",
+               "Density = mass ÷ volume.",
+               "A percentage error in a length multiplies by three in a volume."],
+        vocab=["face", "edge", "vertex", "net", "cross-section", "prism", "cylinder", "pyramid",
+               "cone", "sphere", "slant height", "perpendicular height", "composite solid",
+               "density", "displacement"],
+        mixed=[("8.R1", "Find the volume of a cylinder of radius 5 cm and height 12 cm."),
+               ("8.R2", "Find the surface area of a cube of side 7 cm."),
+               ("8.R3", "Find the volume of a cone of radius 6 cm and height 9 cm."),
+               ("8.R4", "A mass of 350 g has volume 50 cm³. Find the density."),
+               ("8.R5", "Find the curved surface area of a cone of radius 4 cm and slant height "
+                        "10 cm."),
+               ("8.R6", "Explain why the slant height is used in the curved-area formula for a "
+                        "cone.")],
+    ),
+    projects=dict(
+        service=[("Community need", "Packaging waste in the community is high because containers "
+                                    "are chosen without regard to the material they use."),
+                 ("Mathematical connection", "Surface area, volume and density of materials."),
+                 ("Proposed action", "Compare the material used by two containers of equal "
+                                     "capacity and publish the result with a recommendation."),
+                 ("Expected impact", "A measurable reduction in packaging material for one "
+                                     "product."),
+                 ("Student reflection", "Record the comparison, the recommendation and what was "
+                                        "actually adopted.")],
+        community=[("Project idea", "A packaging audit for the school canteen."),
+                   ("Need", "The canteen does not know how much packaging it uses."),
+                   ("Research question", "Which single change would reduce the packaging material "
+                                         "the most?"),
+                   ("Mathematics", "Surface area, volume and density."),
+                   ("Action or outcome", "A ranked list of packaging changes with estimated "
+                                         "material savings."),
+                   ("Beneficiaries", "The canteen and everyone who uses it."),
+                   ("Evidence", "The measurements, the comparisons and the ranked list.")],
+        personal=[("Personal interest", "Cooking, recycling or model making."),
+                  ("Learning goal", "To measure a real container and decide whether its design "
+                                    "wastes material."),
+                  ("Product or outcome", "A measured comparison of two containers at home."),
+                  ("Mathematics", "Surface area, volume and density."),
+                  ("Process", "Measure, compute the surface area and volume, then compare."),
+                  ("Evidence", "The measurements, the comparison and the conclusion.")],
+    ),
+),
+])
