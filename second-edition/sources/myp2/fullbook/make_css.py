@@ -35,6 +35,10 @@ ADDITIONS = """
 /* ============================ book-level additions ============================ */
 .investigate .construction-space{height:58mm}
 
+/* --- assessment footer notes belong inside their task box --- */
+.assessment-task .footer-note{position:static; margin:2.5mm 0 0; padding-top:2mm;
+  border-top:1px solid var(--line); font-family:var(--label); font-size:7pt; color:#7a8784}
+
 
 /* --- contents --- */
 .toc{margin-top:2mm}

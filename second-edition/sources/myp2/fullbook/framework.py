@@ -2261,7 +2261,7 @@ dict(
         ], inv=dict(
             task="Measure the perimeter of three objects by wrapping a string around them and "
                  "measuring the string. Compare with calculations for the shapes you can identify.",
-            table=[["object", "shape", "measured perimeter", "calculated perimeter"],
+            table=[["object", "shape", "measured", "calculated"],
                    ["object 1", "", "", ""], ["object 2", "", "", ""], ["object 3", "", "", ""]],
             notice=["A string measures the boundary directly, whatever the shape.",
                     "Calculated perimeters depend on identifying the shape correctly.",
