@@ -2400,3 +2400,546 @@ dict(
     ),
 ),
 ])
+
+CHAPTERS.extend([
+dict(
+    num=5, title="Equations, inequalities and systems",
+    key="Relationships", related=["Equivalence", "Systems"],
+    context="Globalisation and sustainability",
+    exploration="Resources and consumption",
+    inquiry=("The relationship between quantities that must satisfy several conditions at once can "
+             "be represented as a system, and the equivalence of the different methods of solving "
+             "such systems allows the feasible solutions to be identified, checked and justified."),
+    atl=("Self-management",
+         "In order for a student to organise the solution of a multi-step problem, students must "
+         "plan the order of the steps before starting, record each step so it can be checked, and "
+         "review the plan against the answer obtained."),
+    standfirst="An equation is a balance, and every step of a solution must keep it balanced. When "
+               "two conditions must hold at once, the answer is a system.",
+    engage="A co-operative has 40 dollars a head to spend on seed and fertiliser. Seed costs 3 "
+           "dollars a packet and fertiliser 5 dollars a bag, and at least 2 bags of fertiliser are "
+           "needed. How many packets can they buy? The question has more than one answer, and "
+           "inequalities describe them all.",
+    questions=[("Factual", "How do you solve a linear equation, an inequality, and a pair of "
+                           "simultaneous equations?"),
+               ("Conceptual", "Why must every step of a solution keep the equation equivalent to "
+                              "the original, and how does a system of inequalities produce a set "
+                              "of feasible answers rather than one?"),
+               ("Debatable", "When a resource is limited, is a solution that satisfies every "
+                             "constraint automatically the best one?")],
+    application_lede="These tasks use equations, inequalities, simultaneous equations and systems "
+                     "of inequalities. Check every solution in the original conditions before "
+                     "reporting it.",
+    projects_lede="Every shared resource is limited, and limits are inequalities. Use systems to "
+                  "see the feasible choices before choosing among them.",
+    sections=[
+        dict(id="5.1", title="Solving linear equations",
+             inquiry_q=("How can an equation be solved while keeping it equivalent to the "
+                        "original?"), teach=[
+            "An equation states that two expressions are equal. Solving it means finding the values that make the statement true, and every step of the solution must preserve that truth.",
+            "The permitted steps are: add or subtract the same quantity from both sides, multiply or divide both sides by the same non-zero quantity. Each step produces an equation equivalent to the last.",
+            "Multiplying or dividing both sides by a negative number is allowed when solving an equation, because the equality survives. This is the difference between an equation and an inequality.",
+            "Checking is not optional. Substituting the answer back into the original equation is the only way to be sure that a step did not break the equivalence.",
+        ], examples=[
+            dict(q="Solve 3(x − 4) + 5 = 2x + 11.",
+                 vis=F("table", [["step", "operation", "result"],
+                                 ["3(x − 4) + 5 = 2x + 11", "expand", "3x − 7 = 2x + 11"],
+                                 ["3x − 7 = 2x + 11", "subtract 2x", "x − 7 = 11"],
+                                 ["x − 7 = 11", "add 7", "x = 18"]],
+                       caption="Each step keeps the equation balanced."),
+                 reasoning="Expanding first, then collecting the variable terms on one side and the "
+                          "constants on the other, keeps each step equivalent.",
+                 steps=["Expand: 3x − 12 + 5 = 2x + 11, so 3x − 7 = 2x + 11.",
+                        "Subtract 2x from both sides: x − 7 = 11.",
+                        "Add 7 to both sides: x = 18.",
+                        "Check: 3(14) + 5 = 47 and 2(18) + 11 = 47."],
+                 ans="x = 18",
+                 interp="The check confirms that every step preserved the equality, not just the "
+                        "last one."),
+            dict(q="Solve (2x − 1)/3 = (x + 2)/4.",
+                 vis=F("table", [["step", "operation", "result"],
+                                 ["(2x − 1)/3 = (x + 2)/4", "multiply by 12", "4(2x − 1) = 3(x + 2)"],
+                                 ["8x − 4 = 3x + 6", "collect terms", "5x = 10"],
+                                 ["5x = 10", "divide by 5", "x = 2"]],
+                       caption="Clearing the denominators first keeps the arithmetic simple."),
+                 reasoning="Multiplying both sides by the common denominator clears the fractions "
+                          "without changing the solution.",
+                 steps=["Multiply both sides by 12: 4(2x − 1) = 3(x + 2).",
+                        "Expand: 8x − 4 = 3x + 6.",
+                        "Subtract 3x and add 4: 5x = 10.",
+                        "Divide by 5: x = 2."],
+                 ans="x = 2",
+                 interp="Clearing fractions is a legitimate step because it multiplies both sides by "
+                        "the same non-zero number."),
+        ], inv=dict(
+            task="Solve 2(x + 3) = 14 by three different routes: expanding first, dividing first, "
+                 "and using a bar model. Then try to solve 2(x + 3) = 15 the same way and record "
+                 "what happens.",
+            fig=F("bar_model", 14, [2, 2, 2, 2, 2, 2, 2], [0], "seven groups of 2"),
+            table=[["route", "steps", "answer"],
+                   ["expand first", "2x + 6 = 14, so 2x = 8, so x = 4", "x = 4"],
+                   ["divide first", "x + 3 = 7, so x = 4", "x = 4"],
+                   ["bar model", "14 − 6 = 8 shared into two equal parts", "x = 4"]],
+            notice=["All three routes gave the same answer, because each step kept the equation "
+                    "equivalent.",
+                    "Dividing first was the shortest route because it avoided expanding.",
+                    "For 2(x + 3) = 15, dividing first gives x + 3 = 7.5, so x = 4.5.",
+                    "The answer need not be a whole number, and the bar model still works with "
+                    "half-units."],
+            obs="Different routes through an equation give the same answer when every step "
+                "preserves equivalence.",
+            concl="A linear equation is solved by applying inverse operations to both sides, and "
+                  "any sequence of equivalent steps leads to the same solution.")),
+        dict(id="5.2", title="Inequalities and solution sets",
+             inquiry_q=("How does solving an inequality differ from solving an equation, and why "
+                        "is the answer a set?"), teach=[
+            "An inequality states that one expression is greater or less than another. Its solution is usually a set of values, not a single value, so it is written as an interval or with a number line.",
+            "Adding or subtracting the same quantity from both sides preserves the inequality. Multiplying or dividing by a positive number also preserves it.",
+            "Multiplying or dividing both sides by a negative number reverses the inequality sign. This is the one step that behaves differently from an equation, and it is the commonest source of error.",
+            "A compound inequality such as 1 < 2x + 1 ≤ 7 is solved by applying the same operation to all three parts, which keeps the structure intact.",
+        ], examples=[
+            dict(q="Solve 3 − 2x > 11 and show the solution on a number line.",
+                 vis=F("number_line", -6, 4, 1, [-4], "x < −4", ""),
+                 reasoning="Dividing by a negative number reverses the inequality sign, which is "
+                          "the step that differs from solving an equation.",
+                 steps=["3 − 2x > 11.",
+                        "Subtract 3: −2x > 8.",
+                        "Divide by −2 and reverse the sign: x < −4."],
+                 ans="x < −4, or x ∈ (−∞, −4)",
+                 interp="Reversing the sign is not a rule of convenience: it is what keeps the "
+                        "statement true."),
+            dict(q="Solve −2 ≤ (x + 1)/3 < 4.",
+                 vis=F("number_line", -8, 12, 1, [-7, 11], "[−7, 11)", ""),
+                 reasoning="A compound inequality is solved by applying the same operations to all "
+                          "three parts.",
+                 steps=["Multiply all three parts by 3: −6 ≤ x + 1 < 12.",
+                        "Subtract 1 from all three parts: −7 ≤ x < 11.",
+                        "So x ∈ [−7, 11)."],
+                 ans="−7 ≤ x < 11, or x ∈ [−7, 11)",
+                 interp="The square bracket at −7 and the round bracket at 11 record which "
+                        "endpoints are included."),
+        ], inv=dict(
+            task="Solve 2x + 1 < 7 and then −2x + 1 < 7. Draw both solution sets on the same "
+                 "number line, then solve −2x + 1 < 2x + 5. Record the effect of the negative "
+                 "coefficient in each case.",
+            fig=F("number_line", -6, 6, 1, [3, -3], "x < 3 and x > −3", ""),
+            table=[["inequality", "steps", "solution"],
+                   ["2x + 1 < 7", "2x < 6, so x < 3", "x ∈ (−∞, 3)"],
+                   ["−2x + 1 < 7", "−2x < 6, so x > −3", "x ∈ (−3, ∞)"],
+                   ["−2x + 1 < 2x + 5", "−4 < 4x, so x > −1", "x ∈ (−1, ∞)"]],
+            notice=["The first two inequalities differ only in the sign of the coefficient of x.",
+                    "That sign change reversed the direction of the solution set.",
+                    "Both solution sets are infinite, so an inequality rarely has one answer.",
+                    "The third inequality has the variable on both sides, which is solved by "
+                    "collecting it."],
+            obs="A negative coefficient reverses the inequality sign when it is divided out, so the "
+                "solution set can point the opposite way from an equation's solution.",
+            concl="Solving an inequality follows the same steps as solving an equation, except that "
+                  "multiplying or dividing by a negative number reverses the sign — and the "
+                  "solution is a set, not a value.")),
+        dict(id="5.3", title="Simultaneous equations: graphs and substitution",
+             inquiry_q=("How can two conditions be satisfied at the same time?"), teach=[
+            "A pair of simultaneous equations states two conditions that must both hold. The solution is the pair of values that satisfies both, which is the point where the two graphs cross.",
+            "The graphical method finds the intersection by drawing both lines. It is quick and it shows the structure, but it is limited by the accuracy of the drawing.",
+            "The substitution method solves one equation for one variable and substitutes the result into the other. It is exact and it works whenever one equation is easy to rearrange.",
+            "Both methods answer the same question. The choice between them is about accuracy and convenience, not about correctness.",
+        ], examples=[
+            dict(q="Solve y = 2x + 1 and 3x + y = 11 by substitution.",
+                 vis=F("grid", [(0, 1), (2, 5), (0, 11), (2, 5)], ["", "", "", ""],
+                       xmin=0, xmax=5, ymin=0, ymax=13, title="the crossing point (2, 5)"),
+                 reasoning="One equation already gives y in terms of x, so substituting that "
+                          "expression into the other removes y entirely.",
+                 steps=["Substitute y = 2x + 1 into 3x + y = 11.",
+                        "3x + 2x + 1 = 11.",
+                        "5x = 10, so x = 2.",
+                        "y = 2 × 2 + 1 = 5.",
+                        "Check: 3 × 2 + 5 = 11."],
+                 ans="x = 2 and y = 5",
+                 interp="The check in the second equation confirms the pair satisfies both "
+                        "conditions."),
+            dict(q="Solve x + y = 10 and x − y = 4 by elimination.",
+                 vis=F("table", [["step", "operation", "result"],
+                                 ["x + y = 10", "—", "—"],
+                                 ["x − y = 4", "add the equations", "2x = 14"],
+                                 ["2x = 14", "divide by 2", "x = 7"],
+                                 ["x = 7", "substitute back", "y = 3"]],
+                       caption="Adding the equations cancels y."),
+                 reasoning="Adding the two equations removes y because its coefficients are equal "
+                          "and opposite, leaving one equation in x.",
+                 steps=["Add the equations: (x + y) + (x − y) = 10 + 4.",
+                        "2x = 14, so x = 7.",
+                        "Substitute into x + y = 10: 7 + y = 10, so y = 3.",
+                        "Check: 7 − 3 = 4."],
+                 ans="x = 7 and y = 3",
+                 interp="Elimination was faster here because the y terms were already set up to "
+                        "cancel."),
+        ], inv=dict(
+            task="Solve the pair 2x + 3y = 12 and x − y = 1 three ways: by substitution, by "
+                 "elimination, and by drawing both lines. Record which method you found fastest and "
+                 "why.",
+            fig=F("grid", [(0, 4), (6, 0), (1, 0), (3, 2)], ["", "", "", ""],
+                  xmin=0, xmax=8, ymin=0, ymax=6, title="the crossing point (3, 2)"),
+            table=[["method", "steps", "answer"],
+                   ["substitution", "x = y + 1, so 2(y + 1) + 3y = 12, giving 5y = 10", "x = 3, y = 2"],
+                   ["elimination", "double the second equation and subtract", "x = 3, y = 2"],
+                   ["graph", "draw both lines and read the crossing", "x = 3, y = 2"]],
+            notice=["All three methods gave the same pair, because they all enforce the same two "
+                    "conditions.",
+                    "Substitution was quickest here because x was easy to isolate.",
+                    "The graph showed the crossing but only to the accuracy of the drawing.",
+                    "The check in both equations confirmed the answer."],
+            obs="The solution of a system is the pair that satisfies every equation, and any exact "
+                "method finds it.",
+            concl="Simultaneous equations are solved by substitution or by elimination, and both "
+                  "methods produce the single pair of values that satisfies every equation in the "
+                  "system.")),
+        dict(id="5.4", title="Elimination and special systems",
+             inquiry_q=("How can a system be solved when the coefficients are arranged to cancel, "
+                        "and what happens when they are not?"), teach=[
+            "Elimination multiplies one or both equations by a constant so that one variable has equal and opposite coefficients, then adds or subtracts the equations.",
+            "The multiplier is chosen to make the coefficients match. If the coefficients of x are 2 and 3, multiplying by 3 and 2 makes them 6 and 6, and subtracting removes x.",
+            "A system with exactly one solution has lines that cross once. Parallel lines give no solution, and identical lines give infinitely many.",
+            "Recognising the special cases from the coefficients saves work: if the ratios of the x-coefficients and the y-coefficients are equal but the constants differ, the lines are parallel.",
+        ], examples=[
+            dict(q="Solve 3x + 2y = 16 and 5x − 2y = 8 by elimination.",
+                 vis=F("table", [["equation", "multiply by", "result"],
+                                 ["3x + 2y = 16", "1", "3x + 2y = 16"],
+                                 ["5x − 2y = 8", "1", "5x − 2y = 8"],
+                                 ["add", "—", "8x = 24"]],
+                       caption="The y coefficients already cancel."),
+                 reasoning="The y coefficients are 2 and −2, so adding the equations removes y with "
+                          "no multiplier at all.",
+                 steps=["Add: 8x = 24, so x = 3.",
+                        "Substitute into 3x + 2y = 16: 9 + 2y = 16.",
+                        "2y = 7, so y = 3.5.",
+                        "Check in the second: 15 − 7 = 8."],
+                 ans="x = 3 and y = 3.5",
+                 interp="The answer need not be a pair of integers, and the check still works."),
+            dict(q="Show that 2x + 4y = 10 and x + 2y = 7 have no solution.",
+                 vis=F("grid", [(0, 2.5), (5, 0), (0, 3.5), (7, 0)], ["", "", "", ""],
+                       xmin=0, xmax=8, ymin=0, ymax=6, title="two parallel lines"),
+                 reasoning="If one equation is a multiple of the other in the variable terms but "
+                          "not in the constant, the lines are parallel and never meet.",
+                 steps=["Multiply the second equation by 2: 2x + 4y = 14.",
+                        "Compare with 2x + 4y = 10.",
+                        "The left sides are identical but the right sides differ by 4.",
+                        "So no pair of values can satisfy both."],
+                 ans="there is no solution; the lines are parallel",
+                 interp="Recognising the parallel case from the coefficients avoids a long search "
+                        "for an answer that does not exist."),
+        ], inv=dict(
+            task="Solve these four systems and classify each as having one solution, no solution, "
+                 "or infinitely many: (a) x + y = 5, x − y = 1; (b) 2x + 2y = 6, x + y = 3; (c) "
+                 "x + y = 5, 2x + 2y = 8; (d) 3x − y = 4, 6x − 2y = 8. Record how you decided.",
+            table=[["system", "what elimination gave", "classification"],
+                   ["(a) x + y = 5, x − y = 1", "2x = 6, so x = 3 and y = 2", "one solution"],
+                   ["(b) 2x + 2y = 6, x + y = 3", "0 = 0 after elimination", "infinitely many"],
+                   ["(c) x + y = 5, 2x + 2y = 8", "0 = −2 after elimination", "no solution"],
+                   ["(d) 3x − y = 4, 6x − 2y = 8", "0 = 0 after elimination", "infinitely many"]],
+            notice=["Elimination produced 0 = 0 in two cases and 0 = −2 in one.",
+                    "0 = 0 means the equations say the same thing, so there are infinitely many "
+                    "solutions.",
+                    "0 = −2 is impossible, so the lines are parallel and there is no solution.",
+                    "Only case (a) gave a single pair."],
+            obs="Elimination reveals the type of system: a true statement means infinitely many "
+                "solutions, a false one means none, and a solvable equation means exactly one.",
+            concl="A linear system has exactly one solution when its lines cross, no solution when "
+                  "they are parallel, and infinitely many when they are the same line, and "
+                  "elimination distinguishes the three cases directly.")),
+        dict(id="5.5", title="Systems of inequalities and resource allocation",
+             inquiry_q=("How can several limits at once define a set of feasible choices?"), teach=[
+            "A system of inequalities describes a situation with several limits at once. The solution is the set of points that satisfy every inequality, and it is a region rather than a point.",
+            "Each inequality contributes a half-plane bounded by its line. The feasible region is the intersection of those half-planes.",
+            "The vertices of the feasible region are where two boundary lines cross, and they are usually where the best value of a quantity occurs.",
+            "Inequalities model scarcity honestly: they do not pick an answer, they describe which answers are possible. Choosing among them is a separate, human step.",
+        ], examples=[
+            dict(q="A co-operative has 40 dollars, seed costs 3 dollars a packet and fertiliser 5 "
+                   "dollars a bag, and at least 2 bags of fertiliser are needed. Write the system "
+                   "and find the greatest number of seed packets.",
+                 vis=F("grid", [(0, 8), (13, 0)], ["", ""],
+                       xmin=0, xmax=14, ymin=0, ymax=10,
+                       title="the feasible region for 3x + 5y ≤ 40"),
+                 reasoning="Each condition becomes an inequality, and the feasible region is where "
+                          "all of them hold at once.",
+                 steps=["Let x be seed packets and y be bags of fertiliser.",
+                        "3x + 5y ≤ 40 (the budget) and y ≥ 2 (the minimum fertiliser).",
+                        "With y = 2: 3x + 10 ≤ 40, so 3x ≤ 30, giving x ≤ 10.",
+                        "So the greatest number of seed packets is 10, with 2 bags."],
+                 ans="at most 10 seed packets, with exactly 2 bags of fertiliser",
+                 interp="The budget limit binds at that corner, which is where the best value of x "
+                        "occurs."),
+            dict(q="A farmer plants wheat and barley on at most 100 hectares, with at least 20 "
+                   "hectares of each. Write the system and state its feasible region.",
+                 vis=F("grid", [(20, 80), (80, 20)], ["", ""],
+                       xmin=0, xmax=100, ymin=0, ymax=100,
+                       title="20 ≤ x, 20 ≤ y, x + y ≤ 100"),
+                 reasoning="Each constraint is a half-plane, and the feasible region is their "
+                          "intersection.",
+                 steps=["w + b ≤ 100, w ≥ 20 and b ≥ 20.",
+                        "The third condition gives b ≤ 100 − w.",
+                        "Combining with b ≥ 20 gives 20 ≤ b ≤ 100 − w.",
+                        "So w must satisfy 20 ≤ w ≤ 80."],
+                 ans="20 ≤ w ≤ 80 and 20 ≤ b ≤ 100 − w",
+                 interp="The feasible region is a band of choices, and the farmer still has to "
+                        "choose."),
+        ], inv=dict(
+            task="A school fair stall sells drinks at 2 dollars and snacks at 3 dollars. It has "
+                 "room for at most 60 items, at least 10 of each, and wants to raise at least 150 "
+                 "dollars. Write the system of inequalities, draw the feasible region, and find "
+                 "one combination that meets every condition.",
+            fig=F("grid", [(10, 50), (50, 10), (25, 35)], ["", "", ""],
+                  xmin=0, xmax=70, ymin=0, ymax=70,
+                  title="the feasible region for the stall"),
+            table=[["condition", "inequality"],
+                   ["at most 60 items", "d + s ≤ 60"],
+                   ["at least 10 drinks", "d ≥ 10"],
+                   ["at least 10 snacks", "s ≥ 10"],
+                   ["at least 150 dollars", "2d + 3s ≥ 150"]],
+            notice=["The first three inequalities bound a rectangle of possible stock.",
+                    "The fourth inequality removes the corner where the takings are too low.",
+                    "The feasible region is what remains after every condition is applied.",
+                    "d = 25 and s = 35 gives 2 × 25 + 3 × 35 = 155 dollars with 60 items."],
+            obs="Each inequality removes part of the plane, and the feasible region is what "
+                "survives all of them.",
+            concl="A system of inequalities describes the set of choices that satisfy every "
+                  "condition at once, and that set is a region whose boundaries come from the "
+                  "individual inequalities.")),
+    ],
+    practice=dict(
+        A=[("5.1.1", "Solve 5x − 3 = 22.",
+            "x = 5", "5x = 25, so x = 5.", "F"),
+           ("5.1.2", "Solve 3(x + 4) = 27.",
+            "x = 5", "x + 4 = 9, so x = 5.", "F"),
+           ("5.1.3", "Solve (2x + 1)/3 = 5.",
+            "x = 7", "2x + 1 = 15, so 2x = 14.", "F"),
+           ("5.1.4", "Solve −4x = 20.",
+            "x = −5", "Divide both sides by −4.", "F"),
+           ("5.1.5", "Solve 7 − 2x = 1.",
+            "x = 3", "−2x = −6, so x = 3.", "F"),
+           ("5.1.6", "Solve x/4 − 2 = 3.",
+            "x = 20", "x/4 = 5.", "F"),
+           ("5.1.7", "Solve 3x + 2 = 2x + 9.",
+            "x = 7", "Collect the x terms on the left.", "F"),
+           ("5.1.8", "Solve 2(3x − 1) = 4(x + 2).",
+            "x = 5", "6x − 2 = 4x + 8, so 2x = 10.", "F"),
+           ("5.1.9", "Solve 5x − 8 = 3x + 12.",
+            "x = 10", "2x = 20.", "F"),
+           ("5.1.10", "Solve (x − 2)/5 = (x + 4)/10.",
+            "x = 8", "Multiply by 10: 2(x − 2) = x + 4.", "F"),
+           ("5.1.11", "Solve 4x + 3 = 3x + 8 and check your answer.",
+            "x = 5", "x = 5, and 23 = 23 confirms it.", "F"),
+           ("5.1.12", "Explain why you cannot divide both sides of an equation by x.",
+            "Because x might be zero, and division by zero is undefined.",
+            "The permitted steps require a non-zero divisor.", "R")],
+        B=[("5.2.1", "Investigate: does the equation 2x + 3 = 2x + 5 have a solution? Justify.",
+            "No — subtracting 2x gives 3 = 5, which is false.",
+            "The variable cancels and leaves a false statement.", "R"),
+           ("5.2.2", "Test the claim: every linear equation has exactly one solution.",
+            "False — 2x + 3 = 2x + 3 is true for every x, so it has infinitely many solutions.",
+            "The variable can cancel to a true statement.", "R"),
+           ("5.2.3", "Investigate the system x + y = 4 and 2x + 2y = 9. Classify it.",
+            "No solution — the second equation is not a multiple of the first in the constants.",
+            "Doubling the first gives 2x + 2y = 8, not 9.", "R"),
+           ("5.2.4", "Generalise: when does ax + by = c and kax + kby = kc have infinitely many "
+                     "solutions?",
+            "Always — the second equation is a multiple of the first.",
+            "The two equations state the same condition.", "R"),
+           ("5.2.5", "Investigate whether the system x + y = 3 and x + y = 3 is one equation or "
+                     "two.",
+            "It is one condition written twice, so there are infinitely many solutions.",
+            "The equations are identical.", "R"),
+           ("5.2.6", "Test the claim: if two lines have different gradients they must cross.",
+            "True — different gradients mean different rates of change, so the lines meet exactly "
+            "once.",
+            "The gradient fixes the steepness, and equal steepness with different intercepts gives "
+            "parallel lines.", "R"),
+           ("5.2.7", "Investigate: solve 2x + 3y = 12 for y in terms of x, and describe the set "
+                     "of solutions.",
+            "y = (12 − 2x)/3, and every x gives a y, so there are infinitely many pairs.",
+            "One equation in two unknowns has infinitely many solutions.", "R"),
+           ("5.2.8", "Generalise a rule for classifying a linear system from its coefficients.",
+            "Compare the ratios of the coefficients: equal ratios with unequal constants means no "
+            "solution; equal ratios with equal constants means infinitely many.",
+            "The ratios reveal the geometric relationship of the lines.", "R"),
+           ("5.2.9", "Investigate whether the system 3x + 2y = 6 and 6x + 4y = 12 has one "
+                     "solution.",
+            "No — it has infinitely many, because the second equation is double the first.",
+            "The equations are equivalent.", "R"),
+           ("5.2.10", "Test the claim: a system of three equations in two unknowns always has a "
+                      "solution.",
+            "False — three lines need not pass through one point.",
+            "Each equation adds a condition that may be incompatible.", "R"),
+           ("5.2.11", "Investigate the pattern of solutions to x + y = n for n = 1 to 5.",
+            "Each has infinitely many solutions, one for each choice of x.",
+            "A single equation in two unknowns leaves one degree of freedom.", "R")],
+        C=[("5.3.1", "Explain in words what a solution of a pair of simultaneous equations means.",
+            "The pair of values that makes both equations true at the same time.",
+            "The solution is the intersection of the two conditions.", "R"),
+           ("5.3.2", "Explain the difference between an equation and an inequality in terms of the "
+                     "answer.",
+            "An equation usually has one solution; an inequality has a set of solutions.",
+            "The answer to an inequality is a region or interval.", "R"),
+           ("5.3.3", "Explain why multiplying both sides of an inequality by a negative number "
+                     "reverses the sign.",
+            "Because the order of the numbers reverses when the scale is reflected through zero.",
+            "The inequality is preserved only if the direction is reversed.", "R"),
+           ("5.3.4", "Describe two methods of solving a simultaneous system and say when each is "
+                     "preferred.",
+            "Substitution when one variable is easy to isolate; elimination when the coefficients "
+            "can be made to match.",
+            "The choice depends on the structure of the equations.", "R"),
+           ("5.3.5", "Explain what it means for a system to have no solution.",
+            "The two conditions cannot both hold, which happens when the lines are parallel.",
+            "Incompatible conditions have no common solution.", "R"),
+           ("5.3.6", "Explain why the solution of a system of inequalities is drawn as a region.",
+            "Because infinitely many pairs can satisfy all the inequalities at once.",
+            "The solution set is the intersection of the half-planes.", "R"),
+           ("5.3.7", "Describe how you would check the solution of a simultaneous system.",
+            "Substitute the pair into both original equations and confirm both are true.",
+            "A check in one equation is not enough.", "R"),
+           ("5.3.8", "Explain the difference between a feasible region and a solution.",
+            "The feasible region is the set of allowed choices; a solution is one choice made from "
+            "it.",
+            "The mathematics narrows the choices; the decision is separate.", "R"),
+           ("5.3.9", "Explain why an inequality is the right tool for a budget limit.",
+            "A budget is an upper bound, not an exact amount, so it is naturally written with ≤.",
+            "The limit allows any amount up to the maximum.", "R"),
+           ("5.3.10", "Describe the three possible outcomes of a linear system and how to "
+                      "recognise each.",
+            "One solution, no solution, or infinitely many, recognised from the ratios of the "
+            "coefficients.",
+            "Elimination produces a solvable equation, a false statement or a true one.", "R"),
+           ("5.3.11", "Explain why 0 = 0 after elimination means infinitely many solutions.",
+            "Because the equations state the same condition, so any pair satisfying one satisfies "
+            "both.",
+            "The two equations are equivalent.", "R"),
+           ("5.3.12", "Describe how a vertex of a feasible region is found.",
+            "By solving the two boundary equations of the edges that meet there.",
+            "A vertex is the intersection of two boundary lines.", "R")],
+        D=[("5.4.1", "A co-operative has 50 dollars. Bags of seed cost 4 dollars and fertiliser 6 "
+                     "dollars, and at least 3 bags of fertiliser are needed. Find the greatest "
+                     "number of seed bags.",
+            "8 bags", "With 3 bags of fertiliser at 18 dollars, 32 dollars remain for 8 bags of "
+                      "seed.", "A"),
+           ("5.4.2", "A school orders pencils at 0.30 dollars and notebooks at 1.20 dollars with a "
+                     "60-dollar budget and at least 20 notebooks. Find the greatest number of "
+                     "pencils.",
+            "120 pencils", "20 notebooks cost 24 dollars, leaving 36 dollars for 120 pencils.", "A"),
+           ("5.4.3", "A delivery van carries at most 800 kg. Boxes weigh 12 kg and crates 25 kg, "
+                     "and at least 10 crates are needed. Find the greatest number of boxes.",
+            "45 boxes", "10 crates weigh 250 kg, leaving 550 kg for 45 boxes at 12.2 kg each — "
+                        "45 boxes weigh 540 kg, which fits.", "A"),
+           ("5.4.4", "A farmer has 60 hectares, plants wheat and barley, and needs at least 15 "
+                     "hectares of barley. Write the system and give one feasible plan.",
+            "b ≥ 15 and w + b ≤ 60, so w ≤ 45; for example w = 30 and b = 15",
+            "Any pair inside the region works, and the plan is a choice.", "A"),
+           ("5.4.5", "A charity packs food parcels with a budget of 200 dollars. Rice costs 2 "
+                     "dollars a kilo and beans 3 dollars a kilo, and each parcel needs at least 1 "
+                     "kilo of beans. Write the system for 20 parcels.",
+            "2r + 3b ≤ 200 with b ≥ 20, so 2r ≤ 140 and r ≤ 70",
+            "The bean minimum is a fixed cost that reduces what is left for rice.", "A"),
+           ("5.4.6", "Explain whether a plan that satisfies every constraint is automatically the "
+                     "best plan.",
+            "No — the constraints describe what is possible, not what is best.",
+            "Choosing among feasible options needs an additional criterion.", "R"),
+           ("5.4.7", "Two bus companies charge 3 dollars plus 0.50 dollars a kilometre and 5 "
+                     "dollars plus 0.30 dollars a kilometre. Find the distance at which they cost "
+                     "the same and say which is cheaper below it.",
+            "10 km; the first is cheaper below it",
+            "3 + 0.5d = 5 + 0.3d gives 0.2d = 2.", "A"),
+           ("5.4.8", "A water tank holds at most 500 litres and is filled by two pipes, one at 8 "
+                     "litres a minute for at most 30 minutes and one at 12 litres a minute. Find "
+                     "whether the tank can be filled in 30 minutes.",
+            "Yes — 8 × 30 = 240 and the second pipe supplies the remaining 260 litres in about 22 "
+            "minutes, so both together fill it inside 30 minutes",
+            "240 + 12 × 22 = 504, so about 21.7 minutes of the second pipe is enough.", "A"),
+           ("5.4.9", "A community garden has 40 m of fencing and wants a rectangular plot of area "
+                     "at least 96 m². Find the feasible widths.",
+            "Widths w with w(20 − w) ≥ 96, so 8 ≤ w ≤ 12",
+            "The perimeter gives length 20 − w, and the area condition restricts w.", "R"),
+           ("5.4.10", "A shop sells two teas. Blend A costs 4 dollars a kilo and blend B 6 dollars "
+                      "a kilo. A 10-kilo mixture must cost at most 48 dollars. Find the greatest "
+                      "amount of blend B.",
+            "4 kg", "4a + 6b ≤ 48 with a + b = 10 gives 40 + 2b ≤ 48, so b ≤ 4.", "A"),
+           ("5.4.11", "A school trip costs 8 dollars a student plus a 120-dollar bus. With a "
+                      "500-dollar budget, find the greatest number of students.",
+            "47 students", "500 − 120 = 380 and 380 ÷ 8 = 47.5, so 47 students.", "A"),
+           ("5.4.12", "Explain why a system of inequalities is a better model than an equation "
+                      "for a shared resource.",
+            "A resource has a limit rather than an exact requirement, so ≤ is the honest relation.",
+            "Inequalities describe feasibility; equations describe exact balances.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The seed and fertiliser budget",
+             text="A co-operative has 60 dollars to spend. Seed costs 4 dollars a packet, "
+                  "fertiliser 6 dollars a bag, and at least 3 bags of fertiliser are required. "
+                  "Write the system of inequalities, find the greatest number of seed packets, and "
+                  "state one other feasible plan.",
+             note="Criteria A and C · show the system and justify the greatest value."),
+        dict(title="A2 · The two water carriers",
+             text="Carrier A charges 5 dollars plus 0.40 dollars a litre and carrier B charges 2 "
+                  "dollars plus 0.60 dollars a litre. Find the volume at which the charges are "
+                  "equal, state which is cheaper below that volume, and find the volume that "
+                  "exactly uses a 30-dollar budget with each carrier.",
+             note="Criteria A and D · interpret the crossing point and comment on the sense of "
+                  "your answers."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of relationships and the related concepts of equivalence and "
+        "systems appear in your work?",
+        "How is the global context of globalisation and sustainability, and its exploration of "
+        "resources and consumption, visible in the investigations and examples you completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of an inequality model for sharing a limited resource, and what "
+        "would you still like to ask?",
+    ],
+    review=dict(
+        ideas=["Solving an equation applies inverse operations to both sides.",
+               "Multiplying or dividing an inequality by a negative number reverses the sign.",
+               "The solution of an inequality is a set, written as an interval.",
+               "Simultaneous equations are solved by substitution or elimination.",
+               "A linear system has one solution, no solution, or infinitely many.",
+               "A system of inequalities describes a feasible region.",
+               "Every solution should be checked in the original conditions."],
+        vocab=["equation", "inequality", "solution set", "simultaneous equations", "substitution",
+               "elimination", "no solution", "infinitely many solutions", "feasible region",
+               "constraint", "vertex"],
+        mixed=[("5.R1", "Solve 4x − 7 = 21."),
+               ("5.R2", "Solve −3x > 12."),
+               ("5.R3", "Solve x + y = 7 and x − y = 3."),
+               ("5.R4", "Classify the system 2x + 4y = 8 and x + 2y = 5."),
+               ("5.R5", "Solve −2 ≤ 3x − 1 < 8."),
+               ("5.R6", "Explain why dividing an inequality by a negative number reverses the "
+                        "sign.")],
+    ),
+    projects=dict(
+        service=[("Community need", "Community groups share limited supplies without recording the "
+                                    "limits, so some needs are missed."),
+                 ("Mathematical connection", "Systems of inequalities and feasible regions."),
+                 ("Proposed action", "Write down the limits of one shared supply as inequalities "
+                                     "and publish the feasible options."),
+                 ("Expected impact", "Distribution decisions become transparent and checkable."),
+                 ("Student reflection", "Record the constraints, the feasible region, and the "
+                                        "choice you made.")],
+        community=[("Project idea", "A resource-allocation plan for a school event."),
+                   ("Need", "Budgets and stock limits are decided informally."),
+                   ("Research question", "What combinations of stock meet every limit and still "
+                                         "raise enough money?"),
+                   ("Mathematics", "Linear equations, inequalities and feasible regions."),
+                   ("Action or outcome", "A written allocation plan with its constraints."),
+                   ("Beneficiaries", "Stall holders and the groups they support."),
+                   ("Evidence", "The system of inequalities, the region and the chosen plan.")],
+        personal=[("Personal interest", "Budgeting, cooking or planning a trip."),
+                  ("Learning goal", "To model a personal limit with inequalities and choose within "
+                                    "it."),
+                  ("Product or outcome", "A budget plan with stated constraints."),
+                  ("Mathematics", "Inequalities, feasible regions and linear models."),
+                  ("Process", "List the limits, write the inequalities, then choose a plan."),
+                  ("Evidence", "The system, the feasible region and the plan.")],
+    ),
+),
+])
