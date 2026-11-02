@@ -34,6 +34,12 @@ legacy = re.sub(r"\n{3,}", "\n\n", legacy).strip()
 ADDITIONS = """
 /* ============================ book-level additions ============================ */
 .investigate .construction-space{height:58mm}
+.page .investigate figure svg{max-height:78mm;width:auto;max-width:100%}
+.page .investigate .table-wrap{max-height:78mm;overflow:hidden}
+
+/* --- assessment footer notes belong inside their task box --- */
+.assessment-task .footer-note{position:static; margin:2.5mm 0 0; padding-top:2mm;
+  border-top:1px solid var(--line); font-family:var(--label); font-size:7pt; color:#7a8784}
 
 
 /* --- contents --- */
@@ -96,6 +102,8 @@ ADDITIONS = """
 /* --- book page geometry and figure rhythm --- */
 .page{padding:16mm 16mm 17mm}
 .page figure img{width:100%;height:auto;max-height:56mm;object-fit:contain;display:block;margin:0 auto}
+.page figure svg{max-height:105mm;width:auto;max-width:100%}
+.page .example .visual svg{max-height:105mm;width:auto;max-width:100%}
 .page figure figcaption{text-align:center}
 .page figure{margin:3mm 0}
 .katex{font-size:.99em}

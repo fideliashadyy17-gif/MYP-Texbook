@@ -5,6 +5,8 @@ Every diagram is vector, labelled and sized for a 78 mm text column, so it stays
 sharp in print. Diagrams are referenced from the content data by name, e.g.
 ``fig("number_line", 0, 3, 1, [1, 2])``.
 """
+import re
+
 GOLD = "#d7a55d"
 GREEN = "#0d2a28"
 RUST = "#b24f32"
@@ -46,6 +48,60 @@ def number_line(lo, hi, step, marks=(), label="", unit=""):
     return "".join(out)
 
 
+SUPERS = {
+    "\u2070": "0", "\u00b9": "1", "\u00b2": "2", "\u00b3": "3",
+    "\u2074": "4", "\u2075": "5", "\u2076": "6", "\u2077": "7",
+    "\u2078": "8", "\u2079": "9", "\u207a": "+", "\u207b": "-",
+    "\u207d": "(", "\u207e": ")", "\u1d50": "m", "\u207f": "n",
+}
+SUPER_RUN = re.compile("[" + "".join(SUPERS) + "]+")
+
+
+def _superscripts(svg):
+    """Raise superscript runs inside SVG text nodes, where KaTeX cannot be used."""
+    def sub(m):
+        body = "".join(SUPERS[c] for c in m.group(0))
+        return '<tspan baseline-shift="super" font-size="72%">' + body + '</tspan>'
+    parts = re.split(r"(<[^>]*>)", svg)
+    for i, part in enumerate(parts):
+        if part.startswith("<"):
+            continue
+        parts[i] = SUPER_RUN.sub(sub, part)
+    return "".join(parts)
+
+
+def _text_width(txt, fs):
+    """Approximate rendered width of a string in Inter at font-size fs."""
+    w = 0.0
+    for ch in txt:
+        if ch == " ":
+            w += 0.26
+        elif ch.isdigit() or ch.isupper():
+            w += 0.62
+        elif ch.islower():
+            w += 0.52
+        else:
+            w += 0.42
+    return w * fs
+
+
+def _wrap(txt, fs, maxw):
+    """Greedy word wrap to a maximum width, honouring explicit line breaks."""
+    out = []
+    for para in txt.split("|"):
+        words = para.split(" ")
+        cur = ""
+        for wd in words:
+            trial = (cur + " " + wd).strip()
+            if not cur or _text_width(trial, fs) <= maxw:
+                cur = trial
+            else:
+                out.append(cur)
+                cur = wd
+        out.append(cur)
+    return [l for l in out if l != ""] or [""]
+
+
 def _num(v):
     if abs(v - int(v)) < 1e-9:
         return str(int(v)).replace("-", "\u2212")
@@ -75,26 +131,50 @@ def double_number_line(top, bottom, title=""):
     return "".join(out)
 
 
-def table(rows, header=True, widths=None, caption=""):
-    """A simple labelled table; rows is a list of lists of strings."""
+def table(rows, header=True, widths=None, caption="", fs=9.5):
+    """A labelled table; rows is a list of lists of strings.
+
+    Cell text wraps to the column width and the row height grows to fit, so long
+    explanations stay inside their cell instead of running over the neighbours.
+    """
     cols = max(len(r) for r in rows)
     cw = widths or [int(300 / cols)] * cols
-    rh = 20
-    h = rh * len(rows) + (18 if caption else 0) + 4
+    # A long table is set with tighter rows so that it still reads at the size
+    # the page allows instead of being scaled down into illegibility.
+    lead = fs + 2.4 if len(rows) <= 8 else fs + 1.3
+    row_min = 20 if len(rows) <= 8 else 14.5
+    # wrap every cell first so the row heights can be computed
+    cells = []
+    for row in rows:
+        line_sets = []
+        for c in range(cols):
+            val = str(row[c]) if c < len(row) else ""
+            avail = cw[c] - 8
+            lines = _wrap(val, fs, avail) if val else [""]
+            if len(lines) > 1 and fs > 8.4:
+                # a wrapped cell is given a slightly smaller size so it still fits
+                lines = _wrap(val, fs - 1.0, avail)
+            line_sets.append(lines)
+        cells.append(line_sets)
+    heights = [max(row_min, max(len(lines) for lines in ls) * lead + 6) for ls in cells]
+    h = sum(heights) + (18 if caption else 0) + 4
     out = [_open((306, h))]
     y = 4
-    for r, row in enumerate(rows):
+    for r, line_sets in enumerate(cells):
         x = 3
-        for c in range(cols):
-            val = row[c] if c < len(row) else ""
+        rh = heights[r]
+        for c, lines in enumerate(line_sets):
             if header and r == 0:
                 out.append('<rect x="%d" y="%d" width="%d" height="%d" fill="#f2ece0"/>'
                            % (x, y, cw[c], rh))
             out.append('<rect x="%d" y="%d" width="%d" height="%d" stroke="%s" stroke-width=".7"/>'
                        % (x, y, cw[c], rh, LINE))
-            out.append('<text x="%d" y="%d" fill="%s" font-family="Inter, sans-serif" '
-                       'font-size="9.5" text-anchor="middle">%s</text>'
-                       % (x + cw[c] // 2, y + 14, INK, val))
+            size = fs - 1.0 if len(lines) > 1 else fs
+            top = y + (rh - len(lines) * lead) / 2 + size
+            for li, line in enumerate(lines):
+                out.append('<text x="%d" y="%.1f" fill="%s" font-family="Inter, sans-serif" '
+                           'font-size="%.1f" text-anchor="middle">%s</text>'
+                           % (x + cw[c] // 2, top + li * lead, INK, size, line))
             x += cw[c]
         y += rh
     if caption:
@@ -171,24 +251,32 @@ def staircase(steps, title="", cell=20, gap=2.5):
 
 
 def grid(points=(), labels=(), xmin=-5, xmax=5, ymin=-5, ymax=5, shape=(), title=""):
-    """A coordinate grid with plotted points and an optional polygon."""
+    """A coordinate grid with plotted points and an optional polygon.
+
+    The plot is centred on the middle of the requested range, so an asymmetric
+    window such as x from 0 to 10 still fills the frame instead of running off
+    the top and the right. A title sits in its own band above the plot.
+    """
     W, H = 300, 214
-    out = [_open((312, H + (16 if title else 6)))]
+    top = 32 if title else 18
+    bot = H + (30 if title else 6)
+    out = [_open((312, bot))]
     if title:
         out.append('<text x="6" y="12" fill="%s" font-family="Inter, sans-serif" '
                    'font-size="9" letter-spacing=".6">%s</text>' % (LINE, title))
-    ox, oy = W / 2, (H + 16) / 2
+    hmid, vmid = (xmin + xmax) / 2.0, (ymin + ymax) / 2.0
+    ox, oy = W / 2, (top + bot) / 2.0
     sx, sy = (W - 40) / (xmax - xmin), (H - 40) / (ymax - ymin)
 
     def X(v):
-        return ox + v * sx
+        return ox + (v - hmid) * sx
 
     def Y(v):
-        return oy - v * sy
+        return oy - (v - vmid) * sy
     out.append('<g stroke="%s" stroke-width=".5" opacity=".5">' % LINE)
     v = xmin
     while v <= xmax:
-        out.append('<path d="M%.1f %d V%.1f"/>' % (X(v), 18, Y(ymin)))
+        out.append('<path d="M%.1f %d V%.1f"/>' % (X(v), top, Y(ymin)))
         v += 1
     v = ymin
     while v <= ymax:
@@ -426,24 +514,31 @@ def box_plot(lo, q1, med, q3, hi, title=""):
 
 
 def tree(levels, probs, title=""):
-    """A probability tree; levels is a list of branch-label lists."""
-    out = [_open((330, 60 + 44 * len(levels)))]
+    """A probability tree; levels is a list of branch-label lists.
+
+    A branch probability is written above its own branch, clear of the outcome
+    labels of the level before it, so the two can never print on top of one
+    another when an outcome label is long.
+    """
+    step = 90
+    xs = [40 + i * step for i in range(len(levels))]
+    out = [_open((xs[-1] + step + 66, 60 + 44 * len(levels)))]
     if title:
         out.append('<text x="6" y="12" fill="%s" font-family="Inter, sans-serif" '
                    'font-size="9" letter-spacing=".6">%s</text>' % (LINE, title))
-    xs = [40 + i * 90 for i in range(len(levels))]
     out.append('<circle cx="%d" cy="%d" r="3" fill="%s"/>' % (xs[0], 40, INK))
     for li, labels in enumerate(levels):
         for bi, lab in enumerate(labels):
             y = 44 + (bi + 0.5) * (44 * len(levels)) / len(labels)
-            x2 = xs[li] + 90
+            x2 = xs[li] + step
             out.append('<path d="M%d %d L%d %.1f" stroke="%s" stroke-width="1"/>'
                        % (xs[li], 40, x2, y, INK))
             p = probs[li][bi] if li < len(probs) and bi < len(probs[li]) else ""
             out.append('<text x="%d" y="%.1f" fill="%s" font-family="Inter, sans-serif" '
-                       'font-size="9">%s</text>' % (xs[li] + 26, 40 + (y - 40) / 2 - 4, INK, p))
+                       'font-size="9">%s</text>'
+                       % (xs[li] + int(0.72 * step), 40 + 0.72 * (y - 40) - 8, INK, p))
             out.append('<text x="%d" y="%.1f" fill="%s" font-family="Inter, sans-serif" '
-                       'font-size="9">%s</text>' % (x2 + 4, y + 3, INK, lab))
+                       'font-size="9">%s</text>' % (x2 + 8, y + 3, INK, lab))
     out.append("</svg>")
     return "".join(out)
 
@@ -515,12 +610,14 @@ def scatter(points=(), xlabel="x", ylabel="y", xmin=0, xmax=10, ymin=0, ymax=10,
             line=None, title=""):
     """A scatter plot for bivariate data, with an optional line of best fit."""
     W, H = 300, 210
-    out = [_open((312, H + (16 if title else 6)))]
+    top = 34 if title else 20
+    bot = H + (30 if title else 6)
+    out = [_open((312, bot))]
     if title:
         out.append('<text x="6" y="12" fill="%s" font-family="Inter, sans-serif" '
                    'font-size="9" letter-spacing=".6">%s</text>' % (LINE, title))
-    ox, oy = 42, H - 22
-    sx, sy = (W - 62) / (xmax - xmin), (H - 46) / (ymax - ymin)
+    ox, oy = 42, bot - 22
+    sx, sy = (W - 62) / (xmax - xmin), (bot - top - 26) / (ymax - ymin)
 
     def X(v):
         return ox + (v - xmin) * sx
@@ -529,7 +626,7 @@ def scatter(points=(), xlabel="x", ylabel="y", xmin=0, xmax=10, ymin=0, ymax=10,
         return oy - (v - ymin) * sy
     out.append('<g stroke="%s" stroke-width=".5" opacity=".55">' % LINE)
     for i in range(int(xmin), int(xmax) + 1):
-        out.append('<path d="M%.1f %d V%.1f"/>' % (X(i), 20, Y(ymin)))
+        out.append('<path d="M%.1f %d V%.1f"/>' % (X(i), top, Y(ymin)))
     for i in range(int(ymin), int(ymax) + 1):
         out.append('<path d="M%d %.1f H%d"/>' % (X(xmin), Y(i), X(xmax)))
     out.append("</g>")
@@ -734,6 +831,6 @@ FIGS = {
 
 def fig(name, *args, **kwargs):
     """Render a diagram by name, e.g. fig('number_line', 0, 3, 1, [1])."""
-    return FIGS[name](*args, **kwargs)
+    return _superscripts(FIGS[name](*args, **kwargs))
 
 

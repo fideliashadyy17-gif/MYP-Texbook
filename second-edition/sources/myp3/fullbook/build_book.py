@@ -28,7 +28,7 @@ import diagrams2  # noqa: E402
 import covers  # noqa: E402
 
 LEVEL = 3
-RUNNING = "MYP Mathematics 2 · Student coursebook"
+RUNNING = "MYP Mathematics 3 · Student coursebook"
 ANSWERS = []          # (chapter, qid, question, answer, reasoning, criterion)
 TIER_LABEL = {"F": "Fluency", "A": "Application", "R": "Reasoning", "C": "Challenge"}
 
@@ -118,7 +118,7 @@ def investigation_pages(ch, sec):
     if inv.get("fig"):
         visuals += figure(inv["fig"], inv.get("fig_cap", ""))
     if inv.get("table"):
-        visuals += figure(diagrams2.table(inv["table"]), inv.get("table_cap", ""))
+        visuals += figure(diagrams2.fig("table", inv["table"]), inv.get("table_cap", ""))
     qblock = ('<div class="callout"><div class="label">Inquiry question</div><p>%s</p></div>'
               % esc(sec["inquiry_q"])) if sec.get("inquiry_q") else ""
     task = ('<div class="kicker">Chapter %d · Investigation %s</div><h2>%s</h2>'
@@ -479,6 +479,27 @@ def contents_pages(rows):
 
 
 # ------------------------------------------------------------------------- symbols
+# Superscript runs. The body font covers the digits but not the minus sign or the
+# letter superscripts, and coverage differs between the text and answer fonts, so
+# any run containing one of the fragile characters is routed through KaTeX as a
+# whole. This keeps "10\u207b\u00b3" and "a\u1d50" identical in every typeface.
+SUPERSCRIPTS = {
+    "\u2070": "0", "\u00b9": "1", "\u00b2": "2", "\u00b3": "3",
+    "\u2074": "4", "\u2075": "5", "\u2076": "6", "\u2077": "7",
+    "\u2078": "8", "\u2079": "9", "\u207a": "+", "\u207b": "-",
+    "\u207d": "(", "\u207e": ")", "\u1d50": "m", "\u207f": "n",
+}
+FRAGILE_SUPER = "\u207a\u207b\u207d\u207e\u1d50\u207f"
+SUPER_RUN = re.compile("[" + "".join(SUPERSCRIPTS) + "]+")
+
+
+def _superscript(m):
+    run = m.group(0)
+    if not any(c in FRAGILE_SUPER for c in run):
+        return run
+    return "[[math:^{%s}]]" % "".join(SUPERSCRIPTS[c] for c in run)
+
+
 PROTECTED = re.compile(
     r"(<svg.*?</svg>|<span class=\"katex-mathml\">.*?</span>|\salt=\"[^\"]*\"|\stitle=\"[^\"]*\")",
     re.S)
@@ -489,6 +510,9 @@ SYMBOL_MATH = {
     "\u2218": "[[math:\\circ]]", "\u2260": "[[math:\\neq]]",
     "\u2192": "[[math:\\rightarrow]]", "\u2032": "[[math:\\prime]]",
     "\u221b": "[[math:\\sqrt[3]{%s}]]",
+    "\u2153": "[[math:\\frac{1}{3}]]", "\u2154": "[[math:\\frac{2}{3}]]",
+    "\u00bc": "[[math:\\frac{1}{4}]]", "\u00be": "[[math:\\frac{3}{4}]]",
+    "\u2155": "[[math:\\frac{1}{5}]]", "\u2156": "[[math:\\frac{2}{5}]]",
 }
 
 
@@ -505,6 +529,7 @@ def symbols_to_math(html):
                 part = re.sub(sym + r"([0-9A-Za-z]+)", sub, part)
             else:
                 part = part.replace(sym, repl)
+        part = SUPER_RUN.sub(_superscript, part)
         parts[i] = part
     return "".join(parts)
 

@@ -15,6 +15,7 @@ ROOT = HERE.parent
 sys.path.insert(0, "/home/user/.cache/myp-review-tools")
 import fitz  # PyMuPDF
 
+LEVEL = 3
 PDF = HERE.parents[2] / "exports/myp3/MYP3-Student-Coursebook-Second-Edition.pdf"
 manifest = json.loads((HERE / "book.manifest.json").read_text(encoding="utf-8"))
 book_html = (HERE / "book.html").read_text(encoding="utf-8")
@@ -47,6 +48,8 @@ report["fonts_embedded"] = not not_embedded
 texts = [p.get_text() for p in doc]
 all_text = "\n".join(texts)
 report["replacement_chars"] = all_text.count("\ufffd")
+# a NUL in the extracted text means a glyph the embedded fonts cannot supply
+report["missing_glyphs"] = all_text.count("\x00")
 report["raw_placeholders"] = len(re.findall(r"\{\{[^}]*\}\}", all_text))
 report["raw_math"] = len(re.findall(r"\[\[math:", all_text))
 report["katex_errors"] = all_text.count("KaTeX parse error")
@@ -150,7 +153,7 @@ report["exterior_back_cover"] = {
     "collection": "collection" in back,
     "five_volumes": all(("volume%d" % n) in back for n in range(1, 6)),
     "current_volume": "thisvolume" in back,
-    "forthcoming_labelled": back.count("forthcoming") == 4,
+    "forthcoming_labelled": back.count("forthcoming") == 5 - LEVEL,
     "no_isbn": "noisbn" in back,
 }
 report["exterior_ok"] = (all(report["exterior_front_cover"].values())
@@ -162,6 +165,7 @@ checks = {
     "a4": report["a4"],
     "fonts_embedded": report["fonts_embedded"],
     "no_replacement_chars": report["replacement_chars"] == 0,
+    "no_missing_glyphs": report["missing_glyphs"] == 0,
     "no_placeholders": report["raw_placeholders"] == 0 and report["raw_math"] == 0,
     "page_numbers": report["page_numbers_ok"],
     "chapter_starts": report["chapter_starts_ok"],
