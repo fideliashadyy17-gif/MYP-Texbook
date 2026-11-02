@@ -258,8 +258,8 @@ def grid(points=(), labels=(), xmin=-5, xmax=5, ymin=-5, ymax=5, shape=(), title
     the top and the right. A title sits in its own band above the plot.
     """
     W, H = 300, 214
-    top = 32 if title else 18
-    bot = H + (30 if title else 6)
+    top = 34 if title else 18
+    bot = H + (14 if title else 6)
     out = [_open((312, bot))]
     if title:
         out.append('<text x="6" y="12" fill="%s" font-family="Inter, sans-serif" '
@@ -611,7 +611,7 @@ def scatter(points=(), xlabel="x", ylabel="y", xmin=0, xmax=10, ymin=0, ymax=10,
     """A scatter plot for bivariate data, with an optional line of best fit."""
     W, H = 300, 210
     top = 34 if title else 20
-    bot = H + (30 if title else 6)
+    bot = H + (14 if title else 6)
     out = [_open((312, bot))]
     if title:
         out.append('<text x="6" y="12" fill="%s" font-family="Inter, sans-serif" '
