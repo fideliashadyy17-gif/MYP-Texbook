@@ -3487,3 +3487,542 @@ dict(
     ),
 ),
 ])
+
+CHAPTERS.extend([
+dict(
+    num=7, title="Similarity, proof and trigonometry",
+    key="Relationships", related=["Justification", "Measurement"],
+    context="Orientation in space and time",
+    exploration="Natural and human landscapes and resources",
+    inquiry=("The relationship between corresponding lengths in similar figures can be justified "
+             "as a constant ratio, and that justification, combined with the measurement of "
+             "angles, allows indirect measurement of distances and heights that cannot be measured "
+             "directly."),
+    atl=("Research",
+         "In order for a student to justify a general claim about shapes, students must gather "
+         "evidence from several cases, identify what the cases have in common, and express the "
+         "common structure as a statement that can be proved rather than tested."),
+    standfirst="Similar figures have the same shape at different sizes. The scale factor is the "
+               "constant ratio between corresponding lengths, and it is what makes indirect "
+               "measurement possible.",
+    engage="A surveyor needs the height of a cliff. No one can climb it with a tape measure. The "
+           "surveyor measures a shadow, paces a distance and records two angles. What has been "
+           "measured, and what has been inferred?",
+    questions=[("Factual", "What are the conditions for two triangles to be similar, and what are "
+                           "the three trigonometric ratios?"),
+               ("Conceptual", "Why does a constant scale factor justify a claim about every "
+                              "corresponding pair of lengths, and how does Pythagoras' theorem "
+                              "follow from the properties of similar triangles?"),
+               ("Debatable", "Is a measurement taken indirectly with trigonometry as reliable as "
+                             "one taken directly with a tape?")],
+    application_lede="These tasks use similarity, scale factors, Pythagoras' theorem, "
+                     "trigonometric ratios and angles of elevation. State the precision of every "
+                     "measurement you report.",
+    projects_lede="Indirect measurement is how landscapes, buildings and resources are measured. "
+                  "Use it to plan, and report the precision of the result.",
+    sections=[
+        dict(id="7.1", title="Similar figures and scale factors",
+             inquiry_q=("How can you justify that two figures are similar without measuring every "
+                        "angle?"), teach=[
+            "Two figures are similar when their corresponding angles are equal and their corresponding sides are in the same ratio. The ratio is the scale factor.",
+            "For triangles, two conditions are sufficient: AA (two equal angles, which forces the third), and SSS (all three pairs of sides in the same ratio). SAS with the included angle also works.",
+            "The scale factor from figure A to figure B is k, and the scale factor from B to A is 1/k. Lengths multiply by k and areas by k², which is why area scales differently from length.",
+            "Similarity is a claim about every pair of corresponding lengths at once, so it needs a justification that covers all of them. Measuring three pairs is evidence; the angle conditions are the justification.",
+        ], examples=[
+            dict(q="Two triangles have sides 3 cm, 4 cm, 5 cm and 6 cm, 8 cm, 10 cm. Are they "
+                   "similar, and what is the scale factor?",
+                 vis=F("triangle", [(30, 140), (110, 140), (60, 40)], ["3", "4", "5"],
+                       right=(), title="a 3-4-5 triangle"),
+                 reasoning="If all three pairs of sides are in the same ratio, the triangles are "
+                          "similar by the SSS condition.",
+                 steps=["Compare corresponding sides: 6/3 = 2, 8/4 = 2 and 10/5 = 2.",
+                        "All three ratios are equal to 2.",
+                        "So the triangles are similar, with scale factor 2.",
+                        "The angles must also be equal, and indeed both are right-angled."],
+                 ans="yes, similar with scale factor 2",
+                 interp="The scale factor applies to every length, so one number describes the "
+                        "whole relationship."),
+            dict(q="A photograph 8 cm wide is enlarged to 30 cm wide. By what factor does the area "
+                   "increase?",
+                 vis=F("table", [["measurement", "original", "enlarged", "factor"],
+                                 ["width", "8 cm", "30 cm", "3.75"],
+                                 ["area", "A", "3.75² × A", "14.0625"]],
+                       caption="Area scales as the square of the length factor."),
+                 reasoning="Lengths multiply by the scale factor and areas by its square, because "
+                          "area is a product of two lengths.",
+                 steps=["Scale factor = 30 ÷ 8 = 3.75.",
+                        "Area factor = 3.75² = 14.0625.",
+                        "So the area increases by a factor of about 14."],
+                 ans="the area increases by a factor of 14.0625",
+                 interp="A modest change in width produces a large change in area, which matters "
+                        "for printing and for material cost."),
+        ], inv=dict(
+            task="Draw a triangle, then enlarge it by scale factor 2 about a chosen centre using a "
+                 "ruler. Measure all six sides and all six angles, and record the ratios of "
+                 "corresponding sides and the ratio of the two areas.",
+            fig=F("grid", [(1, 1), (5, 1), (2, 4), (2, 2), (8, 2), (4, 7)], ["", "", "", "", "", ""],
+                  xmin=0, xmax=10, ymin=0, ymax=9, title="a triangle and its enlargement"),
+            table=[["measurement", "original", "enlarged", "ratio"],
+                   ["side 1", "4 cm", "8 cm", "2"],
+                   ["side 2", "3.6 cm", "7.2 cm", "2"],
+                   ["side 3", "3 cm", "6 cm", "2"],
+                   ["angle A", "37°", "37°", "1"],
+                   ["angle B", "90°", "90°", "1"],
+                   ["area", "5.4 cm²", "21.6 cm²", "4"]],
+            notice=["Every length ratio was exactly 2, the scale factor.",
+                    "Every angle was unchanged, so the shape was preserved.",
+                    "The area ratio was 4, which is 2².",
+                    "The enlargement could be described by a single number and a centre."],
+            obs="Corresponding lengths are in a constant ratio, corresponding angles are equal, "
+                "and areas are in the square of that ratio.",
+            concl="Two figures are similar when corresponding angles are equal and corresponding "
+                  "sides are in a constant ratio k, with areas in the ratio k².")),
+        dict(id="7.2", title="Similar triangles and indirect measurement",
+             inquiry_q=("How can a height that cannot be measured directly be found?"), teach=[
+            "Two triangles formed by the sun's rays and vertical objects are similar, because the rays are parallel and the objects are both perpendicular to the ground. The angle at each object is equal.",
+            "This gives the shadow method: the ratio of height to shadow length is the same for every object at the same time, so one measurable pair fixes the ratio for all of them.",
+            "Indirect measurement turns an inaccessible quantity into a ratio problem. What is measured is a distance and an angle; what is inferred is a height.",
+            "The reliability of the result depends on the assumptions: that the ground is level, that the object is vertical, and that the light rays are effectively parallel.",
+        ], examples=[
+            dict(q="A 1.5 m pole casts a 2 m shadow. At the same time a tree casts an 18 m "
+                   "shadow. Find the height of the tree.",
+                 vis=F("triangle", [(20, 150), (60, 150), (20, 120)], ["1.5 m", "2 m"],
+                       right=(), title="two similar right-angled triangles"),
+                 reasoning="The triangles are similar because the sun's rays are parallel, so the "
+                          "ratio of height to shadow is the same for both objects.",
+                 steps=["Pole: height/shadow = 1.5/2 = 0.75.",
+                        "Tree: height/18 = 0.75.",
+                        "Height = 18 × 0.75 = 13.5 m."],
+                 ans="13.5 m",
+                 interp="The tree's height was never measured; it was inferred from the ratio."),
+            dict(q="A student 1.6 m tall stands so that her shadow just reaches the base of a "
+                   "flagpole. She is 4 m from the pole and her shadow is 2.5 m long. Find the "
+                   "height of the pole.",
+                 vis=F("triangle", [(20, 150), (50, 150), (20, 125)], ["1.6 m", "2.5 m"],
+                       right=(), title="shadow and distance"),
+                 reasoning="The two triangles are similar, so the ratio of height to horizontal "
+                          "distance is the same for the student and the pole.",
+                 steps=["Student: 1.6/2.5.",
+                        "Pole: h/(4 + 2.5) = h/6.5.",
+                        "1.6/2.5 = h/6.5, so h = 6.5 × 0.64.",
+                        "h = 4.16 m."],
+                 ans="about 4.16 m",
+                 interp="The distance from the student to the pole is added to her shadow because "
+                        "both lie on the same horizontal line."),
+        ], inv=dict(
+            task="On a sunny day, measure the shadow of a partner and the shadow of a tall object "
+                 "such as a tree, a building or a floodlight. Use similarity to estimate the "
+                 "height, then compare with any direct measurement or published figure you can "
+                 "find.",
+            fig=F("triangle", [(20, 150), (80, 150), (20, 110)], ["h", "shadow"],
+                  right=(), title="object, shadow and the similar triangle"),
+            table=[["object", "shadow (m)", "estimated height (m)", "method"],
+                   ["partner", "1.2", "1.55", "measured directly"],
+                   ["tree", "8.4", "1.55 × (8.4/1.2) = 10.85", "similarity ratio"],
+                   ["building", "22.5", "1.55 × (22.5/1.2) = 29.06", "similarity ratio"]],
+            notice=["The ratio height/shadow was the same for every object.",
+                    "The two tall estimates were consistent with the number of storeys.",
+                    "The method needs level ground and vertical objects.",
+                    "The precision is limited by the shadow measurement, not by the mathematics."],
+            obs="Similar triangles convert a measurable shadow into an unmeasurable height, using "
+                "one ratio for every object.",
+            concl="Two objects measured at the same time form similar triangles with their "
+                  "shadows, so the ratio of height to shadow length is constant and one measured "
+                  "pair determines every height.")),
+        dict(id="7.3", title="Pythagoras' theorem",
+             inquiry_q=("How can the relationship between the sides of a right-angled triangle be "
+                        "proved, and why does the proof work?"), teach=[
+            "Pythagoras' theorem states that in a right-angled triangle, a² + b² = c², where c is the hypotenuse. It applies only to right-angled triangles.",
+            "The theorem can be proved by arranging four copies of the triangle inside a square of side a + b in two ways, and comparing the areas that are left over.",
+            "Both arrangements leave the same total area, but one leaves two squares of sides a and b and the other leaves one square of side c. So a² + b² = c².",
+            "The converse is also true: if a² + b² = c² then the triangle is right-angled. This is how the theorem is used to test whether an angle is a right angle.",
+        ], examples=[
+            dict(q="A right-angled triangle has legs 9 cm and 12 cm. Find the hypotenuse.",
+                 vis=F("pythagoras", 9, 12, "squares on the three sides"),
+                 reasoning="The theorem relates the squares of the three sides, and the hypotenuse "
+                          "is the longest side.",
+                 steps=["c² = 9² + 12² = 81 + 144 = 225.",
+                        "c = √225 = 15 cm."],
+                 ans="15 cm",
+                 interp="The answer is exact, and the diagram shows why: the two smaller squares "
+                        "exactly fill the largest one."),
+            dict(q="A ladder 5 m long rests against a wall with its foot 3 m from the wall. How "
+                   "high up the wall does it reach?",
+                 vis=F("pythagoras", 3, 4, "wall, ground and ladder"),
+                 reasoning="The ladder is the hypotenuse, so the height is found by subtracting "
+                          "the square of the known leg.",
+                 steps=["5² = 3² + h².",
+                        "25 = 9 + h², so h² = 16.",
+                        "h = 4 m."],
+                 ans="4 m",
+                 interp="The theorem works in both directions: given the hypotenuse and one leg, "
+                        "the other leg follows."),
+        ], inv=dict(
+            task="Draw a right-angled triangle with legs a and b, then draw squares on all three "
+                 "sides. Count grid squares to estimate each area, and test whether a² + b² = c². "
+                 "Then repeat with two other triangles of your own.",
+            fig=F("pythagoras", 3, 4, "squares of area 9, 16 and 25"),
+            table=[["triangle", "a", "b", "a² + b²", "c²", "c"],
+                   ["1", "3", "4", "25", "25", "5"],
+                   ["2", "6", "8", "100", "100", "10"],
+                   ["3", "5", "12", "169", "169", "13"],
+                   ["4", "1.5", "2", "6.25", "6.25", "2.5"]],
+            notice=["In every case a² + b² equalled c² exactly.",
+                    "The pattern held for integer sides and for decimal sides.",
+                    "Triangles 1 and 2 are similar, and their sides are in the ratio 1:2.",
+                    "The largest square always had the same area as the two smaller squares "
+                    "combined."],
+            obs="The sum of the squares on the two shorter sides always equals the square on the "
+                "hypotenuse.",
+            concl="In a right-angled triangle a² + b² = c², where c is the hypotenuse, and the "
+                  "converse holds: equal sums of squares force a right angle.")),
+        dict(id="7.4", title="Trigonometric ratios",
+             inquiry_q=("How can an angle determine a ratio between two sides of a right-angled "
+                        "triangle?"), teach=[
+            "In a right-angled triangle, the ratio of two sides depends only on the angles, not on the size of the triangle. This is why trigonometry works for triangles of every scale.",
+            "The three ratios are sine, cosine and tangent, defined for an acute angle θ: sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse and tan θ = opposite/adjacent.",
+            "Because similar triangles have the same angles and proportional sides, these ratios are the same for every triangle with the same angles. That is the justification for the whole subject.",
+            "The ratios are used in two directions: given an angle and one side, find another side; given two sides, find the angle with an inverse ratio.",
+        ], examples=[
+            dict(q="In a right-angled triangle, the side opposite a 35° angle is 8 cm and the "
+                   "hypotenuse is h. Find h.",
+                 vis=F("triangle", [(30, 150), (110, 150), (110, 60)], ["8 cm", "h"],
+                       right=[(110, 150, "")], angles=[(110, 150, "35°")],
+                       title="sine relates the opposite side to the hypotenuse"),
+                 reasoning="The sine ratio links the opposite side to the hypotenuse, so it can be "
+                          "solved for the unknown hypotenuse.",
+                 steps=["sin 35° = opposite/hypotenuse = 8/h.",
+                        "0.5736 = 8/h.",
+                        "h = 8 ÷ 0.5736.",
+                        "h ≈ 13.95 cm."],
+                 ans="about 13.95 cm",
+                 interp="The angle fixes the ratio, so the size of the triangle does not affect "
+                        "the method."),
+            dict(q="A right-angled triangle has adjacent side 5 cm and hypotenuse 13 cm. Find the "
+                   "angle.",
+                 vis=F("triangle", [(30, 150), (110, 150), (30, 60)], ["5 cm", "13 cm"],
+                       right=[(30, 150, "")], angles=[(110, 150, "θ")],
+                       title="cosine relates the adjacent side to the hypotenuse"),
+                 reasoning="The cosine ratio links the adjacent side to the hypotenuse, and the "
+                          "inverse cosine recovers the angle.",
+                 steps=["cos θ = 5/13 = 0.3846.",
+                        "θ = cos⁻¹(0.3846).",
+                        "θ ≈ 67.4°."],
+                 ans="about 67.4°",
+                 interp="The inverse ratio turns a pair of lengths into an angle, which is how "
+                        "slopes are measured."),
+        ], inv=dict(
+            task="Draw three right-angled triangles with a 30° angle but different sizes. For "
+                 "each, measure the opposite and hypotenuse, compute opposite ÷ hypotenuse, and "
+                 "record the value. Then repeat with a 45° angle and with a 60° angle.",
+            fig=F("triangle", [(30, 150), (130, 150), (130, 90)], ["opposite", "hypotenuse"],
+                  right=[(130, 150, "")], angles=[(30, 90, "30°")],
+                  title="three triangles, one angle"),
+            table=[["angle", "triangle", "opposite", "hypotenuse", "opposite ÷ hypotenuse"],
+                   ["30°", "small", "2.0", "4.0", "0.500"],
+                   ["30°", "medium", "3.5", "7.0", "0.500"],
+                   ["30°", "large", "5.2", "10.4", "0.500"],
+                   ["45°", "any", "4.2", "5.9", "0.712"],
+                   ["60°", "any", "5.2", "6.0", "0.867"]],
+            notice=["For a 30° angle the ratio was 0.5 in all three triangles, despite their "
+                    "different sizes.",
+                    "For 45° the ratio was about 0.707, and for 60° about 0.866.",
+                    "The ratios depend only on the angle, which is what makes trigonometry "
+                    "possible.",
+                    "The same values appear for every 30° triangle in the world."],
+            obs="The ratio of two sides of a right-angled triangle depends only on the angles, not "
+                "on the size of the triangle.",
+            concl="In a right-angled triangle the ratios sin θ = opposite/hypotenuse, cos θ = "
+                  "adjacent/hypotenuse and tan θ = opposite/adjacent depend only on the angle, "
+                  "because similar triangles have proportional sides.")),
+        dict(id="7.5", title="Angles of elevation and depression",
+             inquiry_q=("How can an angle measured from the ground give a height?"), teach=[
+            "The angle of elevation is measured upward from the horizontal to the line of sight; the angle of depression is measured downward from the horizontal.",
+            "The two angles are equal by alternate angles, which is why a measurement taken from the top of a building gives the same information as one taken from the ground.",
+            "The measurement gives a right-angled triangle: the horizontal distance and the angle determine the height through a trigonometric ratio.",
+            "The height found is the height above the observer's eye, so the observer's own height must be added. This is the step that is most often forgotten.",
+        ], examples=[
+            dict(q="From 40 m away, the angle of elevation to the top of a tree is 28°. Find the "
+                   "height of the tree above eye level.",
+                 vis=F("elevation", 28, 40, "angle of elevation from 40 m"),
+                 reasoning="The horizontal distance and the angle of elevation form a "
+                          "right-angled triangle whose height is found with the tangent ratio.",
+                 steps=["tan 28° = height/40.",
+                        "0.5317 = height/40.",
+                        "height = 40 × 0.5317.",
+                        "height ≈ 21.27 m above eye level."],
+                 ans="about 21.3 m above eye level",
+                 interp="The eye height of the observer must be added to obtain the total height."),
+            dict(q="From the top of a 30 m cliff, the angle of depression to a boat is 18°. How "
+                   "far is the boat from the base of the cliff?",
+                 vis=F("elevation", 18, 30, "angle of depression to the boat"),
+                 reasoning="The angle of depression equals the angle of elevation from the boat, so "
+                          "the same right-angled triangle applies.",
+                 steps=["The angle at the boat is also 18° by alternate angles.",
+                        "tan 18° = 30/distance.",
+                        "distance = 30 ÷ 0.3249.",
+                        "distance ≈ 92.3 m."],
+                 ans="about 92.3 m",
+                 interp="The equality of the two angles means one measurement answers the question "
+                        "from either end."),
+        ], inv=dict(
+            task="Measure the angle of elevation to the top of a tall object using a clinometer "
+                 "made from a protractor, a straw and a plumb line. Record the angle and the "
+                 "horizontal distance, then compute the height. Add your eye height and compare "
+                 "with a direct measurement if one is possible.",
+            fig=F("elevation", 35, 20, "measuring an angle of elevation"),
+            table=[["measurement", "value", "how it was obtained"],
+                   ["angle of elevation", "35°", "clinometer"],
+                   ["horizontal distance", "20 m", "tape or pacing"],
+                   ["height above eye level", "20 × tan 35° = 14.0 m", "tangent ratio"],
+                   ["eye height", "1.55 m", "measured"],
+                   ["total height", "15.55 m", "sum of the two"]],
+            notice=["The angle and the distance gave the height above eye level directly.",
+                    "Adding the eye height was essential, and omitting it understates the result "
+                    "by about 1.5 m.",
+                    "The precision is limited by the angle, which was read to the nearest degree.",
+                    "A one-degree error at this distance changes the height by about 0.4 m."],
+            obs="An angle of elevation and a horizontal distance form a right-angled triangle "
+                "whose height is given by the tangent ratio.",
+            concl="The height of an object is found from the angle of elevation and the horizontal "
+                  "distance using tan θ = height/distance, and the observer's eye height must be "
+                  "added to the result.")),
+    ],
+    practice=dict(
+        A=[("7.1.1", "Two similar triangles have a scale factor of 3. A side of the smaller is "
+                     "4 cm. Find the corresponding side of the larger.",
+            "12 cm", "Multiply by the scale factor.", "F"),
+           ("7.1.2", "Find the hypotenuse of a right-angled triangle with legs 6 cm and 8 cm.",
+            "10 cm", "√(36 + 64) = 10.", "F"),
+           ("7.1.3", "In a right-angled triangle, sin θ = 0.5. What is θ?",
+            "30°", "The angle whose sine is 0.5.", "F"),
+           ("7.1.4", "Find the leg of a right-angled triangle with hypotenuse 13 cm and one leg "
+                     "5 cm.",
+            "12 cm", "√(169 − 25) = 12.", "F"),
+           ("7.1.5", "A rectangle 3 cm by 4 cm is enlarged by scale factor 5. Find the area of the "
+                     "image.",
+            "300 cm²", "Area scales by 5² = 25, and 12 × 25 = 300.", "F"),
+           ("7.1.6", "Write tan θ in terms of the sides of a right-angled triangle.",
+            "opposite ÷ adjacent", "The tangent ratio.", "F"),
+           ("7.1.7", "Find cos θ when the adjacent side is 7 cm and the hypotenuse 25 cm.",
+            "0.28", "7 ÷ 25.", "F"),
+           ("7.1.8", "Two triangles have angles 40°, 60°, 80° and 40°, 60°, 80°. Are they similar?",
+            "Yes — two equal angles force the third, so AA applies.",
+            "Two equal angles are sufficient for similarity of triangles.", "R"),
+           ("7.1.9", "A map has scale 1 : 50 000. A path measures 3.4 cm. Find the real distance.",
+            "1.7 km", "3.4 × 50 000 = 170 000 cm = 1.7 km.", "F"),
+           ("7.1.10", "Find the hypotenuse when the legs are 1 cm and 2 cm.",
+            "√5 cm", "√(1 + 4) = √5.", "F"),
+           ("7.1.11", "An angle of elevation to a tower is 45° from 60 m away. Find the height "
+                      "above eye level.",
+            "60 m", "tan 45° = 1, so the height equals the distance.", "F"),
+           ("7.1.12", "Explain what the scale factor does to lengths and to areas.",
+            "Lengths multiply by k and areas by k².",
+            "Area is a product of two lengths.", "R")],
+        B=[("7.2.1", "Investigate: do all right-angled triangles with a 30° angle have the same "
+                     "side ratios?",
+            "Yes — they are similar, so the ratios are identical.",
+            "Similarity forces proportional sides.", "R"),
+           ("7.2.2", "Test the claim: two triangles with all three pairs of sides in the same "
+                     "ratio are similar.",
+            "True — this is the SSS similarity condition.",
+            "Proportional sides determine the shape.", "R"),
+           ("7.2.3", "Investigate the pattern of Pythagorean triples 3-4-5, 5-12-13, 8-15-17 and "
+                     "find the next one.",
+            "7-24-25, since 49 + 576 = 625",
+            "The pattern follows odd starting values: 3, 5, 7 with the other two from n² − 1 and "
+            "n² + 1 over 2.", "R"),
+           ("7.2.4", "Generalise: if a triangle has sides in the ratio 3:4:5, what kind of "
+                     "triangle is it?",
+            "Right-angled, because 3² + 4² = 5²",
+            "The converse of Pythagoras' theorem.", "R"),
+           ("7.2.5", "Investigate whether a triangle with sides 5, 6 and 10 is right-angled.",
+            "No — 25 + 36 = 61, which is not 100.",
+            "The sum of squares must equal the square of the longest side.", "R"),
+           ("7.2.6", "Test the claim: the altitude to the hypotenuse of a right-angled triangle "
+                     "creates two triangles similar to the original.",
+            "True — all three share the same angles.",
+            "Each smaller triangle has a right angle and shares an acute angle with the original.", "R"),
+           ("7.2.7", "Investigate how the area ratio of two similar figures relates to their "
+                     "length ratio.",
+            "The area ratio is the square of the length ratio.",
+            "Area is a product of two lengths.", "R"),
+           ("7.2.8", "Generalise a rule for the height of an object given the angle of elevation "
+                     "and the distance.",
+            "height = distance × tan(angle of elevation)",
+            "The tangent ratio relates the opposite side to the adjacent side.", "R"),
+           ("7.2.9", "Investigate whether the angle of elevation equals the angle of depression "
+                     "in the same situation.",
+            "Yes — they are alternate angles between parallel horizontals.",
+            "The two horizontals are parallel, so the alternate angles are equal.", "R"),
+           ("7.2.10", "Test the claim: a larger similar triangle has larger trigonometric ratios.",
+            "False — the ratios depend only on the angles, so they are unchanged.",
+            "Similarity preserves angles and scales sides equally.", "R"),
+           ("7.2.11", "Investigate the values of sin θ for θ = 0°, 30°, 45°, 60° and 90°.",
+            "0, 0.5, 0.707, 0.866, 1",
+            "Sine rises from 0 to 1 as the angle goes from 0° to 90°.", "R")],
+        C=[("7.3.1", "Explain in words what it means for two figures to be similar.",
+            "Corresponding angles are equal and corresponding sides are in a constant ratio.",
+            "Similarity preserves shape but not size.", "R"),
+           ("7.3.2", "Explain why the trigonometric ratios are the same for every triangle with "
+                     "the same angle.",
+            "Because such triangles are similar, so their sides are proportional.",
+            "The ratios are quotients of proportional lengths.", "R"),
+           ("7.3.3", "Describe the difference between the angle of elevation and the angle of "
+                     "depression.",
+            "Elevation is measured upward from the horizontal; depression is measured downward.",
+            "The two are equal by alternate angles.", "R"),
+           ("7.3.4", "Explain why the eye height of the observer must be added to a height found "
+                     "by trigonometry.",
+            "The calculation gives the height above the observer's eye, not above the ground.",
+            "The right-angled triangle starts at eye level.", "R"),
+           ("7.3.5", "Describe two ways to prove Pythagoras' theorem.",
+            "By rearranging four copies of the triangle in a square, or by the similar-triangles "
+            "argument on the altitude to the hypotenuse.",
+            "Both compare areas that must be equal.", "R"),
+           ("7.3.6", "Explain the difference between SSS and AA as similarity conditions.",
+            "SSS compares side ratios; AA compares angles.",
+            "Either is sufficient for triangles.", "R"),
+           ("7.3.7", "Describe how you would use a clinometer and a tape to find the height of a "
+                     "building.",
+            "Measure the angle of elevation and the horizontal distance, apply the tangent ratio, "
+            "then add the eye height.",
+            "The two measurements define a right-angled triangle.", "R"),
+           ("7.3.8", "Explain why indirect measurement can be less reliable than direct "
+                     "measurement.",
+            "It relies on assumptions about level ground, verticality and the accuracy of the "
+            "angle.",
+            "Each assumption adds uncertainty.", "R"),
+           ("7.3.9", "Describe what a scale drawing shows and what it does not.",
+            "It shows shape and proportion but not the true size or the accuracy of the "
+            "measurement.",
+            "A drawing is a representation with its own limits.", "R"),
+           ("7.3.10", "Explain why the converse of Pythagoras' theorem is useful.",
+            "It tests whether an angle is a right angle without measuring the angle.",
+            "The side lengths determine the angle.", "R"),
+           ("7.3.11", "Describe how you would check that a corner of a room is square.",
+            "Measure 3 m along one wall and 4 m along the other; if the diagonal is 5 m the corner "
+            "is square.",
+            "A 3-4-5 triangle is right-angled, which is the practical form of the theorem.", "R"),
+           ("7.3.12", "Explain why a one-degree error in an angle of elevation matters more for a "
+                      "distant object.",
+            "The same angular error covers a larger distance when the object is far away.",
+            "Height error ≈ distance² × angular error for small angles.", "R")],
+        D=[("7.4.1", "A tree casts a 15 m shadow while a 2 m stick casts a 2.5 m shadow. Find the "
+                     "height of the tree.",
+            "12 m", "The ratio is 2/2.5 = 0.8, so the height is 15 × 0.8.", "A"),
+           ("7.4.2", "From 25 m away the angle of elevation to a roof is 32°. Find the height "
+                     "above eye level, to one decimal place.",
+            "15.6 m", "25 × tan 32° = 25 × 0.6249.", "A"),
+           ("7.4.3", "A 6 m ladder leans against a wall with its foot 2 m out. How high does it "
+                     "reach?",
+            "√32 ≈ 5.66 m", "√(36 − 4) = √32.", "A"),
+           ("7.4.4", "A map scale is 1 : 20 000. Two towns are 7.5 cm apart on the map. Find the "
+                     "real distance and the walking time at 5 km/h.",
+            "1.5 km; 18 minutes", "7.5 × 20 000 cm = 1.5 km, and 1.5 ÷ 5 = 0.3 h.", "A"),
+           ("7.4.5", "A photograph 10 cm by 15 cm is enlarged so that the longer side is 45 cm. "
+                     "Find the shorter side and the area factor.",
+            "30 cm; area factor 9", "Scale factor 3, so the area factor is 9.", "A"),
+           ("7.4.6", "Explain whether measuring a height by shadow is reliable on a cloudy day.",
+            "No — the method needs a shadow, so it cannot be used without direct sunlight.",
+            "The method depends on parallel light rays.", "R"),
+           ("7.4.7", "A boat is 120 m from the base of a 40 m cliff. Find the angle of depression "
+                     "from the top of the cliff.",
+            "about 18.4°", "tan θ = 40/120, so θ = tan⁻¹(1/3).", "A"),
+           ("7.4.8", "A roof rafter is 4.2 m long and spans 3.6 m. Find the angle the rafter makes "
+                     "with the horizontal.",
+            "about 31°", "cos θ = 3.6/4.2, so θ ≈ 31°.", "A"),
+           ("7.4.9", "A reservoir is surveyed from two points 60 m apart, with angles of elevation "
+                     "45° and 30°. Explain whether the height can be found.",
+            "Yes — the two angles and the baseline determine two similar right-angled triangles, "
+            "so the height follows from the difference in their horizontal distances.",
+            "Two angles and the included side determine the geometry.", "R"),
+           ("7.4.10", "A scale model of a bridge is 1 : 200. A cable on the model is 12 cm. Find "
+                      "the real length and the real length if the model were 1 : 50.",
+            "24 m at 1 : 200; 6 m at 1 : 50",
+            "12 × 200 cm = 24 m and 12 × 50 cm = 6 m.", "A"),
+           ("7.4.11", "A flagpole is held by a 10 m wire fixed 6 m up the pole. Find the angle the "
+                      "wire makes with the ground.",
+            "about 36.9°", "sin θ = 6/10.", "A"),
+           ("7.4.12", "Explain why a surveyor reports the precision of an indirectly measured "
+                      "height.",
+            "Because the result inherits the uncertainty of the angle and the distance, so extra "
+            "digits would be invented.",
+            "Indirect measurement compounds errors.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The height of the water tower",
+             text="From a point 35 m from the base of a water tower, the angle of elevation to the "
+                  "top is 41°. Find the height above eye level, then the total height given an eye "
+                  "height of 1.6 m. State the precision of your answer and what limits it.",
+             note="Criteria A and D · justify the method and comment on the precision."),
+        dict(title="A2 · The similar frame",
+             text="Two triangular supports have sides in the ratio 2:5. The smaller has area 14 "
+                  "cm². Find the area of the larger, and explain why the area ratio is not 2:5.",
+             note="Criteria A and C · justify with the square of the scale factor."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of relationships and the related concepts of justification and "
+        "measurement appear in your work?",
+        "How is the global context of orientation in space and time, and its exploration of "
+        "natural and human landscapes and resources, visible in the investigations and examples "
+        "you completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of indirect measurement, and what would you still like to ask?",
+    ],
+    review=dict(
+        ideas=["Similar figures have equal corresponding angles and proportional corresponding "
+               "sides.",
+               "For triangles, AA and SSS are sufficient similarity conditions.",
+               "Lengths scale by k and areas by k².",
+               "Pythagoras' theorem: a² + b² = c² for a right-angled triangle.",
+               "The converse tests whether a triangle is right-angled.",
+               "sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse, tan θ = "
+               "opposite/adjacent.",
+               "The angle of elevation equals the angle of depression by alternate angles.",
+               "Indirect measurement gives the height above eye level, so the eye height must be "
+               "added."],
+        vocab=["similar", "scale factor", "AA", "SSS similarity", "hypotenuse", "leg",
+               "Pythagoras' theorem", "sine", "cosine", "tangent", "angle of elevation",
+               "angle of depression", "indirect measurement", "clinometer"],
+        mixed=[("7.R1", "Find the hypotenuse when the legs are 7 cm and 24 cm."),
+               ("7.R2", "Find tan θ when the opposite side is 5 and the adjacent 12."),
+               ("7.R3", "Two similar figures have a length ratio of 1:4. Find the area ratio."),
+               ("7.R4", "From 30 m the angle of elevation to a roof is 25°. Find the height above "
+                        "eye level."),
+               ("7.R5", "Is a triangle with sides 8, 15 and 17 right-angled? Justify."),
+               ("7.R6", "Explain why the trigonometric ratios depend only on the angle.")],
+    ),
+    projects=dict(
+        service=[("Community need", "The community needs accurate heights and distances for a "
+                                    "water tank, a ramp or a shade structure, but has no surveying "
+                                    "equipment."),
+                 ("Mathematical connection", "Similarity, Pythagoras' theorem and trigonometry."),
+                 ("Proposed action", "Measure one height or distance indirectly with a "
+                                     "clinometer and publish the method with the result."),
+                 ("Expected impact", "A structure can be planned from a measurement that was "
+                                     "previously guessed."),
+                 ("Student reflection", "Record the method, the assumptions and the uncertainty.")],
+        community=[("Project idea", "A measured plan for a community shade structure."),
+                   ("Need", "A proposed shade structure has no measured dimensions."),
+                   ("Research question", "What height and span will give useful shade at this "
+                                         "site?"),
+                   ("Mathematics", "Angles of elevation, trigonometry and Pythagoras' theorem."),
+                   ("Action or outcome", "A measured plan with a shadow estimate."),
+                   ("Beneficiaries", "Everyone who will use the structure."),
+                   ("Evidence", "The measurements, the plan and the shadow calculation.")],
+        personal=[("Personal interest", "Cycling, hiking or photography."),
+                  ("Learning goal", "To measure a height or distance indirectly and report its "
+                                    "precision."),
+                  ("Product or outcome", "A measured profile of a local route or building."),
+                  ("Mathematics", "Similarity, Pythagoras' theorem and trigonometry."),
+                  ("Process", "Measure an angle and a distance, compute the height, then check "
+                              "the sense of the answer."),
+                  ("Evidence", "The measurements, the calculation and the stated precision.")],
+    ),
+),
+])
