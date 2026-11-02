@@ -2943,3 +2943,547 @@ dict(
     ),
 ),
 ])
+
+CHAPTERS.extend([
+dict(
+    num=6, title="Transformations, congruence and symmetry",
+    key="Form", related=["Space", "Justification"],
+    context="Personal and cultural expression",
+    exploration="Artistry, craft, creation and beauty",
+    inquiry=("The form of a shape is preserved by a transformation, and the justification that a "
+             "sequence of transformations maps one shape exactly onto another is what allows "
+             "congruence and symmetry to be used in craft, design and pattern."),
+    atl=("Thinking",
+         "In order for a student to justify a claim about two shapes, students must decide what "
+         "would count as sufficient evidence, test the claim against that standard, and state the "
+         "justification in a form another person can check."),
+    standfirst="A transformation moves a shape without changing it. Congruence is the claim that "
+               "two shapes are related by such a movement, and a proof is what makes that claim "
+               "secure.",
+    engage="A tile maker cuts a triangular tile and needs a second tile that fits the gap exactly. "
+           "Rather than measuring every side again, the maker places the first tile on the second "
+           "and turns it over. What has been done mathematically, and how can it be justified?",
+    questions=[("Factual", "What are the four transformations, and what are the four conditions "
+                           "for triangle congruence?"),
+               ("Conceptual", "Why does a transformation preserve form, and what exactly makes a "
+                              "justification of congruence complete?"),
+               ("Debatable", "Is a drawing that shows two triangles fitting together a proof that "
+                             "they are congruent?")],
+    application_lede="These tasks use transformations, congruence, symmetry and tessellation. "
+                     "Justify every claim with a transformation or a congruence condition, not "
+                     "with an impression.",
+    projects_lede="Craft and design depend on form being preserved. Use transformations and "
+                  "congruence to make something that fits exactly.",
+    sections=[
+        dict(id="6.1", title="Moving shapes without changing them",
+             inquiry_q=("How can a shape be moved without changing it, and what stays the same "
+                        "under every such movement?"), teach=[
+            "A transformation maps every point of a shape to a new point. The original is the object and the result is the image.",
+            "The four transformations are translation, reflection, rotation and enlargement. The first three preserve form exactly; an enlargement changes size but preserves shape.",
+            "What is preserved under all four is called invariance. Lengths, angles and area are invariant under translation, reflection and rotation, which is why they are called isometries and why the position of a shape in space can change without the shape itself changing.",
+            "Because form is preserved, a transformed shape can be used in place of the original: a tile cut once can be placed many times.",
+        ], examples=[
+            dict(q="Describe the transformation that maps triangle A with vertices (1, 1), (4, 1), "
+                   "(1, 4) onto triangle B with vertices (3, 2), (6, 2), (3, 5).",
+                 vis=F("transform", [(1, 1), (4, 1), (1, 4)], [(3, 2), (6, 2), (3, 5)],
+                       mirror="none", title="a translation of 2 right and 1 up"),
+                 reasoning="Every vertex moved by the same amount, which is the signature of a "
+                          "translation.",
+                 steps=["Compare corresponding vertices: (1, 1) → (3, 2).",
+                        "The change is +2 in x and +1 in y.",
+                        "Check the other vertices: (4, 1) → (6, 2) and (1, 4) → (3, 5).",
+                        "Every point moved by the same vector, so the transformation is a "
+                        "translation."],
+                 ans="a translation by the vector (2, 1)",
+                 interp="A single vector describes the whole movement, which is why translations "
+                        "are easy to specify."),
+            dict(q="A shape is rotated 90° clockwise about the origin. Where does the point (3, 1) "
+                   "go?",
+                 vis=F("grid", [(3, 1), (1, -3)], ["(3, 1)", "(1, −3)"],
+                       xmin=-5, xmax=5, ymin=-5, ymax=5, title="90° clockwise about the origin"),
+                 reasoning="A rotation preserves distance from the centre and turns every direction "
+                          "through the same angle.",
+                 steps=["The rule for a 90° clockwise rotation about the origin is (x, y) → (y, −x).",
+                        "Apply it to (3, 1): (1, −3).",
+                        "Check the distance from the origin: √10 before and after."],
+                 ans="(3, 1) maps to (1, −3)",
+                 interp="The distance from the centre is unchanged, which is what makes a rotation "
+                        "an isometry."),
+        ], inv=dict(
+            task="Cut out a triangle from card. Perform a translation, a reflection and a rotation "
+                 "with it, and record the position of the vertices after each movement. Then check "
+                 "which measurements stayed the same: side lengths, angles and area.",
+            fig=F("transform", [(2, 1), (6, 1), (2, 5)], [(2, 6), (6, 6), (2, 10)],
+                  mirror="x", title="object, reflection and translation"),
+            table=[["transformation", "what moved", "side lengths", "angles", "area"],
+                   ["translation", "every point by the same vector", "unchanged", "unchanged",
+                    "unchanged"],
+                   ["reflection", "every point mirrored in a line", "unchanged", "unchanged",
+                    "unchanged"],
+                   ["rotation", "every point turned about a centre", "unchanged", "unchanged",
+                    "unchanged"],
+                   ["enlargement, factor 2", "every point moved away from a centre", "doubled",
+                    "unchanged", "quadrupled"]],
+            notice=["The three isometries left every measurement unchanged.",
+                    "The enlargement doubled the lengths and quadrupled the area, but kept the "
+                    "angles.",
+                    "Each transformation could be described completely by a small amount of "
+                    "information.",
+                    "The transformed triangle fitted exactly into the gap it was moved to."],
+            obs="Translations, reflections and rotations preserve lengths, angles and area, so the "
+                "form of a shape is unchanged.",
+            concl="A transformation maps a shape to its image, and the three isometries preserve "
+                  "form exactly, which is why a shape and its image can be used "
+                  "interchangeably.")),
+        dict(id="6.2", title="Reflecting across a line",
+             inquiry_q=("What is preserved when a shape is reflected, and how is the mirror line "
+                        "described?"), teach=[
+            "A reflection maps every point to the point the same distance from the mirror line, on the opposite side. The mirror line is the perpendicular bisector of every segment joining a point to its image.",
+            "Reflection reverses orientation: a shape and its image are mirror images, and a clockwise order of vertices becomes anticlockwise.",
+            "The mirror line can be described by an equation. Reflection in the y-axis maps (x, y) → (−x, y); reflection in the x-axis maps (x, y) → (x, −y); reflection in y = x maps (x, y) → (y, x).",
+            "Because a reflection preserves lengths and angles, a reflected shape is congruent to the original. The justification is the invariance, not the appearance.",
+        ], examples=[
+            dict(q="Reflect the triangle with vertices (2, 1), (5, 1), (2, 4) in the y-axis.",
+                 vis=F("transform", [(2, 1), (5, 1), (2, 4)], [(-2, 1), (-5, 1), (-2, 4)],
+                       mirror="y", title="reflection in the y-axis"),
+                 reasoning="Reflection in the y-axis changes the sign of every x-coordinate and "
+                          "leaves y unchanged.",
+                 steps=["The rule is (x, y) → (−x, y).",
+                        "(2, 1) → (−2, 1), (5, 1) → (−5, 1) and (2, 4) → (−2, 4).",
+                        "Each image point is the same distance from the y-axis as its object "
+                        "point."],
+                 ans="the image has vertices (−2, 1), (−5, 1) and (−2, 4)",
+                 interp="The y-axis is the perpendicular bisector of every segment joining a vertex "
+                        "to its image."),
+            dict(q="Reflect the point (4, 7) in the line y = x.",
+                 vis=F("grid", [(4, 7), (7, 4)], ["(4, 7)", "(7, 4)"],
+                       xmin=0, xmax=9, ymin=0, ymax=9, title="reflection in y = x"),
+                 reasoning="Reflection in y = x interchanges the coordinates, because the line is "
+                          "the set of points where they are equal.",
+                 steps=["The rule for reflection in y = x is (x, y) → (y, x).",
+                        "So (4, 7) → (7, 4).",
+                        "Both points are the same distance from the line y = x."],
+                 ans="(7, 4)",
+                 interp="Interchanging the coordinates is the algebraic version of swapping the two "
+                        "sides of the line."),
+        ], inv=dict(
+            task="Draw a shape on grid paper and reflect it in the y-axis, then in the x-axis, then "
+                 "in the line y = x. Record the coordinates of each image. Then reflect the shape "
+                 "twice in the same line and describe what happens.",
+            fig=F("transform", [(1, 1), (4, 1), (1, 4)], [(-1, 1), (-4, 1), (-1, 4)],
+                  mirror="y", title="object and its reflection"),
+            table=[["reflection", "rule", "image of (3, 2)"],
+                   ["in the y-axis", "(x, y) → (−x, y)", "(−3, 2)"],
+                   ["in the x-axis", "(x, y) → (x, −y)", "(3, −2)"],
+                   ["in the line y = x", "(x, y) → (y, x)", "(2, 3)"],
+                   ["twice in the y-axis", "applied twice", "(3, 2) — back to the start"]],
+            notice=["Each reflection changed only the coordinate that measures distance from the "
+                    "mirror line.",
+                    "Reflecting twice in the same line returned the original point.",
+                    "The reflected shape is congruent to the original, so every length and angle "
+                    "was preserved.",
+                    "The orientation of the vertices reversed, which reflection always does."],
+            obs="A reflection preserves lengths and angles and reverses orientation, and reflecting "
+                "twice in the same line is the identity.",
+            concl="A reflection maps each point to the point the same distance from the mirror line "
+                  "on the opposite side, preserving form and reversing orientation.")),
+        dict(id="6.3", title="Rotating about a point",
+             inquiry_q=("How does a rotation preserve form, and what information is needed to "
+                        "describe it?"), teach=[
+            "A rotation turns every point through the same angle about a fixed centre. It needs three pieces of information: the centre, the angle and the direction.",
+            "Distances from the centre are preserved, and so are all lengths and angles, which makes a rotation an isometry.",
+            "The rules for rotations about the origin are: 90° clockwise (x, y) → (y, −x); 90° anticlockwise (x, y) → (−y, x); 180° (x, y) → (−x, −y).",
+            "A rotation of 180° about the origin is the same as a reflection in the origin, and it maps every line through the origin to itself.",
+        ], examples=[
+            dict(q="Rotate the triangle with vertices (1, 0), (3, 0), (1, 2) through 90° "
+                   "anticlockwise about the origin.",
+                 vis=F("grid", [(1, 0), (3, 0), (1, 2), (0, 1), (0, 3), (-2, 1)],
+                       ["", "", "", "", "", ""], xmin=-4, xmax=4, ymin=-4, ymax=4,
+                       title="90° anticlockwise about the origin"),
+                 reasoning="The rule for a 90° anticlockwise rotation about the origin interchanges "
+                          "the coordinates with a sign change.",
+                 steps=["The rule is (x, y) → (−y, x).",
+                        "(1, 0) → (0, 1).",
+                        "(3, 0) → (0, 3).",
+                        "(1, 2) → (−2, 1)."],
+                 ans="the image has vertices (0, 1), (0, 3) and (−2, 1)",
+                 interp="Each image point is the same distance from the origin as its object "
+                        "point, which is the invariance that makes a rotation an isometry."),
+            dict(q="Rotate the point (5, 2) through 180° about the origin and describe the result.",
+                 vis=F("grid", [(5, 2), (-5, -2)], ["(5, 2)", "(−5, −2)"],
+                       xmin=-7, xmax=7, ymin=-7, ymax=7, title="180° about the origin"),
+                 reasoning="A half turn reverses both coordinates, which is the same as reflecting "
+                          "through the origin.",
+                 steps=["The rule for 180° is (x, y) → (−x, −y).",
+                        "So (5, 2) → (−5, −2).",
+                        "The distance from the origin is √29 before and after."],
+                 ans="(−5, −2)",
+                 interp="A half turn about the origin is a point reflection, and it is its own "
+                        "inverse."),
+        ], inv=dict(
+            task="Take a shape and rotate it 90°, 180°, 270° and 360° anticlockwise about the same "
+                 "centre. Record the vertices after each rotation, then describe what a rotation of "
+                 "360° does and what a rotation of 270° anticlockwise is equivalent to.",
+            fig=F("grid", [(2, 1), (5, 1), (2, 4), (-1, 2), (-1, 5), (-4, 2)],
+                  ["", "", "", "", "", ""], xmin=-6, xmax=6, ymin=-6, ymax=6,
+                  title="four rotations of one triangle"),
+            table=[["rotation", "rule", "image of (2, 1)"],
+                   ["90° anticlockwise", "(x, y) → (−y, x)", "(−1, 2)"],
+                   ["180°", "(x, y) → (−x, −y)", "(−2, −1)"],
+                   ["270° anticlockwise", "(x, y) → (y, −x)", "(1, −2)"],
+                   ["360°", "a full turn", "(2, 1) — back to the start"]],
+            notice=["Each rotation preserved the distances from the centre.",
+                    "The side lengths and angles of the triangle never changed.",
+                    "A rotation of 360° returned the shape to its starting position.",
+                    "A rotation of 270° anticlockwise is the same as 90° clockwise."],
+            obs="A rotation preserves every length and angle and moves every point along a circle "
+                "about the centre.",
+            concl="A rotation turns every point through the same angle about a fixed centre, "
+                  "preserving form, and it is fully described by the centre, the angle and the "
+                  "direction.")),
+        dict(id="6.4", title="Congruence and its criteria",
+             inquiry_q=("How can you justify that two triangles are congruent without measuring "
+                        "every side?"), teach=[
+            "Two shapes are congruent when one can be mapped onto the other by an isometry. Congruent shapes have the same form and the same size.",
+            "For triangles, four conditions are sufficient: SSS (three sides), SAS (two sides and the included angle), ASA (two angles and the included side) and RHS (right angle, hypotenuse and one side).",
+            "These conditions are sufficient because they fix the triangle: no other triangle can be built with the same three measurements, so the shape is determined.",
+            "A drawing is not a justification. Two triangles that look congruent may differ by a small amount that the eye cannot see, which is why the conditions are stated in measurements.",
+        ], examples=[
+            dict(q="Triangle P has sides 5 cm, 7 cm and 9 cm. Triangle Q has sides 9 cm, 5 cm and "
+                   "7 cm. Are they congruent, and which condition applies?",
+                 vis=F("triangle", [(20, 140), (140, 140), (60, 30)],
+                       ["5 cm", "7 cm", "9 cm"], right=(), title="three sides fix the triangle"),
+                 reasoning="Three matching sides are enough to fix a triangle, and the order in "
+                          "which they are listed does not matter.",
+                 steps=["The three sides of P are 5, 7 and 9 cm.",
+                        "The three sides of Q are 9, 5 and 7 cm, which are the same three lengths.",
+                        "So the SSS condition is satisfied.",
+                        "The triangles are congruent."],
+                 ans="yes, congruent by SSS",
+                 interp="Only three measurements are needed, not six, which is why the criteria "
+                        "save work."),
+            dict(q="Two triangles have sides 6 cm and 8 cm with an included angle of 60°, and "
+                   "sides 6 cm and 8 cm with an angle of 60° that is not included. Are they "
+                   "congruent?",
+                 vis=F("triangle", [(30, 150), (110, 150), (60, 60)],
+                       ["6 cm", "8 cm"], right=(), angles=[(60, 60, "60°")],
+                       title="the angle must be included"),
+                 reasoning="SAS requires the angle between the two given sides; an angle elsewhere "
+                          "does not fix the triangle.",
+                 steps=["The first triangle satisfies SAS, because 60° is between the 6 cm and 8 cm "
+                        "sides.",
+                        "The second gives two sides and a non-included angle, which is the "
+                        "ambiguous case.",
+                        "Two different triangles can be built from those measurements.",
+                        "So SAS does not apply and congruence cannot be claimed."],
+                 ans="only the first is determined; congruence cannot be claimed for the second",
+                 interp="The word 'included' is doing real work, and leaving it out changes the "
+                        "claim."),
+        ], inv=dict(
+            task="Build triangles from the following measurements and record how many different "
+                 "triangles are possible each time: (a) 4 cm, 5 cm, 6 cm; (b) 4 cm, 5 cm, 40° with "
+                 "the angle included; (c) 4 cm, 5 cm, 40° with the angle not included; (d) 40°, "
+                 "60°, 5 cm with the side included.",
+            fig=F("triangle", [(20, 150), (120, 150), (70, 50)], ["4 cm", "5 cm", "6 cm"],
+                  right=(), title="one triangle, three sides"),
+            table=[["measurements", "condition", "how many triangles"],
+                   ["4, 5, 6 cm", "SSS", "exactly one"],
+                   ["4 cm, 5 cm, 40° included", "SAS", "exactly one"],
+                   ["4 cm, 5 cm, 40° not included", "SSA — ambiguous", "two"],
+                   ["40°, 60°, 5 cm included", "ASA", "exactly one"]],
+            notice=["Three cases produced exactly one triangle, and one produced two.",
+                    "The ambiguous case is two sides and a non-included angle.",
+                    "Where exactly one triangle is possible, the shape is fixed and congruence is "
+                    "justified.",
+                    "Where two are possible, the measurements do not determine the shape."],
+            obs="Measurements that produce exactly one triangle justify a congruence claim, and "
+                "measurements that produce more than one do not.",
+            concl="SSS, SAS, ASA and RHS are sufficient conditions for triangle congruence because "
+                  "each determines a unique triangle, and a justification of congruence must cite "
+                  "one of them.")),
+        dict(id="6.5", title="Symmetry and tessellation",
+             inquiry_q=("How does symmetry generate a pattern that covers a surface?"), teach=[
+            "A shape has line symmetry if a reflection maps it onto itself, and rotational symmetry if a rotation does. The order of rotational symmetry is the number of times the shape fits onto itself in a full turn.",
+            "A tessellation covers a surface with shapes that meet edge to edge and leave no gaps. Regular tessellations use one regular polygon, and only three exist: triangles, squares and hexagons.",
+            "A shape tessellates if its copies can be arranged so that the angles at every meeting point sum to 360°. This is why the interior angle must divide 360°.",
+            "Symmetry and tessellation are used in craft, tiling and design. The mathematics is the constraint that makes the pattern possible, and the design is the choice inside that constraint.",
+        ], examples=[
+            dict(q="A regular hexagon has interior angle 120°. Does it tessellate, and why?",
+                 vis=F("tiles", 3, 3, [(0, 0), (1, 1), (2, 2)], "a hexagonal tessellation",
+                       cell=26),
+                 reasoning="A shape tessellates if copies meet edge to edge with the angles summing "
+                          "to 360° at every meeting point.",
+                 steps=["The interior angle of a regular hexagon is 120°.",
+                        "360° ÷ 120° = 3, so three hexagons meet at each point.",
+                        "The angles sum to 360° with no gap and no overlap.",
+                        "So the hexagon tessellates."],
+                 ans="yes, because 3 × 120° = 360°",
+                 interp="The division of 360° by the interior angle is the whole test for a "
+                        "regular polygon."),
+            dict(q="Does a regular pentagon tessellate? Justify your answer.",
+                 vis=F("tiles", 3, 3, [(0, 0), (1, 1), (2, 2)], "pentagons leave a gap",
+                       cell=26),
+                 reasoning="If the interior angle does not divide 360°, copies cannot meet without "
+                          "a gap or an overlap.",
+                 steps=["The interior angle of a regular pentagon is 108°.",
+                        "360° ÷ 108° = 3.33…, which is not a whole number.",
+                        "Three pentagons leave a gap of 36°, and four overlap by 72°.",
+                        "So a regular pentagon does not tessellate."],
+                 ans="no, because 108° does not divide 360°",
+                 interp="The failure of the division is a proof, not an observation about one "
+                        "attempt."),
+        ], inv=dict(
+            task="Test which regular polygons tessellate by computing 360° divided by each interior "
+                 "angle. Then take an irregular quadrilateral and check whether it tessellates by "
+                 "tracing copies. Record the angle sum at each meeting point.",
+            fig=F("tiles", 4, 4, [(r, c) for r in range(4) for c in range(4) if (r + c) % 2 == 0],
+                  "a quadrilateral tessellation", cell=22),
+            table=[["polygon", "interior angle", "360° ÷ angle", "tessellates?"],
+                   ["triangle", "60°", "6", "yes"],
+                   ["square", "90°", "4", "yes"],
+                   ["pentagon", "108°", "3.33…", "no"],
+                   ["hexagon", "120°", "3", "yes"],
+                   ["octagon", "135°", "2.67…", "no"],
+                   ["any quadrilateral", "sums to 360°", "4 angles at a point", "yes"]],
+            notice=["Only the triangle, square and hexagon tessellate among the regular polygons.",
+                    "Each works because its interior angle divides 360° exactly.",
+                    "The quadrilateral tessellates because its four angles sum to 360°, so one of "
+                    "each fits around a point.",
+                    "The pattern can be extended indefinitely in every direction."],
+            obs="A shape tessellates when its copies meet edge to edge with the angles at every "
+                "meeting point summing to exactly 360°.",
+            concl="A regular polygon tessellates exactly when its interior angle divides 360°, and "
+                  "any quadrilateral tessellates because its four angles sum to 360°.")),
+    ],
+    practice=dict(
+        A=[("6.1.1", "Translate the point (3, 5) by the vector (−2, 4).",
+            "(1, 9)", "Add the vector to the point.", "F"),
+           ("6.1.2", "Reflect the point (4, 3) in the y-axis.",
+            "(−4, 3)", "Reflection in the y-axis changes the sign of x.", "F"),
+           ("6.1.3", "Reflect the point (4, 3) in the x-axis.",
+            "(4, −3)", "Reflection in the x-axis changes the sign of y.", "F"),
+           ("6.1.4", "Rotate the point (2, 5) through 180° about the origin.",
+            "(−2, −5)", "A half turn changes both signs.", "F"),
+           ("6.1.5", "Rotate the point (3, 1) through 90° clockwise about the origin.",
+            "(1, −3)", "The rule is (x, y) → (y, −x).", "F"),
+           ("6.1.6", "State which measurements are preserved by a translation.",
+            "Lengths, angles and area",
+            "A translation is an isometry, so all lengths and angles are invariant.", "R"),
+           ("6.1.7", "Reflect the point (6, 2) in the line y = x.",
+            "(2, 6)", "Reflection in y = x interchanges the coordinates.", "F"),
+           ("6.1.8", "An enlargement of scale factor 3 maps a side of 4 cm. How long is the image?",
+            "12 cm", "Multiply every length by the scale factor.", "F"),
+           ("6.1.9", "State the order of rotational symmetry of a square.",
+            "4", "A square fits onto itself four times in a full turn.", "F"),
+           ("6.1.10", "Reflect the triangle with vertices (1, 1), (4, 1), (1, 5) in the y-axis.",
+            "(−1, 1), (−4, 1), (−1, 5)",
+            "Change the sign of each x-coordinate.", "F"),
+           ("6.1.11", "Rotate the point (−3, 2) through 90° anticlockwise about the origin.",
+            "(−2, −3)", "The rule is (x, y) → (−y, x).", "F"),
+           ("6.1.12", "Explain the difference between a translation and a rotation.",
+            "A translation moves every point by the same vector; a rotation turns every point "
+            "about a fixed centre.",
+            "Only the rotation has a centre and an angle.", "R")],
+        B=[("6.2.1", "Investigate: does the order of a reflection and a translation matter? Test "
+                     "with the point (2, 3), a reflection in the y-axis and a translation of (1, 0).",
+            "Yes — reflecting first gives (−1, 3), translating first gives (3, 3).",
+            "Transformations generally do not commute.", "R"),
+           ("6.2.2", "Test the claim: two reflections in perpendicular lines give a rotation.",
+            "True — the composition is a rotation of 180° about the intersection of the lines.",
+            "Two perpendicular mirrors produce a half turn.", "R"),
+           ("6.2.3", "Investigate whether a rotation of 90° followed by the same rotation again "
+                     "gives a rotation of 180°.",
+            "Yes — rotations about the same centre add their angles.",
+            "The composition of rotations is a rotation.", "R"),
+           ("6.2.4", "Generalise: what is the result of reflecting twice in the same line?",
+            "The identity — the shape returns to its original position.",
+            "A reflection is its own inverse.", "R"),
+           ("6.2.5", "Investigate whether every triangle has at least one line of symmetry.",
+            "No — only isosceles and equilateral triangles do; a scalene triangle has none.",
+            "A line of symmetry requires two matching halves.", "R"),
+           ("6.2.6", "Test the claim: if two triangles have two equal angles and one equal side "
+                     "they are congruent.",
+            "False — the side must be included for ASA; otherwise the triangles can differ.",
+            "ASA requires the side between the two angles.", "R"),
+           ("6.2.7", "Investigate the minimum information needed to fix a triangle, and justify "
+                     "your answer.",
+            "Three independent measurements, such as SSS, SAS or ASA.",
+            "Each sufficient condition determines a unique triangle.", "R"),
+           ("6.2.8", "Generalise: for what values of n does a regular n-gon tessellate?",
+            "n = 3, 4 and 6 only",
+            "The interior angle (n − 2) × 180°/n must divide 360° exactly.", "R"),
+           ("6.2.9", "Investigate whether an irregular triangle always tessellates.",
+            "Yes — its three angles sum to 180°, so two of each fit around a point.",
+            "The angle sum of a triangle guarantees a tessellation.", "R"),
+           ("6.2.10", "Test the claim: a shape with rotational symmetry must have line symmetry.",
+            "False — the letter S has rotational symmetry of order 2 but no line of symmetry.",
+            "The two kinds of symmetry are independent.", "R"),
+           ("6.2.11", "Investigate the order of rotational symmetry of a regular hexagon.",
+            "6", "It fits onto itself six times in a full turn.", "F")],
+        C=[("6.3.1", "Explain in words what it means for two shapes to be congruent.",
+            "One can be mapped onto the other by an isometry, so they have the same form and size.",
+            "Congruence is a claim about a transformation, not about appearance.", "R"),
+           ("6.3.2", "Explain why a reflection reverses orientation.",
+            "A clockwise order of vertices becomes anticlockwise in the image.",
+            "Reflection turns the shape over.", "R"),
+           ("6.3.3", "Describe the information needed to specify a rotation completely.",
+            "The centre, the angle and the direction.",
+            "Without all three the rotation is not determined.", "R"),
+           ("6.3.4", "Explain why SSS is a sufficient condition for triangle congruence.",
+            "Three sides determine a unique triangle, so no other shape is possible.",
+            "The measurements fix the shape completely.", "R"),
+           ("6.3.5", "Describe the difference between SAS and the ambiguous SSA case.",
+            "In SAS the angle is between the two sides; in SSA it is not, and two triangles may "
+            "result.",
+            "Only the included angle determines a unique triangle.", "R"),
+           ("6.3.6", "Explain why a drawing alone is not a proof of congruence.",
+            "Small differences are invisible in a drawing, so measurements are needed.",
+            "A justification must be checkable by another person.", "R"),
+           ("6.3.7", "Describe two representations of the same reflection and say what each shows.",
+            "A coordinate rule and a diagram: the rule is exact and the diagram shows the "
+            "structure.",
+            "Different representations answer different questions.", "R"),
+           ("6.3.8", "Explain the difference between line symmetry and rotational symmetry.",
+            "Line symmetry is about a reflection; rotational symmetry is about a rotation.",
+            "The two are independent properties.", "R"),
+           ("6.3.9", "Describe why only three regular polygons tessellate.",
+            "Because the interior angle must divide 360°, which happens only for n = 3, 4 and 6.",
+            "The angle condition is a proof, not a search.", "R"),
+           ("6.3.10", "Explain what is preserved by an enlargement and what is not.",
+            "Angles and shape are preserved; lengths and area are multiplied by k and k².",
+            "An enlargement is not an isometry.", "R"),
+           ("6.3.11", "Describe how to check whether two triangles are congruent using ASA.",
+            "Check that two angles match and that the side between them matches.",
+            "The side must be the included one.", "R"),
+           ("6.3.12", "Explain why a tessellation of a craft surface requires edge-to-edge "
+                      "contact.",
+            "Gaps and overlaps would break the surface, so the angles must sum to exactly 360°.",
+            "The condition is about the angles at each meeting point.", "R")],
+        D=[("6.4.1", "A tile pattern uses a triangle rotated 120° about a vertex. Describe the "
+                     "transformation and the angle sum at that vertex.",
+            "A rotation of 120°; three copies give 360°",
+            "Three rotations of 120° complete a full turn.", "A"),
+           ("6.4.2", "A floor is tiled with squares of side 40 cm. A room is 4.8 m by 3.6 m. How "
+                     "many tiles are needed?",
+            "108 tiles", "12 by 9 tiles.", "A"),
+           ("6.4.3", "A mirror tile of side 15 cm is reflected to make a pair. Find the total "
+                     "perimeter of the pair when they share an edge.",
+            "90 cm", "Two squares minus the shared edge: 8 sides of 15 cm.", "A"),
+           ("6.4.4", "A craft pattern uses a regular hexagon of side 6 cm. Find its perimeter and "
+                     "explain why three fit around a point.",
+            "36 cm; the interior angle is 120° and 3 × 120° = 360°",
+            "The angle condition guarantees the tessellation.", "A"),
+           ("6.4.5", "A triangular tile has angles 50°, 60° and 70°. Explain how many fit around "
+                     "a point.",
+            "360° ÷ 50° = 7.2, so the 50° angles cannot tile a point alone; a combination of "
+            "angles is needed.",
+            "Tessellation needs the angles at each point to sum to exactly 360°.", "R"),
+           ("6.4.6", "A logo is designed as a shape and its reflection. Explain how congruence is "
+                     "justified.",
+            "A reflection is an isometry, so the logo and its image are congruent.",
+            "The invariance of lengths and angles is the justification.", "R"),
+           ("6.4.7", "A wall panel is made by rotating a motif 90° four times about one corner. "
+                     "Find the angle at that corner and the number of copies.",
+            "360°; four copies",
+            "Four rotations of 90° complete a full turn.", "A"),
+           ("6.4.8", "Explain whether a photograph of a building and its reflection in water "
+                     "shows congruent shapes.",
+            "They are congruent if the water surface is perfectly flat, because the reflection is "
+            "an isometry.",
+            "Real water distorts the image, so the claim depends on the surface.", "R"),
+           ("6.4.9", "A tiled floor uses two different regular polygons at each vertex. Explain "
+                     "how to find which pairs work.",
+            "Find pairs whose angles sum to 360° at a point, such as 120° and 240° from two "
+            "hexagons and a square.",
+            "The angle sum at each vertex must be exactly 360°.", "R"),
+           ("6.4.10", "A triangular garden bed has sides 3 m, 4 m and 5 m. Explain how to check "
+                      "that a second bed of the same design is congruent without measuring every "
+                      "side.",
+            "Measure two sides and the included angle, or all three sides once, and apply SAS or "
+            "SSS.",
+            "A sufficient condition is shorter than a full measurement.", "R"),
+           ("6.4.11", "A kite design has two lines of symmetry. Explain what each line does.",
+            "Each line reflects the kite onto itself, so the design has two mirror lines.",
+            "A line of symmetry is a reflection that maps the shape to itself.", "R"),
+           ("6.4.12", "Explain why an enlargement of a tile pattern changes the area but not the "
+                      "angles.",
+            "Lengths multiply by the scale factor and areas by its square, while angles are "
+            "unchanged.",
+            "An enlargement preserves shape but not size.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The tiled panel",
+             text="A craft panel is made from copies of one triangular tile rotated about a shared "
+                  "vertex. The tile has angles 40°, 60° and 80°. Explain how many copies can meet "
+                  "at that vertex, whether the panel tiles the plane, and justify your answer with "
+                  "an angle calculation.",
+             note="Criteria A and C · justify with an angle sum, not with a drawing."),
+        dict(title="A2 · The congruent frame",
+             text="A picture frame is a parallelogram with sides 12 cm and 7 cm and an included "
+                  "angle of 65°. A second frame is claimed to be congruent. State the minimum "
+                  "measurements needed to check the claim, and justify the congruence condition "
+                  "you used.",
+             note="Criteria A and B · identify the condition and explain why it is sufficient."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of form and the related concepts of space and justification "
+        "appear in your work?",
+        "How is the global context of personal and cultural expression, and its exploration of "
+        "artistry, craft, creation and beauty, visible in the investigations and examples you "
+        "completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a drawing as a justification of congruence, and what would "
+        "you still like to ask?",
+    ],
+    review=dict(
+        ideas=["A transformation maps an object to an image.",
+               "Translation, reflection and rotation are isometries: they preserve lengths, "
+               "angles and area.",
+               "A reflection reverses orientation; a rotation preserves it.",
+               "Congruent shapes are related by an isometry.",
+               "SSS, SAS, ASA and RHS are sufficient conditions for triangle congruence.",
+               "A shape tessellates if the angles at each meeting point sum to 360°.",
+               "Only three regular polygons tessellate: the triangle, square and hexagon."],
+        vocab=["transformation", "object", "image", "translation", "reflection", "rotation",
+               "enlargement", "isometry", "invariant", "congruent", "SSS", "SAS", "ASA", "RHS",
+               "line symmetry", "rotational symmetry", "tessellation"],
+        mixed=[("6.R1", "Translate (5, −2) by the vector (−3, −4)."),
+               ("6.R2", "Reflect (7, 1) in the line y = x."),
+               ("6.R3", "Rotate (4, 3) through 90° anticlockwise about the origin."),
+               ("6.R4", "State the order of rotational symmetry of a regular pentagon."),
+               ("6.R5", "Which congruence condition applies to two triangles with sides 5, 6, 7?"),
+               ("6.R6", "Explain why a regular octagon does not tessellate.")],
+    ),
+    projects=dict(
+        service=[("Community need", "A community space needs a floor or wall treatment that can be "
+                                    "made and fitted by volunteers."),
+                 ("Mathematical connection", "Transformations, congruence and tessellation."),
+                 ("Proposed action", "Design and cut a tiling pattern from one template and fit it "
+                                     "in a shared space."),
+                 ("Expected impact", "A durable, locally made surface treatment that the community "
+                                     "helped to produce."),
+                 ("Student reflection", "Record the template, the transformation used, and how the "
+                                        "fitting went.")],
+        community=[("Project idea", "A tiling or mural design for a community wall."),
+                   ("Need", "A shared wall is bare and there is no budget for a commercial "
+                            "treatment."),
+                   ("Research question", "What pattern can be cut from one template and fitted "
+                                         "without gaps?"),
+                   ("Mathematics", "Reflection, rotation, congruence and tessellation."),
+                   ("Action or outcome", "A fitted pattern with a reusable template."),
+                   ("Beneficiaries", "Everyone who uses the space."),
+                   ("Evidence", "The template, the plan and a photograph of the fitted work.")],
+        personal=[("Personal interest", "Drawing, textiles or model making."),
+                  ("Learning goal", "To use a transformation to make a design that repeats "
+                                    "exactly."),
+                  ("Product or outcome", "A repeating pattern made from one template."),
+                  ("Mathematics", "Isometries, congruence and tessellation."),
+                  ("Process", "Design the template, apply the transformation, then check the fit."),
+                  ("Evidence", "The template, the pattern and a photograph.")],
+    ),
+),
+])
