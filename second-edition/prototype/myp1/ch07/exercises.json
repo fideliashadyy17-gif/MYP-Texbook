@@ -1,0 +1,1324 @@
+{
+  "chapter": 7,
+  "title": "Lines, angles, triangles and constructions",
+  "revision": "targeted-mathematical-depth",
+  "core_items": 69,
+  "visual_items": [
+    "7.1.02",
+    "7.1.03",
+    "7.1.04",
+    "7.1.05",
+    "7.1.06",
+    "7.1.07",
+    "7.1.08",
+    "7.1.09",
+    "7.1.11",
+    "7.1.12",
+    "7.1.15",
+    "7.2.01",
+    "7.2.02",
+    "7.2.03",
+    "7.2.04",
+    "7.2.06",
+    "7.2.07",
+    "7.2.08",
+    "7.2.09",
+    "7.2.10",
+    "7.2.11",
+    "7.2.12",
+    "7.2.13",
+    "7.2.15",
+    "7.2.16",
+    "7.2.17",
+    "7.2.18",
+    "7.2.19",
+    "7.2.20",
+    "7.3.01",
+    "7.3.03",
+    "7.3.04",
+    "7.3.05",
+    "7.3.06",
+    "7.3.07",
+    "7.3.08",
+    "7.3.09",
+    "7.3.10",
+    "7.3.12",
+    "7.3.13",
+    "7.3.15",
+    "7.3.17",
+    "7.4.01",
+    "7.4.03",
+    "7.4.04",
+    "7.4.05",
+    "7.4.06",
+    "7.4.07",
+    "7.4.09",
+    "7.4.10",
+    "7.4.11",
+    "7.4.12",
+    "7.4.13",
+    "7.4.14",
+    "7.4.15",
+    "7.4.16"
+  ],
+  "visual_fraction": 0.8115942028985508,
+  "worked_examples": 14,
+  "items": [
+    {
+      "id": "7.1.01",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Understand",
+      "tier": "Foundation",
+      "prompt": "Classify each angle as acute, right, obtuse, straight or reflex: 35\u00b0, 90\u00b0, 125\u00b0, 180\u00b0, 210\u00b0. State the boundary values you used.",
+      "answer": "35\u00b0 acute; 90\u00b0 right; 125\u00b0 obtuse; 180\u00b0 straight; 210\u00b0 reflex.",
+      "reasoning": "Acute is between 0\u00b0 and 90\u00b0; obtuse between 90\u00b0 and 180\u00b0; reflex between 180\u00b0 and 360\u00b0. The exact values 90\u00b0 and 180\u00b0 have their own names.",
+      "visual_kind": [],
+      "source_id": "F1",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": false
+    },
+    {
+      "id": "7.1.02",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Understand",
+      "tier": "Foundation",
+      "prompt": "In angle ABC, which point is the vertex? Which two rays form the angle? Draw a labelled sketch of any obtuse angle ABC.",
+      "answer": "The vertex is B; the rays are BA and BC. Sketches may vary but the angle at B must be obtuse.",
+      "reasoning": "The middle letter names the vertex. Many correct sketches are possible.",
+      "visual_kind": [
+        "diagram",
+        "construction"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": true,
+      "space": "box",
+      "visual": true
+    },
+    {
+      "id": "7.1.03",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Understand",
+      "tier": "Foundation",
+      "prompt": "Complete the fact table and add one labelled sketch for each fact.",
+      "answer": "Straight line: 180\u00b0; full turn: 360\u00b0; vertically opposite angles: equal.",
+      "reasoning": "A straight line is a half-turn; a point is a full turn; crossing lines make equal opposite pairs.",
+      "visual_kind": [
+        "table",
+        "construction"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "box",
+      "visual": true
+    },
+    {
+      "id": "7.1.04",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Fluency",
+      "tier": "Foundation",
+      "prompt": "Find x. State the angle fact used and check by addition.",
+      "answer": "x = 115\u00b0.",
+      "reasoning": "180\u00b0 \u2212 65\u00b0 = 115\u00b0; check 65\u00b0 + 115\u00b0 = 180\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "F2",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.1.05",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Fluency",
+      "tier": "Foundation",
+      "prompt": "Three angles around a point are 90\u00b0, 110\u00b0 and 75\u00b0. Find the fourth angle and check the full turn.",
+      "answer": "85\u00b0.",
+      "reasoning": "360\u00b0 \u2212 (90\u00b0 + 110\u00b0 + 75\u00b0) = 85\u00b0; the four angles sum to 360\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "F3",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.1.06",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Fluency",
+      "tier": "Foundation",
+      "prompt": "Two lines cross. One angle is 115\u00b0. Find x, y and z, naming the relationship used for each.",
+      "answer": "x = 65\u00b0, y = 115\u00b0, z = 65\u00b0.",
+      "reasoning": "y is vertically opposite 115\u00b0. x and z are adjacent to 115\u00b0 on straight lines, so each is 180\u00b0 \u2212 115\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "F4",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.1.07",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "Three adjacent angles on a straight line are x + 30\u00b0, 2x and x + 10\u00b0. Find x and all three angles.",
+      "answer": "x = 35\u00b0; the angles are 65\u00b0, 70\u00b0 and 45\u00b0.",
+      "reasoning": "(x+30)+2x+(x+10)=180, so 4x+40=180 and x=35. Check 65+70+45=180.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.1.08",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "The vertically opposite angles 4x + 15\u00b0 and 2x + 45\u00b0 are marked. Find x, the marked angles and one adjacent angle.",
+      "answer": "x = 15\u00b0; each marked angle is 75\u00b0; an adjacent angle is 105\u00b0.",
+      "reasoning": "4x+15=2x+45 gives 2x=30, x=15. Adjacent angles on a line sum to 180\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.1.09",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Application",
+      "tier": "Developing",
+      "prompt": "A ramp makes 12\u00b0 with level ground. A vertical post meets the ground at the same point, and the ramp lies between the ground and the post. Find the angle between the ramp and the post, and explain why the ground\u2013post angle is 90\u00b0.",
+      "answer": "78\u00b0.",
+      "reasoning": "Vertical is perpendicular to level ground, so the ground\u2013post angle is 90\u00b0. The ramp splits this right angle into 12\u00b0 and x, so x = 90\u00b0 \u2212 12\u00b0 = 78\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "A1",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.1.10",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Application",
+      "tier": "Developing",
+      "prompt": "A turning sensor records three consecutive turns of 118\u00b0, 97\u00b0 and 85\u00b0 before completing one full turn. Find the fourth turn. Would the answer change if the turns were recorded in a different order?",
+      "answer": "60\u00b0; no, the order does not change the total.",
+      "reasoning": "360\u00b0 \u2212 (118\u00b0 + 97\u00b0 + 85\u00b0) = 60\u00b0. Addition is commutative, so the missing part of a full turn is unchanged.",
+      "visual_kind": [],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": false
+    },
+    {
+      "id": "7.1.11",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Application",
+      "tier": "Developing",
+      "prompt": "A logo divides a full turn into four angles in the ratio 1 : 2 : 3 : 4. Find the four angles. Is any pair complementary?",
+      "answer": "36\u00b0, 72\u00b0, 108\u00b0, 144\u00b0; no pair is complementary.",
+      "reasoning": "The ratio has 10 parts, so one part is 360\u00b0\u00f710=36\u00b0. Complementary angles sum to 90\u00b0; no two of these angles do.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.1.12",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Reasoning",
+      "tier": "Reasoning",
+      "prompt": "A student writes two claims. Identify the incorrect claim, correct it, and draw a counterexample to the original claim.",
+      "answer": "Claim 2 is wrong: angles around a point sum to 360\u00b0, not 180\u00b0. For example 90\u00b0, 90\u00b0, 100\u00b0 and 80\u00b0 meet at a point.",
+      "reasoning": "A half-turn is 180\u00b0; a full turn is 360\u00b0. Many counterexamples are possible.",
+      "visual_kind": [
+        "table",
+        "construction"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": true,
+      "space": "box",
+      "visual": true
+    },
+    {
+      "id": "7.1.13",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Reasoning",
+      "tier": "Reasoning",
+      "prompt": "True or false: if two adjacent angles on a straight line are equal, each must be 90\u00b0. Justify with an equation and a sketch.",
+      "answer": "True.",
+      "reasoning": "If each angle is x, then 2x=180\u00b0, so x=90\u00b0. The sketch should show two right angles on a line.",
+      "visual_kind": [],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "box",
+      "visual": false
+    },
+    {
+      "id": "7.1.14",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Reasoning",
+      "tier": "Reasoning",
+      "prompt": "Complete the missing steps: for angles 2x, x + 40\u00b0 and 80\u00b0 around a point, __ + __ + __ = 360\u00b0; so __ x = __; x = __. Check the three angles.",
+      "answer": "2x + (x+40) + 80 = 360; 3x = 240; x = 80\u00b0. Angles are 160\u00b0, 120\u00b0 and 80\u00b0.",
+      "reasoning": "Collect like terms: 3x+120=360. Check 160+120+80=360.",
+      "visual_kind": [],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": false
+    },
+    {
+      "id": "7.1.15",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Challenge",
+      "tier": "Challenge",
+      "prompt": "Four angles around a point are x, x + 20\u00b0, 2x and 3x \u2212 10\u00b0. Find x and the largest angle. Explain why the largest angle is not reflex.",
+      "answer": "x = 50\u00b0; angles 50\u00b0, 70\u00b0, 100\u00b0, 140\u00b0; largest is 140\u00b0, which is obtuse because it is between 90\u00b0 and 180\u00b0.",
+      "reasoning": "x+(x+20)+2x+(3x\u221210)=360 gives 7x+10=360.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.1.16",
+      "concept": "7.1",
+      "subtopic": "Angle language and turn facts",
+      "thinking": "Challenge",
+      "tier": "Challenge",
+      "prompt": "Draw two different pairs of crossing lines with one angle 70\u00b0. Label all four angles in each diagram. Compare your diagrams with a partner: what stays the same and what changes?",
+      "answer": "Every correct diagram has angles 70\u00b0, 110\u00b0, 70\u00b0, 110\u00b0. Orientation and the lengths of the drawn segments may change.",
+      "reasoning": "Vertically opposite angles are equal and adjacent angles are supplementary. The angle family is fixed even when the drawing is rotated.",
+      "visual_kind": [
+        "construction",
+        "comparison"
+      ],
+      "source_id": null,
+      "atl": [
+        "communicate",
+        "compare"
+      ],
+      "multiple": true,
+      "space": "box",
+      "visual": false
+    },
+    {
+      "id": "7.2.01",
+      "concept": "7.2",
+      "subtopic": "Parallel lines and transversals",
+      "thinking": "Understand",
+      "tier": "Foundation",
+      "prompt": "Use the numbered diagram. Name one pair of corresponding angles, one pair of alternate angles and one pair of co-interior angles. State which pairs are equal and which are supplementary.",
+      "answer": "Examples: corresponding angle 1 and angle 5; alternate angle 4 and angle 5; co-interior angle 4 and angle 6. Corresponding and alternate pairs are equal; co-interior pairs are supplementary.",
+      "reasoning": "Other correct pairs include angle 2/angle 6, angle 3/angle 6 and angle 3/angle 5. The parallel marks are essential.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": true,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.02",
+      "concept": "7.2",
+      "subtopic": "Parallel lines and transversals",
+      "thinking": "Understand",
+      "tier": "Foundation",
+      "prompt": "True or false: any two angles between parallel lines are equal. Use the diagram to justify your answer.",
+      "answer": "False. For example angle 4 and angle 6 are co-interior and supplementary, not necessarily equal.",
+      "reasoning": "Only corresponding and alternate pairs are equal. A counterexample is any non-right co-interior pair.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "R2",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.03",
+      "concept": "7.2",
+      "subtopic": "Parallel lines and transversals",
+      "thinking": "Fluency",
+      "tier": "Foundation",
+      "prompt": "Find a, b and c. Give a reason for each value.",
+      "answer": "a = 68\u00b0, b = 112\u00b0, c = 68\u00b0.",
+      "reasoning": "a is alternate to 68\u00b0; b is co-interior with 68\u00b0; c corresponds to 68\u00b0 (angle 8).",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "D1",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.04",
+      "concept": "7.2",
+      "subtopic": "Parallel lines and transversals",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "In the diagram, angle 2 = 128\u00b0. Find angle 5, angle 6 and angle 7, naming each relationship.",
+      "answer": "angle 5 = 52\u00b0, angle 6 = 128\u00b0, angle 7 = 128\u00b0.",
+      "reasoning": "angle 1 is adjacent to angle 2 on a line, so angle 1=52\u00b0; angle 5 corresponds to angle 1. angle 6 corresponds to angle 2; angle 7 is vertically opposite angle 6.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "F5",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.05",
+      "concept": "7.2",
+      "subtopic": "Parallel lines and transversals",
+      "thinking": "Reasoning",
+      "tier": "Developing",
+      "prompt": "Two lines are cut by a transversal. A pair of co-interior angles measures 112\u00b0 and 68\u00b0. Are the lines parallel? Justify. Then draw a non-parallel pair and explain why the same conclusion cannot be drawn from appearance alone.",
+      "answer": "Yes: 112\u00b0 + 68\u00b0 = 180\u00b0, so the lines are parallel by the converse of the co-interior angle fact.",
+      "reasoning": "Equal alternate angles or supplementary co-interior angles can establish parallel lines. A sketch without those facts does not prove parallelism.",
+      "visual_kind": [
+        "diagram",
+        "construction"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": true,
+      "space": "box",
+      "visual": false
+    },
+    {
+      "id": "7.2.06",
+      "concept": "7.2",
+      "subtopic": "Triangle and exterior-angle facts",
+      "thinking": "Understand",
+      "tier": "Foundation",
+      "prompt": "A triangle has angles 35\u00b0 and 85\u00b0. Find the third angle and classify the triangle by angles and by sides.",
+      "answer": "60\u00b0; acute scalene.",
+      "reasoning": "180\u00b0\u221235\u00b0\u221285\u00b0=60\u00b0. All angles are acute and different, so the sides are different.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "F6",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.07",
+      "concept": "7.2",
+      "subtopic": "Triangle and exterior-angle facts",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "The angles of a triangle are x, 2x and 3x. Find x and classify the triangle.",
+      "answer": "x = 30\u00b0; angles 30\u00b0, 60\u00b0, 90\u00b0; right triangle.",
+      "reasoning": "x+2x+3x=180\u00b0, so 6x=180\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "D2",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.08",
+      "concept": "7.2",
+      "subtopic": "Triangle and exterior-angle facts",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "Find each base angle x. Which marks tell you the base angles are equal?",
+      "answer": "70\u00b0 each.",
+      "reasoning": "Equal side ticks show an isosceles triangle. (180\u00b0\u221240\u00b0)\u00f72=70\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "D3",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.09",
+      "concept": "7.2",
+      "subtopic": "Triangle and exterior-angle facts",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "An exterior angle is 115\u00b0 and one opposite interior angle is 48\u00b0. Find the other opposite interior angle and the interior angle adjacent to the exterior angle.",
+      "answer": "67\u00b0 and 65\u00b0.",
+      "reasoning": "Other opposite angle =115\u00b0\u221248\u00b0=67\u00b0. Adjacent interior angle =180\u00b0\u2212115\u00b0=65\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "D4",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.10",
+      "concept": "7.2",
+      "subtopic": "Triangle and exterior-angle facts",
+      "thinking": "Application",
+      "tier": "Application",
+      "prompt": "The truss has equal base angles of 65\u00b0. Find the apex angle and the exterior angle at a base. Classify the triangle and state what this implies about the rafters.",
+      "answer": "Apex 50\u00b0; exterior 115\u00b0; isosceles, so the rafters are equal.",
+      "reasoning": "180\u00b0\u221265\u00b0\u221265\u00b0=50\u00b0; 180\u00b0\u221265\u00b0=115\u00b0. Equal base angles imply equal opposite sides.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "A2",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.11",
+      "concept": "7.2",
+      "subtopic": "Parallel lines and transversals",
+      "thinking": "Application",
+      "tier": "Application",
+      "prompt": "A collar is parallel to the base. At a rafter joint the co-interior angle inside the frame is 66\u00b0. Find the angle x on the same side of the transversal at the other joint.",
+      "answer": "x = 114\u00b0.",
+      "reasoning": "Co-interior angles between parallel lines sum to 180\u00b0: 180\u00b0\u221266\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "A5",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.12",
+      "concept": "7.2",
+      "subtopic": "Triangle and exterior-angle facts",
+      "thinking": "Application",
+      "tier": "Application",
+      "prompt": "The kite is made from two identical isosceles triangles joined along their bases. The upper triangle has apex 40\u00b0. Find the marked base angle, then find the whole angle at the left tip of the kite.",
+      "answer": "Marked base angle 70\u00b0; whole left-tip angle 140\u00b0.",
+      "reasoning": "Each base angle is (180\u00b0\u221240\u00b0)\u00f72=70\u00b0. The lower triangle is a mirror copy of the upper triangle, so it has the same base angle; the whole tip is 70\u00b0+70\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "A6",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.13",
+      "concept": "7.2",
+      "subtopic": "Triangle and exterior-angle facts",
+      "thinking": "Application",
+      "tier": "Application",
+      "prompt": "A right-triangular ramp frame has a 14\u00b0 angle with the ground. A handrail continues the sloping side beyond the top. Find the top interior angle and the exterior angle between the handrail extension and the vertical post.",
+      "answer": "Top interior angle 76\u00b0; exterior angle 104\u00b0.",
+      "reasoning": "180\u00b0\u221290\u00b0\u221214\u00b0=76\u00b0. The exterior angle is supplementary to 76\u00b0, so 104\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.14",
+      "concept": "7.2",
+      "subtopic": "Triangle and exterior-angle facts",
+      "thinking": "Reasoning",
+      "tier": "Reasoning",
+      "prompt": "Can a triangle have two obtuse angles? Explain using the angle sum, and sketch what goes wrong if you try.",
+      "answer": "No.",
+      "reasoning": "Two obtuse angles already sum to more than 180\u00b0, leaving no positive third angle. A sketch will fail to close as a triangle.",
+      "visual_kind": [
+        "construction"
+      ],
+      "source_id": "R1",
+      "atl": [],
+      "multiple": true,
+      "space": "box",
+      "visual": false
+    },
+    {
+      "id": "7.2.15",
+      "concept": "7.2",
+      "subtopic": "Triangle and exterior-angle facts",
+      "thinking": "Reasoning",
+      "tier": "Reasoning",
+      "prompt": "A student says the exterior angle 110\u00b0 should be added to the opposite interior angles 60\u00b0 and 50\u00b0 to make 180\u00b0. Identify the error, correct it, and find the adjacent interior angle.",
+      "answer": "The exterior angle equals the sum of the opposite interior angles: 110\u00b0=60\u00b0+50\u00b0. The adjacent interior angle is 70\u00b0.",
+      "reasoning": "The exterior angle and the adjacent interior angle are supplementary. The two opposite interior angles are not added to the exterior angle to make 180\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "R3",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.16",
+      "concept": "7.2",
+      "subtopic": "Triangle and exterior-angle facts",
+      "thinking": "Reasoning",
+      "tier": "Reasoning",
+      "prompt": "Compare the two triangles. What is the same and what is different? Does having the same three angles force the side lengths to be the same? Justify.",
+      "answer": "The angle sets are the same (40\u00b0, 60\u00b0, 80\u00b0); the sizes are different. Equal angles do not force equal side lengths.",
+      "reasoning": "Angle sum controls the angles, not the overall scale. The diagrams are a counterexample to \u201csame angles means same side lengths\u201d.",
+      "visual_kind": [
+        "comparison",
+        "diagram"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": true,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.17",
+      "concept": "7.2",
+      "subtopic": "Triangle and exterior-angle facts",
+      "thinking": "Challenge",
+      "tier": "Challenge",
+      "prompt": "An isosceles triangle has base angles x and apex x + 30\u00b0. Find all three angles. Show two different checks.",
+      "answer": "Base angles 50\u00b0 each; apex 80\u00b0.",
+      "reasoning": "2x+(x+30)=180 gives x=50. Checks: 50+50+80=180; apex exceeds a base angle by 30\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.18",
+      "concept": "7.2",
+      "subtopic": "Triangle and exterior-angle facts",
+      "thinking": "Challenge",
+      "tier": "Challenge",
+      "prompt": "An exterior angle of a triangle is 130\u00b0. The two opposite interior angles are in the ratio 2 : 3. Find all three interior angles and classify the triangle.",
+      "answer": "52\u00b0, 78\u00b0 and 50\u00b0; acute scalene.",
+      "reasoning": "Opposite interior angles sum to 130\u00b0. Five ratio parts give 26\u00b0 each: 52\u00b0 and 78\u00b0. Adjacent interior angle is 180\u00b0\u2212130\u00b0=50\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.2.19",
+      "concept": "7.2",
+      "subtopic": "Parallel lines and transversals",
+      "thinking": "Application",
+      "tier": "Developing",
+      "prompt": "Two parallel shelves are crossed by a support. One acute angle is 73\u00b0. Complete a table showing all eight angles, then state how many are acute and how many are obtuse.",
+      "answer": "Angles 1, 4, 5 and 8 are 73\u00b0; angles 2, 3, 6 and 7 are 107\u00b0. Four angles are acute and four are obtuse.",
+      "reasoning": "At each intersection the acute angles are vertically opposite and the obtuse angles are vertically opposite; adjacent angles sum to 180\u00b0. Parallel-line facts transfer the values to the second intersection.",
+      "visual_kind": [
+        "diagram",
+        "table"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "box",
+      "visual": true
+    },
+    {
+      "id": "7.2.20",
+      "concept": "7.2",
+      "subtopic": "Parallel lines and transversals",
+      "thinking": "Reasoning",
+      "tier": "Challenge",
+      "prompt": "The alternate angles marked 2x + 10\u00b0 and 3x \u2212 15\u00b0 are formed by parallel lines. Find x, the marked angles, and the co-interior partner of one marked angle.",
+      "answer": "x = 25\u00b0; marked angles 60\u00b0; co-interior partner 120\u00b0.",
+      "reasoning": "Alternate angles are equal: 2x+10=3x\u221215, so x=25. Co-interior angles sum to 180\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.3.01",
+      "concept": "7.3",
+      "subtopic": "Polygon angle sums",
+      "thinking": "Understand",
+      "tier": "Foundation",
+      "prompt": "Name the polygons and complete the number of sides. Then state what makes a polygon regular.",
+      "answer": "Pentagon 5; hexagon 6; octagon 8. A regular polygon has all sides equal and all interior angles equal.",
+      "reasoning": "Polygon names count sides. Both equal sides and equal angles are required for regularity.",
+      "visual_kind": [
+        "table"
+      ],
+      "source_id": "F7",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.3.02",
+      "concept": "7.3",
+      "subtopic": "Polygon angle sums",
+      "thinking": "Understand",
+      "tier": "Foundation",
+      "prompt": "Compare a regular hexagon with an irregular hexagon. Sketch each and label one property that is the same and one that may differ.",
+      "answer": "Both have six sides and interior angle sum 720\u00b0. A regular hexagon has equal sides and equal 120\u00b0 angles; an irregular hexagon need not.",
+      "reasoning": "The angle-sum rule depends on the number of sides, not regularity. Sketches may vary.",
+      "visual_kind": [
+        "construction",
+        "comparison"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": true,
+      "space": "box",
+      "visual": false
+    },
+    {
+      "id": "7.3.03",
+      "concept": "7.3",
+      "subtopic": "Polygon angle sums",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "Complete the triangulation table. Use the hexagon diagram to check the last row.",
+      "answer": "Quadrilateral: 2 triangles, 360\u00b0; pentagon: 3, 540\u00b0; hexagon: 4, 720\u00b0.",
+      "reasoning": "An n-gon splits into n\u22122 triangles from one vertex; multiply by 180\u00b0.",
+      "visual_kind": [
+        "table",
+        "diagram"
+      ],
+      "source_id": "D5",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.3.04",
+      "concept": "7.3",
+      "subtopic": "Polygon angle sums",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "Find the interior angle sum of a heptagon, a nonagon and a decagon. Show the number of triangles first.",
+      "answer": "Heptagon 900\u00b0; nonagon 1260\u00b0; decagon 1440\u00b0.",
+      "reasoning": "(7\u22122)\u00d7180=900; (9\u22122)\u00d7180=1260; (10\u22122)\u00d7180=1440.",
+      "visual_kind": [
+        "table"
+      ],
+      "source_id": "R4",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.3.05",
+      "concept": "7.3",
+      "subtopic": "Polygon angle sums",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "Find the missing angle x in the quadrilateral. Check by adding all four angles.",
+      "answer": "x = 80\u00b0.",
+      "reasoning": "360\u00b0\u2212(110\u00b0+75\u00b0+95\u00b0)=80\u00b0.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.3.06",
+      "concept": "7.3",
+      "subtopic": "Polygon angle sums",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "A regular polygon has exterior angle 45\u00b0. Find the number of sides and each interior angle. Sketch the polygon and mark one interior\u2013exterior pair.",
+      "answer": "8 sides; interior 135\u00b0.",
+      "reasoning": "360\u00b0\u00f745\u00b0=8; interior and exterior are supplementary, so 180\u00b0\u221245\u00b0=135\u00b0.",
+      "visual_kind": [
+        "diagram",
+        "construction"
+      ],
+      "source_id": "D6",
+      "atl": [],
+      "multiple": false,
+      "space": "box",
+      "visual": true
+    },
+    {
+      "id": "7.3.07",
+      "concept": "7.3",
+      "subtopic": "Polygon angle sums",
+      "thinking": "Application",
+      "tier": "Application",
+      "prompt": "A floor-tile design uses a regular polygon whose interior angle is 135\u00b0. Identify the polygon. Can copies of this tile alone meet around a point with no gap? Justify.",
+      "answer": "Regular octagon. No: 360\u00b0\u00f7135\u00b0 is not a whole number, so whole tiles cannot fill a full turn exactly.",
+      "reasoning": "Exterior angle is 45\u00b0, giving 8 sides. Two tiles leave 90\u00b0; three overlap. This is an angle argument, not a claim about every possible tiling with other shapes.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.3.08",
+      "concept": "7.3",
+      "subtopic": "Polygon angle sums",
+      "thinking": "Reasoning",
+      "tier": "Reasoning",
+      "prompt": "A student walks once around a convex polygon, turning through the exterior angle at each vertex. Complete the table and explain why the total turn is 360\u00b0 for every convex polygon.",
+      "answer": "Total turn is 360\u00b0 in each row because the walker returns to the starting direction after one full circuit.",
+      "reasoning": "The number of turns changes, but one complete circuit is always one full turn.",
+      "visual_kind": [
+        "table"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.3.09",
+      "concept": "7.3",
+      "subtopic": "Triangle inequality",
+      "thinking": "Investigation",
+      "tier": "Developing",
+      "prompt": "Test whether each triple can form a triangle. Record the sum of the two shorter sides and compare it with the longest side.",
+      "answer": "3,4,8: no (7&lt;8); 5,5,9: yes (10>9); 6,7,10: yes (13>10).",
+      "reasoning": "A triangle needs the two shorter sides together to exceed the longest. Equality would give a straight line.",
+      "visual_kind": [
+        "table"
+      ],
+      "source_id": "D8",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.3.10",
+      "concept": "7.3",
+      "subtopic": "Triangle inequality",
+      "thinking": "Investigation",
+      "tier": "Developing",
+      "prompt": "Complete the table. Include one row of your own that is a borderline case. What pattern separates possible triangles from impossible ones?",
+      "answer": "Rows: yes, no, no (borderline), yes. Student row may vary; a borderline row has shorter sum equal to longest.",
+      "reasoning": "Compare a+b with c when c is longest. Strictly greater gives a triangle; equal gives zero area; less gives a gap.",
+      "visual_kind": [
+        "table"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": true,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.3.11",
+      "concept": "7.3",
+      "subtopic": "Triangle inequality",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "A frame has sides 7 cm, 9 cm and 15 cm. Can it be a triangle? If not, change only the longest side to the smallest whole-number length that makes a triangle.",
+      "answer": "Yes, it already is a triangle because 7+9>15. No change is needed.",
+      "reasoning": "The question checks whether you test before changing. The shortest-sum test is 16>15.",
+      "visual_kind": [],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": false
+    },
+    {
+      "id": "7.3.12",
+      "concept": "7.3",
+      "subtopic": "Triangle inequality",
+      "thinking": "Application",
+      "tier": "Application",
+      "prompt": "A student says a triangular brace with sides 4 cm, 4 cm and 9 cm is possible because 4+9>4. Correct the reasoning and sketch what happens when the two 4 cm sides are joined to the 9 cm base.",
+      "answer": "Impossible: the two shorter sides give 4+4&lt;9. The arcs do not meet; there is a 1 cm gap.",
+      "reasoning": "The relevant test compares the two shorter sides with the longest. A correct sketch shows the failure to close.",
+      "visual_kind": [
+        "diagram",
+        "construction"
+      ],
+      "source_id": "A7",
+      "atl": [],
+      "multiple": false,
+      "space": "box",
+      "visual": true
+    },
+    {
+      "id": "7.3.13",
+      "concept": "7.3",
+      "subtopic": "Triangle inequality",
+      "thinking": "Reasoning",
+      "tier": "Reasoning",
+      "prompt": "Use the arcs to explain why sides 5 cm, 8 cm and 13 cm do not form a triangle. What changes if the 13 cm side becomes 12 cm?",
+      "answer": "5+8=13 gives a degenerate straight line. With 12 cm, 5+8>12, so a triangle is possible.",
+      "reasoning": "Equality places the apex on the base and gives zero area. Reducing the base lets the arcs meet above it.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "R6",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.3.14",
+      "concept": "7.3",
+      "subtopic": "Triangle inequality",
+      "thinking": "Challenge",
+      "tier": "Challenge",
+      "prompt": "Two sides of a triangle are 7 cm and 11 cm. The third side is a whole number of centimetres. Find all possible values and represent them on a number line.",
+      "answer": "5, 6, 7, \u2026, 17 cm.",
+      "reasoning": "The third side x must satisfy 11\u22127 &lt; x &lt; 11+7, so 4&lt;x&lt;18. Endpoints are excluded.",
+      "visual_kind": [
+        "construction"
+      ],
+      "source_id": "C1",
+      "atl": [],
+      "multiple": false,
+      "space": "box",
+      "visual": false
+    },
+    {
+      "id": "7.3.15",
+      "concept": "7.3",
+      "subtopic": "Triangle inequality",
+      "thinking": "Challenge",
+      "tier": "Challenge",
+      "prompt": "A truss model has an 8 m base and equal rafters of length x m. Find the smallest whole-number value of x that makes a triangle. Explain why x = 4 is not enough.",
+      "answer": "5 m.",
+      "reasoning": "2x>8, so x>4. At x=4 the rafters lie flat along the base.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "C4",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.3.16",
+      "concept": "7.3",
+      "subtopic": "Triangle inequality",
+      "thinking": "Challenge",
+      "tier": "Challenge",
+      "prompt": "Use compass arcs to explain why the two shorter sides of a triangle must together exceed the longest side. Include the cases a+b&lt;c, a+b=c and a+b>c in your explanation.",
+      "answer": "If the base is c, arcs of radii a and b meet above the base only when a+b>c. Equality meets on the base; less leaves a gap.",
+      "reasoning": "The arc intersection is the possible apex. No intersection above the base means no non-degenerate triangle.",
+      "visual_kind": [
+        "construction",
+        "diagram"
+      ],
+      "source_id": "C5",
+      "atl": [
+        "explain",
+        "model"
+      ],
+      "multiple": true,
+      "space": "box",
+      "visual": false
+    },
+    {
+      "id": "7.3.17",
+      "concept": "7.3",
+      "subtopic": "Triangle inequality",
+      "thinking": "Challenge",
+      "tier": "Challenge",
+      "prompt": "A regular polygon has each interior angle five times its exterior angle. Find the number of sides. Show the relationship between one interior and exterior pair.",
+      "answer": "12 sides.",
+      "reasoning": "Interior + exterior =180\u00b0. If interior=5e, then 6e=180\u00b0, e=30\u00b0, n=360\u00b0\u00f730\u00b0=12.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "C3",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.4.01",
+      "concept": "7.4",
+      "subtopic": "Bisectors and loci",
+      "thinking": "Understand",
+      "tier": "Foundation",
+      "prompt": "Select the construction that locates all points equally distant from two points A and B: angle bisector, perpendicular bisector, parallel line, or circle centre A. Contrast this with the locus of points inside the angle between two intersecting roads that are equally distant from the roads.",
+      "answer": "Perpendicular bisector for two points; angle bisector for the angle between two roads.",
+      "reasoning": "A perpendicular bisector compares distances to endpoints. An angle bisector compares perpendicular distances to the two arms.",
+      "visual_kind": [
+        "table"
+      ],
+      "source_id": "F8",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.4.02",
+      "concept": "7.4",
+      "subtopic": "Bisectors and loci",
+      "thinking": "Understand",
+      "tier": "Foundation",
+      "prompt": "In a ruler-and-compass construction, what do equal-radius arcs record? Why must the compass setting stay fixed between a pair of arcs?",
+      "answer": "They record equal distances from the named centres. Changing the radius destroys the equal-distance evidence.",
+      "reasoning": "The construction is justified by the defining property, not by appearance.",
+      "visual_kind": [],
+      "source_id": "R7",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": false
+    },
+    {
+      "id": "7.4.03",
+      "concept": "7.4",
+      "subtopic": "Bisectors and loci",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "Order the steps for a perpendicular bisector of AB = 8 cm: (i) draw arcs from A and B with the same radius; (ii) draw AB; (iii) join the arc intersections; (iv) open the compass to more than half AB. State the radius condition.",
+      "answer": "ii, iv, i, iii; radius > 4 cm.",
+      "reasoning": "The arcs must meet at two points. The line through those points is perpendicular to AB and passes through its midpoint.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "D7",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.4.04",
+      "concept": "7.4",
+      "subtopic": "Bisectors and loci",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "An angle of 68\u00b0 is bisected. Find each half and describe how the arcs show the two halves are equal.",
+      "answer": "34\u00b0 each.",
+      "reasoning": "The same radius from the two arm-intersection points locates a point on the bisector; the two half-angles are equal.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.4.05",
+      "concept": "7.4",
+      "subtopic": "Bisectors and loci",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "An 84\u00b0 angle is bisected. Each half is labelled 3x + 6\u00b0. Find x and check.",
+      "answer": "x = 12\u00b0.",
+      "reasoning": "Each half is 42\u00b0, so 3x+6=42 and x=12. Check 3(12)+6=42.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.4.06",
+      "concept": "7.4",
+      "subtopic": "Bisectors and loci",
+      "thinking": "Application",
+      "tier": "Application",
+      "prompt": "A path must stay equally distant from gates A and B. Which construction locates the path? Explain how a partner could check one point on the path.",
+      "answer": "The perpendicular bisector of AB. Check that the point is the same distance from A and B.",
+      "reasoning": "Every point on the perpendicular bisector is equidistant from the endpoints.",
+      "visual_kind": [
+        "diagram"
+      ],
+      "source_id": "A4",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.4.07",
+      "concept": "7.4",
+      "subtopic": "Bisectors and loci",
+      "thinking": "Reasoning",
+      "tier": "Reasoning",
+      "prompt": "A student uses a 2 cm radius to bisect a 6 cm segment. Compare the two diagrams. Explain why the first fails and the second works, and state the general radius condition.",
+      "answer": "Radius must be greater than 3 cm. A 2 cm radius is too small; 4 cm works.",
+      "reasoning": "Equal-radius arcs meet at two points only when the radius exceeds half the segment length.",
+      "visual_kind": [
+        "comparison",
+        "diagram"
+      ],
+      "source_id": "R5",
+      "atl": [],
+      "multiple": false,
+      "space": "lines",
+      "visual": true
+    },
+    {
+      "id": "7.4.08",
+      "concept": "7.4",
+      "subtopic": "Bisectors and loci",
+      "thinking": "Reasoning",
+      "tier": "Reasoning",
+      "prompt": "A construction looks perpendicular but the arcs were erased. Can you rely on appearance? Explain what evidence you would ask for and how you would check the result.",
+      "answer": "No. Ask for the equal-radius arcs or re-construct them; check midpoint, right angle and equal distances to A and B.",
+      "reasoning": "A drawing is not proof. The defining properties and construction evidence justify the result.",
+      "visual_kind": [],
+      "source_id": null,
+      "atl": [],
+      "multiple": true,
+      "space": "lines",
+      "visual": false
+    },
+    {
+      "id": "7.4.09",
+      "concept": "7.4",
+      "subtopic": "Constructing triangles",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "Construct AB = 7.2 cm and its perpendicular bisector. Measure each half and state the check.",
+      "answer": "Each half is 3.6 cm; the bisector meets AB at 90\u00b0.",
+      "reasoning": "Use one radius greater than 3.6 cm from both endpoints. Keep arcs visible.",
+      "visual_kind": [
+        "construction"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "large",
+      "visual": true
+    },
+    {
+      "id": "7.4.10",
+      "concept": "7.4",
+      "subtopic": "Constructing triangles",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "Construct a 64\u00b0 angle and bisect it with ruler and compasses. Measure both halves and state what they should be.",
+      "answer": "32\u00b0 each.",
+      "reasoning": "Draw an arc from the vertex, then equal-radius arcs from the two arm intersections. Join the vertex to their intersection.",
+      "visual_kind": [
+        "construction"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "large",
+      "visual": true
+    },
+    {
+      "id": "7.4.11",
+      "concept": "7.4",
+      "subtopic": "Constructing triangles",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "Construct a triangle with sides 4 cm, 5 cm and 6 cm. Keep the arcs visible and label the vertices.",
+      "answer": "A correct SSS construction; for example base 6 cm, arcs 4 cm and 5 cm from the endpoints.",
+      "reasoning": "Check the triangle inequality first: 4+5>6. The arc intersection fixes the third vertex.",
+      "visual_kind": [
+        "construction"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "large",
+      "visual": true
+    },
+    {
+      "id": "7.4.12",
+      "concept": "7.4",
+      "subtopic": "Constructing triangles",
+      "thinking": "Fluency",
+      "tier": "Developing",
+      "prompt": "Construct an equilateral triangle of side 5 cm. Explain why every angle must be 60\u00b0.",
+      "answer": "All sides 5 cm; all angles 60\u00b0.",
+      "reasoning": "Equal sides give equal opposite angles; 180\u00b0\u00f73=60\u00b0.",
+      "visual_kind": [
+        "construction"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "large",
+      "visual": true
+    },
+    {
+      "id": "7.4.13",
+      "concept": "7.4",
+      "subtopic": "Constructing triangles",
+      "thinking": "Challenge",
+      "tier": "Challenge",
+      "prompt": "Construct an isosceles triangle with equal sides 6 cm and base 8 cm. Then construct the perpendicular bisector of the base. Explain why it passes through the apex.",
+      "answer": "The apex is equidistant from the base endpoints, so it lies on the perpendicular bisector.",
+      "reasoning": "Use radius 6 cm from both base endpoints. The perpendicular bisector is the locus of points equidistant from the endpoints.",
+      "visual_kind": [
+        "construction"
+      ],
+      "source_id": "C2",
+      "atl": [
+        "model",
+        "explain"
+      ],
+      "multiple": false,
+      "space": "large",
+      "visual": true
+    },
+    {
+      "id": "7.4.14",
+      "concept": "7.4",
+      "subtopic": "Constructing triangles",
+      "thinking": "Reasoning",
+      "tier": "Reasoning",
+      "prompt": "Attempt to construct a triangle with sides 3 cm, 4 cm and 8 cm. Describe what the arcs do and connect this to the triangle inequality.",
+      "answer": "The arcs do not meet because 3+4&lt;8.",
+      "reasoning": "No apex exists; the two shorter sides cannot reach across the base.",
+      "visual_kind": [
+        "construction",
+        "diagram"
+      ],
+      "source_id": null,
+      "atl": [],
+      "multiple": false,
+      "space": "box",
+      "visual": true
+    },
+    {
+      "id": "7.4.15",
+      "concept": "7.4",
+      "subtopic": "Constructing triangles",
+      "thinking": "Application",
+      "tier": "Application",
+      "prompt": "A scale drawing uses 1 : 20. The real base of a triangular frame is 2.4 m. Find the model base in centimetres, then construct an isosceles model with equal sides 9 cm. What real rafter length does this represent?",
+      "answer": "Model base 12 cm; real rafters 1.8 m.",
+      "reasoning": "2.4 m=240 cm; 240\u00f720=12 cm. Model sides 9 cm represent 9\u00d720=180 cm=1.8 m.",
+      "visual_kind": [
+        "diagram",
+        "construction"
+      ],
+      "source_id": "A3",
+      "atl": [],
+      "multiple": false,
+      "space": "large",
+      "visual": true
+    },
+    {
+      "id": "7.4.16",
+      "concept": "7.4",
+      "subtopic": "Constructing triangles",
+      "thinking": "Challenge",
+      "tier": "Challenge",
+      "prompt": "A sprinkler is inside the angle between two straight roads that meet at 56\u00b0 and must be equally distant from the roads. Sketch the locus and find the angle between the locus and each road. How would the answer change if the requirement were equal distance from two points instead?",
+      "answer": "The angle bisector; 28\u00b0 to each road. For two points, use the perpendicular bisector of the segment joining them.",
+      "reasoning": "Distance to lines is measured perpendicular to the lines; the angle bisector is the locus. Distance to points uses the perpendicular bisector.",
+      "visual_kind": [
+        "diagram",
+        "construction"
+      ],
+      "source_id": null,
+      "atl": [
+        "model",
+        "explain"
+      ],
+      "multiple": true,
+      "space": "box",
+      "visual": true
+    }
+  ]
+}

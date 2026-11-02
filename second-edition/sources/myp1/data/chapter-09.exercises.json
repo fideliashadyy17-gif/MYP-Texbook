@@ -1,0 +1,1759 @@
+{
+  "chapter": 9,
+  "title": "Perimeter, area, surface area and volume",
+  "part": "Part IV · Shape, structure and measure",
+  "hours": 16,
+  "key": "Form",
+  "related": "Measurement, Space",
+  "context": "Globalization and sustainability",
+  "soi": "Choosing the right measure—length, area, surface area or volume—connects geometric structure to material use, capacity and cost.",
+  "engage": "How can a community project estimate turf, paving, fencing, soil and paint without confusing boundary, surface and space?",
+  "atl": "In order for a student to apply mathematics in real-life contexts, students must select the correct measure, convert units, calculate costs and evaluate a budget with stated assumptions.",
+  "objectives": [
+    "Distinguish perimeter, area, surface area and volume.",
+    "Calculate with triangles, quadrilaterals, circles and composites.",
+    "Use nets and prism formulas with correct units.",
+    "Convert capacity, compare packaging and evaluate a project budget."
+  ],
+  "vocabulary": "perimeter · area · surface area · volume · capacity · radius · diameter · circumference · semicircle · composite · net · prism · cross-section · litre",
+  "sections": [
+    {
+      "number": "9.1",
+      "title": "Perimeter and area of triangles and quadrilaterals",
+      "short": "Area and perimeter",
+      "intent": "Choose the quantity the task needs: boundary length, covered surface or space inside.",
+      "paras": [
+        "Perimeter is the total boundary length. Area measures surface in square units. Rectangle area = length×width; triangle area = ½×base×perpendicular height; parallelogram area = base×height.",
+        "A trapezoid with parallel sides a and b and perpendicular height h has area ½(a+b)h. The height must be perpendicular to the parallel sides, not a slant edge."
+      ],
+      "example": {
+        "title": "A triangle and a trapezoid",
+        "problem": "Triangle: base 8 cm, height 5 cm. Trapezoid: parallel sides 6 and 10 cm, height 4 cm.",
+        "steps": [
+          "Triangle: ½×8×5 = 20 cm².",
+          "Trapezoid: ½×(6+10)×4 = 32 cm²."
+        ],
+        "answer": "20 cm² and 32 cm²."
+      },
+      "warning": "Do not use a slant side as the height. Do not report area in cm or perimeter in cm².",
+      "practice": [
+        {
+          "id": "9.1.1",
+          "tier": "fluency",
+          "prompt": "Find the area and perimeter of a 7 cm by 4 cm rectangle.",
+          "answer": "28 cm²; 22 cm.",
+          "reasoning": "Area 7×4; perimeter 2(7+4).",
+          "verify": [
+            {
+              "expr": "[7*4,2*(7+4)]",
+              "equals": [
+                28,
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.1.2",
+          "tier": "fluency",
+          "prompt": "Find the area of a triangle with base 8 cm and perpendicular height 5 cm.",
+          "answer": "20 cm².",
+          "reasoning": "½×8×5.",
+          "verify": [
+            {
+              "expr": "0.5*8*5",
+              "equals": 20
+            }
+          ]
+        },
+        {
+          "id": "9.1.3",
+          "tier": "fluency",
+          "prompt": "Find the area of a trapezoid with parallel sides 6 cm and 10 cm and height 4 cm.",
+          "answer": "32 cm².",
+          "reasoning": "½(6+10)×4.",
+          "verify": [
+            {
+              "expr": "0.5*(6+10)*4",
+              "equals": 32
+            }
+          ]
+        },
+        {
+          "id": "9.1.4",
+          "tier": "reasoning",
+          "prompt": "A triangle has sides 5, 5, 6 cm. A student uses ½×6×5. Explain the error and find the correct height and area.",
+          "answer": "The 5 cm side is slant, not perpendicular height. Height is 4 cm; area 12 cm².",
+          "reasoning": "Half the base is 3; 3–4–5 right triangle.",
+          "verify": [
+            {
+              "expr": "[sqrt(5**2-3**2),0.5*6*4]",
+              "equals": [
+                4,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.1.5",
+          "tier": "application",
+          "prompt": "A rectangular lawn is 18 m by 12 m. Find its area and the cost of turf at $7.50/m².",
+          "answer": "216 m²; $1,620.",
+          "reasoning": "18×12; multiply by 7.50.",
+          "verify": [
+            {
+              "expr": "[18*12,18*12*7.5]",
+              "equals": [
+                216,
+                1620
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.1.6",
+          "tier": "challenge",
+          "prompt": "A rectangle has area 48 cm² and whole-number sides. Which dimensions give the smallest perimeter?",
+          "answer": "6 cm by 8 cm; perimeter 28 cm.",
+          "reasoning": "Compare factor pairs of 48; the closest pair minimises perimeter.",
+          "verify": [
+            {
+              "expr": "min((2*(a+48//a),a,48//a) for a in range(1,49) if 48%a==0)",
+              "equals": [
+                28,
+                6,
+                8
+              ]
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "rectangle_area",
+        "length": 7,
+        "width": 4,
+        "caption": "Area counts square units (28 cm²); perimeter counts boundary units (22 cm)."
+      }
+    },
+    {
+      "number": "9.2",
+      "title": "Circles and composite shapes",
+      "short": "Circles and composites",
+      "intent": "Identify radius and diameter, then split a composite shape into familiar pieces.",
+      "paras": [
+        "For a circle, diameter d=2r. Circumference C=πd=2πr; area A=πr². In this chapter use π≈3.14 unless told otherwise, and label results as approximate.",
+        "A semicircle has half the circle area and a curved boundary of πr. For a composite plan, add areas of non-overlapping pieces and trace only the outer boundary for fencing."
+      ],
+      "example": {
+        "title": "A semicircular stage",
+        "problem": "Diameter 12 m, so radius 6 m.",
+        "steps": [
+          "Area = ½×3.14×6² = 56.52 m².",
+          "Curved boundary = 3.14×6 = 18.84 m."
+        ],
+        "answer": "Area ≈56.52 m²; arc ≈18.84 m."
+      },
+      "warning": "The diameter is not part of the outer boundary when the semicircle is attached to a rectangle along that edge.",
+      "practice": [
+        {
+          "id": "9.2.1",
+          "tier": "fluency",
+          "prompt": "Find the circumference and area of a circle with radius 5 cm, using π=3.14.",
+          "answer": "31.4 cm; 78.5 cm².",
+          "reasoning": "2πr and πr².",
+          "verify": [
+            {
+              "expr": "[2*3.14*5,3.14*5**2]",
+              "equals": [
+                31.4,
+                78.5
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.2.2",
+          "tier": "fluency",
+          "prompt": "A circle has diameter 12 m. Find its radius, circumference and area (π=3.14).",
+          "answer": "6 m; 37.68 m; 113.04 m².",
+          "reasoning": "r=d/2; C=πd; A=πr².",
+          "verify": [
+            {
+              "expr": "[12/2,3.14*12,3.14*6**2]",
+              "equals": [
+                6,
+                37.68,
+                113.04
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.2.3",
+          "tier": "application",
+          "prompt": "Find the area and curved boundary of a semicircle of diameter 12 m (π=3.14).",
+          "answer": "56.52 m²; 18.84 m.",
+          "reasoning": "Half the circle area; half the circumference.",
+          "verify": [
+            {
+              "expr": "[0.5*3.14*6**2,3.14*6]",
+              "equals": [
+                56.52,
+                18.84
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.2.4",
+          "tier": "application",
+          "prompt": "An 18 m by 12 m rectangle has a semicircle of diameter 12 m attached to one short end. Find total area and outer boundary (π=3.14).",
+          "answer": "272.52 m²; 66.84 m.",
+          "reasoning": "Area 216+56.52; boundary 18+18+12+18.84.",
+          "verify": [
+            {
+              "expr": "[18*12+0.5*3.14*6**2,18+18+12+3.14*6]",
+              "equals": [
+                272.52,
+                66.84
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.2.5",
+          "tier": "reasoning",
+          "prompt": "Why is the 12 m diameter not included in the fencing length of the composite plan?",
+          "answer": "It is an internal join between lawn and stage, not an outer edge.",
+          "reasoning": "Fencing follows the outside boundary only.",
+          "verify": [
+            {
+              "expr": "18+18+12+3.14*6",
+              "equals": 66.84,
+              "contains": [
+                "internal"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.2.6",
+          "tier": "challenge",
+          "prompt": "If the radius of a circle doubles, what happens to its circumference and area?",
+          "answer": "Circumference doubles; area becomes four times as large.",
+          "reasoning": "C is proportional to r; A to r².",
+          "verify": [
+            {
+              "expr": "[2*3.14*10/(2*3.14*5),3.14*10**2/(3.14*5**2)]",
+              "equals": [
+                2,
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "circle",
+        "radius": 6,
+        "caption": "d = 2r. Area uses r²; circumference uses 2r. Use π ≈ 3.14 here."
+      }
+    },
+    {
+      "number": "9.3",
+      "title": "Nets and surface area",
+      "short": "Surface area",
+      "intent": "A net shows every outside face; surface area adds face areas, not the space inside.",
+      "paras": [
+        "A net is a flat pattern that folds into a solid. The surface area of a closed cuboid is 2(lw+lh+wh). For an open-topped box, omit the top face.",
+        "Use square units for surface area. Painting an outside surface depends on area; filling the box depends on volume. Keep the two quantities separate."
+      ],
+      "example": {
+        "title": "An open-topped raised bed",
+        "problem": "Length 1.2 m, width 0.6 m, height 0.5 m.",
+        "steps": [
+          "Base: 1.2×0.6 = 0.72 m².",
+          "Two long sides: 2×1.2×0.5 = 1.20 m². Two short sides: 2×0.6×0.5 = 0.60 m²."
+        ],
+        "answer": "Outside area = 2.52 m²."
+      },
+      "warning": "A closed cuboid has six faces; an open-topped bed has five. Do not paint an imaginary top.",
+      "practice": [
+        {
+          "id": "9.3.1",
+          "tier": "fluency",
+          "prompt": "Find the surface area of a closed cuboid 4 cm by 3 cm by 2 cm.",
+          "answer": "52 cm².",
+          "reasoning": "2(12+8+6).",
+          "verify": [
+            {
+              "expr": "2*(4*3+4*2+3*2)",
+              "equals": 52
+            }
+          ]
+        },
+        {
+          "id": "9.3.2",
+          "tier": "fluency",
+          "prompt": "Find the surface area of a cube with side 6 cm.",
+          "answer": "216 cm².",
+          "reasoning": "6×6².",
+          "verify": [
+            {
+              "expr": "6*6**2",
+              "equals": 216
+            }
+          ]
+        },
+        {
+          "id": "9.3.3",
+          "tier": "application",
+          "prompt": "Find the outside area of an open-topped bed 1.2 m by 0.6 m by 0.5 m.",
+          "answer": "2.52 m².",
+          "reasoning": "Base 0.72 + long sides 1.20 + short sides 0.60.",
+          "verify": [
+            {
+              "expr": "round(1.2*0.6+2*1.2*0.5+2*0.6*0.5,8)",
+              "equals": 2.52
+            }
+          ]
+        },
+        {
+          "id": "9.3.4",
+          "tier": "reasoning",
+          "prompt": "A student uses the closed-cuboid formula for an open box. What must be subtracted?",
+          "answer": "The top area lw.",
+          "reasoning": "The top is not an outside face to paint.",
+          "verify": [
+            {
+              "expr": "2*(4*3+4*2+3*2)-4*3",
+              "equals": 40
+            }
+          ]
+        },
+        {
+          "id": "9.3.5",
+          "tier": "application",
+          "prompt": "Three beds each have outside area 2.52 m². Paint covers 9 m² per litre. How many litres are needed, and how many 1 L tins must be bought?",
+          "answer": "0.84 L needed; buy 1 tin.",
+          "reasoning": "3×2.52=7.56 m²; 7.56÷9=0.84; round tins up.",
+          "verify": [
+            {
+              "expr": "[round(3*2.52/9,8),ceil(3*2.52/9)]",
+              "equals": [
+                0.84,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.3.6",
+          "tier": "challenge",
+          "prompt": "A cuboid has volume 24 cm³ and whole-number edges. Compare surface areas of 1×1×24 and 2×3×4.",
+          "answer": "98 cm² and 52 cm². The compact box uses less material.",
+          "reasoning": "Same volume does not imply same surface area.",
+          "verify": [
+            {
+              "expr": "[2*(1*1+1*24+1*24),2*(2*3+2*4+3*4)]",
+              "equals": [
+                98,
+                52
+              ]
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "cuboid_net",
+        "l": 4,
+        "w": 3,
+        "h": 2,
+        "caption": "A net exposes all six faces. Surface area = 2(lw + lh + wh)."
+      }
+    },
+    {
+      "number": "9.4",
+      "title": "Prisms, volume and capacity",
+      "short": "Volume and capacity",
+      "intent": "Volume measures space; capacity measures how much a container can hold.",
+      "paras": [
+        "A prism has a constant cross-section. Volume = cross-section area × length. For a cuboid, V=lwh; for a triangular prism, V=(½×base×height)×length.",
+        "Capacity conversions: 1 cm³ = 1 mL; 1,000 cm³ = 1 L; 1 m³ = 1,000 L. Convert units before multiplying or dividing."
+      ],
+      "example": {
+        "title": "A tank and a prism",
+        "problem": "Tank 50 cm × 30 cm × 40 cm; triangular prism with cross-section base 8 cm, height 5 cm, length 14 cm.",
+        "steps": [
+          "Tank volume 60,000 cm³ = 60 L.",
+          "Prism volume ½×8×5×14 = 280 cm³."
+        ],
+        "answer": "60 L; 280 cm³."
+      },
+      "warning": "1 m³ is 1,000 L, not 100 L. Length units scale by 100, area by 10,000 and volume by 1,000,000 between metres and centimetres.",
+      "practice": [
+        {
+          "id": "9.4.1",
+          "tier": "fluency",
+          "prompt": "Find the volume of a cuboid 20 cm by 10 cm by 5 cm.",
+          "answer": "1,000 cm³ = 1 L.",
+          "reasoning": "20×10×5.",
+          "verify": [
+            {
+              "expr": "[20*10*5,20*10*5/1000]",
+              "equals": [
+                1000,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.4.2",
+          "tier": "fluency",
+          "prompt": "Find the volume of a triangular prism: cross-section base 8 cm, height 5 cm, length 14 cm.",
+          "answer": "280 cm³.",
+          "reasoning": "½×8×5×14.",
+          "verify": [
+            {
+              "expr": "0.5*8*5*14",
+              "equals": 280
+            }
+          ]
+        },
+        {
+          "id": "9.4.3",
+          "tier": "application",
+          "prompt": "A tank is 50 cm by 30 cm by 40 cm. Find its capacity in litres.",
+          "answer": "60 L.",
+          "reasoning": "60,000 cm³÷1,000.",
+          "verify": [
+            {
+              "expr": "50*30*40/1000",
+              "equals": 60
+            }
+          ]
+        },
+        {
+          "id": "9.4.4",
+          "tier": "fluency",
+          "prompt": "Convert 2.5 L to cm³, 450 mL to cm³ and 0.8 m³ to litres.",
+          "answer": "2,500 cm³; 450 cm³; 800 L.",
+          "reasoning": "Use 1 L=1,000 cm³ and 1 m³=1,000 L.",
+          "verify": [
+            {
+              "expr": "[2.5*1000,450,0.8*1000]",
+              "equals": [
+                2500,
+                450,
+                800
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.4.5",
+          "tier": "reasoning",
+          "prompt": "A student says 1 m³=100 L because 1 m=100 cm. Correct the reasoning.",
+          "answer": "1 m³=1,000,000 cm³=1,000 L. Volume scales in three dimensions.",
+          "reasoning": "Cube the length conversion.",
+          "verify": [
+            {
+              "expr": "100**3/1000",
+              "equals": 1000
+            }
+          ]
+        },
+        {
+          "id": "9.4.6",
+          "tier": "challenge",
+          "prompt": "A prism has volume 360 cm³ and cross-section area 30 cm². Find its length. If every dimension doubles, what happens to volume?",
+          "answer": "12 cm; volume becomes 8 times as large.",
+          "reasoning": "Length=V÷A; scale factor 2³=8.",
+          "verify": [
+            {
+              "expr": "[360/30,2**3]",
+              "equals": [
+                12,
+                8
+              ]
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "prism",
+        "l": 5,
+        "w": 3,
+        "h": 2,
+        "caption": "Volume counts cubic units: 5 × 3 × 2 = 30 cm³ = 30 mL."
+      }
+    }
+  ],
+  "explore": {
+    "title": "The packaging problem",
+    "instruction": "Criterion B. Keep volume fixed, compare surface areas, test a second volume and justify a recommendation.",
+    "intro": "A box has volume 24 cm³ and whole-number edges. Rotations count as the same design. Surface area measures cardboard needed for a closed box.",
+    "table": {
+      "headers": [
+        "Edges (cm)",
+        "Volume (cm³)",
+        "Surface area (cm²)"
+      ],
+      "rows": [
+        [
+          "1×1×24",
+          "24",
+          ""
+        ],
+        [
+          "1×2×12",
+          "24",
+          ""
+        ],
+        [
+          "1×3×8",
+          "24",
+          ""
+        ],
+        [
+          "1×4×6",
+          "24",
+          ""
+        ],
+        [
+          "2×2×6",
+          "24",
+          ""
+        ],
+        [
+          "2×3×4",
+          "24",
+          ""
+        ]
+      ]
+    },
+    "items": [
+      {
+        "id": "B1",
+        "tier": "investigation",
+        "prompt": "Complete the surface areas for the six designs.",
+        "answer": "98, 76, 70, 68, 56, 52 cm².",
+        "reasoning": "Use 2(lw+lh+wh).",
+        "verify": [
+          {
+            "expr": "[2*(a*b+a*c+b*c) for a,b,c in [(1,1,24),(1,2,12),(1,3,8),(1,4,6),(2,2,6),(2,3,4)]]",
+            "equals": [
+              98,
+              76,
+              70,
+              68,
+              56,
+              52
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B2",
+        "tier": "investigation",
+        "prompt": "Which design uses least and most cardboard?",
+        "answer": "Least 2×3×4 (52 cm²); most 1×1×24 (98 cm²).",
+        "reasoning": "Compare the completed surface areas.",
+        "verify": [
+          {
+            "expr": "[min([98,76,70,68,56,52]),max([98,76,70,68,56,52])]",
+            "equals": [
+              52,
+              98
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B3",
+        "tier": "investigation",
+        "prompt": "Test volume 27 cm³ with 3×3×3, 1×3×9 and 1×1×27. Does the cube use least?",
+        "answer": "Surface areas 54, 78, 110 cm²; yes, the cube uses least.",
+        "reasoning": "Compact dimensions reduce exposed face area.",
+        "verify": [
+          {
+            "expr": "[2*(a*b+a*c+b*c) for a,b,c in [(3,3,3),(1,3,9),(1,1,27)]]",
+            "equals": [
+              54,
+              78,
+              110
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B4",
+        "tier": "challenge",
+        "prompt": "Design two closed boxes of volume 36 cm³ and recommend one by material use.",
+        "answer": "Sample: 3×3×4 has area 66 cm²; 1×6×6 has area 96 cm². Recommend 3×3×4 for less cardboard.",
+        "reasoning": "Both volumes are 36; compare surface areas.",
+        "verify": [
+          {
+            "expr": "[3*3*4,1*6*6,2*(3*3+3*4+3*4),2*(1*6+1*6+6*6)]",
+            "equals": [
+              36,
+              36,
+              66,
+              96
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B5",
+        "tier": "investigation",
+        "prompt": "Give two practical reasons a manufacturer might not choose the minimum-area box, and one limitation of the pattern.",
+        "answer": "Sample: product shape, stacking, opening strength or shelf display may matter. The pattern compares closed boxes with whole-number edges and ignores waste, tabs and thickness.",
+        "reasoning": "A mathematical optimum is not the only design criterion.",
+        "verify": [
+          {
+            "expr": "52<98",
+            "equals": true,
+            "contains": [
+              "Sample"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "application": {
+    "title": "The courtyard project",
+    "instruction": "Criterion D. Simulated project. Use π=3.14, show units and round purchases up to whole bags or tins.",
+    "intro": "An 18 m by 12 m rectangular lawn has a semicircular stage of diameter 12 m attached to one short end. Three open-topped beds are 1.2 m × 0.6 m × 0.5 m, filled to 80%. Budget $6,000.",
+    "table": {
+      "headers": [
+        "Item",
+        "Price",
+        "Coverage or size"
+      ],
+      "rows": [
+        [
+          "Turf",
+          "$7.50/m²",
+          "Lawn only"
+        ],
+        [
+          "Paving",
+          "$42/m²",
+          "Stage only"
+        ],
+        [
+          "Fencing",
+          "$28/m",
+          "Outer boundary"
+        ],
+        [
+          "Soil",
+          "$9.50 per 40 L bag",
+          "Each bed 80% full"
+        ],
+        [
+          "Paint",
+          "$22 per 1 L tin",
+          "1 L covers 9 m²"
+        ]
+      ]
+    },
+    "items": [
+      {
+        "id": "D1",
+        "tier": "application",
+        "prompt": "Find lawn area, stage area and total area.",
+        "answer": "216 m²; 56.52 m²; 272.52 m².",
+        "reasoning": "Rectangle plus semicircle of radius 6 m.",
+        "verify": [
+          {
+            "expr": "[18*12,0.5*3.14*6**2,18*12+0.5*3.14*6**2]",
+            "equals": [
+              216,
+              56.52,
+              272.52
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D2",
+        "tier": "application",
+        "prompt": "Find fencing length and the costs of turf, paving and fencing.",
+        "answer": "66.84 m; turf $1,620; paving $2,373.84; fencing $1,871.52.",
+        "reasoning": "Boundary 18+18+12+18.84; multiply each quantity by its price.",
+        "verify": [
+          {
+            "expr": "[18+18+12+3.14*6,216*7.5,round(56.52*42,2),round(66.84*28,2)]",
+            "equals": [
+              66.84,
+              1620,
+              2373.84,
+              1871.52
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D3",
+        "tier": "application",
+        "prompt": "Find soil needed for three beds and the number and cost of 40 L bags.",
+        "answer": "864 L; 22 bags; $209.",
+        "reasoning": "One bed 0.36 m³=360 L; 80% is 288 L; three beds 864 L; ceil(864/40)=22.",
+        "verify": [
+          {
+            "expr": "[round(1.2*0.6*0.5*1000*0.8*3,8),ceil(864/40),ceil(864/40)*9.5]",
+            "equals": [
+              864,
+              22,
+              209
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D4",
+        "tier": "application",
+        "prompt": "Find paint needed for the three open beds and the tin cost.",
+        "answer": "7.56 m² outside area; 0.84 L paint; buy 1 tin for $22.",
+        "reasoning": "One bed 2.52 m²; three beds 7.56; divide by 9 and round tins up.",
+        "verify": [
+          {
+            "expr": "[round(3*2.52,8),round(3*2.52/9,8),ceil(3*2.52/9)*22]",
+            "equals": [
+              7.56,
+              0.84,
+              22
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D5",
+        "tier": "challenge",
+        "prompt": "Find the total cost and budget position. Then add 10% contingency and state the new position.",
+        "answer": "$6,096.36, over by $96.36. With 10% contingency: $6,706.00 (to the nearest cent), over by $706.00.",
+        "reasoning": "Add 1620+2373.84+1871.52+209+22; multiply by 1.10.",
+        "verify": [
+          {
+            "expr": "[round(1620+2373.84+1871.52+209+22,2),round((1620+2373.84+1871.52+209+22)*1.1,2)]",
+            "equals": [
+              6096.36,
+              6706.0
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "assessment": {
+    "title": "The measure explainer",
+    "instruction": "Criteria A and C. Explain which measure a purchase needs and check units with a small example.",
+    "intro": "A learner confuses perimeter, area, surface area and volume. Use a 4 cm by 3 cm by 2 cm box to make the distinctions clear.",
+    "items": [
+      {
+        "id": "S1",
+        "tier": "assessment",
+        "prompt": "Find the box volume and closed surface area, with units.",
+        "answer": "24 cm³; 52 cm².",
+        "reasoning": "4×3×2; 2(12+8+6).",
+        "verify": [
+          {
+            "expr": "[4*3*2,2*(4*3+4*2+3*2)]",
+            "equals": [
+              24,
+              52
+            ]
+          }
+        ]
+      },
+      {
+        "id": "S2",
+        "tier": "assessment",
+        "prompt": "Which measure determines cardboard, paint and filling?",
+        "answer": "Cardboard and paint use surface area; filling uses volume or capacity.",
+        "reasoning": "Boundary length would use perimeter.",
+        "verify": [
+          {
+            "expr": "2*(4*3+4*2+3*2)",
+            "equals": 52,
+            "contains": [
+              "surface area",
+              "volume"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "S3",
+        "tier": "assessment",
+        "prompt": "Write a unit-check warning and one conversion fact.",
+        "answer": "Sample: “Area uses square units, volume cubic units; 1,000 cm³ = 1 L.”",
+        "reasoning": "Units reveal whether a formula matches the quantity.",
+        "verify": [
+          {
+            "expr": "1000/1000",
+            "equals": 1,
+            "contains": [
+              "Sample"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "diagrams": [
+    {
+      "kind": "rectangle_area",
+      "length": 7,
+      "width": 4,
+      "caption": "Area counts square units (28 cm²); perimeter counts boundary units (22 cm)."
+    },
+    {
+      "kind": "circle",
+      "radius": 6,
+      "caption": "d = 2r. Area uses r²; circumference uses 2r. Use π ≈ 3.14 here."
+    },
+    {
+      "kind": "cuboid_net",
+      "l": 4,
+      "w": 3,
+      "h": 2,
+      "caption": "A net exposes all six faces. Surface area = 2(lw + lh + wh)."
+    },
+    {
+      "kind": "prism",
+      "l": 5,
+      "w": 3,
+      "h": 2,
+      "caption": "Volume counts cubic units: 5 × 3 × 2 = 30 cm³ = 30 mL."
+    }
+  ],
+  "notes": [],
+  "groups": [
+    {
+      "id": "ready",
+      "title": "Ready check",
+      "instruction": "Try these without a calculator. They check the ideas this chapter builds on.",
+      "items": [
+        {
+          "id": "R1",
+          "tier": "ready",
+          "prompt": "Find 7×4 and 2(7+4).",
+          "answer": "28 and 22.",
+          "reasoning": "Area and perimeter of a 7 by 4 rectangle.",
+          "verify": [
+            {
+              "expr": "[7*4,2*(7+4)]",
+              "equals": [
+                28,
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "tier": "ready",
+          "prompt": "Find half of 8×5.",
+          "answer": "20.",
+          "reasoning": "½×40.",
+          "verify": [
+            {
+              "expr": "0.5*8*5",
+              "equals": 20
+            }
+          ]
+        },
+        {
+          "id": "R3",
+          "tier": "ready",
+          "prompt": "Calculate 6².",
+          "answer": "36.",
+          "reasoning": "6×6.",
+          "verify": [
+            {
+              "expr": "6**2",
+              "equals": 36
+            }
+          ]
+        },
+        {
+          "id": "R4",
+          "tier": "ready",
+          "prompt": "Convert 2 L to mL.",
+          "answer": "2,000 mL.",
+          "reasoning": "1 L=1,000 mL.",
+          "verify": [
+            {
+              "expr": "2*1000",
+              "equals": 2000
+            }
+          ]
+        },
+        {
+          "id": "R5",
+          "tier": "ready",
+          "prompt": "Find 1.2×0.6.",
+          "answer": "0.72.",
+          "reasoning": "Multiply as whole numbers, then place two decimal digits.",
+          "verify": [
+            {
+              "expr": "round(1.2*0.6,8)",
+              "equals": 0.72
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p91",
+      "title": "Practice 9.1 · Area and perimeter",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "9.1.1",
+          "tier": "fluency",
+          "prompt": "Find the area and perimeter of a 7 cm by 4 cm rectangle.",
+          "answer": "28 cm²; 22 cm.",
+          "reasoning": "Area 7×4; perimeter 2(7+4).",
+          "verify": [
+            {
+              "expr": "[7*4,2*(7+4)]",
+              "equals": [
+                28,
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.1.2",
+          "tier": "fluency",
+          "prompt": "Find the area of a triangle with base 8 cm and perpendicular height 5 cm.",
+          "answer": "20 cm².",
+          "reasoning": "½×8×5.",
+          "verify": [
+            {
+              "expr": "0.5*8*5",
+              "equals": 20
+            }
+          ]
+        },
+        {
+          "id": "9.1.3",
+          "tier": "fluency",
+          "prompt": "Find the area of a trapezoid with parallel sides 6 cm and 10 cm and height 4 cm.",
+          "answer": "32 cm².",
+          "reasoning": "½(6+10)×4.",
+          "verify": [
+            {
+              "expr": "0.5*(6+10)*4",
+              "equals": 32
+            }
+          ]
+        },
+        {
+          "id": "9.1.4",
+          "tier": "reasoning",
+          "prompt": "A triangle has sides 5, 5, 6 cm. A student uses ½×6×5. Explain the error and find the correct height and area.",
+          "answer": "The 5 cm side is slant, not perpendicular height. Height is 4 cm; area 12 cm².",
+          "reasoning": "Half the base is 3; 3–4–5 right triangle.",
+          "verify": [
+            {
+              "expr": "[sqrt(5**2-3**2),0.5*6*4]",
+              "equals": [
+                4,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.1.5",
+          "tier": "application",
+          "prompt": "A rectangular lawn is 18 m by 12 m. Find its area and the cost of turf at $7.50/m².",
+          "answer": "216 m²; $1,620.",
+          "reasoning": "18×12; multiply by 7.50.",
+          "verify": [
+            {
+              "expr": "[18*12,18*12*7.5]",
+              "equals": [
+                216,
+                1620
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.1.6",
+          "tier": "challenge",
+          "prompt": "A rectangle has area 48 cm² and whole-number sides. Which dimensions give the smallest perimeter?",
+          "answer": "6 cm by 8 cm; perimeter 28 cm.",
+          "reasoning": "Compare factor pairs of 48; the closest pair minimises perimeter.",
+          "verify": [
+            {
+              "expr": "min((2*(a+48//a),a,48//a) for a in range(1,49) if 48%a==0)",
+              "equals": [
+                28,
+                6,
+                8
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p92",
+      "title": "Practice 9.2 · Circles and composites",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "9.2.1",
+          "tier": "fluency",
+          "prompt": "Find the circumference and area of a circle with radius 5 cm, using π=3.14.",
+          "answer": "31.4 cm; 78.5 cm².",
+          "reasoning": "2πr and πr².",
+          "verify": [
+            {
+              "expr": "[2*3.14*5,3.14*5**2]",
+              "equals": [
+                31.4,
+                78.5
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.2.2",
+          "tier": "fluency",
+          "prompt": "A circle has diameter 12 m. Find its radius, circumference and area (π=3.14).",
+          "answer": "6 m; 37.68 m; 113.04 m².",
+          "reasoning": "r=d/2; C=πd; A=πr².",
+          "verify": [
+            {
+              "expr": "[12/2,3.14*12,3.14*6**2]",
+              "equals": [
+                6,
+                37.68,
+                113.04
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.2.3",
+          "tier": "application",
+          "prompt": "Find the area and curved boundary of a semicircle of diameter 12 m (π=3.14).",
+          "answer": "56.52 m²; 18.84 m.",
+          "reasoning": "Half the circle area; half the circumference.",
+          "verify": [
+            {
+              "expr": "[0.5*3.14*6**2,3.14*6]",
+              "equals": [
+                56.52,
+                18.84
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.2.4",
+          "tier": "application",
+          "prompt": "An 18 m by 12 m rectangle has a semicircle of diameter 12 m attached to one short end. Find total area and outer boundary (π=3.14).",
+          "answer": "272.52 m²; 66.84 m.",
+          "reasoning": "Area 216+56.52; boundary 18+18+12+18.84.",
+          "verify": [
+            {
+              "expr": "[18*12+0.5*3.14*6**2,18+18+12+3.14*6]",
+              "equals": [
+                272.52,
+                66.84
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.2.5",
+          "tier": "reasoning",
+          "prompt": "Why is the 12 m diameter not included in the fencing length of the composite plan?",
+          "answer": "It is an internal join between lawn and stage, not an outer edge.",
+          "reasoning": "Fencing follows the outside boundary only.",
+          "verify": [
+            {
+              "expr": "18+18+12+3.14*6",
+              "equals": 66.84,
+              "contains": [
+                "internal"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.2.6",
+          "tier": "challenge",
+          "prompt": "If the radius of a circle doubles, what happens to its circumference and area?",
+          "answer": "Circumference doubles; area becomes four times as large.",
+          "reasoning": "C is proportional to r; A to r².",
+          "verify": [
+            {
+              "expr": "[2*3.14*10/(2*3.14*5),3.14*10**2/(3.14*5**2)]",
+              "equals": [
+                2,
+                4
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p93",
+      "title": "Practice 9.3 · Surface area",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "9.3.1",
+          "tier": "fluency",
+          "prompt": "Find the surface area of a closed cuboid 4 cm by 3 cm by 2 cm.",
+          "answer": "52 cm².",
+          "reasoning": "2(12+8+6).",
+          "verify": [
+            {
+              "expr": "2*(4*3+4*2+3*2)",
+              "equals": 52
+            }
+          ]
+        },
+        {
+          "id": "9.3.2",
+          "tier": "fluency",
+          "prompt": "Find the surface area of a cube with side 6 cm.",
+          "answer": "216 cm².",
+          "reasoning": "6×6².",
+          "verify": [
+            {
+              "expr": "6*6**2",
+              "equals": 216
+            }
+          ]
+        },
+        {
+          "id": "9.3.3",
+          "tier": "application",
+          "prompt": "Find the outside area of an open-topped bed 1.2 m by 0.6 m by 0.5 m.",
+          "answer": "2.52 m².",
+          "reasoning": "Base 0.72 + long sides 1.20 + short sides 0.60.",
+          "verify": [
+            {
+              "expr": "round(1.2*0.6+2*1.2*0.5+2*0.6*0.5,8)",
+              "equals": 2.52
+            }
+          ]
+        },
+        {
+          "id": "9.3.4",
+          "tier": "reasoning",
+          "prompt": "A student uses the closed-cuboid formula for an open box. What must be subtracted?",
+          "answer": "The top area lw.",
+          "reasoning": "The top is not an outside face to paint.",
+          "verify": [
+            {
+              "expr": "2*(4*3+4*2+3*2)-4*3",
+              "equals": 40
+            }
+          ]
+        },
+        {
+          "id": "9.3.5",
+          "tier": "application",
+          "prompt": "Three beds each have outside area 2.52 m². Paint covers 9 m² per litre. How many litres are needed, and how many 1 L tins must be bought?",
+          "answer": "0.84 L needed; buy 1 tin.",
+          "reasoning": "3×2.52=7.56 m²; 7.56÷9=0.84; round tins up.",
+          "verify": [
+            {
+              "expr": "[round(3*2.52/9,8),ceil(3*2.52/9)]",
+              "equals": [
+                0.84,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.3.6",
+          "tier": "challenge",
+          "prompt": "A cuboid has volume 24 cm³ and whole-number edges. Compare surface areas of 1×1×24 and 2×3×4.",
+          "answer": "98 cm² and 52 cm². The compact box uses less material.",
+          "reasoning": "Same volume does not imply same surface area.",
+          "verify": [
+            {
+              "expr": "[2*(1*1+1*24+1*24),2*(2*3+2*4+3*4)]",
+              "equals": [
+                98,
+                52
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p94",
+      "title": "Practice 9.4 · Volume and capacity",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "9.4.1",
+          "tier": "fluency",
+          "prompt": "Find the volume of a cuboid 20 cm by 10 cm by 5 cm.",
+          "answer": "1,000 cm³ = 1 L.",
+          "reasoning": "20×10×5.",
+          "verify": [
+            {
+              "expr": "[20*10*5,20*10*5/1000]",
+              "equals": [
+                1000,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.4.2",
+          "tier": "fluency",
+          "prompt": "Find the volume of a triangular prism: cross-section base 8 cm, height 5 cm, length 14 cm.",
+          "answer": "280 cm³.",
+          "reasoning": "½×8×5×14.",
+          "verify": [
+            {
+              "expr": "0.5*8*5*14",
+              "equals": 280
+            }
+          ]
+        },
+        {
+          "id": "9.4.3",
+          "tier": "application",
+          "prompt": "A tank is 50 cm by 30 cm by 40 cm. Find its capacity in litres.",
+          "answer": "60 L.",
+          "reasoning": "60,000 cm³÷1,000.",
+          "verify": [
+            {
+              "expr": "50*30*40/1000",
+              "equals": 60
+            }
+          ]
+        },
+        {
+          "id": "9.4.4",
+          "tier": "fluency",
+          "prompt": "Convert 2.5 L to cm³, 450 mL to cm³ and 0.8 m³ to litres.",
+          "answer": "2,500 cm³; 450 cm³; 800 L.",
+          "reasoning": "Use 1 L=1,000 cm³ and 1 m³=1,000 L.",
+          "verify": [
+            {
+              "expr": "[2.5*1000,450,0.8*1000]",
+              "equals": [
+                2500,
+                450,
+                800
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9.4.5",
+          "tier": "reasoning",
+          "prompt": "A student says 1 m³=100 L because 1 m=100 cm. Correct the reasoning.",
+          "answer": "1 m³=1,000,000 cm³=1,000 L. Volume scales in three dimensions.",
+          "reasoning": "Cube the length conversion.",
+          "verify": [
+            {
+              "expr": "100**3/1000",
+              "equals": 1000
+            }
+          ]
+        },
+        {
+          "id": "9.4.6",
+          "tier": "challenge",
+          "prompt": "A prism has volume 360 cm³ and cross-section area 30 cm². Find its length. If every dimension doubles, what happens to volume?",
+          "answer": "12 cm; volume becomes 8 times as large.",
+          "reasoning": "Length=V÷A; scale factor 2³=8.",
+          "verify": [
+            {
+              "expr": "[360/30,2**3]",
+              "equals": [
+                12,
+                8
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explore",
+      "title": "Exploration · The packaging problem",
+      "instruction": "Criterion B. Keep volume fixed, compare surface areas, test a second volume and justify a recommendation.",
+      "items": [
+        {
+          "id": "B1",
+          "tier": "investigation",
+          "prompt": "Complete the surface areas for the six designs.",
+          "answer": "98, 76, 70, 68, 56, 52 cm².",
+          "reasoning": "Use 2(lw+lh+wh).",
+          "verify": [
+            {
+              "expr": "[2*(a*b+a*c+b*c) for a,b,c in [(1,1,24),(1,2,12),(1,3,8),(1,4,6),(2,2,6),(2,3,4)]]",
+              "equals": [
+                98,
+                76,
+                70,
+                68,
+                56,
+                52
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B2",
+          "tier": "investigation",
+          "prompt": "Which design uses least and most cardboard?",
+          "answer": "Least 2×3×4 (52 cm²); most 1×1×24 (98 cm²).",
+          "reasoning": "Compare the completed surface areas.",
+          "verify": [
+            {
+              "expr": "[min([98,76,70,68,56,52]),max([98,76,70,68,56,52])]",
+              "equals": [
+                52,
+                98
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B3",
+          "tier": "investigation",
+          "prompt": "Test volume 27 cm³ with 3×3×3, 1×3×9 and 1×1×27. Does the cube use least?",
+          "answer": "Surface areas 54, 78, 110 cm²; yes, the cube uses least.",
+          "reasoning": "Compact dimensions reduce exposed face area.",
+          "verify": [
+            {
+              "expr": "[2*(a*b+a*c+b*c) for a,b,c in [(3,3,3),(1,3,9),(1,1,27)]]",
+              "equals": [
+                54,
+                78,
+                110
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B4",
+          "tier": "challenge",
+          "prompt": "Design two closed boxes of volume 36 cm³ and recommend one by material use.",
+          "answer": "Sample: 3×3×4 has area 66 cm²; 1×6×6 has area 96 cm². Recommend 3×3×4 for less cardboard.",
+          "reasoning": "Both volumes are 36; compare surface areas.",
+          "verify": [
+            {
+              "expr": "[3*3*4,1*6*6,2*(3*3+3*4+3*4),2*(1*6+1*6+6*6)]",
+              "equals": [
+                36,
+                36,
+                66,
+                96
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B5",
+          "tier": "investigation",
+          "prompt": "Give two practical reasons a manufacturer might not choose the minimum-area box, and one limitation of the pattern.",
+          "answer": "Sample: product shape, stacking, opening strength or shelf display may matter. The pattern compares closed boxes with whole-number edges and ignores waste, tabs and thickness.",
+          "reasoning": "A mathematical optimum is not the only design criterion.",
+          "verify": [
+            {
+              "expr": "52<98",
+              "equals": true,
+              "contains": [
+                "Sample"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "check",
+      "title": "Checkpoint",
+      "instruction": "Answer, then explain one result to a partner.",
+      "items": [
+        {
+          "id": "C1",
+          "tier": "check",
+          "prompt": "Find the area of a triangle with base 10 cm and height 6 cm.",
+          "answer": "30 cm².",
+          "reasoning": "½×10×6.",
+          "verify": [
+            {
+              "expr": "0.5*10*6",
+              "equals": 30
+            }
+          ]
+        },
+        {
+          "id": "C2",
+          "tier": "check",
+          "prompt": "Find the area of a circle with radius 3 cm (π=3.14).",
+          "answer": "28.26 cm².",
+          "reasoning": "3.14×9.",
+          "verify": [
+            {
+              "expr": "3.14*3**2",
+              "equals": 28.26
+            }
+          ]
+        },
+        {
+          "id": "C3",
+          "tier": "check",
+          "prompt": "Find the surface area of a cube with side 4 cm.",
+          "answer": "96 cm².",
+          "reasoning": "6×16.",
+          "verify": [
+            {
+              "expr": "6*4**2",
+              "equals": 96
+            }
+          ]
+        },
+        {
+          "id": "C4",
+          "tier": "check",
+          "prompt": "Find the capacity in litres of a 10 cm cube.",
+          "answer": "1 L.",
+          "reasoning": "1,000 cm³.",
+          "verify": [
+            {
+              "expr": "10**3/1000",
+              "equals": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "application",
+      "title": "Application · The courtyard project",
+      "instruction": "Criterion D. Simulated project. Use π=3.14, show units and round purchases up to whole bags or tins.",
+      "items": [
+        {
+          "id": "D1",
+          "tier": "application",
+          "prompt": "Find lawn area, stage area and total area.",
+          "answer": "216 m²; 56.52 m²; 272.52 m².",
+          "reasoning": "Rectangle plus semicircle of radius 6 m.",
+          "verify": [
+            {
+              "expr": "[18*12,0.5*3.14*6**2,18*12+0.5*3.14*6**2]",
+              "equals": [
+                216,
+                56.52,
+                272.52
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "tier": "application",
+          "prompt": "Find fencing length and the costs of turf, paving and fencing.",
+          "answer": "66.84 m; turf $1,620; paving $2,373.84; fencing $1,871.52.",
+          "reasoning": "Boundary 18+18+12+18.84; multiply each quantity by its price.",
+          "verify": [
+            {
+              "expr": "[18+18+12+3.14*6,216*7.5,round(56.52*42,2),round(66.84*28,2)]",
+              "equals": [
+                66.84,
+                1620,
+                2373.84,
+                1871.52
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "tier": "application",
+          "prompt": "Find soil needed for three beds and the number and cost of 40 L bags.",
+          "answer": "864 L; 22 bags; $209.",
+          "reasoning": "One bed 0.36 m³=360 L; 80% is 288 L; three beds 864 L; ceil(864/40)=22.",
+          "verify": [
+            {
+              "expr": "[round(1.2*0.6*0.5*1000*0.8*3,8),ceil(864/40),ceil(864/40)*9.5]",
+              "equals": [
+                864,
+                22,
+                209
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D4",
+          "tier": "application",
+          "prompt": "Find paint needed for the three open beds and the tin cost.",
+          "answer": "7.56 m² outside area; 0.84 L paint; buy 1 tin for $22.",
+          "reasoning": "One bed 2.52 m²; three beds 7.56; divide by 9 and round tins up.",
+          "verify": [
+            {
+              "expr": "[round(3*2.52,8),round(3*2.52/9,8),ceil(3*2.52/9)*22]",
+              "equals": [
+                7.56,
+                0.84,
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D5",
+          "tier": "challenge",
+          "prompt": "Find the total cost and budget position. Then add 10% contingency and state the new position.",
+          "answer": "$6,096.36, over by $96.36. With 10% contingency: $6,706.00 (to the nearest cent), over by $706.00.",
+          "reasoning": "Add 1620+2373.84+1871.52+209+22; multiply by 1.10.",
+          "verify": [
+            {
+              "expr": "[round(1620+2373.84+1871.52+209+22,2),round((1620+2373.84+1871.52+209+22)*1.1,2)]",
+              "equals": [
+                6096.36,
+                6706.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment",
+      "title": "Assessment practice · The measure explainer",
+      "instruction": "Criteria A and C. Explain which measure a purchase needs and check units with a small example.",
+      "items": [
+        {
+          "id": "S1",
+          "tier": "assessment",
+          "prompt": "Find the box volume and closed surface area, with units.",
+          "answer": "24 cm³; 52 cm².",
+          "reasoning": "4×3×2; 2(12+8+6).",
+          "verify": [
+            {
+              "expr": "[4*3*2,2*(4*3+4*2+3*2)]",
+              "equals": [
+                24,
+                52
+              ]
+            }
+          ]
+        },
+        {
+          "id": "S2",
+          "tier": "assessment",
+          "prompt": "Which measure determines cardboard, paint and filling?",
+          "answer": "Cardboard and paint use surface area; filling uses volume or capacity.",
+          "reasoning": "Boundary length would use perimeter.",
+          "verify": [
+            {
+              "expr": "2*(4*3+4*2+3*2)",
+              "equals": 52,
+              "contains": [
+                "surface area",
+                "volume"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "S3",
+          "tier": "assessment",
+          "prompt": "Write a unit-check warning and one conversion fact.",
+          "answer": "Sample: “Area uses square units, volume cubic units; 1,000 cm³ = 1 L.”",
+          "reasoning": "Units reveal whether a formula matches the quantity.",
+          "verify": [
+            {
+              "expr": "1000/1000",
+              "equals": 1,
+              "contains": [
+                "Sample"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mixed",
+      "title": "Mixed practice 9",
+      "instruction": "Connect ideas. Give units and reasons where requested.",
+      "items": [
+        {
+          "id": "M1",
+          "tier": "fluency",
+          "prompt": "Find the area of a parallelogram with base 9 cm and height 4 cm.",
+          "answer": "36 cm².",
+          "reasoning": "base×height.",
+          "verify": [
+            {
+              "expr": "9*4",
+              "equals": 36
+            }
+          ]
+        },
+        {
+          "id": "M2",
+          "tier": "fluency",
+          "prompt": "Find the circumference of a circle with diameter 10 cm (π=3.14).",
+          "answer": "31.4 cm.",
+          "reasoning": "πd.",
+          "verify": [
+            {
+              "expr": "3.14*10",
+              "equals": 31.4
+            }
+          ]
+        },
+        {
+          "id": "M3",
+          "tier": "fluency",
+          "prompt": "Find the surface area of a closed cuboid 5 cm by 2 cm by 3 cm.",
+          "answer": "62 cm².",
+          "reasoning": "2(10+15+6).",
+          "verify": [
+            {
+              "expr": "2*(5*2+5*3+2*3)",
+              "equals": 62
+            }
+          ]
+        },
+        {
+          "id": "M4",
+          "tier": "application",
+          "prompt": "Find the capacity in litres of a tank 40 cm by 25 cm by 20 cm.",
+          "answer": "20 L.",
+          "reasoning": "20,000 cm³÷1,000.",
+          "verify": [
+            {
+              "expr": "40*25*20/1000",
+              "equals": 20
+            }
+          ]
+        },
+        {
+          "id": "M5",
+          "tier": "reasoning",
+          "prompt": "A student uses a slant side as triangle height. Explain the correction.",
+          "answer": "Use the perpendicular distance from the base to the opposite vertex; a slant side is not the height unless it is perpendicular.",
+          "reasoning": "Area requires base×perpendicular height÷2.",
+          "verify": [
+            {
+              "expr": "0.5*6*4",
+              "equals": 12,
+              "contains": [
+                "perpendicular"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M6",
+          "tier": "application",
+          "prompt": "A semicircle has radius 4 m. Find its area and curved boundary (π=3.14).",
+          "answer": "25.12 m²; 12.56 m.",
+          "reasoning": "½πr² and πr.",
+          "verify": [
+            {
+              "expr": "[0.5*3.14*4**2,3.14*4]",
+              "equals": [
+                25.12,
+                12.56
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M7",
+          "tier": "challenge",
+          "prompt": "A cuboid has volume 60 cm³ and base area 12 cm². Find its height.",
+          "answer": "5 cm.",
+          "reasoning": "60÷12.",
+          "verify": [
+            {
+              "expr": "60/12",
+              "equals": 5
+            }
+          ]
+        },
+        {
+          "id": "M8",
+          "tier": "reasoning",
+          "prompt": "If all lengths of a solid double, what happens to surface area and volume?",
+          "answer": "Surface area ×4; volume ×8.",
+          "reasoning": "Area scales with the square, volume with the cube.",
+          "verify": [
+            {
+              "expr": "[2**2,2**3]",
+              "equals": [
+                4,
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M9",
+          "tier": "application",
+          "prompt": "Paint covers 9 m²/L. How many 1 L tins for 20 m²?",
+          "answer": "3 tins.",
+          "reasoning": "20÷9≈2.22; round up.",
+          "verify": [
+            {
+              "expr": "ceil(20/9)",
+              "equals": 3
+            }
+          ]
+        },
+        {
+          "id": "M10",
+          "tier": "challenge",
+          "prompt": "Compare closed boxes 1×1×36 and 3×3×4 (both volume 36). Which uses less cardboard and by how much?",
+          "answer": "3×3×4: 66 cm² versus 146 cm², saving 80 cm².",
+          "reasoning": "Use 2(lw+lh+wh).",
+          "verify": [
+            {
+              "expr": "[2*(1*1+1*36+1*36),2*(3*3+3*4+3*4),146-66]",
+              "equals": [
+                146,
+                66,
+                80
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source": {
+    "file": "MYP-Mathematics-1-Student-Coursebook.pdf",
+    "sha256": "131a3a99d14ae5a7613c7e9da24c540e29029d93a1a360abcc8516835798b3f0",
+    "pages": "174–193; answers 234–237",
+    "scope_note": "Rewritten within the verified first-edition chapter scope and embedded planner. No standalone school curriculum overview was present. New classroom contexts are simulated and labelled."
+  }
+}

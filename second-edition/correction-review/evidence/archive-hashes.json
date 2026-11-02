@@ -1,0 +1,27 @@
+{
+  "1": {
+    "file": "MYP-Mathematics-1-Student-Coursebook.pdf",
+    "sha256": "131a3a99d14ae5a7613c7e9da24c540e29029d93a1a360abcc8516835798b3f0",
+    "bytes": 16777029
+  },
+  "2": {
+    "file": "MYP-Mathematics-2-Student-Coursebook.pdf",
+    "sha256": "565ed7876b3cf2e16d0a7c9607fe9cf93a8edc40d599ce8772ad70ca76baa30e",
+    "bytes": 15079740
+  },
+  "3": {
+    "file": "MYP-Mathematics-3-Student-Coursebook.pdf",
+    "sha256": "c0d5136cd423336fca35b6743eac20e6825d5537b6ea2117820d61c2bf949524",
+    "bytes": 32196622
+  },
+  "4": {
+    "file": "/home/user/.cache/myp-comparative-review/first-editions/MYP_Mathematics_4_Student_Coursebook.pdf",
+    "sha256": "4e0e8a32776f43f8565966edb54f9f30c6f45e7858259bd9799931e89197c393",
+    "bytes": 11462227
+  },
+  "5": {
+    "file": "/home/user/.cache/myp-comparative-review/first-editions/MYP_Mathematics_5_Student_Coursebook.pdf",
+    "sha256": "5f2e8001623ce1e26c72a94755127ee0828c4b0756fcc6c5bc0604e223d3274f",
+    "bytes": 11276894
+  }
+}

@@ -1,0 +1,540 @@
+{
+  "pdf": "second-edition/exports/myp1/prototype/MYP1-Chapter-07-Prototype-Revision-02.pdf",
+  "pages": 84,
+  "bytes": 805410,
+  "sha256": "09b1963777ceee478c77103abf86881796fb273431e86b5199e40685451f905a",
+  "items": 69,
+  "worked_examples": 14,
+  "provided_visual_items": 56,
+  "visual_fraction": 0.812,
+  "thinking": {
+    "Understand": 10,
+    "Fluency": 22,
+    "Application": 12,
+    "Reasoning": 13,
+    "Challenge": 10,
+    "Investigation": 2
+  },
+  "subtopics": {
+    "Angle language and turn facts": 16,
+    "Parallel lines and transversals": 8,
+    "Triangle and exterior-angle facts": 12,
+    "Polygon angle sums": 8,
+    "Triangle inequality": 9,
+    "Bisectors and loci": 8,
+    "Constructing triangles": 8
+  },
+  "checks": [
+    {
+      "check": "69 core items",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "14 worked examples",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "unique item IDs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "every example has six components and a visual",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "35 First-Edition source IDs mapped",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "provided visual assets >= 40%",
+      "pass": true,
+      "detail": "56/69"
+    },
+    {
+      "check": "concept counts 16/20/17/16",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "subtopics >= 8 items",
+      "pass": true,
+      "detail": {
+        "Angle language and turn facts": 16,
+        "Parallel lines and transversals": 8,
+        "Triangle and exterior-angle facts": 12,
+        "Polygon angle sums": 8,
+        "Triangle inequality": 9,
+        "Bisectors and loci": 8,
+        "Constructing triangles": 8
+      }
+    },
+    {
+      "check": "A-F thinking types present",
+      "pass": true,
+      "detail": {
+        "Understand": 10,
+        "Fluency": 22,
+        "Application": 12,
+        "Reasoning": 13,
+        "Challenge": 10,
+        "Investigation": 2
+      }
+    },
+    {
+      "check": "open-ended answers flagged multiple",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "answer 7.1.04",
+      "pass": true,
+      "detail": "x = 115\u00b0."
+    },
+    {
+      "check": "answer 7.1.05",
+      "pass": true,
+      "detail": "85\u00b0."
+    },
+    {
+      "check": "answer 7.1.06",
+      "pass": true,
+      "detail": "x = 65\u00b0, y = 115\u00b0, z = 65\u00b0."
+    },
+    {
+      "check": "answer 7.1.07",
+      "pass": true,
+      "detail": "x = 35\u00b0; the angles are 65\u00b0, 70\u00b0 and 45\u00b0."
+    },
+    {
+      "check": "answer 7.1.08",
+      "pass": true,
+      "detail": "x = 15\u00b0; each marked angle is 75\u00b0; an adjacent angle is 105\u00b0."
+    },
+    {
+      "check": "answer 7.1.09",
+      "pass": true,
+      "detail": "78\u00b0."
+    },
+    {
+      "check": "answer 7.1.10",
+      "pass": true,
+      "detail": "60\u00b0; no, the order does not change the total."
+    },
+    {
+      "check": "answer 7.1.11",
+      "pass": true,
+      "detail": "36\u00b0, 72\u00b0, 108\u00b0, 144\u00b0; no pair is complementary."
+    },
+    {
+      "check": "answer 7.1.12",
+      "pass": true,
+      "detail": "Claim 2 is wrong: angles around a point sum to 360\u00b0, not 180\u00b0. For example 90\u00b0, 90\u00b0, 100\u00b0 and 80\u00b0 meet at a point."
+    },
+    {
+      "check": "answer 7.1.14",
+      "pass": true,
+      "detail": "2x + (x+40) + 80 = 360; 3x = 240; x = 80\u00b0. Angles are 160\u00b0, 120\u00b0 and 80\u00b0."
+    },
+    {
+      "check": "answer 7.1.15",
+      "pass": true,
+      "detail": "x = 50\u00b0; angles 50\u00b0, 70\u00b0, 100\u00b0, 140\u00b0; largest is 140\u00b0, which is obtuse because it is between 90\u00b0 and 180\u00b0."
+    },
+    {
+      "check": "answer 7.2.03",
+      "pass": true,
+      "detail": "a = 68\u00b0, b = 112\u00b0, c = 68\u00b0."
+    },
+    {
+      "check": "answer 7.2.04",
+      "pass": true,
+      "detail": "angle 5 = 52\u00b0, angle 6 = 128\u00b0, angle 7 = 128\u00b0."
+    },
+    {
+      "check": "answer 7.2.06",
+      "pass": true,
+      "detail": "60\u00b0; acute scalene."
+    },
+    {
+      "check": "answer 7.2.07",
+      "pass": true,
+      "detail": "x = 30\u00b0; angles 30\u00b0, 60\u00b0, 90\u00b0; right triangle."
+    },
+    {
+      "check": "answer 7.2.08",
+      "pass": true,
+      "detail": "70\u00b0 each."
+    },
+    {
+      "check": "answer 7.2.09",
+      "pass": true,
+      "detail": "67\u00b0 and 65\u00b0."
+    },
+    {
+      "check": "answer 7.2.10",
+      "pass": true,
+      "detail": "Apex 50\u00b0; exterior 115\u00b0; isosceles, so the rafters are equal."
+    },
+    {
+      "check": "answer 7.2.11",
+      "pass": true,
+      "detail": "x = 114\u00b0."
+    },
+    {
+      "check": "answer 7.2.12",
+      "pass": true,
+      "detail": "Marked base angle 70\u00b0; whole left-tip angle 140\u00b0."
+    },
+    {
+      "check": "answer 7.2.13",
+      "pass": true,
+      "detail": "Top interior angle 76\u00b0; exterior angle 104\u00b0."
+    },
+    {
+      "check": "answer 7.2.17",
+      "pass": true,
+      "detail": "Base angles 50\u00b0 each; apex 80\u00b0."
+    },
+    {
+      "check": "answer 7.2.18",
+      "pass": true,
+      "detail": "52\u00b0, 78\u00b0 and 50\u00b0; acute scalene."
+    },
+    {
+      "check": "answer 7.2.19",
+      "pass": true,
+      "detail": "Angles 1, 4, 5 and 8 are 73\u00b0; angles 2, 3, 6 and 7 are 107\u00b0. Four angles are acute and four are obtuse."
+    },
+    {
+      "check": "answer 7.2.20",
+      "pass": true,
+      "detail": "x = 25\u00b0; marked angles 60\u00b0; co-interior partner 120\u00b0."
+    },
+    {
+      "check": "answer 7.3.03",
+      "pass": true,
+      "detail": "Quadrilateral: 2 triangles, 360\u00b0; pentagon: 3, 540\u00b0; hexagon: 4, 720\u00b0."
+    },
+    {
+      "check": "answer 7.3.04",
+      "pass": true,
+      "detail": "Heptagon 900\u00b0; nonagon 1260\u00b0; decagon 1440\u00b0."
+    },
+    {
+      "check": "answer 7.3.05",
+      "pass": true,
+      "detail": "x = 80\u00b0."
+    },
+    {
+      "check": "answer 7.3.06",
+      "pass": true,
+      "detail": "8 sides; interior 135\u00b0."
+    },
+    {
+      "check": "answer 7.3.07",
+      "pass": true,
+      "detail": "Regular octagon. No: 360\u00b0\u00f7135\u00b0 is not a whole number, so whole tiles cannot fill a full turn exactly."
+    },
+    {
+      "check": "answer 7.3.11",
+      "pass": true,
+      "detail": "Yes, it already is a triangle because 7+9>15. No change is needed."
+    },
+    {
+      "check": "answer 7.3.14",
+      "pass": true,
+      "detail": "5, 6, 7, \u2026, 17 cm."
+    },
+    {
+      "check": "answer 7.3.15",
+      "pass": true,
+      "detail": "5 m."
+    },
+    {
+      "check": "answer 7.3.17",
+      "pass": true,
+      "detail": "12 sides."
+    },
+    {
+      "check": "answer 7.4.05",
+      "pass": true,
+      "detail": "x = 12\u00b0."
+    },
+    {
+      "check": "answer 7.4.09",
+      "pass": true,
+      "detail": "Each half is 3.6 cm; the bisector meets AB at 90\u00b0."
+    },
+    {
+      "check": "answer 7.4.10",
+      "pass": true,
+      "detail": "32\u00b0 each."
+    },
+    {
+      "check": "answer 7.4.15",
+      "pass": true,
+      "detail": "Model base 12 cm; real rafters 1.8 m."
+    },
+    {
+      "check": "answer 7.4.16",
+      "pass": true,
+      "detail": "The angle bisector; 28\u00b0 to each road. For two points, use the perpendicular bisector of the segment joining them."
+    },
+    {
+      "check": "identity straight 47",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "identity full 95/120/85",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "identity vertical algebra",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "identity parallel 68",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "identity exterior 115",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "identity isosceles 40",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "identity quad 85/95/110",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "identity regular exterior 40",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "identity third side 7/11",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "identity triangle inequality 7/9/15",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "identity truss 8",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "identity interior=5 exterior",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "identity canopy 2.4/1.5",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "figure numbers sequential in reading order",
+      "pass": true,
+      "detail": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "check": "7.1.09 uses right-angle split, not untaught triangle sum",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "complementary defined before 7.1.11",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "7.1.15 obtuse definition complete",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "road loci restricted to interior of angle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "7.2.12 avoids formal congruence terminology",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "PDF page count 84",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "print overflow gate empty",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "all 69 items in practice once",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "all 69 items in answers once",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "practice precedes answers",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "inequality practice after discovery",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no replacement characters",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no raw placeholders",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no raw HTML entities in PDF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "all item prompts rendered in PDF",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "check": "all item answers rendered in PDF",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "check": "all item reasonings rendered in PDF",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "check": "all worked-example components rendered in PDF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "example 7.1.1 in PDF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "example 7.1.2 in PDF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "example 7.1.3 in PDF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "example 7.2.1 in PDF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "example 7.2.2 in PDF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "example 7.2.3 in PDF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "example 7.2.4 in PDF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "example 7.3.1 in PDF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "example 7.3.2 in PDF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "example 7.3.3 in PDF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "example 7.4.1 in PDF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "example 7.4.2 in PDF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "example 7.4.3 in PDF",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "example 7.4.4 in PDF",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "passed": 95,
+  "total": 95
+}

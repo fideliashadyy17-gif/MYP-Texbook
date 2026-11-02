@@ -1,0 +1,663 @@
+{
+  "chapter": 1,
+  "title": "Number systems and place value",
+  "source": {
+    "file": "MYP-Mathematics-1-Student-Coursebook.pdf",
+    "sha256": "131a3a99d14ae5a7613c7e9da24c540e29029d93a1a360abcc8516835798b3f0",
+    "pages": "18–34; answers 216–218",
+    "scope_note": "Revised within the first-edition Chapter 1 scope. Classroom datasets are simulated and labelled. No separate school overview was present in the repository."
+  },
+  "groups": [
+    {
+      "id": "ready",
+      "title": "Ready check",
+      "instruction": "Try these without a calculator. They check the ideas this chapter builds on.",
+      "items": [
+        {
+          "id": "R1",
+          "tier": "ready",
+          "prompt": "Write “four thousand and sixty” using digits.",
+          "answer": "4,060",
+          "reasoning": "The 4 is in the thousands place and the 6 is in the tens place; zeros hold the hundreds and ones places."
+        },
+        {
+          "id": "R2",
+          "tier": "ready",
+          "prompt": "Which is greater, 0.5 or 0.45? Explain using hundredths.",
+          "answer": "0.5",
+          "reasoning": "0.5 = 0.50, and 50 hundredths is greater than 45 hundredths."
+        },
+        {
+          "id": "R3",
+          "tier": "ready",
+          "prompt": "Calculate 8 × 7.",
+          "answer": "56",
+          "reasoning": "Eight groups of seven make 56."
+        },
+        {
+          "id": "R4",
+          "tier": "ready",
+          "prompt": "What is 100 more than 2,950?",
+          "answer": "3,050",
+          "reasoning": "Adding one hundred to 29 hundreds gives 30 hundreds, so the thousands digit increases."
+        },
+        {
+          "id": "R5",
+          "tier": "ready",
+          "prompt": "Write 7/10 as a decimal.",
+          "answer": "0.7",
+          "reasoning": "Seven tenths is written 0.7."
+        },
+        {
+          "id": "R6",
+          "tier": "ready",
+          "prompt": "Put −2, 0, 3 and −5 in order from least to greatest.",
+          "answer": "−5, −2, 0, 3",
+          "reasoning": "On a number line, values increase from left to right."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Practice 1.1 · Number families and order",
+      "instruction": "Show enough working or explanation that someone else can check your thinking.",
+      "items": [
+        {
+          "id": "1.1.1",
+          "tier": "fluency",
+          "prompt": "State every family each number belongs to: natural, whole, integer, rational. (a) 12 (b) 0 (c) −4 (d) 5/8 (e) 1.2",
+          "answer": "(a) natural, whole, integer, rational. (b) whole, integer, rational. (c) integer, rational. (d) rational. (e) rational.",
+          "reasoning": "Natural numbers start at 1 in this book; whole numbers add 0; integers add negatives; rational numbers can be written as a fraction of integers with nonzero denominator."
+        },
+        {
+          "id": "1.1.2",
+          "tier": "fluency",
+          "prompt": "Write all the integers from −3 to 2 inclusive.",
+          "answer": "−3, −2, −1, 0, 1, 2",
+          "reasoning": "Inclusive means both endpoints are included."
+        },
+        {
+          "id": "1.1.3",
+          "tier": "fluency",
+          "prompt": "Replace each box with <, > or =. (a) −7 □ −2 (b) 0 □ −1 (c) −5 □ 5",
+          "answer": "(a) < (b) > (c) <",
+          "reasoning": "The smaller number lies further left on the number line."
+        },
+        {
+          "id": "1.1.4",
+          "tier": "fluency",
+          "prompt": "Order these temperatures from coldest to warmest: 3 °C, −2 °C, −7 °C, 0 °C, 5 °C.",
+          "answer": "−7 °C, −2 °C, 0 °C, 3 °C, 5 °C",
+          "reasoning": "Coldest means least, so order the numbers from left to right on a number line."
+        },
+        {
+          "id": "1.1.5",
+          "tier": "reasoning",
+          "prompt": "Maya says, “Zero is a natural number because we can count zero items.” Using this book’s definition, explain whether her statement is correct.",
+          "answer": "Not under this book’s convention. Zero is whole, an integer and rational, but natural numbers start at 1.",
+          "reasoning": "Some traditions include 0 in the natural numbers, so a definition must be stated. This book uses natural numbers = 1, 2, 3, …"
+        },
+        {
+          "id": "1.1.6",
+          "tier": "reasoning",
+          "prompt": "Give a counterexample to the claim: “Every fraction is less than 1.”",
+          "answer": "For example, 5/4 = 1.25, which is greater than 1. Also 4/4 = 1.",
+          "reasoning": "A fraction can be greater than or equal to 1 when the numerator is at least the denominator."
+        },
+        {
+          "id": "1.1.7",
+          "tier": "application",
+          "prompt": "A lift starts at floor 1, travels to floor −2, then to floor 3. Describe each movement and the final position relative to the start.",
+          "answer": "Down 3 floors, then up 5 floors; final position is 2 floors above the start.",
+          "reasoning": "1 to −2 is a change of −3; −2 to 3 is a change of +5; net change +2."
+        },
+        {
+          "id": "1.1.8",
+          "tier": "challenge",
+          "prompt": "Draw a number line from −5 to 5. Mark −4, 0 and 2.5. Explain why 2.5 is not an integer but still has a precise place.",
+          "answer": "2.5 lies halfway between 2 and 3. It is rational, not an integer.",
+          "reasoning": "Integers are whole numbers and their negatives; halves between integers are rational numbers."
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Practice 1.2 · Place value and zero",
+      "instruction": "Name the place before you state the value.",
+      "items": [
+        {
+          "id": "1.2.1",
+          "tier": "fluency",
+          "prompt": "State the value of the underlined digit. (a) 6,7<u>4</u>2 (b) 23.5<u>8</u> (c) <u>8</u>,106 (d) 0.2<u>0</u>4",
+          "answer": "(a) 40 (b) 0.08 (c) 8,000 (d) 0",
+          "reasoning": "The places are tens, hundredths, thousands and hundredths respectively. A zero digit contributes zero but still holds its place."
+        },
+        {
+          "id": "1.2.2",
+          "tier": "fluency",
+          "prompt": "Write the number represented by 4,000 + 600 + 30 + 2.",
+          "answer": "4,632",
+          "reasoning": "Combine the thousands, hundreds, tens and ones."
+        },
+        {
+          "id": "1.2.3",
+          "tier": "fluency",
+          "prompt": "Calculate. (a) 36.2 × 10 (b) 5.48 × 100 (c) 920 ÷ 10 (d) 7.3 ÷ 100",
+          "answer": "(a) 362 (b) 548 (c) 92 (d) 0.073",
+          "reasoning": "Multiplying by 10 shifts digits one place left; multiplying by 100 shifts two places. Division shifts digits right."
+        },
+        {
+          "id": "1.2.4",
+          "tier": "reasoning",
+          "prompt": "In 2.06, what does the zero do? What number results if the zero is removed, and how much larger is it?",
+          "answer": "It holds the tenths place. Removing it gives 2.6, which is 0.54 larger.",
+          "reasoning": "2.06 has 0 tenths and 6 hundredths; 2.6 has 6 tenths. 2.60 − 2.06 = 0.54."
+        },
+        {
+          "id": "1.2.5",
+          "tier": "reasoning",
+          "prompt": "Which is larger, 3.5 or 3.05? Explain using place value, not the number of digits.",
+          "answer": "3.5",
+          "reasoning": "3.5 = 3.50. Both have 3 ones, but 5 tenths is greater than 0 tenths."
+        },
+        {
+          "id": "1.2.6",
+          "tier": "application",
+          "prompt": "A warehouse receives 24 boxes with 100 pencils in each box. Write the total and state the value of the digit 2 in your answer.",
+          "answer": "2,400 pencils; the 2 is worth 2,000.",
+          "reasoning": "24 × 100 = 2,400. The 2 is in the thousands place."
+        },
+        {
+          "id": "1.2.7",
+          "tier": "reasoning",
+          "prompt": "Test the claim “adding a zero to the right of a number multiplies it by 10” on 4, 0.4 and 4.50. Then write a corrected rule.",
+          "answer": "4 → 40 multiplies by 10; 0.4 → 0.40 and 4.50 → 4.500 do not change the value. Correct rule: multiplying by 10 shifts every digit one place left. Appending a zero only guarantees this for whole numbers written without a decimal part.",
+          "reasoning": "Trailing zeros after a decimal point add no value; they may record precision."
+        },
+        {
+          "id": "1.2.8",
+          "tier": "challenge",
+          "prompt": "Using 5, 0, 8 and 2 exactly once each, make the greatest and least four-digit numbers. Explain why the least cannot begin with 0.",
+          "answer": "Greatest 8,520; least 2,058.",
+          "reasoning": "Put the largest digits in the highest places for the greatest number. For the least four-digit number, the thousands digit must be the smallest nonzero digit, 2."
+        }
+      ]
+    },
+    {
+      "id": "explore",
+      "title": "Exploration · How many numbers can the digits write?",
+      "instruction": "Criterion B practice. Use a table, describe a rule, then verify it on a new case.",
+      "items": [
+        {
+          "id": "B1",
+          "tier": "investigation",
+          "prompt": "Using exactly n digits, with repetition allowed and no leading zero, complete the count for n = 1, 2, 3 and 4.",
+          "answer": "9; 90; 900; 9,000.",
+          "reasoning": "The first digit has 9 choices; each later digit has 10 choices."
+        },
+        {
+          "id": "B2",
+          "tier": "investigation",
+          "prompt": "Describe how the total changes when one more digit is allowed.",
+          "answer": "It is multiplied by 10.",
+          "reasoning": "Each existing number can be extended by any of 10 final digits."
+        },
+        {
+          "id": "B3",
+          "tier": "investigation",
+          "prompt": "State a rule for n digits and test it for n = 5.",
+          "answer": "9 × 10^(n−1); for n = 5 the count is 90,000.",
+          "reasoning": "There are 9 choices for the first digit and 10 choices for each of the remaining n−1 digits."
+        },
+        {
+          "id": "B4",
+          "tier": "investigation",
+          "prompt": "Explain why the first digit has 9 choices but each later digit has 10.",
+          "answer": "The first digit cannot be 0, so it can be 1–9. Later digits can be 0–9.",
+          "reasoning": "A leading zero would not create an n-digit positive whole number."
+        },
+        {
+          "id": "B5",
+          "tier": "challenge",
+          "prompt": "Challenge: repeat the investigation in base 5 using digits 0–4. Record three cases and state a rule.",
+          "answer": "For n = 1, 2, 3 the counts are 4, 20, 100. Rule: 4 × 5^(n−1).",
+          "reasoning": "The first digit has 4 nonzero choices; each later digit has 5 choices."
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "title": "Practice 1.3 · Expanded form",
+      "instruction": "Move between standard form and expanded form without changing the value.",
+      "items": [
+        {
+          "id": "1.3.1",
+          "tier": "fluency",
+          "prompt": "Write in expanded form. (a) 2,506 (b) 30.78 (c) 0.409",
+          "answer": "(a) 2,000 + 500 + 6 (b) 30 + 0.7 + 0.08 (c) 0.4 + 0.009",
+          "reasoning": "Each nonzero digit is multiplied by its place value; zero places may be omitted."
+        },
+        {
+          "id": "1.3.2",
+          "tier": "fluency",
+          "prompt": "Write as a standard number. (a) 4 × 100 + 9 × 10 + 6 × 1 (b) 6 × 1 + 5 × 0.1 + 8 × 0.01 (c) 2 × 1,000 + 7 × 10 + 3 × 0.001",
+          "answer": "(a) 496 (b) 6.58 (c) 2,070.003",
+          "reasoning": "Keep zeros in any missing places so the other digits stay in the correct positions."
+        },
+        {
+          "id": "1.3.3",
+          "tier": "fluency",
+          "prompt": "Fill the missing value. (a) 8,000 + □ + 40 + 5 = 8,745 (b) 0.6 + 0.07 + □ = 0.679",
+          "answer": "(a) 700 (b) 0.009",
+          "reasoning": "The missing parts are 7 hundreds and 9 thousandths."
+        },
+        {
+          "id": "1.3.4",
+          "tier": "reasoning",
+          "prompt": "Explain why 2 × 0.1 + 5 × 0.01 is ten times 2 × 0.01 + 5 × 0.001.",
+          "answer": "The first expression is 0.25 and the second is 0.025. Each digit in the first is one place to the left, so each contributes ten times as much.",
+          "reasoning": "0.25 ÷ 0.025 = 10."
+        },
+        {
+          "id": "1.3.5",
+          "tier": "reasoning",
+          "prompt": "Student A writes 407.3 as 400 + 7 + 0.3. Student B writes 4 × 100 + 0 × 10 + 7 × 1 + 3 × 0.1. Whose form shows the tens place more clearly? Do they have the same value?",
+          "answer": "Student B shows the zero tens explicitly. Both forms have the same value, 407.3.",
+          "reasoning": "Adding a zero term does not change a sum, but it can reveal structure."
+        },
+        {
+          "id": "1.3.6",
+          "tier": "application",
+          "prompt": "A label gives a length as 5 × 10 + 3 × 1 + 4 × 0.1 centimetres. Write the length in standard form and name the unit of each term.",
+          "answer": "53.4 cm. The terms are 50 cm, 3 cm and 0.4 cm.",
+          "reasoning": "5 tens of centimetres + 3 centimetres + 4 tenths of a centimetre."
+        },
+        {
+          "id": "1.3.7",
+          "tier": "challenge",
+          "prompt": "Create a four-digit number with 6 in the hundreds place and 0 in the tens place. Swap those two digits and explain how the value changes.",
+          "answer": "Sample: 1,602 becomes 1,062, a decrease of 540. Other valid starting numbers are possible.",
+          "reasoning": "Moving 6 from hundreds to tens loses 600 − 60 = 540."
+        },
+        {
+          "id": "1.3.8",
+          "tier": "reasoning",
+          "prompt": "Why can 1,000 be written with one nonzero term in expanded form while its place-value chart still has four positions?",
+          "answer": "1,000 = 1 × 1,000. The hundreds, tens and ones are all zero, but those positions are still needed to show the 1 is in the thousands place.",
+          "reasoning": "Zero terms contribute no value but hold places."
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "title": "Practice 1.4 · Compare, order and round",
+      "instruction": "For rounding, state the target place and use the digit immediately to its right.",
+      "items": [
+        {
+          "id": "1.4.1",
+          "tier": "fluency",
+          "prompt": "Insert <, > or =. (a) 0.5 □ 0.50 (b) 2.7 □ 2.68 (c) −3 □ −5",
+          "answer": "(a) = (b) > (c) >",
+          "reasoning": "Compare place by place; for negatives, the number further right is greater."
+        },
+        {
+          "id": "1.4.2",
+          "tier": "fluency",
+          "prompt": "Order from least to greatest: 0.7, 0.07, 0.77, 0.707.",
+          "answer": "0.07, 0.7, 0.707, 0.77",
+          "reasoning": "Write them as 0.070, 0.700, 0.707, 0.770 to compare thousandths."
+        },
+        {
+          "id": "1.4.3",
+          "tier": "fluency",
+          "prompt": "Round 8,647 to the nearest (a) hundred (b) ten.",
+          "answer": "(a) 8,600 (b) 8,650",
+          "reasoning": "For hundreds, the tens digit 4 rounds down; for tens, the ones digit 7 rounds up."
+        },
+        {
+          "id": "1.4.4",
+          "tier": "fluency",
+          "prompt": "Round 3.746 to the nearest hundredth and 0.897 to the nearest tenth.",
+          "answer": "3.75 and 0.9",
+          "reasoning": "The thousandths digit 6 rounds the hundredths up; the hundredths digit 9 rounds the tenths up with a carry."
+        },
+        {
+          "id": "1.4.5",
+          "tier": "reasoning",
+          "prompt": "Round 59.96 to the nearest tenth. Explain why the whole-number part changes.",
+          "answer": "60.0. The hundredths digit 6 rounds 9 tenths up to 10 tenths, which is one whole.",
+          "reasoning": "Keep the .0 to show the answer is to the nearest tenth."
+        },
+        {
+          "id": "1.4.6",
+          "tier": "reasoning",
+          "prompt": "One sign says a trail is 4.6 km; another says 4.56 km. Explain how both could be correct.",
+          "answer": "4.56 km rounds to 4.6 km to the nearest tenth.",
+          "reasoning": "The signs report the same length at different accuracies."
+        },
+        {
+          "id": "1.4.7",
+          "tier": "challenge",
+          "prompt": "Give three decimals that round to 6.5 to the nearest tenth. Describe all possible values under the usual “5 rounds up” convention.",
+          "answer": "Examples: 6.45, 6.50, 6.549. All values from 6.45 inclusive up to but not including 6.55 round to 6.5.",
+          "reasoning": "6.45 is the lower midpoint; 6.55 would round to 6.6."
+        },
+        {
+          "id": "1.4.8",
+          "tier": "application",
+          "prompt": "A class raised 1,948 CFA francs and reports “about 2,000 CFA francs”. Is this reasonable? What should an accountability report include?",
+          "answer": "Yes; 1,948 rounds to 2,000 to the nearest thousand. An accountability report should give the exact total, 1,948 CFA francs, and state any rounding used.",
+          "reasoning": "The hundreds digit is 9, so 1,948 rounds up to 2,000 to the nearest thousand. “About 2,000” is reasonable for a quick headline, but an accountability report should keep the exact total and state the rounding."
+        }
+      ]
+    },
+    {
+      "id": "p15",
+      "title": "Practice 1.5 · Estimate and judge accuracy",
+      "instruction": "Estimate first, then check. Say what your estimate is for and whether it is above or below the exact result when you can tell.",
+      "items": [
+        {
+          "id": "1.5.1",
+          "tier": "fluency",
+          "prompt": "Estimate 692 + 3,141 by rounding each number to the nearest hundred. Then calculate exactly and compare.",
+          "answer": "Estimate 700 + 3,100 = 3,800. Exact 3,833, so the estimate is 33 low.",
+          "reasoning": "692 rounds up by 8; 3,141 rounds down by 41; the net change is −33."
+        },
+        {
+          "id": "1.5.2",
+          "tier": "fluency",
+          "prompt": "Estimate 58 × 31 by rounding each factor to the nearest ten. Then calculate exactly and compare.",
+          "answer": "Estimate 60 × 30 = 1,800. Exact 1,798, so the estimate is 2 high.",
+          "reasoning": "Rounding one factor up and one down does not guarantee the direction; the exact check shows it."
+        },
+        {
+          "id": "1.5.3",
+          "tier": "reasoning",
+          "prompt": "Estimate 9.8 × 4.2 using 10 × 4. Calculate the exact product. Is the estimate above or below? Can you tell from the rounding alone?",
+          "answer": "Estimate 40; exact 41.16, so the estimate is below. Mixed rounding does not by itself guarantee the direction.",
+          "reasoning": "Round 9.8 up to 10 and 4.2 down to 4: 10 × 4 = 40. Exactly, 9.8 × 4.2 = 41.16. One factor was rounded up and the other down, so the direction of the error is not guaranteed; the exact check shows this estimate is low."
+        },
+        {
+          "id": "1.5.4",
+          "tier": "fluency",
+          "prompt": "Estimate 604 ÷ 29 using 600 ÷ 30. Then compare with the exact quotient to one decimal place.",
+          "answer": "Estimate 20. Exact quotient is about 20.8, so the estimate is low.",
+          "reasoning": "604 ÷ 29 = 20.793…; rounding the divisor down and dividend down has competing effects."
+        },
+        {
+          "id": "1.5.5",
+          "tier": "application",
+          "prompt": "A shop records 397 visitors on Friday, 412 on Saturday and 289 on Sunday. Estimate the total to the nearest hundred, then calculate it exactly.",
+          "answer": "Estimate 400 + 400 + 300 = 1,100. Exact 1,098; estimate is 2 high.",
+          "reasoning": "The rounded values differ from the exact values by +3, −12 and +11."
+        },
+        {
+          "id": "1.5.6",
+          "tier": "reasoning",
+          "prompt": "A runner completes 9.95 km and 10.08 km on two days. A poster says “about 20 km”. Is this reasonable? What accuracy is being used?",
+          "answer": "Yes. The exact total is 20.03 km, which rounds to 20 km to the nearest kilometre.",
+          "reasoning": "The poster gives a useful whole-kilometre summary, not an exact distance."
+        },
+        {
+          "id": "1.5.7",
+          "tier": "challenge",
+          "prompt": "A library has 1,247,936 books. Suggest a rounded figure for a short public notice and state its accuracy. When should the exact figure be used?",
+          "answer": "Sample: about 1,250,000 books, to the nearest ten thousand. Use the exact figure in an inventory or audit.",
+          "reasoning": "The rounded figure is easier to read; the exact figure is needed when individual items must be accounted for."
+        },
+        {
+          "id": "1.5.8",
+          "tier": "challenge",
+          "prompt": "A calculation gives a length as 2.673913043 m. The measuring tape reads to the nearest centimetre. Suggest a sensible report and explain why the extra digits should not be presented as measured accuracy.",
+          "answer": "About 2.67 m is a sensible centimetre-level report. The extra digits come from calculation, not from measurement precision; a full accuracy claim would need the calculation and measurement uncertainties.",
+          "reasoning": "One centimetre is 0.01 m. Do not imply the tape measured billionths of a metre."
+        }
+      ]
+    },
+    {
+      "id": "check",
+      "title": "Checkpoint · Before the application",
+      "instruction": "Answer quickly, then explain one answer to a partner.",
+      "items": [
+        {
+          "id": "C1",
+          "tier": "check",
+          "prompt": "What is the value of the 7 in 0.0705?",
+          "answer": "0.07",
+          "reasoning": "The 7 is in the hundredths place."
+        },
+        {
+          "id": "C2",
+          "tier": "check",
+          "prompt": "Calculate 4.06 × 100.",
+          "answer": "406",
+          "reasoning": "The digits shift two places left."
+        },
+        {
+          "id": "C3",
+          "tier": "check",
+          "prompt": "Round 39.95 to the nearest tenth.",
+          "answer": "40.0",
+          "reasoning": "The hundredths digit 5 rounds the tenths up, carrying into the ones."
+        },
+        {
+          "id": "C4",
+          "tier": "check",
+          "prompt": "Estimate 49 × 21 using friendly numbers.",
+          "answer": "About 50 × 20 = 1,000.",
+          "reasoning": "The exact product is 1,029, so the estimate is close and slightly low."
+        }
+      ]
+    },
+    {
+      "id": "application",
+      "title": "Application · A school noticeboard",
+      "instruction": "Criterion D practice. This is a simulated dataset for a school in Cotonou. Choose forms that fit each purpose, justify accuracy, and check that the message makes sense.",
+      "items": [
+        {
+          "id": "D1",
+          "tier": "application",
+          "prompt": "The draft figures are: enrolment 1,284; library books 3,680; year opened 1998; annual visits 10,473; scholarship places 12. Recommend a form for each and justify your choice.",
+          "answer": "Sample: enrolment about 1,300 for a headline; library books 3,680 for inventory; year opened 1998 exactly; visits about 10,000 for a headline; scholarship places 12 exactly because the number is small and consequential.",
+          "reasoning": "Accuracy should match purpose. Small counts and identifiers should not be rounded merely for style."
+        },
+        {
+          "id": "D2",
+          "tier": "application",
+          "prompt": "Another school has enrolment 1,327. If both enrolments are rounded to the nearest hundred, what does a reader see? Is the comparison fair? Suggest a better accuracy.",
+          "answer": "Both appear as about 1,300, hiding a difference of 43 students. To the nearest ten, 1,280 and 1,330 preserve the comparison better.",
+          "reasoning": "1,327 − 1,284 = 43. Rounding to hundreds maps both into the same hundred."
+        },
+        {
+          "id": "D3",
+          "tier": "application",
+          "prompt": "What must the school clarify before publishing “10,473 visits”?",
+          "answer": "Whether it counts visits or unique visitors, the period covered, and whether repeat visits by the same person are counted more than once.",
+          "reasoning": "A number is interpretable only when the counted unit and collection rule are clear."
+        },
+        {
+          "id": "D4",
+          "tier": "application",
+          "prompt": "Identify one figure that should not be rounded and one that is most sensitive to rounding. Explain both choices.",
+          "answer": "The year opened, 1998, should not be rounded because it identifies a date. The 12 scholarship places are sensitive: rounding to the nearest ten gives 10, losing 2 places, about 17% of the total.",
+          "reasoning": "The same rounding rule can be harmless for a large headline and misleading for a small decision-making count."
+        }
+      ]
+    },
+    {
+      "id": "assessment",
+      "title": "Assessment practice · A museum label",
+      "instruction": "Criteria A and C. Use accurate mathematics and clear communication. Write for visitors aged 10–14 and adults who want a quick overview.",
+      "items": [
+        {
+          "id": "S1",
+          "tier": "assessment",
+          "prompt": "The fact sheet gives 48,672 objects in the collection and 6,509 on display. State the value of the 8 in 48,672 and the 6 in 6,509.",
+          "answer": "8,000 and 6,000.",
+          "reasoning": "The 8 is in the thousands place; the 6 is in the thousands place."
+        },
+        {
+          "id": "S2",
+          "tier": "assessment",
+          "prompt": "Write 6,509 in expanded form.",
+          "answer": "6,000 + 500 + 9, or 6 × 1,000 + 5 × 100 + 0 × 10 + 9 × 1.",
+          "reasoning": "The zero tens may be omitted or shown to reveal the place structure."
+        },
+        {
+          "id": "S3",
+          "tier": "assessment",
+          "prompt": "Round 48,672 to the nearest thousand and 214,830 annual visitors to the nearest ten thousand.",
+          "answer": "49,000 objects and 210,000 visitors.",
+          "reasoning": "The hundreds digit 6 rounds the thousands up; the thousands digit 4 rounds the ten-thousands down."
+        },
+        {
+          "id": "S4",
+          "tier": "assessment",
+          "prompt": "Write a label of no more than 70 words using the collection size, display count, opening year 1894 and annual visitors. Include one rounded value and one comparison.",
+          "answer": "Sample: “The collection began in 1894. Today it holds about 49,000 objects, with 6,509 on display—fewer than one in seven. Last year the museum welcomed about 210,000 visitors. Come and see how a small display can tell a large story.”",
+          "reasoning": "The label uses the opening year exactly, rounds the collection and visitor figures for readability, and keeps the display count exact. The comparison is valid because 6,509 is less than one seventh of 48,672. It stays within 70 words."
+        },
+        {
+          "id": "S5",
+          "tier": "assessment",
+          "prompt": "Add a two-sentence note explaining one rounding choice and one risk of rounding too heavily.",
+          "answer": "Sample: “I rounded the collection to the nearest thousand so the headline is quick to read. Rounding the display count too heavily could hide how few objects visitors can actually see.”",
+          "reasoning": "The note connects accuracy to audience and meaning."
+        }
+      ]
+    },
+    {
+      "id": "mixed",
+      "title": "Mixed practice 1",
+      "instruction": "Do not use a calculator unless a question asks for one. Show a method or explanation where requested.",
+      "items": [
+        {
+          "id": "M1",
+          "tier": "fluency",
+          "prompt": "Write the value of the digit 8 in (a) 3,812 (b) 20.83 (c) 0.081.",
+          "answer": "(a) 800 (b) 0.8 (c) 0.08",
+          "reasoning": "The places are hundreds, tenths and hundredths."
+        },
+        {
+          "id": "M2",
+          "tier": "fluency",
+          "prompt": "Write 5,040.207 in expanded form.",
+          "answer": "5,000 + 40 + 0.2 + 0.007",
+          "reasoning": "The hundreds, ones and hundredths digits are zero."
+        },
+        {
+          "id": "M3",
+          "tier": "fluency",
+          "prompt": "Write 7 × 1,000 + 3 × 10 + 6 × 0.01 as a decimal.",
+          "answer": "7,030.06",
+          "reasoning": "Keep zeros in the hundreds, ones and tenths places."
+        },
+        {
+          "id": "M4",
+          "tier": "fluency",
+          "prompt": "Round 64,782 to the nearest thousand, hundred and ten.",
+          "answer": "65,000; 64,800; 64,780",
+          "reasoning": "Inspect the digit immediately to the right of each target place."
+        },
+        {
+          "id": "M5",
+          "tier": "fluency",
+          "prompt": "Round 0.496 to the nearest hundredth and 12.95 to the nearest tenth.",
+          "answer": "0.50 and 13.0",
+          "reasoning": "Both involve a carry. Keep the final zero to show the requested place."
+        },
+        {
+          "id": "M6",
+          "tier": "fluency",
+          "prompt": "Calculate (a) 0.64 × 100 (b) 8.2 ÷ 10 (c) 3.5 × 1,000.",
+          "answer": "(a) 64 (b) 0.82 (c) 3,500",
+          "reasoning": "Shift digits left for multiplication by powers of ten and right for division."
+        },
+        {
+          "id": "M7",
+          "tier": "fluency",
+          "prompt": "Order from least to greatest: −2.5, 0.25, −0.5, 2.05.",
+          "answer": "−2.5, −0.5, 0.25, 2.05",
+          "reasoning": "Negative values lie left of zero; among negatives, the larger magnitude is smaller."
+        },
+        {
+          "id": "M8",
+          "tier": "fluency",
+          "prompt": "Insert <, > or =. (a) 0.08 □ 0.8 (b) 1.30 □ 1.3 (c) −6 □ −2",
+          "answer": "(a) < (b) = (c) <",
+          "reasoning": "Compare by place value and number-line position."
+        },
+        {
+          "id": "M9",
+          "tier": "reasoning",
+          "prompt": "A whole number rounds to 4,700 to the nearest hundred. Give three possible values and describe the full range.",
+          "answer": "Examples: 4,650, 4,700, 4,749. Whole-number range: 4,650 to 4,749 inclusive.",
+          "reasoning": "The midpoint below is 4,650; the midpoint above is 4,750, which would round to 4,800."
+        },
+        {
+          "id": "M10",
+          "tier": "reasoning",
+          "prompt": "A student says 6.09 is larger than 6.1 because it has more digits. Correct the comparison.",
+          "answer": "6.09 < 6.1 because 6.1 = 6.10, and 9 hundredths is less than 10 hundredths.",
+          "reasoning": "Align place values instead of counting digits."
+        },
+        {
+          "id": "M11",
+          "tier": "reasoning",
+          "prompt": "A temperature changes from −3 °C to 4 °C. Which is colder, and by how many degrees do they differ?",
+          "answer": "−3 °C is colder; the difference is 7 °C.",
+          "reasoning": "From −3 to 0 is 3 degrees, and from 0 to 4 is 4 degrees."
+        },
+        {
+          "id": "M12",
+          "tier": "application",
+          "prompt": "A stock list gives 12,480 items. The manager says “about 12,000”. Is this an underestimate or overestimate, and by how much? Suggest a more informative rounded statement.",
+          "answer": "Underestimate by 480. “About 12,500” to the nearest hundred is more informative.",
+          "reasoning": "12,480 − 12,000 = 480; 12,480 rounds to 12,500 to the nearest hundred."
+        },
+        {
+          "id": "M13",
+          "tier": "reasoning",
+          "prompt": "Explain the different value of the 5 in 4,507 and 457.",
+          "answer": "In 4,507 the 5 is worth 500; in 457 it is worth 50. The zero in 4,507 keeps the 5 in the hundreds place.",
+          "reasoning": "The same digit has different value in different positions."
+        },
+        {
+          "id": "M14",
+          "tier": "reasoning",
+          "prompt": "Estimate 3,912 + 4,087 + 2,998 to the nearest thousand. Is the estimate above or below the exact total? Check.",
+          "answer": "Estimate 4,000 + 4,000 + 3,000 = 11,000. Exact total 10,997, so the estimate is 3 high.",
+          "reasoning": "The rounded values differ by +88, −87 and +2, net +3."
+        },
+        {
+          "id": "M15",
+          "tier": "challenge",
+          "prompt": "A number is 6 × 100 + 4 × 10 + □ × 1. It is even and lies between 646 and 650. Find the missing digit and explain why it is unique.",
+          "answer": "8, giving 648.",
+          "reasoning": "The only even whole number strictly between 646 and 650 is 648."
+        },
+        {
+          "id": "M16",
+          "tier": "reasoning",
+          "prompt": "Why do 2.60 and 2.6 have the same value, but 2.60 may be a more appropriate measurement report?",
+          "answer": "The trailing zero adds no value, but it records accuracy to the nearest hundredth rather than the nearest tenth.",
+          "reasoning": "Numerical equality and reported precision are different ideas."
+        },
+        {
+          "id": "M17",
+          "tier": "challenge",
+          "prompt": "Write a number between 3.5 and 3.6 with three decimal places. Then write a second number in the same interval closer to 3.5. Justify the order.",
+          "answer": "Sample: 3.512 and 3.501. Both lie between 3.500 and 3.600, and 3.501 is closer to 3.5.",
+          "reasoning": "Compare thousandths: 3.500 < 3.501 < 3.512 < 3.600."
+        },
+        {
+          "id": "M18",
+          "tier": "challenge",
+          "prompt": "Find four-digit numbers whose digits sum to 12, whose thousands digit is 3, and whose tens digit is twice the ones digit. Find all possibilities.",
+          "answer": "3,900; 3,621; 3,342; 3,063.",
+          "reasoning": "Let the ones digit be u. Then tens is 2u and hundreds is 9 − 3u. The digit constraints allow u = 0, 1, 2, 3."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+level,chapter,physical_page,reference,check_type,prompt,independent_result,book_value_or_claim,outcome
+1,1,24,WE 1.2.1,chapter_sample,"Underlined digit values in 6502.94: 5,4,9","(500, 0.04, 0.9)","(500, 0.04, 0.9)",AGREE
+1,2,38,WE 2.1.1,chapter_sample,"2^5,5^2,10^4,4^3","(32, 25, 10000, 64)","(32, 25, 10000, 64)",AGREE
+1,3,56,WE 3.1.1,chapter_sample,All factors of 48,"(1, 2, 3, 4, 6, 8, 12, 16, 24, 48)","(1, 2, 3, 4, 6, 8, 12, 16, 24, 48)",AGREE
+1,4,78,WE 4.1.1,chapter_sample,42/56 simplest form,3/4,3/4,AGREE
+1,5,99,WE 5.1.2,chapter_sample,3/8 as percentage,75/2,75/2,AGREE
+1,6,118,WE 6.1.1,chapter_sample,"4,9,14,19: 12th term",59,59,AGREE
+1,7,137,WE 7.1.1,chapter_sample,Supplementary angles 3x+20 and 2x+30,"(26.0, 98, 82)","(26, 98, 82)",AGREE
+1,8,158,WE 8.1.1,chapter_sample,Cardinalities: primes<12; multiples of 3<=12; letters of book,"(5, 4, 3)","(5, 4, 3)",AGREE
+1,9,178,WE 9.1.1,chapter_sample,"Rectangle 8.4 by 3.6: perimeter, area","(24.0, 30.240000000000002)","(24, 30.24)",AGREE
+1,10,199,WE 10.1.2,chapter_sample,Apple or banana: (12+9)/30,7/10,7/10,AGREE
+2,1,23,WE 1.1.1,chapter_sample,"8 red,12 blue: red:blue and red:total","(Fraction(2, 3), Fraction(2, 5))","(Fraction(2, 3), Fraction(2, 5))",AGREE
+2,2,39,WE 2.1.1,chapter_sample,"45/3,75/5,120/8 constant","(Fraction(15, 1), Fraction(15, 1), Fraction(15, 1))","(15, 15, 15)",AGREE
+2,3,54,WE 3.1.1,chapter_sample,180 pages/4 min; time for 585,13,13,AGREE
+2,4,70,WE 4.1.2,chapter_sample,"|-9|, |6|, -|-4|","(9, 6, -4)","(9, 6, -4)",AGREE
+2,5,88,WE 5.1.3,chapter_sample,3x^2-2x+1 at x=-2,17,17,AGREE
+2,6,106,WE 6.1.3,chapter_sample,Save 15 then add 8: week 10 total; first week >=100,"(87, 12)","(87, 12)",AGREE
+2,7,127,WE 7.1.1,chapter_sample,Supplementary 3x+5 and 2x+15,"(32.0, 101, 79)","(32, 101, 79)",AGREE
+2,8,152,WE 8.1.1,chapter_sample,Cuboid 8x4x5 surface area,184,184,AGREE
+2,9,171,WE 9.1.1,chapter_sample,"Translate (1,2),(4,2),(1,5) by (3,-4)","((4, -2), (7, -2), (4, 1))","((4, -2), (7, -2), (4, 1))",AGREE
+2,10,193,WE 10.1.2,chapter_sample,"Two dice counts: sum7,sum12,doubles","(6, 1, 6)","(6, 1, 6)",AGREE
+2,11,210,WE 11.1.1,chapter_sample,"Goals frequencies 3,5,6,4,2 at 0..4: mean",37/20,37/20,AGREE
+3,1,22,WE 1.1.1,chapter_sample,0.3636... as fraction,4/11,4/11,AGREE
+3,2,40,WE 2.1.2,chapter_sample,2^-4 and (3/4)^-2,"(Fraction(1, 16), Fraction(16, 9))","(Fraction(1, 16), Fraction(16, 9))",AGREE
+3,3,56,WE 3.1.2,chapter_sample,3x^2-2x+1 at x=-2,17,17,AGREE
+3,4,74,WE 4.1.1,chapter_sample,y=2x-1 for x=-2..3,"(-5, -3, -1, 1, 3, 5)","(-5, -3, -1, 1, 3, 5)",AGREE
+3,5,94,WE 5.1.1,chapter_sample,3(x-4)=2x+5,39,39,AGREE
+3,6,115,WE 6.1.1,chapter_sample,"Translate (1,1),(3,1),(2,3) by (4,-2)","((5, -1), (7, -1), (6, 1))","((5, -1), (7, -1), (6, 1))",AGREE
+3,7,138,WE 7.1.2,chapter_sample,"Similar sides 5,7,9 scaled by 7.5/5","(10.5, 13.5, 2.25)","(10.5, 13.5, 2.25)",AGREE
+3,8,160,WE 8.1.1,chapter_sample,"12-gonal prism F,E,V and Euler check","(14, 36, 24, 2)","(14, 36, 24, 2)",AGREE
+3,9,188,WE 9.2.1,chapter_sample,"Correlation of (1,52),(2,58),(3,64),(4,68),(5,78)",0.9902586757499068,0.99,AGREE
+3,10,210,WE 10.1.1,chapter_sample,Fair die: even or prime,0.8333333333333334,5/6,AGREE
+4,1,16,Example 1.2,chapter_sample,0.4747... and 0.8333... as fractions,"(Fraction(47, 99), Fraction(5, 6))","(Fraction(47, 99), Fraction(5, 6))",AGREE
+4,2,46,Example 2.1,chapter_sample,5y(2y+1)-3y(y-4) at y=2,62,62,AGREE
+4,3,71,Example 3.1,chapter_sample,4(2x-3)=3(x+5)-2: check x=5,"(28, 28)","(28, 28)",AGREE
+4,4,95,Example 4.1,chapter_sample,"f(x)=2x-3: f(4),f(-2),f(0)","(5, -7, -3)","(5, -7, -3)",AGREE
+4,5,119,Example 5.1,chapter_sample,(2x-3)(x+4) at x=1,-5,-5,AGREE
+4,6,141,Example 6.1,chapter_sample,x^2-6x+5 vertex and roots,"((3.0, -4.0), (1, 5))","((3, -4), (1, 5))",AGREE
+4,7,163,Example 7.2,chapter_sample,Matches in 8 adjacent squares,25,25,AGREE
+4,8,185,Example 8.1,chapter_sample,80 increased 15% then decreased 15%,78.2,78.2,AGREE
+4,9,208,Example 9.1,chapter_sample,"Translate (2,1),(5,1),(2,4) by (4,-3)","((6, -2), (9, -2), (6, 1))","((6, -2), (9, -2), (6, 1))",AGREE
+4,10,237,Example 10.2,chapter_sample,"Right-triangle legs 9,12: hypotenuse",15.0,15,AGREE
+4,11,267,Example 11.1,chapter_sample,"Triangular prism legs3,4,5 length10: volume, surface area","(60.0, 132.0)","(60, 132)",AGREE
+4,12,296,Example 12.3,chapter_sample,"Stratified sample 72 from 180,200,170,170","(18.0, 20.0, 17.0, 17.0)","(18, 20, 17, 17)",AGREE
+4,13,329,Example 13.1,chapter_sample,"Fair die: even, prime, >4, not prime","(Fraction(1, 2), Fraction(1, 2), Fraction(1, 3), Fraction(1, 2))","(Fraction(1, 2), Fraction(1, 2), Fraction(1, 3), Fraction(1, 2))",AGREE
+4,14,358,Example C.1,chapter_sample,Scale 1:50; plan 7.2x4.8 cm: real area m²,8.64,8.64,AGREE
+5,1,17,Example 1.2,chapter_sample,(2x-3)(x^2+4x-1) at x=1,-4,-4,AGREE
+5,2,39,Example 2.2,chapter_sample,"f=x^2-3x, g=2x+1: f(-2),g(f(1))","(10, -3)","(10, -3)",AGREE
+5,3,59,Example 3.2,chapter_sample,800 bacteria double every 3h: after12h; hourly factor,12800.0,12800,AGREE
+5,4,79,Example 4.1,chapter_sample,"7,11,15...: u20 and position of 143","(83, 35)","(83, 35)",AGREE
+5,5,105,Example 5.2,chapter_sample,2x^2+5x<=12 roots,"(-4.0, 1.5)","(-4, 1.5)",AGREE
+5,6,126,Example 6.2,chapter_sample,Central 128: major/minor arc angles and reflex,"(64.0, 116.0, 232)","(64, 116, 232)",AGREE
+5,7,145,Example 7.1,chapter_sample,"A=38,B=64,a=9.4: b,c","(13.722905157811267, 14.934485614897755)","(13.7, 14.9)",AGREE
+5,8,167,Example 8.1,chapter_sample,"a=(3,-2),b=(-1,5): 3a-2b","(11, -16)","(11, -16)",AGREE
+5,9,191,Example 9.3,chapter_sample,Population variance and SD of seven values,"(10.857142857142858, 3.295017884191656)","(10.857142857142858, 3.3)",AGREE
+5,10,214,Example 10.5,chapter_sample,Screening: 180 true positives of 670 positives,18/67,18/67,AGREE
+5,11,240,Example 11.6,chapter_sample,60m fencing on three sides: max area and dimensions,"(450, 15, 30)","(450, 15, 30)",AGREE
+5,12,248,Example 12.1,chapter_sample,x^3-2x^2-5x+6 roots,"(-2, 1, 3)","(-2, 1, 3)",AGREE
+4,13,441,Opening problem answer 4,defect_probe,Neither player wins when total is not 7 or 8,25/36,A single game always has a winner and a loser.,ISSUE_CONFIRMED
+5,7,145,Example 7.2 general claim,defect_probe,"SSA A=30,a=5,b=10: b sin A=a gives ONE right triangle, not two",4.999999999999999,Book claims two triangles precisely when A is acute and a<b; equality a=b sin A is a counterexample.,ISSUE_CONFIRMED
+5,11,240,Guided practice 2 hint,defect_probe,"P=900+a(n-50)^2,a=-5,n=48: loss",20,"Hint 900-4a gives 920 for a=-5, a gain, while the note reports loss 20.",ISSUE_CONFIRMED
+5,11,241,Exercise 11D Q14,defect_probe,"Open-top tank cost coefficient at r=.70,h=2/(pi*r^2)",8.793046514803711,Prompt omits open top/lid; answer key acknowledges the ambiguity and answers open-top first.,ISSUE_CONFIRMED
+5,12,328,Revision 12D Q6,defect_probe,Annual doubling rate 2^(1/8)-1,0.09050773266525769,Raw LaTeX commands are visible in the printed answer.,ISSUE_CONFIRMED

@@ -1,0 +1,24 @@
+{
+  "pages": 28,
+  "bytes": 355101,
+  "items": 35,
+  "visual_items": [
+    "F2",
+    "F4",
+    "D1",
+    "D3",
+    "D5",
+    "D7",
+    "A2",
+    "A4",
+    "A6",
+    "R3",
+    "R6",
+    "C4"
+  ],
+  "visual_fraction": 0.34285714285714286,
+  "math_checks_pass": true,
+  "overflow": "none reported by export check",
+  "sha256": "7e8d72300e59793837fd5692282718c6fd5b3dd1df7e7ad6050d4e18e8f30405",
+  "visual_inspection": "Key pages rendered and read: cover, opener, practice, investigation, construction, answers. Tier-label overlap and duplicate cover footer fixed; parallel-line, bisector and borderline arc diagrams corrected."
+}

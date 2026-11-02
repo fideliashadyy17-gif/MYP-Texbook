@@ -1,0 +1,73 @@
+{
+  "chapter": 3,
+  "answerPages": [
+    {
+      "title": "Answers · Ready check and Checkpoint",
+      "groups": [
+        [
+          "ready"
+        ],
+        [
+          "check"
+        ]
+      ]
+    },
+    {
+      "title": "Answers · 3.1 and 3.2",
+      "groups": [
+        [
+          "p31"
+        ],
+        [
+          "p32"
+        ]
+      ]
+    },
+    {
+      "title": "Answers · 3.3 and 3.4",
+      "groups": [
+        [
+          "p33"
+        ],
+        [
+          "p34"
+        ]
+      ]
+    },
+    {
+      "title": "Answers · 3.5",
+      "groups": [
+        [
+          "p35"
+        ]
+      ]
+    },
+    {
+      "title": "Answers · Exploration",
+      "groups": [
+        [
+          "explore"
+        ]
+      ]
+    },
+    {
+      "title": "Answers · Application and Assessment",
+      "groups": [
+        [
+          "application"
+        ],
+        [
+          "assessment"
+        ]
+      ]
+    },
+    {
+      "title": "Answers · Mixed practice",
+      "groups": [
+        [
+          "mixed"
+        ]
+      ]
+    }
+  ]
+}

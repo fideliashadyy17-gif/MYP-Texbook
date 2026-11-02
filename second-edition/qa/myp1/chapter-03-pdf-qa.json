@@ -1,0 +1,196 @@
+{
+  "file": "/home/user/MYP-Texbook/second-edition/exports/myp1/MYP1-Chapter-03-Revision-Proof.pdf",
+  "pages": 25,
+  "expected_pages": 25,
+  "answer_start_page": 19,
+  "page_sizes": [
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ]
+  ],
+  "fonts": {
+    "AAAAAA+Inter-Bold": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 8176
+    },
+    "BAAAAA+Fraunces-Regular": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 2348
+    },
+    "CAAAAA+Fraunces-SemiBold": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 11996
+    },
+    "DAAAAA+SourceSerif4-Regular": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 13112
+    },
+    "EAAAAA+Inter-Regular": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 10016
+    },
+    "FAAAAA+SourceSerif4-SemiBold": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 12600
+    },
+    "GAAAAA+Inter-SemiBold": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 7072
+    },
+    "HAAAAA+OpenSans-Bold": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 12604
+    },
+    "IAAAAA+OpenSans-Regular": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 8664
+    }
+  },
+  "issues": [],
+  "text_lengths": [
+    180,
+    952,
+    1350,
+    1005,
+    964,
+    866,
+    943,
+    778,
+    930,
+    803,
+    962,
+    954,
+    1010,
+    948,
+    551,
+    946,
+    1019,
+    1153,
+    622,
+    1571,
+    1318,
+    739,
+    752,
+    1142,
+    885
+  ],
+  "missing_question_ids": [],
+  "missing_answer_ids": [],
+  "exercise_ids_missing_or_unpaired": [],
+  "status": "PASS"
+}

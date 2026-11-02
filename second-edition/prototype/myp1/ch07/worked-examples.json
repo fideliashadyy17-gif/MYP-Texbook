@@ -1,0 +1,236 @@
+[
+  {
+    "id": "7.1.1",
+    "concept": "7.1",
+    "title": "Missing angle on a straight line",
+    "problem": "Two adjacent angles on a straight line are 47\u00b0 and x. Find x.",
+    "reasoning": "A straight line is a half-turn, so adjacent angles on it are supplementary: their sum is 180\u00b0.",
+    "steps": [
+      "Identify the relationship: the two angles lie on one straight line.",
+      "Write the equation: 47\u00b0 + x = 180\u00b0.",
+      "Subtract 47\u00b0 from both sides: x = 180\u00b0 \u2212 47\u00b0 = 133\u00b0.",
+      "Check: 47\u00b0 + 133\u00b0 = 180\u00b0."
+    ],
+    "answer": "x = 133\u00b0.",
+    "interpretation": "The unknown angle is obtuse. The diagram and the equation agree: the two angles complete a half-turn.",
+    "caption": "Figure 7.1 \u00b7 The two angles share a vertex and lie on a straight line.",
+    "visual": true
+  },
+  {
+    "id": "7.1.2",
+    "concept": "7.1",
+    "title": "Angles around a point",
+    "problem": "Four angles meet at a point: 95\u00b0, 120\u00b0, 85\u00b0 and x. Find x.",
+    "reasoning": "A full turn around a point is 360\u00b0. The four angles must fill the turn exactly.",
+    "steps": [
+      "Add the known angles: 95\u00b0 + 120\u00b0 + 85\u00b0 = 300\u00b0.",
+      "Subtract from the full turn: x = 360\u00b0 \u2212 300\u00b0 = 60\u00b0.",
+      "Check: 95\u00b0 + 120\u00b0 + 85\u00b0 + 60\u00b0 = 360\u00b0."
+    ],
+    "answer": "x = 60\u00b0.",
+    "interpretation": "The missing sector is acute. The visual model shows why the total must be 360\u00b0, not 180\u00b0.",
+    "caption": "Figure 7.2 \u00b7 Four sectors fill one full turn.",
+    "visual": true
+  },
+  {
+    "id": "7.1.3",
+    "concept": "7.1",
+    "title": "Vertically opposite angles with algebra",
+    "problem": "Two lines cross. Vertically opposite angles are labelled 3x + 10\u00b0 and x + 50\u00b0. Find x and one adjacent angle.",
+    "reasoning": "Vertically opposite angles are equal. Adjacent angles on a straight line are supplementary.",
+    "steps": [
+      "Set the opposite angles equal: 3x + 10 = x + 50.",
+      "Collect terms: 2x = 40, so x = 20\u00b0.",
+      "Each marked angle is 3(20) + 10 = 70\u00b0.",
+      "An adjacent angle is 180\u00b0 \u2212 70\u00b0 = 110\u00b0. Check: 70\u00b0 + 110\u00b0 = 180\u00b0."
+    ],
+    "answer": "x = 20\u00b0; marked angles 70\u00b0; adjacent angle 110\u00b0.",
+    "interpretation": "The algebra confirms the visual symmetry: opposite sectors match, and neighbouring sectors complete a line.",
+    "caption": "Figure 7.3 \u00b7 Opposite angles are equal; adjacent angles sum to 180\u00b0.",
+    "visual": true
+  },
+  {
+    "id": "7.2.1",
+    "concept": "7.2",
+    "title": "Parallel-line angle chase",
+    "problem": "Lines l and m are parallel. The marked angle is 68\u00b0. Find a, b and c.",
+    "reasoning": "With parallel lines, alternate angles are equal, co-interior angles are supplementary, and corresponding angles are equal.",
+    "steps": [
+      "a is alternate to 68\u00b0, so a = 68\u00b0.",
+      "b is co-interior with 68\u00b0, so b = 180\u00b0 \u2212 68\u00b0 = 112\u00b0.",
+      "c corresponds to the 68\u00b0 angle (both are in the lower-right position), so c = 68\u00b0.",
+      "Check: a + b = 68\u00b0 + 112\u00b0 = 180\u00b0."
+    ],
+    "answer": "a = 68\u00b0, b = 112\u00b0, c = 68\u00b0.",
+    "interpretation": "The transversal creates two angle families: 68\u00b0 and 112\u00b0. Naming the relationship prevents guessing from appearance.",
+    "caption": "Figure 7.5 \u00b7 Parallel marks justify the angle relationships.",
+    "visual": true
+  },
+  {
+    "id": "7.2.2",
+    "concept": "7.2",
+    "title": "Exterior angle of a triangle",
+    "problem": "An exterior angle of a triangle is 115\u00b0. One opposite interior angle is 48\u00b0. Find the other opposite interior angle and the adjacent interior angle.",
+    "reasoning": "An exterior angle equals the sum of the two opposite interior angles. It is supplementary to the interior angle at the same vertex.",
+    "steps": [
+      "Other opposite interior angle = 115\u00b0 \u2212 48\u00b0 = 67\u00b0.",
+      "Adjacent interior angle = 180\u00b0 \u2212 115\u00b0 = 65\u00b0.",
+      "Check the triangle sum: 48\u00b0 + 67\u00b0 + 65\u00b0 = 180\u00b0."
+    ],
+    "answer": "Other opposite angle 67\u00b0; adjacent interior angle 65\u00b0.",
+    "interpretation": "The exterior angle is larger than either opposite interior angle. The diagram shows which angles belong to the exterior-angle relationship.",
+    "caption": "Figure 7.6 \u00b7 The exterior angle is outside the triangle at the extended base.",
+    "visual": true
+  },
+  {
+    "id": "7.2.3",
+    "concept": "7.2",
+    "title": "Isosceles base angles",
+    "problem": "An isosceles triangle has apex angle 40\u00b0. Find each base angle.",
+    "reasoning": "Equal sides have equal opposite angles. The triangle angle sum is 180\u00b0.",
+    "steps": [
+      "The tick marks show two equal sides, so the base angles are equal. Call each x.",
+      "Write 2x + 40\u00b0 = 180\u00b0.",
+      "Then 2x = 140\u00b0, so x = 70\u00b0.",
+      "Check: 70\u00b0 + 70\u00b0 + 40\u00b0 = 180\u00b0."
+    ],
+    "answer": "Each base angle is 70\u00b0.",
+    "interpretation": "The equal-side marks are the evidence for equal base angles; the calculation then uses the angle sum.",
+    "caption": "Figure 7.7 \u00b7 Equal sides force equal base angles.",
+    "visual": true
+  },
+  {
+    "id": "7.2.4",
+    "concept": "7.2",
+    "title": "Why every triangle has angle sum 180\u00b0",
+    "problem": "Use a line through the apex parallel to the base to explain why the angles of a triangle sum to 180\u00b0.",
+    "reasoning": "Alternate angles between parallel lines are equal. Angles on a straight line sum to 180\u00b0.",
+    "steps": [
+      "Draw a line through the apex parallel to the base.",
+      "The left base angle equals the left angle at the apex (alternate angles). The right base angle equals the right angle at the apex.",
+      "The three angles on the straight line through the apex are therefore the three triangle angles.",
+      "They sum to 180\u00b0, so the triangle angles sum to 180\u00b0."
+    ],
+    "answer": "A + B + C = 180\u00b0 for every triangle.",
+    "interpretation": "This is a visual argument, not a measurement of one triangle. It explains why the rule is general.",
+    "caption": "Figure 7.8 \u00b7 The parallel line transfers the base angles to the apex.",
+    "visual": true
+  },
+  {
+    "id": "7.3.1",
+    "concept": "7.3",
+    "title": "Missing angle in a quadrilateral",
+    "problem": "A quadrilateral has angles 85\u00b0, 95\u00b0, 110\u00b0 and x. Find x.",
+    "reasoning": "A quadrilateral can be split into two triangles, so its interior angle sum is 2 \u00d7 180\u00b0 = 360\u00b0.",
+    "steps": [
+      "Add the known angles: 85\u00b0 + 95\u00b0 + 110\u00b0 = 290\u00b0.",
+      "Subtract from 360\u00b0: x = 360\u00b0 \u2212 290\u00b0 = 70\u00b0.",
+      "Check: 85\u00b0 + 95\u00b0 + 110\u00b0 + 70\u00b0 = 360\u00b0."
+    ],
+    "answer": "x = 70\u00b0.",
+    "interpretation": "The diagonal in the diagram shows where the 360\u00b0 comes from: two triangle sums.",
+    "caption": "Figure 7.10 \u00b7 One diagonal divides the quadrilateral into two triangles.",
+    "visual": true
+  },
+  {
+    "id": "7.3.2",
+    "concept": "7.3",
+    "title": "Regular polygon from an exterior angle",
+    "problem": "A regular polygon has exterior angle 40\u00b0. Find the number of sides and each interior angle.",
+    "reasoning": "The exterior angles of any convex polygon sum to 360\u00b0. In a regular polygon they are equal. Interior and exterior angles at a vertex are supplementary.",
+    "steps": [
+      "Number of sides n = 360\u00b0 \u00f7 40\u00b0 = 9.",
+      "Each interior angle = 180\u00b0 \u2212 40\u00b0 = 140\u00b0.",
+      "Check with the interior-sum formula: (9 \u2212 2) \u00d7 180\u00b0 = 1260\u00b0, and 1260\u00b0 \u00f7 9 = 140\u00b0."
+    ],
+    "answer": "9 sides; each interior angle 140\u00b0.",
+    "interpretation": "A small exterior angle means many sides. The polygon is a regular nonagon.",
+    "caption": "Figure 7.11 \u00b7 A regular nonagon has nine equal exterior turns.",
+    "visual": true
+  },
+  {
+    "id": "7.3.3",
+    "concept": "7.3",
+    "title": "Possible third sides",
+    "problem": "Two sides of a triangle are 7 cm and 11 cm. The third side is a whole number of centimetres. Find all possible values.",
+    "reasoning": "The third side must be greater than the difference of the other two sides and less than their sum. Endpoints give degenerate cases.",
+    "steps": [
+      "Lower boundary: 11 \u2212 7 = 4, so x > 4.",
+      "Upper boundary: 11 + 7 = 18, so x &lt; 18.",
+      "Whole-number values are 5, 6, 7, \u2026, 17.",
+      "Check endpoints: x = 4 gives 4 + 7 = 11; x = 18 gives 7 + 11 = 18. Both are straight-line cases, not triangles."
+    ],
+    "answer": "x = 5, 6, 7, \u2026, 17 cm.",
+    "interpretation": "The open circles on the number line show that 4 and 18 are excluded. The integer dots are the possible whole-centimetre lengths.",
+    "caption": "Figure 7.13 \u00b7 The number line represents 4 &lt; x &lt; 18.",
+    "visual": true
+  },
+  {
+    "id": "7.4.1",
+    "concept": "7.4",
+    "title": "Perpendicular bisector",
+    "problem": "Construct the perpendicular bisector of AB = 8 cm. State the midpoint length and the check.",
+    "reasoning": "Points on the perpendicular bisector are equidistant from A and B. Equal-radius arcs locate two such points.",
+    "steps": [
+      "Draw AB = 8 cm.",
+      "Choose one radius greater than half of AB, for example 5 cm. Keep it fixed.",
+      "Draw arcs from A and from B above and below AB. Label the intersections P and Q.",
+      "Draw PQ. It crosses AB at its midpoint M, so AM = MB = 4 cm, and PQ is perpendicular to AB."
+    ],
+    "answer": "AM = MB = 4 cm; PQ is perpendicular to AB.",
+    "interpretation": "The arcs are evidence: P and Q are each the same distance from A and B, so the line through them is the perpendicular bisector.",
+    "caption": "Figure 7.15 \u00b7 The same compass radius is used from both endpoints.",
+    "visual": true
+  },
+  {
+    "id": "7.4.2",
+    "concept": "7.4",
+    "title": "Angle bisector",
+    "problem": "Bisect a 64\u00b0 angle with ruler and compasses. Find each half.",
+    "reasoning": "An angle bisector divides an angle into two equal angles. Equal-radius arcs from the arms locate a point on the bisector.",
+    "steps": [
+      "Draw an arc from the vertex O, cutting the arms at P and Q.",
+      "With the same radius from P and Q, draw arcs meeting at R.",
+      "Draw OR. This is the angle bisector.",
+      "Each half is 64\u00b0 \u00f7 2 = 32\u00b0. Check: 32\u00b0 + 32\u00b0 = 64\u00b0."
+    ],
+    "answer": "Each half is 32\u00b0.",
+    "interpretation": "The construction forces equality; measuring is only a check. Do not confuse this with the perpendicular bisector of a segment.",
+    "caption": "Figure 7.16 \u00b7 The bisector is the ray OR.",
+    "visual": true
+  },
+  {
+    "id": "7.4.3",
+    "concept": "7.4",
+    "title": "Triangle from three sides (SSS)",
+    "problem": "Construct a triangle with sides 5 cm, 6 cm and 7 cm.",
+    "reasoning": "If two sides and the base are fixed, the third vertex is the intersection of two circles/arcs. The triangle inequality predicts whether the arcs meet.",
+    "steps": [
+      "Check: 5 + 6 > 7, so a triangle is possible.",
+      "Draw base AB = 7 cm.",
+      "From A draw an arc of radius 5 cm; from B draw an arc of radius 6 cm.",
+      "Label the intersection C and join AC and BC. Keep the arcs visible."
+    ],
+    "answer": "Triangle ABC has AB = 7 cm, AC = 5 cm and BC = 6 cm.",
+    "interpretation": "The arcs locate the only possible apex on each side of the base. The two choices are mirror images.",
+    "caption": "Figure 7.17 \u00b7 The arc intersection fixes the third vertex.",
+    "visual": true
+  },
+  {
+    "id": "7.4.4",
+    "concept": "7.4",
+    "title": "Isosceles triangle and a locus",
+    "problem": "Construct an isosceles triangle with equal sides 6 cm and base 8 cm. Explain why the perpendicular bisector of the base passes through the apex.",
+    "reasoning": "The apex is equidistant from the base endpoints. The perpendicular bisector is the locus of all points equidistant from the endpoints.",
+    "steps": [
+      "Draw base AB = 8 cm.",
+      "With radius 6 cm from A and from B, draw arcs meeting at C.",
+      "Join AC and BC. Then AC = BC = 6 cm.",
+      "Because C is equidistant from A and B, it lies on the perpendicular bisector of AB."
+    ],
+    "answer": "The perpendicular bisector of AB passes through C.",
+    "interpretation": "The equal sides are not just a picture feature; they place the apex on a precise locus. This connects construction with reasoning.",
+    "caption": "Figure 7.18 \u00b7 Equal sides place the apex on the perpendicular bisector.",
+    "visual": true
+  }
+]

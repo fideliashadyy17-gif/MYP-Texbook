@@ -1,0 +1,2154 @@
+{
+  "chapter": 4,
+  "title": "Fractions and decimals",
+  "part": "Part I · The grammar of number",
+  "hours": 16,
+  "key": "Relationships",
+  "related": "Equivalence, Representation",
+  "context": "Scientific and technical innovation",
+  "soi": "The same quantity can be written as a fraction, a decimal or a measurement; choosing a representation makes comparison and calculation more reliable.",
+  "engage": "A recipe must serve nine people instead of six. How can every ingredient change proportionally without changing the taste?",
+  "atl": "In order for a student to transfer mathematical knowledge, students must connect representations and apply a known method in a new measurement or recipe context.",
+  "objectives": [
+    "Simplify and compare fractions.",
+    "Use all four operations with fractions and decimals.",
+    "Round with stated precision and convert representations.",
+    "Scale a recipe and justify exact versus rounded measurements."
+  ],
+  "vocabulary": "numerator · denominator · equivalent · simplest form · common denominator · reciprocal · terminating · repeating · precision",
+  "sections": [
+    {
+      "number": "4.1",
+      "title": "Equivalent fractions and simplest form",
+      "short": "Equivalence",
+      "intent": "Multiply or divide numerator and denominator by the same nonzero number.",
+      "paras": [
+        "Fractions describe equal parts of one whole. 1/2, 2/4 and 4/8 name the same amount when the wholes are the same size. The number of pieces changes, but the covered amount does not.",
+        "To simplify, divide top and bottom by a common factor. A fraction is in simplest form when its numerator and denominator have HCF 1."
+      ],
+      "example": {
+        "title": "Simplify 36/48",
+        "problem": "Find a common factor, or divide by the HCF.",
+        "steps": [
+          "HCF(36,48) = 12.",
+          "36÷12 = 3 and 48÷12 = 4."
+        ],
+        "answer": "3/4."
+      },
+      "warning": "Equivalent fractions use the same whole. Half of a small pizza is not the same amount as half of a large pizza.",
+      "practice": [
+        {
+          "id": "4.1.1",
+          "tier": "fluency",
+          "prompt": "Complete 2/3 = □/12.",
+          "answer": "8/12.",
+          "reasoning": "Multiply numerator and denominator by 4.",
+          "verify": [
+            {
+              "expr": "2*12//3",
+              "equals": 8
+            }
+          ]
+        },
+        {
+          "id": "4.1.2",
+          "tier": "fluency",
+          "prompt": "Simplify 18/24, 35/49 and 36/48.",
+          "answer": "3/4, 5/7 and 3/4.",
+          "reasoning": "Divide by HCFs 6, 7 and 12.",
+          "verify": [
+            {
+              "expr": "[(18//gcd(18,24),24//gcd(18,24)),(35//gcd(35,49),49//gcd(35,49)),(36//gcd(36,48),48//gcd(36,48))]",
+              "equals": [
+                [
+                  3,
+                  4
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  3,
+                  4
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.1.3",
+          "tier": "reasoning",
+          "prompt": "A student changes 3/5 to 5/7 by adding 2 to both parts. Is it equivalent?",
+          "answer": "No. 3/5 = 0.6, while 5/7 ≈ 0.714. Multiply or divide both parts by the same nonzero number.",
+          "reasoning": "Adding equal amounts does not preserve a ratio.",
+          "verify": [
+            {
+              "expr": "F(3,5)==F(5,7)",
+              "equals": false
+            }
+          ]
+        },
+        {
+          "id": "4.1.4",
+          "tier": "reasoning",
+          "prompt": "Write three fractions equivalent to 4/6, including its simplest form.",
+          "answer": "Examples: 2/3, 8/12 and 12/18.",
+          "reasoning": "Simplify by 2, or scale both parts.",
+          "verify": [
+            {
+              "expr": "[F(4,6)==F(a,b) for a,b in [(2,3),(8,12),(12,18)]]",
+              "equals": [
+                true,
+                true,
+                true
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.1.5",
+          "tier": "application",
+          "prompt": "A recipe uses 12 cups of flour out of 16 cups of dry ingredients. What fraction is flour, in simplest form?",
+          "answer": "3/4.",
+          "reasoning": "Simplify 12/16 by 4.",
+          "verify": [
+            {
+              "expr": "F(12,16)",
+              "equals": "3/4"
+            }
+          ]
+        },
+        {
+          "id": "4.1.6",
+          "tier": "challenge",
+          "prompt": "A fraction simplifies to 3/5 and its denominator is 40. Find the numerator.",
+          "answer": "24.",
+          "reasoning": "40÷5 = 8, so multiply 3 by 8.",
+          "verify": [
+            {
+              "expr": "3*(40//5)",
+              "equals": 24
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "fraction_bars",
+        "fractions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            8
+          ]
+        ],
+        "caption": "Three equal wholes. The same amount is shaded in each bar."
+      }
+    },
+    {
+      "number": "4.2",
+      "title": "Comparing and ordering fractions",
+      "short": "Compare",
+      "intent": "Use a common whole, a common denominator, a benchmark or a common numerator.",
+      "paras": [
+        "With equal denominators, more parts means a larger fraction. With equal numerators, more parts means each part is smaller. For 3/7 and 3/5, fifths are larger than sevenths.",
+        "For unlike parts, use a common denominator: 3/4 = 9/12 and 5/6 = 10/12, so 5/6 is larger. A benchmark such as 1/2 can make comparison faster."
+      ],
+      "example": {
+        "title": "Order 2/3, 3/5 and 7/10",
+        "problem": "Use denominator 30.",
+        "steps": [
+          "2/3 = 20/30; 3/5 = 18/30; 7/10 = 21/30."
+        ],
+        "answer": "3/5 < 2/3 < 7/10."
+      },
+      "warning": "A larger denominator does not automatically mean a larger fraction. Always check the numerator and the size of the whole.",
+      "practice": [
+        {
+          "id": "4.2.1",
+          "tier": "fluency",
+          "prompt": "Compare 3/7 and 3/5 using <, > or =.",
+          "answer": "3/7 < 3/5.",
+          "reasoning": "Equal numerators: fifths are larger pieces than sevenths.",
+          "verify": [
+            {
+              "expr": "F(3,7)<F(3,5)",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "4.2.2",
+          "tier": "fluency",
+          "prompt": "Compare 3/4 and 5/6.",
+          "answer": "3/4 < 5/6.",
+          "reasoning": "9/12 < 10/12.",
+          "verify": [
+            {
+              "expr": "F(3,4)<F(5,6)",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "4.2.3",
+          "tier": "fluency",
+          "prompt": "Order 2/3, 3/5 and 7/10 from smallest to largest.",
+          "answer": "3/5, 2/3, 7/10.",
+          "reasoning": "Use thirtieths: 18/30, 20/30, 21/30.",
+          "verify": [
+            {
+              "expr": "sorted([F(2,3),F(3,5),F(7,10)])",
+              "equals": [
+                "3/5",
+                "2/3",
+                "7/10"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.2.4",
+          "tier": "reasoning",
+          "prompt": "Which is closer to 1: 7/8 or 8/9? Explain.",
+          "answer": "8/9 is closer: its gap is 1/9, smaller than 1/8.",
+          "reasoning": "Compare the missing parts, not just the numerators.",
+          "verify": [
+            {
+              "expr": "1-F(8,9)<1-F(7,8)",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "4.2.5",
+          "tier": "application",
+          "prompt": "Amina reads 5/8 of a book and Ben reads 2/3 of an identical book. Who has read more?",
+          "answer": "Ben: 2/3 = 16/24, while 5/8 = 15/24.",
+          "reasoning": "The books are the same size, so the fractions can be compared.",
+          "verify": [
+            {
+              "expr": "F(2,3)>F(5,8)",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "4.2.6",
+          "tier": "challenge",
+          "prompt": "Find a fraction strictly between 1/3 and 1/2 with denominator 12.",
+          "answer": "5/12.",
+          "reasoning": "1/3 = 4/12 and 1/2 = 6/12.",
+          "verify": [
+            {
+              "expr": "[n for n in range(13) if F(1,3)<F(n,12)<F(1,2)]",
+              "equals": [
+                5
+              ]
+            }
+          ]
+        }
+      ],
+      "diagram": null
+    },
+    {
+      "number": "4.3",
+      "title": "Adding and subtracting fractions",
+      "short": "Add and subtract",
+      "intent": "Make the parts the same size before combining or comparing amounts.",
+      "paras": [
+        "For like denominators, add or subtract numerators and keep the denominator. For unlike denominators, first write equivalent fractions with a common denominator.",
+        "Mixed numbers can be handled as whole and fractional parts or as improper fractions. Borrowing one whole means borrowing denominator/denominator, not 1/10."
+      ],
+      "example": {
+        "title": "Add 3/4 and 5/6",
+        "problem": "Use denominator 12.",
+        "steps": [
+          "3/4 = 9/12 and 5/6 = 10/12.",
+          "9/12 + 10/12 = 19/12."
+        ],
+        "answer": "19/12 = 1 7/12."
+      },
+      "warning": "Do not add denominators: 1/2 + 1/3 is not 2/5. It must be more than 1/2.",
+      "practice": [
+        {
+          "id": "4.3.1",
+          "tier": "fluency",
+          "prompt": "Calculate 3/8 + 1/8 and 7/9 − 2/9.",
+          "answer": "4/8 = 1/2; 5/9.",
+          "reasoning": "Like denominators: combine numerators.",
+          "verify": [
+            {
+              "expr": "[F(3,8)+F(1,8),F(7,9)-F(2,9)]",
+              "equals": [
+                "1/2",
+                "5/9"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.3.2",
+          "tier": "fluency",
+          "prompt": "Calculate 3/4 + 5/6.",
+          "answer": "19/12 = 1 7/12.",
+          "reasoning": "Use twelfths: 9/12 + 10/12.",
+          "verify": [
+            {
+              "expr": "F(3,4)+F(5,6)",
+              "equals": "19/12"
+            }
+          ]
+        },
+        {
+          "id": "4.3.3",
+          "tier": "fluency",
+          "prompt": "Calculate 5 1/3 − 2 3/4.",
+          "answer": "31/12 = 2 7/12.",
+          "reasoning": "16/3 − 11/4 = 64/12 − 33/12.",
+          "verify": [
+            {
+              "expr": "F(16,3)-F(11,4)",
+              "equals": "31/12"
+            }
+          ]
+        },
+        {
+          "id": "4.3.4",
+          "tier": "reasoning",
+          "prompt": "Explain why 1/2 + 1/3 cannot equal 2/5.",
+          "answer": "2/5 is less than 1/2, but adding a positive amount to 1/2 must increase it. The correct sum is 5/6.",
+          "reasoning": "Use a benchmark to detect an unreasonable result.",
+          "verify": [
+            {
+              "expr": "[F(1,2)+F(1,3),F(2,5)<F(1,2)]",
+              "equals": [
+                "5/6",
+                true
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.3.5",
+          "tier": "application",
+          "prompt": "A jug contains 3/4 litre. Another 1/3 litre is added. How much is in the jug?",
+          "answer": "13/12 litres = 1 1/12 litres.",
+          "reasoning": "Add using twelfths.",
+          "verify": [
+            {
+              "expr": "F(3,4)+F(1,3)",
+              "equals": "13/12"
+            }
+          ]
+        },
+        {
+          "id": "4.3.6",
+          "tier": "challenge",
+          "prompt": "Find the missing addend: 2/5 + □ = 1 1/10.",
+          "answer": "7/10.",
+          "reasoning": "11/10 − 4/10 = 7/10.",
+          "verify": [
+            {
+              "expr": "F(11,10)-F(2,5)",
+              "equals": "7/10"
+            }
+          ]
+        }
+      ],
+      "diagram": null
+    },
+    {
+      "number": "4.4",
+      "title": "Multiplying and dividing fractions",
+      "short": "Multiply and divide",
+      "intent": "Use “a fraction of” for multiplication and “how many groups?” for division.",
+      "paras": [
+        "To multiply fractions, multiply numerators and denominators: a/b × c/d = ac/bd. An area model shows why: a rectangle split into b by d equal parts has ac shaded parts.",
+        "Dividing by a nonzero fraction asks how many of those fractional groups fit. Dividing by c/d is multiplying by d/c. For example, 3/4 ÷ 1/8 = 6."
+      ],
+      "example": {
+        "title": "Find 2/3 of 3/5",
+        "problem": "Use a rectangle split into thirds one way and fifths the other.",
+        "steps": [
+          "The whole has 15 equal cells.",
+          "The overlap has 2 × 3 = 6 cells.",
+          "6/15 simplifies to 2/5."
+        ],
+        "answer": "2/3 × 3/5 = 2/5."
+      },
+      "warning": "Multiplying by a proper fraction makes a positive amount smaller. Dividing by a proper fraction can make it larger.",
+      "practice": [
+        {
+          "id": "4.4.1",
+          "tier": "fluency",
+          "prompt": "Calculate 2/3 × 3/5 and 4/7 × 7/8.",
+          "answer": "2/5 and 1/2.",
+          "reasoning": "Multiply across, then simplify.",
+          "verify": [
+            {
+              "expr": "[F(2,3)*F(3,5),F(4,7)*F(7,8)]",
+              "equals": [
+                "2/5",
+                "1/2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.4.2",
+          "tier": "fluency",
+          "prompt": "Calculate 3/4 ÷ 1/8 and 5/6 ÷ 5/3.",
+          "answer": "6 and 1/2.",
+          "reasoning": "Multiply by the reciprocal of the divisor.",
+          "verify": [
+            {
+              "expr": "[F(3,4)/F(1,8),F(5,6)/F(5,3)]",
+              "equals": [
+                "6",
+                "1/2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.4.3",
+          "tier": "application",
+          "prompt": "A recipe needs 3/4 cup of milk. How much is needed for half a recipe?",
+          "answer": "3/8 cup.",
+          "reasoning": "Half of 3/4 is 1/2 × 3/4.",
+          "verify": [
+            {
+              "expr": "F(1,2)*F(3,4)",
+              "equals": "3/8"
+            }
+          ]
+        },
+        {
+          "id": "4.4.4",
+          "tier": "application",
+          "prompt": "How many 1/4-litre cups fill a 3/2-litre jug?",
+          "answer": "6 cups.",
+          "reasoning": "3/2 ÷ 1/4 = 3/2 × 4.",
+          "verify": [
+            {
+              "expr": "F(3,2)/F(1,4)",
+              "equals": 6
+            }
+          ]
+        },
+        {
+          "id": "4.4.5",
+          "tier": "reasoning",
+          "prompt": "Explain why 6 ÷ 1/2 is 12, not 3.",
+          "answer": "There are two halves in each whole, so six wholes contain 12 halves.",
+          "reasoning": "Division counts groups of size 1/2.",
+          "verify": [
+            {
+              "expr": "6/F(1,2)",
+              "equals": 12
+            }
+          ]
+        },
+        {
+          "id": "4.4.6",
+          "tier": "challenge",
+          "prompt": "Calculate (2/3 + 1/4) ÷ 5/6.",
+          "answer": "11/10 = 1 1/10.",
+          "reasoning": "First add to get 11/12, then multiply by 6/5.",
+          "verify": [
+            {
+              "expr": "(F(2,3)+F(1,4))/F(5,6)",
+              "equals": "11/10"
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "fraction_area",
+        "a": [
+          2,
+          3
+        ],
+        "b": [
+          3,
+          5
+        ],
+        "caption": "The overlap is 6 of 15 cells: 2/3 × 3/5 = 2/5."
+      }
+    },
+    {
+      "number": "4.5",
+      "title": "Decimal place value, ordering and rounding",
+      "short": "Decimals",
+      "intent": "Read place value, compare from left to right and round only at the requested stage.",
+      "paras": [
+        "Digits right of the decimal point represent tenths, hundredths, thousandths and so on. Trailing zeros can record precision: 0.40 and 0.4 have equal value but different stated precision.",
+        "Compare equal place values from left to right. To round, inspect the next digit: 0–4 rounds down, 5–9 rounds up. Keep trailing zeros when they show the requested decimal places."
+      ],
+      "example": {
+        "title": "Round 0.995 to two decimal places",
+        "problem": "The third decimal digit is 5.",
+        "steps": [
+          "The hundredths digit 9 rounds up and carries through the tenths digit.",
+          "Write two digits after the point."
+        ],
+        "answer": "1.00."
+      },
+      "warning": "0.35 is larger than 0.4? Compare tenths first: 3 tenths is less than 4 tenths. Length in digits is not size.",
+      "practice": [
+        {
+          "id": "4.5.1",
+          "tier": "fluency",
+          "prompt": "Write the value of the 7 in 3.072.",
+          "answer": "7 hundredths = 0.07.",
+          "reasoning": "The first digit after the point is tenths; the second is hundredths.",
+          "verify": [
+            {
+              "expr": "0.07",
+              "equals": 0.07
+            }
+          ]
+        },
+        {
+          "id": "4.5.2",
+          "tier": "fluency",
+          "prompt": "Order 0.35, 0.4, 0.305 and 0.45 from smallest to largest.",
+          "answer": "0.305, 0.35, 0.4, 0.45.",
+          "reasoning": "Compare place values; 0.35 = 0.350 and 0.4 = 0.400.",
+          "verify": [
+            {
+              "expr": "sorted([0.35,0.4,0.305,0.45])",
+              "equals": [
+                0.305,
+                0.35,
+                0.4,
+                0.45
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.5.3",
+          "tier": "fluency",
+          "prompt": "Calculate 3.7 + 0.48 and 5 − 2.36.",
+          "answer": "4.18 and 2.64.",
+          "reasoning": "Align decimal points; write 5 as 5.00.",
+          "verify": [
+            {
+              "expr": "[round(3.7+0.48,10),round(5-2.36,10)]",
+              "equals": [
+                4.18,
+                2.64
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.5.4",
+          "tier": "fluency",
+          "prompt": "Calculate 0.6 × 0.4 and 2.4 ÷ 0.3.",
+          "answer": "0.24 and 8.",
+          "reasoning": "6×4 = 24 with two decimal places; 24 tenths ÷ 3 tenths.",
+          "verify": [
+            {
+              "expr": "[round(0.6*0.4,10),round(2.4/0.3,10)]",
+              "equals": [
+                0.24,
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.5.5",
+          "tier": "application",
+          "prompt": "Round 0.995 to two decimal places and explain the zeros.",
+          "answer": "1.00. The zeros show accuracy to two decimal places.",
+          "reasoning": "The 5 causes a carry through both 9s.",
+          "verify": [
+            {
+              "expr": "roundh(0.995,2)",
+              "equals": "1.00"
+            }
+          ]
+        },
+        {
+          "id": "4.5.6",
+          "tier": "challenge",
+          "prompt": "A length is 4.7 cm to one decimal place. Give the interval of possible exact lengths under the usual half-up convention.",
+          "answer": "4.65 ≤ length < 4.75 cm.",
+          "reasoning": "Values at 4.65 round up; 4.75 rounds to 4.8.",
+          "verify": [
+            {
+              "expr": "[roundh(4.65,1),roundh(4.75,1)]",
+              "equals": [
+                "4.7",
+                "4.8"
+              ],
+              "contains": [
+                "4.65",
+                "4.75"
+              ]
+            }
+          ]
+        }
+      ],
+      "diagram": null
+    },
+    {
+      "number": "4.6",
+      "title": "Fractions, decimals and measurement",
+      "short": "Convert and connect",
+      "intent": "A fraction bar means division; choose the representation that makes the task clearer.",
+      "paras": [
+        "To convert a fraction to a decimal, divide numerator by denominator, or rewrite with denominator 10, 100 or 1,000 when possible. 3/8 = 0.375.",
+        "A reduced fraction terminates exactly when its denominator has no prime factors except 2 and 5. Otherwise its decimal repeats: 1/3 = 0.333…. Use an exact fraction when a rounded decimal would hide the value."
+      ],
+      "example": {
+        "title": "Compare 3/8 inch and 0.4 inch",
+        "problem": "Convert to the same representation.",
+        "steps": [
+          "3/8 = 0.375.",
+          "0.4 = 0.400."
+        ],
+        "answer": "0.4 inch is larger by 0.025 inch."
+      },
+      "warning": "A calculator display is often rounded. 0.333 is an approximation to 1/3, not exactly equal to it.",
+      "practice": [
+        {
+          "id": "4.6.1",
+          "tier": "fluency",
+          "prompt": "Write 3/8, 7/20 and 2/5 as decimals.",
+          "answer": "0.375, 0.35 and 0.4.",
+          "reasoning": "Divide, or scale to thousandths/hundredths/tenths.",
+          "verify": [
+            {
+              "expr": "[float(F(3,8)),float(F(7,20)),float(F(2,5))]",
+              "equals": [
+                0.375,
+                0.35,
+                0.4
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.6.2",
+          "tier": "fluency",
+          "prompt": "Write 0.24 and 1.125 as fractions in simplest form.",
+          "answer": "6/25 and 9/8 (= 1 1/8).",
+          "reasoning": "24/100 and 1125/1000, then simplify.",
+          "verify": [
+            {
+              "expr": "[F(24,100),F(1125,1000)]",
+              "equals": [
+                "6/25",
+                "9/8"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.6.3",
+          "tier": "reasoning",
+          "prompt": "Which of 3/8, 7/20 and 5/6 has a repeating decimal? Explain.",
+          "answer": "5/6 repeats. Its reduced denominator contains a factor 3.",
+          "reasoning": "Terminating denominators contain only 2s and 5s.",
+          "verify": [
+            {
+              "expr": "[terminates(F(n,d)) for n,d in [(3,8),(7,20),(5,6)]]",
+              "equals": [
+                true,
+                true,
+                false
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.6.4",
+          "tier": "application",
+          "prompt": "Compare 3/8 inch and 0.4 inch. Which is larger and by how much?",
+          "answer": "0.4 inch, by 0.025 inch.",
+          "reasoning": "0.375 < 0.400.",
+          "verify": [
+            {
+              "expr": "round(0.4-3/8,10)",
+              "equals": 0.025
+            }
+          ]
+        },
+        {
+          "id": "4.6.5",
+          "tier": "application",
+          "prompt": "One cup is defined here as 240 mL. How many mL are in 3/4 cup and 1 1/2 cups?",
+          "answer": "180 mL and 360 mL.",
+          "reasoning": "Multiply 240 by 3/4 and by 3/2.",
+          "verify": [
+            {
+              "expr": "[240*3//4,240*3//2]",
+              "equals": [
+                180,
+                360
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.6.6",
+          "tier": "challenge",
+          "prompt": "Calculate 0.75 + 2/5 − 0.3 exactly.",
+          "answer": "0.85 = 17/20.",
+          "reasoning": "Use 3/4 + 2/5 − 3/10 with denominator 20.",
+          "verify": [
+            {
+              "expr": "F(3,4)+F(2,5)-F(3,10)",
+              "equals": "17/20"
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "number_line",
+        "start": 0,
+        "end": 1,
+        "ticks": 10,
+        "points": [
+          [
+            0.375,
+            "3/8"
+          ],
+          [
+            0.4,
+            "0.4"
+          ]
+        ],
+        "caption": "A common scale makes 3/8 = 0.375 and 0.4 directly comparable."
+      }
+    }
+  ],
+  "explore": {
+    "title": "Which fractions stop?",
+    "instruction": "Criterion B. Test reduced fractions, record patterns and justify a rule using prime factors.",
+    "intro": "A terminating decimal ends after finitely many digits. A repeating decimal continues a repeating block forever.",
+    "table": {
+      "headers": [
+        "Reduced fraction",
+        "Decimal",
+        "Stops?"
+      ],
+      "rows": [
+        [
+          "1/2",
+          "0.5",
+          "Yes"
+        ],
+        [
+          "3/8",
+          "",
+          ""
+        ],
+        [
+          "7/20",
+          "",
+          ""
+        ],
+        [
+          "5/6",
+          "",
+          ""
+        ],
+        [
+          "7/15",
+          "",
+          ""
+        ]
+      ]
+    },
+    "items": [
+      {
+        "id": "B1",
+        "tier": "investigation",
+        "prompt": "Convert 3/8, 7/20, 5/6 and 7/15 to decimals. Identify which terminate.",
+        "answer": "0.375 and 0.35 terminate; 0.8333… and 0.4666… repeat.",
+        "reasoning": "Divide numerator by denominator and mark repetition.",
+        "verify": [
+          {
+            "expr": "[terminates(F(n,d)) for n,d in [(3,8),(7,20),(5,6),(7,15)]]",
+            "equals": [
+              true,
+              true,
+              false,
+              false
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B2",
+        "tier": "investigation",
+        "prompt": "Factor the denominators 8, 20, 6 and 15.",
+        "answer": "8=2³; 20=2²×5; 6=2×3; 15=3×5.",
+        "reasoning": "Prime factors explain the stopping behaviour.",
+        "verify": [
+          {
+            "expr": "[prime_factors(n) for n in [8,20,6,15]]",
+            "equals": [
+              [
+                2,
+                2,
+                2
+              ],
+              [
+                2,
+                2,
+                5
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                5
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B3",
+        "tier": "investigation",
+        "prompt": "State the rule for a fraction already in simplest form.",
+        "answer": "It terminates exactly when its denominator has no prime factors other than 2 and 5.",
+        "reasoning": "Powers of 10 contain only 2 and 5.",
+        "verify": [
+          {
+            "expr": "product(prime_factors(1000))",
+            "equals": 1000,
+            "contains": [
+              "2",
+              "5"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B4",
+        "tier": "investigation",
+        "prompt": "Predict whether 13/40 and 13/30 terminate, then check.",
+        "answer": "13/40 terminates (0.325); 13/30 repeats (0.4333…).",
+        "reasoning": "40=2³×5; 30=2×3×5.",
+        "verify": [
+          {
+            "expr": "[terminates(F(13,40)),terminates(F(13,30))]",
+            "equals": [
+              true,
+              false
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B5",
+        "tier": "challenge",
+        "prompt": "Why must the fraction be reduced before applying the denominator rule? Give an example.",
+        "answer": "A non-reduced denominator may hide a cancelling factor. 3/6 = 1/2 terminates even though 6 contains 3.",
+        "reasoning": "The rule concerns the reduced denominator.",
+        "verify": [
+          {
+            "expr": "terminates(F(3,6))",
+            "equals": true,
+            "contains": [
+              "reduced"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "application": {
+    "title": "The scaling kitchen",
+    "instruction": "Criterion D. Simulated recipe. In this task, 1 cup = 240 mL. Keep exact amounts until the final measurement.",
+    "intro": "A community kitchen scales a recipe for different group sizes. The original recipe serves 6 people and uses 3/4 cup milk, 1 1/2 cups rice and 2/3 cup oil.",
+    "table": {
+      "headers": [
+        "Ingredient",
+        "For 6 people"
+      ],
+      "rows": [
+        [
+          "Milk",
+          "3/4 cup"
+        ],
+        [
+          "Rice",
+          "1 1/2 cups"
+        ],
+        [
+          "Oil",
+          "2/3 cup"
+        ]
+      ]
+    },
+    "items": [
+      {
+        "id": "D1",
+        "tier": "application",
+        "prompt": "Scale the recipe to 9 people. Give each ingredient in cups.",
+        "answer": "Milk 9/8 = 1 1/8 cups; rice 9/4 = 2 1/4 cups; oil 1 cup.",
+        "reasoning": "Multiply every amount by 9/6 = 3/2.",
+        "verify": [
+          {
+            "expr": "[F(3,4)*F(3,2),F(3,2)*F(3,2),F(2,3)*F(3,2)]",
+            "equals": [
+              "9/8",
+              "9/4",
+              "1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D2",
+        "tier": "application",
+        "prompt": "Convert the 9-person milk and oil amounts to mL.",
+        "answer": "Milk 270 mL; oil 240 mL.",
+        "reasoning": "Multiply cups by 240.",
+        "verify": [
+          {
+            "expr": "[float(F(9,8)*240),240]",
+            "equals": [
+              270,
+              240
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D3",
+        "tier": "reasoning",
+        "prompt": "A cook adds the scale factors for two ingredients instead of multiplying each amount. Explain the error.",
+        "answer": "Each ingredient must be multiplied by the same scale factor 3/2. Adding 3/2 changes the amount by a fixed quantity, not proportionally.",
+        "reasoning": "Equivalent ratios preserve the recipe.",
+        "verify": [
+          {
+            "expr": "F(3,2)",
+            "equals": 1.5,
+            "contains": [
+              "multiplied",
+              "proportionally"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D4",
+        "tier": "challenge",
+        "prompt": "For 4 people, the cook has 100 mL milk. Is it enough? Find the surplus or shortage.",
+        "answer": "Not enough. The recipe needs 1/2 cup = 120 mL, so 100 mL is 20 mL short.",
+        "reasoning": "Scale first, then convert.",
+        "verify": [
+          {
+            "expr": "float(F(3,4)*F(4,6)*240)-100",
+            "equals": 20
+          }
+        ]
+      }
+    ]
+  },
+  "assessment": {
+    "title": "The measurement explainer",
+    "instruction": "Criteria A and C. Use a diagram, exact fractions and a clear comparison for a workshop card.",
+    "intro": "A fitting is labelled 3/8 inch; another is labelled 0.4 inch. A learner must choose the larger without rounding too early.",
+    "items": [
+      {
+        "id": "S1",
+        "tier": "assessment",
+        "prompt": "Convert 3/8 inch to a decimal and compare with 0.4 inch.",
+        "answer": "0.375 inch < 0.4 inch; difference 0.025 inch.",
+        "reasoning": "Use a common decimal representation.",
+        "verify": [
+          {
+            "expr": "round(0.4-3/8,10)",
+            "equals": 0.025
+          }
+        ]
+      },
+      {
+        "id": "S2",
+        "tier": "assessment",
+        "prompt": "Calculate 2/3 + 1/4 and explain a diagram that checks the result.",
+        "answer": "11/12. A 3-by-4 rectangle has 8 shaded columns for 2/3 and 3 more rows for 1/4, covering 11 of 12 cells.",
+        "reasoning": "A common denominator makes parts equal.",
+        "verify": [
+          {
+            "expr": "F(2,3)+F(1,4)",
+            "equals": "11/12"
+          }
+        ]
+      },
+      {
+        "id": "S3",
+        "tier": "assessment",
+        "prompt": "Write one misconception warning and one check question with its answer.",
+        "answer": "Sample warning: “Do not add denominators.” Check: 1/2 + 1/4 = 3/4, not 2/6.",
+        "reasoning": "The answer should expose the error and show a correct alternative.",
+        "verify": [
+          {
+            "expr": "F(1,2)+F(1,4)",
+            "equals": "3/4",
+            "contains": [
+              "Sample"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "diagrams": [
+    {
+      "kind": "fraction_bars",
+      "fractions": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          8
+        ]
+      ],
+      "caption": "Three equal wholes. The same amount is shaded in each bar."
+    },
+    {
+      "kind": "fraction_area",
+      "a": [
+        2,
+        3
+      ],
+      "b": [
+        3,
+        5
+      ],
+      "caption": "The overlap is 6 of 15 cells: 2/3 × 3/5 = 2/5."
+    },
+    {
+      "kind": "number_line",
+      "start": 0,
+      "end": 1,
+      "ticks": 10,
+      "points": [
+        [
+          0.375,
+          "3/8"
+        ],
+        [
+          0.4,
+          "0.4"
+        ]
+      ],
+      "caption": "A common scale makes 3/8 = 0.375 and 0.4 directly comparable."
+    }
+  ],
+  "notes": [],
+  "groups": [
+    {
+      "id": "ready",
+      "title": "Ready check",
+      "instruction": "Try these without a calculator. They check the ideas this chapter builds on.",
+      "items": [
+        {
+          "id": "R1",
+          "tier": "ready",
+          "prompt": "Simplify 6/8.",
+          "answer": "3/4.",
+          "reasoning": "Divide both parts by 2.",
+          "verify": [
+            {
+              "expr": "F(6,8)",
+              "equals": "3/4"
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "tier": "ready",
+          "prompt": "Calculate 24÷6 and 7×8.",
+          "answer": "4 and 56.",
+          "reasoning": "Use known multiplication facts.",
+          "verify": [
+            {
+              "expr": "[24//6,7*8]",
+              "equals": [
+                4,
+                56
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R3",
+          "tier": "ready",
+          "prompt": "Which is larger, 0.3 or 0.25?",
+          "answer": "0.3.",
+          "reasoning": "3 tenths is 0.30, greater than 0.25.",
+          "verify": [
+            {
+              "expr": "0.3>0.25",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "R4",
+          "tier": "ready",
+          "prompt": "Find half of 18.",
+          "answer": "9.",
+          "reasoning": "18÷2 = 9.",
+          "verify": [
+            {
+              "expr": "18//2",
+              "equals": 9
+            }
+          ]
+        },
+        {
+          "id": "R5",
+          "tier": "ready",
+          "prompt": "Write 1 as a fraction with denominator 7.",
+          "answer": "7/7.",
+          "reasoning": "Seven sevenths make one whole.",
+          "verify": [
+            {
+              "expr": "F(7,7)",
+              "equals": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p41",
+      "title": "Practice 4.1 · Equivalence",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "4.1.1",
+          "tier": "fluency",
+          "prompt": "Complete 2/3 = □/12.",
+          "answer": "8/12.",
+          "reasoning": "Multiply numerator and denominator by 4.",
+          "verify": [
+            {
+              "expr": "2*12//3",
+              "equals": 8
+            }
+          ]
+        },
+        {
+          "id": "4.1.2",
+          "tier": "fluency",
+          "prompt": "Simplify 18/24, 35/49 and 36/48.",
+          "answer": "3/4, 5/7 and 3/4.",
+          "reasoning": "Divide by HCFs 6, 7 and 12.",
+          "verify": [
+            {
+              "expr": "[(18//gcd(18,24),24//gcd(18,24)),(35//gcd(35,49),49//gcd(35,49)),(36//gcd(36,48),48//gcd(36,48))]",
+              "equals": [
+                [
+                  3,
+                  4
+                ],
+                [
+                  5,
+                  7
+                ],
+                [
+                  3,
+                  4
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.1.3",
+          "tier": "reasoning",
+          "prompt": "A student changes 3/5 to 5/7 by adding 2 to both parts. Is it equivalent?",
+          "answer": "No. 3/5 = 0.6, while 5/7 ≈ 0.714. Multiply or divide both parts by the same nonzero number.",
+          "reasoning": "Adding equal amounts does not preserve a ratio.",
+          "verify": [
+            {
+              "expr": "F(3,5)==F(5,7)",
+              "equals": false
+            }
+          ]
+        },
+        {
+          "id": "4.1.4",
+          "tier": "reasoning",
+          "prompt": "Write three fractions equivalent to 4/6, including its simplest form.",
+          "answer": "Examples: 2/3, 8/12 and 12/18.",
+          "reasoning": "Simplify by 2, or scale both parts.",
+          "verify": [
+            {
+              "expr": "[F(4,6)==F(a,b) for a,b in [(2,3),(8,12),(12,18)]]",
+              "equals": [
+                true,
+                true,
+                true
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.1.5",
+          "tier": "application",
+          "prompt": "A recipe uses 12 cups of flour out of 16 cups of dry ingredients. What fraction is flour, in simplest form?",
+          "answer": "3/4.",
+          "reasoning": "Simplify 12/16 by 4.",
+          "verify": [
+            {
+              "expr": "F(12,16)",
+              "equals": "3/4"
+            }
+          ]
+        },
+        {
+          "id": "4.1.6",
+          "tier": "challenge",
+          "prompt": "A fraction simplifies to 3/5 and its denominator is 40. Find the numerator.",
+          "answer": "24.",
+          "reasoning": "40÷5 = 8, so multiply 3 by 8.",
+          "verify": [
+            {
+              "expr": "3*(40//5)",
+              "equals": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p42",
+      "title": "Practice 4.2 · Compare",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "4.2.1",
+          "tier": "fluency",
+          "prompt": "Compare 3/7 and 3/5 using <, > or =.",
+          "answer": "3/7 < 3/5.",
+          "reasoning": "Equal numerators: fifths are larger pieces than sevenths.",
+          "verify": [
+            {
+              "expr": "F(3,7)<F(3,5)",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "4.2.2",
+          "tier": "fluency",
+          "prompt": "Compare 3/4 and 5/6.",
+          "answer": "3/4 < 5/6.",
+          "reasoning": "9/12 < 10/12.",
+          "verify": [
+            {
+              "expr": "F(3,4)<F(5,6)",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "4.2.3",
+          "tier": "fluency",
+          "prompt": "Order 2/3, 3/5 and 7/10 from smallest to largest.",
+          "answer": "3/5, 2/3, 7/10.",
+          "reasoning": "Use thirtieths: 18/30, 20/30, 21/30.",
+          "verify": [
+            {
+              "expr": "sorted([F(2,3),F(3,5),F(7,10)])",
+              "equals": [
+                "3/5",
+                "2/3",
+                "7/10"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.2.4",
+          "tier": "reasoning",
+          "prompt": "Which is closer to 1: 7/8 or 8/9? Explain.",
+          "answer": "8/9 is closer: its gap is 1/9, smaller than 1/8.",
+          "reasoning": "Compare the missing parts, not just the numerators.",
+          "verify": [
+            {
+              "expr": "1-F(8,9)<1-F(7,8)",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "4.2.5",
+          "tier": "application",
+          "prompt": "Amina reads 5/8 of a book and Ben reads 2/3 of an identical book. Who has read more?",
+          "answer": "Ben: 2/3 = 16/24, while 5/8 = 15/24.",
+          "reasoning": "The books are the same size, so the fractions can be compared.",
+          "verify": [
+            {
+              "expr": "F(2,3)>F(5,8)",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "4.2.6",
+          "tier": "challenge",
+          "prompt": "Find a fraction strictly between 1/3 and 1/2 with denominator 12.",
+          "answer": "5/12.",
+          "reasoning": "1/3 = 4/12 and 1/2 = 6/12.",
+          "verify": [
+            {
+              "expr": "[n for n in range(13) if F(1,3)<F(n,12)<F(1,2)]",
+              "equals": [
+                5
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p43",
+      "title": "Practice 4.3 · Add and subtract",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "4.3.1",
+          "tier": "fluency",
+          "prompt": "Calculate 3/8 + 1/8 and 7/9 − 2/9.",
+          "answer": "4/8 = 1/2; 5/9.",
+          "reasoning": "Like denominators: combine numerators.",
+          "verify": [
+            {
+              "expr": "[F(3,8)+F(1,8),F(7,9)-F(2,9)]",
+              "equals": [
+                "1/2",
+                "5/9"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.3.2",
+          "tier": "fluency",
+          "prompt": "Calculate 3/4 + 5/6.",
+          "answer": "19/12 = 1 7/12.",
+          "reasoning": "Use twelfths: 9/12 + 10/12.",
+          "verify": [
+            {
+              "expr": "F(3,4)+F(5,6)",
+              "equals": "19/12"
+            }
+          ]
+        },
+        {
+          "id": "4.3.3",
+          "tier": "fluency",
+          "prompt": "Calculate 5 1/3 − 2 3/4.",
+          "answer": "31/12 = 2 7/12.",
+          "reasoning": "16/3 − 11/4 = 64/12 − 33/12.",
+          "verify": [
+            {
+              "expr": "F(16,3)-F(11,4)",
+              "equals": "31/12"
+            }
+          ]
+        },
+        {
+          "id": "4.3.4",
+          "tier": "reasoning",
+          "prompt": "Explain why 1/2 + 1/3 cannot equal 2/5.",
+          "answer": "2/5 is less than 1/2, but adding a positive amount to 1/2 must increase it. The correct sum is 5/6.",
+          "reasoning": "Use a benchmark to detect an unreasonable result.",
+          "verify": [
+            {
+              "expr": "[F(1,2)+F(1,3),F(2,5)<F(1,2)]",
+              "equals": [
+                "5/6",
+                true
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.3.5",
+          "tier": "application",
+          "prompt": "A jug contains 3/4 litre. Another 1/3 litre is added. How much is in the jug?",
+          "answer": "13/12 litres = 1 1/12 litres.",
+          "reasoning": "Add using twelfths.",
+          "verify": [
+            {
+              "expr": "F(3,4)+F(1,3)",
+              "equals": "13/12"
+            }
+          ]
+        },
+        {
+          "id": "4.3.6",
+          "tier": "challenge",
+          "prompt": "Find the missing addend: 2/5 + □ = 1 1/10.",
+          "answer": "7/10.",
+          "reasoning": "11/10 − 4/10 = 7/10.",
+          "verify": [
+            {
+              "expr": "F(11,10)-F(2,5)",
+              "equals": "7/10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p44",
+      "title": "Practice 4.4 · Multiply and divide",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "4.4.1",
+          "tier": "fluency",
+          "prompt": "Calculate 2/3 × 3/5 and 4/7 × 7/8.",
+          "answer": "2/5 and 1/2.",
+          "reasoning": "Multiply across, then simplify.",
+          "verify": [
+            {
+              "expr": "[F(2,3)*F(3,5),F(4,7)*F(7,8)]",
+              "equals": [
+                "2/5",
+                "1/2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.4.2",
+          "tier": "fluency",
+          "prompt": "Calculate 3/4 ÷ 1/8 and 5/6 ÷ 5/3.",
+          "answer": "6 and 1/2.",
+          "reasoning": "Multiply by the reciprocal of the divisor.",
+          "verify": [
+            {
+              "expr": "[F(3,4)/F(1,8),F(5,6)/F(5,3)]",
+              "equals": [
+                "6",
+                "1/2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.4.3",
+          "tier": "application",
+          "prompt": "A recipe needs 3/4 cup of milk. How much is needed for half a recipe?",
+          "answer": "3/8 cup.",
+          "reasoning": "Half of 3/4 is 1/2 × 3/4.",
+          "verify": [
+            {
+              "expr": "F(1,2)*F(3,4)",
+              "equals": "3/8"
+            }
+          ]
+        },
+        {
+          "id": "4.4.4",
+          "tier": "application",
+          "prompt": "How many 1/4-litre cups fill a 3/2-litre jug?",
+          "answer": "6 cups.",
+          "reasoning": "3/2 ÷ 1/4 = 3/2 × 4.",
+          "verify": [
+            {
+              "expr": "F(3,2)/F(1,4)",
+              "equals": 6
+            }
+          ]
+        },
+        {
+          "id": "4.4.5",
+          "tier": "reasoning",
+          "prompt": "Explain why 6 ÷ 1/2 is 12, not 3.",
+          "answer": "There are two halves in each whole, so six wholes contain 12 halves.",
+          "reasoning": "Division counts groups of size 1/2.",
+          "verify": [
+            {
+              "expr": "6/F(1,2)",
+              "equals": 12
+            }
+          ]
+        },
+        {
+          "id": "4.4.6",
+          "tier": "challenge",
+          "prompt": "Calculate (2/3 + 1/4) ÷ 5/6.",
+          "answer": "11/10 = 1 1/10.",
+          "reasoning": "First add to get 11/12, then multiply by 6/5.",
+          "verify": [
+            {
+              "expr": "(F(2,3)+F(1,4))/F(5,6)",
+              "equals": "11/10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p45",
+      "title": "Practice 4.5 · Decimals",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "4.5.1",
+          "tier": "fluency",
+          "prompt": "Write the value of the 7 in 3.072.",
+          "answer": "7 hundredths = 0.07.",
+          "reasoning": "The first digit after the point is tenths; the second is hundredths.",
+          "verify": [
+            {
+              "expr": "0.07",
+              "equals": 0.07
+            }
+          ]
+        },
+        {
+          "id": "4.5.2",
+          "tier": "fluency",
+          "prompt": "Order 0.35, 0.4, 0.305 and 0.45 from smallest to largest.",
+          "answer": "0.305, 0.35, 0.4, 0.45.",
+          "reasoning": "Compare place values; 0.35 = 0.350 and 0.4 = 0.400.",
+          "verify": [
+            {
+              "expr": "sorted([0.35,0.4,0.305,0.45])",
+              "equals": [
+                0.305,
+                0.35,
+                0.4,
+                0.45
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.5.3",
+          "tier": "fluency",
+          "prompt": "Calculate 3.7 + 0.48 and 5 − 2.36.",
+          "answer": "4.18 and 2.64.",
+          "reasoning": "Align decimal points; write 5 as 5.00.",
+          "verify": [
+            {
+              "expr": "[round(3.7+0.48,10),round(5-2.36,10)]",
+              "equals": [
+                4.18,
+                2.64
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.5.4",
+          "tier": "fluency",
+          "prompt": "Calculate 0.6 × 0.4 and 2.4 ÷ 0.3.",
+          "answer": "0.24 and 8.",
+          "reasoning": "6×4 = 24 with two decimal places; 24 tenths ÷ 3 tenths.",
+          "verify": [
+            {
+              "expr": "[round(0.6*0.4,10),round(2.4/0.3,10)]",
+              "equals": [
+                0.24,
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.5.5",
+          "tier": "application",
+          "prompt": "Round 0.995 to two decimal places and explain the zeros.",
+          "answer": "1.00. The zeros show accuracy to two decimal places.",
+          "reasoning": "The 5 causes a carry through both 9s.",
+          "verify": [
+            {
+              "expr": "roundh(0.995,2)",
+              "equals": "1.00"
+            }
+          ]
+        },
+        {
+          "id": "4.5.6",
+          "tier": "challenge",
+          "prompt": "A length is 4.7 cm to one decimal place. Give the interval of possible exact lengths under the usual half-up convention.",
+          "answer": "4.65 ≤ length < 4.75 cm.",
+          "reasoning": "Values at 4.65 round up; 4.75 rounds to 4.8.",
+          "verify": [
+            {
+              "expr": "[roundh(4.65,1),roundh(4.75,1)]",
+              "equals": [
+                "4.7",
+                "4.8"
+              ],
+              "contains": [
+                "4.65",
+                "4.75"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p46",
+      "title": "Practice 4.6 · Convert and connect",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "4.6.1",
+          "tier": "fluency",
+          "prompt": "Write 3/8, 7/20 and 2/5 as decimals.",
+          "answer": "0.375, 0.35 and 0.4.",
+          "reasoning": "Divide, or scale to thousandths/hundredths/tenths.",
+          "verify": [
+            {
+              "expr": "[float(F(3,8)),float(F(7,20)),float(F(2,5))]",
+              "equals": [
+                0.375,
+                0.35,
+                0.4
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.6.2",
+          "tier": "fluency",
+          "prompt": "Write 0.24 and 1.125 as fractions in simplest form.",
+          "answer": "6/25 and 9/8 (= 1 1/8).",
+          "reasoning": "24/100 and 1125/1000, then simplify.",
+          "verify": [
+            {
+              "expr": "[F(24,100),F(1125,1000)]",
+              "equals": [
+                "6/25",
+                "9/8"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.6.3",
+          "tier": "reasoning",
+          "prompt": "Which of 3/8, 7/20 and 5/6 has a repeating decimal? Explain.",
+          "answer": "5/6 repeats. Its reduced denominator contains a factor 3.",
+          "reasoning": "Terminating denominators contain only 2s and 5s.",
+          "verify": [
+            {
+              "expr": "[terminates(F(n,d)) for n,d in [(3,8),(7,20),(5,6)]]",
+              "equals": [
+                true,
+                true,
+                false
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.6.4",
+          "tier": "application",
+          "prompt": "Compare 3/8 inch and 0.4 inch. Which is larger and by how much?",
+          "answer": "0.4 inch, by 0.025 inch.",
+          "reasoning": "0.375 < 0.400.",
+          "verify": [
+            {
+              "expr": "round(0.4-3/8,10)",
+              "equals": 0.025
+            }
+          ]
+        },
+        {
+          "id": "4.6.5",
+          "tier": "application",
+          "prompt": "One cup is defined here as 240 mL. How many mL are in 3/4 cup and 1 1/2 cups?",
+          "answer": "180 mL and 360 mL.",
+          "reasoning": "Multiply 240 by 3/4 and by 3/2.",
+          "verify": [
+            {
+              "expr": "[240*3//4,240*3//2]",
+              "equals": [
+                180,
+                360
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4.6.6",
+          "tier": "challenge",
+          "prompt": "Calculate 0.75 + 2/5 − 0.3 exactly.",
+          "answer": "0.85 = 17/20.",
+          "reasoning": "Use 3/4 + 2/5 − 3/10 with denominator 20.",
+          "verify": [
+            {
+              "expr": "F(3,4)+F(2,5)-F(3,10)",
+              "equals": "17/20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explore",
+      "title": "Exploration · Which fractions stop?",
+      "instruction": "Criterion B. Test reduced fractions, record patterns and justify a rule using prime factors.",
+      "items": [
+        {
+          "id": "B1",
+          "tier": "investigation",
+          "prompt": "Convert 3/8, 7/20, 5/6 and 7/15 to decimals. Identify which terminate.",
+          "answer": "0.375 and 0.35 terminate; 0.8333… and 0.4666… repeat.",
+          "reasoning": "Divide numerator by denominator and mark repetition.",
+          "verify": [
+            {
+              "expr": "[terminates(F(n,d)) for n,d in [(3,8),(7,20),(5,6),(7,15)]]",
+              "equals": [
+                true,
+                true,
+                false,
+                false
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B2",
+          "tier": "investigation",
+          "prompt": "Factor the denominators 8, 20, 6 and 15.",
+          "answer": "8=2³; 20=2²×5; 6=2×3; 15=3×5.",
+          "reasoning": "Prime factors explain the stopping behaviour.",
+          "verify": [
+            {
+              "expr": "[prime_factors(n) for n in [8,20,6,15]]",
+              "equals": [
+                [
+                  2,
+                  2,
+                  2
+                ],
+                [
+                  2,
+                  2,
+                  5
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  5
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B3",
+          "tier": "investigation",
+          "prompt": "State the rule for a fraction already in simplest form.",
+          "answer": "It terminates exactly when its denominator has no prime factors other than 2 and 5.",
+          "reasoning": "Powers of 10 contain only 2 and 5.",
+          "verify": [
+            {
+              "expr": "product(prime_factors(1000))",
+              "equals": 1000,
+              "contains": [
+                "2",
+                "5"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B4",
+          "tier": "investigation",
+          "prompt": "Predict whether 13/40 and 13/30 terminate, then check.",
+          "answer": "13/40 terminates (0.325); 13/30 repeats (0.4333…).",
+          "reasoning": "40=2³×5; 30=2×3×5.",
+          "verify": [
+            {
+              "expr": "[terminates(F(13,40)),terminates(F(13,30))]",
+              "equals": [
+                true,
+                false
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B5",
+          "tier": "challenge",
+          "prompt": "Why must the fraction be reduced before applying the denominator rule? Give an example.",
+          "answer": "A non-reduced denominator may hide a cancelling factor. 3/6 = 1/2 terminates even though 6 contains 3.",
+          "reasoning": "The rule concerns the reduced denominator.",
+          "verify": [
+            {
+              "expr": "terminates(F(3,6))",
+              "equals": true,
+              "contains": [
+                "reduced"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "check",
+      "title": "Checkpoint",
+      "instruction": "Answer, then explain one result to a partner.",
+      "items": [
+        {
+          "id": "C1",
+          "tier": "check",
+          "prompt": "Simplify 24/36.",
+          "answer": "2/3.",
+          "reasoning": "Divide by HCF 12.",
+          "verify": [
+            {
+              "expr": "F(24,36)",
+              "equals": "2/3"
+            }
+          ]
+        },
+        {
+          "id": "C2",
+          "tier": "check",
+          "prompt": "Calculate 1/2 + 1/3.",
+          "answer": "5/6.",
+          "reasoning": "Use sixths.",
+          "verify": [
+            {
+              "expr": "F(1,2)+F(1,3)",
+              "equals": "5/6"
+            }
+          ]
+        },
+        {
+          "id": "C3",
+          "tier": "check",
+          "prompt": "Calculate 2/3 ÷ 4/9.",
+          "answer": "3/2 = 1 1/2.",
+          "reasoning": "Multiply by 9/4.",
+          "verify": [
+            {
+              "expr": "F(2,3)/F(4,9)",
+              "equals": "3/2"
+            }
+          ]
+        },
+        {
+          "id": "C4",
+          "tier": "check",
+          "prompt": "Write 5/8 as a decimal.",
+          "answer": "0.625.",
+          "reasoning": "5÷8 = 0.625.",
+          "verify": [
+            {
+              "expr": "5/8",
+              "equals": 0.625
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "application",
+      "title": "Application · The scaling kitchen",
+      "instruction": "Criterion D. Simulated recipe. In this task, 1 cup = 240 mL. Keep exact amounts until the final measurement.",
+      "items": [
+        {
+          "id": "D1",
+          "tier": "application",
+          "prompt": "Scale the recipe to 9 people. Give each ingredient in cups.",
+          "answer": "Milk 9/8 = 1 1/8 cups; rice 9/4 = 2 1/4 cups; oil 1 cup.",
+          "reasoning": "Multiply every amount by 9/6 = 3/2.",
+          "verify": [
+            {
+              "expr": "[F(3,4)*F(3,2),F(3,2)*F(3,2),F(2,3)*F(3,2)]",
+              "equals": [
+                "9/8",
+                "9/4",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "tier": "application",
+          "prompt": "Convert the 9-person milk and oil amounts to mL.",
+          "answer": "Milk 270 mL; oil 240 mL.",
+          "reasoning": "Multiply cups by 240.",
+          "verify": [
+            {
+              "expr": "[float(F(9,8)*240),240]",
+              "equals": [
+                270,
+                240
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "tier": "reasoning",
+          "prompt": "A cook adds the scale factors for two ingredients instead of multiplying each amount. Explain the error.",
+          "answer": "Each ingredient must be multiplied by the same scale factor 3/2. Adding 3/2 changes the amount by a fixed quantity, not proportionally.",
+          "reasoning": "Equivalent ratios preserve the recipe.",
+          "verify": [
+            {
+              "expr": "F(3,2)",
+              "equals": 1.5,
+              "contains": [
+                "multiplied",
+                "proportionally"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D4",
+          "tier": "challenge",
+          "prompt": "For 4 people, the cook has 100 mL milk. Is it enough? Find the surplus or shortage.",
+          "answer": "Not enough. The recipe needs 1/2 cup = 120 mL, so 100 mL is 20 mL short.",
+          "reasoning": "Scale first, then convert.",
+          "verify": [
+            {
+              "expr": "float(F(3,4)*F(4,6)*240)-100",
+              "equals": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment",
+      "title": "Assessment practice · The measurement explainer",
+      "instruction": "Criteria A and C. Use a diagram, exact fractions and a clear comparison for a workshop card.",
+      "items": [
+        {
+          "id": "S1",
+          "tier": "assessment",
+          "prompt": "Convert 3/8 inch to a decimal and compare with 0.4 inch.",
+          "answer": "0.375 inch < 0.4 inch; difference 0.025 inch.",
+          "reasoning": "Use a common decimal representation.",
+          "verify": [
+            {
+              "expr": "round(0.4-3/8,10)",
+              "equals": 0.025
+            }
+          ]
+        },
+        {
+          "id": "S2",
+          "tier": "assessment",
+          "prompt": "Calculate 2/3 + 1/4 and explain a diagram that checks the result.",
+          "answer": "11/12. A 3-by-4 rectangle has 8 shaded columns for 2/3 and 3 more rows for 1/4, covering 11 of 12 cells.",
+          "reasoning": "A common denominator makes parts equal.",
+          "verify": [
+            {
+              "expr": "F(2,3)+F(1,4)",
+              "equals": "11/12"
+            }
+          ]
+        },
+        {
+          "id": "S3",
+          "tier": "assessment",
+          "prompt": "Write one misconception warning and one check question with its answer.",
+          "answer": "Sample warning: “Do not add denominators.” Check: 1/2 + 1/4 = 3/4, not 2/6.",
+          "reasoning": "The answer should expose the error and show a correct alternative.",
+          "verify": [
+            {
+              "expr": "F(1,2)+F(1,4)",
+              "equals": "3/4",
+              "contains": [
+                "Sample"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mixed",
+      "title": "Mixed practice 4",
+      "instruction": "Connect ideas. Give units and reasons where requested.",
+      "items": [
+        {
+          "id": "M1",
+          "tier": "fluency",
+          "prompt": "Simplify 45/60.",
+          "answer": "3/4.",
+          "reasoning": "Divide by 15.",
+          "verify": [
+            {
+              "expr": "F(45,60)",
+              "equals": "3/4"
+            }
+          ]
+        },
+        {
+          "id": "M2",
+          "tier": "fluency",
+          "prompt": "Compare 5/9 and 4/7.",
+          "answer": "5/9 < 4/7.",
+          "reasoning": "35/63 < 36/63.",
+          "verify": [
+            {
+              "expr": "F(5,9)<F(4,7)",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "M3",
+          "tier": "fluency",
+          "prompt": "Calculate 2 1/2 + 3/4.",
+          "answer": "13/4 = 3 1/4.",
+          "reasoning": "10/4 + 3/4.",
+          "verify": [
+            {
+              "expr": "F(5,2)+F(3,4)",
+              "equals": "13/4"
+            }
+          ]
+        },
+        {
+          "id": "M4",
+          "tier": "fluency",
+          "prompt": "Calculate 7/10 − 1/4.",
+          "answer": "9/20.",
+          "reasoning": "14/20 − 5/20.",
+          "verify": [
+            {
+              "expr": "F(7,10)-F(1,4)",
+              "equals": "9/20"
+            }
+          ]
+        },
+        {
+          "id": "M5",
+          "tier": "fluency",
+          "prompt": "Calculate 3/5 × 10/9 and 4/5 ÷ 2/3.",
+          "answer": "2/3 and 6/5 = 1 1/5.",
+          "reasoning": "Multiply; for division use the reciprocal.",
+          "verify": [
+            {
+              "expr": "[F(3,5)*F(10,9),F(4,5)/F(2,3)]",
+              "equals": [
+                "2/3",
+                "6/5"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M6",
+          "tier": "fluency",
+          "prompt": "Calculate 1.25 × 0.8 and 3.6 ÷ 0.6.",
+          "answer": "1 and 6.",
+          "reasoning": "Use place value or equivalent fractions.",
+          "verify": [
+            {
+              "expr": "[round(1.25*0.8,10),round(3.6/0.6,10)]",
+              "equals": [
+                1,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M7",
+          "tier": "application",
+          "prompt": "Round 2.675 to two decimal places using half-up rounding.",
+          "answer": "2.68.",
+          "reasoning": "The third decimal digit is 5.",
+          "verify": [
+            {
+              "expr": "roundh(2.675,2)",
+              "equals": "2.68"
+            }
+          ]
+        },
+        {
+          "id": "M8",
+          "tier": "reasoning",
+          "prompt": "Explain why 0.333 is not exactly 1/3.",
+          "answer": "1/3 = 0.3333…; stopping after three digits loses the remaining amount.",
+          "reasoning": "0.333 = 333/1000, which is slightly smaller.",
+          "verify": [
+            {
+              "expr": "F(333,1000)<F(1,3)",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "M9",
+          "tier": "challenge",
+          "prompt": "Find 3/4 of a number if the result is 18.",
+          "answer": "24.",
+          "reasoning": "18 ÷ 3/4 = 24.",
+          "verify": [
+            {
+              "expr": "18/F(3,4)",
+              "equals": 24
+            }
+          ]
+        },
+        {
+          "id": "M10",
+          "tier": "challenge",
+          "prompt": "Calculate (1/2 + 1/3) × 6/5.",
+          "answer": "1.",
+          "reasoning": "First 5/6, then multiply by 6/5.",
+          "verify": [
+            {
+              "expr": "(F(1,2)+F(1,3))*F(6,5)",
+              "equals": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source": {
+    "file": "MYP-Mathematics-1-Student-Coursebook.pdf",
+    "sha256": "131a3a99d14ae5a7613c7e9da24c540e29029d93a1a360abcc8516835798b3f0",
+    "pages": "74–94; answers 222–225",
+    "scope_note": "Rewritten within the verified first-edition chapter scope and embedded planner. No standalone school curriculum overview was present. New classroom contexts are simulated and labelled."
+  }
+}

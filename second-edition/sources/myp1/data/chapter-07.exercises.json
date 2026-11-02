@@ -1,0 +1,1677 @@
+{
+  "chapter": 7,
+  "title": "Lines, angles, triangles and constructions",
+  "part": "Part IV · Shape, structure and measure",
+  "hours": 16,
+  "key": "Relationships",
+  "related": "Space, Measurement",
+  "context": "Orientation in space and time",
+  "soi": "Angle facts, polygon structure and equal-radius constructions let us reason about shapes and check designs before building.",
+  "engage": "Which triples of lengths can close a triangle, and how can a workshop check a roof design before cutting timber?",
+  "atl": "In order for a student to think creatively and critically, students must choose an appropriate geometric fact or construction, test a design and explain why the method is reliable.",
+  "objectives": [
+    "Use angle facts on lines, at points and with parallel lines.",
+    "Reason with triangle and polygon angle sums.",
+    "Apply the triangle inequality and regular-polygon facts.",
+    "Construct perpendicular bisectors, angle bisectors and SSS triangles."
+  ],
+  "vocabulary": "acute · right · obtuse · reflex · vertically opposite · corresponding · alternate · co-interior · isosceles · exterior angle · polygon · perpendicular bisector · angle bisector · construction",
+  "sections": [
+    {
+      "number": "7.1",
+      "title": "Lines, angles and angle facts",
+      "short": "Angle facts",
+      "intent": "Name the relationship first: straight line, full turn, vertically opposite or right angle.",
+      "paras": [
+        "Angles on a straight line add to 180°; angles around a point add to 360°. Vertically opposite angles are equal. A right angle is 90°.",
+        "Classify angles as acute (<90°), right (90°), obtuse (between 90° and 180°) or reflex (between 180° and 360°). A diagram is not always drawn to scale, so use stated facts rather than appearance."
+      ],
+      "example": {
+        "title": "Find a missing angle",
+        "problem": "Two lines cross. One angle is 115°.",
+        "steps": [
+          "The vertically opposite angle is 115°.",
+          "Each adjacent angle is 180°−115° = 65°."
+        ],
+        "answer": "115°, 65°, 115°, 65° around the intersection."
+      },
+      "warning": "Do not assume lines are parallel or angles equal unless marked or stated. “Looks like 90°” is not a reason.",
+      "practice": [
+        {
+          "id": "7.1.1",
+          "tier": "fluency",
+          "prompt": "An angle on a straight line is 65°. Find its neighbour.",
+          "answer": "115°.",
+          "reasoning": "180−65.",
+          "verify": [
+            {
+              "expr": "180-65",
+              "equals": 115
+            }
+          ]
+        },
+        {
+          "id": "7.1.2",
+          "tier": "fluency",
+          "prompt": "Two lines cross and one angle is 115°. Find the other three.",
+          "answer": "65°, 115°, 65°.",
+          "reasoning": "Vertically opposite angles are equal; adjacent angles sum to 180°.",
+          "verify": [
+            {
+              "expr": "[180-115,115,180-115]",
+              "equals": [
+                65,
+                115,
+                65
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.1.3",
+          "tier": "reasoning",
+          "prompt": "Three angles around a point are 90°, 110° and 75°. Find the fourth.",
+          "answer": "85°.",
+          "reasoning": "360−(90+110+75).",
+          "verify": [
+            {
+              "expr": "360-(90+110+75)",
+              "equals": 85
+            }
+          ]
+        },
+        {
+          "id": "7.1.4",
+          "tier": "fluency",
+          "prompt": "Classify 35°, 90°, 125° and 210°.",
+          "answer": "Acute, right, obtuse, reflex.",
+          "reasoning": "Compare with 90°, 180° and 360°.",
+          "verify": [
+            {
+              "expr": "[classify_angle(a) for a in [35,90,125,210]]",
+              "equals": [
+                "acute",
+                "right",
+                "obtuse",
+                "reflex"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.1.5",
+          "tier": "application",
+          "prompt": "A ramp makes 12° with the ground. What angle does it make with the vertical?",
+          "answer": "78°.",
+          "reasoning": "Ground and vertical are perpendicular: 90−12.",
+          "verify": [
+            {
+              "expr": "90-12",
+              "equals": 78
+            }
+          ]
+        },
+        {
+          "id": "7.1.6",
+          "tier": "challenge",
+          "prompt": "Can two adjacent angles on a straight line both be obtuse? Explain.",
+          "answer": "No. Their sum would exceed 180°.",
+          "reasoning": "Each obtuse angle is greater than 90°.",
+          "verify": [
+            {
+              "expr": "91+91>180",
+              "equals": true
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "crossing_lines",
+        "angle": 115,
+        "caption": "Vertically opposite angles are equal; adjacent angles on a straight line sum to 180°."
+      }
+    },
+    {
+      "number": "7.2",
+      "title": "Parallel lines and triangles",
+      "short": "Parallel and triangle facts",
+      "intent": "Use corresponding, alternate and co-interior angles only when the lines are parallel.",
+      "paras": [
+        "When a transversal crosses parallel lines, corresponding angles are equal, alternate angles are equal, and co-interior angles add to 180°.",
+        "Triangle angles sum to 180°. An exterior angle equals the sum of the two opposite interior angles. In an isosceles triangle, the angles opposite the equal sides are equal."
+      ],
+      "example": {
+        "title": "A roof truss",
+        "problem": "The two base angles are 65° each.",
+        "steps": [
+          "Apex = 180−65−65 = 50°.",
+          "The exterior angle at a base is 180−65 = 115°."
+        ],
+        "answer": "Apex 50°; exterior base angle 115°."
+      },
+      "warning": "The triangle sum is 180°, not 360°. Parallel-line facts need the parallel condition.",
+      "practice": [
+        {
+          "id": "7.2.1",
+          "tier": "fluency",
+          "prompt": "A triangle has angles 65° and 65°. Find the third.",
+          "answer": "50°.",
+          "reasoning": "180−130.",
+          "verify": [
+            {
+              "expr": "180-65-65",
+              "equals": 50
+            }
+          ]
+        },
+        {
+          "id": "7.2.2",
+          "tier": "fluency",
+          "prompt": "Parallel lines are cut by a transversal. One angle is 65°. Find its corresponding, alternate and co-interior angles.",
+          "answer": "65°, 65°, 115°.",
+          "reasoning": "Corresponding and alternate are equal; co-interior sums to 180°.",
+          "verify": [
+            {
+              "expr": "[65,65,180-65]",
+              "equals": [
+                65,
+                65,
+                115
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.2.3",
+          "tier": "reasoning",
+          "prompt": "An exterior angle of a triangle is 115° and one opposite interior angle is 65°. Find the other.",
+          "answer": "50°.",
+          "reasoning": "115−65.",
+          "verify": [
+            {
+              "expr": "115-65",
+              "equals": 50
+            }
+          ]
+        },
+        {
+          "id": "7.2.4",
+          "tier": "application",
+          "prompt": "An isosceles triangle has apex 50°. Find each base angle.",
+          "answer": "65°.",
+          "reasoning": "(180−50)÷2.",
+          "verify": [
+            {
+              "expr": "(180-50)//2",
+              "equals": 65
+            }
+          ]
+        },
+        {
+          "id": "7.2.5",
+          "tier": "reasoning",
+          "prompt": "Can a triangle have angles 60°, 70° and 60°? Explain.",
+          "answer": "No. They sum to 190°, not 180°.",
+          "reasoning": "The angle sum is a necessary condition.",
+          "verify": [
+            {
+              "expr": "60+70+60",
+              "equals": 190
+            }
+          ]
+        },
+        {
+          "id": "7.2.6",
+          "tier": "challenge",
+          "prompt": "A triangle has angles in the ratio 2:3:4. Find them.",
+          "answer": "40°, 60°, 80°.",
+          "reasoning": "Nine parts make 180°, so one part is 20°.",
+          "verify": [
+            {
+              "expr": "[180*k//9 for k in [2,3,4]]",
+              "equals": [
+                40,
+                60,
+                80
+              ]
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "parallel_lines",
+        "angle": 65,
+        "caption": "With parallel lines: corresponding and alternate angles are 65°; the co-interior angle is 115°."
+      }
+    },
+    {
+      "number": "7.3",
+      "title": "Polygons and the triangle inequality",
+      "short": "Polygons and possible triangles",
+      "intent": "Split polygons into triangles; test whether three lengths can close a triangle.",
+      "paras": [
+        "An n-sided polygon can be split into n−2 triangles from one vertex, so its interior angle sum is (n−2)×180°. The exterior angles of any convex polygon sum to 360°.",
+        "For a regular n-gon, each exterior angle is 360°/n and each interior angle is 180°−360°/n. Three lengths form a non-degenerate triangle exactly when the sum of the two shorter lengths exceeds the longest."
+      ],
+      "example": {
+        "title": "A pentagon and a possible triangle",
+        "problem": "Find the interior sum of a pentagon; test sides 3, 4, 8.",
+        "steps": [
+          "Pentagon: (5−2)×180 = 540°.",
+          "3+4 = 7 < 8, so no triangle."
+        ],
+        "answer": "540°; no triangle."
+      },
+      "warning": "Equality gives a straight line, not a triangle. The inequality must be strict.",
+      "practice": [
+        {
+          "id": "7.3.1",
+          "tier": "fluency",
+          "prompt": "Find the interior angle sums of a quadrilateral, pentagon and hexagon.",
+          "answer": "360°, 540°, 720°.",
+          "reasoning": "Use (n−2)×180°.",
+          "verify": [
+            {
+              "expr": "[(n-2)*180 for n in [4,5,6]]",
+              "equals": [
+                360,
+                540,
+                720
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.3.2",
+          "tier": "fluency",
+          "prompt": "Find each interior and exterior angle of a regular hexagon.",
+          "answer": "Interior 120°; exterior 60°.",
+          "reasoning": "360÷6 = 60; 180−60.",
+          "verify": [
+            {
+              "expr": "[180-360/6,360/6]",
+              "equals": [
+                120,
+                60
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.3.3",
+          "tier": "reasoning",
+          "prompt": "Can sides 3 cm, 4 cm and 8 cm form a triangle? What about 4, 5, 9?",
+          "answer": "Neither. 3+4<8; 4+5=9 gives a degenerate straight line.",
+          "reasoning": "The two shorter sides must sum to more than the longest.",
+          "verify": [
+            {
+              "expr": "[3+4>8,4+5>9]",
+              "equals": [
+                false,
+                false
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.3.4",
+          "tier": "application",
+          "prompt": "A regular polygon has exterior angle 45°. How many sides?",
+          "answer": "8.",
+          "reasoning": "360÷45.",
+          "verify": [
+            {
+              "expr": "360//45",
+              "equals": 8
+            }
+          ]
+        },
+        {
+          "id": "7.3.5",
+          "tier": "reasoning",
+          "prompt": "Why is checking only the two shorter sides against the longest enough?",
+          "answer": "If a+b>c with c longest, then a+c>b and b+c>a automatically because c is at least as large as the other sides.",
+          "reasoning": "The other two inequalities follow from ordering.",
+          "verify": [
+            {
+              "expr": "sorted([6,7,10])[0]+sorted([6,7,10])[1]>sorted([6,7,10])[2]",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "7.3.6",
+          "tier": "challenge",
+          "prompt": "Two sides are 5 cm and 8 cm. List all whole-number third sides.",
+          "answer": "4, 5, 6, 7, 8, 9, 10, 11, 12 cm.",
+          "reasoning": "Need 3 < x < 13.",
+          "verify": [
+            {
+              "expr": "[x for x in range(1,20) if 5+8>x and 5+x>8 and 8+x>5]",
+              "equals": [
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "polygon",
+        "n": 6,
+        "caption": "A hexagon splits into four triangles: interior sum 4 × 180° = 720°."
+      }
+    },
+    {
+      "number": "7.4",
+      "title": "Ruler-and-compass constructions",
+      "short": "Construct",
+      "intent": "Use equal radii to force a property, keep construction arcs visible and check the defining relationship.",
+      "paras": [
+        "A perpendicular bisector cuts a segment at its midpoint at 90°. Draw equal-radius arcs from both endpoints, with radius greater than half the segment, then join the arc intersections.",
+        "An angle bisector uses an arc from the vertex, then equal arcs from the two arm intersections. For an SSS triangle, draw one side and use the other two lengths as arc radii from its endpoints."
+      ],
+      "example": {
+        "title": "Construct a 5–6–7 triangle",
+        "problem": "Use the longest side as the base.",
+        "steps": [
+          "Draw AB = 7 cm.",
+          "From A draw radius 5 cm; from B draw radius 6 cm. Let the arcs meet at C.",
+          "Join AC and BC; check 5+6>7."
+        ],
+        "answer": "Triangle ABC has sides 5, 6 and 7 cm."
+      },
+      "warning": "Do not change the compass radius between the paired arcs of a bisector. A protractor drawing is a measurement, not a ruler-and-compass construction.",
+      "practice": [
+        {
+          "id": "7.4.1",
+          "tier": "fluency",
+          "prompt": "For a 6 cm segment, what must be true of the compass radius used for a perpendicular bisector?",
+          "answer": "Greater than 3 cm.",
+          "reasoning": "The arcs must meet above and below the segment.",
+          "verify": [
+            {
+              "expr": "6/2",
+              "equals": 3,
+              "contains": [
+                "Greater than 3"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.4.2",
+          "tier": "reasoning",
+          "prompt": "A 70° angle is bisected by construction. What should each half measure?",
+          "answer": "35°.",
+          "reasoning": "A bisector makes two equal angles.",
+          "verify": [
+            {
+              "expr": "70/2",
+              "equals": 35
+            }
+          ]
+        },
+        {
+          "id": "7.4.3",
+          "tier": "application",
+          "prompt": "Can a 5 cm, 6 cm, 7 cm triangle be constructed? State the check.",
+          "answer": "Yes: 5+6>7.",
+          "reasoning": "The two shorter sides exceed the longest.",
+          "verify": [
+            {
+              "expr": "5+6>7",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "7.4.4",
+          "tier": "reasoning",
+          "prompt": "Why must construction arcs be left visible?",
+          "answer": "They record the equal-radius method and allow the construction to be checked.",
+          "reasoning": "The arcs are evidence, not clutter.",
+          "verify": [
+            {
+              "expr": "5+6>7",
+              "equals": true,
+              "contains": [
+                "evidence"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.4.5",
+          "tier": "application",
+          "prompt": "Describe how to locate the midpoint of a 6 m base in a 1:20 scale drawing.",
+          "answer": "Draw a 30 cm base and construct its perpendicular bisector; it meets the base at 15 cm.",
+          "reasoning": "6 m ÷ 20 = 0.3 m = 30 cm; half is 15 cm.",
+          "verify": [
+            {
+              "expr": "[600/20,600/20/2]",
+              "equals": [
+                30,
+                15
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.4.6",
+          "tier": "challenge",
+          "prompt": "A student uses radius 2 cm from both ends of a 6 cm segment. Explain why the perpendicular-bisector construction fails.",
+          "answer": "The arcs do not meet: 2+2<6. The radius must exceed 3 cm.",
+          "reasoning": "Equal radii are not enough; they must be long enough to intersect.",
+          "verify": [
+            {
+              "expr": "2+2<6",
+              "equals": true
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "compass_bisector",
+        "length": 6,
+        "radius": 4,
+        "caption": "Equal radii from A and B locate P and Q. Line PQ is the perpendicular bisector of AB."
+      }
+    }
+  ],
+  "explore": {
+    "title": "The triangle inequality",
+    "instruction": "Criterion B. Test triples, identify borderline cases and justify the rule with compass arcs.",
+    "intro": "For each triple, compare the sum of the two shorter sides with the longest. A triangle must close with nonzero area.",
+    "table": {
+      "headers": [
+        "Sides (cm)",
+        "Possible?",
+        "Reason"
+      ],
+      "rows": [
+        [
+          "3, 4, 5",
+          "",
+          ""
+        ],
+        [
+          "3, 4, 8",
+          "",
+          ""
+        ],
+        [
+          "4, 5, 9",
+          "",
+          ""
+        ],
+        [
+          "6, 7, 10",
+          "",
+          ""
+        ],
+        [
+          "2, 2, 3",
+          "",
+          ""
+        ]
+      ]
+    },
+    "items": [
+      {
+        "id": "B1",
+        "tier": "investigation",
+        "prompt": "Complete the table for the five triples.",
+        "answer": "Yes, no, no (degenerate), yes, yes.",
+        "reasoning": "Compare the two shorter sums with the longest.",
+        "verify": [
+          {
+            "expr": "[triangle_possible(*t) for t in [(3,4,5),(3,4,8),(4,5,9),(6,7,10),(2,2,3)]]",
+            "equals": [
+              true,
+              false,
+              false,
+              true,
+              true
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B2",
+        "tier": "investigation",
+        "prompt": "State the triangle inequality rule.",
+        "answer": "The sum of the two shorter sides must be strictly greater than the longest side.",
+        "reasoning": "Equality produces a straight line.",
+        "verify": [
+          {
+            "expr": "triangle_possible(4,5,9)",
+            "equals": false,
+            "contains": [
+              "strictly greater"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B3",
+        "tier": "investigation",
+        "prompt": "Test 5, 8, 13; 5, 8, 12; and 7, 7, 14. Identify borderline cases.",
+        "answer": "No, yes, no. The first and third are borderline equality cases.",
+        "reasoning": "5+8=13 and 7+7=14.",
+        "verify": [
+          {
+            "expr": "[triangle_possible(*t) for t in [(5,8,13),(5,8,12),(7,7,14)]]",
+            "equals": [
+              false,
+              true,
+              false
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B4",
+        "tier": "challenge",
+        "prompt": "Two sides are 5 cm and 8 cm. Find every whole-number third side.",
+        "answer": "4 through 12 cm inclusive.",
+        "reasoning": "3 < x < 13.",
+        "verify": [
+          {
+            "expr": "[x for x in range(1,20) if triangle_possible(5,8,x)]",
+            "equals": [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B5",
+        "tier": "challenge",
+        "prompt": "Sides x, x+1 and x+2 are whole numbers. Find the smallest x that makes a triangle, and explain the arcs.",
+        "answer": "x=2. At x=1 the lengths 1,2,3 are degenerate; for x≥2 the two shorter arcs meet.",
+        "reasoning": "x+(x+1)>x+2 gives x>1.",
+        "verify": [
+          {
+            "expr": "min(x for x in range(1,20) if triangle_possible(x,x+1,x+2))",
+            "equals": 2
+          }
+        ]
+      }
+    ]
+  },
+  "application": {
+    "title": "The roof-truss workshop",
+    "instruction": "Criterion D. Simulated workshop design. Use angle facts and a 1:20 scale template before cutting timber.",
+    "intro": "A triangular truss has a 6 m base and equal base angles of 65°. A collar beam is parallel to the base.",
+    "table": {
+      "headers": [
+        "Design fact",
+        "Value"
+      ],
+      "rows": [
+        [
+          "Base",
+          "6 m"
+        ],
+        [
+          "Base angles",
+          "65° each"
+        ],
+        [
+          "Scale",
+          "1:20"
+        ]
+      ]
+    },
+    "items": [
+      {
+        "id": "D1",
+        "tier": "application",
+        "prompt": "Find the apex angle and classify the triangle.",
+        "answer": "50°; isosceles.",
+        "reasoning": "180−65−65; equal base angles imply equal rafters.",
+        "verify": [
+          {
+            "expr": "180-65-65",
+            "equals": 50
+          }
+        ]
+      },
+      {
+        "id": "D2",
+        "tier": "application",
+        "prompt": "Find the exterior angle at a base and the base length on the 1:20 drawing.",
+        "answer": "115°; 30 cm.",
+        "reasoning": "180−65; 600 cm÷20.",
+        "verify": [
+          {
+            "expr": "[180-65,600/20]",
+            "equals": [
+              115,
+              30
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D3",
+        "tier": "reasoning",
+        "prompt": "A second design has base 8 m and rafters 2.5 m each. Can it form a triangle?",
+        "answer": "No: 2.5+2.5=5<8.",
+        "reasoning": "The two shorter sides do not reach across the base.",
+        "verify": [
+          {
+            "expr": "triangle_possible(8,2.5,2.5)",
+            "equals": false
+          }
+        ]
+      },
+      {
+        "id": "D4",
+        "tier": "application",
+        "prompt": "Which construction locates the centre line from the apex to the base? Explain why it passes through the apex.",
+        "answer": "Construct the perpendicular bisector of the base. In an isosceles triangle the apex is equidistant from the base endpoints, so it lies on that bisector.",
+        "reasoning": "Equal rafters give the equidistance property.",
+        "verify": [
+          {
+            "expr": "600/20/2",
+            "equals": 15,
+            "contains": [
+              "perpendicular bisector",
+              "equidistant"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "assessment": {
+    "title": "The construction card",
+    "instruction": "Criteria A and C. Write a step-by-step card for a 5–6–7 cm triangle and a check that does not rely on appearance.",
+    "intro": "Your card should be usable by a partner with a ruler and compasses, not a protractor.",
+    "items": [
+      {
+        "id": "S1",
+        "tier": "assessment",
+        "prompt": "Give the construction steps and the inequality check.",
+        "answer": "Draw 7 cm base; arcs of 5 cm and 6 cm from its ends meet at the third vertex; join. Check 5+6>7.",
+        "reasoning": "The arcs transfer the required side lengths.",
+        "verify": [
+          {
+            "expr": "5+6>7",
+            "equals": true
+          }
+        ]
+      },
+      {
+        "id": "S2",
+        "tier": "assessment",
+        "prompt": "Explain how to check the completed triangle.",
+        "answer": "Measure all three sides against 5, 6 and 7 cm within drawing tolerance; the angle sum should be 180°.",
+        "reasoning": "A construction is checked by its defining properties.",
+        "verify": [
+          {
+            "expr": "5+6+7",
+            "equals": 18,
+            "contains": [
+              "5",
+              "6",
+              "7"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "S3",
+        "tier": "assessment",
+        "prompt": "Write one warning about a common construction error.",
+        "answer": "Sample: “Do not change the compass radius while transferring a side; keep the arcs visible as evidence.”",
+        "reasoning": "A changed radius changes the required length.",
+        "verify": [
+          {
+            "expr": "5+6>7",
+            "equals": true,
+            "contains": [
+              "Sample"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "diagrams": [
+    {
+      "kind": "crossing_lines",
+      "angle": 115,
+      "caption": "Vertically opposite angles are equal; adjacent angles on a straight line sum to 180°."
+    },
+    {
+      "kind": "parallel_lines",
+      "angle": 65,
+      "caption": "With parallel lines: corresponding and alternate angles are 65°; the co-interior angle is 115°."
+    },
+    {
+      "kind": "polygon",
+      "n": 6,
+      "caption": "A hexagon splits into four triangles: interior sum 4 × 180° = 720°."
+    },
+    {
+      "kind": "compass_bisector",
+      "length": 6,
+      "radius": 4,
+      "caption": "Equal radii from A and B locate P and Q. Line PQ is the perpendicular bisector of AB."
+    }
+  ],
+  "notes": [],
+  "groups": [
+    {
+      "id": "ready",
+      "title": "Ready check",
+      "instruction": "Try these without a calculator. They check the ideas this chapter builds on.",
+      "items": [
+        {
+          "id": "R1",
+          "tier": "ready",
+          "prompt": "Calculate 180−65 and 360−275.",
+          "answer": "115° and 85°.",
+          "reasoning": "Use straight-line and full-turn totals.",
+          "verify": [
+            {
+              "expr": "[180-65,360-275]",
+              "equals": [
+                115,
+                85
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "tier": "ready",
+          "prompt": "Find 180÷3.",
+          "answer": "60.",
+          "reasoning": "Three equal parts of 180.",
+          "verify": [
+            {
+              "expr": "180//3",
+              "equals": 60
+            }
+          ]
+        },
+        {
+          "id": "R3",
+          "tier": "ready",
+          "prompt": "Is 95° acute, right or obtuse?",
+          "answer": "Obtuse.",
+          "reasoning": "It lies between 90° and 180°.",
+          "verify": [
+            {
+              "expr": "classify_angle(95)",
+              "equals": "obtuse"
+            }
+          ]
+        },
+        {
+          "id": "R4",
+          "tier": "ready",
+          "prompt": "Find 5+6 and compare with 7.",
+          "answer": "11 > 7.",
+          "reasoning": "Add the two shorter lengths.",
+          "verify": [
+            {
+              "expr": "5+6>7",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "R5",
+          "tier": "ready",
+          "prompt": "Half of 6 cm is what length?",
+          "answer": "3 cm.",
+          "reasoning": "6÷2.",
+          "verify": [
+            {
+              "expr": "6/2",
+              "equals": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p71",
+      "title": "Practice 7.1 · Angle facts",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "7.1.1",
+          "tier": "fluency",
+          "prompt": "An angle on a straight line is 65°. Find its neighbour.",
+          "answer": "115°.",
+          "reasoning": "180−65.",
+          "verify": [
+            {
+              "expr": "180-65",
+              "equals": 115
+            }
+          ]
+        },
+        {
+          "id": "7.1.2",
+          "tier": "fluency",
+          "prompt": "Two lines cross and one angle is 115°. Find the other three.",
+          "answer": "65°, 115°, 65°.",
+          "reasoning": "Vertically opposite angles are equal; adjacent angles sum to 180°.",
+          "verify": [
+            {
+              "expr": "[180-115,115,180-115]",
+              "equals": [
+                65,
+                115,
+                65
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.1.3",
+          "tier": "reasoning",
+          "prompt": "Three angles around a point are 90°, 110° and 75°. Find the fourth.",
+          "answer": "85°.",
+          "reasoning": "360−(90+110+75).",
+          "verify": [
+            {
+              "expr": "360-(90+110+75)",
+              "equals": 85
+            }
+          ]
+        },
+        {
+          "id": "7.1.4",
+          "tier": "fluency",
+          "prompt": "Classify 35°, 90°, 125° and 210°.",
+          "answer": "Acute, right, obtuse, reflex.",
+          "reasoning": "Compare with 90°, 180° and 360°.",
+          "verify": [
+            {
+              "expr": "[classify_angle(a) for a in [35,90,125,210]]",
+              "equals": [
+                "acute",
+                "right",
+                "obtuse",
+                "reflex"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.1.5",
+          "tier": "application",
+          "prompt": "A ramp makes 12° with the ground. What angle does it make with the vertical?",
+          "answer": "78°.",
+          "reasoning": "Ground and vertical are perpendicular: 90−12.",
+          "verify": [
+            {
+              "expr": "90-12",
+              "equals": 78
+            }
+          ]
+        },
+        {
+          "id": "7.1.6",
+          "tier": "challenge",
+          "prompt": "Can two adjacent angles on a straight line both be obtuse? Explain.",
+          "answer": "No. Their sum would exceed 180°.",
+          "reasoning": "Each obtuse angle is greater than 90°.",
+          "verify": [
+            {
+              "expr": "91+91>180",
+              "equals": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p72",
+      "title": "Practice 7.2 · Parallel and triangle facts",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "7.2.1",
+          "tier": "fluency",
+          "prompt": "A triangle has angles 65° and 65°. Find the third.",
+          "answer": "50°.",
+          "reasoning": "180−130.",
+          "verify": [
+            {
+              "expr": "180-65-65",
+              "equals": 50
+            }
+          ]
+        },
+        {
+          "id": "7.2.2",
+          "tier": "fluency",
+          "prompt": "Parallel lines are cut by a transversal. One angle is 65°. Find its corresponding, alternate and co-interior angles.",
+          "answer": "65°, 65°, 115°.",
+          "reasoning": "Corresponding and alternate are equal; co-interior sums to 180°.",
+          "verify": [
+            {
+              "expr": "[65,65,180-65]",
+              "equals": [
+                65,
+                65,
+                115
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.2.3",
+          "tier": "reasoning",
+          "prompt": "An exterior angle of a triangle is 115° and one opposite interior angle is 65°. Find the other.",
+          "answer": "50°.",
+          "reasoning": "115−65.",
+          "verify": [
+            {
+              "expr": "115-65",
+              "equals": 50
+            }
+          ]
+        },
+        {
+          "id": "7.2.4",
+          "tier": "application",
+          "prompt": "An isosceles triangle has apex 50°. Find each base angle.",
+          "answer": "65°.",
+          "reasoning": "(180−50)÷2.",
+          "verify": [
+            {
+              "expr": "(180-50)//2",
+              "equals": 65
+            }
+          ]
+        },
+        {
+          "id": "7.2.5",
+          "tier": "reasoning",
+          "prompt": "Can a triangle have angles 60°, 70° and 60°? Explain.",
+          "answer": "No. They sum to 190°, not 180°.",
+          "reasoning": "The angle sum is a necessary condition.",
+          "verify": [
+            {
+              "expr": "60+70+60",
+              "equals": 190
+            }
+          ]
+        },
+        {
+          "id": "7.2.6",
+          "tier": "challenge",
+          "prompt": "A triangle has angles in the ratio 2:3:4. Find them.",
+          "answer": "40°, 60°, 80°.",
+          "reasoning": "Nine parts make 180°, so one part is 20°.",
+          "verify": [
+            {
+              "expr": "[180*k//9 for k in [2,3,4]]",
+              "equals": [
+                40,
+                60,
+                80
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p73",
+      "title": "Practice 7.3 · Polygons and possible triangles",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "7.3.1",
+          "tier": "fluency",
+          "prompt": "Find the interior angle sums of a quadrilateral, pentagon and hexagon.",
+          "answer": "360°, 540°, 720°.",
+          "reasoning": "Use (n−2)×180°.",
+          "verify": [
+            {
+              "expr": "[(n-2)*180 for n in [4,5,6]]",
+              "equals": [
+                360,
+                540,
+                720
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.3.2",
+          "tier": "fluency",
+          "prompt": "Find each interior and exterior angle of a regular hexagon.",
+          "answer": "Interior 120°; exterior 60°.",
+          "reasoning": "360÷6 = 60; 180−60.",
+          "verify": [
+            {
+              "expr": "[180-360/6,360/6]",
+              "equals": [
+                120,
+                60
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.3.3",
+          "tier": "reasoning",
+          "prompt": "Can sides 3 cm, 4 cm and 8 cm form a triangle? What about 4, 5, 9?",
+          "answer": "Neither. 3+4<8; 4+5=9 gives a degenerate straight line.",
+          "reasoning": "The two shorter sides must sum to more than the longest.",
+          "verify": [
+            {
+              "expr": "[3+4>8,4+5>9]",
+              "equals": [
+                false,
+                false
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.3.4",
+          "tier": "application",
+          "prompt": "A regular polygon has exterior angle 45°. How many sides?",
+          "answer": "8.",
+          "reasoning": "360÷45.",
+          "verify": [
+            {
+              "expr": "360//45",
+              "equals": 8
+            }
+          ]
+        },
+        {
+          "id": "7.3.5",
+          "tier": "reasoning",
+          "prompt": "Why is checking only the two shorter sides against the longest enough?",
+          "answer": "If a+b>c with c longest, then a+c>b and b+c>a automatically because c is at least as large as the other sides.",
+          "reasoning": "The other two inequalities follow from ordering.",
+          "verify": [
+            {
+              "expr": "sorted([6,7,10])[0]+sorted([6,7,10])[1]>sorted([6,7,10])[2]",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "7.3.6",
+          "tier": "challenge",
+          "prompt": "Two sides are 5 cm and 8 cm. List all whole-number third sides.",
+          "answer": "4, 5, 6, 7, 8, 9, 10, 11, 12 cm.",
+          "reasoning": "Need 3 < x < 13.",
+          "verify": [
+            {
+              "expr": "[x for x in range(1,20) if 5+8>x and 5+x>8 and 8+x>5]",
+              "equals": [
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p74",
+      "title": "Practice 7.4 · Construct",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "7.4.1",
+          "tier": "fluency",
+          "prompt": "For a 6 cm segment, what must be true of the compass radius used for a perpendicular bisector?",
+          "answer": "Greater than 3 cm.",
+          "reasoning": "The arcs must meet above and below the segment.",
+          "verify": [
+            {
+              "expr": "6/2",
+              "equals": 3,
+              "contains": [
+                "Greater than 3"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.4.2",
+          "tier": "reasoning",
+          "prompt": "A 70° angle is bisected by construction. What should each half measure?",
+          "answer": "35°.",
+          "reasoning": "A bisector makes two equal angles.",
+          "verify": [
+            {
+              "expr": "70/2",
+              "equals": 35
+            }
+          ]
+        },
+        {
+          "id": "7.4.3",
+          "tier": "application",
+          "prompt": "Can a 5 cm, 6 cm, 7 cm triangle be constructed? State the check.",
+          "answer": "Yes: 5+6>7.",
+          "reasoning": "The two shorter sides exceed the longest.",
+          "verify": [
+            {
+              "expr": "5+6>7",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "7.4.4",
+          "tier": "reasoning",
+          "prompt": "Why must construction arcs be left visible?",
+          "answer": "They record the equal-radius method and allow the construction to be checked.",
+          "reasoning": "The arcs are evidence, not clutter.",
+          "verify": [
+            {
+              "expr": "5+6>7",
+              "equals": true,
+              "contains": [
+                "evidence"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.4.5",
+          "tier": "application",
+          "prompt": "Describe how to locate the midpoint of a 6 m base in a 1:20 scale drawing.",
+          "answer": "Draw a 30 cm base and construct its perpendicular bisector; it meets the base at 15 cm.",
+          "reasoning": "6 m ÷ 20 = 0.3 m = 30 cm; half is 15 cm.",
+          "verify": [
+            {
+              "expr": "[600/20,600/20/2]",
+              "equals": [
+                30,
+                15
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7.4.6",
+          "tier": "challenge",
+          "prompt": "A student uses radius 2 cm from both ends of a 6 cm segment. Explain why the perpendicular-bisector construction fails.",
+          "answer": "The arcs do not meet: 2+2<6. The radius must exceed 3 cm.",
+          "reasoning": "Equal radii are not enough; they must be long enough to intersect.",
+          "verify": [
+            {
+              "expr": "2+2<6",
+              "equals": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explore",
+      "title": "Exploration · The triangle inequality",
+      "instruction": "Criterion B. Test triples, identify borderline cases and justify the rule with compass arcs.",
+      "items": [
+        {
+          "id": "B1",
+          "tier": "investigation",
+          "prompt": "Complete the table for the five triples.",
+          "answer": "Yes, no, no (degenerate), yes, yes.",
+          "reasoning": "Compare the two shorter sums with the longest.",
+          "verify": [
+            {
+              "expr": "[triangle_possible(*t) for t in [(3,4,5),(3,4,8),(4,5,9),(6,7,10),(2,2,3)]]",
+              "equals": [
+                true,
+                false,
+                false,
+                true,
+                true
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B2",
+          "tier": "investigation",
+          "prompt": "State the triangle inequality rule.",
+          "answer": "The sum of the two shorter sides must be strictly greater than the longest side.",
+          "reasoning": "Equality produces a straight line.",
+          "verify": [
+            {
+              "expr": "triangle_possible(4,5,9)",
+              "equals": false,
+              "contains": [
+                "strictly greater"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B3",
+          "tier": "investigation",
+          "prompt": "Test 5, 8, 13; 5, 8, 12; and 7, 7, 14. Identify borderline cases.",
+          "answer": "No, yes, no. The first and third are borderline equality cases.",
+          "reasoning": "5+8=13 and 7+7=14.",
+          "verify": [
+            {
+              "expr": "[triangle_possible(*t) for t in [(5,8,13),(5,8,12),(7,7,14)]]",
+              "equals": [
+                false,
+                true,
+                false
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B4",
+          "tier": "challenge",
+          "prompt": "Two sides are 5 cm and 8 cm. Find every whole-number third side.",
+          "answer": "4 through 12 cm inclusive.",
+          "reasoning": "3 < x < 13.",
+          "verify": [
+            {
+              "expr": "[x for x in range(1,20) if triangle_possible(5,8,x)]",
+              "equals": [
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B5",
+          "tier": "challenge",
+          "prompt": "Sides x, x+1 and x+2 are whole numbers. Find the smallest x that makes a triangle, and explain the arcs.",
+          "answer": "x=2. At x=1 the lengths 1,2,3 are degenerate; for x≥2 the two shorter arcs meet.",
+          "reasoning": "x+(x+1)>x+2 gives x>1.",
+          "verify": [
+            {
+              "expr": "min(x for x in range(1,20) if triangle_possible(x,x+1,x+2))",
+              "equals": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "check",
+      "title": "Checkpoint",
+      "instruction": "Answer, then explain one result to a partner.",
+      "items": [
+        {
+          "id": "C1",
+          "tier": "check",
+          "prompt": "Angles on a line are x and 115°. Find x.",
+          "answer": "65°.",
+          "reasoning": "180−115.",
+          "verify": [
+            {
+              "expr": "180-115",
+              "equals": 65
+            }
+          ]
+        },
+        {
+          "id": "C2",
+          "tier": "check",
+          "prompt": "A triangle has angles 50° and 65°. Find the third.",
+          "answer": "65°.",
+          "reasoning": "180−115.",
+          "verify": [
+            {
+              "expr": "180-50-65",
+              "equals": 65
+            }
+          ]
+        },
+        {
+          "id": "C3",
+          "tier": "check",
+          "prompt": "Find the interior angle sum of a pentagon.",
+          "answer": "540°.",
+          "reasoning": "(5−2)×180.",
+          "verify": [
+            {
+              "expr": "(5-2)*180",
+              "equals": 540
+            }
+          ]
+        },
+        {
+          "id": "C4",
+          "tier": "check",
+          "prompt": "Can sides 2, 2, 3 form a triangle?",
+          "answer": "Yes: 2+2>3.",
+          "reasoning": "The strict inequality holds.",
+          "verify": [
+            {
+              "expr": "2+2>3",
+              "equals": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "application",
+      "title": "Application · The roof-truss workshop",
+      "instruction": "Criterion D. Simulated workshop design. Use angle facts and a 1:20 scale template before cutting timber.",
+      "items": [
+        {
+          "id": "D1",
+          "tier": "application",
+          "prompt": "Find the apex angle and classify the triangle.",
+          "answer": "50°; isosceles.",
+          "reasoning": "180−65−65; equal base angles imply equal rafters.",
+          "verify": [
+            {
+              "expr": "180-65-65",
+              "equals": 50
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "tier": "application",
+          "prompt": "Find the exterior angle at a base and the base length on the 1:20 drawing.",
+          "answer": "115°; 30 cm.",
+          "reasoning": "180−65; 600 cm÷20.",
+          "verify": [
+            {
+              "expr": "[180-65,600/20]",
+              "equals": [
+                115,
+                30
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "tier": "reasoning",
+          "prompt": "A second design has base 8 m and rafters 2.5 m each. Can it form a triangle?",
+          "answer": "No: 2.5+2.5=5<8.",
+          "reasoning": "The two shorter sides do not reach across the base.",
+          "verify": [
+            {
+              "expr": "triangle_possible(8,2.5,2.5)",
+              "equals": false
+            }
+          ]
+        },
+        {
+          "id": "D4",
+          "tier": "application",
+          "prompt": "Which construction locates the centre line from the apex to the base? Explain why it passes through the apex.",
+          "answer": "Construct the perpendicular bisector of the base. In an isosceles triangle the apex is equidistant from the base endpoints, so it lies on that bisector.",
+          "reasoning": "Equal rafters give the equidistance property.",
+          "verify": [
+            {
+              "expr": "600/20/2",
+              "equals": 15,
+              "contains": [
+                "perpendicular bisector",
+                "equidistant"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment",
+      "title": "Assessment practice · The construction card",
+      "instruction": "Criteria A and C. Write a step-by-step card for a 5–6–7 cm triangle and a check that does not rely on appearance.",
+      "items": [
+        {
+          "id": "S1",
+          "tier": "assessment",
+          "prompt": "Give the construction steps and the inequality check.",
+          "answer": "Draw 7 cm base; arcs of 5 cm and 6 cm from its ends meet at the third vertex; join. Check 5+6>7.",
+          "reasoning": "The arcs transfer the required side lengths.",
+          "verify": [
+            {
+              "expr": "5+6>7",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "S2",
+          "tier": "assessment",
+          "prompt": "Explain how to check the completed triangle.",
+          "answer": "Measure all three sides against 5, 6 and 7 cm within drawing tolerance; the angle sum should be 180°.",
+          "reasoning": "A construction is checked by its defining properties.",
+          "verify": [
+            {
+              "expr": "5+6+7",
+              "equals": 18,
+              "contains": [
+                "5",
+                "6",
+                "7"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "S3",
+          "tier": "assessment",
+          "prompt": "Write one warning about a common construction error.",
+          "answer": "Sample: “Do not change the compass radius while transferring a side; keep the arcs visible as evidence.”",
+          "reasoning": "A changed radius changes the required length.",
+          "verify": [
+            {
+              "expr": "5+6>7",
+              "equals": true,
+              "contains": [
+                "Sample"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mixed",
+      "title": "Mixed practice 7",
+      "instruction": "Connect ideas. Give units and reasons where requested.",
+      "items": [
+        {
+          "id": "M1",
+          "tier": "fluency",
+          "prompt": "Find the neighbour of 72° on a straight line.",
+          "answer": "108°.",
+          "reasoning": "180−72.",
+          "verify": [
+            {
+              "expr": "180-72",
+              "equals": 108
+            }
+          ]
+        },
+        {
+          "id": "M2",
+          "tier": "fluency",
+          "prompt": "A triangle has angles 35° and 85°. Find the third.",
+          "answer": "60°.",
+          "reasoning": "180−120.",
+          "verify": [
+            {
+              "expr": "180-35-85",
+              "equals": 60
+            }
+          ]
+        },
+        {
+          "id": "M3",
+          "tier": "fluency",
+          "prompt": "Find the interior angle sum of an octagon.",
+          "answer": "1080°.",
+          "reasoning": "(8−2)×180.",
+          "verify": [
+            {
+              "expr": "(8-2)*180",
+              "equals": 1080
+            }
+          ]
+        },
+        {
+          "id": "M4",
+          "tier": "application",
+          "prompt": "A regular polygon has exterior angle 30°. Find its number of sides and interior angle.",
+          "answer": "12 sides; interior 150°.",
+          "reasoning": "360÷30; 180−30.",
+          "verify": [
+            {
+              "expr": "[360//30,180-30]",
+              "equals": [
+                12,
+                150
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M5",
+          "tier": "reasoning",
+          "prompt": "Can sides 4, 4, 9 form a triangle?",
+          "answer": "No: 4+4<9.",
+          "reasoning": "The shorter sides do not reach.",
+          "verify": [
+            {
+              "expr": "triangle_possible(4,4,9)",
+              "equals": false
+            }
+          ]
+        },
+        {
+          "id": "M6",
+          "tier": "reasoning",
+          "prompt": "Parallel lines give a co-interior angle of 110°. Find its partner.",
+          "answer": "70°.",
+          "reasoning": "180−110.",
+          "verify": [
+            {
+              "expr": "180-110",
+              "equals": 70
+            }
+          ]
+        },
+        {
+          "id": "M7",
+          "tier": "application",
+          "prompt": "A 70° angle is bisected. Find each half.",
+          "answer": "35°.",
+          "reasoning": "70÷2.",
+          "verify": [
+            {
+              "expr": "70/2",
+              "equals": 35
+            }
+          ]
+        },
+        {
+          "id": "M8",
+          "tier": "challenge",
+          "prompt": "An isosceles triangle has apex 40°. Find the base angles.",
+          "answer": "70° each.",
+          "reasoning": "(180−40)÷2.",
+          "verify": [
+            {
+              "expr": "(180-40)//2",
+              "equals": 70
+            }
+          ]
+        },
+        {
+          "id": "M9",
+          "tier": "challenge",
+          "prompt": "List whole-number third sides for a triangle with sides 6 and 9.",
+          "answer": "4 through 14 cm.",
+          "reasoning": "3 < x < 15.",
+          "verify": [
+            {
+              "expr": "[x for x in range(1,20) if triangle_possible(6,9,x)]",
+              "equals": [
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M10",
+          "tier": "application",
+          "prompt": "A 1:20 drawing has a 30 cm base. Find the real length in metres.",
+          "answer": "6 m.",
+          "reasoning": "30×20=600 cm=6 m.",
+          "verify": [
+            {
+              "expr": "30*20/100",
+              "equals": 6
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source": {
+    "file": "MYP-Mathematics-1-Student-Coursebook.pdf",
+    "sha256": "131a3a99d14ae5a7613c7e9da24c540e29029d93a1a360abcc8516835798b3f0",
+    "pages": "133–154; answers 229–232",
+    "scope_note": "Rewritten within the verified first-edition chapter scope and embedded planner. No standalone school curriculum overview was present. New classroom contexts are simulated and labelled."
+  }
+}

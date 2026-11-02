@@ -1,0 +1,108 @@
+[
+  {
+    "concept": "7.1",
+    "items": 16,
+    "visual": 11,
+    "examples": 3,
+    "thinking": {
+      "Understand": 3,
+      "Fluency": 5,
+      "Application": 3,
+      "Reasoning": 3,
+      "Challenge": 2
+    },
+    "subtopics": {
+      "Angle language and turn facts": 16
+    },
+    "pages": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  {
+    "concept": "7.2",
+    "items": 20,
+    "visual": 18,
+    "examples": 4,
+    "thinking": {
+      "Understand": 3,
+      "Fluency": 5,
+      "Reasoning": 5,
+      "Application": 5,
+      "Challenge": 2
+    },
+    "subtopics": {
+      "Parallel lines and transversals": 8,
+      "Triangle and exterior-angle facts": 12
+    },
+    "pages": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ]
+  },
+  {
+    "concept": "7.3",
+    "items": 17,
+    "visual": 13,
+    "examples": 3,
+    "thinking": {
+      "Understand": 2,
+      "Fluency": 5,
+      "Application": 2,
+      "Reasoning": 2,
+      "Investigation": 2,
+      "Challenge": 4
+    },
+    "subtopics": {
+      "Polygon angle sums": 8,
+      "Triangle inequality": 9
+    },
+    "pages": [
+      34,
+      35,
+      36,
+      37,
+      42,
+      43,
+      44
+    ]
+  },
+  {
+    "concept": "7.4",
+    "items": 16,
+    "visual": 14,
+    "examples": 4,
+    "thinking": {
+      "Understand": 2,
+      "Fluency": 7,
+      "Application": 2,
+      "Reasoning": 3,
+      "Challenge": 2
+    },
+    "subtopics": {
+      "Bisectors and loci": 8,
+      "Constructing triangles": 8
+    },
+    "pages": [
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57
+    ]
+  }
+]

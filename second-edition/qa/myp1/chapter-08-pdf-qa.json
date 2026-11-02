@@ -1,0 +1,211 @@
+{
+  "file": "/home/user/MYP-Texbook/second-edition/exports/myp1/MYP1-Chapter-08-Revision-Proof.pdf",
+  "pages": 22,
+  "expected_pages": 22,
+  "answer_start_page": 17,
+  "page_sizes": [
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ],
+    [
+      594.96,
+      841.92
+    ]
+  ],
+  "fonts": {
+    "AAAAAA+Inter-Bold": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 8480
+    },
+    "BAAAAA+Fraunces-Regular": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 2364
+    },
+    "CAAAAA+Fraunces-SemiBold": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 11596
+    },
+    "DAAAAA+SourceSerif4-Regular": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 13952
+    },
+    "EAAAAA+Inter-Regular": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 9884
+    },
+    "FAAAAA+SourceSerif4-SemiBold": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 11484
+    },
+    "GAAAAA+Inter-SemiBold": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 7016
+    },
+    "HAAAAA+OpenSans-Regular": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 13272
+    },
+    "IAAAAA+OpenSans-Bold": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 14280
+    },
+    "JAAAAA+KaTeX_Main-Regular": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 7268
+    },
+    "KAAAAA+KaTeX_Math-Italic": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 5780
+    },
+    "LAAAAA+SourceSerif4-Regular": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 2036
+    },
+    "MAAAAA+KaTeX_AMS-Regular": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 6436
+    },
+    "NAAAAA+SourceSerif4-SemiBold": {
+      "type": "Type0",
+      "ext": "ttf",
+      "embedded": true,
+      "bytes": 2024
+    }
+  },
+  "issues": [],
+  "text_lengths": [
+    182,
+    1045,
+    1196,
+    956,
+    873,
+    846,
+    866,
+    1240,
+    903,
+    768,
+    949,
+    1110,
+    596,
+    848,
+    987,
+    1028,
+    446,
+    1011,
+    1166,
+    675,
+    974,
+    700
+  ],
+  "missing_question_ids": [],
+  "missing_answer_ids": [],
+  "exercise_ids_missing_or_unpaired": [],
+  "status": "PASS"
+}

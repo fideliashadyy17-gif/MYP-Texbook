@@ -1,0 +1,9 @@
+# Local toolchain and generated intermediates
+sources/*/build/node_modules/
+sources/*/build/.generated/
+sources/*/tools/node_modules/
+sources/*/tools/.generated/
+*.log
+
+# Full-page QA renders are regenerable; contact sheets and JSON reports are kept as evidence.
+qa/*/renders/*/page-*.png
