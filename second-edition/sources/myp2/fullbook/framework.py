@@ -287,7 +287,10 @@ CHAPTERS.extend([
 dict(
     num=1, title="Ratios and equivalent ratios",
     key="Form", related=["Equivalence", "Representation"], context="Fairness and development",
-    inquiry="How can one comparison describe many different-sized situations without losing what matters?",
+    exploration="Inequality, difference and inclusion",
+    inquiry=("The form of a ratio, and the equivalence of its different representations, allow a "
+             "limited resource to be shared fairly and allow that fairness to be justified and "
+             "checked."),
     atl=("Critical thinking",
          "In order for a student to evaluate and improve a mathematical claim, students must test the "
          "claim on several cases, find a counterexample if one exists, and revise the statement so it is accurate."),
@@ -295,15 +298,21 @@ dict(
                "factory order, and equivalent ratios keep that comparison honest.",
     engage="A school fair sells boxes of 8 pencils and boxes of 12 pencils. A teacher buys 3 boxes of "
            "8 and a parent buys 2 boxes of 12. Who has more pencils? A ratio answers this in one line.",
-    questions=[("Factual", "What does the ratio 3:5 compare, and in what unit?"),
-               ("Conceptual", "Why can one ratio describe many different-sized situations?"),
-               ("Debatable", "Is a ratio always the fairest way to share a limited resource?")],
+    questions=[("Factual", "What does the ratio 3:5 compare, what is its simplest form, and how do "
+                           "you generate ratios equivalent to it?"),
+               ("Conceptual", "Why can one ratio describe many different-sized situations, and how "
+                              "does representing it as a unit rate or a ratio table change what you "
+                              "are able to compare?"),
+               ("Debatable", "Is a ratio always the fairest way to share a limited resource, and how "
+                             "could you use mathematical evidence to defend your position?")],
     application_lede="These tasks use ratio language, equivalent ratios, ratio tables and sharing. "
                      "Choose the representation that makes the comparison easiest to explain.",
     projects_lede="Ratio reasoning is used wherever a limited resource is shared. Use it to act, "
                   "not only to calculate.",
     sections=[
-        dict(id="1.1", title="Understanding ratio language", teach=[
+        dict(id="1.1", title="Understanding ratio language",
+             inquiry_q=("How can one ratio describe a comparison between two quantities, and what "
+                        "does its simplest form tell us about that comparison?"), teach=[
             "A ratio compares two quantities of the same kind. The order matters: 3:5 is not the same comparison as 5:3. A ratio does not tell you the total — it tells you how the total is split.",
             "Two different kinds of comparison are easy to confuse. A part-part ratio compares one part with another (red:blue = 3:5). A part-whole ratio compares one part with everything (red:total = 3:8). Writing the wrong one is the most common error in this chapter.",
             "A ratio can be simplified by dividing both parts by the same non-zero number, exactly as with fractions. 12:18 simplifies to 2:3 because both parts divide by 6.",
@@ -324,9 +333,10 @@ dict(
                  ans="Yes — both classes have a boys-to-girls ratio of 7:8",
                  interp="The classes are different sizes, but the balance between boys and girls is identical."),
         ], inv=dict(
-            task="Colour a 4 × 6 grid of tiles using two colours so that the ratio of shaded to unshaded "
-                 "tiles is 2:4. Then colour a 6 × 9 grid with the same ratio. Record how many tiles of "
-                 "each colour you used in each grid.",
+            task="A donation of coloured tiles is shared between two classes. Colour a 4 × 6 grid so "
+                 "that the ratio of shaded (class A) to unshaded (class B) tiles is 2:4, then colour a "
+                 "6 × 9 grid with the same ratio. Record how many tiles each class receives in each "
+                 "grid.",
             fig=F("tiles", 6, 4, [(r, c) for r in range(4) for c in range(2)],
                   "A 4 by 6 grid with 8 shaded tiles", note="shaded : unshaded = 8 : 16 = 1 : 2"),
             table=[["Grid", "shaded", "unshaded", "total"],
@@ -335,8 +345,12 @@ dict(
                     "The totals are different but the simplified ratio is the same.",
                     "Doubling the grid doubles both parts of the ratio."],
             obs="Multiplying both parts of a ratio by the same number keeps the comparison unchanged.",
-            concl="a : b = (ak) : (bk) for any non-zero number k, so equivalent ratios describe the same comparison.")),
-        dict(id="1.2", title="Equivalent ratios and simplest form", teach=[
+            concl="a : b = (ak) : (bk) for any non-zero number k, so one ratio can describe the "
+                  "comparison in any size, and its simplest form is the shortest honest description "
+                  "of that comparison.")),
+        dict(id="1.2", title="Equivalent ratios and simplest form",
+             inquiry_q=("What stays the same when both parts of a ratio change, and how can you tell "
+                        "whether two ratios describe the same comparison?"), teach=[
             "Equivalent ratios are the ratio version of equivalent fractions. To test whether two ratios are equivalent, simplify both to simplest form, or check whether one multiplier turns one into the other.",
             "A unit rate is a ratio scaled so that one part is 1. It is the most useful form for comparing: 8 pencils for 3 dollars is a unit price of 0.375 dollars per pencil.",
             "Simplifying is also a checking tool. If two answers disagree, reduce both to simplest form before deciding which is wrong.",
@@ -365,8 +379,11 @@ dict(
                     "The gap between the two parts grows, but the comparison does not change.",
                     "There is no largest equivalent ratio: k can be any non-zero number."],
             obs="A single comparison has infinitely many equivalent forms, all multiples of the simplest form.",
-            concl="Equivalent ratios are exactly the ratios that reduce to the same simplest form.")),
-        dict(id="1.3", title="Ratio tables and double number lines", teach=[
+            concl="What stays the same is the comparison: equivalent ratios are exactly the ratios "
+                  "that reduce to the same simplest form, whatever the size of the numbers.")),
+        dict(id="1.3", title="Ratio tables and double number lines",
+             inquiry_q=("How can a ratio table or a double number line find a missing value in a "
+                        "comparison without guessing?"), teach=[
             "A ratio table lists matching pairs of quantities. Reading down the table shows one quantity scaling; reading across shows the fixed comparison. A double number line does the same job on a line, which makes missing values visible.",
             "Tables are the natural home for ratio reasoning because they keep the relationship visible while you scale. To find a missing value, first find the multiplier between two known values in the same column.",
             "The same structure appears later as a table of values for a proportional relationship, and as a coordinate graph. Recognising it now saves time in chapters 2 and 6.",
@@ -394,8 +411,11 @@ dict(
                     "25 ÷ 5 = 5 steps, so 5 × 2 = 10 litres.",
                     "The line and the table give the same answer."],
             obs="A double number line and a ratio table are the same relationship in two notations.",
-            concl="To find a missing value, find the multiplier in one row and apply it to the other.")),
-        dict(id="1.4", title="Sharing and comparing with ratios", teach=[
+            concl="A missing value is found by locating the multiplier in one row and applying it to "
+                  "the other, which is why the table and the number line never need trial and error.")),
+        dict(id="1.4", title="Sharing and comparing with ratios",
+             inquiry_q=("When is a sharing rule fair, and how can you check that a sharing really "
+                        "matches the rule that was agreed?"), teach=[
             "Sharing an amount in a ratio has three steps: add the parts, divide the amount by the total to find the value of one part, then multiply by each part. Skipping the first step is the classic error.",
             "Comparing ratios is easier when both are written with the same second part, or when both are converted to unit rates. Whichever you choose, say which you used.",
             "A ratio also supports reasoning about fairness: if two people contribute in the ratio 3:2, a fair split of the reward is not automatically 3:2 unless the agreed rule says so. State the rule before you calculate.",
@@ -426,7 +446,8 @@ dict(
                     "120 ÷ 8 = 15, so one part is 15 books.",
                     "5 × 15 = 75 and 3 × 15 = 45, which adds back to 120."],
             obs="A sharing is correct only when the parts add to the total and simplify to the given ratio.",
-            concl="Share by finding the value of one part, then check both the total and the simplest form.")),
+            concl="A sharing is fair when the rule is stated first and the result is checked: find "
+                  "the value of one part, then verify both the total and the simplest form.")),
     ],
     practice=dict(
         A=[("1.1.1", "Write the ratio 8:12 in simplest form.", "2:3", "Divide both parts by the HCF, 4.", "F"),
@@ -548,6 +569,19 @@ dict(
                   "solution. How much concentrate is needed for a 15-litre batch, and what is the ratio of "
                   "concentrate to water in simplest form?",
              note="Criteria A and C · show a table or double number line as your working."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of form and the related concepts of equivalence and representation "
+        "appear in your work?",
+        "How is the global context of fairness and development, and its exploration of inequality, "
+        "difference and inclusion, visible in the investigations and examples you completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of ratio reasoning for deciding what is fair, and what would you "
+        "still like to ask?",
     ],
     review=dict(
         ideas=["A ratio compares quantities of the same kind, and the order matters.",

@@ -88,6 +88,8 @@ def example(ex, index):
 def chapter_opener(ch):
     qs = "".join('<li><strong>%s:</strong> %s</li>' % (esc(k), esc(v)) for k, v in ch["questions"])
     related = " · ".join(ch["related"])
+    expl = ('<br/><strong>Global context exploration:</strong> %s' % esc(ch["exploration"]) \
+            if ch.get("exploration") else "")
     body = (
         '<div class="kicker">Chapter %d · %s</div>'
         '<div class="chapter-number">%02d</div>'
@@ -97,13 +99,13 @@ def chapter_opener(ch):
         '<div class="review-grid">'
         '<div class="card"><h3>Framing the inquiry</h3>'
         '<p><strong>Key concept:</strong> %s<br/><strong>Related concepts:</strong> %s<br/>'
-        '<strong>Global context:</strong> %s</p>'
+        '<strong>Global context:</strong> %s%s</p>'
         '<p><strong>Statement of inquiry:</strong> %s</p></div>'
         '<div class="card"><h3>Questions to guide us</h3><ul>%s</ul></div>'
         '</div>'
         '<div class="atl"><strong>ATL · %s.</strong> %s</div>'
         % (ch["num"], esc(PARTS[ch["num"]]), ch["num"], esc(ch["title"]), esc(ch["standfirst"]),
-           esc(ch["engage"]), esc(ch["key"]), esc(related), esc(ch["context"]),
+           esc(ch["engage"]), esc(ch["key"]), esc(related), esc(ch["context"]), expl,
            esc(ch["inquiry"]), qs, esc(ch["atl"][0]), esc(ch["atl"][1])))
     return make_page(body, "ch%02d-cover" % ch["num"], cls="opener",
                      running_left=RUNNING, running_right="Chapter %d · %s" % (ch["num"], ch["title"]))
@@ -117,11 +119,14 @@ def investigation_pages(ch, sec):
         visuals += figure(inv["fig"], inv.get("fig_cap", ""))
     if inv.get("table"):
         visuals += figure(diagrams2.table(inv["table"]), inv.get("table_cap", ""))
+    qblock = ('<div class="callout"><div class="label">Inquiry question</div><p>%s</p></div>'
+              % esc(sec["inquiry_q"])) if sec.get("inquiry_q") else ""
     task = ('<div class="kicker">Chapter %d · Investigation %s</div><h2>%s</h2>'
-            '<div class="investigate">'
+            '<div class="investigate">%s'
             '<div class="task"><div class="label">Your task</div><p>%s</p>%s</div>'
             '</div>'
-            % (ch["num"], esc(sec["id"]), esc(sec["title"]), esc(inv["task"]), visuals))
+            % (ch["num"], esc(sec["id"]), esc(sec["title"]), qblock,
+               esc(inv["task"]), visuals))
     prompts = "".join("<li>%s</li>" % esc(p) for p in inv.get("notice", []))
     discovery = ('<div class="kicker">Chapter %d · Investigation %s</div><h2>%s</h2>'
                  '<div class="investigate">'
@@ -230,7 +235,14 @@ def review_pages(ch):
                 % (ch["num"], esc(ch["review"].get("mixed_note",
                    "Do not use a calculator unless a question asks for one. "
                    "Show a method where one is requested.")), rows))
-    return [make_page(summary, "ch%02d-review" % ch["num"], running_left=RUNNING,
+    refl = ch.get("reflection") or []
+    refl_rows = "".join("<li>%s</li>" % esc(r) for r in refl)
+    reflection = ('<div class="assessment-task"><h3>Returning to the statement of inquiry</h3>'
+                  '<p class="small muted">%s</p><ul>%s</ul>'
+                  '<div class="construction-space"></div></div>'
+                  % (esc("Answer in your own words, using evidence from this chapter."),
+                     refl_rows))
+    return [make_page(summary + reflection, "ch%02d-review" % ch["num"], running_left=RUNNING,
                       running_right="Chapter review"),
             make_page(practice, "ch%02d-review-mixed" % ch["num"], running_left=RUNNING,
                       running_right="Chapter review")]
