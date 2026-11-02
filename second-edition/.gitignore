@@ -7,3 +7,7 @@ sources/*/tools/.generated/
 
 # Full-page QA renders are regenerable; contact sheets and JSON reports are kept as evidence.
 qa/*/renders/*/page-*.png
+
+# Python bytecode
+__pycache__/
+*.pyc

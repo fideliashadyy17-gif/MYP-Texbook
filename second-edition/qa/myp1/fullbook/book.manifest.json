@@ -1,5 +1,5 @@
 {
-  "pages": 380,
+  "pages": 381,
   "chapters": {
     "1": 8,
     "2": 37,
@@ -16,7 +16,8 @@
     "answers": 306,
     "formula": 371,
     "glossary": 376,
-    "references": 380
+    "references": 380,
+    "back_cover": 381
   },
   "items": 722,
   "answer_pages": 65

@@ -18,6 +18,9 @@ design is preserved exactly.
 | `build_book.py` | writes `book.html`, `book.manifest.json`, `book.layout.json` |
 | `render_math.mjs` | replaces `[[math:…]]` placeholders with KaTeX HTML (243 expressions) |
 | `export_book.mjs` | serves the book, measures every page with Chromium, exports the PDF |
+| `covers.py` | exterior cover artwork: premium front cover, back cover, five-volume collection strip and the MYP 2–5 cover concepts (all inline SVG/CSS, fully vector) |
+| `make_cover_artwork.py` | writes `covers.html` (MYP 1 front + back covers and the four collection concepts) |
+| `extract_covers.py` | pulls the shipped cover pages out of the compiled PDF as standalone artwork |
 | `qa_book.py` | structural QA of the exported PDF with PyMuPDF → `book-qa.json` |
 
 ## Build
@@ -33,6 +36,21 @@ AWS_EXECUTION_ENV=nodejs22.x node export_book.mjs   # → exports/myp1/*.pdf
 PYTHONPATH=/home/user/.cache/myp-review-tools python3 qa_book.py
 ```
 
+### Cover artwork
+
+```bash
+python3 make_cover_artwork.py                                   # → covers.html
+rm -f /tmp/chromium
+AWS_EXECUTION_ENV=nodejs22.x node export_book.mjs covers.html \
+    MYP-Collection-Cover-Concepts-Second-Edition.pdf 6          # → exports/myp1/
+PYTHONPATH=/home/user/.cache/myp-review-tools python3 extract_covers.py
+```
+
+`extract_covers.py` writes `exports/myp1/covers/MYP1-Front-Cover-Second-Edition.pdf`
+and `MYP1-Back-Cover-Second-Edition.pdf` (plus 200 dpi PNG previews) by taking pages 1
+and 381 straight out of the compiled book, so the standalone artwork can never drift from
+what is printed inside the volume.
+
 `export_book.mjs` refuses to write the PDF if any page overflows its A4 box, if a `[[math:…]]`
 placeholder survives, if raw LaTeX leaks into the text, or if KaTeX/Chromium logs an error.
 
@@ -45,6 +63,10 @@ placeholder survives, if raw LaTeX leaks into the text, or if KaTeX/Chromium log
   Legacy manuscript pages keep their own kickers and never receive an injected head, so no page
   is over-full.
 - **Folios** — printed page numbers match the physical index; cover pages carry no folio.
+- **Exterior** — the front cover (page 1) and back cover (page 381) are built by `covers.py`.
+  The back cover is appended after the references, so the 380-page interior is untouched.
+  Both covers carry the author credit `SADIKOU MOUKODDIM`, repeated on the imprint page;
+  no publisher, ISBN, date, spine width or other bibliographic data is invented.
 - **Item ids** — globally unique. Manuscript short ids are prefixed with the chapter number
   (`3.B1`, `2.G1`, `3.M1`, `3.CK1`); section ids keep their dotted form (`3.1.1`); Chapter 7
   keeps its approved `7.1.01` markup. Textual cross-references were rewritten to match.

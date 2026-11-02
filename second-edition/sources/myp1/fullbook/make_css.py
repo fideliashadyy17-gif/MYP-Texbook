@@ -118,6 +118,113 @@ ADDITIONS = """
 .checklist li{padding-left:6.5mm;position:relative;margin-bottom:2mm}
 .checklist li::before{content:'';position:absolute;left:0;top:1.1mm;width:3mm;height:3mm;border:.35mm solid var(--rust);border-radius:.5mm}
 .book-cover .chips{display:flex;gap:3mm;flex-wrap:wrap;margin-top:8mm}
+
+/* --- author credit on the imprint (title) page --- */
+.credit{display:flex;align-items:baseline;gap:4mm;margin:0 0 6mm;padding-bottom:4mm;border-bottom:.3mm solid var(--gold)}
+.credit-label{font-family:Inter,sans-serif;font-size:7.5pt;letter-spacing:.2em;text-transform:uppercase;color:var(--rust)}
+.credit-name{font-family:Fraunces,serif;font-weight:600;font-size:17pt;letter-spacing:.06em;color:var(--green)}
+
+/* ==================== premium exterior covers ==================== */
+.premium-cover,.back-cover-page{display:block;padding:0;background:#0d2a28;color:var(--cream)}
+.premium-cover::before,.premium-cover::after,.back-cover-page::before,.back-cover-page::after{display:none}
+.pc-bg{position:absolute;inset:0;
+  background:
+    radial-gradient(115% 78% at 86% 4%, rgba(215,165,93,.15), rgba(215,165,93,0) 58%),
+    radial-gradient(95% 65% at 6% 98%, rgba(178,79,50,.11), rgba(178,79,50,0) 62%),
+    linear-gradient(180deg,#10332f 0%,#0d2a28 46%,#09201e 100%)}
+.pc-grid{position:absolute;inset:0;
+  background-image:linear-gradient(rgba(215,165,93,.075) .25mm,transparent .25mm),
+                   linear-gradient(90deg,rgba(215,165,93,.075) .25mm,transparent .25mm);
+  background-size:7mm 7mm;
+  -webkit-mask-image:linear-gradient(212deg,rgba(0,0,0,.95) 14%,rgba(0,0,0,0) 66%);
+  mask-image:linear-gradient(212deg,rgba(0,0,0,.95) 14%,rgba(0,0,0,0) 66%)}
+
+/* shared bands */
+.pc-top{position:absolute;top:15mm;left:18mm;right:18mm;display:flex;justify-content:space-between;
+  align-items:baseline;font-family:Inter,sans-serif;font-size:7.4pt;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--gold);border-bottom:.3mm solid rgba(215,165,93,.34);
+  padding-bottom:3mm;z-index:2}
+.pc-top .r{color:rgba(215,165,93,.75)}
+.pc-foot{position:absolute;left:18mm;right:18mm;bottom:14mm;display:flex;justify-content:space-between;
+  align-items:baseline;font-family:Inter,sans-serif;font-size:7pt;letter-spacing:.13em;
+  text-transform:uppercase;color:rgba(251,246,236,.6);border-top:.3mm solid rgba(215,165,93,.34);
+  padding-top:4mm;z-index:2}
+.pc-foot .pc-author{font-size:9.2pt;letter-spacing:.15em;color:var(--cream)}
+
+/* front cover */
+.pc-body{position:absolute;left:18mm;top:47mm;width:84mm;z-index:2}
+.pc-eyebrow{font-family:Inter,sans-serif;font-size:10pt;letter-spacing:.44em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:4.5mm}
+.premium-cover .pc-title{font-family:Fraunces,serif;font-weight:600;font-size:30pt;line-height:1;letter-spacing:.004em;
+  color:var(--cream);margin:0}
+.pc-level{display:flex;align-items:flex-end;gap:5mm;margin:6mm 0 0}
+.pc-numeral{font-family:Fraunces,serif;font-weight:600;font-size:52pt;line-height:.8;color:var(--gold)}
+.pc-leveltext{display:flex;flex-direction:column;gap:1.4mm;padding-bottom:1.5mm}
+.pc-levelname{font-family:Inter,sans-serif;font-size:10pt;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--cream)}
+.pc-levelnote{font-family:Inter,sans-serif;font-size:7pt;letter-spacing:.13em;text-transform:uppercase;
+  color:rgba(251,246,236,.55)}
+.premium-cover .pc-standfirst{font-family:'Source Serif 4',serif;font-style:italic;font-size:11pt;line-height:1.5;
+  color:rgba(251,246,236,.86);margin:8mm 0 0;max-width:80mm}
+.pc-rule{width:26mm;border-top:.6mm solid var(--gold);margin:7mm 0 5mm}
+.pc-topics{font-family:Inter,sans-serif;font-size:7.2pt;line-height:1.85;letter-spacing:.05em;
+  text-transform:uppercase;color:rgba(251,246,236,.5)}
+.pc-topics .t{white-space:nowrap}
+.pc-topics .t::after{content:' ·';color:rgba(215,165,93,.75)}
+.pc-topics .t:last-child::after{content:''}
+.pc-inquiry{margin-top:8mm;border-left:.6mm solid var(--rust);padding-left:4.5mm;max-width:80mm}
+.pc-inquirylabel{font-family:Inter,sans-serif;font-size:7pt;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.6mm}
+.pc-inquiry p{font-family:'Source Serif 4',serif;font-size:9.6pt;line-height:1.45;margin:0;
+  color:rgba(251,246,236,.82)}
+.pc-criteria{margin-top:9mm;max-width:80mm}
+.pc-criteriahead{font-family:Inter,sans-serif;font-size:6.6pt;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(215,165,93,.85);margin-bottom:2.6mm}
+.pc-criteriagrid{display:grid;grid-template-columns:auto 1fr;gap:1.5mm 4mm;align-items:baseline}
+.pc-criteria .k{font-family:Inter,sans-serif;font-size:6.4pt;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold)}
+.pc-criteria .v{font-family:'Source Serif 4',serif;font-size:8.4pt;line-height:1.25;
+  color:rgba(251,246,236,.72)}
+.pc-art{position:absolute;left:104mm;top:32mm;width:92mm;height:214mm;z-index:1}
+.pc-art .plate{width:100%;height:100%}
+
+/* back cover */
+.pc-bbody{position:absolute;left:18mm;top:42mm;width:118mm;z-index:2}
+.pc-bheading{font-family:Inter,sans-serif;font-size:8pt;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:5mm}
+.pc-btext p{font-family:'Source Serif 4',serif;font-size:10.4pt;line-height:1.55;margin:0 0 4.5mm;
+  color:rgba(251,246,236,.88)}
+.pc-becho{position:absolute;left:126mm;top:8mm;width:66mm;height:141mm;opacity:.2;z-index:1}
+.pc-becho .plate{width:100%;height:100%}
+.pc-collection{position:absolute;left:18mm;right:18mm;top:166mm;z-index:2}
+.pc-collectionhead{font-family:Inter,sans-serif;font-size:8pt;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:5mm;
+  border-bottom:.3mm solid rgba(215,165,93,.3);padding-bottom:3mm}
+.pc-strip{display:flex;gap:4.6mm}
+.pc-vol{width:30mm}
+.mini{width:30mm;height:45mm;background:#0d2a28;border:.25mm solid rgba(215,165,93,.3);
+  display:flex;flex-direction:column;justify-content:space-between;padding:2.4mm 2.2mm;
+  box-sizing:border-box}
+.mini.now{border:.55mm solid var(--gold)}
+.mini .m-top{font-family:Inter,sans-serif;font-size:3.6pt;letter-spacing:.3em;color:var(--gold)}
+.mini .m-art{height:17mm}
+.mini .m-art svg{width:100%;height:100%}
+.mini .m-foot{text-align:center}
+.mini .m-num{font-family:Fraunces,serif;font-weight:600;font-size:17pt;line-height:.9;color:var(--gold)}
+.mini .m-lab{font-family:Inter,sans-serif;font-size:3.2pt;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(251,246,236,.75);margin-top:.6mm}
+.pc-cap{font-family:Inter,sans-serif;font-size:5.4pt;letter-spacing:.09em;text-transform:uppercase;
+  color:rgba(251,246,236,.55);text-align:center;margin-top:1.8mm;line-height:1.35}
+.pc-cap.now{color:var(--gold)}
+.pc-collectionnote{font-family:'Source Serif 4',serif;font-size:8.4pt;line-height:1.45;
+  color:rgba(251,246,236,.6);margin:5mm 0 0;max-width:158mm}
+.pc-smallprint{position:absolute;left:18mm;right:18mm;bottom:31mm;font-family:Inter,sans-serif;
+  font-size:6.2pt;letter-spacing:.05em;line-height:1.5;color:rgba(251,246,236,.42);z-index:2}
+
+/* collection cover concepts (MYP 2-5, not yet produced) */
+.pc-concept{font-family:Inter,sans-serif;font-size:7.6pt;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(215,165,93,.8);border:.3mm solid rgba(215,165,93,.4);padding:3mm 4mm;max-width:80mm;
+  line-height:1.6}
 """
 
 out = "\n\n".join([

@@ -1,7 +1,7 @@
 {
   "file": "/home/user/MYP-Texbook/second-edition/exports/myp1/MYP1-Student-Coursebook-Second-Edition.pdf",
-  "pages": 380,
-  "expected_pages": 380,
+  "pages": 381,
+  "expected_pages": 381,
   "page_sizes": [
     [
       595.0,
@@ -40,7 +40,8 @@
     207,
     237,
     260,
-    283
+    283,
+    381
   ],
   "missing_page_numbers": [],
   "page_numbers_ok": true,
@@ -60,12 +61,33 @@
     "answers": 306,
     "formula": 371,
     "glossary": 376,
-    "references": 380
+    "references": 380,
+    "back_cover": 381
   },
   "back_matter_answers_ok": true,
   "back_matter_formula_ok": true,
   "back_matter_glossary_ok": true,
   "back_matter_references_ok": true,
+  "back_matter_back_cover_ok": true,
+  "exterior_front_cover": {
+    "title": true,
+    "level": true,
+    "author": true,
+    "edition": true
+  },
+  "exterior_author_credit": {
+    "front_cover": true,
+    "imprint": true,
+    "back_cover": true
+  },
+  "exterior_back_cover": {
+    "collection": true,
+    "five_volumes": true,
+    "current_volume": true,
+    "forthcoming_labelled": true,
+    "no_isbn": true
+  },
+  "exterior_ok": true,
   "checks": {
     "page_count": true,
     "a4": true,
@@ -76,7 +98,8 @@
     "chapter_starts": true,
     "contents": true,
     "coverage": true,
-    "back_matter": true
+    "back_matter": true,
+    "exterior": true
   },
   "status": "PASS"
 }

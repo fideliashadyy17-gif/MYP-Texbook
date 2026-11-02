@@ -28,6 +28,7 @@ EDITION = HERE.parents[2]                # second-edition
 PROTO_DIR = EDITION / "prototype/myp1/ch07"
 sys.path.insert(0, str(HERE))
 from framework import FW, FRONT, GLOSSARY, REFERENCES  # noqa: E402
+import covers  # noqa: E402
 
 CHAPTERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 PROTO_CH = 7
@@ -471,22 +472,17 @@ def build_prototype_chapter():
 
 # ------------------------------------------------------------------ front matter
 def front_matter():
-    c = FRONT["cover"]
-    chips = "".join('<span class="chip">%s</span>' % esc(x) for x in c["chips"])
-    cover = make_page(
-        '<div><div class="part">%s</div><h1>%s</h1>'
-        '<p class="standfirst">%s</p>'
-        '<div class="chips">%s</div></div>'
-        '<div><div class="inquiry"><div class="label">How this book works</div><p>%s</p></div>'
-        '<div class="foot"><span>%s</span><span>%s</span></div></div>'
-        % (esc(c["kicker"]), esc(c["title"]), esc(c["subtitle"]), chips, esc(c["inquiry"]),
-           esc(c["foot_left"]), esc(c["foot_right"])),
-        "book-cover", cls="cover book-cover")
+    # Premium exterior cover: see covers.py for the artwork and the design notes.
+    cover = covers.front_cover_page()
 
     im = FRONT["imprint"]
     imprint = make_page(
-        '<div class="kicker">MYP 1 · Student coursebook</div><h2>%s</h2>%s'
-        % (esc(im["title"]), "".join("<p>%s</p>" % esc(p) for p in im["body"])),
+        '<div class="kicker">MYP 1 · Student coursebook</div>'
+        '<div class="credit"><div class="credit-label">%s</div>'
+        '<div class="credit-name">%s</div></div>'
+        '<h2>%s</h2>%s'
+        % (esc(im["credit"]), esc(im["author"]), esc(im["title"]),
+           "".join("<p>%s</p>" % esc(p) for p in im["body"])),
         "imprint", running_left="MYP Mathematics 1 · Student coursebook", running_right="About this edition")
 
     h = FRONT["howto"]
@@ -700,6 +696,8 @@ def main():
     pages.extend(glossary_pages())
     marks["references"] = len(pages) + 1
     pages.extend(reference_pages())
+    marks["back_cover"] = len(pages) + 1
+    pages.append(covers.back_cover_page())
 
     pages[toc_index] = contents_page({**chapter_start, **marks})
 
