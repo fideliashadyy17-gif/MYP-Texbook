@@ -1,7 +1,7 @@
 {
   "file": "/home/user/MYP-Texbook/second-edition/exports/myp2/MYP2-Student-Coursebook-Second-Edition.pdf",
-  "pages": 411,
-  "expected_pages": 411,
+  "pages": 422,
+  "expected_pages": 422,
   "page_sizes": [
     [
       595.0,
@@ -29,17 +29,17 @@
   "cover_pages": [
     1,
     11,
-    44,
-    77,
-    105,
-    138,
-    171,
-    199,
-    232,
-    265,
-    293,
-    326,
-    411
+    45,
+    79,
+    108,
+    142,
+    176,
+    205,
+    239,
+    273,
+    302,
+    336,
+    422
   ],
   "missing_page_numbers": [],
   "page_numbers_ok": true,
@@ -56,11 +56,11 @@
   "items_total": 517,
   "coverage_ok": true,
   "back_matter_starts": {
-    "answers": 359,
-    "formula": 403,
-    "glossary": 407,
-    "references": 410,
-    "back_cover": 411
+    "answers": 370,
+    "formula": 414,
+    "glossary": 418,
+    "references": 421,
+    "back_cover": 422
   },
   "back_matter_answers_ok": true,
   "back_matter_formula_ok": true,

@@ -217,7 +217,7 @@ def assessment_page(ch):
 
 
 def review_pages(ch):
-    """Two review pages: key ideas and vocabulary, then mixed practice."""
+    """Key ideas and vocabulary, then mixed practice, then the SOI reflection."""
     ideas = "".join("<li>%s</li>" % esc(i) for i in ch["review"]["ideas"])
     vocab = " · ".join(ch["review"]["vocab"])
     summary = ('<div class="kicker">Chapter %d · Review</div>'
@@ -237,12 +237,24 @@ def review_pages(ch):
                    "Show a method where one is requested.")), rows))
     refl = ch.get("reflection") or []
     refl_rows = "".join("<li>%s</li>" % esc(r) for r in refl)
-    reflection = ('<div class="assessment-task"><h3>Returning to the statement of inquiry</h3>'
+    reflection = ('<div class="kicker">Chapter %d · Review</div>'
+                  '<h2>Returning to the statement of inquiry</h2>'
+                  '<div class="callout"><div class="label">Statement of inquiry</div>'
+                  '<p class="small">%s</p></div>'
+                  '<div class="assessment-task"><h3>Reflect on the chapter</h3>'
                   '<p class="small muted">%s</p><ul>%s</ul>'
                   '<div class="construction-space"></div></div>'
-                  % (esc("Answer in your own words, using evidence from this chapter."),
+                  % (ch["num"], esc(ch["inquiry"]),
+                     esc("Answer in your own words, using evidence from this chapter."),
                      refl_rows))
-    return [make_page(summary + reflection, "ch%02d-review" % ch["num"], running_left=RUNNING,
+    if refl:
+        return [make_page(summary, "ch%02d-review" % ch["num"], running_left=RUNNING,
+                          running_right="Chapter review"),
+                make_page(practice, "ch%02d-review-mixed" % ch["num"], running_left=RUNNING,
+                          running_right="Chapter review"),
+                make_page(reflection, "ch%02d-review-reflection" % ch["num"], running_left=RUNNING,
+                          running_right="Chapter review")]
+    return [make_page(summary, "ch%02d-review" % ch["num"], running_left=RUNNING,
                       running_right="Chapter review"),
             make_page(practice, "ch%02d-review-mixed" % ch["num"], running_left=RUNNING,
                       running_right="Chapter review")]

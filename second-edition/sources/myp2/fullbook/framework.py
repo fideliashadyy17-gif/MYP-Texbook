@@ -623,8 +623,13 @@ dict(
 CHAPTERS.extend([
 dict(
     num=2, title="Proportional reasoning",
-    key="Relationships", related=["Equivalence", "Representation", "Logic"], context="Cooking and construction",
-    inquiry="When two quantities change together, what stays the same and what changes?",
+    key="Relationships", related=["Equivalence", "Representation", "Logic"],
+    context="Globalisation and sustainability",
+    exploration="Markets, commodities and commercialisation",
+    inquiry=("A proportional relationship models two quantities that change together; the equivalence "
+             "of its representations as a table, a unit rate and a straight line through the origin "
+             "rests on the logic of one constant multiplier, and allows costs and scales to be "
+             "compared, justified and predicted."),
     atl=("Transfer",
          "In order for a student to apply skills and knowledge in unfamiliar situations, students must "
          "select a structure that fits the new situation, apply it independently, and test the result "
@@ -633,15 +638,22 @@ dict(
                "constant multiplier, drawn as a straight line through the origin.",
     engage="A recipe for 4 people uses 300 g of rice. How much rice for 6 people, and how much for 10? "
            "One relationship answers both questions.",
-    questions=[("Factual", "What is a proportional relationship and how do you recognise one?"),
-               ("Conceptual", "Why does the graph of a proportional relationship pass through the origin?"),
-               ("Debatable", "Is a linear relationship always proportional?")],
+    questions=[("Factual", "What is a proportional relationship, what is its constant of "
+                           "proportionality, and how do you recognise one in a table, an equation "
+                           "and a graph?"),
+               ("Conceptual", "Why does every proportional relationship graph as a straight line "
+                              "through the origin, and what does the slope tell you that a table "
+                              "alone does not?"),
+               ("Debatable", "When two offers are compared per unit, is the cheaper unit price always "
+                             "the fairer choice for a buyer with very little money?")],
     application_lede="Use tables, unit rates and graphs. In every task, state the constant that links the "
                      "two quantities.",
     projects_lede="Proportional reasoning is the mathematics of scaling: recipes, maps, models and currency. "
                   "Use it on a real project.",
     sections=[
-        dict(id="2.1", title="Recognising proportional relationships", teach=[
+        dict(id="2.1", title="Recognising proportional relationships",
+             inquiry_q=("How can you tell whether two quantities really change together in a "
+                        "proportional relationship, and what single number describes it?"), teach=[
             "Two quantities are in a proportional relationship when one is always a constant multiple of the other. That constant is the constant of proportionality, often written k, and y = kx.",
             "A quick test: divide each pair of matching values. If every quotient is the same, the relationship is proportional. If even one quotient differs, it is not.",
             "Proportional relationships are a special case of linear relationships. Every proportional relationship is linear, but a linear relationship with a non-zero starting value is not proportional.",
@@ -674,8 +686,11 @@ dict(
                     "B gives quotients 5, 4.5, 4.33, 4.25 — not proportional.",
                     "C gives quotients 4, 4, 4, 4 — proportional."],
             obs="A relationship is proportional exactly when every quotient is the same.",
-            concl="Testing quotients is a complete test: one different quotient is enough to say no.")),
-        dict(id="2.2", title="Unit rates and comparison", teach=[
+            concl="A relationship is proportional exactly when every quotient is the same, and that "
+                  "one quotient is the constant of proportionality k in y = kx.")),
+        dict(id="2.2", title="Unit rates and comparison",
+             inquiry_q=("How does converting two different offers to the same unit rate turn an "
+                        "unfair comparison into a fair one?"), teach=[
             "A unit rate scales a ratio so the second quantity is 1: dollars per item, kilometres per hour, grams per dollar. Unit rates make unlike quantities comparable.",
             "To compare two offers, convert both to the same unit rate. Whichever is smaller per unit is better value when you are paying; whichever is larger is better when you are earning.",
             "Unit rates also let you convert units cleanly: 60 km/h is 1 km per minute, because 60 ÷ 60 = 1.",
@@ -704,8 +719,11 @@ dict(
                     "Ranking by the converted rate is the same as ranking by unit price.",
                     "The cheapest per kg is not always the cheapest packet."],
             obs="Converting to a common unit rate makes different pack sizes comparable.",
-            concl="A unit rate is the constant of proportionality, so it is unique to the situation.")),
-        dict(id="2.3", title="Graphs of proportional relationships", teach=[
+            concl="Converting to a common unit rate puts both offers on the same basis, and that "
+                  "unit rate is the constant of proportionality, so it is unique to the situation.")),
+        dict(id="2.3", title="Graphs of proportional relationships",
+             inquiry_q=("What does the graph of a proportional relationship show that a table of "
+                        "values cannot show?"), teach=[
             "A proportional relationship graphs as a straight line through the origin. The slope of the line is the constant of proportionality.",
             "Reading a value off the graph is a form of interpolation; reading beyond the data is extrapolation. Both are valid when the relationship genuinely stays proportional, and both need a note about that assumption.",
             "The graph also shows what the table hides: the steepness of the line tells you at a glance which relationship grows faster.",
@@ -739,8 +757,11 @@ dict(
                     "Both lines are straight, so both are linear.",
                     "Only the proportional line has a constant quotient."],
             obs="Straight line does not mean proportional — passing through the origin is the extra condition.",
-            concl="Proportional relationships graph as straight lines through the origin with slope k.")),
-        dict(id="2.4", title="Scaling and real-world models", teach=[
+            concl="The graph shows the rate of growth as steepness: proportional relationships graph "
+                  "as straight lines through the origin whose slope is the constant k.")),
+        dict(id="2.4", title="Scaling and real-world models",
+             inquiry_q=("When a shape or a quantity is scaled, what changes and what must stay the "
+                        "same for the model to remain faithful?"), teach=[
             "Scaling multiplies every length by the same factor. Areas scale by the square of that factor and volumes by its cube — a fact that surprises most learners the first time.",
             "A scale drawing keeps angles unchanged and multiplies every length by the scale factor. A scale model is a three-dimensional version of the same idea.",
             "Percentage change is a proportional relationship with k = the percentage written as a decimal. A 15% increase multiplies by 1.15.",
@@ -770,7 +791,8 @@ dict(
                     "distinction is easy to miss.",
                     "Changing the height too would separate area from volume."],
             obs="Different measures scale by different powers of the scale factor.",
-            concl="Under a scale factor k, lengths scale by k, areas by k² and volumes by k³.")),
+            concl="Under a scale factor k, lengths scale by k, areas by k² and volumes by k³, so the "
+                  "shape stays the same while each measure changes by its own power of k.")),
     ],
     practice=dict(
         A=[("2.1.1", "A table gives x = 2, 4, 6 and y = 7, 14, 21. Is the relationship proportional? What is k?",
@@ -881,6 +903,19 @@ dict(
                   "model height, and find by what factor the model's surface area differs from the real one.",
              note="Criteria A and D · show the scale factor and check the units."),
     ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of relationships and the related concepts of equivalence, "
+        "representation and logic appear in your work?",
+        "How is the global context of globalisation and sustainability, and its exploration of "
+        "markets, commodities and commercialisation, visible in the investigations and examples you "
+        "completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a proportional model, and what would you still like to ask?",
+    ],
     review=dict(
         ideas=["A proportional relationship is y = kx with a constant quotient.",
                "The unit rate is k when the second quantity is 1.",
@@ -923,8 +958,12 @@ dict(
 CHAPTERS.extend([
 dict(
     num=3, title="Rates and conversions",
-    key="Logic", related=["Representation", "Equivalence"], context="Transport and trade",
-    inquiry="How do we compare quantities measured in different units without losing accuracy?",
+    key="Logic", related=["Representation", "Equivalence"],
+    context="Scientific and technical innovation",
+    exploration="Precision, accuracy and measurement",
+    inquiry=("A rate compares quantities of different kinds, and the logic of converting units "
+             "precisely relies on the equivalence of different representations of the same quantity, "
+             "which allows speeds, densities and pressures to be measured, compared and trusted."),
     atl=("Communication",
          "In order for a student to communicate information and ideas effectively, students must "
          "organise a structure for a purpose, use appropriate notation, and check that a reader can "
@@ -933,14 +972,20 @@ dict(
                "working with density are all rate problems in disguise.",
     engage="A lorry travels 240 km in 3 hours. A cyclist travels 45 km in 2 hours. "
            "Which is faster, and by how much?",
-    questions=[("Factual", "What units are compared in a rate?"),
-               ("Conceptual", "Why must the units be stated whenever a rate is used?"),
-               ("Debatable", "Is average speed ever a fair description of a journey?")],
+    questions=[("Factual", "What two units does a rate compare, and how do you convert between "
+                           "compound units such as km/h and m/s?"),
+               ("Conceptual", "Why does converting to the smaller unit before dividing protect the "
+                              "accuracy of a rate, and how does a unit rate make unlike quantities "
+                              "comparable?"),
+               ("Debatable", "Is an average speed ever an honest description of a journey, and what "
+                             "evidence would you need to defend your answer?")],
     application_lede="Convert first, calculate second. State the units of every answer.",
     projects_lede="Rates govern travel, trade and consumption. Measure a rate in your community and "
                   "report it with correct units.",
     sections=[
-        dict(id="3.1", title="Understanding rates", teach=[
+        dict(id="3.1", title="Understanding rates",
+             inquiry_q=("How can one number compare two journeys of different lengths and "
+                        "durations?"), teach=[
             "A rate compares quantities of different kinds, so it always carries two units: kilometres per hour, dollars per kilogram, pages per minute. A ratio compares quantities of the same kind.",
             "Speed, price per unit and flow are the three rates learners meet most often. Each is a constant of proportionality between its two quantities.",
             "Average speed is total distance divided by total time, not the average of the speeds. Confusing the two is the most common error in rate problems.",
@@ -971,8 +1016,11 @@ dict(
                     "The combined speed is total distance ÷ total time.",
                     "The combined speed is not the mean of the three trial speeds."],
             obs="Average speed is a single rate computed from totals.",
-            concl="average speed = total distance ÷ total time.")),
-        dict(id="3.2", title="Converting units", teach=[
+            concl="One number — total distance ÷ total time — compares journeys of any length and "
+                  "duration, which is why average speed is defined from totals.")),
+        dict(id="3.2", title="Converting units",
+             inquiry_q=("How can the same rate be written in different units without changing its "
+                        "value?"), teach=[
             "Conversion is proportional reasoning with a known constant. 1 km = 1 000 m means every kilometre is 1 000 metres, so distance in metres = 1 000 × distance in kilometres.",
             "To convert a compound rate, convert one unit at a time and keep the fraction structure. 60 km/h becomes 60 000 m/h, then 1 000 m/min, then about 16.7 m/s.",
             "Choosing the order of conversion matters for accuracy: converting to the smaller unit first avoids repeating decimals.",
@@ -999,8 +1047,10 @@ dict(
                     "5 000 ÷ 3 600 = 50 ÷ 36 = 25 ÷ 18, a recurring decimal.",
                     "Leaving the answer as a fraction 25/18 m/s is exact."],
             obs="Different conversion routes give the same rate.",
-            concl="Converting units is proportional reasoning with a fixed constant.")),
-        dict(id="3.3", title="Density and pressure", teach=[
+            concl="Converting units is proportional reasoning with a fixed constant, so the same "
+                  "rate can be written in different units without changing its value.")),
+        dict(id="3.3", title="Density and pressure",
+             inquiry_q=("How can a rate compare objects of different sizes and shapes fairly?"), teach=[
             "Density is mass per unit volume: density = mass ÷ volume. Two objects with the same volume can have very different masses, which is what density measures.",
             "Pressure is force per unit area: pressure = force ÷ area. A smaller area with the same force gives a larger pressure, which is why a knife is sharp.",
             "Both are rates, so both use the same reasoning: fix the denominator to 1 and compare.",
@@ -1029,7 +1079,9 @@ dict(
                     "Density separates them because the volume is nearly the same.",
                     "The densest object sinks first in water (density 1 g/cm³)."],
             obs="Density is mass per unit volume, so it compares objects of different sizes fairly.",
-            concl="density = mass ÷ volume.")),
+            concl="Density and pressure are rates, so dividing by the size — volume or area — "
+                  "compares objects of different sizes fairly: density = mass ÷ volume and "
+                  "pressure = force ÷ area.")),
     ],
     practice=dict(
         A=[("3.1.1", "A train travels 300 km in 4 hours. Find its average speed.", "75 km/h",
@@ -1143,6 +1195,20 @@ dict(
                   "base area needed to halve the pressure.",
              note="Criteria B and C · state the formula you use and check the units."),
     ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of logic and the related concepts of representation and equivalence "
+        "appear in your work?",
+        "How is the global context of scientific and technical innovation, and its exploration of "
+        "precision, accuracy and measurement, visible in the investigations and examples you "
+        "completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a single rate as a description, and what would you still like "
+        "to ask?",
+    ],
     review=dict(
         ideas=["A rate compares different kinds of quantity and carries two units.",
                "Average speed = total distance ÷ total time.",
@@ -1184,8 +1250,13 @@ dict(
 CHAPTERS.extend([
 dict(
     num=4, title="Integers and their operations",
-    key="Logic", related=["Representation", "Patterns"], context="Weather and finance",
-    inquiry="How can a number line make addition and subtraction of negative numbers obvious?",
+    key="Logic", related=["Representation", "Patterns"],
+    context="Orientation in space and time",
+    exploration="Natural and human landscapes and resources",
+    inquiry=("Signed numbers are a representation of position relative to a chosen reference point, "
+             "and the logic of direction on the number line, together with the patterns in the sign "
+             "rules, allows changes in temperature, depth and balance to be described, ordered and "
+             "predicted."),
     atl=("Reflection",
          "In order for a student to evaluate their own learning and progress, students must consider "
          "the process of learning, identify strengths and weaknesses, and set a plan for improvement."),
@@ -1193,14 +1264,19 @@ dict(
                "for operating with negative numbers follow from the model.",
     engage="The temperature at dawn is −4 °C. By noon it has risen 9 degrees, and by midnight it falls "
            "11 degrees. What is the temperature at midnight?",
-    questions=[("Factual", "What is an integer and where do integers sit on the number line?"),
-               ("Conceptual", "Why does subtracting a negative number increase the value?"),
-               ("Debatable", "Is a negative temperature 'less than nothing'?")],
+    questions=[("Factual", "What is an integer, how are integers ordered on the number line, and "
+                           "what does the sign of a number tell you?"),
+               ("Conceptual", "Why does subtracting a negative number increase the value, and how "
+                              "does the number line explain each of the sign rules?"),
+               ("Debatable", "Is a negative balance or a negative temperature a real quantity, or "
+                             "only a convention about where we place zero?")],
     application_lede="Draw a number line for every task. Direction is the whole argument.",
     projects_lede="Negative numbers appear wherever a quantity can fall below a reference point. "
                   "Find one in your community.",
     sections=[
-        dict(id="4.1", title="The integer number line", teach=[
+        dict(id="4.1", title="The integer number line",
+             inquiry_q=("How can a single line represent numbers both above and below a reference "
+                        "point, and how does it decide which of two integers is greater?"), teach=[
             "Integers are the whole numbers together with their negatives: … −3, −2, −1, 0, 1, 2, 3 … The number line gives them an order: a number further right is always greater.",
             "Zero is the reference point. A positive number lies to the right of zero, a negative number to the left. The sign gives the direction and the digit gives the distance from zero.",
             "Opposites are pairs like +5 and −5. They sit the same distance from zero on opposite sides, and they add to zero.",
@@ -1231,8 +1307,12 @@ dict(
                     "Every such pair sums to zero.",
                     "The only number that is its own opposite is 0."],
             obs="Opposites are symmetric about zero and sum to zero.",
-            concl="a + (−a) = 0 for every integer a.")),
-        dict(id="4.2", title="Adding and subtracting integers", teach=[
+            concl="One line with a chosen reference point represents numbers in both directions: "
+                  "opposites are symmetric about zero and sum to zero (a + (−a) = 0), and the further "
+                  "right a number lies the greater it is.")),
+        dict(id="4.2", title="Adding and subtracting integers",
+             inquiry_q=("How can the number line explain what happens when a negative number is "
+                        "added or subtracted?"), teach=[
             "Addition is a move along the line: adding a positive moves right, adding a negative moves left. Subtraction is the same move in the opposite direction.",
             "The two rules follow from this model. Adding a negative is the same as subtracting the positive: 5 + (−3) = 5 − 3 = 2. Subtracting a negative is the same as adding the positive: 5 − (−3) = 5 + 3 = 8.",
             "A written calculation can always be checked on a number line. If the move and the answer disagree, the mistake is in the arithmetic, not in the model.",
@@ -1261,8 +1341,11 @@ dict(
                     "Only the total move matters, not the order of the moves.",
                     "Reversing the order of addition always gives the same result."],
             obs="Integer addition is commutative and associative.",
-            concl="The total of a set of moves does not depend on the order in which they are made.")),
-        dict(id="4.3", title="Multiplying and dividing integers", teach=[
+            concl="Addition is a move along the line, so subtracting a negative moves right, and the "
+                  "total of a set of moves does not depend on the order in which they are made.")),
+        dict(id="4.3", title="Multiplying and dividing integers",
+             inquiry_q=("Where do the sign rules for multiplication and division come from, and why "
+                        "is a negative times a negative positive?"), teach=[
             "Multiplication is repeated addition, so 3 × (−4) means three moves of −4: −12. The sign rule follows: a positive times a negative is negative.",
             "The other cases complete the pattern. Negative times positive is negative, negative times negative is positive. The pattern in the table of products is the reason for the rule, not a separate law.",
             "Division uses the same sign rules as multiplication, because division is multiplication by the reciprocal.",
@@ -1291,8 +1374,12 @@ dict(
                     "The sign changes when n changes sign.",
                     "The product is zero only when n is zero."],
             obs="The sign of a product is fixed by the signs of the factors.",
-            concl="Same signs give a positive product; different signs give a negative product.")),
-        dict(id="4.4", title="Integers in context", teach=[
+            concl="The sign rules come from continuing a pattern rather than from a separate law: "
+                  "same signs give a positive product or quotient, different signs give a negative "
+                  "one.")),
+        dict(id="4.4", title="Integers in context",
+             inquiry_q=("How can signed numbers describe a change in a real quantity such as "
+                        "temperature, depth or balance?"), teach=[
             "Negative numbers model anything measured against a reference: temperature, height above sea level, bank balance, golf scores. The context decides what zero means.",
             "Choosing a sensible reference point makes a problem easier. Sea level is zero for height; the starting balance is zero for a bank account.",
             "When several changes happen in sequence, add them as signed numbers. The order does not matter, only the total change.",
@@ -1320,7 +1407,8 @@ dict(
                     "A negative change means the temperature fell.",
                     "The range is the largest value minus the smallest."],
             obs="Signed numbers record both direction and size of change.",
-            concl="A change is the difference of two signed values, so its sign shows the direction.")),
+            concl="A change is the difference of two signed values measured from the same "
+                  "reference point, so its sign shows the direction of the change.")),
     ],
     practice=dict(
         A=[("4.1.1", "Place −3, 0, 5, −7, 2 on a number line and order them.", "−7, −3, 0, 2, 5",
@@ -1415,6 +1503,19 @@ dict(
                   "Find the final balance and explain what a negative balance would mean here.",
              note="Criteria C and D · present the calculation clearly and check the total."),
     ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of logic and the related concepts of representation and patterns "
+        "appear in your work?",
+        "How is the global context of orientation in space and time, and its exploration of natural "
+        "and human landscapes and resources, visible in the investigations and examples you "
+        "completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a number line as a model, and what would you still like to ask?",
+    ],
     review=dict(
         ideas=["Integers extend the number line in both directions from zero.",
                "A number further right is greater.",
@@ -1454,8 +1555,13 @@ dict(
 CHAPTERS.extend([
 dict(
     num=5, title="Algebraic expressions and equations",
-    key="Logic", related=["Patterns", "Representation"], context="Design and budgeting",
-    inquiry="How does a letter let one statement describe every possible number?",
+    key="Logic", related=["Patterns", "Representation"],
+    context="Scientific and technical innovation",
+    exploration="Products, processes and solutions",
+    inquiry=("A variable represents an unknown or changing quantity, and the logic of equivalence "
+             "between different representations of the same relationship, together with the patterns "
+             "in its structure, allows one expression or equation to model many situations, so that "
+             "processes can be designed, solved and checked."),
     atl=("Creative thinking",
          "In order for a student to generate novel ideas and consider new perspectives, students must "
          "use brainstorming and visual diagrams to develop ideas, and make guesses and ask 'what if' "
@@ -1464,13 +1570,18 @@ dict(
                "calculation into a rule that works for every value.",
     engage="A taxi costs 3 dollars plus 2 dollars per kilometre. Instead of calculating each fare "
            "separately, can one formula give every fare?",
-    questions=[("Factual", "What does a variable represent and how is it used?"),
-               ("Conceptual", "Why can you add 3x and 5x but not 3x and 5?"),
-               ("Debatable", "Is algebra a new kind of mathematics or a shorthand for arithmetic?")],
+    questions=[("Factual", "What does a variable represent, what are like terms, and how do you "
+                           "build an expression from a written description?"),
+               ("Conceptual", "Why can 3x and 5x be collected but 3x and 5 cannot, and how does "
+                              "expanding show that two expressions are equivalent?"),
+               ("Debatable", "Is algebra a new kind of mathematics or a shorthand for arithmetic, "
+                             "and what would count as evidence for your view?")],
     application_lede="Build the expression first, then substitute. Say what each letter means.",
     projects_lede="Algebra models any situation where a rule repeats. Model one in your community.",
     sections=[
-        dict(id="5.1", title="Building expressions", teach=[
+        dict(id="5.1", title="Building expressions",
+             inquiry_q=("How can a letter stand for a number so that one expression describes every "
+                        "possible case?"), teach=[
             "A variable is a letter that stands for a number that can change. A constant is a fixed number. In 3x + 5, x is the variable and 5 is the constant.",
             "An expression is built from a situation: 'three more than twice a number' becomes 2x + 3. The order of operations decides the structure, so read the words carefully.",
             "Substitution replaces the variable with a value and evaluates. In 3x + 5 with x = 4, the value is 17.",
@@ -1504,8 +1615,11 @@ dict(
                     "An expression works for every figure.",
                     "Two different expressions can be equivalent, e.g. 2n + 2 and 2(n + 1)."],
             obs="A variable replaces an unknown count so one expression covers all figures.",
-            concl="An expression is a rule; substituting a value applies the rule.")),
-        dict(id="5.2", title="Simplifying and expanding", teach=[
+            concl="A variable lets one expression act as a rule for every case: substituting a "
+                  "value applies the rule.")),
+        dict(id="5.2", title="Simplifying and expanding",
+             inquiry_q=("What makes two expressions the same, and how can you show it without "
+                        "testing every number?"), teach=[
             "Like terms have the same variables raised to the same powers. 3x and 5x are like terms; 3x and 5x² are not. Only like terms can be collected.",
             "Simplifying collects like terms: 3x + 5x = 8x. The coefficients add; the variable part is unchanged.",
             "Expanding multiplies each term inside a bracket by the term outside: 3(x + 4) = 3x + 12. Expanding and collecting are opposite processes, and both are checked by substituting a value.",
@@ -1536,8 +1650,10 @@ dict(
                     "Expanding changes the form, not the value.",
                     "Testing with a value is a reliable check on any simplification."],
             obs="Equivalent expressions have the same value for every substitution.",
-            concl="Two expressions are equivalent when they agree for every value of the variable.")),
-        dict(id="5.3", title="Solving equations", teach=[
+            concl="Two expressions are equivalent when they agree for every value of the variable, "
+                  "which is why expanding and collecting change the form but never the value.")),
+        dict(id="5.3", title="Solving equations",
+             inquiry_q=("How can an equation be solved by keeping it true at every step?"), teach=[
             "An equation states that two expressions are equal. Solving it means finding the value that makes the statement true.",
             "The balance method keeps the equation true by doing the same thing to both sides: add, subtract, multiply or divide by the same amount.",
             "Always check a solution by substituting it back into the original equation. A solution that fails the check is a signal that a sign or a step went wrong.",
@@ -1565,8 +1681,11 @@ dict(
                     "The balance method finds every answer exactly.",
                     "Both routes give x = 4, and both pass the check."],
             obs="The balance method is a systematic version of trial and improvement.",
-            concl="Applying the same operation to both sides preserves the solution.")),
-        dict(id="5.4", title="Equations in context", teach=[
+            concl="An equation is solved by keeping it true at every step: applying the same "
+                  "operation to both sides preserves the solution.")),
+        dict(id="5.4", title="Equations in context",
+             inquiry_q=("How can an equation model a real situation, and how do you decide whether "
+                        "its solution is meaningful?"), teach=[
             "Word problems become equations in three steps: define the variable with its unit, write the relationship as an equation, solve and interpret the answer in the original context.",
             "The interpretation step matters: a negative length or a fractional number of people tells you the answer is not meaningful in the situation, even if the algebra is correct.",
             "Inequalities describe ranges rather than single values. They are written with the same balance method, and the direction of the inequality sign is preserved when both sides are multiplied by a positive number.",
@@ -1599,7 +1718,8 @@ dict(
                     "A fractional answer is meaningful for money but not for people.",
                     "Interpreting the answer is part of solving the problem."],
             obs="The context decides whether a solution is acceptable.",
-            concl="Solve, then check that the answer makes sense in the original situation.")),
+            concl="Solve, then check that the answer makes sense in the original situation, "
+                  "because the context decides which solutions are acceptable.")),
     ],
     practice=dict(
         A=[("5.1.1", "Write an expression for 'seven more than a number n'.", "n + 7",
@@ -1694,6 +1814,20 @@ dict(
                   "costs under 200 dollars. How many items can they sell, and what is the cost at that limit?",
              note="Criteria B and D · set up and solve an inequality, then interpret it."),
     ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of logic and the related concepts of patterns and representation "
+        "appear in your work?",
+        "How is the global context of scientific and technical innovation, and its exploration of "
+        "products, processes and solutions, visible in the investigations and examples you "
+        "completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a mathematical model of a real situation, and what would you "
+        "still like to ask?",
+    ],
     review=dict(
         ideas=["A variable stands for a number that can change.",
                "Only like terms can be collected.",
@@ -1735,8 +1869,12 @@ dict(
 CHAPTERS.extend([
 dict(
     num=6, title="Numerical patterns and generalisation",
-    key="Patterns", related=["Relationships", "Logic"], context="Design and nature",
-    inquiry="How can a sequence of numbers become a rule that predicts any term?",
+    key="Patterns", related=["Relationships", "Logic"],
+    context="Personal and cultural expression",
+    exploration="Artistry, craft, creation and beauty",
+    inquiry=("A numerical pattern describes relationships between position and value, and the logic of "
+             "generalisation allows one rule to describe and predict every term, which is how "
+             "patterns in design and nature are created, extended and reproduced."),
     atl=("Critical thinking",
          "In order for a student to practise observing carefully, students must recognise patterns "
          "and relationships, and test a generalisation on cases not yet seen."),
@@ -1744,13 +1882,19 @@ dict(
                "patterns into formulas and graphs.",
     engage="A staircase of blocks has 1 block in the first step, 3 in the second, 6 in the third. "
            "How many blocks are in the 20th step?",
-    questions=[("Factual", "What is a numerical sequence and how is it described?"),
-               ("Conceptual", "How do you know a rule is correct for every term, not just the ones you checked?"),
-               ("Debatable", "Is finding a pattern the same as proving it?")],
+    questions=[("Factual", "What is a numerical sequence, what is the nth term, and how do you "
+                           "describe a pattern in words and in symbols?"),
+               ("Conceptual", "How do you know a rule is correct for every term and not only for the "
+                              "terms you checked, and what do the differences tell you about the "
+                              "rule?"),
+               ("Debatable", "Is finding a pattern the same as proving it, and what would you accept "
+                             "as proof?")],
     application_lede="Find the pattern, express it as a rule, then test the rule on a term you have not counted.",
     projects_lede="Patterns appear in design, nature and sport. Generalise one you can measure.",
     sections=[
-        dict(id="6.1", title="Describing sequences", teach=[
+        dict(id="6.1", title="Describing sequences",
+             inquiry_q=("How can a list of numbers be described so that any term can be found "
+                        "without listing them all?"), teach=[
             "A sequence is an ordered list of numbers. A term is one entry; its position is usually called n. The nth term rule gives the value at position n.",
             "To find a rule, look at the differences between consecutive terms. Constant differences mean a linear rule; constant second differences mean a quadratic rule.",
             "A rule is a generalisation: it claims to work for every position. Testing one new term is evidence, and checking the structure is proof.",
@@ -1784,8 +1928,11 @@ dict(
                     "The second differences are all 1.",
                     "Two copies of the staircase make an n by (n + 1) rectangle."],
             obs="Triangular numbers grow quadratically because their second differences are constant.",
-            concl="The nth triangular number is n(n + 1)/2.")),
-        dict(id="6.2", title="From pattern to formula", teach=[
+            concl="A list can be described by its differences: constant differences give a linear "
+                  "rule and constant second differences a quadratic one, so the nth triangular number "
+                  "is n(n + 1)/2.")),
+        dict(id="6.2", title="From pattern to formula",
+             inquiry_q=("How can a pattern be turned into a formula that works for every position?"), teach=[
             "A formula is a rule that links variables. Building one means describing the structure in words first, then translating: 'twice the position plus one' becomes 2n + 1.",
             "Substituting into a formula gives a value; rearranging a formula gives a new relationship. Both skills are used throughout the chapter.",
             "A formula can be checked by substitution, by comparing with a table, and by testing an extreme case such as n = 0 or n = 1.",
@@ -1814,8 +1961,10 @@ dict(
                     "Extending the table one row at a time also reaches 32.",
                     "The rule is faster and less error-prone for large n."],
             obs="A formula replaces repeated listing.",
-            concl="A formula is a generalisation that holds for every position.")),
-        dict(id="6.3", title="Graphs of sequences", teach=[
+            concl="A formula replaces listing: it is a generalisation that holds for every position "
+                  "and can be tested on a term that has not yet been counted.")),
+        dict(id="6.3", title="Graphs of sequences",
+             inquiry_q=("What can a graph of a sequence show that the list of terms cannot show?"), teach=[
             "Plotting term against position turns a sequence into a set of points. A linear rule gives points on a straight line; a quadratic rule gives points on a curve.",
             "Reading a graph in the n direction is interpolation or extrapolation, and the same caution applies as in chapter 2: the rule must genuinely continue.",
             "Comparing two sequences on the same axes shows which grows faster, and the crossing point shows where the order changes.",
@@ -1851,7 +2000,8 @@ dict(
                     "n² is equal to n at n = 1 and above it from n = 2.",
                     "The gap between n² and 2n grows quickly."],
             obs="Different rules grow at different rates, visible as different steepness on the graph.",
-            concl="A graph compares growth rates that a list of numbers hides.")),
+            concl="Steepness and curvature compare growth rates that a list of numbers hides, so a "
+                  "graph shows which rule grows faster and where the order changes.")),
     ],
     practice=dict(
         A=[("6.1.1", "Find the next term: 2, 5, 8, 11, …", "14", "The common difference is 3.", "F"),
@@ -1956,6 +2106,20 @@ dict(
                   "total after n weeks, draw the graph, and find when the total reaches 1 000 dollars.",
              note="Criteria C and D · use a graph or a table to justify your answer."),
     ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of patterns and the related concepts of relationships and logic "
+        "appear in your work?",
+        "How is the global context of personal and cultural expression, and its exploration of "
+        "artistry, craft, creation and beauty, visible in the investigations and examples you "
+        "completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a rule found from a few terms, and what would you still like "
+        "to ask?",
+    ],
     review=dict(
         ideas=["A sequence is an ordered list; a rule gives any term.",
                "Constant differences indicate a linear rule.",
@@ -1997,8 +2161,12 @@ dict(
 CHAPTERS.extend([
 dict(
     num=7, title="2D geometry: angles, perimeter and area",
-    key="Form", related=["Logic", "Representation"], context="Design and construction",
-    inquiry="How do the properties of a shape determine its perimeter and its area?",
+    key="Form", related=["Logic", "Representation"],
+    context="Globalisation and sustainability",
+    exploration="Urban and rural planning",
+    inquiry=("The form of a two-dimensional shape, and the logic of how its parts relate, are "
+             "represented by formulas for perimeter and area, and that representation allows spaces "
+             "to be measured, planned and costed when land, flooring and materials are limited."),
     atl=("Information literacy",
          "In order for a student to access information to be informed, students must collect, record "
          "and verify data, and make connections between sources of information."),
@@ -2006,13 +2174,18 @@ dict(
                "Formulas come from the properties of each shape.",
     engage="A rectangular room measures 6 m by 4 m. How much skirting board runs around the walls, "
            "and how much carpet covers the floor?",
-    questions=[("Factual", "What is the difference between perimeter and area?"),
-               ("Conceptual", "Why does the angle sum of a triangle always equal 180°?"),
-               ("Debatable", "Is a formula a shortcut or a form of understanding?")],
+    questions=[("Factual", "What is the difference between perimeter and area, and which formula "
+                           "gives each for a rectangle, a triangle and a circle?"),
+               ("Conceptual", "Why does the angle sum of a triangle always equal 180°, and how do "
+                              "the properties of a shape produce its perimeter and area formulas?"),
+               ("Debatable", "When a community space is planned with a limited budget, is the "
+                             "cheapest shape per square metre always the best choice?")],
     application_lede="Identify the shape, choose the formula, and state the units of the answer.",
     projects_lede="Measurement and design are everywhere in a school building. Measure a real space.",
     sections=[
-        dict(id="7.1", title="Angles and their relationships", teach=[
+        dict(id="7.1", title="Angles and their relationships",
+             inquiry_q=("What relationships exist between angles formed by lines, and why do they "
+                        "always hold?"), teach=[
             "An angle measures a turn. A full turn is 360°, a half turn 180°, and a right angle 90°.",
             "Angles on a straight line add to 180°, and angles around a point add to 360°. Vertically opposite angles are equal because they share the same two lines.",
             "When a transversal crosses parallel lines, corresponding angles are equal, alternate angles are equal, and co-interior angles add to 180°.",
@@ -2041,8 +2214,11 @@ dict(
                     "The quadrilateral totals close to 360°.",
                     "Splitting a quadrilateral along a diagonal gives two triangles."],
             obs="The angle sum depends on the number of sides.",
-            concl="The angle sum of a polygon with n sides is (n − 2) × 180°.")),
-        dict(id="7.2", title="Perimeter of 2D shapes", teach=[
+            concl="Angle relationships come from straight lines, full turns and parallel lines, and "
+                  "they combine to give the angle sum of a polygon with n sides as (n − 2) × 180°.")),
+        dict(id="7.2", title="Perimeter of 2D shapes",
+             inquiry_q=("How is the boundary of a shape measured, and how does the perimeter formula "
+                        "follow from the shape's properties?"), teach=[
             "Perimeter is the total distance around a shape. For a rectangle it is 2(l + w), and for any polygon it is the sum of the side lengths.",
             "The perimeter of a circle is called the circumference: C = πd = 2πr. The diameter is twice the radius.",
             "When a shape is described by a formula, the perimeter formula follows from the same structure: a square of side s has perimeter 4s.",
@@ -2070,8 +2246,11 @@ dict(
                     "Calculated perimeters depend on identifying the shape correctly.",
                     "Small differences come from measuring error and from the string's thickness."],
             obs="Perimeter is a length, so it is measured in length units.",
-            concl="Perimeter is the total boundary length; formulas are shortcuts for known shapes.")),
-        dict(id="7.3", title="Area of 2D shapes", teach=[
+            concl="Perimeter is the total boundary length, and each formula is a shortcut that "
+                  "follows from the properties of that shape.")),
+        dict(id="7.3", title="Area of 2D shapes",
+             inquiry_q=("How is the surface covered by a shape measured, and where does each area "
+                        "formula come from?"), teach=[
             "Area measures the surface covered. A rectangle of length l and width w has area lw; a triangle has area ½ × base × height; a parallelogram has base × height.",
             "The triangle formula comes from the rectangle: two identical triangles make a rectangle of the same base and height.",
             "A circle has area πr², and a trapezium has area ½(a + b)h. Each formula can be derived from a simpler one by cutting and rearranging.",
@@ -2103,8 +2282,10 @@ dict(
                     "The height of the rectangle equals the height of the parallelogram.",
                     "The areas are equal because no paper was added or removed."],
             obs="A parallelogram has the same area formula as a rectangle.",
-            concl="Area of a parallelogram = base × height.")),
-        dict(id="7.4", title="Using properties to solve problems", teach=[
+            concl="Every area formula can be derived by cutting and rearranging into a rectangle, "
+                  "so area of a parallelogram = base × height.")),
+        dict(id="7.4", title="Using properties to solve problems",
+             inquiry_q=("How can the properties of a shape be used to find a missing measurement?"), teach=[
             "Properties are the reason formulas work: opposite sides of a parallelogram are equal, diagonals of a rectangle are equal, and the diagonals of a rhombus bisect at right angles.",
             "Naming a shape precisely is part of the mathematics. A square is a rectangle, a rhombus and a parallelogram, but a rectangle is not necessarily a square.",
             "When a problem gives a perimeter and a relationship between sides, write both as equations and solve them together.",
@@ -2139,7 +2320,9 @@ dict(
                     "The square is the most specialised of the four.",
                     "The parallelogram is the most general."],
             obs="Sharing properties lets one formula cover several shapes.",
-            concl="Quadrilaterals form a hierarchy in which the more specialised shape has more properties.")),
+            concl="Quadrilaterals form a hierarchy in which the more specialised shape has more "
+                  "properties, and those properties supply the equations that find a missing "
+                  "measurement.")),
     ],
     practice=dict(
         A=[("7.1.1", "Angles on a straight line add to how many degrees?", "180°",
@@ -2249,6 +2432,19 @@ dict(
                   "garden has the same perimeter. Find the area of each and say which is larger.",
              note="Criteria B and D · show the properties you use and check the units."),
     ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of form and the related concepts of logic and representation appear "
+        "in your work?",
+        "How is the global context of globalisation and sustainability, and its exploration of urban "
+        "and rural planning, visible in the investigations and examples you completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a formula when a real space is irregular, and what would you "
+        "still like to ask?",
+    ],
     review=dict(
         ideas=["Angles on a straight line add to 180°; angles around a point add to 360°.",
                "The angle sum of an n-sided polygon is (n − 2) × 180°.",
@@ -2291,8 +2487,12 @@ dict(
 CHAPTERS.extend([
 dict(
     num=8, title="3D geometry: volume and surface area",
-    key="Form", related=["Logic", "Representation"], context="Packaging and construction",
-    inquiry="How does the shape of a container decide how much it holds and how much material it needs?",
+    key="Form", related=["Logic", "Representation"],
+    context="Globalisation and sustainability",
+    exploration="Human impact on the environment",
+    inquiry=("The form of a solid, and the logic of how its faces and cross-sections relate, are "
+             "represented by formulas for volume and surface area, and that representation allows "
+             "the material used for containers to be measured and reduced."),
     atl=("Transfer",
          "In order for a student to apply skills and knowledge in unfamiliar situations, students must "
          "select a structure that fits the new situation, apply it independently, and test the result "
@@ -2301,13 +2501,19 @@ dict(
                "cover it. Both follow from the properties of the solid.",
     engage="Two boxes hold the same volume. One is long and thin, the other nearly cubic. "
            "Which needs less cardboard to make?",
-    questions=[("Factual", "What is the difference between volume and surface area?"),
-               ("Conceptual", "Why do two solids with the same volume have different surface areas?"),
-               ("Debatable", "Is the most efficient shape for packaging always the best choice?")],
+    questions=[("Factual", "What is the difference between volume and surface area, and which "
+                           "formula gives each for a cuboid, a cylinder and a prism?"),
+               ("Conceptual", "Why do two solids with the same volume have different surface areas, "
+                              "and how does a net reveal the surface area of a solid?"),
+               ("Debatable", "Is the most efficient shape for packaging always the best choice for "
+                             "the environment, and how would you use mathematics to argue your "
+                             "case?")],
     application_lede="Name the solid, choose the formula, and keep the units consistent throughout.",
     projects_lede="Packaging and construction are volume problems. Optimise a real container.",
     sections=[
-        dict(id="8.1", title="Naming and drawing solids", teach=[
+        dict(id="8.1", title="Naming and drawing solids",
+             inquiry_q=("How can a solid be described so that its faces, edges and vertices can be "
+                        "counted without seeing all of them?"), teach=[
             "A solid has faces, edges and vertices. A cuboid has 6 faces, 12 edges and 8 vertices; a cube is a cuboid with all edges equal.",
             "A prism has two identical parallel faces joined by rectangles. A pyramid has one base and triangular faces meeting at an apex. A cylinder has two circular faces and a curved surface.",
             "A net is a flat pattern that folds into a solid. Drawing the net is the most reliable way to count faces and to find the surface area.",
@@ -2338,8 +2544,10 @@ dict(
                     "A cube has square faces instead of rectangular ones.",
                     "The net folds without gaps, which is why it works."],
             obs="Faces, edges and vertices are fixed by the type of solid.",
-            concl="A cuboid always has 6 faces, 12 edges and 8 vertices.")),
-        dict(id="8.2", title="Volume of prisms and cylinders", teach=[
+            concl="A solid is described by its faces, edges and vertices, and a net lays every face "
+                  "out flat, so a cuboid always has 6 faces, 12 edges and 8 vertices.")),
+        dict(id="8.2", title="Volume of prisms and cylinders",
+             inquiry_q=("How can the space inside very different solids be measured with one rule?"), teach=[
             "Volume measures the space inside a solid and is measured in cubic units. A cuboid of length l, width w and height h has volume lwh.",
             "Any prism has volume equal to the area of its cross-section times its length. This single rule covers cuboids, triangular prisms and cylinders.",
             "A cylinder has volume πr²h, because its cross-section is a circle. The radius and the height must use the same unit.",
@@ -2367,8 +2575,11 @@ dict(
                     "The number of cubes scales with the volume ratio 8:1.",
                     "Partial cubes at the edges show why units must match."],
             obs="Volume counts unit cubes, so it scales with the cube of the linear size.",
-            concl="Volume of a cuboid = length × width × height.")),
-        dict(id="8.3", title="Surface area of solids", teach=[
+            concl="One rule covers every prism — volume = area of cross-section × length — of which "
+                  "volume of a cuboid = length × width × height is the special case.")),
+        dict(id="8.3", title="Surface area of solids",
+             inquiry_q=("How can the material needed to cover a solid be measured, and why does the "
+                        "same volume need different amounts of material?"), teach=[
             "Surface area is the total area of every face. For a cuboid it is 2(lw + lh + wh), and for a cube of side s it is 6s².",
             "A cylinder has surface area 2πr² + 2πrh: two circles plus a rectangle that wraps around. The rectangle has height h and width equal to the circumference 2πr.",
             "Surface area problems in packaging ask for the least material, which means finding the shape with the smallest surface area for a fixed volume.",
@@ -2397,8 +2608,12 @@ dict(
                     "The more cubic box has the smaller surface area.",
                     "The flatter box needs more material for the same capacity."],
             obs="For a fixed volume, the shape closest to a cube uses the least surface area.",
-            concl="Surface area depends on shape, not only on volume.")),
-        dict(id="8.4", title="Solving 3D problems", teach=[
+            concl="Surface area is the sum of the face areas, so it depends on shape and not only "
+                  "on volume: for a fixed volume the shape closest to a cube uses the least "
+                  "material.")),
+        dict(id="8.4", title="Solving 3D problems",
+             inquiry_q=("How can volume, surface area and edge length be used together to solve a "
+                        "real problem about a container?"), teach=[
             "A three-step method handles most problems: find the missing dimension from a formula, compute the required measure, then check the units.",
             "Converting between volume and capacity uses 1 cm³ = 1 ml and 1 litre = 1 000 cm³. Density problems link mass, volume and density from chapter 3.",
             "Real problems combine measures: a water tank needs its volume for capacity and its surface area for the material.",
@@ -2426,7 +2641,8 @@ dict(
                     "The flatter box has the larger surface area.",
                     "The edge total is easy to check by running a tape around the box."],
             obs="Measuring a real solid links the formulas to physical material.",
-            concl="Volume, surface area and edge length are three distinct measures of one solid.")),
+            concl="Volume, surface area and edge length are three distinct measures of one solid, "
+                  "and a real problem usually needs more than one of them.")),
     ],
     practice=dict(
         A=[("8.1.1", "How many faces, edges and vertices does a cuboid have?",
@@ -2539,6 +2755,19 @@ dict(
                   "cylinder of radius 5 cm and height 12.7 cm. Which needs less material?",
              note="Criteria B and C · compute both volumes and both surface areas before concluding."),
     ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of form and the related concepts of logic and representation appear "
+        "in your work?",
+        "How is the global context of globalisation and sustainability, and its exploration of human "
+        "impact on the environment, visible in the investigations and examples you completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of choosing a container by surface area alone, and what would you "
+        "still like to ask?",
+    ],
     review=dict(
         ideas=["A solid has faces, edges and vertices fixed by its type.",
                "A net folds into a solid and reveals all its faces.",
@@ -2581,8 +2810,12 @@ dict(
 CHAPTERS.extend([
 dict(
     num=9, title="Transformations and symmetry",
-    key="Form", related=["Logic", "Relationships"], context="Art, design and architecture",
-    inquiry="What changes and what stays the same when a shape is transformed?",
+    key="Form", related=["Logic", "Relationships"],
+    context="Personal and cultural expression",
+    exploration="Artistry, craft, creation and beauty",
+    inquiry=("The form of a shape is preserved by transformations, and the logic of describing each "
+             "movement precisely — and the relationships between them — allows patterns to be "
+             "created, extended and recognised in art, craft and design."),
     atl=("Communication",
          "In order for a student to communicate information and ideas effectively, students must "
          "organise a structure for a purpose, use appropriate notation, and check that a reader can "
@@ -2591,14 +2824,20 @@ dict(
                "movement precisely is the whole task.",
     engage="A tile pattern repeats across a wall. Each tile is the same shape in a new position. "
            "How do you describe the movement from one tile to the next?",
-    questions=[("Factual", "What are the four basic transformations?"),
-               ("Conceptual", "Which properties of a shape are preserved under each transformation?"),
-               ("Debatable", "Is a reflected shape still the same shape?")],
+    questions=[("Factual", "What are the four basic transformations, and what information is needed "
+                           "to describe each one completely?"),
+               ("Conceptual", "Which properties of a shape are preserved under each transformation, "
+                              "and how are translations, reflections and rotations related to one "
+                              "another?"),
+               ("Debatable", "Is a reflected or enlarged shape still the same shape, and how would "
+                             "you defend your answer to a designer?")],
     application_lede="State the transformation completely: type, then all the values needed to fix it.",
     projects_lede="Symmetry and transformation govern pattern, design and structure. Find an example "
                   "in your community.",
     sections=[
-        dict(id="9.1", title="Translations and reflections", teach=[
+        dict(id="9.1", title="Translations and reflections",
+             inquiry_q=("How can a movement of a shape be described so that someone else can "
+                        "reproduce it exactly?"), teach=[
             "A translation slides every point of a shape the same distance in the same direction. It is described by a column vector: 3 right and 2 up is written (3, 2).",
             "A reflection flips a shape in a mirror line. Every point moves the same perpendicular distance to the other side of the line.",
             "Both transformations preserve length and angle, so the image is congruent to the original. A translation preserves orientation; a reflection reverses it.",
@@ -2632,8 +2871,11 @@ dict(
                     "The final image is the original rotated by 180° about the origin.",
                     "Lengths and angles are unchanged throughout."],
             obs="Two reflections in perpendicular lines have the same effect as a half turn.",
-            concl="Reflections in perpendicular mirror lines are equivalent to a rotation of 180°.")),
-        dict(id="9.2", title="Rotations and enlargements", teach=[
+            concl="A movement is fully described by a vector or a mirror line, and combining them "
+                  "shows that reflections in perpendicular mirror lines are equivalent to a rotation "
+                  "of 180°.")),
+        dict(id="9.2", title="Rotations and enlargements",
+             inquiry_q=("What changes and what stays the same when a shape is rotated or enlarged?"), teach=[
             "A rotation turns a shape about a fixed centre through a given angle. It is described by the centre, the angle and the direction.",
             "An enlargement changes the size. It is described by a centre and a scale factor: a factor greater than 1 enlarges, between 0 and 1 reduces, and negative reverses the direction.",
             "Enlargement preserves angles but multiplies every length by the scale factor, so area is multiplied by its square. This is the same scaling rule as in chapter 2.",
@@ -2664,8 +2906,11 @@ dict(
                     "Area multiplies by k².",
                     "The shape of the triangle never changes."],
             obs="Enlargement preserves angles and scales lengths and areas by k and k².",
-            concl="Under an enlargement of scale factor k, lengths scale by k and areas by k².")),
-        dict(id="9.3", title="Symmetry", teach=[
+            concl="Rotation preserves length and angle, while an enlargement preserves angle only: "
+                  "under an enlargement of scale factor k, lengths scale by k and areas by k².")),
+        dict(id="9.3", title="Symmetry",
+             inquiry_q=("How can symmetry be described and counted, and what does it tell you about "
+                        "a shape?"), teach=[
             "A shape has line symmetry if it can be folded along a line so that the two halves match exactly. That line is a line of symmetry.",
             "Rotational symmetry means the shape fits onto itself after a rotation of less than 360°. The order of rotational symmetry is how many times it fits in a full turn.",
             "A regular polygon with n sides has n lines of symmetry and rotational symmetry of order n.",
@@ -2697,7 +2942,8 @@ dict(
                     "Rotational order 1 means no rotational symmetry.",
                     "The counts depend only on the shape of the letter."],
             obs="Line and rotational symmetry are independent properties.",
-            concl="A shape's symmetry is fully described by its lines of symmetry and its rotational order.")),
+            concl="A shape's symmetry is fully described by its lines of symmetry and its "
+                  "rotational order, and counting them also checks a transformation.")),
     ],
     practice=dict(
         A=[("9.1.1", "Describe the transformation that slides a shape 4 right and 3 down.",
@@ -2813,6 +3059,20 @@ dict(
                   "the area ratio of the final logo to the original and justify your answer.",
              note="Criteria B and D · explain which properties are preserved and which change."),
     ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of form and the related concepts of logic and relationships appear "
+        "in your work?",
+        "How is the global context of personal and cultural expression, and its exploration of "
+        "artistry, craft, creation and beauty, visible in the investigations and examples you "
+        "completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of describing a design by transformations alone, and what would "
+        "you still like to ask?",
+    ],
     review=dict(
         ideas=["A translation is described by a column vector.",
                "A reflection needs a mirror line; it reverses orientation.",
@@ -2856,8 +3116,13 @@ dict(
 CHAPTERS.extend([
 dict(
     num=10, title="Probability and simulation",
-    key="Relationships", related=["Logic", "Representation"], context="Games and risk",
-    inquiry="How can randomness be described without predicting a single outcome?",
+    key="Relationships", related=["Logic", "Representation"],
+    context="Scientific and technical innovation",
+    exploration="Randomness, chance, risk and uncertainty",
+    inquiry=("The relationship between an experiment and the outcomes it can produce is described by "
+             "probability, and the logic of counting those outcomes — with representation as a sample "
+             "space or a simulation — allows randomness to be quantified and risk to be assessed "
+             "rather than guessed."),
     atl=("Critical thinking",
          "In order for a student to draw reasonable conclusions and generalisations, students must "
          "test conclusions against evidence, revise them where necessary, and develop theories."),
@@ -2865,14 +3130,19 @@ dict(
                "simulations turn chance into numbers that can be reasoned about.",
     engage="A game gives a point when two dice show the same number. Is the game fair? "
            "How could you find out without playing it a thousand times?",
-    questions=[("Factual", "What does a probability of 0.5 mean?"),
-               ("Conceptual", "Why can experimental results differ from theoretical probabilities?"),
-               ("Debatable", "Is a simulation ever better than a real experiment?")],
+    questions=[("Factual", "What does a probability of 0.5 mean, and how are experimental and "
+                           "theoretical probabilities calculated?"),
+               ("Conceptual", "Why can experimental results differ from theoretical probabilities, "
+                              "and how does the sample space connect the outcomes to the "
+                              "probabilities?"),
+               ("Debatable", "Is a simulation ever better than a real experiment, and what would you "
+                             "need to know about the risk before relying on it?")],
     application_lede="List the outcomes first, then compute. Experimental results are compared with "
                      "theory, not confused with it.",
     projects_lede="Probability supports decisions under uncertainty. Use it to advise a real choice.",
     sections=[
-        dict(id="10.1", title="Describing probability", teach=[
+        dict(id="10.1", title="Describing probability",
+             inquiry_q="How can chance be described as a number, and what does that number mean?", teach=[
             "The probability of an event is a number from 0 to 1. Zero means impossible, 1 means certain, and 0.5 means equally likely to happen or not.",
             "Theoretical probability comes from counting equally likely outcomes: P(event) = number of favourable outcomes ÷ total number of outcomes. Experimental probability comes from repeating a trial.",
             "Probabilities of all outcomes of one experiment add to 1, so the probability of 'not A' is 1 − P(A).",
@@ -2902,8 +3172,11 @@ dict(
                     "The theoretical probability stays at 1/2.",
                     "More tosses bring the experimental value closer to 1/2."],
             obs="Experimental probability varies; theoretical probability is fixed by the outcomes.",
-            concl="Experimental probability approaches theoretical probability as the number of trials grows.")),
-        dict(id="10.2", title="Sample spaces and listing outcomes", teach=[
+            concl="Probability is a number from 0 to 1 on a scale from impossible to certain, and "
+                  "experimental probability approaches theoretical probability as the number of "
+                  "trials grows.")),
+        dict(id="10.2", title="Sample spaces and listing outcomes",
+             inquiry_q="How can every possible outcome be counted so that none is missed?", teach=[
             "A sample space is the set of all possible outcomes. Listing it completely is the first step in any probability calculation.",
             "For two events, a table or a grid lists all combinations. For two dice there are 36 outcomes, and 6 of them are doubles.",
             "An outcome is a single result; an event is a set of outcomes. The probability of an event is the sum of the probabilities of its outcomes.",
@@ -2938,8 +3211,10 @@ dict(
                     "HT and TH are different outcomes when the coins are distinct.",
                     "The sample space size is the denominator of every probability."],
             obs="The size of a sample space is the product of the numbers of outcomes for each part.",
-            concl="Listing the full sample space prevents missing favourable outcomes.")),
-        dict(id="10.3", title="Probability rules", teach=[
+            concl="Listing the full sample space prevents missing favourable outcomes, and its "
+                  "size gives the denominator of every theoretical probability.")),
+        dict(id="10.3", title="Probability rules",
+             inquiry_q="How do the probabilities of events combine, and what rules govern them?", teach=[
             "For mutually exclusive events, P(A or B) = P(A) + P(B). If they are not mutually exclusive, the overlap must be subtracted.",
             "For independent events, P(A and B) = P(A) × P(B). Dependence means the first event changes the probability of the second.",
             "These two rules cover most probability calculations, and choosing between them depends on whether the question says 'or' or 'and'.",
@@ -2972,8 +3247,11 @@ dict(
                     "Sixty trials is a small sample, so variation is expected.",
                     "The theoretical value is exact because all 36 outcomes are equally likely."],
             obs="Experimental results fluctuate around the theoretical probability.",
-            concl="More trials reduce the gap between experimental and theoretical probability.")),
-        dict(id="10.4", title="Simulation and fair games", teach=[
+            concl="The addition rule covers mutually exclusive outcomes, the multiplication rule "
+                  "covers independent stages, and more trials reduce the gap between experimental "
+                  "and theoretical probability.")),
+        dict(id="10.4", title="Simulation and fair games",
+             inquiry_q="How can a real experiment be replaced by a model, and when is a game fair?", teach=[
             "A simulation uses random numbers to model a situation that is impractical to repeat. A random number table, dice, coins or a calculator can all generate the outcomes.",
             "A fair game gives each player the same expected chance of winning. Expected value is the average result over many repetitions, and it decides whether a game is worth playing.",
             "Simulations are also used to test designs: how long a queue gets, how often a machine fails, how a disease spreads.",
@@ -3007,7 +3285,9 @@ dict(
                     "Fifty trials give frequencies near 10 for each sector.",
                     "The total frequency must be 50, which checks the simulation."],
             obs="A simulation reproduces theoretical probabilities when the rule matches them.",
-            concl="A simulation is a model of a real experiment, and its rule must reproduce the probabilities.")),
+            concl="A simulation is a model of a real experiment, and its rule must reproduce the "
+                  "probabilities; a game is fair when every player has the same chance of "
+                  "winning.")),
     ],
     practice=dict(
         A=[("10.1.1", "State the range of possible probabilities.", "0 to 1",
@@ -3128,6 +3408,20 @@ dict(
                   "run 50 simulated days, and compare the experimental probability with the theoretical value.",
              note="Criteria B and D · state the rule clearly and comment on the comparison."),
     ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of relationships and the related concepts of logic and "
+        "representation appear in your work?",
+        "How is the global context of scientific and technical innovation, and its exploration of "
+        "randomness, chance, risk and uncertainty, visible in the investigations and examples you "
+        "completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a model or a simulation of a real situation, and what would you "
+        "still like to ask?",
+    ],
     review=dict(
         ideas=["Probability is a number from 0 to 1.",
                "Theoretical probability counts equally likely outcomes.",
@@ -3171,8 +3465,13 @@ dict(
 CHAPTERS.extend([
 dict(
     num=11, title="Univariate data",
-    key="Logic", related=["Representation", "Relationships"], context="Surveys and reports",
-    inquiry="How can a small set of numbers describe a much larger group?",
+    key="Logic", related=["Representation", "Relationships"],
+    context="Globalisation and sustainability",
+    exploration="Population and demography",
+    inquiry=("The logic of organising a data set, and the relationships between its values, are "
+             "represented by displays, measures of centre and measures of spread, and that "
+             "representation allows a sample to be reported honestly and used to describe a larger "
+             "population."),
     atl=("Information literacy",
          "In order for a student to access information to be informed, students must collect, record "
          "and verify data, and make connections between various sources of information."),
@@ -3180,15 +3479,19 @@ dict(
                "of average changes what the data appear to say.",
     engage="A class records the number of text messages sent by each student in a day. "
            "How would you describe the class's habits in one sentence?",
-    questions=[("Factual", "What do the mean, median and mode measure?"),
-               ("Conceptual", "Why can two data sets with the same mean look very different?"),
-               ("Debatable", "Can an average ever be misleading?")],
+    questions=[("Factual", "What do the mean, median and mode measure, and what does each of the "
+                           "range and the IQR measure?"),
+               ("Conceptual", "Why can two data sets with the same mean look very different, and how "
+                              "does the choice of display change what the data appear to say?"),
+               ("Debatable", "Can an average ever be misleading when it is used to describe a whole "
+                             "population, and how would you argue for a fairer report?")],
     application_lede="Choose a display that answers the question, then choose the average that fits the "
                      "purpose. Justify both choices.",
     projects_lede="Data collection serves decisions. Collect data on a question that matters in your "
                   "community.",
     sections=[
-        dict(id="11.1", title="Collecting and displaying data", teach=[
+        dict(id="11.1", title="Collecting and displaying data",
+             inquiry_q="How can a collection of data be organised and displayed so that its story is visible?", teach=[
             "Data are collected for a purpose. A survey question must be clear, unbiased and answerable, and the sample must be described.",
             "A frequency table organises raw data; a bar chart compares categories; a histogram shows the distribution of grouped numerical data; a pie chart shows parts of a whole.",
             "The display must match the data type: categorical data suit bar and pie charts, continuous numerical data suit histograms and line graphs.",
@@ -3224,8 +3527,10 @@ dict(
                     "The tallest bar is the mode of the data.",
                     "The display makes the comparison immediate."],
             obs="A frequency table turns raw data into a countable summary.",
-            concl="The display must match the data type and the question being asked.")),
-        dict(id="11.2", title="Measures of centre", teach=[
+            concl="Data are organised in a table and displayed in a chart, and the display must "
+                  "match the data type and the question being asked.")),
+        dict(id="11.2", title="Measures of centre",
+             inquiry_q="How can the middle of a data set be summarised by a single number, and which single number is the fairest?", teach=[
             "The mean is the sum of the values divided by how many there are. It uses every value, so it is affected by extreme values.",
             "The median is the middle value when the data are ordered. With an even number of values it is the mean of the two middle values, and it is unaffected by extremes.",
             "The mode is the most frequent value. It is the only average that works for categorical data.",
@@ -3257,8 +3562,10 @@ dict(
                     "The mode depends on which value happened most often.",
                     "The median is the average of the 10th and 11th ordered values."],
             obs="Experimental statistics vary around the theoretical values.",
-            concl="Each average summarises a different aspect of the data.")),
-        dict(id="11.3", title="Measures of spread", teach=[
+            concl="Each average summarises a different aspect of the data, so the mean uses every "
+                  "value, the median resists extremes and the mode suits categories.")),
+        dict(id="11.3", title="Measures of spread",
+             inquiry_q="How can the spread of a data set be summarised, and why does spread matter as much as centre?", teach=[
             "The range is the largest value minus the smallest. It is simple but uses only two values.",
             "The interquartile range is the range of the middle half: Q3 − Q1. Quartiles split the ordered data into four equal parts.",
             "A box plot shows the minimum, Q1, median, Q3 and maximum in one display, which makes comparing two data sets straightforward.",
@@ -3291,8 +3598,10 @@ dict(
                     "The box covers the middle half of the data.",
                     "The whiskers reach the extremes."],
             obs="The box plot displays five summary values in a single picture.",
-            concl="A box plot shows centre, spread and extremes together.")),
-        dict(id="11.4", title="Interpreting and reporting data", teach=[
+            concl="Spread is measured by the range and the IQR, and a box plot shows centre, "
+                  "spread and extremes together.")),
+        dict(id="11.4", title="Interpreting and reporting data",
+             inquiry_q="How can a report about data be made honest, and what must it state before it draws a conclusion?", teach=[
             "A report on data states the question, the sample, the display, the statistics and the conclusion, in that order.",
             "Averages can mislead when the sample is biased, when outliers are hidden, or when the wrong average is chosen. A critical reader asks which average and which sample.",
             "Predictions from data are statements about a group, not about an individual. A 70% chance applies to the group, not to one person.",
@@ -3326,7 +3635,9 @@ dict(
                     "The IQRs compare the spread of the middle half.",
                     "A conclusion needs both pieces of information."],
             obs="A comparison is complete only when centre and spread are both reported.",
-            concl="Report the centre, the spread and the sample before drawing a conclusion.")),
+            concl="Report the centre, the spread and the sample before drawing a conclusion, "
+                  "because a conclusion about a population rests on the logic of how the sample was "
+                  "chosen.")),
     ],
     practice=dict(
         A=[("11.1.1", "Name a display suitable for categorical data.", "A bar chart",
@@ -3442,6 +3753,19 @@ dict(
              text="Two classes have mean scores of 68 and 71 with IQRs of 6 and 15. Advise the school "
                   "on which class needs more support and justify your answer.",
              note="Criteria B and D · compare centre and spread before advising."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of logic and the related concepts of representation and "
+        "relationships appear in your work?",
+        "How is the global context of globalisation and sustainability, and its exploration of "
+        "population and demography, visible in the investigations and examples you completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a sample when it is used to describe a population, and what "
+        "would you still like to ask?",
     ],
     review=dict(
         ideas=["A display must match the data type and the question.",
