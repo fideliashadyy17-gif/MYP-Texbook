@@ -1155,18 +1155,61 @@ FW[7] = dict(
 )
 
 # ================================================================ front matter
+AUTHOR = "SADIKOU MOUKODDIM"
+
+SERIES = dict(
+    name="MYP Mathematics",
+    line="MYP Mathematics \u00b7 Student coursebook",
+    edition="Second edition",
+)
+
+# Five-volume collection. Volumes 2-5 do not exist yet: their entries are
+# coordinated cover concepts only and are labelled as such wherever they appear.
+COLLECTION = [
+    dict(level=1, status="this volume", theme="Year 1 \u00b7 number, algebra, shape and data"),
+    dict(level=2, status="forthcoming", theme="Year 2 \u00b7 ratio, algebra, geometry, probability"),
+    dict(level=3, status="forthcoming", theme="Year 3 \u00b7 concept-driven inquiry course"),
+    dict(level=4, status="forthcoming", theme="Year 4 \u00b7 inquiry, practice, assessment"),
+    dict(level=5, status="forthcoming", theme="Year 5 \u00b7 modelling, proof, transition"),
+]
+
 FRONT = dict(
     cover=dict(
-        kicker="MYP Mathematics 1 \u00b7 Student coursebook",
-        title="Mathematics 1",
-        subtitle="A concept-driven MYP Year 1 coursebook: investigate first, then reason, communicate and apply.",
-        chips=["Investigate", "Reason", "Communicate", "Apply", "Reflect"],
-        inquiry="Every chapter opens with an investigation. You meet the mathematics through a task, discover a pattern, state a conclusion and only then meet the formal explanation.",
-        foot_left="Second edition",
-        foot_right="MYP Year 1 \u00b7 Chapters 1\u201310",
+        kicker="MYP Mathematics \u00b7 Student coursebook",
+        edition="Second edition",
+        title="Mathematics",
+        level="1",
+        level_text="Student coursebook",
+        level_note="MYP 1 \u00b7 Year 1 \u00b7 ten chapters in five parts",
+        standfirst="A concept-driven inquiry course in number, proportion, algebra, shape and data. You investigate first, then reason, communicate and apply.",
+        topics=["Number systems", "Powers and order", "Factors and primes", "Fractions and decimals",
+                "Percentages", "Patterns and equations", "Lines and angles", "Sets and classification",
+                "Perimeter, area and volume", "Data and graphs"],
+        criteria=[("A", "Knowing and understanding"), ("B", "Investigating patterns"),
+                  ("C", "Communicating"), ("D", "Applying mathematics in real-life contexts")],
+        inquiry_label="How this book works",
+        inquiry="Every chapter opens with a task. You investigate, notice a pattern and state a mathematical conclusion before you meet the formal explanation.",
+        author=AUTHOR,
+        series="MYP Mathematics \u00b7 Volume 1 of 5",
+    ),
+    backcover=dict(
+        kicker="MYP Mathematics \u00b7 Student coursebook",
+        edition="Second edition",
+        heading="About this book",
+        paras=[
+            "Ten chapters, each opening with a task rather than a rule. You investigate, notice a pattern, state a mathematical conclusion, and only then meet the formal explanation \u2014 with worked examples that model a complete solution and 722 practice items separated into Criterion A, B, C and D practice so you can see which skill each task trains.",
+            "Every chapter closes with a Service as Action opportunity, a Community Project connection and a Personal Project extension for MYP 5. The back of the book carries complete student-facing answers with reasoning, a formula bank, a glossary and references.",
+        ],
+        collection_heading="MYP Mathematics \u00b7 the five-volume collection",
+        collection_note="One inquiry-led course from Year 1 to Year 5. Volumes 2\u20135 are in preparation; the covers shown here are coordinated collection designs, not published volumes.",
+        smallprint="Second edition \u00b7 A4 review copy \u00b7 embedded fonts \u00b7 continuous pagination. No ISBN, publisher, print specification or commercial print-readiness claim is made.",
+        author=AUTHOR,
+        foot_right="Second edition \u00b7 MYP Mathematics",
     ),
     imprint=dict(
         title="About this edition",
+        credit="Author",
+        author=AUTHOR,
         body=[
             "This is the second edition of the MYP 1 mathematics coursebook. It was rebuilt from the first-edition MYP Mathematics 1 Student Coursebook, which remains the principal content reference and is preserved unchanged in the project archive.",
             "The edition keeps the first edition's chapter scope and its visual identity, and rebuilds the teaching sequence around inquiry: engagement, inquiry questions, investigation, observation, mathematical conclusion, formal development, worked examples, extensive visual practice, and application, assessment and reflection.",

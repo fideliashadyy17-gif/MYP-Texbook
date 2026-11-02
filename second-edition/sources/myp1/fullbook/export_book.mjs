@@ -9,14 +9,18 @@ const root = path.resolve(here, '..');                       // sources/myp1
 const tools = path.join(root, 'tools');
 const exportsDir = path.resolve(here, '../../../exports/myp1');
 fs.mkdirSync(exportsDir, {recursive: true});
-const outFile = path.join(exportsDir, 'MYP1-Student-Coursebook-Second-Edition.pdf');
+// Optional: node export_book.mjs <html-file> <output.pdf> <expected-pages>
+const htmlFile = process.argv[2] || 'book.html';
+const outName = process.argv[3] || 'MYP1-Student-Coursebook-Second-Edition.pdf';
+const expectedPages = Number(process.argv[4]) || null;
+const outFile = path.join(exportsDir, outName);
 const manifest = JSON.parse(fs.readFileSync(path.join(here, 'book.manifest.json'), 'utf8'));
 
 const mime = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml',
   '.woff2':'font/woff2','.woff':'font/woff','.ttf':'font/ttf','.json':'application/json'};
 function resolve(url) {
   const p = decodeURIComponent(url.split('?')[0]);
-  if (p === '/' || p === '/book.html') return path.join(here, 'book.html');
+  if (p === '/' || p === '/' + htmlFile) return path.join(here, htmlFile);
   if (p.startsWith('/styles/')) return path.join(here, p.slice(8));
   if (p.startsWith('/assets/')) return path.join(here, 'assets', p.slice(8));
   if (p.startsWith('/vendor/katex/')) return path.join(tools, 'node_modules/katex/dist', p.slice(14));
@@ -42,9 +46,9 @@ try {
   const errors = [];
   page.on('pageerror', e => errors.push(String(e)));
   page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
-  await page.goto(`${base}/book.html`, {waitUntil: 'networkidle'});
+  await page.goto(`${base}/${htmlFile}`, {waitUntil: 'networkidle'});
   await page.waitForFunction(n => document.querySelectorAll('.page').length >= n,
-    manifest.pages, {timeout: 180000});
+    expectedPages || manifest.pages, {timeout: 180000});
   await page.evaluate(() => document.fonts.ready);
   await page.waitForFunction(() => [...document.images].every(img => img.complete), null, {timeout: 60000});
   await page.waitForTimeout(1500);
@@ -67,8 +71,10 @@ try {
       questionIds: document.querySelectorAll('[id^="q-"]').length,
       answerIds: document.querySelectorAll('[data-answer-for]').length,
     };
-  }, manifest.pages);
-  fs.writeFileSync(path.join(here, 'book.layout.json'), JSON.stringify(report, null, 2));
+  }, expectedPages || manifest.pages);
+  if (htmlFile === 'book.html') {
+    fs.writeFileSync(path.join(here, 'book.layout.json'), JSON.stringify(report, null, 2));
+  }
   console.log(JSON.stringify({pages: report.rendered, overflow: report.overflow.length,
     rawPlaceholders: report.rawPlaceholders.length, rawMath: report.rawMath,
     katexErrors: report.katexErrors, questions: report.questionIds, answers: report.answerIds,

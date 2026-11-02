@@ -124,7 +124,38 @@ for key, page in manifest["back_matter"].items():
         "formula": "formula bank" in t,
         "glossary": "glossary" in t,
         "references": "references" in t,
+        "back_cover": ("collection" in t and "sadikou" in t),
     }[key]
+
+# ---- exterior: front cover, author credit, back cover, collection ----------
+# Cover type is letterspaced, so compare with whitespace removed: the glyphs are
+# positioned individually and text extraction inserts spaces between them.
+def flat(t):
+    return re.sub(r"\s+", "", t).lower()
+
+
+front, imprint_text, back = flat(texts[0]), flat(texts[1]), flat(texts[-1])
+report["exterior_front_cover"] = {
+    "title": "mathematics" in front,
+    "level": "studentcoursebook" in front and "myp1" in front,
+    "author": "sadikoumoukoddim" in front,
+    "edition": "secondedition" in front,
+}
+report["exterior_author_credit"] = {
+    "front_cover": "sadikoumoukoddim" in front,
+    "imprint": "sadikoumoukoddim" in imprint_text,
+    "back_cover": "sadikoumoukoddim" in back,
+}
+report["exterior_back_cover"] = {
+    "collection": "collection" in back,
+    "five_volumes": all(("volume%d" % n) in back for n in range(1, 6)),
+    "current_volume": "thisvolume" in back,
+    "forthcoming_labelled": back.count("forthcoming") == 4,
+    "no_isbn": "noisbn" in back,
+}
+report["exterior_ok"] = (all(report["exterior_front_cover"].values())
+                         and all(report["exterior_author_credit"].values())
+                         and all(report["exterior_back_cover"].values()))
 
 checks = {
     "page_count": report["pages"] == report["expected_pages"],
@@ -137,6 +168,7 @@ checks = {
     "contents": report["contents_ok"],
     "coverage": report["coverage_ok"],
     "back_matter": all(v for k, v in report.items() if k.startswith("back_matter_")),
+    "exterior": report["exterior_ok"],
 }
 report["checks"] = checks
 report["status"] = "PASS" if all(checks.values()) else "FAIL"
