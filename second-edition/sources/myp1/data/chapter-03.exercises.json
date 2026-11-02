@@ -1,0 +1,2147 @@
+{
+  "chapter": 3,
+  "title": "Factors, multiples and primes",
+  "part": "Part I · The grammar of number",
+  "hours": 13,
+  "key": "Relationships",
+  "related": "System, Representation",
+  "context": "Fairness and development",
+  "soi": "Factors, multiples and prime products reveal how numbers are built, so exact grouping and shared schedules can be planned and justified.",
+  "engage": "Can 192 students be placed into identical mixed teams without leaving anyone out? What must be true about the number of teams?",
+  "atl": "In order for a student to justify a generalisation, students must organise evidence, test a proposed rule and explain why it works beyond the examples.",
+  "objectives": [
+    "List factors and multiples systematically.",
+    "Apply divisibility tests and classify primes.",
+    "Write prime products and find HCF and LCM.",
+    "Choose a grouping or schedule method and justify it."
+  ],
+  "vocabulary": "factor · multiple · factor pair · divisible · prime · composite · prime factorisation · HCF · LCM",
+  "sections": [
+    {
+      "number": "3.1",
+      "title": "Factors, multiples and factor pairs",
+      "short": "Factor pairs",
+      "intent": "Search for factor pairs in order, then stop when the partners would repeat.",
+      "paras": [
+        "A factor divides a positive whole number exactly. A multiple is that number times a whole number. Since 7 × 12 = 84, 7 and 12 are factors of 84, and 84 is a multiple of both.",
+        "For 36, the pairs are 1 × 36, 2 × 18, 3 × 12, 4 × 9 and 6 × 6. The repeated 6 is counted once. A pair search is complete when the next possible first factor has already appeared as a partner."
+      ],
+      "example": {
+        "title": "Find every factor of 48",
+        "problem": "Use factor pairs rather than guessing.",
+        "steps": [
+          "1 × 48, 2 × 24, 3 × 16, 4 × 12 and 6 × 8.",
+          "5 and 7 do not divide 48. The next partner would repeat.",
+          "Collect the factors in order."
+        ],
+        "answer": "1, 2, 3, 4, 6, 8, 12, 16, 24, 48: ten factors."
+      },
+      "warning": "A factor is usually no larger than the number; a positive multiple is at least as large. Do not confuse the two directions.",
+      "practice": [
+        {
+          "id": "3.1.1",
+          "tier": "fluency",
+          "prompt": "List all factor pairs of 36.",
+          "answer": "1 × 36; 2 × 18; 3 × 12; 4 × 9; 6 × 6.",
+          "reasoning": "Each product is 36; the final pair repeats a factor.",
+          "verify": [
+            {
+              "expr": "[(d,36//d) for d in range(1,7) if 36%d==0]",
+              "equals": [
+                [
+                  1,
+                  36
+                ],
+                [
+                  2,
+                  18
+                ],
+                [
+                  3,
+                  12
+                ],
+                [
+                  4,
+                  9
+                ],
+                [
+                  6,
+                  6
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.1.2",
+          "tier": "fluency",
+          "prompt": "List the first five positive multiples of 7.",
+          "answer": "7, 14, 21, 28, 35.",
+          "reasoning": "Multiply 7 by 1, 2, 3, 4 and 5.",
+          "verify": [
+            {
+              "expr": "[7*n for n in range(1,6)]",
+              "equals": [
+                7,
+                14,
+                21,
+                28,
+                35
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.1.3",
+          "tier": "fluency",
+          "prompt": "Is 56 a multiple of 8? Is 8 a factor of 56? Explain.",
+          "answer": "Yes to both: 8 × 7 = 56.",
+          "reasoning": "The same exact multiplication links factors and multiples.",
+          "verify": [
+            {
+              "expr": "[56%8,8*7]",
+              "equals": [
+                0,
+                56
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.1.4",
+          "tier": "reasoning",
+          "prompt": "A student lists 1, 2, 3, 6, 9, 18 as all factors of 54. Find the missing factors.",
+          "answer": "Missing: 27 and 54. The pairs include 2 × 27 and 1 × 54.",
+          "reasoning": "Search pairs systematically; do not stop at the square root without recording both partners.",
+          "verify": [
+            {
+              "expr": "[d for d in range(1,55) if 54%d==0 and d not in [1,2,3,6,9,18]]",
+              "equals": [
+                27,
+                54
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.1.5",
+          "tier": "application",
+          "prompt": "Which rectangular arrays can be made with exactly 24 counters? Count rotations as the same array.",
+          "answer": "1 × 24, 2 × 12, 3 × 8 and 4 × 6.",
+          "reasoning": "Each pair of side lengths has product 24.",
+          "verify": [
+            {
+              "expr": "[(a,24//a) for a in range(1,5) if 24%a==0]",
+              "equals": [
+                [
+                  1,
+                  24
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  3,
+                  8
+                ],
+                [
+                  4,
+                  6
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.1.6",
+          "tier": "challenge",
+          "prompt": "A number between 30 and 50 has factors 6 and 8. Find it and explain uniqueness.",
+          "answer": "48. It is the only common multiple of 6 and 8 in the interval.",
+          "reasoning": "List common multiples or use the least common multiple 24, then 48.",
+          "verify": [
+            {
+              "expr": "[n for n in range(31,50) if n%6==0 and n%8==0]",
+              "equals": [
+                48
+              ]
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "factors",
+        "n": 36,
+        "caption": "Factor pairs meet at 6 × 6. Search in order so no pair is missed."
+      }
+    },
+    {
+      "number": "3.2",
+      "title": "Divisibility tests",
+      "short": "Divisibility",
+      "intent": "Use digit tests as shortcuts, then confirm with an exact multiplication when needed.",
+      "paras": [
+        "Tests for 2, 5 and 10 use the last digit. Tests for 4 and 8 use the last two and three digits because 100 is divisible by 4 and 1,000 by 8.",
+        "For 3 and 9, add the digits. A number is divisible by 6 exactly when it is divisible by both 2 and 3. These tests concern positive whole numbers here; a passing test is evidence, not a guess."
+      ],
+      "example": {
+        "title": "Test 4,728",
+        "problem": "Which of 2, 3, 4, 5, 6, 8, 9 and 10 divide it?",
+        "steps": [
+          "Last digit 8: passes 2, fails 5 and 10. Digit sum 21: passes 3, fails 9.",
+          "Last two digits 28: passes 4. Last three digits 728 = 8 × 91: passes 8.",
+          "Passing 2 and 3 means it also passes 6."
+        ],
+        "answer": "2, 3, 4, 6 and 8."
+      },
+      "warning": "A digit sum divisible by 3 does not prove divisibility by 6: the number must also be even.",
+      "practice": [
+        {
+          "id": "3.2.1",
+          "tier": "fluency",
+          "prompt": "Which of 2, 3, 4, 5, 6, 8, 9 and 10 divide 4,728?",
+          "answer": "2, 3, 4, 6 and 8.",
+          "reasoning": "Use the last digits and digit sum 21; 728 is divisible by 8.",
+          "verify": [
+            {
+              "expr": "[d for d in [2,3,4,5,6,8,9,10] if 4728%d==0]",
+              "equals": [
+                2,
+                3,
+                4,
+                6,
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.2.2",
+          "tier": "fluency",
+          "prompt": "Test 315 for divisibility by 3, 5, 9 and 10.",
+          "answer": "3, 5 and 9: yes. 10: no.",
+          "reasoning": "Digit sum 9; last digit 5, not 0.",
+          "verify": [
+            {
+              "expr": "[d for d in [3,5,9,10] if 315%d==0]",
+              "equals": [
+                3,
+                5,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.2.3",
+          "tier": "reasoning",
+          "prompt": "Explain why 513 is not divisible by 6 even though its digit sum is 9.",
+          "answer": "It is odd, so it fails the test for 2. Divisibility by 6 needs both 2 and 3.",
+          "reasoning": "The digit-sum test establishes only the factor 3 here.",
+          "verify": [
+            {
+              "expr": "[513%2,513%3,513%6]",
+              "equals": [
+                1,
+                0,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.2.4",
+          "tier": "reasoning",
+          "prompt": "Why does testing the last two digits decide divisibility by 4?",
+          "answer": "Every hundred is divisible by 4, so only the last two digits can affect the remainder.",
+          "reasoning": "Write the number as 100 × a + b, where b is the last two-digit number.",
+          "verify": [
+            {
+              "expr": "100%4",
+              "equals": 0
+            }
+          ]
+        },
+        {
+          "id": "3.2.5",
+          "tier": "application",
+          "prompt": "A teacher has 126 pencils. Can they be shared equally into 6 packs? Into 9 packs?",
+          "answer": "6 packs: yes, 21 per pack. 9 packs: yes, 14 per pack.",
+          "reasoning": "126 is even and has digit sum 9, so both tests pass.",
+          "verify": [
+            {
+              "expr": "[126//6,126//9,126%6,126%9]",
+              "equals": [
+                21,
+                14,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.2.6",
+          "tier": "challenge",
+          "prompt": "Use digits 4, 5 and 6 once each to make the largest three-digit number divisible by 4.",
+          "answer": "654 is not divisible by 4; the largest valid arrangement is 564.",
+          "reasoning": "The possible even endings are 54, 64 and 46; only 64 and 56 work, and 564 is the largest valid arrangement.",
+          "verify": [
+            {
+              "expr": "max(int(str(a)+str(b)+str(c)) for a,b,c in permutations([4,5,6]) if int(str(a)+str(b)+str(c))%4==0)",
+              "equals": 564
+            }
+          ]
+        }
+      ],
+      "diagram": null
+    },
+    {
+      "number": "3.3",
+      "title": "Prime and composite numbers",
+      "short": "Primes",
+      "intent": "Classify by the number of factors, and stop a prime search at the square-root boundary.",
+      "paras": [
+        "A prime is a whole number greater than 1 with exactly two positive factors: 1 and itself. A composite has more than two. The number 1 has one factor, so it is neither.",
+        "To test n, try prime divisors no larger than √n. If n = a × b and both factors exceeded √n, their product would exceed n. Thus a composite must have a factor at or below that boundary."
+      ],
+      "example": {
+        "title": "Is 97 prime?",
+        "problem": "Test only the primes up to √97.",
+        "steps": [
+          "√97 is between 9 and 10, so test 2, 3, 5 and 7.",
+          "97 is not divisible by any of them."
+        ],
+        "answer": "97 is prime."
+      },
+      "warning": "2 is prime even though it is even. It is the only even prime; every larger even number has 2 as a factor.",
+      "practice": [
+        {
+          "id": "3.3.1",
+          "tier": "fluency",
+          "prompt": "List the primes below 30.",
+          "answer": "2, 3, 5, 7, 11, 13, 17, 19, 23, 29.",
+          "reasoning": "Each has exactly two positive factors.",
+          "verify": [
+            {
+              "expr": "primes(30)",
+              "equals": [
+                2,
+                3,
+                5,
+                7,
+                11,
+                13,
+                17,
+                19,
+                23,
+                29
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.3.2",
+          "tier": "fluency",
+          "prompt": "Classify 1, 2, 21 and 29 as prime, composite or neither.",
+          "answer": "1 neither; 2 prime; 21 composite; 29 prime.",
+          "reasoning": "21 = 3 × 7; 1 has only one factor.",
+          "verify": [
+            {
+              "expr": "[len(factors(n)) for n in [1,2,21,29]]",
+              "equals": [
+                1,
+                2,
+                4,
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.3.3",
+          "tier": "reasoning",
+          "prompt": "Which prime divisors must be tested to decide whether 97 is prime? Is it prime?",
+          "answer": "Test 2, 3, 5 and 7. None divides 97, so it is prime.",
+          "reasoning": "The next prime, 11, is greater than √97.",
+          "verify": [
+            {
+              "expr": "[p for p in primes(10) if p*p<=97]",
+              "equals": [
+                2,
+                3,
+                5,
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.3.4",
+          "tier": "reasoning",
+          "prompt": "Give a counterexample to “all odd numbers are prime”.",
+          "answer": "9 is odd but composite: 9 = 3 × 3.",
+          "reasoning": "One counterexample disproves a universal claim.",
+          "verify": [
+            {
+              "expr": "[9%2,len(factors(9))]",
+              "equals": [
+                1,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.3.5",
+          "tier": "application",
+          "prompt": "Find a twin-prime pair between 50 and 70 and give its sum.",
+          "answer": "59 and 61; sum 120.",
+          "reasoning": "Both are prime and differ by 2.",
+          "verify": [
+            {
+              "expr": "[59 in primes(62),61 in primes(62),61-59,59+61]",
+              "equals": [
+                true,
+                true,
+                2,
+                120
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.3.6",
+          "tier": "challenge",
+          "prompt": "Does checking that 28 = 11 + 17 prove that every even number above 2 is a sum of two primes?",
+          "answer": "No. It verifies one case, not a general proof.",
+          "reasoning": "A general claim needs a reason covering every case.",
+          "verify": [
+            {
+              "expr": "11+17",
+              "equals": 28,
+              "contains": [
+                "No",
+                "one case"
+              ]
+            }
+          ]
+        }
+      ],
+      "diagram": null
+    },
+    {
+      "number": "3.4",
+      "title": "Prime factorisation",
+      "short": "Prime products",
+      "intent": "Break a composite into factors until every branch ends at a prime.",
+      "paras": [
+        "A factor tree records repeated splitting. Different starting pairs can lead to the same prime factors, apart from order. Index form groups equal primes.",
+        "For 84, split 84 into 4 × 21, then 4 into 2 × 2 and 21 into 3 × 7. Thus 84 = 2² × 3 × 7. Multiply the prime product to check the original number."
+      ],
+      "example": {
+        "title": "Factorise 72",
+        "problem": "Use a factor tree or repeated division.",
+        "steps": [
+          "72 = 8 × 9.",
+          "8 = 2³ and 9 = 3².",
+          "Check 8 × 9 = 72."
+        ],
+        "answer": "72 = 2³ × 3²."
+      },
+      "warning": "Stop only when all terminal factors are prime. A product containing 4 or 9 is not yet a prime factorisation.",
+      "practice": [
+        {
+          "id": "3.4.1",
+          "tier": "fluency",
+          "prompt": "Write 36, 54 and 72 as products of primes in index form.",
+          "answer": "36 = 2² × 3²; 54 = 2 × 3³; 72 = 2³ × 3².",
+          "reasoning": "Split until every factor is prime, then group equal factors.",
+          "verify": [
+            {
+              "expr": "prime_factors(36)",
+              "equals": [
+                2,
+                2,
+                3,
+                3
+              ]
+            },
+            {
+              "expr": "prime_factors(54)",
+              "equals": [
+                2,
+                3,
+                3,
+                3
+              ]
+            },
+            {
+              "expr": "prime_factors(72)",
+              "equals": [
+                2,
+                2,
+                2,
+                3,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.4.2",
+          "tier": "fluency",
+          "prompt": "Find the number represented by 2³ × 3 × 5.",
+          "answer": "120.",
+          "reasoning": "8 × 3 × 5 = 120.",
+          "verify": [
+            {
+              "expr": "2**3*3*5",
+              "equals": 120
+            }
+          ]
+        },
+        {
+          "id": "3.4.3",
+          "tier": "reasoning",
+          "prompt": "A tree for 84 ends in 4, 3 and 7. Is it complete? Repair it.",
+          "answer": "No: 4 is composite. Replace it by 2 × 2, giving 2² × 3 × 7.",
+          "reasoning": "A prime factorisation cannot contain 4 as a terminal factor.",
+          "verify": [
+            {
+              "expr": "2**2*3*7",
+              "equals": 84
+            }
+          ]
+        },
+        {
+          "id": "3.4.4",
+          "tier": "reasoning",
+          "prompt": "Why can two different factor trees for 84 give the same final prime product?",
+          "answer": "Prime factorisation is unique apart from order; the trees only choose different intermediate pairs.",
+          "reasoning": "Both trees decompose the same number completely.",
+          "verify": [
+            {
+              "expr": "product(prime_factors(84))",
+              "equals": 84,
+              "contains": [
+                "unique",
+                "order"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.4.5",
+          "tier": "application",
+          "prompt": "A display has 126 tiles. Write 126 as a prime product and use it to find a 6-by-21 array.",
+          "answer": "126 = 2 × 3² × 7 = 6 × 21.",
+          "reasoning": "Group 2 × 3 as 6 and 3 × 7 as 21.",
+          "verify": [
+            {
+              "expr": "[product(prime_factors(126)),6*21]",
+              "equals": [
+                126,
+                126
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.4.6",
+          "tier": "challenge",
+          "prompt": "Find the smallest positive integer that makes 180n a perfect square.",
+          "answer": "n = 5, because 180 = 2² × 3² × 5 and 900 = 30².",
+          "reasoning": "A square has even exponents in its prime factorisation.",
+          "verify": [
+            {
+              "expr": "min(n for n in range(1,100) if isqrt(180*n)**2==180*n)",
+              "equals": 5
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "factor_tree",
+        "n": 84,
+        "caption": "Split composite branches until every endpoint is prime: 84 = 2² × 3 × 7."
+      }
+    },
+    {
+      "number": "3.5",
+      "title": "Highest common factor and lowest common multiple",
+      "short": "HCF and LCM",
+      "intent": "Choose HCF for largest equal groups and LCM for the next shared repeat.",
+      "paras": [
+        "The highest common factor (HCF) is the largest number dividing each given number. The lowest common multiple (LCM) is the smallest positive number that is a multiple of each.",
+        "Using prime products, take the smallest exponent of each shared prime for the HCF and the largest exponent of each prime appearing for the LCM. For 12 = 2² × 3 and 18 = 2 × 3², HCF = 6 and LCM = 36."
+      ],
+      "example": {
+        "title": "Ribbons and schedules",
+        "problem": "48 cm and 60 cm ribbons are cut into the longest equal pieces. Two bells repeat every 15 and 20 minutes.",
+        "steps": [
+          "HCF(48,60) = 12, so pieces are 12 cm long.",
+          "There are 4 + 5 = 9 pieces.",
+          "LCM(15,20) = 60, so the bells next coincide after 60 minutes."
+        ],
+        "answer": "12 cm, 9 pieces; 60 minutes."
+      },
+      "warning": "HCF cannot exceed the smaller number; a positive LCM cannot be below the larger number. Use these bounds to check.",
+      "practice": [
+        {
+          "id": "3.5.1",
+          "tier": "fluency",
+          "prompt": "Find the HCF and LCM of 12 and 18.",
+          "answer": "HCF 6; LCM 36.",
+          "reasoning": "Shared prime factors give 6; the smallest common multiple is 36.",
+          "verify": [
+            {
+              "expr": "[gcd(12,18),lcm(12,18)]",
+              "equals": [
+                6,
+                36
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.5.2",
+          "tier": "fluency",
+          "prompt": "Find the HCF and LCM of 8, 12 and 18.",
+          "answer": "HCF 2; LCM 72.",
+          "reasoning": "2 divides all three; 72 is the first positive multiple shared by all.",
+          "verify": [
+            {
+              "expr": "[gcd(8,12,18),lcm(8,12,18)]",
+              "equals": [
+                2,
+                72
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.5.3",
+          "tier": "application",
+          "prompt": "Cut 48 cm and 60 cm ribbons into the longest equal pieces with no waste. Find the length and total pieces.",
+          "answer": "12 cm; 9 pieces in total.",
+          "reasoning": "HCF is 12; 48÷12 + 60÷12 = 4 + 5.",
+          "verify": [
+            {
+              "expr": "[gcd(48,60),48//gcd(48,60)+60//gcd(48,60)]",
+              "equals": [
+                12,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.5.4",
+          "tier": "application",
+          "prompt": "Buses leave every 15 and 20 minutes and coincide at 08:00. When do they next coincide?",
+          "answer": "09:00, after 60 minutes.",
+          "reasoning": "The next shared repeat is LCM(15,20) = 60 minutes.",
+          "verify": [
+            {
+              "expr": "lcm(15,20)",
+              "equals": 60
+            }
+          ]
+        },
+        {
+          "id": "3.5.5",
+          "tier": "reasoning",
+          "prompt": "A student uses HCF to find when two repeating events coincide. Explain the correct choice.",
+          "answer": "Use LCM: a shared future time must be a common multiple, and the next one is the lowest.",
+          "reasoning": "HCF describes a largest common divisor, not a future repeat.",
+          "verify": [
+            {
+              "expr": "lcm(15,20)",
+              "equals": 60,
+              "contains": [
+                "LCM",
+                "multiple"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.5.6",
+          "tier": "challenge",
+          "prompt": "Find two different unordered pairs of positive integers with HCF 6 and LCM 36.",
+          "answer": "(6,36) and (12,18).",
+          "reasoning": "Write the numbers as 6a and 6b with coprime a,b and ab = 6.",
+          "verify": [
+            {
+              "expr": "[(a,b) for a in range(1,37) for b in range(a,37) if gcd(a,b)==6 and lcm(a,b)==36]",
+              "equals": [
+                [
+                  6,
+                  36
+                ],
+                [
+                  12,
+                  18
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "diagram": null
+    }
+  ],
+  "explore": {
+    "title": "Why do squares have an odd factor count?",
+    "instruction": "Criterion B. Record evidence, describe a pattern, then justify it using factor pairs.",
+    "intro": "Count factors of positive whole numbers. A repeated factor such as 6 in 6 × 6 is counted once.",
+    "table": {
+      "headers": [
+        "n",
+        "Factor pairs",
+        "Number of factors"
+      ],
+      "rows": [
+        [
+          "4",
+          "1×4; 2×2",
+          "3"
+        ],
+        [
+          "9",
+          "",
+          ""
+        ],
+        [
+          "16",
+          "",
+          ""
+        ],
+        [
+          "25",
+          "",
+          ""
+        ],
+        [
+          "36",
+          "",
+          ""
+        ]
+      ]
+    },
+    "items": [
+      {
+        "id": "B1",
+        "tier": "investigation",
+        "prompt": "Complete the factor counts for 4, 9, 16, 25 and 36.",
+        "answer": "3, 3, 5, 3, 9.",
+        "reasoning": "List pairs and count a repeated middle factor once.",
+        "verify": [
+          {
+            "expr": "[len(factors(n)) for n in [4,9,16,25,36]]",
+            "equals": [
+              3,
+              3,
+              5,
+              3,
+              9
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B2",
+        "tier": "investigation",
+        "prompt": "Which numbers from 1 to 30 have an odd number of factors?",
+        "answer": "1, 4, 9, 16 and 25: the perfect squares.",
+        "reasoning": "Each square has one pair whose two entries coincide.",
+        "verify": [
+          {
+            "expr": "[n for n in range(1,31) if len(factors(n))%2==1]",
+            "equals": [
+              1,
+              4,
+              9,
+              16,
+              25
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B3",
+        "tier": "investigation",
+        "prompt": "Explain why a non-square has an even number of factors.",
+        "answer": "Its factors form distinct pairs a × b, with a different from b.",
+        "reasoning": "No unpaired middle factor occurs.",
+        "verify": [
+          {
+            "expr": "len(factors(24))%2",
+            "equals": 0,
+            "contains": [
+              "pairs"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B4",
+        "tier": "investigation",
+        "prompt": "Verify the square pattern on 49 and compare factor counts of 24 and 25.",
+        "answer": "49 has 3 factors. 24 has 8; 25 has 3. A larger number need not have more factors.",
+        "reasoning": "49 = 7²; compare complete factor lists.",
+        "verify": [
+          {
+            "expr": "[len(factors(n)) for n in [49,24,25]]",
+            "equals": [
+              3,
+              8,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B5",
+        "tier": "challenge",
+        "prompt": "Find every number below 100 with exactly three factors. Explain the rule.",
+        "answer": "4, 9, 25 and 49: squares of primes. p² has factors 1, p and p².",
+        "reasoning": "A three-factor number must have one repeated middle pair and no other prime factor.",
+        "verify": [
+          {
+            "expr": "[n for n in range(1,100) if len(factors(n))==3]",
+            "equals": [
+              4,
+              9,
+              25,
+              49
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "application": {
+    "title": "The fairness relay",
+    "instruction": "Criterion D. Simulated festival data. State what fairness means before choosing a grouping.",
+    "intro": "A simulated school festival has 84, 60 and 48 students in three year groups. Every student takes part exactly once. Identical mixed teams must contain the same number from each year group.",
+    "table": {
+      "headers": [
+        "Year group",
+        "Students"
+      ],
+      "rows": [
+        [
+          "A",
+          "84"
+        ],
+        [
+          "B",
+          "60"
+        ],
+        [
+          "C",
+          "48"
+        ]
+      ]
+    },
+    "items": [
+      {
+        "id": "D1",
+        "tier": "application",
+        "prompt": "What is the largest possible number of identical mixed teams? How many students are in each?",
+        "answer": "12 teams of 16: 7 from A, 5 from B and 4 from C.",
+        "reasoning": "The team count must divide all three totals; use HCF.",
+        "verify": [
+          {
+            "expr": "[gcd(84,60,48),sum([84,60,48])//gcd(84,60,48)]",
+            "equals": [
+              12,
+              16
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D2",
+        "tier": "application",
+        "prompt": "If instead each year forms teams of 12, how many teams are there altogether?",
+        "answer": "7 + 5 + 4 = 16 teams.",
+        "reasoning": "Divide each year total by 12.",
+        "verify": [
+          {
+            "expr": "sum(n//12 for n in [84,60,48])",
+            "equals": 16
+          }
+        ]
+      },
+      {
+        "id": "D3",
+        "tier": "reasoning",
+        "prompt": "Both plans include everyone. Explain why “fair” needs a definition.",
+        "answer": "Equal mixed composition and equal team size within each year are different fairness rules. Both can be valid for different purposes.",
+        "reasoning": "State the criterion before judging the allocation.",
+        "verify": [
+          {
+            "expr": "sum([84,60,48])",
+            "equals": 192,
+            "contains": [
+              "different",
+              "fairness"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D4",
+        "tier": "challenge",
+        "prompt": "Could 16 identical mixed teams be made? Explain.",
+        "answer": "No. 16 does not divide 84, 60 or 48 exactly.",
+        "reasoning": "A feasible team count must be a common factor.",
+        "verify": [
+          {
+            "expr": "[n%16 for n in [84,60,48]]",
+            "equals": [
+              4,
+              12,
+              0
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "assessment": {
+    "title": "The number museum",
+    "instruction": "Criteria A and C. Create a visitor card for 84 and a second number, 60. Use precise language, a factor tree and a short explanation.",
+    "intro": "Your display should help a younger student see the structure of a number, not merely list calculations.",
+    "items": [
+      {
+        "id": "S1",
+        "tier": "assessment",
+        "prompt": "Show all factor pairs of 84 and write its prime factorisation.",
+        "answer": "1×84, 2×42, 3×28, 4×21, 6×14, 7×12; 84 = 2² × 3 × 7.",
+        "reasoning": "There are twelve factors; the prime product checks to 84.",
+        "verify": [
+          {
+            "expr": "[len(factors(84)),product(prime_factors(84))]",
+            "equals": [
+              12,
+              84
+            ]
+          }
+        ]
+      },
+      {
+        "id": "S2",
+        "tier": "assessment",
+        "prompt": "Find HCF(84,60) and LCM(84,60), and explain which answers “largest equal groups?”.",
+        "answer": "HCF 12; LCM 420. HCF answers largest equal groups.",
+        "reasoning": "Use shared prime factors for HCF and highest powers for LCM.",
+        "verify": [
+          {
+            "expr": "[gcd(84,60),lcm(84,60)]",
+            "equals": [
+              12,
+              420
+            ]
+          }
+        ]
+      },
+      {
+        "id": "S3",
+        "tier": "assessment",
+        "prompt": "Write a short museum label and one visitor question with its answer.",
+        "answer": "Sample: “84 can be arranged in six different rectangular arrays. Its prime building blocks are 2, 2, 3 and 7.” Question: “How many factors does 84 have?” Answer: 12.",
+        "reasoning": "A clear label connects a representation to a verified fact.",
+        "verify": [
+          {
+            "expr": "len(factors(84))//2",
+            "equals": 6,
+            "contains": [
+              "Sample",
+              "12"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "diagrams": [
+    {
+      "kind": "factors",
+      "n": 36,
+      "caption": "Factor pairs meet at 6 × 6. Search in order so no pair is missed."
+    },
+    {
+      "kind": "factor_tree",
+      "n": 84,
+      "caption": "Split composite branches until every endpoint is prime: 84 = 2² × 3 × 7."
+    }
+  ],
+  "notes": [],
+  "groups": [
+    {
+      "id": "ready",
+      "title": "Ready check",
+      "instruction": "Try these without a calculator. They check the ideas this chapter builds on.",
+      "items": [
+        {
+          "id": "R1",
+          "tier": "ready",
+          "prompt": "Calculate 7 × 8 and 96 ÷ 8.",
+          "answer": "56 and 12.",
+          "reasoning": "Use the inverse multiplications 8 × 7 and 8 × 12.",
+          "verify": [
+            {
+              "expr": "[7*8,96//8]",
+              "equals": [
+                56,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "tier": "ready",
+          "prompt": "List the first five positive multiples of 4.",
+          "answer": "4, 8, 12, 16, 20.",
+          "reasoning": "Multiply by 1 through 5.",
+          "verify": [
+            {
+              "expr": "[4*n for n in range(1,6)]",
+              "equals": [
+                4,
+                8,
+                12,
+                16,
+                20
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R3",
+          "tier": "ready",
+          "prompt": "Write 100 as a product of two equal factors.",
+          "answer": "10 × 10.",
+          "reasoning": "10 is the square root of 100.",
+          "verify": [
+            {
+              "expr": "10*10",
+              "equals": 100
+            }
+          ]
+        },
+        {
+          "id": "R4",
+          "tier": "ready",
+          "prompt": "Which is larger, 3² or 2³?",
+          "answer": "3² = 9 is larger than 2³ = 8.",
+          "reasoning": "Evaluate each power.",
+          "verify": [
+            {
+              "expr": "[3**2,2**3]",
+              "equals": [
+                9,
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R5",
+          "tier": "ready",
+          "prompt": "Does 7 divide 56 exactly? Explain.",
+          "answer": "Yes: 7 × 8 = 56.",
+          "reasoning": "The remainder is zero.",
+          "verify": [
+            {
+              "expr": "56%7",
+              "equals": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p31",
+      "title": "Practice 3.1 · Factor pairs",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "3.1.1",
+          "tier": "fluency",
+          "prompt": "List all factor pairs of 36.",
+          "answer": "1 × 36; 2 × 18; 3 × 12; 4 × 9; 6 × 6.",
+          "reasoning": "Each product is 36; the final pair repeats a factor.",
+          "verify": [
+            {
+              "expr": "[(d,36//d) for d in range(1,7) if 36%d==0]",
+              "equals": [
+                [
+                  1,
+                  36
+                ],
+                [
+                  2,
+                  18
+                ],
+                [
+                  3,
+                  12
+                ],
+                [
+                  4,
+                  9
+                ],
+                [
+                  6,
+                  6
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.1.2",
+          "tier": "fluency",
+          "prompt": "List the first five positive multiples of 7.",
+          "answer": "7, 14, 21, 28, 35.",
+          "reasoning": "Multiply 7 by 1, 2, 3, 4 and 5.",
+          "verify": [
+            {
+              "expr": "[7*n for n in range(1,6)]",
+              "equals": [
+                7,
+                14,
+                21,
+                28,
+                35
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.1.3",
+          "tier": "fluency",
+          "prompt": "Is 56 a multiple of 8? Is 8 a factor of 56? Explain.",
+          "answer": "Yes to both: 8 × 7 = 56.",
+          "reasoning": "The same exact multiplication links factors and multiples.",
+          "verify": [
+            {
+              "expr": "[56%8,8*7]",
+              "equals": [
+                0,
+                56
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.1.4",
+          "tier": "reasoning",
+          "prompt": "A student lists 1, 2, 3, 6, 9, 18 as all factors of 54. Find the missing factors.",
+          "answer": "Missing: 27 and 54. The pairs include 2 × 27 and 1 × 54.",
+          "reasoning": "Search pairs systematically; do not stop at the square root without recording both partners.",
+          "verify": [
+            {
+              "expr": "[d for d in range(1,55) if 54%d==0 and d not in [1,2,3,6,9,18]]",
+              "equals": [
+                27,
+                54
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.1.5",
+          "tier": "application",
+          "prompt": "Which rectangular arrays can be made with exactly 24 counters? Count rotations as the same array.",
+          "answer": "1 × 24, 2 × 12, 3 × 8 and 4 × 6.",
+          "reasoning": "Each pair of side lengths has product 24.",
+          "verify": [
+            {
+              "expr": "[(a,24//a) for a in range(1,5) if 24%a==0]",
+              "equals": [
+                [
+                  1,
+                  24
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  3,
+                  8
+                ],
+                [
+                  4,
+                  6
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.1.6",
+          "tier": "challenge",
+          "prompt": "A number between 30 and 50 has factors 6 and 8. Find it and explain uniqueness.",
+          "answer": "48. It is the only common multiple of 6 and 8 in the interval.",
+          "reasoning": "List common multiples or use the least common multiple 24, then 48.",
+          "verify": [
+            {
+              "expr": "[n for n in range(31,50) if n%6==0 and n%8==0]",
+              "equals": [
+                48
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p32",
+      "title": "Practice 3.2 · Divisibility",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "3.2.1",
+          "tier": "fluency",
+          "prompt": "Which of 2, 3, 4, 5, 6, 8, 9 and 10 divide 4,728?",
+          "answer": "2, 3, 4, 6 and 8.",
+          "reasoning": "Use the last digits and digit sum 21; 728 is divisible by 8.",
+          "verify": [
+            {
+              "expr": "[d for d in [2,3,4,5,6,8,9,10] if 4728%d==0]",
+              "equals": [
+                2,
+                3,
+                4,
+                6,
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.2.2",
+          "tier": "fluency",
+          "prompt": "Test 315 for divisibility by 3, 5, 9 and 10.",
+          "answer": "3, 5 and 9: yes. 10: no.",
+          "reasoning": "Digit sum 9; last digit 5, not 0.",
+          "verify": [
+            {
+              "expr": "[d for d in [3,5,9,10] if 315%d==0]",
+              "equals": [
+                3,
+                5,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.2.3",
+          "tier": "reasoning",
+          "prompt": "Explain why 513 is not divisible by 6 even though its digit sum is 9.",
+          "answer": "It is odd, so it fails the test for 2. Divisibility by 6 needs both 2 and 3.",
+          "reasoning": "The digit-sum test establishes only the factor 3 here.",
+          "verify": [
+            {
+              "expr": "[513%2,513%3,513%6]",
+              "equals": [
+                1,
+                0,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.2.4",
+          "tier": "reasoning",
+          "prompt": "Why does testing the last two digits decide divisibility by 4?",
+          "answer": "Every hundred is divisible by 4, so only the last two digits can affect the remainder.",
+          "reasoning": "Write the number as 100 × a + b, where b is the last two-digit number.",
+          "verify": [
+            {
+              "expr": "100%4",
+              "equals": 0
+            }
+          ]
+        },
+        {
+          "id": "3.2.5",
+          "tier": "application",
+          "prompt": "A teacher has 126 pencils. Can they be shared equally into 6 packs? Into 9 packs?",
+          "answer": "6 packs: yes, 21 per pack. 9 packs: yes, 14 per pack.",
+          "reasoning": "126 is even and has digit sum 9, so both tests pass.",
+          "verify": [
+            {
+              "expr": "[126//6,126//9,126%6,126%9]",
+              "equals": [
+                21,
+                14,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.2.6",
+          "tier": "challenge",
+          "prompt": "Use digits 4, 5 and 6 once each to make the largest three-digit number divisible by 4.",
+          "answer": "654 is not divisible by 4; the largest valid arrangement is 564.",
+          "reasoning": "The possible even endings are 54, 64 and 46; only 64 and 56 work, and 564 is the largest valid arrangement.",
+          "verify": [
+            {
+              "expr": "max(int(str(a)+str(b)+str(c)) for a,b,c in permutations([4,5,6]) if int(str(a)+str(b)+str(c))%4==0)",
+              "equals": 564
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p33",
+      "title": "Practice 3.3 · Primes",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "3.3.1",
+          "tier": "fluency",
+          "prompt": "List the primes below 30.",
+          "answer": "2, 3, 5, 7, 11, 13, 17, 19, 23, 29.",
+          "reasoning": "Each has exactly two positive factors.",
+          "verify": [
+            {
+              "expr": "primes(30)",
+              "equals": [
+                2,
+                3,
+                5,
+                7,
+                11,
+                13,
+                17,
+                19,
+                23,
+                29
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.3.2",
+          "tier": "fluency",
+          "prompt": "Classify 1, 2, 21 and 29 as prime, composite or neither.",
+          "answer": "1 neither; 2 prime; 21 composite; 29 prime.",
+          "reasoning": "21 = 3 × 7; 1 has only one factor.",
+          "verify": [
+            {
+              "expr": "[len(factors(n)) for n in [1,2,21,29]]",
+              "equals": [
+                1,
+                2,
+                4,
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.3.3",
+          "tier": "reasoning",
+          "prompt": "Which prime divisors must be tested to decide whether 97 is prime? Is it prime?",
+          "answer": "Test 2, 3, 5 and 7. None divides 97, so it is prime.",
+          "reasoning": "The next prime, 11, is greater than √97.",
+          "verify": [
+            {
+              "expr": "[p for p in primes(10) if p*p<=97]",
+              "equals": [
+                2,
+                3,
+                5,
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.3.4",
+          "tier": "reasoning",
+          "prompt": "Give a counterexample to “all odd numbers are prime”.",
+          "answer": "9 is odd but composite: 9 = 3 × 3.",
+          "reasoning": "One counterexample disproves a universal claim.",
+          "verify": [
+            {
+              "expr": "[9%2,len(factors(9))]",
+              "equals": [
+                1,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.3.5",
+          "tier": "application",
+          "prompt": "Find a twin-prime pair between 50 and 70 and give its sum.",
+          "answer": "59 and 61; sum 120.",
+          "reasoning": "Both are prime and differ by 2.",
+          "verify": [
+            {
+              "expr": "[59 in primes(62),61 in primes(62),61-59,59+61]",
+              "equals": [
+                true,
+                true,
+                2,
+                120
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.3.6",
+          "tier": "challenge",
+          "prompt": "Does checking that 28 = 11 + 17 prove that every even number above 2 is a sum of two primes?",
+          "answer": "No. It verifies one case, not a general proof.",
+          "reasoning": "A general claim needs a reason covering every case.",
+          "verify": [
+            {
+              "expr": "11+17",
+              "equals": 28,
+              "contains": [
+                "No",
+                "one case"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p34",
+      "title": "Practice 3.4 · Prime products",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "3.4.1",
+          "tier": "fluency",
+          "prompt": "Write 36, 54 and 72 as products of primes in index form.",
+          "answer": "36 = 2² × 3²; 54 = 2 × 3³; 72 = 2³ × 3².",
+          "reasoning": "Split until every factor is prime, then group equal factors.",
+          "verify": [
+            {
+              "expr": "prime_factors(36)",
+              "equals": [
+                2,
+                2,
+                3,
+                3
+              ]
+            },
+            {
+              "expr": "prime_factors(54)",
+              "equals": [
+                2,
+                3,
+                3,
+                3
+              ]
+            },
+            {
+              "expr": "prime_factors(72)",
+              "equals": [
+                2,
+                2,
+                2,
+                3,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.4.2",
+          "tier": "fluency",
+          "prompt": "Find the number represented by 2³ × 3 × 5.",
+          "answer": "120.",
+          "reasoning": "8 × 3 × 5 = 120.",
+          "verify": [
+            {
+              "expr": "2**3*3*5",
+              "equals": 120
+            }
+          ]
+        },
+        {
+          "id": "3.4.3",
+          "tier": "reasoning",
+          "prompt": "A tree for 84 ends in 4, 3 and 7. Is it complete? Repair it.",
+          "answer": "No: 4 is composite. Replace it by 2 × 2, giving 2² × 3 × 7.",
+          "reasoning": "A prime factorisation cannot contain 4 as a terminal factor.",
+          "verify": [
+            {
+              "expr": "2**2*3*7",
+              "equals": 84
+            }
+          ]
+        },
+        {
+          "id": "3.4.4",
+          "tier": "reasoning",
+          "prompt": "Why can two different factor trees for 84 give the same final prime product?",
+          "answer": "Prime factorisation is unique apart from order; the trees only choose different intermediate pairs.",
+          "reasoning": "Both trees decompose the same number completely.",
+          "verify": [
+            {
+              "expr": "product(prime_factors(84))",
+              "equals": 84,
+              "contains": [
+                "unique",
+                "order"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.4.5",
+          "tier": "application",
+          "prompt": "A display has 126 tiles. Write 126 as a prime product and use it to find a 6-by-21 array.",
+          "answer": "126 = 2 × 3² × 7 = 6 × 21.",
+          "reasoning": "Group 2 × 3 as 6 and 3 × 7 as 21.",
+          "verify": [
+            {
+              "expr": "[product(prime_factors(126)),6*21]",
+              "equals": [
+                126,
+                126
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.4.6",
+          "tier": "challenge",
+          "prompt": "Find the smallest positive integer that makes 180n a perfect square.",
+          "answer": "n = 5, because 180 = 2² × 3² × 5 and 900 = 30².",
+          "reasoning": "A square has even exponents in its prime factorisation.",
+          "verify": [
+            {
+              "expr": "min(n for n in range(1,100) if isqrt(180*n)**2==180*n)",
+              "equals": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p35",
+      "title": "Practice 3.5 · HCF and LCM",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "3.5.1",
+          "tier": "fluency",
+          "prompt": "Find the HCF and LCM of 12 and 18.",
+          "answer": "HCF 6; LCM 36.",
+          "reasoning": "Shared prime factors give 6; the smallest common multiple is 36.",
+          "verify": [
+            {
+              "expr": "[gcd(12,18),lcm(12,18)]",
+              "equals": [
+                6,
+                36
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.5.2",
+          "tier": "fluency",
+          "prompt": "Find the HCF and LCM of 8, 12 and 18.",
+          "answer": "HCF 2; LCM 72.",
+          "reasoning": "2 divides all three; 72 is the first positive multiple shared by all.",
+          "verify": [
+            {
+              "expr": "[gcd(8,12,18),lcm(8,12,18)]",
+              "equals": [
+                2,
+                72
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.5.3",
+          "tier": "application",
+          "prompt": "Cut 48 cm and 60 cm ribbons into the longest equal pieces with no waste. Find the length and total pieces.",
+          "answer": "12 cm; 9 pieces in total.",
+          "reasoning": "HCF is 12; 48÷12 + 60÷12 = 4 + 5.",
+          "verify": [
+            {
+              "expr": "[gcd(48,60),48//gcd(48,60)+60//gcd(48,60)]",
+              "equals": [
+                12,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.5.4",
+          "tier": "application",
+          "prompt": "Buses leave every 15 and 20 minutes and coincide at 08:00. When do they next coincide?",
+          "answer": "09:00, after 60 minutes.",
+          "reasoning": "The next shared repeat is LCM(15,20) = 60 minutes.",
+          "verify": [
+            {
+              "expr": "lcm(15,20)",
+              "equals": 60
+            }
+          ]
+        },
+        {
+          "id": "3.5.5",
+          "tier": "reasoning",
+          "prompt": "A student uses HCF to find when two repeating events coincide. Explain the correct choice.",
+          "answer": "Use LCM: a shared future time must be a common multiple, and the next one is the lowest.",
+          "reasoning": "HCF describes a largest common divisor, not a future repeat.",
+          "verify": [
+            {
+              "expr": "lcm(15,20)",
+              "equals": 60,
+              "contains": [
+                "LCM",
+                "multiple"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3.5.6",
+          "tier": "challenge",
+          "prompt": "Find two different unordered pairs of positive integers with HCF 6 and LCM 36.",
+          "answer": "(6,36) and (12,18).",
+          "reasoning": "Write the numbers as 6a and 6b with coprime a,b and ab = 6.",
+          "verify": [
+            {
+              "expr": "[(a,b) for a in range(1,37) for b in range(a,37) if gcd(a,b)==6 and lcm(a,b)==36]",
+              "equals": [
+                [
+                  6,
+                  36
+                ],
+                [
+                  12,
+                  18
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explore",
+      "title": "Exploration · Why do squares have an odd factor count?",
+      "instruction": "Criterion B. Record evidence, describe a pattern, then justify it using factor pairs.",
+      "items": [
+        {
+          "id": "B1",
+          "tier": "investigation",
+          "prompt": "Complete the factor counts for 4, 9, 16, 25 and 36.",
+          "answer": "3, 3, 5, 3, 9.",
+          "reasoning": "List pairs and count a repeated middle factor once.",
+          "verify": [
+            {
+              "expr": "[len(factors(n)) for n in [4,9,16,25,36]]",
+              "equals": [
+                3,
+                3,
+                5,
+                3,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B2",
+          "tier": "investigation",
+          "prompt": "Which numbers from 1 to 30 have an odd number of factors?",
+          "answer": "1, 4, 9, 16 and 25: the perfect squares.",
+          "reasoning": "Each square has one pair whose two entries coincide.",
+          "verify": [
+            {
+              "expr": "[n for n in range(1,31) if len(factors(n))%2==1]",
+              "equals": [
+                1,
+                4,
+                9,
+                16,
+                25
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B3",
+          "tier": "investigation",
+          "prompt": "Explain why a non-square has an even number of factors.",
+          "answer": "Its factors form distinct pairs a × b, with a different from b.",
+          "reasoning": "No unpaired middle factor occurs.",
+          "verify": [
+            {
+              "expr": "len(factors(24))%2",
+              "equals": 0,
+              "contains": [
+                "pairs"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B4",
+          "tier": "investigation",
+          "prompt": "Verify the square pattern on 49 and compare factor counts of 24 and 25.",
+          "answer": "49 has 3 factors. 24 has 8; 25 has 3. A larger number need not have more factors.",
+          "reasoning": "49 = 7²; compare complete factor lists.",
+          "verify": [
+            {
+              "expr": "[len(factors(n)) for n in [49,24,25]]",
+              "equals": [
+                3,
+                8,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B5",
+          "tier": "challenge",
+          "prompt": "Find every number below 100 with exactly three factors. Explain the rule.",
+          "answer": "4, 9, 25 and 49: squares of primes. p² has factors 1, p and p².",
+          "reasoning": "A three-factor number must have one repeated middle pair and no other prime factor.",
+          "verify": [
+            {
+              "expr": "[n for n in range(1,100) if len(factors(n))==3]",
+              "equals": [
+                4,
+                9,
+                25,
+                49
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "check",
+      "title": "Checkpoint",
+      "instruction": "Answer, then explain one result to a partner.",
+      "items": [
+        {
+          "id": "C1",
+          "tier": "check",
+          "prompt": "List all factors of 24.",
+          "answer": "1, 2, 3, 4, 6, 8, 12, 24.",
+          "reasoning": "Use four factor pairs.",
+          "verify": [
+            {
+              "expr": "factors(24)",
+              "equals": [
+                1,
+                2,
+                3,
+                4,
+                6,
+                8,
+                12,
+                24
+              ]
+            }
+          ]
+        },
+        {
+          "id": "C2",
+          "tier": "check",
+          "prompt": "Is 91 prime?",
+          "answer": "No: 91 = 7 × 13.",
+          "reasoning": "Test primes through √91, including 7.",
+          "verify": [
+            {
+              "expr": "prime_factors(91)",
+              "equals": [
+                7,
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "id": "C3",
+          "tier": "check",
+          "prompt": "Write 90 as a prime product.",
+          "answer": "2 × 3² × 5.",
+          "reasoning": "90 = 9 × 10.",
+          "verify": [
+            {
+              "expr": "prime_factors(90)",
+              "equals": [
+                2,
+                3,
+                3,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "id": "C4",
+          "tier": "check",
+          "prompt": "Find HCF(18,24) and LCM(18,24).",
+          "answer": "HCF 6; LCM 72.",
+          "reasoning": "18 = 2 × 3²; 24 = 2³ × 3.",
+          "verify": [
+            {
+              "expr": "[gcd(18,24),lcm(18,24)]",
+              "equals": [
+                6,
+                72
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "application",
+      "title": "Application · The fairness relay",
+      "instruction": "Criterion D. Simulated festival data. State what fairness means before choosing a grouping.",
+      "items": [
+        {
+          "id": "D1",
+          "tier": "application",
+          "prompt": "What is the largest possible number of identical mixed teams? How many students are in each?",
+          "answer": "12 teams of 16: 7 from A, 5 from B and 4 from C.",
+          "reasoning": "The team count must divide all three totals; use HCF.",
+          "verify": [
+            {
+              "expr": "[gcd(84,60,48),sum([84,60,48])//gcd(84,60,48)]",
+              "equals": [
+                12,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "tier": "application",
+          "prompt": "If instead each year forms teams of 12, how many teams are there altogether?",
+          "answer": "7 + 5 + 4 = 16 teams.",
+          "reasoning": "Divide each year total by 12.",
+          "verify": [
+            {
+              "expr": "sum(n//12 for n in [84,60,48])",
+              "equals": 16
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "tier": "reasoning",
+          "prompt": "Both plans include everyone. Explain why “fair” needs a definition.",
+          "answer": "Equal mixed composition and equal team size within each year are different fairness rules. Both can be valid for different purposes.",
+          "reasoning": "State the criterion before judging the allocation.",
+          "verify": [
+            {
+              "expr": "sum([84,60,48])",
+              "equals": 192,
+              "contains": [
+                "different",
+                "fairness"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D4",
+          "tier": "challenge",
+          "prompt": "Could 16 identical mixed teams be made? Explain.",
+          "answer": "No. 16 does not divide 84, 60 or 48 exactly.",
+          "reasoning": "A feasible team count must be a common factor.",
+          "verify": [
+            {
+              "expr": "[n%16 for n in [84,60,48]]",
+              "equals": [
+                4,
+                12,
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment",
+      "title": "Assessment practice · The number museum",
+      "instruction": "Criteria A and C. Create a visitor card for 84 and a second number, 60. Use precise language, a factor tree and a short explanation.",
+      "items": [
+        {
+          "id": "S1",
+          "tier": "assessment",
+          "prompt": "Show all factor pairs of 84 and write its prime factorisation.",
+          "answer": "1×84, 2×42, 3×28, 4×21, 6×14, 7×12; 84 = 2² × 3 × 7.",
+          "reasoning": "There are twelve factors; the prime product checks to 84.",
+          "verify": [
+            {
+              "expr": "[len(factors(84)),product(prime_factors(84))]",
+              "equals": [
+                12,
+                84
+              ]
+            }
+          ]
+        },
+        {
+          "id": "S2",
+          "tier": "assessment",
+          "prompt": "Find HCF(84,60) and LCM(84,60), and explain which answers “largest equal groups?”.",
+          "answer": "HCF 12; LCM 420. HCF answers largest equal groups.",
+          "reasoning": "Use shared prime factors for HCF and highest powers for LCM.",
+          "verify": [
+            {
+              "expr": "[gcd(84,60),lcm(84,60)]",
+              "equals": [
+                12,
+                420
+              ]
+            }
+          ]
+        },
+        {
+          "id": "S3",
+          "tier": "assessment",
+          "prompt": "Write a short museum label and one visitor question with its answer.",
+          "answer": "Sample: “84 can be arranged in six different rectangular arrays. Its prime building blocks are 2, 2, 3 and 7.” Question: “How many factors does 84 have?” Answer: 12.",
+          "reasoning": "A clear label connects a representation to a verified fact.",
+          "verify": [
+            {
+              "expr": "len(factors(84))//2",
+              "equals": 6,
+              "contains": [
+                "Sample",
+                "12"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mixed",
+      "title": "Mixed practice 3",
+      "instruction": "Connect ideas. Give units and reasons where requested.",
+      "items": [
+        {
+          "id": "M1",
+          "tier": "fluency",
+          "prompt": "List the factors of 42.",
+          "answer": "1, 2, 3, 6, 7, 14, 21, 42.",
+          "reasoning": "Pair 1×42, 2×21, 3×14 and 6×7.",
+          "verify": [
+            {
+              "expr": "factors(42)",
+              "equals": [
+                1,
+                2,
+                3,
+                6,
+                7,
+                14,
+                21,
+                42
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M2",
+          "tier": "fluency",
+          "prompt": "Write the first six positive multiples of 9.",
+          "answer": "9, 18, 27, 36, 45, 54.",
+          "reasoning": "Multiply 9 by 1 through 6.",
+          "verify": [
+            {
+              "expr": "[9*n for n in range(1,7)]",
+              "equals": [
+                9,
+                18,
+                27,
+                36,
+                45,
+                54
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M3",
+          "tier": "fluency",
+          "prompt": "Which of 2,3,4,5,6,8,9,10 divide 360?",
+          "answer": "All eight listed numbers.",
+          "reasoning": "360 is a common multiple of each.",
+          "verify": [
+            {
+              "expr": "[d for d in [2,3,4,5,6,8,9,10] if 360%d==0]",
+              "equals": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                8,
+                9,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M4",
+          "tier": "reasoning",
+          "prompt": "Explain why 1 is neither prime nor composite.",
+          "answer": "It has exactly one positive factor, not two or more than two.",
+          "reasoning": "Prime and composite definitions both apply to numbers greater than 1.",
+          "verify": [
+            {
+              "expr": "len(factors(1))",
+              "equals": 1
+            }
+          ]
+        },
+        {
+          "id": "M5",
+          "tier": "fluency",
+          "prompt": "Prime-factorise 96 and 150.",
+          "answer": "96 = 2⁵ × 3; 150 = 2 × 3 × 5².",
+          "reasoning": "Group repeated primes.",
+          "verify": [
+            {
+              "expr": "prime_factors(96)",
+              "equals": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                3
+              ]
+            },
+            {
+              "expr": "prime_factors(150)",
+              "equals": [
+                2,
+                3,
+                5,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M6",
+          "tier": "application",
+          "prompt": "Two lights flash every 18 and 24 seconds. After how many seconds do they next flash together?",
+          "answer": "72 seconds.",
+          "reasoning": "Use LCM, not HCF.",
+          "verify": [
+            {
+              "expr": "lcm(18,24)",
+              "equals": 72
+            }
+          ]
+        },
+        {
+          "id": "M7",
+          "tier": "application",
+          "prompt": "Find the longest equal pieces that can be cut from 42 cm and 70 cm strings without waste.",
+          "answer": "14 cm.",
+          "reasoning": "Use HCF(42,70).",
+          "verify": [
+            {
+              "expr": "gcd(42,70)",
+              "equals": 14
+            }
+          ]
+        },
+        {
+          "id": "M8",
+          "tier": "reasoning",
+          "prompt": "Does a larger number always have more factors? Compare 28 and 29.",
+          "answer": "No. 28 has 6 factors; 29 is prime and has 2.",
+          "reasoning": "A prime can be larger than a highly divisible composite.",
+          "verify": [
+            {
+              "expr": "[len(factors(28)),len(factors(29))]",
+              "equals": [
+                6,
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M9",
+          "tier": "challenge",
+          "prompt": "Find the smallest number with prime factorisation containing 2², 3 and 5, then list its factor count.",
+          "answer": "60; it has 12 factors.",
+          "reasoning": "Multiply 4×3×5; exponents 2,1,1 give (2+1)(1+1)(1+1).",
+          "verify": [
+            {
+              "expr": "[2**2*3*5,len(factors(60))]",
+              "equals": [
+                60,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M10",
+          "tier": "challenge",
+          "prompt": "Two numbers have HCF 4 and LCM 60. One number is 12. Find the other and check.",
+          "answer": "20. HCF(12,20)=4 and LCM(12,20)=60.",
+          "reasoning": "For two positive integers, HCF × LCM equals their product.",
+          "verify": [
+            {
+              "expr": "[gcd(12,20),lcm(12,20),4*60//12]",
+              "equals": [
+                4,
+                60,
+                20
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source": {
+    "file": "MYP-Mathematics-1-Student-Coursebook.pdf",
+    "sha256": "131a3a99d14ae5a7613c7e9da24c540e29029d93a1a360abcc8516835798b3f0",
+    "pages": "53–73; answers 220–222",
+    "scope_note": "Rewritten within the verified first-edition chapter scope and embedded planner. No standalone school curriculum overview was present. New classroom contexts are simulated and labelled."
+  }
+}

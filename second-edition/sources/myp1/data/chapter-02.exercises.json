@@ -1,0 +1,183 @@
+{
+  "chapter": 2,
+  "title": "Powers, expanded form and order of operations",
+  "source": {
+    "file": "MYP-Mathematics-1-Student-Coursebook.pdf",
+    "sha256": "131a3a99d14ae5a7613c7e9da24c540e29029d93a1a360abcc8516835798b3f0",
+    "pages": "35–52; answers 218–219",
+    "scope_note": "Revised within the first-edition Chapter 2 scope: index notation, powers of ten and expanded form, squares/cubes/roots, order of operations, substitution, a doubling investigation and a school data-store application. No separate school overview was present in the repository. Classroom datasets are simulated and labelled. The first-edition mixed-practice answer comparing 2^5 and 5^2 is not followed where it is numerically incorrect; the second edition states 32 > 25."
+  },
+  "groups": [
+    {
+      "id": "ready",
+      "title": "Ready check",
+      "instruction": "Try these without a calculator. They check multiplication, place value and brackets.",
+      "items": [
+        {"id":"R1","tier":"ready","prompt":"Calculate 6 × 7 and 9 × 9.","answer":"42 and 81.","reasoning":"Six groups of seven make 42. Nine groups of nine make 81."},
+        {"id":"R2","tier":"ready","prompt":"Write 4,000 + 500 + 30 + 6 as a single number.","answer":"4,536.","reasoning":"The terms occupy the thousands, hundreds, tens and ones places."},
+        {"id":"R3","tier":"ready","prompt":"Calculate 12 + 3 × 4.","answer":"24.","reasoning":"Multiply first: 3 × 4 = 12. Then add: 12 + 12 = 24."},
+        {"id":"R4","tier":"ready","prompt":"Write 3 × 3 × 3 as a product and evaluate it.","answer":"3 × 3 × 3 = 27.","reasoning":"There are three factors of 3. First 3 × 3 = 9, then 9 × 3 = 27."},
+        {"id":"R5","tier":"ready","prompt":"What is the area of a square with side 8 cm?","answer":"64 cm².","reasoning":"Area of a square = side × side = 8 × 8 = 64 square centimetres."},
+        {"id":"R6","tier":"ready","prompt":"Insert brackets so that 2 + 4 × 3 has the value 18.","answer":"(2 + 4) × 3 = 18.","reasoning":"The brackets make the addition happen first: 2 + 4 = 6, then 6 × 3 = 18."}
+      ]
+    },
+    {
+      "id": "p21",
+      "title": "Practice 2.1 · Powers and index notation",
+      "instruction": "Show the expanded product at least once for each new power. Name the base and exponent before evaluating.",
+      "items": [
+        {"id":"2.1.1","tier":"fluency","prompt":"Write each product as a power. (a) 4 × 4 × 4 (b) 7 × 7 (c) 10 × 10 × 10 × 10 × 10 (d) 2 × 2 × 2 × 2 × 2 × 2 × 2","answer":"(a) 4<sup>3</sup> (b) 7<sup>2</sup> (c) 10<sup>5</sup> (d) 2<sup>7</sup>.","reasoning":"The base is the repeated factor. The exponent counts how many copies of that factor are multiplied."},
+        {"id":"2.1.2","tier":"fluency","prompt":"Evaluate. (a) 2<sup>3</sup> (b) 3<sup>2</sup> (c) 5<sup>3</sup> (d) 10<sup>3</sup> (e) 2<sup>6</sup> (f) 4<sup>3</sup>","answer":"(a) 8 (b) 9 (c) 125 (d) 1,000 (e) 64 (f) 64.","reasoning":"Expand first if needed: 2×2×2=8; 3×3=9; 5×5×5=125; 10×10×10=1,000; six 2s make 64; 4×4×4=64."},
+        {"id":"2.1.3","tier":"fluency","prompt":"Find the missing exponent. (a) 3<sup>□</sup> = 81 (b) 2<sup>□</sup> = 64 (c) 10<sup>□</sup> = 1,000 (d) 7<sup>□</sup> = 1","answer":"(a) 4 (b) 6 (c) 3 (d) 0.","reasoning":"3⁴=81, 2⁶=64 and 10³=1,000. For the nonzero base 7, the exponent 0 gives 1."},
+        {"id":"2.1.4","tier":"reasoning","prompt":"Explain the difference between 4<sup>2</sup> and 4 × 2. Include the value of each.","answer":"4<sup>2</sup> = 16, but 4 × 2 = 8. The exponent counts equal factors; it is not a multiplier.","reasoning":"4² means 4 × 4. The expression 4 × 2 means two groups of 4, or 4 + 4."},
+        {"id":"2.1.5","tier":"application","prompt":"A square tile has side length 9 cm. Write its area using a power and evaluate it. State the unit.","answer":"9<sup>2</sup> = 81 cm².","reasoning":"A square’s area is side × side. The unit is square centimetres because two lengths in centimetres are multiplied."},
+        {"id":"2.1.6","tier":"reasoning","prompt":"Compare 2<sup>4</sup> and 4<sup>2</sup>. Are they equal? Compare 2<sup>3</sup> and 3<sup>2</sup>. What does this suggest about the claim ‘swapping base and exponent never changes the value’?","answer":"2<sup>4</sup> = 4<sup>2</sup> = 16, but 2<sup>3</sup> = 8 and 3<sup>2</sup> = 9. The claim is false; one counterexample is enough.","reasoning":"The first pair happens to match. The second pair does not, so a universal claim about swapping base and exponent cannot be true."},
+        {"id":"2.1.7","tier":"application","prompt":"A rumour starts with one person. In round 1, that person tells 3 new people. In round 2, each of those 3 tells 3 new people, and the pattern continues. Write the number of new people told in round 4 as a power, evaluate it, and find the total number of new people told across rounds 1 to 4.","answer":"Round 4: 3<sup>4</sup> = 81 new people. Rounds 1–4: 3 + 9 + 27 + 81 = 120 new people.","reasoning":"Each round multiplies the number of new people by 3. The total asked for excludes the original person."},
+        {"id":"2.1.8","tier":"challenge","prompt":"Decide which is larger, 2<sup>10</sup> or 10<sup>3</sup>, first by reasoning with factors and then by checking the values.","answer":"2<sup>10</sup> is larger. Exactly, 2<sup>10</sup> = 1,024 and 10<sup>3</sup> = 1,000.","reasoning":"One check is 2¹⁰ = 2⁷ × 2³ = 128 × 8. Since 128 > 125, multiplying both by 8 gives 128 × 8 > 125 × 8 = 1,000. The exact value is 1,024."}
+      ]
+    },
+    {
+      "id": "p22",
+      "title": "Practice 2.2 · Powers of ten and expanded form",
+      "instruction": "Keep zero placeholders visible when they help explain the place structure.",
+      "items": [
+        {"id":"2.2.1","tier":"fluency","prompt":"Evaluate. (a) 10<sup>2</sup> (b) 10<sup>4</sup> (c) 10<sup>6</sup> (d) 10<sup>0</sup>","answer":"(a) 100 (b) 10,000 (c) 1,000,000 (d) 1.","reasoning":"For positive whole-number exponents, 10ⁿ is 1 followed by n zeros. The pattern of dividing by 10 gives 10⁰ = 1."},
+        {"id":"2.2.2","tier":"fluency","prompt":"Write 8,304 in expanded form using powers of ten.","answer":"8 × 10<sup>3</sup> + 3 × 10<sup>2</sup> + 0 × 10<sup>1</sup> + 4 × 10<sup>0</sup>.","reasoning":"The digits occupy thousands, hundreds, tens and ones. The zero tens term may be shown to make the place structure explicit."},
+        {"id":"2.2.3","tier":"fluency","prompt":"Write 4 × 10<sup>3</sup> + 7 × 10<sup>2</sup> + 0 × 10<sup>1</sup> + 6 × 10<sup>0</sup> in standard form.","answer":"4,706.","reasoning":"The terms are 4,000, 700, 0 and 6. The zero keeps the tens place empty."},
+        {"id":"2.2.4","tier":"fluency","prompt":"Write 90,050 in expanded form using powers of ten, then state the value of the digit 5.","answer":"9 × 10<sup>4</sup> + 0 × 10<sup>3</sup> + 0 × 10<sup>2</sup> + 5 × 10<sup>1</sup> + 0 × 10<sup>0</sup>; the 5 is worth 50.","reasoning":"The 5 is in the tens place. Zeros hold the thousands, hundreds and ones places."},
+        {"id":"2.2.5","tier":"reasoning","prompt":"A number is written as 2 × 10<sup>4</sup> + 5 × 10<sup>1</sup>. Explain why the standard form contains zeros, and write the number.","answer":"20,050. Zeros hold the thousands, hundreds and ones places.","reasoning":"2 × 10⁴ = 20,000 and 5 × 10¹ = 50. Adding them gives 20,050; the missing places must not be collapsed."},
+        {"id":"2.2.6","tier":"application","prompt":"A simulated school roll is 12,480 students. Write this number in expanded form using powers of ten and explain which digit contributes the most to the total.","answer":"1 × 10<sup>4</sup> + 2 × 10<sup>3</sup> + 4 × 10<sup>2</sup> + 8 × 10<sup>1</sup> + 0 × 10<sup>0</sup>. The 1 contributes 10,000, the largest share.","reasoning":"Compare the values of the nonzero terms: 10,000, 2,000, 400 and 80. The ten-thousands term is largest."},
+        {"id":"2.2.7","tier":"reasoning","prompt":"Compare 3 × 10<sup>3</sup> and 3 × 10<sup>2</sup>. How many times larger is the first expression? Explain using place value.","answer":"3,000 is 10 times 300.","reasoning":"The digit 3 has moved one place to the left. Each place is ten times the place to its right."},
+        {"id":"2.2.8","tier":"challenge","prompt":"Write a five-digit number whose expanded form contains exactly one zero term and whose digits add to 18. Explain how you constructed it and whether more than one answer is possible.","answer":"Sample: 12,690 = 1 × 10<sup>4</sup> + 2 × 10<sup>3</sup> + 6 × 10<sup>2</sup> + 9 × 10<sup>1</sup> + 0 × 10<sup>0</sup>. The digits sum to 18 and there is exactly one zero term. Many answers are possible.","reasoning":"Choose four nonzero digits that sum to 18, then place one zero in a non-leading position. The leading digit cannot be zero in a five-digit number."}
+      ]
+    },
+    {
+      "id": "p23",
+      "title": "Practice 2.3 · Squares, cubes and roots",
+      "instruction": "Check roots by reversing the operation: square a square root, or cube a cube root.",
+      "items": [
+        {"id":"2.3.1","tier":"fluency","prompt":"List the first twelve square numbers.","answer":"1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144.","reasoning":"These are 1² through 12². Each is a whole number multiplied by itself."},
+        {"id":"2.3.2","tier":"fluency","prompt":"Evaluate. (a) 13<sup>2</sup> (b) 15<sup>2</sup> (c) 6<sup>3</sup> (d) 10<sup>3</sup>","answer":"(a) 169 (b) 225 (c) 216 (d) 1,000.","reasoning":"13×13=169; 15×15=225; 6×6×6=216; 10×10×10=1,000."},
+        {"id":"2.3.3","tier":"fluency","prompt":"Evaluate. (a) √49 (b) √100 (c) √169 (d) ³√8 (e) ³√27 (f) ³√125","answer":"(a) 7 (b) 10 (c) 13 (d) 2 (e) 3 (f) 5.","reasoning":"Reverse the powers: 7²=49, 10²=100, 13²=169, 2³=8, 3³=27 and 5³=125."},
+        {"id":"2.3.4","tier":"application","prompt":"A square mosaic uses 144 identical tiles. How many tiles are along each side?","answer":"12 tiles.","reasoning":"If each side has n tiles, the square contains n² tiles. Since 12² = 144, n = 12."},
+        {"id":"2.3.5","tier":"fluency","prompt":"Find the positive value of x. (a) x<sup>2</sup> = 64 (b) x<sup>3</sup> = 216 (c) x<sup>2</sup> = 225","answer":"(a) 8 (b) 6 (c) 15.","reasoning":"8²=64, 6³=216 and 15²=225. The question asks for the positive value."},
+        {"id":"2.3.6","tier":"reasoning","prompt":"Compare √81 + √16 with √(81 + 16). Are they equal? Explain the difference.","answer":"√81 + √16 = 9 + 4 = 13. √(81 + 16) = √97, which is not 13 because 13² = 169. They are not equal.","reasoning":"In the first expression the roots are taken separately and then added. In the second, the sum is formed first and the root applies to the whole sum."},
+        {"id":"2.3.7","tier":"challenge","prompt":"Between which two consecutive whole numbers does √50 lie? Explain using square numbers, then state which whole number it is closer to.","answer":"Between 7 and 8, closer to 7.","reasoning":"7²=49 and 8²=64, so 7 < √50 < 8. Also 7.5²=56.25, and 50 < 56.25, so √50 < 7.5 and is closer to 7."},
+        {"id":"2.3.8","tier":"challenge","prompt":"A cube has volume 343 cm³. Find its edge length. If the edge length is doubled, calculate the new volume and explain how your answer connects to 2<sup>3</sup>.","answer":"Edge length 7 cm. Doubled edge 14 cm gives 14<sup>3</sup> = 2,744 cm³, which is 8 × 343. The factor is 2<sup>3</sup> = 8.","reasoning":"7³=343. Doubling each of the three dimensions multiplies volume by 2 × 2 × 2."}
+      ]
+    },
+    {
+      "id": "p24",
+      "title": "Practice 2.4 · Order of operations",
+      "instruction": "Show one operation per line when an expression has several steps. Multiplication and division share a rank; addition and subtraction share a rank.",
+      "items": [
+        {"id":"2.4.1","tier":"fluency","prompt":"Evaluate 8 + 2 × 5.","answer":"18.","reasoning":"Multiply first: 2 × 5 = 10. Then add: 8 + 10 = 18."},
+        {"id":"2.4.2","tier":"fluency","prompt":"Evaluate 20 − 3 × 4.","answer":"8.","reasoning":"Multiply first: 3 × 4 = 12. Then subtract: 20 − 12 = 8."},
+        {"id":"2.4.3","tier":"fluency","prompt":"Evaluate. (a) 6 + 4<sup>2</sup> (b) (6 + 4)<sup>2</sup> (c) 2<sup>3</sup> + 3<sup>2</sup>","answer":"(a) 22 (b) 100 (c) 17.","reasoning":"(a) 4²=16, then 6+16=22. (b) Brackets first: 10²=100. (c) 8+9=17."},
+        {"id":"2.4.4","tier":"fluency","prompt":"Evaluate. (a) 24 ÷ 4 × 2 (b) 24 ÷ (4 × 2) (c) 36 ÷ 6 + 3","answer":"(a) 12 (b) 3 (c) 9.","reasoning":"(a) Division and multiplication have equal priority, so work left to right: 24÷4=6, then 6×2=12. (b) Brackets first: 4×2=8, then 24÷8=3. (c) 36÷6=6, then 6+3=9."},
+        {"id":"2.4.5","tier":"fluency","prompt":"Evaluate 5 × 2<sup>3</sup> − 3<sup>2</sup>, showing each stage.","answer":"5 × 8 − 9 = 40 − 9 = 31.","reasoning":"Evaluate the powers first: 2³=8 and 3²=9. Then multiply, then subtract."},
+        {"id":"2.4.6","tier":"reasoning","prompt":"Insert brackets to make each statement true. (a) 3 + 5 × 2 = 16 (b) 12 − 4 × 2 = 16 (c) 18 ÷ 3 + 6 = 2","answer":"(a) (3 + 5) × 2 = 16 (b) (12 − 4) × 2 = 16 (c) 18 ÷ (3 + 6) = 2.","reasoning":"The brackets change which operation is completed first. Check each result after inserting them."},
+        {"id":"2.4.7","tier":"reasoning","prompt":"A student calculates 12 + 6 ÷ 3 as 18 ÷ 3 = 6. Identify the mistake, give the correct value, and explain which operation should be performed first.","answer":"The student added before dividing. Correct: 6 ÷ 3 = 2, then 12 + 2 = 14.","reasoning":"Division has higher priority than addition unless brackets say otherwise."},
+        {"id":"2.4.8","tier":"challenge","prompt":"Use the digits 2, 3 and 4 once each, with any operations and brackets, to make at least four different values. One expression must contain an index.","answer":"Samples: 2 + 3 × 4 = 14; (2 + 3) × 4 = 20; 2<sup>3</sup> + 4 = 12; 4<sup>2</sup> − 3 = 13. Other valid expressions are possible.","reasoning":"Each sample uses 2, 3 and 4 exactly once. The order of operations and brackets determine the value."}
+      ]
+    },
+    {
+      "id": "p25",
+      "title": "Practice 2.5 · Substitution and powers",
+      "instruction": "Replace the letter with its value in brackets, then evaluate. Ask what the exponent applies to.",
+      "items": [
+        {"id":"2.5.1","tier":"fluency","prompt":"Evaluate 2n<sup>2</sup> for (a) n = 3 (b) n = 5 (c) n = 10.","answer":"(a) 18 (b) 50 (c) 200.","reasoning":"Square n first, then multiply by 2: 2×9=18; 2×25=50; 2×100=200."},
+        {"id":"2.5.2","tier":"fluency","prompt":"Evaluate (2n)<sup>2</sup> for (a) n = 3 (b) n = 5 (c) n = 10. Compare each result with the matching result in question 2.5.1.","answer":"(a) 36 (b) 100 (c) 400. Each is double the matching result in 2.5.1.","reasoning":"The brackets include the factor 2 in the base: (2n)² = 4n², while 2n² is only 2n². Therefore (2n)² is twice 2n²."},
+        {"id":"2.5.3","tier":"fluency","prompt":"For a = 3 and b = 4, evaluate a<sup>2</sup> + b<sup>2</sup> and (a + b)<sup>2</sup>. Are they equal?","answer":"a<sup>2</sup> + b<sup>2</sup> = 9 + 16 = 25. (a + b)<sup>2</sup> = 7<sup>2</sup> = 49. They are not equal.","reasoning":"The first expression squares a and b separately. The second squares the whole sum."},
+        {"id":"2.5.4","tier":"application","prompt":"A square has side length s = 12 cm. Use A = s<sup>2</sup> to find its area, with units.","answer":"A = 12<sup>2</sup> = 144 cm².","reasoning":"Substitute 12 for s. Multiplying centimetres by centimetres gives square centimetres."},
+        {"id":"2.5.5","tier":"fluency","prompt":"Use V = s<sup>3</sup> to find the volume of a cube with edge (a) 3 cm (b) 5 cm.","answer":"(a) 27 cm³ (b) 125 cm³.","reasoning":"3³=27 and 5³=125. Multiplying three lengths in centimetres gives cubic centimetres."},
+        {"id":"2.5.6","tier":"reasoning","prompt":"In a simplified falling-object model, d = 5t<sup>2</sup>, where d is in metres and t is in seconds. Find d when (a) t = 2 (b) t = 4. Explain why doubling t does not double d.","answer":"(a) 20 m (b) 80 m. Doubling t multiplies t<sup>2</sup> by 4, so d quadruples in this model.","reasoning":"5×2²=20 and 5×4²=80. The model is simplified; it is not a precise measurement of a real fall."},
+        {"id":"2.5.7","tier":"reasoning","prompt":"Insert one pair of brackets to make each statement true. (a) 2x<sup>2</sup> = 36 when x = 3 (b) a + b<sup>2</sup> = 49 when a = 2 and b = 5. Explain how the brackets change the base.","answer":"(a) (2x)<sup>2</sup> = 36 (b) (a + b)<sup>2</sup> = 49. The brackets put the whole product or sum in the base of the power.","reasoning":"When x=3, (2×3)²=6²=36. When a=2 and b=5, (2+5)²=7²=49."},
+        {"id":"2.5.8","tier":"challenge","prompt":"A square has area 81 cm². Find its side length. If the side length is tripled, find the new area and explain how 3<sup>2</sup> appears in your answer.","answer":"Side length 9 cm. Tripled side 27 cm gives new area 27<sup>2</sup> = 729 cm² = 9 × 81. The area is multiplied by 3<sup>2</sup> = 9.","reasoning":"Area depends on the square of the side length. Tripling the side multiplies area by 3 × 3."}
+      ]
+    },
+    {
+      "id": "explore",
+      "title": "Exploration · The doubling sheet",
+      "instruction": "Criterion B practice. Separate what an ideal model predicts from what a physical sheet of paper allows. Use a table, state a rule, verify it, then test the model’s limits.",
+      "items": [
+        {"id":"B1","tier":"investigation","prompt":"Fold a sheet of paper as many times as you safely can and record the number of folds you achieve. Then, under the ideal assumptions that every fold doubles the layers and the sheet is 0.1 mm thick, complete the layers and thickness for n = 0 to 5.","answer":"Physical results vary. Ideal model: layers 1, 2, 4, 8, 16, 32; thicknesses 0.1, 0.2, 0.4, 0.8, 1.6, 3.2 mm for n = 0, 1, 2, 3, 4, 5.","reasoning":"Start with one layer. Each fold doubles the layer count. Thickness = 0.1 × layers. The physical trial and the ideal model are different kinds of evidence."},
+        {"id":"B2","tier":"investigation","prompt":"Describe the pattern in words and write a rule for the thickness T millimetres after n folds.","answer":"The thickness doubles with each fold. T = 0.1 × 2<sup>n</sup> mm.","reasoning":"After n folds there are 2ⁿ layers. At n=0, 2⁰=1, so the rule gives the original thickness 0.1 mm."},
+        {"id":"B3","tier":"investigation","prompt":"Verify your rule for n = 10. How many times thicker is the stack than before any folds?","answer":"T = 0.1 × 2<sup>10</sup> = 102.4 mm. It is 1,024 times thicker, because 2<sup>10</sup> = 1,024.","reasoning":"The starting thickness is 0.1 mm. Dividing 102.4 by 0.1 gives 1,024, the layer-count factor."},
+        {"id":"B4","tier":"investigation","prompt":"Find the least number of folds for which the ideal stack is thicker than 1 m. Show the values on either side of your answer.","answer":"14 folds. At 13 folds, T = 819.2 mm; at 14 folds, T = 1,638.4 mm. Since 1 m = 1,000 mm, 14 is the first fold count above 1 m.","reasoning":"Use T = 0.1 × 2ⁿ. Check n=13 and n=14 rather than guessing from the size of the exponent."},
+        {"id":"B5","tier":"reasoning","prompt":"People often say that a sheet of paper cannot be folded more than about eight times. Does the table prove that claim false? State two assumptions of the model and one way to improve the thickness estimate.","answer":"No. The table is an ideal model, not proof of physical feasibility. Assumptions include perfect folds, constant thickness and enough sheet area to keep folding. Improve the estimate by measuring a stack of many sheets and dividing by the number of sheets.","reasoning":"Real paper resists folding because thickness grows, creases form and the available area shrinks. A mathematical prediction can be valid inside a model while the model stops matching reality."},
+        {"id":"B6","tier":"challenge","prompt":"Extension: a different ideal model triples in thickness with each fold, so T = 0.1 × 3<sup>n</sup>. Find the thickness after 5 folds and compare it with the doubling model. Which model grows faster, and why?","answer":"Tripling model: 0.1 × 3<sup>5</sup> = 24.3 mm. Doubling model: 0.1 × 2<sup>5</sup> = 3.2 mm. The tripling model grows faster because each step multiplies by 3 rather than 2.","reasoning":"Compare the growth factors, not only the starting value. Both start at 0.1 mm when n=0."}
+      ]
+    },
+    {
+      "id": "guided",
+      "title": "Guided practice · Copy and complete",
+      "instruction": "Use these immediately after the matching worked examples. Check your reasoning, not only the final number.",
+      "items": [
+        {"id":"G1","tier":"guided","prompt":"In 8<sup>3</sup>, identify the base and exponent, write the expanded product, and evaluate it. What would the value be if the exponent were 1?","answer":"Base 8, exponent 3. 8 × 8 × 8 = 512. If the exponent were 1, the value would be 8.","reasoning":"The exponent counts factors of 8. It does not mean 8 × 3."},
+        {"id":"G2","tier":"guided","prompt":"Since 13<sup>2</sup> = 169, what is √169? Since 6<sup>3</sup> = 216, what is ³√216? A square has area 196 cm²; find its side length.","answer":"√169 = 13; ³√216 = 6; side length = 14 cm.","reasoning":"Roots reverse powers. Since 14²=196, a square with area 196 cm² has side 14 cm."},
+        {"id":"G3","tier":"guided","prompt":"For x = 5, compare 2x<sup>2</sup> and (2x)<sup>2</sup>. For x = 2, compare x<sup>2</sup> + 3<sup>2</sup> and (x + 3)<sup>2</sup>. Explain what the brackets change.","answer":"For x=5: 2x²=50 and (2x)²=100. For x=2: x²+3²=13 and (x+3)²=25. Brackets change the base of the power to include the whole product or sum.","reasoning":"Without brackets, the exponent applies only to the quantity immediately before it. With brackets, it applies to everything inside the brackets."},
+        {"id":"G4","tier":"guided","prompt":"Boundary note: evaluate −3<sup>2</sup> and (−3)<sup>2</sup>. Explain what the brackets include in the base.","answer":"−3<sup>2</sup> = −9, while (−3)<sup>2</sup> = 9. In the first expression the power is evaluated before the unary minus; in the second, the base is −3.","reasoning":"−3² means −(3²). The brackets in (−3)² include the negative sign in the repeated factor: (−3) × (−3) = 9."}
+      ]
+    },
+    {
+      "id": "check",
+      "title": "Checkpoint · Before the application",
+      "instruction": "Answer quickly, then explain one answer to a partner.",
+      "items": [
+        {"id":"C1","tier":"check","prompt":"In 6<sup>4</sup>, name the base and exponent, then evaluate the power.","answer":"Base 6, exponent 4; 6<sup>4</sup> = 1,296.","reasoning":"6⁴ = 6×6×6×6 = 36×36 = 1,296."},
+        {"id":"C2","tier":"check","prompt":"Write 5,020 in expanded form using powers of ten.","answer":"5 × 10<sup>3</sup> + 0 × 10<sup>2</sup> + 2 × 10<sup>1</sup> + 0 × 10<sup>0</sup>.","reasoning":"The zeros hold the hundreds and ones places."},
+        {"id":"C3","tier":"check","prompt":"Evaluate √144 and ³√64.","answer":"12 and 4.","reasoning":"12²=144 and 4³=64."},
+        {"id":"C4","tier":"check","prompt":"Evaluate 18 − 2 × 3<sup>2</sup>.","answer":"0.","reasoning":"3²=9, then 2×9=18, then 18−18=0."}
+      ]
+    },
+    {
+      "id": "application",
+      "title": "Application · The school data store",
+      "instruction": "Criterion D practice. This is a simulated planning task for a school media club in Cotonou. Use the stated decimal units: 1 TB = 1,000 GB. Show units and justify any rounding.",
+      "items": [
+        {"id":"D1","tier":"application","prompt":"The club plans to use three drives labelled 4 TB, 4 TB and 2 TB. Find the total capacity in TB and in GB, and write the GB total as a power of ten.","answer":"10 TB = 10,000 GB = 10<sup>4</sup> GB.","reasoning":"4+4+2=10 TB. With 1 TB=1,000 GB, multiply by 1,000: 10×1,000=10,000 GB."},
+        {"id":"D2","tier":"application","prompt":"The system reserves 15% of the total capacity. Each finished project needs 5 GB for a master file and 1 GB for a backup. How many complete projects can the club store after the reserve is removed, and how much space is left over?","answer":"1,416 complete projects, with 4 GB left over.","reasoning":"15% means 15 out of 100, so the reserve is 10,000 × 15 ÷ 100 = 1,500 GB. Available space is 8,500 GB. Each project needs 6 GB. 8,500 ÷ 6 = 1,416 remainder 4."},
+        {"id":"D3","tier":"reasoning","prompt":"Explain why the answer in D2 must be rounded down rather than to the nearest whole number.","answer":"A 1,417th project would need 1,417 × 6 = 8,502 GB, but only 8,500 GB is available. Complete projects require rounding down.","reasoning":"Nearest-whole rounding can create a capacity that does not exist. The context requires a feasible whole number of complete projects."},
+        {"id":"D4","tier":"challenge","prompt":"Extension: some software reports storage in binary units. In this task, 1 TB = 10<sup>12</sup> bytes and 1 TiB = 2<sup>40</sup> bytes. Use a calculator to explain why 10 TB is about 9.09 TiB. Is any storage missing? Write one honest label for a poster.","answer":"10 TB = 10<sup>13</sup> bytes. 10<sup>13</sup> ÷ 2<sup>40</sup> ≈ 9.09 TiB. No storage is missing; the units differ. Sample label: ‘10 TB decimal capacity (about 9.09 TiB in binary units).’","reasoning":"A tebibyte is a larger unit than a terabyte, so the same number of bytes gives a smaller count in TiB. Honesty means naming the unit, not choosing the larger number."}
+      ]
+    },
+    {
+      "id": "assessment",
+      "title": "Assessment practice · A power primer for the science lab",
+      "instruction": "Criteria A and C. Design a one-page reference card for students who have not yet studied this chapter. Use no more than 180 words of explanation, plus diagrams and one fully worked example.",
+      "items": [
+        {"id":"S1","tier":"assessment","prompt":"Define power, base and exponent using 5<sup>3</sup> = 125 as your example.","answer":"Sample: ‘A power records repeated multiplication. In 5³, 5 is the base and 3 is the exponent. It means 5 × 5 × 5 = 125.’","reasoning":"The definition names the repeated factor and the number of factors, and the example matches the notation."},
+        {"id":"S2","tier":"assessment","prompt":"Explain 5<sup>1</sup> and 5<sup>0</sup> with a pattern that makes clear why 5<sup>0</sup> = 1 rather than 0.","answer":"Sample: ‘5³=125, 5²=25, 5¹=5. Each step divides by 5, so the next step gives 5⁰=1.’","reasoning":"The pattern continues the division-by-the-base rule. The zero-exponent rule applies because the base 5 is nonzero."},
+        {"id":"S3","tier":"assessment","prompt":"Show 4<sup>2</sup> = 16 as a square of 16 unit squares. Add a sketch or description explaining why 4<sup>3</sup> is called a cube.","answer":"Sample: draw a 4 by 4 grid and label it 4²=16. For 4³, draw or describe 4 layers of 4 by 4 unit cubes: 4 × 4 × 4 = 64 unit cubes.","reasoning":"The square model shows two equal dimensions; the cube model shows three equal dimensions."},
+        {"id":"S4","tier":"assessment","prompt":"Work through 4 + 3 × (8 − 2)<sup>2</sup> ÷ 6, with one line per operation and a label naming the rule used at each step.","answer":"Brackets: 8−2=6. Index: 6²=36. Multiply: 3×36=108. Divide: 108÷6=18. Add: 4+18=22.","reasoning":"Brackets first, then indices, then multiplication/division from left to right, then addition/subtraction. The final value is 22."},
+        {"id":"S5","tier":"assessment","prompt":"Explain the difference between 3x<sup>2</sup> and (3x)<sup>2</sup> when x = 2. Then ask a classmate to use your card to evaluate 2 + 5 × 3<sup>2</sup>. Record one strength, one limitation and one revision.","answer":"When x=2, 3x²=12 and (3x)²=36. The test expression is 2 + 5 × 9 = 47. Sample evaluation: strength—one step per line; limitation—symbols may be too small; revision—enlarge the ‘indices before multiplication’ label.","reasoning":"The card should make the base of each power visible and support a reader who is learning the convention for the first time."}
+      ]
+    },
+    {
+      "id": "mixed",
+      "title": "Mixed practice 2",
+      "instruction": "Do not use a calculator unless a question asks for one. Show the order of operations for questions with more than one operation.",
+      "items": [
+        {"id":"M1","tier":"fluency","prompt":"Evaluate. (a) 3<sup>4</sup> (b) 2<sup>7</sup> (c) 10<sup>6</sup> (d) 6<sup>3</sup> (e) 11<sup>2</sup> (f) 4<sup>4</sup>","answer":"(a) 81 (b) 128 (c) 1,000,000 (d) 216 (e) 121 (f) 256.","reasoning":"Expand or use known squares/cubes: 3⁴=81; 2⁷=128; 10⁶=1,000,000; 6³=216; 11²=121; 4⁴=256."},
+        {"id":"M2","tier":"fluency","prompt":"Write as a single power. (a) 9 × 9 × 9 (b) 12 × 12 (c) 10 × 10 × 10 × 10 × 10 (d) 5 × 5 × 5 × 5 × 5 × 5 × 5","answer":"(a) 9<sup>3</sup> (b) 12<sup>2</sup> (c) 10<sup>5</sup> (d) 5<sup>7</sup>.","reasoning":"Count the repeated factors. The base stays the same."},
+        {"id":"M3","tier":"fluency","prompt":"Write 60,304 in expanded form using powers of ten.","answer":"6 × 10<sup>4</sup> + 0 × 10<sup>3</sup> + 3 × 10<sup>2</sup> + 0 × 10<sup>1</sup> + 4 × 10<sup>0</sup>.","reasoning":"The zero terms hold the thousands and tens places."},
+        {"id":"M4","tier":"fluency","prompt":"Write 8 × 10<sup>4</sup> + 2 × 10<sup>2</sup> + 5 × 10<sup>0</sup> in standard form.","answer":"80,205.","reasoning":"The terms are 80,000, 200 and 5. Zeros hold the thousands and tens places."},
+        {"id":"M5","tier":"fluency","prompt":"Evaluate. (a) √81 (b) √196 (c) ³√27 (d) ³√1,000","answer":"(a) 9 (b) 14 (c) 3 (d) 10.","reasoning":"9²=81, 14²=196, 3³=27 and 10³=1,000."},
+        {"id":"M6","tier":"fluency","prompt":"Calculate. (a) 6 + 2 × 5 (b) (6 + 2) × 5 (c) 3<sup>2</sup> × 4 − 10 (d) 48 ÷ (4 + 4) (e) 5 + 12 ÷ 3 (f) (7 − 2)<sup>2</sup>","answer":"(a) 16 (b) 40 (c) 26 (d) 6 (e) 9 (f) 25.","reasoning":"Apply brackets, indices, multiplication/division left to right, then addition/subtraction left to right."},
+        {"id":"M7","tier":"fluency","prompt":"Substitute x = 3 and y = 2. (a) x<sup>2</sup> + y<sup>2</sup> (b) (x + y)<sup>2</sup> (c) 2x<sup>3</sup> (d) (2x)<sup>2</sup>","answer":"(a) 13 (b) 25 (c) 54 (d) 36.","reasoning":"(a) 9+4=13. (b) 5²=25. (c) 2×27=54. (d) 6²=36."},
+        {"id":"M8","tier":"reasoning","prompt":"Insert one pair of brackets to make each statement true. (a) 2 + 3 × 4 = 20 (b) 24 − 8 ÷ 4 = 4 (c) 3 × 2<sup>2</sup> = 36 (d) 10 − 4<sup>2</sup> = 36","answer":"(a) (2 + 3) × 4 = 20 (b) (24 − 8) ÷ 4 = 4 (c) (3 × 2)<sup>2</sup> = 36 (d) (10 − 4)<sup>2</sup> = 36.","reasoning":"The brackets change the grouping and, in (c) and (d), the base of the power."},
+        {"id":"M9","tier":"reasoning","prompt":"Explain why 2<sup>5</sup> = 32 but 5<sup>2</sup> = 25. Which is larger, and why does the position of the exponent matter?","answer":"2<sup>5</sup> uses five factors of 2, giving 32. 5<sup>2</sup> uses two factors of 5, giving 25. Therefore 2<sup>5</sup> is larger. The base and exponent play different roles.","reasoning":"Swapping base and exponent changes both the repeated factor and the number of factors. The correct comparison is 32 > 25."},
+        {"id":"M10","tier":"reasoning","prompt":"A student writes 7<sup>2</sup> = 14. Identify the error and give the correct value with a one-sentence explanation.","answer":"7<sup>2</sup> = 49, not 14. The student multiplied 7 by 2 instead of using two factors of 7.","reasoning":"The exponent counts factors: 7² = 7 × 7."},
+        {"id":"M11","tier":"reasoning","prompt":"Find the missing whole number. (a) 2<sup>n</sup> = 64 (b) 10<sup>n</sup> = 100,000 (c) 3<sup>n</sup> = 81 (d) n<sup>3</sup> = 125","answer":"(a) 6 (b) 5 (c) 4 (d) 5.","reasoning":"2⁶=64; 10⁵=100,000; 3⁴=81; 5³=125."},
+        {"id":"M12","tier":"reasoning","prompt":"Explain why 10<sup>0</sup> = 1 using the pattern 10<sup>3</sup> = 1,000, 10<sup>2</sup> = 100, 10<sup>1</sup> = 10.","answer":"Each step down in exponent divides by 10: 1,000 → 100 → 10 → 1. Therefore 10<sup>0</sup> = 1.","reasoning":"The zero exponent continues the place-value pattern. It is not the same as multiplying by zero."},
+        {"id":"M13","tier":"reasoning","prompt":"Evaluate 10<sup>3</sup> + 10<sup>2</sup> + 10<sup>1</sup> + 10<sup>0</sup>. Describe the pattern in the digits of the answer and explain why it occurs.","answer":"1,111. Each power of ten contributes a 1 in a different place: thousands, hundreds, tens and ones.","reasoning":"1,000 + 100 + 10 + 1 = 1,111."},
+        {"id":"M14","tier":"application","prompt":"A square rug has area 169 cm². Find its side length and perimeter. If the side length is doubled, find the new area and perimeter. Explain why the area changes by a factor of 2<sup>2</sup> while the perimeter changes by a factor of 2.","answer":"Side 13 cm, perimeter 52 cm. Doubled side 26 cm gives area 676 cm² and perimeter 104 cm. Area is multiplied by 4 = 2²; perimeter is multiplied by 2.","reasoning":"√169=13. Perimeter is 4s, so it scales linearly. Area is s², so it scales by the square of the scale factor."},
+        {"id":"M15","tier":"application","prompt":"A cube has edge 2 cm. Find its volume. Repeat for a cube with edge 4 cm. How many times larger is the second volume? Explain using 2<sup>3</sup>.","answer":"8 cm³ and 64 cm³. The second is 8 times larger because doubling each of three dimensions multiplies volume by 2<sup>3</sup> = 8.","reasoning":"2³=8 and 4³=64; 64÷8=8."},
+        {"id":"M16","tier":"challenge","prompt":"Using the numbers 4, 3 and 2 in that order, insert operations and brackets to make (a) 14 and (b) 20. Check each result with the order of operations.","answer":"Samples: (a) 4 × 3 + 2 = 14 (b) 4 × (3 + 2) = 20.","reasoning":"In (a), multiply before adding. In (b), brackets make the sum 5 before multiplying by 4."},
+        {"id":"M17","tier":"challenge","prompt":"A rumour spreads in rounds. One student tells 3 friends in round 1. In round 2, each of those 3 tells 3 new people, and the pattern continues. (a) How many new people hear it in round 4? (b) How many people in total have heard it after 4 rounds, including the original student? (c) Explain why the answer to (b) is not 3<sup>5</sup>.","answer":"(a) 81 new people. (b) 1 + 3 + 9 + 27 + 81 = 121 people. (c) 3<sup>5</sup> = 243 would describe the number of new people in round 5, not the total after four rounds.","reasoning":"New people by round are 3¹, 3², 3³, 3⁴. The total includes the original person and stops after round 4."},
+        {"id":"M18","tier":"reasoning","prompt":"Explain why √(36 + 64) is not √36 + √64. Evaluate both expressions and state the rule that the example disproves.","answer":"√(36 + 64) = √100 = 10, while √36 + √64 = 6 + 8 = 14. The example disproves the claim that a square root can be distributed over a sum.","reasoning":"The root applies to the whole value under the radical. Adding first and then taking the root is different from taking roots first and then adding."}
+      ]
+    }
+  ]
+}

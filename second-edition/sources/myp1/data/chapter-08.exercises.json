@@ -1,0 +1,1772 @@
+{
+  "chapter": 8,
+  "title": "Sets and classification",
+  "part": "Part IV · Shape, structure and measure",
+  "hours": 14,
+  "key": "Form",
+  "related": "Representation, Systems",
+  "context": "Fairness and development",
+  "soi": "Sets organise membership and overlap; clear definitions and representations prevent double counting and make survey claims testable.",
+  "engage": "When two groups overlap, what can we know about the missing intersection, and how does that change a decision?",
+  "atl": "In order for a student to organise information, students must define categories, represent overlap, check totals and explain how a definition changes a conclusion.",
+  "objectives": [
+    "Use set notation, elements and subsets.",
+    "Represent union, intersection and complement with Venn diagrams.",
+    "Classify number families and place values on the real line.",
+    "Interpret survey counts and justify decisions with stated denominators."
+  ],
+  "vocabulary": "set · element · subset · empty set · universal set · union · intersection · complement · Venn diagram · natural · whole · integer · rational · irrational · real",
+  "sections": [
+    {
+      "number": "8.1",
+      "title": "Sets, elements and subsets",
+      "short": "Sets and subsets",
+      "intent": "Define a set clearly, list each element once and distinguish “element of” from “subset of”.",
+      "paras": [
+        "A set is a well-defined collection. x [[math:\\in]] A means x is an element of A; B [[math:\\subseteq]] A means every element of B is also in A. Order and repeated listings do not change a set.",
+        "The empty set [[math:\\emptyset]] has no elements and is a subset of every set. A set with n distinct elements has 2ⁿ subsets, because each element is either included or excluded."
+      ],
+      "example": {
+        "title": "Subsets of {a,b,c}",
+        "problem": "Choose included or excluded for each element.",
+        "steps": [
+          "2×2×2 = 8 subsets.",
+          "[[math:\\emptyset]], {a}, {b}, {c}, {a,b}, {a,c}, {b,c}, {a,b,c}."
+        ],
+        "answer": "8 subsets."
+      },
+      "warning": "[[math:\\in]] relates an element to a set; [[math:\\subseteq]] relates one set to another. {a} [[math:\\subseteq]] {a,b}, but a [[math:\\in]] {a,b}.",
+      "practice": [
+        {
+          "id": "8.1.1",
+          "tier": "fluency",
+          "prompt": "List the elements of A = {even numbers from 1 to 10}.",
+          "answer": "{2, 4, 6, 8, 10}.",
+          "reasoning": "Apply the membership rule once to each candidate.",
+          "verify": [
+            {
+              "expr": "[n for n in range(1,11) if n%2==0]",
+              "equals": [
+                2,
+                4,
+                6,
+                8,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.1.2",
+          "tier": "fluency",
+          "prompt": "How many subsets has a 3-element set? A 4-element set?",
+          "answer": "8 and 16.",
+          "reasoning": "Use 2ⁿ.",
+          "verify": [
+            {
+              "expr": "[2**3,2**4]",
+              "equals": [
+                8,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.1.3",
+          "tier": "reasoning",
+          "prompt": "Are {1,2,2,3} and {3,2,1} the same set? Explain.",
+          "answer": "Yes. Repetition and order do not matter; both contain exactly 1, 2 and 3.",
+          "reasoning": "A set records membership, not listing order.",
+          "verify": [
+            {
+              "expr": "set([1,2,2,3])==set([3,2,1])",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "8.1.4",
+          "tier": "reasoning",
+          "prompt": "For A={a,b}, decide: a[[math:\\in]]A, {a}[[math:\\subseteq]]A, [[math:\\emptyset]][[math:\\subseteq]]A, {a}[[math:\\in]]A.",
+          "answer": "True, true, true, false (unless {a} itself were listed as an element).",
+          "reasoning": "Distinguish elements from subsets.",
+          "verify": [
+            {
+              "expr": "[True,True,True,False]",
+              "equals": [
+                true,
+                true,
+                true,
+                false
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.1.5",
+          "tier": "application",
+          "prompt": "A club chooses any subset of 5 activities, including none. How many choices?",
+          "answer": "32.",
+          "reasoning": "2⁵.",
+          "verify": [
+            {
+              "expr": "2**5",
+              "equals": 32
+            }
+          ]
+        },
+        {
+          "id": "8.1.6",
+          "tier": "challenge",
+          "prompt": "How many subsets of {1,2,3,4,5} contain 1?",
+          "answer": "16.",
+          "reasoning": "Fix 1 as included; choose freely among the other four.",
+          "verify": [
+            {
+              "expr": "2**4",
+              "equals": 16
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "subset_tree",
+        "elements": [
+          "a",
+          "b",
+          "c"
+        ],
+        "caption": "Each element has two choices: in or out. Three elements give 2³ = 8 subsets."
+      }
+    },
+    {
+      "number": "8.2",
+      "title": "Venn diagrams and set operations",
+      "short": "Venn operations",
+      "intent": "Place the overlap first, then the “only” regions, then the outside region.",
+      "paras": [
+        "Union A [[math:\\cup]] B contains elements in A or B or both. Intersection A [[math:\\cap]] B contains elements in both. Complement A′ contains elements in the universal set [[math:\\xi]] that are not in A.",
+        "For finite sets, n(A[[math:\\cup]]B)=n(A)+n(B)−n(A[[math:\\cap]]B). Subtract the overlap once because it was counted in both totals."
+      ],
+      "example": {
+        "title": "Complete a Venn diagram",
+        "problem": "[[math:\\xi]] has 30 students; 17 help at a fair, 14 at a concert, 6 at both.",
+        "steps": [
+          "Both: 6. Fair only: 17−6=11. Concert only: 14−6=8.",
+          "At least one: 11+6+8=25. Neither: 30−25=5."
+        ],
+        "answer": "Regions 11, 6, 8, 5."
+      },
+      "warning": "“A or B” in mathematics includes both unless the question says “exactly one”.",
+      "practice": [
+        {
+          "id": "8.2.1",
+          "tier": "fluency",
+          "prompt": "A={1,2,3,4}, B={3,4,5}. Find A[[math:\\cup]]B and A[[math:\\cap]]B.",
+          "answer": "{1,2,3,4,5} and {3,4}.",
+          "reasoning": "Union collects all; intersection keeps shared elements.",
+          "verify": [
+            {
+              "expr": "[sorted(set([1,2,3,4])|set([3,4,5])),sorted(set([1,2,3,4])&set([3,4,5]))]",
+              "equals": [
+                [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                [
+                  3,
+                  4
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.2.2",
+          "tier": "fluency",
+          "prompt": "In a 30-student group, 17 like F, 14 like C and 6 like both. Find all four Venn regions.",
+          "answer": "F only 11; both 6; C only 8; neither 5.",
+          "reasoning": "Subtract the overlap from each total; subtract the union from 30.",
+          "verify": [
+            {
+              "expr": "[17-6,6,14-6,30-(17+14-6)]",
+              "equals": [
+                11,
+                6,
+                8,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.2.3",
+          "tier": "reasoning",
+          "prompt": "Why is n(A[[math:\\cup]]B) not always n(A)+n(B)?",
+          "answer": "The intersection is counted twice, so subtract it once.",
+          "reasoning": "Use inclusion–exclusion.",
+          "verify": [
+            {
+              "expr": "17+14-6",
+              "equals": 25
+            }
+          ]
+        },
+        {
+          "id": "8.2.4",
+          "tier": "application",
+          "prompt": "Of 40 people, 22 take tea, 18 take coffee and 7 take both. How many take neither?",
+          "answer": "7.",
+          "reasoning": "Union 22+18−7=33; 40−33.",
+          "verify": [
+            {
+              "expr": "40-(22+18-7)",
+              "equals": 7
+            }
+          ]
+        },
+        {
+          "id": "8.2.5",
+          "tier": "reasoning",
+          "prompt": "If A[[math:\\subseteq]]B, what are A[[math:\\cap]]B and A[[math:\\cup]]B?",
+          "answer": "A and B.",
+          "reasoning": "Every element of A is already in B.",
+          "verify": [
+            {
+              "expr": "[sorted(set([1,2])&set([1,2,3])),sorted(set([1,2])|set([1,2,3]))]",
+              "equals": [
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.2.6",
+          "tier": "challenge",
+          "prompt": "n(A)=12, n(B)=9 and n(A[[math:\\cup]]B)=17. Find n(A[[math:\\cap]]B).",
+          "answer": "4.",
+          "reasoning": "12+9−17.",
+          "verify": [
+            {
+              "expr": "12+9-17",
+              "equals": 4
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "venn",
+        "universe": 30,
+        "left": "Fair",
+        "right": "Concert",
+        "regions": [
+          11,
+          6,
+          8,
+          5
+        ],
+        "caption": "Overlap first: 11 + 6 + 8 + 5 = 30."
+      }
+    },
+    {
+      "number": "8.3",
+      "title": "Number sets and the real line",
+      "short": "Number families",
+      "intent": "Classify a number by the sets it belongs to, not by the way it is written.",
+      "paras": [
+        "Natural numbers [[math:\\mathbb{N}]] are counting numbers (here 1,2,3,…); whole numbers add 0; integers [[math:\\mathbb{Z}]] add negatives; rationals [[math:\\mathbb{Q}]] are ratios of integers with nonzero denominator. Real numbers [[math:\\mathbb{R}]] include rationals and irrationals.",
+        "Thus natural numbers are a subset of whole numbers, which are a subset of integers, which are a subset of rationals, which are a subset of reals. A terminating or repeating decimal is rational. Non-repeating, non-terminating decimals such as √2 and π are irrational."
+      ],
+      "example": {
+        "title": "Classify −3, 0, 0.75 and √2",
+        "problem": "Use the most specific familiar set, then note wider membership.",
+        "steps": [
+          "−3 is an integer and rational.",
+          "0 is whole, integer and rational.",
+          "0.75 = 3/4 is rational.",
+          "√2 is irrational and real."
+        ],
+        "answer": "All four are real; only √2 is irrational."
+      },
+      "warning": "A number can belong to several sets. “Rational” does not mean “fraction-looking”; 0.5 and 1/2 are both rational.",
+      "practice": [
+        {
+          "id": "8.3.1",
+          "tier": "fluency",
+          "prompt": "Classify −4, 0, 5 and 1/2 as natural, whole, integer, rational or real (give the most specific listed).",
+          "answer": "−4 integer; 0 whole; 5 natural; 1/2 rational. All are real.",
+          "reasoning": "Use the nesting of number sets.",
+          "verify": [
+            {
+              "expr": "[number_family(x) for x in [-4,0,5,0.5]]",
+              "equals": [
+                "integer",
+                "whole",
+                "natural",
+                "rational"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.3.2",
+          "tier": "fluency",
+          "prompt": "Which are irrational: √2, π, 0.25, 1/3?",
+          "answer": "√2 and π.",
+          "reasoning": "0.25=1/4 and 1/3 are ratios of integers.",
+          "verify": [
+            {
+              "expr": "[is_irrational_symbol(s) for s in ['sqrt2','pi','0.25','1/3']]",
+              "equals": [
+                true,
+                true,
+                false,
+                false
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.3.3",
+          "tier": "reasoning",
+          "prompt": "Is every integer rational? Is every rational an integer?",
+          "answer": "Yes; no. For example −3=−3/1 is rational, but 1/2 is not an integer.",
+          "reasoning": "Integers are a subset of rationals.",
+          "verify": [
+            {
+              "expr": "F(-3,1).denominator==1 and F(1,2).denominator!=1",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "8.3.4",
+          "tier": "application",
+          "prompt": "Place −2, 0, 1/2 and 2 on a number line in order.",
+          "answer": "−2 < 0 < 1/2 < 2.",
+          "reasoning": "Negative values lie left of zero.",
+          "verify": [
+            {
+              "expr": "sorted([-2,0,0.5,2])",
+              "equals": [
+                -2,
+                0,
+                0.5,
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.3.5",
+          "tier": "reasoning",
+          "prompt": "Explain why 0.333… is rational.",
+          "answer": "It equals 1/3, a ratio of integers.",
+          "reasoning": "Repeating decimals are rational.",
+          "verify": [
+            {
+              "expr": "F(1,3)",
+              "equals": 0.3333333333333333
+            }
+          ]
+        },
+        {
+          "id": "8.3.6",
+          "tier": "challenge",
+          "prompt": "Find a rational and an irrational number between 1 and 2.",
+          "answer": "Sample: 3/2 and √2.",
+          "reasoning": "1.5 lies between; √2≈1.414 also lies between.",
+          "verify": [
+            {
+              "expr": "[1<F(3,2)<2,1<sqrt(2)<2]",
+              "equals": [
+                true,
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "number_sets",
+        "caption": "Natural numbers sit inside whole numbers, integers, rationals and reals. Irrationals are real but not rational."
+      }
+    },
+    {
+      "number": "8.4",
+      "title": "Sets in surveys and decisions",
+      "short": "Survey counts",
+      "intent": "Define the universal set and categories before counting; state whether “or” includes overlap.",
+      "paras": [
+        "A survey count is only meaningful with its universal set. “Pool users” may include people who also use the gym; “pool only” excludes them.",
+        "Use a Venn diagram or table to organise counts, check that regions sum to the total, and translate the result into a decision with a stated assumption."
+      ],
+      "example": {
+        "title": "A centre audit",
+        "problem": "80 members: 44 pool, 37 gym, 18 both.",
+        "steps": [
+          "Pool only 26; gym only 19; both 18; neither 17.",
+          "At least one: 63, which is 78.75% of 80."
+        ],
+        "answer": "Regions 26, 18, 19, 17; 78.75% use at least one."
+      },
+      "warning": "A percentage needs its denominator. 37/80 and 19/80 answer different questions about gym use.",
+      "practice": [
+        {
+          "id": "8.4.1",
+          "tier": "application",
+          "prompt": "80 members: 44 pool, 37 gym, 18 both. Find the four regions.",
+          "answer": "26, 18, 19, 17.",
+          "reasoning": "Subtract overlap, then subtract union from 80.",
+          "verify": [
+            {
+              "expr": "[44-18,18,37-18,80-(44+37-18)]",
+              "equals": [
+                26,
+                18,
+                19,
+                17
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.4.2",
+          "tier": "application",
+          "prompt": "What percentage use at least one facility?",
+          "answer": "78.75%.",
+          "reasoning": "63/80×100.",
+          "verify": [
+            {
+              "expr": "(44+37-18)/80*100",
+              "equals": 78.75
+            }
+          ]
+        },
+        {
+          "id": "8.4.3",
+          "tier": "reasoning",
+          "prompt": "Is “more than a third use the gym” true? Discuss both meanings.",
+          "answer": "Yes for all gym users: 37/80=46.25%. No for gym only: 19/80=23.75%.",
+          "reasoning": "The category definition changes the claim.",
+          "verify": [
+            {
+              "expr": "[37/80*100,19/80*100]",
+              "equals": [
+                46.25,
+                23.75
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.4.4",
+          "tier": "application",
+          "prompt": "Pool-only pass $4, gym-only $3, combined $6. Find income if each member buys the relevant pass.",
+          "answer": "$26×4 + 19×3 + 18×6 = $269.",
+          "reasoning": "Use the exactly-one and both regions.",
+          "verify": [
+            {
+              "expr": "26*4+19*3+18*6",
+              "equals": 269
+            }
+          ]
+        },
+        {
+          "id": "8.4.5",
+          "tier": "reasoning",
+          "prompt": "Why should a survey report state the universal set?",
+          "answer": "The same count can mean different proportions in different populations.",
+          "reasoning": "Percentages and “neither” depend on the total and the denominator.",
+          "verify": [
+            {
+              "expr": "63/80*100",
+              "equals": 78.75,
+              "contains": [
+                "denominator"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.4.6",
+          "tier": "challenge",
+          "prompt": "50 people: 34 like vanilla, 29 chocolate, 7 neither. Find both and vanilla only.",
+          "answer": "Both 20; vanilla only 14.",
+          "reasoning": "Union 43; overlap 34+29−43.",
+          "verify": [
+            {
+              "expr": "[34+29-(50-7),34-(34+29-(50-7))]",
+              "equals": [
+                20,
+                14
+              ]
+            }
+          ]
+        }
+      ],
+      "diagram": null
+    }
+  ],
+  "explore": {
+    "title": "How much overlap is possible?",
+    "instruction": "Criterion B. Use inequalities to find the full range of a missing intersection, then justify both endpoints.",
+    "intro": "A committee has 30 students. 17 help at a fair (F), 14 at a concert (C). First use a stated overlap of 6; then treat the overlap x as unknown.",
+    "table": {
+      "headers": [
+        "Quantity",
+        "Expression or value"
+      ],
+      "rows": [
+        [
+          "n(F)",
+          "17"
+        ],
+        [
+          "n(C)",
+          "14"
+        ],
+        [
+          "n(F[[math:\\cap]]C)",
+          "x"
+        ],
+        [
+          "n(F[[math:\\cup]]C)",
+          ""
+        ],
+        [
+          "Neither",
+          ""
+        ]
+      ]
+    },
+    "items": [
+      {
+        "id": "B1",
+        "tier": "investigation",
+        "prompt": "With overlap 6, find all four regions and the number helping at least one event.",
+        "answer": "11, 6, 8, 5; at least one 25.",
+        "reasoning": "Subtract the overlap and use the total 30.",
+        "verify": [
+          {
+            "expr": "[17-6,6,14-6,30-(17+14-6),17+14-6]",
+            "equals": [
+              11,
+              6,
+              8,
+              5,
+              25
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B2",
+        "tier": "investigation",
+        "prompt": "With unknown overlap x, write n(F[[math:\\cup]]C) and the neither count.",
+        "answer": "31−x and x−1.",
+        "reasoning": "17+14−x; 30−(31−x).",
+        "verify": [
+          {
+            "expr": "[17+14-6,30-(17+14-6)]",
+            "equals": [
+              25,
+              5
+            ],
+            "contains": [
+              "31−x",
+              "x−1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B3",
+        "tier": "investigation",
+        "prompt": "Find the smallest possible x and explain why x=0 fails.",
+        "answer": "x=1. If x=0, the union would be 31, more than the 30 students.",
+        "reasoning": "The union cannot exceed the universal set.",
+        "verify": [
+          {
+            "expr": "max(0,17+14-30)",
+            "equals": 1
+          }
+        ]
+      },
+      {
+        "id": "B4",
+        "tier": "investigation",
+        "prompt": "Find the largest possible x and describe that diagram.",
+        "answer": "x=14. All concert helpers also help at the fair; C is a subset of F.",
+        "reasoning": "The overlap cannot exceed either set total.",
+        "verify": [
+          {
+            "expr": "min(17,14)",
+            "equals": 14
+          }
+        ]
+      },
+      {
+        "id": "B5",
+        "tier": "challenge",
+        "prompt": "The committee needs 20 helpers for a combined event. With overlap 6, are there enough? Could the answer change across the possible range?",
+        "answer": "Yes, 25 helpers. Across x=1 to 14, the union ranges from 30 down to 17, so for x≥12 there would be fewer than 20.",
+        "reasoning": "Union = 31−x; solve 31−x≥20.",
+        "verify": [
+          {
+            "expr": "[31-x for x in [1,6,11,12,14]]",
+            "equals": [
+              30,
+              25,
+              20,
+              19,
+              17
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "application": {
+    "title": "The centre audit",
+    "instruction": "Criterion D. Simulated membership data. State the region and denominator behind every claim.",
+    "intro": "80 members: 44 use the pool, 37 use the gym, 18 use both. Passes: pool $4, gym $3, combined $6.",
+    "table": {
+      "headers": [
+        "Region",
+        "Count"
+      ],
+      "rows": [
+        [
+          "Pool only",
+          ""
+        ],
+        [
+          "Both",
+          ""
+        ],
+        [
+          "Gym only",
+          ""
+        ],
+        [
+          "Neither",
+          ""
+        ]
+      ]
+    },
+    "items": [
+      {
+        "id": "D1",
+        "tier": "application",
+        "prompt": "Complete the four regions and check the total.",
+        "answer": "26, 18, 19, 17; sum 80.",
+        "reasoning": "Pool only 44−18; gym only 37−18; neither 80−63.",
+        "verify": [
+          {
+            "expr": "[44-18,18,37-18,80-(44+37-18),26+18+19+17]",
+            "equals": [
+              26,
+              18,
+              19,
+              17,
+              80
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D2",
+        "tier": "application",
+        "prompt": "Find pass income and the percentage using at least one facility.",
+        "answer": "$269; 78.75%.",
+        "reasoning": "26×4+19×3+18×6; 63/80×100.",
+        "verify": [
+          {
+            "expr": "[26*4+19*3+18*6,63/80*100]",
+            "equals": [
+              269,
+              78.75
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D3",
+        "tier": "reasoning",
+        "prompt": "Test “more than a third use the gym” under two meanings.",
+        "answer": "All gym users: true (46.25%). Gym only: false (23.75%).",
+        "reasoning": "State whether the overlap is included.",
+        "verify": [
+          {
+            "expr": "[37/80>1/3,19/80>1/3]",
+            "equals": [
+              true,
+              false
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D4",
+        "tier": "challenge",
+        "prompt": "A combined pass costs $6 instead of $4+$3. Give one member argument, one centre argument and a recommendation.",
+        "answer": "Sample: members save $1; the centre may receive less per dual user but gain simplicity and uptake. Recommend tracking visits and uptake before changing price.",
+        "reasoning": "A fairness judgment needs a stated criterion and data.",
+        "verify": [
+          {
+            "expr": "4+3-6",
+            "equals": 1,
+            "contains": [
+              "Sample"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "assessment": {
+    "title": "The classification poster",
+    "instruction": "Criteria A and C. Create a poster that distinguishes membership, subsets and number families, with one checked example.",
+    "intro": "Your poster should prevent the common confusion between [[math:\\in]] and [[math:\\subseteq]] and between rational and irrational.",
+    "items": [
+      {
+        "id": "S1",
+        "tier": "assessment",
+        "prompt": "Give one correct [[math:\\in]] statement and one correct [[math:\\subseteq]] statement using {1,2,3}.",
+        "answer": "Sample: 2[[math:\\in]]{1,2,3}; {1,2}[[math:\\subseteq]]{1,2,3}.",
+        "reasoning": "The first relates an element; the second relates sets.",
+        "verify": [
+          {
+            "expr": "[2 in [1,2,3],set([1,2]).issubset([1,2,3])]",
+            "equals": [
+              true,
+              true
+            ]
+          }
+        ]
+      },
+      {
+        "id": "S2",
+        "tier": "assessment",
+        "prompt": "Classify −2, 0, 3/4 and √2, and state one nesting fact.",
+        "answer": "Integer, whole, rational, irrational; all real. [[math:\\mathbb{Z}]][[math:\\subset]][[math:\\mathbb{Q}]][[math:\\subset]][[math:\\mathbb{R}]].",
+        "reasoning": "Use the most specific listed family and wider membership.",
+        "verify": [
+          {
+            "expr": "[number_family(x) for x in [-2,0,0.75]]+[\"irrational\"]",
+            "equals": [
+              "integer",
+              "whole",
+              "rational",
+              "irrational"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "S3",
+        "tier": "assessment",
+        "prompt": "Write a check question that exposes double counting, with its answer.",
+        "answer": "Sample: n(A)=10, n(B)=8, overlap 3. Union? 15, not 18.",
+        "reasoning": "Subtract the overlap once.",
+        "verify": [
+          {
+            "expr": "10+8-3",
+            "equals": 15,
+            "contains": [
+              "Sample"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "diagrams": [
+    {
+      "kind": "subset_tree",
+      "elements": [
+        "a",
+        "b",
+        "c"
+      ],
+      "caption": "Each element has two choices: in or out. Three elements give 2³ = 8 subsets."
+    },
+    {
+      "kind": "venn",
+      "universe": 30,
+      "left": "Fair",
+      "right": "Concert",
+      "regions": [
+        11,
+        6,
+        8,
+        5
+      ],
+      "caption": "Overlap first: 11 + 6 + 8 + 5 = 30."
+    },
+    {
+      "kind": "number_sets",
+      "caption": "Natural numbers sit inside whole numbers, integers, rationals and reals. Irrationals are real but not rational."
+    }
+  ],
+  "notes": [],
+  "groups": [
+    {
+      "id": "ready",
+      "title": "Ready check",
+      "instruction": "Try these without a calculator. They check the ideas this chapter builds on.",
+      "items": [
+        {
+          "id": "R1",
+          "tier": "ready",
+          "prompt": "List the even numbers from 1 to 8.",
+          "answer": "2, 4, 6, 8.",
+          "reasoning": "Apply the rule.",
+          "verify": [
+            {
+              "expr": "[n for n in range(1,9) if n%2==0]",
+              "equals": [
+                2,
+                4,
+                6,
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "tier": "ready",
+          "prompt": "Calculate 17−6 and 30−25.",
+          "answer": "11 and 5.",
+          "reasoning": "Subtract the overlap and then the union.",
+          "verify": [
+            {
+              "expr": "[17-6,30-25]",
+              "equals": [
+                11,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R3",
+          "tier": "ready",
+          "prompt": "Find 2³.",
+          "answer": "8.",
+          "reasoning": "2×2×2.",
+          "verify": [
+            {
+              "expr": "2**3",
+              "equals": 8
+            }
+          ]
+        },
+        {
+          "id": "R4",
+          "tier": "ready",
+          "prompt": "Write −3, 0, 2 in order.",
+          "answer": "−3, 0, 2.",
+          "reasoning": "Negatives lie left of zero.",
+          "verify": [
+            {
+              "expr": "sorted([-3,0,2])",
+              "equals": [
+                -3,
+                0,
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R5",
+          "tier": "ready",
+          "prompt": "What is 6/80 as a percentage?",
+          "answer": "7.5%.",
+          "reasoning": "6÷80×100.",
+          "verify": [
+            {
+              "expr": "6/80*100",
+              "equals": 7.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p81",
+      "title": "Practice 8.1 · Sets and subsets",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "8.1.1",
+          "tier": "fluency",
+          "prompt": "List the elements of A = {even numbers from 1 to 10}.",
+          "answer": "{2, 4, 6, 8, 10}.",
+          "reasoning": "Apply the membership rule once to each candidate.",
+          "verify": [
+            {
+              "expr": "[n for n in range(1,11) if n%2==0]",
+              "equals": [
+                2,
+                4,
+                6,
+                8,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.1.2",
+          "tier": "fluency",
+          "prompt": "How many subsets has a 3-element set? A 4-element set?",
+          "answer": "8 and 16.",
+          "reasoning": "Use 2ⁿ.",
+          "verify": [
+            {
+              "expr": "[2**3,2**4]",
+              "equals": [
+                8,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.1.3",
+          "tier": "reasoning",
+          "prompt": "Are {1,2,2,3} and {3,2,1} the same set? Explain.",
+          "answer": "Yes. Repetition and order do not matter; both contain exactly 1, 2 and 3.",
+          "reasoning": "A set records membership, not listing order.",
+          "verify": [
+            {
+              "expr": "set([1,2,2,3])==set([3,2,1])",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "8.1.4",
+          "tier": "reasoning",
+          "prompt": "For A={a,b}, decide: a[[math:\\in]]A, {a}[[math:\\subseteq]]A, [[math:\\emptyset]][[math:\\subseteq]]A, {a}[[math:\\in]]A.",
+          "answer": "True, true, true, false (unless {a} itself were listed as an element).",
+          "reasoning": "Distinguish elements from subsets.",
+          "verify": [
+            {
+              "expr": "[True,True,True,False]",
+              "equals": [
+                true,
+                true,
+                true,
+                false
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.1.5",
+          "tier": "application",
+          "prompt": "A club chooses any subset of 5 activities, including none. How many choices?",
+          "answer": "32.",
+          "reasoning": "2⁵.",
+          "verify": [
+            {
+              "expr": "2**5",
+              "equals": 32
+            }
+          ]
+        },
+        {
+          "id": "8.1.6",
+          "tier": "challenge",
+          "prompt": "How many subsets of {1,2,3,4,5} contain 1?",
+          "answer": "16.",
+          "reasoning": "Fix 1 as included; choose freely among the other four.",
+          "verify": [
+            {
+              "expr": "2**4",
+              "equals": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p82",
+      "title": "Practice 8.2 · Venn operations",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "8.2.1",
+          "tier": "fluency",
+          "prompt": "A={1,2,3,4}, B={3,4,5}. Find A[[math:\\cup]]B and A[[math:\\cap]]B.",
+          "answer": "{1,2,3,4,5} and {3,4}.",
+          "reasoning": "Union collects all; intersection keeps shared elements.",
+          "verify": [
+            {
+              "expr": "[sorted(set([1,2,3,4])|set([3,4,5])),sorted(set([1,2,3,4])&set([3,4,5]))]",
+              "equals": [
+                [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                [
+                  3,
+                  4
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.2.2",
+          "tier": "fluency",
+          "prompt": "In a 30-student group, 17 like F, 14 like C and 6 like both. Find all four Venn regions.",
+          "answer": "F only 11; both 6; C only 8; neither 5.",
+          "reasoning": "Subtract the overlap from each total; subtract the union from 30.",
+          "verify": [
+            {
+              "expr": "[17-6,6,14-6,30-(17+14-6)]",
+              "equals": [
+                11,
+                6,
+                8,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.2.3",
+          "tier": "reasoning",
+          "prompt": "Why is n(A[[math:\\cup]]B) not always n(A)+n(B)?",
+          "answer": "The intersection is counted twice, so subtract it once.",
+          "reasoning": "Use inclusion–exclusion.",
+          "verify": [
+            {
+              "expr": "17+14-6",
+              "equals": 25
+            }
+          ]
+        },
+        {
+          "id": "8.2.4",
+          "tier": "application",
+          "prompt": "Of 40 people, 22 take tea, 18 take coffee and 7 take both. How many take neither?",
+          "answer": "7.",
+          "reasoning": "Union 22+18−7=33; 40−33.",
+          "verify": [
+            {
+              "expr": "40-(22+18-7)",
+              "equals": 7
+            }
+          ]
+        },
+        {
+          "id": "8.2.5",
+          "tier": "reasoning",
+          "prompt": "If A[[math:\\subseteq]]B, what are A[[math:\\cap]]B and A[[math:\\cup]]B?",
+          "answer": "A and B.",
+          "reasoning": "Every element of A is already in B.",
+          "verify": [
+            {
+              "expr": "[sorted(set([1,2])&set([1,2,3])),sorted(set([1,2])|set([1,2,3]))]",
+              "equals": [
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.2.6",
+          "tier": "challenge",
+          "prompt": "n(A)=12, n(B)=9 and n(A[[math:\\cup]]B)=17. Find n(A[[math:\\cap]]B).",
+          "answer": "4.",
+          "reasoning": "12+9−17.",
+          "verify": [
+            {
+              "expr": "12+9-17",
+              "equals": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p83",
+      "title": "Practice 8.3 · Number families",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "8.3.1",
+          "tier": "fluency",
+          "prompt": "Classify −4, 0, 5 and 1/2 as natural, whole, integer, rational or real (give the most specific listed).",
+          "answer": "−4 integer; 0 whole; 5 natural; 1/2 rational. All are real.",
+          "reasoning": "Use the nesting of number sets.",
+          "verify": [
+            {
+              "expr": "[number_family(x) for x in [-4,0,5,0.5]]",
+              "equals": [
+                "integer",
+                "whole",
+                "natural",
+                "rational"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.3.2",
+          "tier": "fluency",
+          "prompt": "Which are irrational: √2, π, 0.25, 1/3?",
+          "answer": "√2 and π.",
+          "reasoning": "0.25=1/4 and 1/3 are ratios of integers.",
+          "verify": [
+            {
+              "expr": "[is_irrational_symbol(s) for s in ['sqrt2','pi','0.25','1/3']]",
+              "equals": [
+                true,
+                true,
+                false,
+                false
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.3.3",
+          "tier": "reasoning",
+          "prompt": "Is every integer rational? Is every rational an integer?",
+          "answer": "Yes; no. For example −3=−3/1 is rational, but 1/2 is not an integer.",
+          "reasoning": "Integers are a subset of rationals.",
+          "verify": [
+            {
+              "expr": "F(-3,1).denominator==1 and F(1,2).denominator!=1",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "8.3.4",
+          "tier": "application",
+          "prompt": "Place −2, 0, 1/2 and 2 on a number line in order.",
+          "answer": "−2 < 0 < 1/2 < 2.",
+          "reasoning": "Negative values lie left of zero.",
+          "verify": [
+            {
+              "expr": "sorted([-2,0,0.5,2])",
+              "equals": [
+                -2,
+                0,
+                0.5,
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.3.5",
+          "tier": "reasoning",
+          "prompt": "Explain why 0.333… is rational.",
+          "answer": "It equals 1/3, a ratio of integers.",
+          "reasoning": "Repeating decimals are rational.",
+          "verify": [
+            {
+              "expr": "F(1,3)",
+              "equals": 0.3333333333333333
+            }
+          ]
+        },
+        {
+          "id": "8.3.6",
+          "tier": "challenge",
+          "prompt": "Find a rational and an irrational number between 1 and 2.",
+          "answer": "Sample: 3/2 and √2.",
+          "reasoning": "1.5 lies between; √2≈1.414 also lies between.",
+          "verify": [
+            {
+              "expr": "[1<F(3,2)<2,1<sqrt(2)<2]",
+              "equals": [
+                true,
+                true
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p84",
+      "title": "Practice 8.4 · Survey counts",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "8.4.1",
+          "tier": "application",
+          "prompt": "80 members: 44 pool, 37 gym, 18 both. Find the four regions.",
+          "answer": "26, 18, 19, 17.",
+          "reasoning": "Subtract overlap, then subtract union from 80.",
+          "verify": [
+            {
+              "expr": "[44-18,18,37-18,80-(44+37-18)]",
+              "equals": [
+                26,
+                18,
+                19,
+                17
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.4.2",
+          "tier": "application",
+          "prompt": "What percentage use at least one facility?",
+          "answer": "78.75%.",
+          "reasoning": "63/80×100.",
+          "verify": [
+            {
+              "expr": "(44+37-18)/80*100",
+              "equals": 78.75
+            }
+          ]
+        },
+        {
+          "id": "8.4.3",
+          "tier": "reasoning",
+          "prompt": "Is “more than a third use the gym” true? Discuss both meanings.",
+          "answer": "Yes for all gym users: 37/80=46.25%. No for gym only: 19/80=23.75%.",
+          "reasoning": "The category definition changes the claim.",
+          "verify": [
+            {
+              "expr": "[37/80*100,19/80*100]",
+              "equals": [
+                46.25,
+                23.75
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.4.4",
+          "tier": "application",
+          "prompt": "Pool-only pass $4, gym-only $3, combined $6. Find income if each member buys the relevant pass.",
+          "answer": "$26×4 + 19×3 + 18×6 = $269.",
+          "reasoning": "Use the exactly-one and both regions.",
+          "verify": [
+            {
+              "expr": "26*4+19*3+18*6",
+              "equals": 269
+            }
+          ]
+        },
+        {
+          "id": "8.4.5",
+          "tier": "reasoning",
+          "prompt": "Why should a survey report state the universal set?",
+          "answer": "The same count can mean different proportions in different populations.",
+          "reasoning": "Percentages and “neither” depend on the total and the denominator.",
+          "verify": [
+            {
+              "expr": "63/80*100",
+              "equals": 78.75,
+              "contains": [
+                "denominator"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8.4.6",
+          "tier": "challenge",
+          "prompt": "50 people: 34 like vanilla, 29 chocolate, 7 neither. Find both and vanilla only.",
+          "answer": "Both 20; vanilla only 14.",
+          "reasoning": "Union 43; overlap 34+29−43.",
+          "verify": [
+            {
+              "expr": "[34+29-(50-7),34-(34+29-(50-7))]",
+              "equals": [
+                20,
+                14
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explore",
+      "title": "Exploration · How much overlap is possible?",
+      "instruction": "Criterion B. Use inequalities to find the full range of a missing intersection, then justify both endpoints.",
+      "items": [
+        {
+          "id": "B1",
+          "tier": "investigation",
+          "prompt": "With overlap 6, find all four regions and the number helping at least one event.",
+          "answer": "11, 6, 8, 5; at least one 25.",
+          "reasoning": "Subtract the overlap and use the total 30.",
+          "verify": [
+            {
+              "expr": "[17-6,6,14-6,30-(17+14-6),17+14-6]",
+              "equals": [
+                11,
+                6,
+                8,
+                5,
+                25
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B2",
+          "tier": "investigation",
+          "prompt": "With unknown overlap x, write n(F[[math:\\cup]]C) and the neither count.",
+          "answer": "31−x and x−1.",
+          "reasoning": "17+14−x; 30−(31−x).",
+          "verify": [
+            {
+              "expr": "[17+14-6,30-(17+14-6)]",
+              "equals": [
+                25,
+                5
+              ],
+              "contains": [
+                "31−x",
+                "x−1"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B3",
+          "tier": "investigation",
+          "prompt": "Find the smallest possible x and explain why x=0 fails.",
+          "answer": "x=1. If x=0, the union would be 31, more than the 30 students.",
+          "reasoning": "The union cannot exceed the universal set.",
+          "verify": [
+            {
+              "expr": "max(0,17+14-30)",
+              "equals": 1
+            }
+          ]
+        },
+        {
+          "id": "B4",
+          "tier": "investigation",
+          "prompt": "Find the largest possible x and describe that diagram.",
+          "answer": "x=14. All concert helpers also help at the fair; C is a subset of F.",
+          "reasoning": "The overlap cannot exceed either set total.",
+          "verify": [
+            {
+              "expr": "min(17,14)",
+              "equals": 14
+            }
+          ]
+        },
+        {
+          "id": "B5",
+          "tier": "challenge",
+          "prompt": "The committee needs 20 helpers for a combined event. With overlap 6, are there enough? Could the answer change across the possible range?",
+          "answer": "Yes, 25 helpers. Across x=1 to 14, the union ranges from 30 down to 17, so for x≥12 there would be fewer than 20.",
+          "reasoning": "Union = 31−x; solve 31−x≥20.",
+          "verify": [
+            {
+              "expr": "[31-x for x in [1,6,11,12,14]]",
+              "equals": [
+                30,
+                25,
+                20,
+                19,
+                17
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "check",
+      "title": "Checkpoint",
+      "instruction": "Answer, then explain one result to a partner.",
+      "items": [
+        {
+          "id": "C1",
+          "tier": "check",
+          "prompt": "How many subsets has {a,b,c,d}?",
+          "answer": "16.",
+          "reasoning": "2⁴.",
+          "verify": [
+            {
+              "expr": "2**4",
+              "equals": 16
+            }
+          ]
+        },
+        {
+          "id": "C2",
+          "tier": "check",
+          "prompt": "A={1,2,3}, B={2,3,4}. Find A[[math:\\cap]]B.",
+          "answer": "{2,3}.",
+          "reasoning": "Keep shared elements.",
+          "verify": [
+            {
+              "expr": "sorted(set([1,2,3])&set([2,3,4]))",
+              "equals": [
+                2,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "C3",
+          "tier": "check",
+          "prompt": "n(A)=10, n(B)=8, overlap 3. Find n(A[[math:\\cup]]B).",
+          "answer": "15.",
+          "reasoning": "10+8−3.",
+          "verify": [
+            {
+              "expr": "10+8-3",
+              "equals": 15
+            }
+          ]
+        },
+        {
+          "id": "C4",
+          "tier": "check",
+          "prompt": "Classify 0.6 as rational or irrational.",
+          "answer": "Rational: 3/5.",
+          "reasoning": "It is a ratio of integers.",
+          "verify": [
+            {
+              "expr": "F(6,10)",
+              "equals": "3/5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "application",
+      "title": "Application · The centre audit",
+      "instruction": "Criterion D. Simulated membership data. State the region and denominator behind every claim.",
+      "items": [
+        {
+          "id": "D1",
+          "tier": "application",
+          "prompt": "Complete the four regions and check the total.",
+          "answer": "26, 18, 19, 17; sum 80.",
+          "reasoning": "Pool only 44−18; gym only 37−18; neither 80−63.",
+          "verify": [
+            {
+              "expr": "[44-18,18,37-18,80-(44+37-18),26+18+19+17]",
+              "equals": [
+                26,
+                18,
+                19,
+                17,
+                80
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "tier": "application",
+          "prompt": "Find pass income and the percentage using at least one facility.",
+          "answer": "$269; 78.75%.",
+          "reasoning": "26×4+19×3+18×6; 63/80×100.",
+          "verify": [
+            {
+              "expr": "[26*4+19*3+18*6,63/80*100]",
+              "equals": [
+                269,
+                78.75
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "tier": "reasoning",
+          "prompt": "Test “more than a third use the gym” under two meanings.",
+          "answer": "All gym users: true (46.25%). Gym only: false (23.75%).",
+          "reasoning": "State whether the overlap is included.",
+          "verify": [
+            {
+              "expr": "[37/80>1/3,19/80>1/3]",
+              "equals": [
+                true,
+                false
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D4",
+          "tier": "challenge",
+          "prompt": "A combined pass costs $6 instead of $4+$3. Give one member argument, one centre argument and a recommendation.",
+          "answer": "Sample: members save $1; the centre may receive less per dual user but gain simplicity and uptake. Recommend tracking visits and uptake before changing price.",
+          "reasoning": "A fairness judgment needs a stated criterion and data.",
+          "verify": [
+            {
+              "expr": "4+3-6",
+              "equals": 1,
+              "contains": [
+                "Sample"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment",
+      "title": "Assessment practice · The classification poster",
+      "instruction": "Criteria A and C. Create a poster that distinguishes membership, subsets and number families, with one checked example.",
+      "items": [
+        {
+          "id": "S1",
+          "tier": "assessment",
+          "prompt": "Give one correct [[math:\\in]] statement and one correct [[math:\\subseteq]] statement using {1,2,3}.",
+          "answer": "Sample: 2[[math:\\in]]{1,2,3}; {1,2}[[math:\\subseteq]]{1,2,3}.",
+          "reasoning": "The first relates an element; the second relates sets.",
+          "verify": [
+            {
+              "expr": "[2 in [1,2,3],set([1,2]).issubset([1,2,3])]",
+              "equals": [
+                true,
+                true
+              ]
+            }
+          ]
+        },
+        {
+          "id": "S2",
+          "tier": "assessment",
+          "prompt": "Classify −2, 0, 3/4 and √2, and state one nesting fact.",
+          "answer": "Integer, whole, rational, irrational; all real. [[math:\\mathbb{Z}]][[math:\\subset]][[math:\\mathbb{Q}]][[math:\\subset]][[math:\\mathbb{R}]].",
+          "reasoning": "Use the most specific listed family and wider membership.",
+          "verify": [
+            {
+              "expr": "[number_family(x) for x in [-2,0,0.75]]+[\"irrational\"]",
+              "equals": [
+                "integer",
+                "whole",
+                "rational",
+                "irrational"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "S3",
+          "tier": "assessment",
+          "prompt": "Write a check question that exposes double counting, with its answer.",
+          "answer": "Sample: n(A)=10, n(B)=8, overlap 3. Union? 15, not 18.",
+          "reasoning": "Subtract the overlap once.",
+          "verify": [
+            {
+              "expr": "10+8-3",
+              "equals": 15,
+              "contains": [
+                "Sample"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mixed",
+      "title": "Mixed practice 8",
+      "instruction": "Connect ideas. Give units and reasons where requested.",
+      "items": [
+        {
+          "id": "M1",
+          "tier": "fluency",
+          "prompt": "How many subsets has a 5-element set?",
+          "answer": "32.",
+          "reasoning": "2⁵.",
+          "verify": [
+            {
+              "expr": "2**5",
+              "equals": 32
+            }
+          ]
+        },
+        {
+          "id": "M2",
+          "tier": "fluency",
+          "prompt": "A={2,4,6}, B={4,6,8}. Find union and intersection.",
+          "answer": "{2,4,6,8}; {4,6}.",
+          "reasoning": "Collect all; keep shared.",
+          "verify": [
+            {
+              "expr": "[sorted(set([2,4,6])|set([4,6,8])),sorted(set([2,4,6])&set([4,6,8]))]",
+              "equals": [
+                [
+                  2,
+                  4,
+                  6,
+                  8
+                ],
+                [
+                  4,
+                  6
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M3",
+          "tier": "application",
+          "prompt": "In 50 people, 28 like A, 22 like B, 9 both. Find neither.",
+          "answer": "9.",
+          "reasoning": "50−(28+22−9).",
+          "verify": [
+            {
+              "expr": "50-(28+22-9)",
+              "equals": 9
+            }
+          ]
+        },
+        {
+          "id": "M4",
+          "tier": "reasoning",
+          "prompt": "Is 0.121212… rational? Explain.",
+          "answer": "Yes; repeating decimals are ratios of integers (12/99 = 4/33).",
+          "reasoning": "A repeating block can be converted to a fraction.",
+          "verify": [
+            {
+              "expr": "F(12,99)",
+              "equals": "4/33"
+            }
+          ]
+        },
+        {
+          "id": "M5",
+          "tier": "fluency",
+          "prompt": "Classify √9 and √10.",
+          "answer": "√9=3 is natural/rational; √10 is irrational.",
+          "reasoning": "Simplify perfect squares first.",
+          "verify": [
+            {
+              "expr": "[isqrt(9)**2==9,isqrt(10)**2==10]",
+              "equals": [
+                true,
+                false
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M6",
+          "tier": "reasoning",
+          "prompt": "If A[[math:\\subseteq]]B, n(A)=7 and n(B)=12, find n(A[[math:\\cap]]B) and n(A[[math:\\cup]]B).",
+          "answer": "7 and 12.",
+          "reasoning": "A is entirely inside B.",
+          "verify": [
+            {
+              "expr": "[7,12]",
+              "equals": [
+                7,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M7",
+          "tier": "application",
+          "prompt": "60 people: 35 use X, 28 use Y, 10 neither. Find both.",
+          "answer": "13.",
+          "reasoning": "Union 50; overlap 35+28−50.",
+          "verify": [
+            {
+              "expr": "35+28-(60-10)",
+              "equals": 13
+            }
+          ]
+        },
+        {
+          "id": "M8",
+          "tier": "challenge",
+          "prompt": "n(A)=20, n(B)=15, universal 30. Find the possible overlap range.",
+          "answer": "5 to 15.",
+          "reasoning": "max(0,20+15−30) ≤ x ≤ min(20,15).",
+          "verify": [
+            {
+              "expr": "[max(0,20+15-30),min(20,15)]",
+              "equals": [
+                5,
+                15
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M9",
+          "tier": "reasoning",
+          "prompt": "Explain why {1,2} and {1,1,2,2} are equal.",
+          "answer": "Sets ignore repetition; both have exactly elements 1 and 2.",
+          "reasoning": "Membership defines a set.",
+          "verify": [
+            {
+              "expr": "set([1,2])==set([1,1,2,2])",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "M10",
+          "tier": "application",
+          "prompt": "A set has 6 elements. How many subsets contain a particular element?",
+          "answer": "32.",
+          "reasoning": "Fix it in; choose among the other five: 2⁵.",
+          "verify": [
+            {
+              "expr": "2**5",
+              "equals": 32
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source": {
+    "file": "MYP-Mathematics-1-Student-Coursebook.pdf",
+    "sha256": "131a3a99d14ae5a7613c7e9da24c540e29029d93a1a360abcc8516835798b3f0",
+    "pages": "155–173; answers 232–234",
+    "scope_note": "Rewritten within the verified first-edition chapter scope and embedded planner. No standalone school curriculum overview was present. New classroom contexts are simulated and labelled."
+  }
+}

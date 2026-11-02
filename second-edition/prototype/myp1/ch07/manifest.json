@@ -1,0 +1,884 @@
+[
+  {
+    "page": 1,
+    "id": "cover",
+    "title": "Chapter cover",
+    "kind": "cover",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 2,
+    "id": "opener",
+    "title": "Opener",
+    "kind": "student",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 3,
+    "id": "ready-map",
+    "title": "Ready check and map",
+    "kind": "student",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 4,
+    "id": "practice-guide",
+    "title": "Practice guide",
+    "kind": "student",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 5,
+    "id": "theory-7-1",
+    "title": "7.1 explanation",
+    "kind": "student",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 6,
+    "id": "example-7.1.1",
+    "title": "Worked example 7.1.1",
+    "kind": "worked-example",
+    "items": [],
+    "examples": [
+      "7.1.1"
+    ]
+  },
+  {
+    "page": 7,
+    "id": "example-7.1.2",
+    "title": "Worked example 7.1.2",
+    "kind": "worked-example",
+    "items": [],
+    "examples": [
+      "7.1.2"
+    ]
+  },
+  {
+    "page": 8,
+    "id": "example-7.1.3",
+    "title": "Worked example 7.1.3",
+    "kind": "worked-example",
+    "items": [],
+    "examples": [
+      "7.1.3"
+    ]
+  },
+  {
+    "page": 9,
+    "id": "practice-7.1-7.1.01",
+    "title": "Practice Angle language and turn facts",
+    "kind": "practice",
+    "items": [
+      "7.1.01",
+      "7.1.02",
+      "7.1.03"
+    ],
+    "examples": []
+  },
+  {
+    "page": 10,
+    "id": "practice-7.1-7.1.04",
+    "title": "Practice Angle language and turn facts",
+    "kind": "practice",
+    "items": [
+      "7.1.04",
+      "7.1.05"
+    ],
+    "examples": []
+  },
+  {
+    "page": 11,
+    "id": "practice-7.1-7.1.06",
+    "title": "Practice Angle language and turn facts",
+    "kind": "practice",
+    "items": [
+      "7.1.06",
+      "7.1.07"
+    ],
+    "examples": []
+  },
+  {
+    "page": 12,
+    "id": "practice-7.1-7.1.08",
+    "title": "Practice Angle language and turn facts",
+    "kind": "practice",
+    "items": [
+      "7.1.08",
+      "7.1.09",
+      "7.1.10"
+    ],
+    "examples": []
+  },
+  {
+    "page": 13,
+    "id": "practice-7.1-7.1.11",
+    "title": "Practice Angle language and turn facts",
+    "kind": "practice",
+    "items": [
+      "7.1.11",
+      "7.1.12",
+      "7.1.13"
+    ],
+    "examples": []
+  },
+  {
+    "page": 14,
+    "id": "practice-7.1-7.1.14",
+    "title": "Practice Angle language and turn facts",
+    "kind": "practice",
+    "items": [
+      "7.1.14",
+      "7.1.15",
+      "7.1.16"
+    ],
+    "examples": []
+  },
+  {
+    "page": 15,
+    "id": "theory-7-2-parallel",
+    "title": "7.2 parallel explanation",
+    "kind": "student",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 16,
+    "id": "theory-7-2-triangles",
+    "title": "7.2 triangle explanation",
+    "kind": "student",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 17,
+    "id": "example-7.2.1",
+    "title": "Worked example 7.2.1",
+    "kind": "worked-example",
+    "items": [],
+    "examples": [
+      "7.2.1"
+    ]
+  },
+  {
+    "page": 18,
+    "id": "example-7.2.2",
+    "title": "Worked example 7.2.2",
+    "kind": "worked-example",
+    "items": [],
+    "examples": [
+      "7.2.2"
+    ]
+  },
+  {
+    "page": 19,
+    "id": "example-7.2.3",
+    "title": "Worked example 7.2.3",
+    "kind": "worked-example",
+    "items": [],
+    "examples": [
+      "7.2.3"
+    ]
+  },
+  {
+    "page": 20,
+    "id": "example-7.2.4",
+    "title": "Worked example 7.2.4",
+    "kind": "worked-example",
+    "items": [],
+    "examples": [
+      "7.2.4"
+    ]
+  },
+  {
+    "page": 21,
+    "id": "practice-7.2-7.2.01",
+    "title": "Practice Parallel lines and transversals",
+    "kind": "practice",
+    "items": [
+      "7.2.01",
+      "7.2.02"
+    ],
+    "examples": []
+  },
+  {
+    "page": 22,
+    "id": "practice-7.2-7.2.03",
+    "title": "Practice Parallel lines and transversals",
+    "kind": "practice",
+    "items": [
+      "7.2.03",
+      "7.2.04",
+      "7.2.05"
+    ],
+    "examples": []
+  },
+  {
+    "page": 23,
+    "id": "practice-7.2-7.2.11",
+    "title": "Practice Parallel lines and transversals",
+    "kind": "practice",
+    "items": [
+      "7.2.11",
+      "7.2.19"
+    ],
+    "examples": []
+  },
+  {
+    "page": 24,
+    "id": "practice-7.2-7.2.20",
+    "title": "Practice Parallel lines and transversals",
+    "kind": "practice",
+    "items": [
+      "7.2.20"
+    ],
+    "examples": []
+  },
+  {
+    "page": 25,
+    "id": "practice-7.2-7.2.06",
+    "title": "Practice Triangle and exterior-angle facts",
+    "kind": "practice",
+    "items": [
+      "7.2.06",
+      "7.2.07"
+    ],
+    "examples": []
+  },
+  {
+    "page": 26,
+    "id": "practice-7.2-7.2.08",
+    "title": "Practice Triangle and exterior-angle facts",
+    "kind": "practice",
+    "items": [
+      "7.2.08",
+      "7.2.09"
+    ],
+    "examples": []
+  },
+  {
+    "page": 27,
+    "id": "practice-7.2-7.2.10",
+    "title": "Practice Triangle and exterior-angle facts",
+    "kind": "practice",
+    "items": [
+      "7.2.10",
+      "7.2.12"
+    ],
+    "examples": []
+  },
+  {
+    "page": 28,
+    "id": "practice-7.2-7.2.13",
+    "title": "Practice Triangle and exterior-angle facts",
+    "kind": "practice",
+    "items": [
+      "7.2.13",
+      "7.2.14",
+      "7.2.15"
+    ],
+    "examples": []
+  },
+  {
+    "page": 29,
+    "id": "practice-7.2-7.2.16",
+    "title": "Practice Triangle and exterior-angle facts",
+    "kind": "practice",
+    "items": [
+      "7.2.16",
+      "7.2.17"
+    ],
+    "examples": []
+  },
+  {
+    "page": 30,
+    "id": "practice-7.2-7.2.18",
+    "title": "Practice Triangle and exterior-angle facts",
+    "kind": "practice",
+    "items": [
+      "7.2.18"
+    ],
+    "examples": []
+  },
+  {
+    "page": 31,
+    "id": "theory-7-3-polygons",
+    "title": "7.3 polygon explanation",
+    "kind": "student",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 32,
+    "id": "example-7.3.1",
+    "title": "Worked example 7.3.1",
+    "kind": "worked-example",
+    "items": [],
+    "examples": [
+      "7.3.1"
+    ]
+  },
+  {
+    "page": 33,
+    "id": "example-7.3.2",
+    "title": "Worked example 7.3.2",
+    "kind": "worked-example",
+    "items": [],
+    "examples": [
+      "7.3.2"
+    ]
+  },
+  {
+    "page": 34,
+    "id": "practice-7-3-poly-7.3.01",
+    "title": "Practice polygon angle sums",
+    "kind": "practice",
+    "items": [
+      "7.3.01",
+      "7.3.02"
+    ],
+    "examples": []
+  },
+  {
+    "page": 35,
+    "id": "practice-7-3-poly-7.3.03",
+    "title": "Practice polygon angle sums",
+    "kind": "practice",
+    "items": [
+      "7.3.03",
+      "7.3.04"
+    ],
+    "examples": []
+  },
+  {
+    "page": 36,
+    "id": "practice-7-3-poly-7.3.05",
+    "title": "Practice polygon angle sums",
+    "kind": "practice",
+    "items": [
+      "7.3.05",
+      "7.3.06"
+    ],
+    "examples": []
+  },
+  {
+    "page": 37,
+    "id": "practice-7-3-poly-7.3.07",
+    "title": "Practice polygon angle sums",
+    "kind": "practice",
+    "items": [
+      "7.3.07",
+      "7.3.08"
+    ],
+    "examples": []
+  },
+  {
+    "page": 38,
+    "id": "inquiry-launch",
+    "title": "Inquiry launch",
+    "kind": "student",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 39,
+    "id": "inquiry-test",
+    "title": "Investigation testing",
+    "kind": "student",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 40,
+    "id": "inquiry-discovery",
+    "title": "Inquiry discovery",
+    "kind": "student",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 41,
+    "id": "example-7.3.3",
+    "title": "Worked example 7.3.3",
+    "kind": "worked-example",
+    "items": [],
+    "examples": [
+      "7.3.3"
+    ]
+  },
+  {
+    "page": 42,
+    "id": "practice-7-3-ineq-7.3.09",
+    "title": "Practice triangle inequality",
+    "kind": "practice",
+    "items": [
+      "7.3.09",
+      "7.3.10",
+      "7.3.11"
+    ],
+    "examples": []
+  },
+  {
+    "page": 43,
+    "id": "practice-7-3-ineq-7.3.12",
+    "title": "Practice triangle inequality",
+    "kind": "practice",
+    "items": [
+      "7.3.12",
+      "7.3.13",
+      "7.3.14"
+    ],
+    "examples": []
+  },
+  {
+    "page": 44,
+    "id": "practice-7-3-ineq-7.3.15",
+    "title": "Practice triangle inequality",
+    "kind": "practice",
+    "items": [
+      "7.3.15",
+      "7.3.16",
+      "7.3.17"
+    ],
+    "examples": []
+  },
+  {
+    "page": 45,
+    "id": "theory-7-4-bisectors",
+    "title": "7.4 bisectors explanation",
+    "kind": "student",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 46,
+    "id": "theory-7-4-sss",
+    "title": "7.4 SSS explanation",
+    "kind": "student",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 47,
+    "id": "example-7.4.1",
+    "title": "Worked example 7.4.1",
+    "kind": "worked-example",
+    "items": [],
+    "examples": [
+      "7.4.1"
+    ]
+  },
+  {
+    "page": 48,
+    "id": "example-7.4.2",
+    "title": "Worked example 7.4.2",
+    "kind": "worked-example",
+    "items": [],
+    "examples": [
+      "7.4.2"
+    ]
+  },
+  {
+    "page": 49,
+    "id": "example-7.4.3",
+    "title": "Worked example 7.4.3",
+    "kind": "worked-example",
+    "items": [],
+    "examples": [
+      "7.4.3"
+    ]
+  },
+  {
+    "page": 50,
+    "id": "example-7.4.4",
+    "title": "Worked example 7.4.4",
+    "kind": "worked-example",
+    "items": [],
+    "examples": [
+      "7.4.4"
+    ]
+  },
+  {
+    "page": 51,
+    "id": "practice-7.4-7.4.01",
+    "title": "Practice Bisectors and loci",
+    "kind": "practice",
+    "items": [
+      "7.4.01",
+      "7.4.02",
+      "7.4.03"
+    ],
+    "examples": []
+  },
+  {
+    "page": 52,
+    "id": "practice-7.4-7.4.04",
+    "title": "Practice Bisectors and loci",
+    "kind": "practice",
+    "items": [
+      "7.4.04",
+      "7.4.05"
+    ],
+    "examples": []
+  },
+  {
+    "page": 53,
+    "id": "practice-7.4-7.4.06",
+    "title": "Practice Bisectors and loci",
+    "kind": "practice",
+    "items": [
+      "7.4.06",
+      "7.4.07",
+      "7.4.08"
+    ],
+    "examples": []
+  },
+  {
+    "page": 54,
+    "id": "practice-7.4-7.4.09",
+    "title": "Practice Constructing triangles",
+    "kind": "practice",
+    "items": [
+      "7.4.09",
+      "7.4.10"
+    ],
+    "examples": []
+  },
+  {
+    "page": 55,
+    "id": "practice-7.4-7.4.11",
+    "title": "Practice Constructing triangles",
+    "kind": "practice",
+    "items": [
+      "7.4.11",
+      "7.4.12"
+    ],
+    "examples": []
+  },
+  {
+    "page": 56,
+    "id": "practice-7.4-7.4.13",
+    "title": "Practice Constructing triangles",
+    "kind": "practice",
+    "items": [
+      "7.4.13",
+      "7.4.14"
+    ],
+    "examples": []
+  },
+  {
+    "page": 57,
+    "id": "practice-7.4-7.4.15",
+    "title": "Practice Constructing triangles",
+    "kind": "practice",
+    "items": [
+      "7.4.15",
+      "7.4.16"
+    ],
+    "examples": []
+  },
+  {
+    "page": 58,
+    "id": "mixed-practice",
+    "title": "Mixed practice route",
+    "kind": "student",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 59,
+    "id": "assessment-a-1",
+    "title": "Criterion A task 1",
+    "kind": "assessment",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 60,
+    "id": "assessment-a-2",
+    "title": "Criterion A task 2",
+    "kind": "assessment",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 61,
+    "id": "assessment-b-1",
+    "title": "Criterion B task",
+    "kind": "assessment",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 62,
+    "id": "assessment-b-2",
+    "title": "Criterion B workspace",
+    "kind": "assessment",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 63,
+    "id": "assessment-c-1",
+    "title": "Criterion C task",
+    "kind": "assessment",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 64,
+    "id": "assessment-c-2",
+    "title": "Criterion C workspace",
+    "kind": "assessment",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 65,
+    "id": "assessment-d-1",
+    "title": "Criterion D task",
+    "kind": "assessment",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 66,
+    "id": "assessment-d-2",
+    "title": "Criterion D workspace",
+    "kind": "assessment",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 67,
+    "id": "review",
+    "title": "Review",
+    "kind": "student",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 68,
+    "id": "progress",
+    "title": "Progress and reflection",
+    "kind": "student",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 69,
+    "id": "answers-7.1.01",
+    "title": "Answers 7.1.01\u20137.1.05",
+    "kind": "answers",
+    "items": [
+      "7.1.01",
+      "7.1.02",
+      "7.1.03",
+      "7.1.04",
+      "7.1.05"
+    ],
+    "examples": []
+  },
+  {
+    "page": 70,
+    "id": "answers-7.1.06",
+    "title": "Answers 7.1.06\u20137.1.10",
+    "kind": "answers",
+    "items": [
+      "7.1.06",
+      "7.1.07",
+      "7.1.08",
+      "7.1.09",
+      "7.1.10"
+    ],
+    "examples": []
+  },
+  {
+    "page": 71,
+    "id": "answers-7.1.11",
+    "title": "Answers 7.1.11\u20137.1.15",
+    "kind": "answers",
+    "items": [
+      "7.1.11",
+      "7.1.12",
+      "7.1.13",
+      "7.1.14",
+      "7.1.15"
+    ],
+    "examples": []
+  },
+  {
+    "page": 72,
+    "id": "answers-7.1.16",
+    "title": "Answers 7.1.16\u20137.2.04",
+    "kind": "answers",
+    "items": [
+      "7.1.16",
+      "7.2.01",
+      "7.2.02",
+      "7.2.03",
+      "7.2.04"
+    ],
+    "examples": []
+  },
+  {
+    "page": 73,
+    "id": "answers-7.2.05",
+    "title": "Answers 7.2.05\u20137.2.09",
+    "kind": "answers",
+    "items": [
+      "7.2.05",
+      "7.2.06",
+      "7.2.07",
+      "7.2.08",
+      "7.2.09"
+    ],
+    "examples": []
+  },
+  {
+    "page": 74,
+    "id": "answers-7.2.10",
+    "title": "Answers 7.2.10\u20137.2.14",
+    "kind": "answers",
+    "items": [
+      "7.2.10",
+      "7.2.11",
+      "7.2.12",
+      "7.2.13",
+      "7.2.14"
+    ],
+    "examples": []
+  },
+  {
+    "page": 75,
+    "id": "answers-7.2.15",
+    "title": "Answers 7.2.15\u20137.2.19",
+    "kind": "answers",
+    "items": [
+      "7.2.15",
+      "7.2.16",
+      "7.2.17",
+      "7.2.18",
+      "7.2.19"
+    ],
+    "examples": []
+  },
+  {
+    "page": 76,
+    "id": "answers-7.2.20",
+    "title": "Answers 7.2.20\u20137.3.04",
+    "kind": "answers",
+    "items": [
+      "7.2.20",
+      "7.3.01",
+      "7.3.02",
+      "7.3.03",
+      "7.3.04"
+    ],
+    "examples": []
+  },
+  {
+    "page": 77,
+    "id": "answers-7.3.05",
+    "title": "Answers 7.3.05\u20137.3.09",
+    "kind": "answers",
+    "items": [
+      "7.3.05",
+      "7.3.06",
+      "7.3.07",
+      "7.3.08",
+      "7.3.09"
+    ],
+    "examples": []
+  },
+  {
+    "page": 78,
+    "id": "answers-7.3.10",
+    "title": "Answers 7.3.10\u20137.3.14",
+    "kind": "answers",
+    "items": [
+      "7.3.10",
+      "7.3.11",
+      "7.3.12",
+      "7.3.13",
+      "7.3.14"
+    ],
+    "examples": []
+  },
+  {
+    "page": 79,
+    "id": "answers-7.3.15",
+    "title": "Answers 7.3.15\u20137.4.02",
+    "kind": "answers",
+    "items": [
+      "7.3.15",
+      "7.3.16",
+      "7.3.17",
+      "7.4.01",
+      "7.4.02"
+    ],
+    "examples": []
+  },
+  {
+    "page": 80,
+    "id": "answers-7.4.03",
+    "title": "Answers 7.4.03\u20137.4.07",
+    "kind": "answers",
+    "items": [
+      "7.4.03",
+      "7.4.04",
+      "7.4.05",
+      "7.4.06",
+      "7.4.07"
+    ],
+    "examples": []
+  },
+  {
+    "page": 81,
+    "id": "answers-7.4.08",
+    "title": "Answers 7.4.08\u20137.4.12",
+    "kind": "answers",
+    "items": [
+      "7.4.08",
+      "7.4.09",
+      "7.4.10",
+      "7.4.11",
+      "7.4.12"
+    ],
+    "examples": []
+  },
+  {
+    "page": 82,
+    "id": "answers-7.4.13",
+    "title": "Answers 7.4.13\u20137.4.16",
+    "kind": "answers",
+    "items": [
+      "7.4.13",
+      "7.4.14",
+      "7.4.15",
+      "7.4.16"
+    ],
+    "examples": []
+  },
+  {
+    "page": 83,
+    "id": "assessment-answers-1",
+    "title": "Assessment guidance A/B",
+    "kind": "answers",
+    "items": [],
+    "examples": []
+  },
+  {
+    "page": 84,
+    "id": "assessment-answers-2",
+    "title": "Assessment guidance C/D",
+    "kind": "answers",
+    "items": [],
+    "examples": []
+  }
+]

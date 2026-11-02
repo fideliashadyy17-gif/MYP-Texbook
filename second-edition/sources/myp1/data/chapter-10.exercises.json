@@ -1,0 +1,1859 @@
+{
+  "chapter": 10,
+  "title": "Data, tables and graphs",
+  "part": "Part V · Data and decisions",
+  "hours": 16,
+  "key": "Relationships",
+  "related": "Representation, Pattern",
+  "context": "Fairness and development",
+  "soi": "Data displays and summaries make patterns visible, but choices of grouping, scale and denominator shape the claims that seem reasonable.",
+  "engage": "How can the same survey support a fair decision without letting a misleading graph or an unstated denominator do the arguing?",
+  "atl": "In order for a student to process and communicate information, students must organise data, choose an appropriate representation, calculate summaries and justify a claim with its limitations.",
+  "objectives": [
+    "Classify variables and organise frequency or two-way tables.",
+    "Construct and interpret bar and pie charts.",
+    "Summarise distributions with dot plots, histograms and averages.",
+    "Describe trends and detect misleading scales or claims."
+  ],
+  "vocabulary": "variable · categorical · nominal · ordinal · discrete · continuous · frequency · two-way table · bar chart · pie chart · sector angle · dot plot · histogram · mean · median · mode · range · outlier · trend",
+  "sections": [
+    {
+      "number": "10.1",
+      "title": "Data, variables and tables",
+      "short": "Data and variables",
+      "intent": "Identify what was measured, the unit, the population and the type of variable before summarising.",
+      "paras": [
+        "Data are recorded values. A categorical variable names groups (nominal) or ordered categories (ordinal). A numerical variable is discrete if it counts separate values, or continuous if it measures on a scale.",
+        "A frequency table lists categories or intervals and their counts. Frequencies must sum to the number of observations. A two-way table shows how two categories overlap."
+      ],
+      "example": {
+        "title": "Classify variables",
+        "problem": "Lunch choice, year group, number of siblings and height.",
+        "steps": [
+          "Lunch choice: nominal categorical.",
+          "Year group: ordinal categorical (or discrete numerical code).",
+          "Siblings: discrete numerical. Height: continuous numerical."
+        ],
+        "answer": "The variable type guides the display and summary."
+      },
+      "warning": "A number used as a label (such as a shirt size code) is not automatically a quantity to average.",
+      "practice": [
+        {
+          "id": "10.1.1",
+          "tier": "fluency",
+          "prompt": "Classify: favourite fruit, school year, number of pets, height.",
+          "answer": "Nominal categorical; ordinal categorical; discrete numerical; continuous numerical.",
+          "reasoning": "Name, order, count and measurement are different variable types.",
+          "verify": [
+            {
+              "expr": "['nominal','ordinal','discrete','continuous']",
+              "equals": [
+                "nominal",
+                "ordinal",
+                "discrete",
+                "continuous"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.1.2",
+          "tier": "fluency",
+          "prompt": "A table has frequencies 38, 31, 27 for school lunch in Years 7–9. Find the total.",
+          "answer": "96.",
+          "reasoning": "Add the three counts.",
+          "verify": [
+            {
+              "expr": "38+31+27",
+              "equals": 96
+            }
+          ]
+        },
+        {
+          "id": "10.1.3",
+          "tier": "reasoning",
+          "prompt": "Why is “year group” not usually averaged as if it were height?",
+          "answer": "It is an ordered category or label; an average year code may not describe a meaningful category.",
+          "reasoning": "Variable type determines appropriate summaries.",
+          "verify": [
+            {
+              "expr": "70+65+65",
+              "equals": 200,
+              "contains": [
+                "category"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.1.4",
+          "tier": "application",
+          "prompt": "In a two-way table, Year 7 has 38 school, 24 packed, 8 off-site. Find the row total and the school-lunch share of Year 7.",
+          "answer": "70; 38/70 ≈ 54.3%.",
+          "reasoning": "Row total 70; use the row as denominator.",
+          "verify": [
+            {
+              "expr": "[38+24+8,round(38/70*100,1)]",
+              "equals": [
+                70,
+                54.3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.1.5",
+          "tier": "reasoning",
+          "prompt": "A survey records “0, 1, 2, 3” as codes for four lunch choices. Can these codes be added meaningfully?",
+          "answer": "No. They are category labels, not counts or measurements.",
+          "reasoning": "Nominal codes have no numerical order or distance.",
+          "verify": [
+            {
+              "expr": "96+74+30",
+              "equals": 200,
+              "contains": [
+                "labels"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.1.6",
+          "tier": "challenge",
+          "prompt": "A frequency table has total 200 and known frequencies 96 and 74. Find the missing frequency and its percentage.",
+          "answer": "30; 15%.",
+          "reasoning": "200−96−74; 30/200×100.",
+          "verify": [
+            {
+              "expr": "[200-96-74,30/200*100]",
+              "equals": [
+                30,
+                15
+              ]
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "frequency_table",
+        "headers": [
+          "Lunch choice",
+          "Frequency"
+        ],
+        "rows": [
+          [
+            "School",
+            "96"
+          ],
+          [
+            "Packed",
+            "74"
+          ],
+          [
+            "Off-site",
+            "30"
+          ],
+          [
+            "Total",
+            "200"
+          ]
+        ],
+        "caption": "A frequency table organises categories; the counts sum to the 200 students surveyed."
+      }
+    },
+    {
+      "number": "10.2",
+      "title": "Bar charts and pie charts",
+      "short": "Bar and pie charts",
+      "intent": "Use bars to compare categories and sectors to show parts of one whole.",
+      "paras": [
+        "A bar chart uses equal-width bars with heights proportional to frequency. Label axes, start the frequency axis at zero and keep spacing consistent.",
+        "A pie chart represents a whole by 360°. Sector angle = category frequency/total × 360°. Percentages should sum to 100% apart from stated rounding."
+      ],
+      "example": {
+        "title": "Lunch choices for 200 students",
+        "problem": "School 96, packed 74, off-site 30.",
+        "steps": [
+          "School: 96/200×360 = 172.8°.",
+          "Packed: 74/200×360 = 133.2°.",
+          "Off-site: 30/200×360 = 54°."
+        ],
+        "answer": "Angles sum to 360°."
+      },
+      "warning": "A pie chart is poor for comparing many similar categories or several groups side by side; a clustered bar chart is clearer.",
+      "practice": [
+        {
+          "id": "10.2.1",
+          "tier": "fluency",
+          "prompt": "Find pie-chart angles for frequencies 96, 74 and 30 out of 200.",
+          "answer": "172.8°, 133.2°, 54°.",
+          "reasoning": "Multiply each share by 360°.",
+          "verify": [
+            {
+              "expr": "[round(f/200*360,8) for f in [96,74,30]]",
+              "equals": [
+                172.8,
+                133.2,
+                54
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.2.2",
+          "tier": "fluency",
+          "prompt": "What percentage of 200 is 96?",
+          "answer": "48%.",
+          "reasoning": "96/200×100.",
+          "verify": [
+            {
+              "expr": "96/200*100",
+              "equals": 48
+            }
+          ]
+        },
+        {
+          "id": "10.2.3",
+          "tier": "reasoning",
+          "prompt": "Why should a bar-chart frequency axis start at zero?",
+          "answer": "Bar height encodes frequency; a truncated axis exaggerates differences.",
+          "reasoning": "Start the frequency axis at zero so the visual ratio matches the data ratio.",
+          "verify": [
+            {
+              "expr": "96/30",
+              "equals": 3.2,
+              "contains": [
+                "zero"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.2.4",
+          "tier": "application",
+          "prompt": "Year 7 has 70 students, Year 8 and Year 9 have 65 each. Which display compares lunch choices across years?",
+          "answer": "A clustered bar chart (or a well-labelled two-way table).",
+          "reasoning": "It keeps year groups visible side by side.",
+          "verify": [
+            {
+              "expr": "70+65+65",
+              "equals": 200,
+              "contains": [
+                "clustered bar"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.2.5",
+          "tier": "reasoning",
+          "prompt": "Three sector percentages are 48%, 37% and 15%. Do they fit one whole?",
+          "answer": "Yes, they sum to 100%.",
+          "reasoning": "A pie chart partitions the whole.",
+          "verify": [
+            {
+              "expr": "48+37+15",
+              "equals": 100
+            }
+          ]
+        },
+        {
+          "id": "10.2.6",
+          "tier": "challenge",
+          "prompt": "A category has sector angle 54° in a survey of 200. Find its frequency.",
+          "answer": "30.",
+          "reasoning": "54/360×200.",
+          "verify": [
+            {
+              "expr": "54/360*200",
+              "equals": 30
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "pie_chart",
+        "labels": [
+          "School",
+          "Packed",
+          "Off-site"
+        ],
+        "values": [
+          96,
+          74,
+          30
+        ],
+        "caption": "Sector angles are proportional to frequency: 172.8°, 133.2° and 54°."
+      }
+    },
+    {
+      "number": "10.3",
+      "title": "Dot plots, histograms and averages",
+      "short": "Distribution and averages",
+      "intent": "Describe shape, centre and spread; choose an average that fits the data and the question.",
+      "paras": [
+        "A dot plot shows individual values. A histogram groups continuous or finely measured numerical data into intervals; with equal widths, bar height is frequency. State the boundary rule.",
+        "Mean = sum÷count; median is the middle ordered value (or mean of the two middle values); mode is most frequent; range = maximum−minimum. Outliers pull the mean more than the median."
+      ],
+      "example": {
+        "title": "Summarise 30 screen-time values",
+        "problem": "The ordered data have sum 4,740; the 15th and 16th values are 135 and 140; 120 occurs four times.",
+        "steps": [
+          "Mean = 4740/30 = 158 min.",
+          "Median = (135+140)/2 = 137.5 min.",
+          "Mode = 120 min; range = 360−45 = 315 min."
+        ],
+        "answer": "Mean 158; median 137.5; mode 120; range 315 minutes."
+      },
+      "warning": "For grouped data, a midpoint estimate of the mean is an estimate, not the exact mean of the raw values.",
+      "practice": [
+        {
+          "id": "10.3.1",
+          "tier": "fluency",
+          "prompt": "Find the mean, median, mode and range of 2, 3, 3, 8.",
+          "answer": "Mean 4; median 3; mode 3; range 6.",
+          "reasoning": "Sum 16÷4; middle two 3 and 3; 8−2.",
+          "verify": [
+            {
+              "expr": "[mean([2,3,3,8]),median([2,3,3,8]),mode([2,3,3,8]),max([2,3,3,8])-min([2,3,3,8])]",
+              "equals": [
+                4,
+                3,
+                3,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.3.2",
+          "tier": "application",
+          "prompt": "For the 30 screen-time values, sum 4,740, middle values 135 and 140, mode 120, min 45, max 360. Find all four summaries.",
+          "answer": "Mean 158; median 137.5; mode 120; range 315 minutes.",
+          "reasoning": "Use the definitions directly.",
+          "verify": [
+            {
+              "expr": "[4740/30,(135+140)/2,120,360-45]",
+              "equals": [
+                158,
+                137.5,
+                120,
+                315
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.3.3",
+          "tier": "reasoning",
+          "prompt": "Why is the median lower than the mean for the screen-time data?",
+          "answer": "A tail of high values pulls the mean upward; the median depends only on position.",
+          "reasoning": "The distribution is right-skewed.",
+          "verify": [
+            {
+              "expr": "158>137.5",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "10.3.4",
+          "tier": "application",
+          "prompt": "Group the screen data into 0–<60, 60–<120, 120–<180, 180–<240, 240–<300, 300–360 (last includes 360). Find frequencies.",
+          "answer": "1, 9, 9, 5, 3, 3.",
+          "reasoning": "Count each value once using the stated boundary rule.",
+          "verify": [
+            {
+              "expr": "[sum(a<=x<(b if b<360 else 361) for x in SCREEN) for a,b in [(0,60),(60,120),(120,180),(180,240),(240,300),(300,360)]]",
+              "equals": [
+                1,
+                9,
+                9,
+                5,
+                3,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.3.5",
+          "tier": "reasoning",
+          "prompt": "Why must a histogram state its interval boundaries?",
+          "answer": "A value on a boundary must belong to exactly one interval; otherwise counts can be duplicated or omitted.",
+          "reasoning": "Equal widths also make heights comparable.",
+          "verify": [
+            {
+              "expr": "sum([1,9,9,5,3,3])",
+              "equals": 30,
+              "contains": [
+                "exactly one"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.3.6",
+          "tier": "challenge",
+          "prompt": "Estimate the mean from grouped intervals with midpoints 30, 90, 150, 210, 270, 330 and frequencies 1, 9, 9, 5, 3, 3.",
+          "answer": "168 minutes.",
+          "reasoning": "Weighted midpoint sum ÷30 = 168. A grouped estimate need not equal the raw mean (158 minutes).",
+          "verify": [
+            {
+              "expr": "sum(m*f for m,f in zip([30,90,150,210,270,330],[1,9,9,5,3,3]))/30",
+              "equals": 168
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "histogram",
+        "labels": [
+          "0–<60",
+          "60–<120",
+          "120–<180",
+          "180–<240",
+          "240–<300",
+          "300–360"
+        ],
+        "values": [
+          1,
+          9,
+          9,
+          5,
+          3,
+          3
+        ],
+        "caption": "Equal 60-minute intervals. Boundary rule: left endpoint included, right excluded; the final interval includes 360."
+      }
+    },
+    {
+      "number": "10.4",
+      "title": "Trends, comparisons and misleading graphs",
+      "short": "Trends and claims",
+      "intent": "Read the scale, denominator and time order before accepting a visual claim.",
+      "paras": [
+        "A line graph or time-ordered bar chart can show change over time. Describe direction, size of change and exceptions; do not call every fluctuation a trend.",
+        "Misleading displays include truncated axes, unequal intervals, 3-D distortion, area used for a one-dimensional value, missing denominators and selective time windows. Compare like with like."
+      ],
+      "example": {
+        "title": "Test “sales doubled”",
+        "problem": "Sales rose from 50 to 90.",
+        "steps": [
+          "Increase = 40.",
+          "Percentage increase = 40/50×100 = 80%."
+        ],
+        "answer": "The claim is false: sales rose by 80%, not 100%."
+      },
+      "warning": "A percentage can be correct while the headline is misleading if the base is tiny or the denominator is hidden.",
+      "practice": [
+        {
+          "id": "10.4.1",
+          "tier": "fluency",
+          "prompt": "Uptake over five years is 88, 72, 80, 90, 96. Describe the overall change and the largest fall.",
+          "answer": "Overall +8; largest fall 16 from year 1 to year 2.",
+          "reasoning": "96−88=8; 88−72=16.",
+          "verify": [
+            {
+              "expr": "[96-88,88-72]",
+              "equals": [
+                8,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.4.2",
+          "tier": "application",
+          "prompt": "Find the percentage fall from 88 to 72.",
+          "answer": "About 18.2%.",
+          "reasoning": "16/88×100.",
+          "verify": [
+            {
+              "expr": "round(16/88*100,1)",
+              "equals": 18.2
+            }
+          ]
+        },
+        {
+          "id": "10.4.3",
+          "tier": "reasoning",
+          "prompt": "A headline says “sales doubled” after 50 to 90. Test it.",
+          "answer": "False: 80% increase, not 100%.",
+          "reasoning": "Doubling would require 100.",
+          "verify": [
+            {
+              "expr": "(90-50)/50*100",
+              "equals": 80
+            }
+          ]
+        },
+        {
+          "id": "10.4.4",
+          "tier": "reasoning",
+          "prompt": "A pictogram doubles both height and width for a value twice as large. Explain the distortion.",
+          "answer": "The area becomes four times as large, exaggerating a twofold value.",
+          "reasoning": "Area scales with the square of linear size.",
+          "verify": [
+            {
+              "expr": "2*2",
+              "equals": 4
+            }
+          ]
+        },
+        {
+          "id": "10.4.5",
+          "tier": "application",
+          "prompt": "Year 9 off-site is 13/65; Year 7 is 8/70. Compare percentages fairly.",
+          "answer": "20% versus about 11.4%; Year 9 is higher.",
+          "reasoning": "Use each year group as its denominator.",
+          "verify": [
+            {
+              "expr": "[13/65*100,round(8/70*100,1)]",
+              "equals": [
+                20,
+                11.4
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.4.6",
+          "tier": "challenge",
+          "prompt": "Incidents rise from 2 to 4. Is “doubled” correct? What else should a reader ask?",
+          "answer": "Yes, 100% increase, but ask for the time period, population size and longer trend; small counts can make a dramatic headline.",
+          "reasoning": "A relative change needs context.",
+          "verify": [
+            {
+              "expr": "(4-2)/2*100",
+              "equals": 100,
+              "contains": [
+                "population",
+                "time period"
+              ]
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "trend",
+        "labels": [
+          "Y1",
+          "Y2",
+          "Y3",
+          "Y4",
+          "Y5"
+        ],
+        "values": [
+          88,
+          72,
+          80,
+          90,
+          96
+        ],
+        "caption": "A zero-based axis shows the fall from 88 to 72 and the later recovery to 96 without exaggeration."
+      }
+    }
+  ],
+  "explore": {
+    "title": "How should data be grouped?",
+    "instruction": "Criterion B. Use the same 30 values with two interval widths, compare the pictures and justify a display for families.",
+    "intro": "Daily screen time (minutes), ordered: 45, 60, 60, 75, 80, 90, 90, 90, 105, 110, 120, 120, 120, 120, 135, 140, 150, 150, 165, 180, 180, 195, 210, 210, 240, 240, 270, 300, 330, 360. Boundary rule: left included, right excluded; final interval includes 360.",
+    "table": {
+      "headers": [
+        "Interval width",
+        "Frequencies"
+      ],
+      "rows": [
+        [
+          "60 min: 0–<60, …, 300–360",
+          ""
+        ],
+        [
+          "120 min: 0–<120, 120–<240, 240–360",
+          ""
+        ]
+      ]
+    },
+    "items": [
+      {
+        "id": "B1",
+        "tier": "investigation",
+        "prompt": "Find the six 60-minute frequencies.",
+        "answer": "1, 9, 9, 5, 3, 3.",
+        "reasoning": "Count each value once.",
+        "verify": [
+          {
+            "expr": "[sum(a<=x<(b if b<360 else 361) for x in SCREEN) for a,b in [(0,60),(60,120),(120,180),(180,240),(240,300),(300,360)]]",
+            "equals": [
+              1,
+              9,
+              9,
+              5,
+              3,
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B2",
+        "tier": "investigation",
+        "prompt": "Find the three 120-minute frequencies.",
+        "answer": "10, 14, 6.",
+        "reasoning": "Combine adjacent 60-minute intervals.",
+        "verify": [
+          {
+            "expr": "[sum(a<=x<(b if b<360 else 361) for x in SCREEN) for a,b in [(0,120),(120,240),(240,360)]]",
+            "equals": [
+              10,
+              14,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B3",
+        "tier": "investigation",
+        "prompt": "Which grouping shows the central cluster more clearly? Which loses more detail?",
+        "answer": "60-minute intervals show the cluster around 60–180 more clearly; 120-minute intervals lose more detail.",
+        "reasoning": "Narrower equal intervals preserve more shape.",
+        "verify": [
+          {
+            "expr": "sum([1,9,9,5,3,3])",
+            "equals": 30,
+            "contains": [
+              "60-minute"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B4",
+        "tier": "application",
+        "prompt": "Find mean, median, mode and range. How many students spend 240 minutes or more?",
+        "answer": "Mean 158; median 137.5; mode 120; range 315 minutes. Six students are at 240 or more.",
+        "reasoning": "Use the raw ordered data; count 240,240,270,300,330,360.",
+        "verify": [
+          {
+            "expr": "[mean(SCREEN),median(SCREEN),mode(SCREEN),max(SCREEN)-min(SCREEN),sum(x>=240 for x in SCREEN)]",
+            "equals": [
+              158,
+              137.5,
+              120,
+              315,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B5",
+        "tier": "challenge",
+        "prompt": "Test “the typical student spends four hours a day” and recommend a newsletter display.",
+        "answer": "Not supported: mean 158 min, median 137.5 min; only 6/30=20% reach 240 min. Recommend a labelled 60-minute histogram with median and a note about the high-value tail.",
+        "reasoning": "Choose an average and grouping that match the claim and audience.",
+        "verify": [
+          {
+            "expr": "[mean(SCREEN),median(SCREEN),sum(x>=240 for x in SCREEN)/30*100]",
+            "equals": [
+              158,
+              137.5,
+              20
+            ],
+            "contains": [
+              "Not supported"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "application": {
+    "title": "The canteen survey",
+    "instruction": "Criterion D. Simulated whole-school survey of 200 students. State denominators and distinguish spending from canteen revenue.",
+    "intro": "Lunch choice by year group is shown below. Prices: school lunch $4.20, packed lunch ingredients about $3.10, off-site meal about $5.50. Five-year school-lunch uptake: 88, 72, 80, 90, 96.",
+    "table": {
+      "headers": [
+        "Year",
+        "School",
+        "Packed",
+        "Off-site",
+        "Total"
+      ],
+      "rows": [
+        [
+          "7",
+          "38",
+          "24",
+          "8",
+          "70"
+        ],
+        [
+          "8",
+          "31",
+          "25",
+          "9",
+          "65"
+        ],
+        [
+          "9",
+          "27",
+          "25",
+          "13",
+          "65"
+        ],
+        [
+          "Total",
+          "96",
+          "74",
+          "30",
+          "200"
+        ]
+      ]
+    },
+    "items": [
+      {
+        "id": "D1",
+        "tier": "application",
+        "prompt": "Find the school-lunch percentage and the pie-chart angles for all three choices.",
+        "answer": "48%; angles 172.8°, 133.2°, 54°.",
+        "reasoning": "Use denominator 200.",
+        "verify": [
+          {
+            "expr": "[96/200*100]+[round(f/200*360,8) for f in [96,74,30]]",
+            "equals": [
+              48,
+              172.8,
+              133.2,
+              54
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D2",
+        "tier": "application",
+        "prompt": "Compare off-site eating in Year 9 and Year 7 using percentages.",
+        "answer": "Year 9: 20%; Year 7: about 11.4%.",
+        "reasoning": "13/65 and 8/70.",
+        "verify": [
+          {
+            "expr": "[13/65*100,round(8/70*100,1)]",
+            "equals": [
+              20,
+              11.4
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D3",
+        "tier": "application",
+        "prompt": "Find daily spending by lunch choice and total spending. How much extra canteen revenue if 24 students switch from packed to school lunch?",
+        "answer": "School $403.20; packed $229.40; off-site $165.00; total $797.60. Extra canteen revenue $100.80.",
+        "reasoning": "Multiply counts by prices; the switch adds 24×4.20 to canteen revenue.",
+        "verify": [
+          {
+            "expr": "[round(96*4.2,2),round(74*3.1,2),round(30*5.5,2),round(96*4.2+74*3.1+30*5.5,2),round(24*4.2,2)]",
+            "equals": [
+              403.2,
+              229.4,
+              165,
+              797.6,
+              100.8
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D4",
+        "tier": "reasoning",
+        "prompt": "Evaluate “off-site eating is out of control” and write a more accurate headline of at most twelve words.",
+        "answer": "Sample headline: “Off-site lunches are 15% overall, higher in Year 9.” The claim is not supported by one share alone; compare year groups and time data.",
+        "reasoning": "15% overall and 20% in Year 9 are descriptive, not proof of a crisis.",
+        "verify": [
+          {
+            "expr": "[30/200*100,13/65*100]",
+            "equals": [
+              15,
+              20
+            ],
+            "contains": [
+              "Sample"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "assessment": {
+    "title": "The data explainer",
+    "instruction": "Criteria A and C. Choose a display, compute one summary and write a claim that the data actually support.",
+    "intro": "Use the lunch survey to explain why a truncated bar chart or a single pie chart could mislead.",
+    "items": [
+      {
+        "id": "S1",
+        "tier": "assessment",
+        "prompt": "Which display best compares lunch choices across the three year groups? Explain.",
+        "answer": "A clustered bar chart or two-way table; it preserves year-group comparisons.",
+        "reasoning": "A single pie chart hides the year structure.",
+        "verify": [
+          {
+            "expr": "70+65+65",
+            "equals": 200,
+            "contains": [
+              "clustered bar"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "S2",
+        "tier": "assessment",
+        "prompt": "Calculate the school-lunch share and one check on the pie chart.",
+        "answer": "48%; angles sum to 360° (172.8+133.2+54).",
+        "reasoning": "The whole is 200 students.",
+        "verify": [
+          {
+            "expr": "[96/200*100,172.8+133.2+54]",
+            "equals": [
+              48,
+              360
+            ]
+          }
+        ]
+      },
+      {
+        "id": "S3",
+        "tier": "assessment",
+        "prompt": "Write one supported claim and one warning about a misleading display.",
+        "answer": "Sample claim: “School lunch is the most common choice (48%).” Warning: a bar axis not starting at zero can exaggerate differences.",
+        "reasoning": "The claim quotes a denominator and the warning names a visual distortion.",
+        "verify": [
+          {
+            "expr": "96/200*100",
+            "equals": 48,
+            "contains": [
+              "Sample",
+              "zero"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "diagrams": [
+    {
+      "kind": "frequency_table",
+      "headers": [
+        "Lunch choice",
+        "Frequency"
+      ],
+      "rows": [
+        [
+          "School",
+          "96"
+        ],
+        [
+          "Packed",
+          "74"
+        ],
+        [
+          "Off-site",
+          "30"
+        ],
+        [
+          "Total",
+          "200"
+        ]
+      ],
+      "caption": "A frequency table organises categories; the counts sum to the 200 students surveyed."
+    },
+    {
+      "kind": "pie_chart",
+      "labels": [
+        "School",
+        "Packed",
+        "Off-site"
+      ],
+      "values": [
+        96,
+        74,
+        30
+      ],
+      "caption": "Sector angles are proportional to frequency: 172.8°, 133.2° and 54°."
+    },
+    {
+      "kind": "histogram",
+      "labels": [
+        "0–<60",
+        "60–<120",
+        "120–<180",
+        "180–<240",
+        "240–<300",
+        "300–360"
+      ],
+      "values": [
+        1,
+        9,
+        9,
+        5,
+        3,
+        3
+      ],
+      "caption": "Equal 60-minute intervals. Boundary rule: left endpoint included, right excluded; the final interval includes 360."
+    },
+    {
+      "kind": "trend",
+      "labels": [
+        "Y1",
+        "Y2",
+        "Y3",
+        "Y4",
+        "Y5"
+      ],
+      "values": [
+        88,
+        72,
+        80,
+        90,
+        96
+      ],
+      "caption": "A zero-based axis shows the fall from 88 to 72 and the later recovery to 96 without exaggeration."
+    }
+  ],
+  "notes": [],
+  "groups": [
+    {
+      "id": "ready",
+      "title": "Ready check",
+      "instruction": "Try these without a calculator. They check the ideas this chapter builds on.",
+      "items": [
+        {
+          "id": "R1",
+          "tier": "ready",
+          "prompt": "Find 96+74+30.",
+          "answer": "200.",
+          "reasoning": "Add the category counts.",
+          "verify": [
+            {
+              "expr": "96+74+30",
+              "equals": 200
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "tier": "ready",
+          "prompt": "Find 96/200 as a percentage.",
+          "answer": "48%.",
+          "reasoning": "Divide and multiply by 100.",
+          "verify": [
+            {
+              "expr": "96/200*100",
+              "equals": 48
+            }
+          ]
+        },
+        {
+          "id": "R3",
+          "tier": "ready",
+          "prompt": "Find the mean of 2, 4, 6.",
+          "answer": "4.",
+          "reasoning": "Sum 12÷3.",
+          "verify": [
+            {
+              "expr": "mean([2,4,6])",
+              "equals": 4
+            }
+          ]
+        },
+        {
+          "id": "R4",
+          "tier": "ready",
+          "prompt": "Find 360×0.25.",
+          "answer": "90°.",
+          "reasoning": "A quarter turn.",
+          "verify": [
+            {
+              "expr": "360*0.25",
+              "equals": 90
+            }
+          ]
+        },
+        {
+          "id": "R5",
+          "tier": "ready",
+          "prompt": "Order 5, 2, 8, 3.",
+          "answer": "2, 3, 5, 8.",
+          "reasoning": "Sort before finding a median.",
+          "verify": [
+            {
+              "expr": "sorted([5,2,8,3])",
+              "equals": [
+                2,
+                3,
+                5,
+                8
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p101",
+      "title": "Practice 10.1 · Data and variables",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "10.1.1",
+          "tier": "fluency",
+          "prompt": "Classify: favourite fruit, school year, number of pets, height.",
+          "answer": "Nominal categorical; ordinal categorical; discrete numerical; continuous numerical.",
+          "reasoning": "Name, order, count and measurement are different variable types.",
+          "verify": [
+            {
+              "expr": "['nominal','ordinal','discrete','continuous']",
+              "equals": [
+                "nominal",
+                "ordinal",
+                "discrete",
+                "continuous"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.1.2",
+          "tier": "fluency",
+          "prompt": "A table has frequencies 38, 31, 27 for school lunch in Years 7–9. Find the total.",
+          "answer": "96.",
+          "reasoning": "Add the three counts.",
+          "verify": [
+            {
+              "expr": "38+31+27",
+              "equals": 96
+            }
+          ]
+        },
+        {
+          "id": "10.1.3",
+          "tier": "reasoning",
+          "prompt": "Why is “year group” not usually averaged as if it were height?",
+          "answer": "It is an ordered category or label; an average year code may not describe a meaningful category.",
+          "reasoning": "Variable type determines appropriate summaries.",
+          "verify": [
+            {
+              "expr": "70+65+65",
+              "equals": 200,
+              "contains": [
+                "category"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.1.4",
+          "tier": "application",
+          "prompt": "In a two-way table, Year 7 has 38 school, 24 packed, 8 off-site. Find the row total and the school-lunch share of Year 7.",
+          "answer": "70; 38/70 ≈ 54.3%.",
+          "reasoning": "Row total 70; use the row as denominator.",
+          "verify": [
+            {
+              "expr": "[38+24+8,round(38/70*100,1)]",
+              "equals": [
+                70,
+                54.3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.1.5",
+          "tier": "reasoning",
+          "prompt": "A survey records “0, 1, 2, 3” as codes for four lunch choices. Can these codes be added meaningfully?",
+          "answer": "No. They are category labels, not counts or measurements.",
+          "reasoning": "Nominal codes have no numerical order or distance.",
+          "verify": [
+            {
+              "expr": "96+74+30",
+              "equals": 200,
+              "contains": [
+                "labels"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.1.6",
+          "tier": "challenge",
+          "prompt": "A frequency table has total 200 and known frequencies 96 and 74. Find the missing frequency and its percentage.",
+          "answer": "30; 15%.",
+          "reasoning": "200−96−74; 30/200×100.",
+          "verify": [
+            {
+              "expr": "[200-96-74,30/200*100]",
+              "equals": [
+                30,
+                15
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p102",
+      "title": "Practice 10.2 · Bar and pie charts",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "10.2.1",
+          "tier": "fluency",
+          "prompt": "Find pie-chart angles for frequencies 96, 74 and 30 out of 200.",
+          "answer": "172.8°, 133.2°, 54°.",
+          "reasoning": "Multiply each share by 360°.",
+          "verify": [
+            {
+              "expr": "[round(f/200*360,8) for f in [96,74,30]]",
+              "equals": [
+                172.8,
+                133.2,
+                54
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.2.2",
+          "tier": "fluency",
+          "prompt": "What percentage of 200 is 96?",
+          "answer": "48%.",
+          "reasoning": "96/200×100.",
+          "verify": [
+            {
+              "expr": "96/200*100",
+              "equals": 48
+            }
+          ]
+        },
+        {
+          "id": "10.2.3",
+          "tier": "reasoning",
+          "prompt": "Why should a bar-chart frequency axis start at zero?",
+          "answer": "Bar height encodes frequency; a truncated axis exaggerates differences.",
+          "reasoning": "Start the frequency axis at zero so the visual ratio matches the data ratio.",
+          "verify": [
+            {
+              "expr": "96/30",
+              "equals": 3.2,
+              "contains": [
+                "zero"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.2.4",
+          "tier": "application",
+          "prompt": "Year 7 has 70 students, Year 8 and Year 9 have 65 each. Which display compares lunch choices across years?",
+          "answer": "A clustered bar chart (or a well-labelled two-way table).",
+          "reasoning": "It keeps year groups visible side by side.",
+          "verify": [
+            {
+              "expr": "70+65+65",
+              "equals": 200,
+              "contains": [
+                "clustered bar"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.2.5",
+          "tier": "reasoning",
+          "prompt": "Three sector percentages are 48%, 37% and 15%. Do they fit one whole?",
+          "answer": "Yes, they sum to 100%.",
+          "reasoning": "A pie chart partitions the whole.",
+          "verify": [
+            {
+              "expr": "48+37+15",
+              "equals": 100
+            }
+          ]
+        },
+        {
+          "id": "10.2.6",
+          "tier": "challenge",
+          "prompt": "A category has sector angle 54° in a survey of 200. Find its frequency.",
+          "answer": "30.",
+          "reasoning": "54/360×200.",
+          "verify": [
+            {
+              "expr": "54/360*200",
+              "equals": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p103",
+      "title": "Practice 10.3 · Distribution and averages",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "10.3.1",
+          "tier": "fluency",
+          "prompt": "Find the mean, median, mode and range of 2, 3, 3, 8.",
+          "answer": "Mean 4; median 3; mode 3; range 6.",
+          "reasoning": "Sum 16÷4; middle two 3 and 3; 8−2.",
+          "verify": [
+            {
+              "expr": "[mean([2,3,3,8]),median([2,3,3,8]),mode([2,3,3,8]),max([2,3,3,8])-min([2,3,3,8])]",
+              "equals": [
+                4,
+                3,
+                3,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.3.2",
+          "tier": "application",
+          "prompt": "For the 30 screen-time values, sum 4,740, middle values 135 and 140, mode 120, min 45, max 360. Find all four summaries.",
+          "answer": "Mean 158; median 137.5; mode 120; range 315 minutes.",
+          "reasoning": "Use the definitions directly.",
+          "verify": [
+            {
+              "expr": "[4740/30,(135+140)/2,120,360-45]",
+              "equals": [
+                158,
+                137.5,
+                120,
+                315
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.3.3",
+          "tier": "reasoning",
+          "prompt": "Why is the median lower than the mean for the screen-time data?",
+          "answer": "A tail of high values pulls the mean upward; the median depends only on position.",
+          "reasoning": "The distribution is right-skewed.",
+          "verify": [
+            {
+              "expr": "158>137.5",
+              "equals": true
+            }
+          ]
+        },
+        {
+          "id": "10.3.4",
+          "tier": "application",
+          "prompt": "Group the screen data into 0–<60, 60–<120, 120–<180, 180–<240, 240–<300, 300–360 (last includes 360). Find frequencies.",
+          "answer": "1, 9, 9, 5, 3, 3.",
+          "reasoning": "Count each value once using the stated boundary rule.",
+          "verify": [
+            {
+              "expr": "[sum(a<=x<(b if b<360 else 361) for x in SCREEN) for a,b in [(0,60),(60,120),(120,180),(180,240),(240,300),(300,360)]]",
+              "equals": [
+                1,
+                9,
+                9,
+                5,
+                3,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.3.5",
+          "tier": "reasoning",
+          "prompt": "Why must a histogram state its interval boundaries?",
+          "answer": "A value on a boundary must belong to exactly one interval; otherwise counts can be duplicated or omitted.",
+          "reasoning": "Equal widths also make heights comparable.",
+          "verify": [
+            {
+              "expr": "sum([1,9,9,5,3,3])",
+              "equals": 30,
+              "contains": [
+                "exactly one"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.3.6",
+          "tier": "challenge",
+          "prompt": "Estimate the mean from grouped intervals with midpoints 30, 90, 150, 210, 270, 330 and frequencies 1, 9, 9, 5, 3, 3.",
+          "answer": "168 minutes.",
+          "reasoning": "Weighted midpoint sum ÷30 = 168. A grouped estimate need not equal the raw mean (158 minutes).",
+          "verify": [
+            {
+              "expr": "sum(m*f for m,f in zip([30,90,150,210,270,330],[1,9,9,5,3,3]))/30",
+              "equals": 168
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p104",
+      "title": "Practice 10.4 · Trends and claims",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "10.4.1",
+          "tier": "fluency",
+          "prompt": "Uptake over five years is 88, 72, 80, 90, 96. Describe the overall change and the largest fall.",
+          "answer": "Overall +8; largest fall 16 from year 1 to year 2.",
+          "reasoning": "96−88=8; 88−72=16.",
+          "verify": [
+            {
+              "expr": "[96-88,88-72]",
+              "equals": [
+                8,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.4.2",
+          "tier": "application",
+          "prompt": "Find the percentage fall from 88 to 72.",
+          "answer": "About 18.2%.",
+          "reasoning": "16/88×100.",
+          "verify": [
+            {
+              "expr": "round(16/88*100,1)",
+              "equals": 18.2
+            }
+          ]
+        },
+        {
+          "id": "10.4.3",
+          "tier": "reasoning",
+          "prompt": "A headline says “sales doubled” after 50 to 90. Test it.",
+          "answer": "False: 80% increase, not 100%.",
+          "reasoning": "Doubling would require 100.",
+          "verify": [
+            {
+              "expr": "(90-50)/50*100",
+              "equals": 80
+            }
+          ]
+        },
+        {
+          "id": "10.4.4",
+          "tier": "reasoning",
+          "prompt": "A pictogram doubles both height and width for a value twice as large. Explain the distortion.",
+          "answer": "The area becomes four times as large, exaggerating a twofold value.",
+          "reasoning": "Area scales with the square of linear size.",
+          "verify": [
+            {
+              "expr": "2*2",
+              "equals": 4
+            }
+          ]
+        },
+        {
+          "id": "10.4.5",
+          "tier": "application",
+          "prompt": "Year 9 off-site is 13/65; Year 7 is 8/70. Compare percentages fairly.",
+          "answer": "20% versus about 11.4%; Year 9 is higher.",
+          "reasoning": "Use each year group as its denominator.",
+          "verify": [
+            {
+              "expr": "[13/65*100,round(8/70*100,1)]",
+              "equals": [
+                20,
+                11.4
+              ]
+            }
+          ]
+        },
+        {
+          "id": "10.4.6",
+          "tier": "challenge",
+          "prompt": "Incidents rise from 2 to 4. Is “doubled” correct? What else should a reader ask?",
+          "answer": "Yes, 100% increase, but ask for the time period, population size and longer trend; small counts can make a dramatic headline.",
+          "reasoning": "A relative change needs context.",
+          "verify": [
+            {
+              "expr": "(4-2)/2*100",
+              "equals": 100,
+              "contains": [
+                "population",
+                "time period"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explore",
+      "title": "Exploration · How should data be grouped?",
+      "instruction": "Criterion B. Use the same 30 values with two interval widths, compare the pictures and justify a display for families.",
+      "items": [
+        {
+          "id": "B1",
+          "tier": "investigation",
+          "prompt": "Find the six 60-minute frequencies.",
+          "answer": "1, 9, 9, 5, 3, 3.",
+          "reasoning": "Count each value once.",
+          "verify": [
+            {
+              "expr": "[sum(a<=x<(b if b<360 else 361) for x in SCREEN) for a,b in [(0,60),(60,120),(120,180),(180,240),(240,300),(300,360)]]",
+              "equals": [
+                1,
+                9,
+                9,
+                5,
+                3,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B2",
+          "tier": "investigation",
+          "prompt": "Find the three 120-minute frequencies.",
+          "answer": "10, 14, 6.",
+          "reasoning": "Combine adjacent 60-minute intervals.",
+          "verify": [
+            {
+              "expr": "[sum(a<=x<(b if b<360 else 361) for x in SCREEN) for a,b in [(0,120),(120,240),(240,360)]]",
+              "equals": [
+                10,
+                14,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B3",
+          "tier": "investigation",
+          "prompt": "Which grouping shows the central cluster more clearly? Which loses more detail?",
+          "answer": "60-minute intervals show the cluster around 60–180 more clearly; 120-minute intervals lose more detail.",
+          "reasoning": "Narrower equal intervals preserve more shape.",
+          "verify": [
+            {
+              "expr": "sum([1,9,9,5,3,3])",
+              "equals": 30,
+              "contains": [
+                "60-minute"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B4",
+          "tier": "application",
+          "prompt": "Find mean, median, mode and range. How many students spend 240 minutes or more?",
+          "answer": "Mean 158; median 137.5; mode 120; range 315 minutes. Six students are at 240 or more.",
+          "reasoning": "Use the raw ordered data; count 240,240,270,300,330,360.",
+          "verify": [
+            {
+              "expr": "[mean(SCREEN),median(SCREEN),mode(SCREEN),max(SCREEN)-min(SCREEN),sum(x>=240 for x in SCREEN)]",
+              "equals": [
+                158,
+                137.5,
+                120,
+                315,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B5",
+          "tier": "challenge",
+          "prompt": "Test “the typical student spends four hours a day” and recommend a newsletter display.",
+          "answer": "Not supported: mean 158 min, median 137.5 min; only 6/30=20% reach 240 min. Recommend a labelled 60-minute histogram with median and a note about the high-value tail.",
+          "reasoning": "Choose an average and grouping that match the claim and audience.",
+          "verify": [
+            {
+              "expr": "[mean(SCREEN),median(SCREEN),sum(x>=240 for x in SCREEN)/30*100]",
+              "equals": [
+                158,
+                137.5,
+                20
+              ],
+              "contains": [
+                "Not supported"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "check",
+      "title": "Checkpoint",
+      "instruction": "Answer, then explain one result to a partner.",
+      "items": [
+        {
+          "id": "C1",
+          "tier": "check",
+          "prompt": "Classify “number of siblings”.",
+          "answer": "Discrete numerical.",
+          "reasoning": "It counts separate whole values.",
+          "verify": [
+            {
+              "expr": "'discrete'",
+              "equals": "discrete"
+            }
+          ]
+        },
+        {
+          "id": "C2",
+          "tier": "check",
+          "prompt": "Find the sector angle for 30 out of 200.",
+          "answer": "54°.",
+          "reasoning": "30/200×360.",
+          "verify": [
+            {
+              "expr": "30/200*360",
+              "equals": 54
+            }
+          ]
+        },
+        {
+          "id": "C3",
+          "tier": "check",
+          "prompt": "Find the median of 1, 3, 3, 6, 7.",
+          "answer": "3.",
+          "reasoning": "The middle ordered value.",
+          "verify": [
+            {
+              "expr": "median([1,3,3,6,7])",
+              "equals": 3
+            }
+          ]
+        },
+        {
+          "id": "C4",
+          "tier": "check",
+          "prompt": "A value rises from 50 to 90. Find the percentage increase.",
+          "answer": "80%.",
+          "reasoning": "40/50×100.",
+          "verify": [
+            {
+              "expr": "(90-50)/50*100",
+              "equals": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "application",
+      "title": "Application · The canteen survey",
+      "instruction": "Criterion D. Simulated whole-school survey of 200 students. State denominators and distinguish spending from canteen revenue.",
+      "items": [
+        {
+          "id": "D1",
+          "tier": "application",
+          "prompt": "Find the school-lunch percentage and the pie-chart angles for all three choices.",
+          "answer": "48%; angles 172.8°, 133.2°, 54°.",
+          "reasoning": "Use denominator 200.",
+          "verify": [
+            {
+              "expr": "[96/200*100]+[round(f/200*360,8) for f in [96,74,30]]",
+              "equals": [
+                48,
+                172.8,
+                133.2,
+                54
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "tier": "application",
+          "prompt": "Compare off-site eating in Year 9 and Year 7 using percentages.",
+          "answer": "Year 9: 20%; Year 7: about 11.4%.",
+          "reasoning": "13/65 and 8/70.",
+          "verify": [
+            {
+              "expr": "[13/65*100,round(8/70*100,1)]",
+              "equals": [
+                20,
+                11.4
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "tier": "application",
+          "prompt": "Find daily spending by lunch choice and total spending. How much extra canteen revenue if 24 students switch from packed to school lunch?",
+          "answer": "School $403.20; packed $229.40; off-site $165.00; total $797.60. Extra canteen revenue $100.80.",
+          "reasoning": "Multiply counts by prices; the switch adds 24×4.20 to canteen revenue.",
+          "verify": [
+            {
+              "expr": "[round(96*4.2,2),round(74*3.1,2),round(30*5.5,2),round(96*4.2+74*3.1+30*5.5,2),round(24*4.2,2)]",
+              "equals": [
+                403.2,
+                229.4,
+                165,
+                797.6,
+                100.8
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D4",
+          "tier": "reasoning",
+          "prompt": "Evaluate “off-site eating is out of control” and write a more accurate headline of at most twelve words.",
+          "answer": "Sample headline: “Off-site lunches are 15% overall, higher in Year 9.” The claim is not supported by one share alone; compare year groups and time data.",
+          "reasoning": "15% overall and 20% in Year 9 are descriptive, not proof of a crisis.",
+          "verify": [
+            {
+              "expr": "[30/200*100,13/65*100]",
+              "equals": [
+                15,
+                20
+              ],
+              "contains": [
+                "Sample"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment",
+      "title": "Assessment practice · The data explainer",
+      "instruction": "Criteria A and C. Choose a display, compute one summary and write a claim that the data actually support.",
+      "items": [
+        {
+          "id": "S1",
+          "tier": "assessment",
+          "prompt": "Which display best compares lunch choices across the three year groups? Explain.",
+          "answer": "A clustered bar chart or two-way table; it preserves year-group comparisons.",
+          "reasoning": "A single pie chart hides the year structure.",
+          "verify": [
+            {
+              "expr": "70+65+65",
+              "equals": 200,
+              "contains": [
+                "clustered bar"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "S2",
+          "tier": "assessment",
+          "prompt": "Calculate the school-lunch share and one check on the pie chart.",
+          "answer": "48%; angles sum to 360° (172.8+133.2+54).",
+          "reasoning": "The whole is 200 students.",
+          "verify": [
+            {
+              "expr": "[96/200*100,172.8+133.2+54]",
+              "equals": [
+                48,
+                360
+              ]
+            }
+          ]
+        },
+        {
+          "id": "S3",
+          "tier": "assessment",
+          "prompt": "Write one supported claim and one warning about a misleading display.",
+          "answer": "Sample claim: “School lunch is the most common choice (48%).” Warning: a bar axis not starting at zero can exaggerate differences.",
+          "reasoning": "The claim quotes a denominator and the warning names a visual distortion.",
+          "verify": [
+            {
+              "expr": "96/200*100",
+              "equals": 48,
+              "contains": [
+                "Sample",
+                "zero"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mixed",
+      "title": "Mixed practice 10",
+      "instruction": "Connect ideas. Give units and reasons where requested.",
+      "items": [
+        {
+          "id": "M1",
+          "tier": "fluency",
+          "prompt": "Classify “height in centimetres”.",
+          "answer": "Continuous numerical.",
+          "reasoning": "It is measured on a scale.",
+          "verify": [
+            {
+              "expr": "'continuous'",
+              "equals": "continuous"
+            }
+          ]
+        },
+        {
+          "id": "M2",
+          "tier": "fluency",
+          "prompt": "Find the sector angle for 74 out of 200.",
+          "answer": "133.2°.",
+          "reasoning": "74/200×360.",
+          "verify": [
+            {
+              "expr": "74/200*360",
+              "equals": 133.2
+            }
+          ]
+        },
+        {
+          "id": "M3",
+          "tier": "fluency",
+          "prompt": "Find mean, median, mode and range of 4, 4, 6, 10.",
+          "answer": "Mean 6; median 5; mode 4; range 6.",
+          "reasoning": "Sum 24÷4; middle (4+6)/2; 10−4.",
+          "verify": [
+            {
+              "expr": "[mean([4,4,6,10]),median([4,4,6,10]),mode([4,4,6,10]),10-4]",
+              "equals": [
+                6,
+                5,
+                4,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M4",
+          "tier": "application",
+          "prompt": "A frequency table has counts 12, 18, 20. Find the percentage for 18.",
+          "answer": "36%.",
+          "reasoning": "18/50×100.",
+          "verify": [
+            {
+              "expr": "18/(12+18+20)*100",
+              "equals": 36
+            }
+          ]
+        },
+        {
+          "id": "M5",
+          "tier": "reasoning",
+          "prompt": "Why can a truncated vertical axis mislead?",
+          "answer": "It exaggerates visual differences by hiding the zero baseline.",
+          "reasoning": "Bar height should be proportional to frequency.",
+          "verify": [
+            {
+              "expr": "96/30",
+              "equals": 3.2,
+              "contains": [
+                "zero"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M6",
+          "tier": "application",
+          "prompt": "Uptake falls from 90 to 72. Find the percentage fall.",
+          "answer": "20%.",
+          "reasoning": "18/90×100.",
+          "verify": [
+            {
+              "expr": "(90-72)/90*100",
+              "equals": 20
+            }
+          ]
+        },
+        {
+          "id": "M7",
+          "tier": "reasoning",
+          "prompt": "A data set has mean 50 and median 30. What might explain the gap?",
+          "answer": "A high-value tail or outliers pulling the mean upward.",
+          "reasoning": "The median is resistant to extreme values.",
+          "verify": [
+            {
+              "expr": "50>30",
+              "equals": true,
+              "contains": [
+                "tail"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M8",
+          "tier": "challenge",
+          "prompt": "Grouped intervals 0–<10 and 10–20 have frequencies 4 and 6. Estimate the mean using midpoints.",
+          "answer": "11.",
+          "reasoning": "(4×5+6×15)/10.",
+          "verify": [
+            {
+              "expr": "(4*5+6*15)/10",
+              "equals": 11
+            }
+          ]
+        },
+        {
+          "id": "M9",
+          "tier": "application",
+          "prompt": "A survey of 80 has 20 choosing A. Find the percentage and pie angle.",
+          "answer": "25%; 90°.",
+          "reasoning": "20/80×100 and ×360.",
+          "verify": [
+            {
+              "expr": "[20/80*100,20/80*360]",
+              "equals": [
+                25,
+                90
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M10",
+          "tier": "challenge",
+          "prompt": "A headline says “crime doubled” from 2 to 4 incidents. Give a balanced response.",
+          "answer": "The 100% increase is correct, but the base is tiny; ask for population, time period and longer trend before judging risk.",
+          "reasoning": "Relative change without context can mislead.",
+          "verify": [
+            {
+              "expr": "(4-2)/2*100",
+              "equals": 100,
+              "contains": [
+                "population",
+                "time period"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source": {
+    "file": "MYP-Mathematics-1-Student-Coursebook.pdf",
+    "sha256": "131a3a99d14ae5a7613c7e9da24c540e29029d93a1a360abcc8516835798b3f0",
+    "pages": "194–215; answers 237–240",
+    "scope_note": "Rewritten within the verified first-edition chapter scope and embedded planner. No standalone school curriculum overview was present. New classroom contexts are simulated and labelled."
+  }
+}

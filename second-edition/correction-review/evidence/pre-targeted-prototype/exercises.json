@@ -1,0 +1,287 @@
+{
+  "chapter": 7,
+  "title": "Lines, angles, triangles and constructions",
+  "visual_target": 0.34,
+  "items": [
+    {
+      "id": "F1",
+      "tier": "Foundation",
+      "prompt": "Classify each angle: 35\u00b0, 90\u00b0, 125\u00b0, 210\u00b0.",
+      "visual": false,
+      "answer": "Acute, right, obtuse, reflex.",
+      "reasoning": "Compare with 90\u00b0, 180\u00b0 and 360\u00b0."
+    },
+    {
+      "id": "F2",
+      "tier": "Foundation",
+      "prompt": "Find x on the straight line.",
+      "visual": true,
+      "answer": "115\u00b0.",
+      "reasoning": "Angles on a straight line sum to 180\u00b0: 180\u221265."
+    },
+    {
+      "id": "F3",
+      "tier": "Foundation",
+      "prompt": "Three angles around a point are 90\u00b0, 110\u00b0 and 75\u00b0. Find the fourth.",
+      "visual": false,
+      "answer": "85\u00b0.",
+      "reasoning": "360\u2212(90+110+75)."
+    },
+    {
+      "id": "F4",
+      "tier": "Foundation",
+      "prompt": "Two lines cross. One angle is 115\u00b0. Find x, y and z.",
+      "visual": true,
+      "answer": "x=65\u00b0, y=115\u00b0, z=65\u00b0.",
+      "reasoning": "Vertically opposite angles are equal; adjacent angles sum to 180\u00b0."
+    },
+    {
+      "id": "F5",
+      "tier": "Foundation",
+      "prompt": "In a parallel-line diagram, angle 3 and angle 6 are alternate. If angle 3=68\u00b0, find angle 6 and the co-interior angle 5.",
+      "visual": false,
+      "answer": "Angle 6=68\u00b0; angle 5=112\u00b0.",
+      "reasoning": "Alternate angles are equal; co-interior angles sum to 180\u00b0."
+    },
+    {
+      "id": "F6",
+      "tier": "Foundation",
+      "prompt": "A triangle has angles 35\u00b0 and 85\u00b0. Find the third angle and classify the triangle.",
+      "visual": false,
+      "answer": "60\u00b0; acute scalene.",
+      "reasoning": "180\u221235\u221285; all angles are acute and different."
+    },
+    {
+      "id": "F7",
+      "tier": "Foundation",
+      "prompt": "Name the polygons with 5, 6 and 8 sides.",
+      "visual": false,
+      "answer": "Pentagon, hexagon, octagon.",
+      "reasoning": "Polygon names count sides."
+    },
+    {
+      "id": "F8",
+      "tier": "Foundation",
+      "prompt": "Which construction locates all points equally distant from A and B? A) angle bisector B) perpendicular bisector C) parallel line D) circle centre A.",
+      "visual": false,
+      "answer": "B.",
+      "reasoning": "The perpendicular bisector is the locus of points equidistant from A and B."
+    },
+    {
+      "id": "D1",
+      "tier": "Developing",
+      "prompt": "Use the parallel-line diagram. Find a, b and c.",
+      "visual": true,
+      "answer": "a=65\u00b0, b=65\u00b0, c=115\u00b0.",
+      "reasoning": "Corresponding and alternate angles are equal; co-interior angles sum to 180\u00b0."
+    },
+    {
+      "id": "D2",
+      "tier": "Developing",
+      "prompt": "The angles of a triangle are x, 2x and 3x. Find x and classify the triangle.",
+      "visual": false,
+      "answer": "x=30\u00b0; angles 30\u00b0, 60\u00b0, 90\u00b0; right triangle.",
+      "reasoning": "x+2x+3x=180."
+    },
+    {
+      "id": "D3",
+      "tier": "Developing",
+      "prompt": "Find each base angle x.",
+      "visual": true,
+      "answer": "70\u00b0 each.",
+      "reasoning": "(180\u221240)\u00f72; base angles of an isosceles triangle are equal."
+    },
+    {
+      "id": "D4",
+      "tier": "Developing",
+      "prompt": "An exterior angle of a triangle is 115\u00b0. One opposite interior angle is 48\u00b0. Find the other opposite interior angle and the adjacent interior angle.",
+      "visual": false,
+      "answer": "67\u00b0 and 65\u00b0.",
+      "reasoning": "115\u221248; 180\u2212115."
+    },
+    {
+      "id": "D5",
+      "tier": "Developing",
+      "prompt": "Complete the table: quadrilateral \u2192 __ triangles, __\u00b0; pentagon \u2192 __ triangles, __\u00b0; hexagon \u2192 __ triangles, __\u00b0.",
+      "visual": true,
+      "answer": "Quadrilateral: 2 triangles, 360\u00b0. Pentagon: 3, 540\u00b0. Hexagon: 4, 720\u00b0.",
+      "reasoning": "An n-gon splits into n\u22122 triangles; multiply by 180\u00b0."
+    },
+    {
+      "id": "D6",
+      "tier": "Developing",
+      "prompt": "A regular polygon has exterior angle 45\u00b0. Find the number of sides and each interior angle.",
+      "visual": false,
+      "answer": "8 sides; interior 135\u00b0.",
+      "reasoning": "360\u00f745; 180\u221245."
+    },
+    {
+      "id": "D7",
+      "tier": "Developing",
+      "prompt": "Order the steps for a perpendicular bisector of AB=8 cm: (i) draw arcs from A and B with the same radius; (ii) draw AB; (iii) join the arc intersections; (iv) open the compass to more than half of AB. State the radius condition.",
+      "visual": true,
+      "answer": "ii, iv, i, iii; radius >4 cm.",
+      "reasoning": "The arcs must meet; the line through the intersections is perpendicular and bisects AB."
+    },
+    {
+      "id": "D8",
+      "tier": "Developing",
+      "prompt": "Test whether these triples can form a triangle: 3,4,8; 5,5,9; 6,7,10.",
+      "visual": false,
+      "answer": "No; yes; yes.",
+      "reasoning": "Compare the sum of the two shorter sides with the longest."
+    },
+    {
+      "id": "A1",
+      "tier": "Application",
+      "prompt": "A ramp makes 12\u00b0 with the ground. What angle does it make with a vertical post?",
+      "visual": false,
+      "answer": "78\u00b0.",
+      "reasoning": "Ground and vertical are perpendicular: 90\u221212."
+    },
+    {
+      "id": "A2",
+      "tier": "Application",
+      "prompt": "The truss has equal base angles of 65\u00b0. Find the apex angle, the exterior angle at a base, and classify the triangle.",
+      "visual": true,
+      "answer": "Apex 50\u00b0; exterior 115\u00b0; isosceles.",
+      "reasoning": "180\u221265\u221265; 180\u221265; equal base angles imply equal rafters."
+    },
+    {
+      "id": "A3",
+      "tier": "Application",
+      "prompt": "A scale drawing uses 1:20. The model base is 30 cm. Find the real base in metres.",
+      "visual": false,
+      "answer": "6 m.",
+      "reasoning": "30\u00d720=600 cm=6 m."
+    },
+    {
+      "id": "A4",
+      "tier": "Application",
+      "prompt": "A path must pass through points equally distant from gates A and B. Which construction locates the path? Explain.",
+      "visual": true,
+      "answer": "Perpendicular bisector of AB.",
+      "reasoning": "Every point on the perpendicular bisector is equidistant from A and B."
+    },
+    {
+      "id": "A5",
+      "tier": "Application",
+      "prompt": "A collar is parallel to the base. At a rafter joint it makes a 66\u00b0 co-interior angle. Find the angle on the other side of the collar at that joint.",
+      "visual": false,
+      "answer": "114\u00b0.",
+      "reasoning": "Co-interior angles sum to 180\u00b0."
+    },
+    {
+      "id": "A6",
+      "tier": "Application",
+      "prompt": "The kite is made from two congruent triangles. One triangle has angles 40\u00b0 and 70\u00b0. Find the missing angle and explain why the matching angle in the other triangle is equal.",
+      "visual": true,
+      "answer": "70\u00b0; corresponding angles of congruent triangles are equal.",
+      "reasoning": "180\u221240\u221270; congruence preserves angles."
+    },
+    {
+      "id": "A7",
+      "tier": "Application",
+      "prompt": "A student says a triangle with sides 4 cm, 4 cm and 9 cm is possible because 4+9>4. Correct the reasoning.",
+      "visual": false,
+      "answer": "Impossible: the two shorter sides give 4+4<9.",
+      "reasoning": "The triangle inequality must be checked using the two shorter sides against the longest."
+    },
+    {
+      "id": "R1",
+      "tier": "Reasoning",
+      "prompt": "Can a triangle have two obtuse angles? Explain.",
+      "visual": false,
+      "answer": "No.",
+      "reasoning": "Two obtuse angles already sum to more than 180\u00b0."
+    },
+    {
+      "id": "R2",
+      "tier": "Reasoning",
+      "prompt": "True or false: any two angles between parallel lines are equal. Justify.",
+      "visual": false,
+      "answer": "False.",
+      "reasoning": "Corresponding and alternate angles are equal; co-interior angles are supplementary."
+    },
+    {
+      "id": "R3",
+      "tier": "Reasoning",
+      "prompt": "A student says the exterior angle 110\u00b0 should be added to the opposite interior angles 60\u00b0 and 50\u00b0 to make 180\u00b0. Identify the error and correct it.",
+      "visual": true,
+      "answer": "The exterior angle equals the sum of the two opposite interior angles: 110\u00b0=60\u00b0+50\u00b0. It is not added to them to make 180\u00b0.",
+      "reasoning": "The adjacent interior angle is 70\u00b0; 110\u00b0 and 70\u00b0 are supplementary."
+    },
+    {
+      "id": "R4",
+      "tier": "Reasoning",
+      "prompt": "Complete the missing steps: a heptagon has __ sides, splits into __ triangles, so its interior angle sum is __.",
+      "visual": false,
+      "answer": "7 sides; 5 triangles; 900\u00b0.",
+      "reasoning": "(7\u22122)\u00d7180."
+    },
+    {
+      "id": "R5",
+      "tier": "Reasoning",
+      "prompt": "A student uses a compass radius of 2 cm to bisect a 6 cm segment. The arcs do not meet. Explain why and state a suitable radius.",
+      "visual": false,
+      "answer": "The radius must be greater than half of 6 cm, so greater than 3 cm; 2 cm is too small.",
+      "reasoning": "Equal-radius arcs meet only when the radius exceeds half the segment."
+    },
+    {
+      "id": "R6",
+      "tier": "Reasoning",
+      "prompt": "Use the arcs to explain why sides 5 cm, 8 cm and 13 cm do not form a triangle.",
+      "visual": true,
+      "answer": "They form a degenerate straight line because 5+8=13.",
+      "reasoning": "Equality gives zero area; the two shorter sides must exceed the longest."
+    },
+    {
+      "id": "R7",
+      "tier": "Reasoning",
+      "prompt": "Why should construction arcs be kept visible?",
+      "visual": false,
+      "answer": "They record the equal radii and the defining property, so the construction can be checked.",
+      "reasoning": "A construction is an argument made with instruments."
+    },
+    {
+      "id": "C1",
+      "tier": "Challenge",
+      "prompt": "Two sides of a triangle are 7 cm and 11 cm. The third side is a whole number of centimetres. Find all possible values.",
+      "visual": false,
+      "answer": "5 through 17 cm.",
+      "reasoning": "11\u22127 < x < 11+7, so 4 < x < 18."
+    },
+    {
+      "id": "C2",
+      "tier": "Challenge",
+      "prompt": "Construct an isosceles triangle with equal sides 6 cm and base 8 cm. Explain why the perpendicular bisector of the base passes through the apex.",
+      "visual": false,
+      "answer": "The apex is equidistant from the base endpoints, so it lies on the perpendicular bisector.",
+      "reasoning": "Equal sides place the apex on the locus of points equidistant from the endpoints."
+    },
+    {
+      "id": "C3",
+      "tier": "Challenge",
+      "prompt": "A regular polygon has each interior angle five times its exterior angle. Find the number of sides.",
+      "visual": false,
+      "answer": "12 sides.",
+      "reasoning": "Interior + exterior =180\u00b0; 6e=180\u00b0, e=30\u00b0, n=360\u00f730."
+    },
+    {
+      "id": "C4",
+      "tier": "Challenge",
+      "prompt": "A truss has an 8 m base and equal rafters of length x m. Find the smallest whole-number value of x that makes a triangle.",
+      "visual": true,
+      "answer": "5 m.",
+      "reasoning": "2x>8, so x>4; x=4 gives a degenerate straight line."
+    },
+    {
+      "id": "C5",
+      "tier": "Challenge",
+      "prompt": "Use compass arcs to explain why the two shorter sides of a triangle must together exceed the longest side.",
+      "visual": false,
+      "answer": "If the base is the longest side c, arcs of radius a and b from the endpoints meet above the base only when a+b>c. If a+b=c they meet on the base; if a+b<c they do not meet.",
+      "reasoning": "The arc intersection is the possible apex; no intersection means no triangle."
+    }
+  ]
+}

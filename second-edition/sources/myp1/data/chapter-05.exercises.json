@@ -1,0 +1,1720 @@
+{
+  "chapter": 5,
+  "title": "Percentages and applications",
+  "part": "Part II · Parts and proportions",
+  "hours": 14,
+  "key": "Change",
+  "related": "Quantity, Proportion",
+  "context": "Fairness and development",
+  "soi": "Percentages express change and comparison relative to a whole; identifying that whole makes financial and fairness decisions more reliable.",
+  "engage": "Two shops advertise different discount sequences. Which offer is genuinely cheaper, and what must a price card make clear?",
+  "atl": "In order for a student to think critically, students must identify the reference quantity, test a claim with calculations and explain the limits of a financial decision.",
+  "objectives": [
+    "Convert between fractions, decimals and percentages.",
+    "Find percentages and percentage changes.",
+    "Use multipliers for successive changes.",
+    "Interpret discounts, taxes, costs and profit in a budget."
+  ],
+  "vocabulary": "per cent · reference amount · multiplier · percentage change · discount · tax · revenue · cost · gross profit · net profit",
+  "sections": [
+    {
+      "number": "5.1",
+      "title": "Per cent and equivalent representations",
+      "short": "Per cent",
+      "intent": "Read “per cent” as “out of one hundred”, then connect fractions, decimals and percentages.",
+      "paras": [
+        "A percentage is a ratio with denominator 100. 37% means 37/100 = 0.37. A percentage can exceed 100 when the amount is more than the reference whole.",
+        "To write a fraction as a percentage, find an equivalent fraction out of 100 or multiply by 100%. To write a percentage as a fraction, put it over 100 and simplify."
+      ],
+      "example": {
+        "title": "Connect 3/5, 0.6 and 60%",
+        "problem": "Scale the fraction to hundredths.",
+        "steps": [
+          "3/5 = 60/100.",
+          "60/100 = 0.60 = 60%."
+        ],
+        "answer": "All three name the same proportion."
+      },
+      "warning": "Percentages compare to a stated whole. 50% of different totals need not be equal amounts.",
+      "practice": [
+        {
+          "id": "5.1.1",
+          "tier": "fluency",
+          "prompt": "Write 37%, 5% and 125% as decimals.",
+          "answer": "0.37, 0.05 and 1.25.",
+          "reasoning": "Divide by 100.",
+          "verify": [
+            {
+              "expr": "[37/100,5/100,125/100]",
+              "equals": [
+                0.37,
+                0.05,
+                1.25
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.1.2",
+          "tier": "fluency",
+          "prompt": "Write 3/5, 7/20 and 1/8 as percentages.",
+          "answer": "60%, 35% and 12.5%.",
+          "reasoning": "Multiply each fraction by 100%.",
+          "verify": [
+            {
+              "expr": "[float(F(3,5)*100),float(F(7,20)*100),float(F(1,8)*100)]",
+              "equals": [
+                60,
+                35,
+                12.5
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.1.3",
+          "tier": "fluency",
+          "prompt": "Write 24% and 150% as fractions in simplest form.",
+          "answer": "6/25 and 3/2.",
+          "reasoning": "24/100 and 150/100, then simplify.",
+          "verify": [
+            {
+              "expr": "[F(24,100),F(150,100)]",
+              "equals": [
+                "6/25",
+                "3/2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.1.4",
+          "tier": "reasoning",
+          "prompt": "A student says 0.5% = 0.5. Correct the statement.",
+          "answer": "0.5% = 0.005. 0.5 = 50%.",
+          "reasoning": "Per cent means divide by 100.",
+          "verify": [
+            {
+              "expr": "0.5/100",
+              "equals": 0.005
+            }
+          ]
+        },
+        {
+          "id": "5.1.5",
+          "tier": "application",
+          "prompt": "In a group of 40, 18 choose football. What percentage is that?",
+          "answer": "45%.",
+          "reasoning": "18/40 × 100 = 45.",
+          "verify": [
+            {
+              "expr": "18/40*100",
+              "equals": 45
+            }
+          ]
+        },
+        {
+          "id": "5.1.6",
+          "tier": "challenge",
+          "prompt": "Can a quantity be 120% of a reference amount? Give an example.",
+          "answer": "Yes. If the reference is 50, then 60 is 120% of it.",
+          "reasoning": "Percentages above 100 represent more than the reference whole.",
+          "verify": [
+            {
+              "expr": "60/50*100",
+              "equals": 120
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "percent_grid",
+        "shaded": 37,
+        "caption": "37 of 100 equal squares: 37/100 = 0.37 = 37%."
+      }
+    },
+    {
+      "number": "5.2",
+      "title": "Finding a percentage of a quantity",
+      "short": "Percentage of",
+      "intent": "Translate “of” into multiplication and identify the reference amount first.",
+      "paras": [
+        "p% of A means p/100 × A. Useful benchmarks are 10% (divide by 10), 1% (divide by 100), 50% (halve) and 25% (quarter). Build other percentages from these.",
+        "For 15% of 240, find 10% = 24 and 5% = 12, then add: 36. Or use the multiplier 0.15 × 240 = 36."
+      ],
+      "example": {
+        "title": "Find 12.5% of 320",
+        "problem": "Use a fraction benchmark.",
+        "steps": [
+          "12.5% = 1/8.",
+          "320 ÷ 8 = 40."
+        ],
+        "answer": "40."
+      },
+      "warning": "A percentage is not an amount until its whole is known. 20% of 50 and 20% of 200 are different.",
+      "practice": [
+        {
+          "id": "5.2.1",
+          "tier": "fluency",
+          "prompt": "Find 10%, 25% and 15% of 240.",
+          "answer": "24, 60 and 36.",
+          "reasoning": "Use a tenth, a quarter, and a tenth plus half a tenth.",
+          "verify": [
+            {
+              "expr": "[240*0.1,240*0.25,240*0.15]",
+              "equals": [
+                24,
+                60,
+                36
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.2.2",
+          "tier": "fluency",
+          "prompt": "Find 12.5% of 320 and 1% of 750.",
+          "answer": "40 and 7.5.",
+          "reasoning": "12.5% = 1/8; 1% means divide by 100.",
+          "verify": [
+            {
+              "expr": "[320/8,750/100]",
+              "equals": [
+                40,
+                7.5
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.2.3",
+          "tier": "reasoning",
+          "prompt": "Explain two ways to find 35% of 80.",
+          "answer": "28. Use 0.35×80, or 25% (20) + 10% (8).",
+          "reasoning": "Both methods use the same reference whole.",
+          "verify": [
+            {
+              "expr": "[0.35*80,80/4+80/10]",
+              "equals": [
+                28,
+                28
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.2.4",
+          "tier": "application",
+          "prompt": "A £60 jacket is reduced by 20%. Find the reduction and sale price.",
+          "answer": "Reduction £12; sale price £48.",
+          "reasoning": "20% of 60 is 12; subtract from 60.",
+          "verify": [
+            {
+              "expr": "[60*0.2,60*0.8]",
+              "equals": [
+                12,
+                48
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.2.5",
+          "tier": "reasoning",
+          "prompt": "Is 30% of 50 equal to 50% of 30? Explain.",
+          "answer": "Yes, both are 15. Multiplication can be done in either order.",
+          "reasoning": "30/100×50 = 50/100×30.",
+          "verify": [
+            {
+              "expr": "[0.3*50,0.5*30]",
+              "equals": [
+                15,
+                15
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.2.6",
+          "tier": "challenge",
+          "prompt": "15% of a number is 27. Find the number.",
+          "answer": "180.",
+          "reasoning": "27 ÷ 0.15 = 180.",
+          "verify": [
+            {
+              "expr": "27/0.15",
+              "equals": 180
+            }
+          ]
+        }
+      ],
+      "diagram": null
+    },
+    {
+      "number": "5.3",
+      "title": "Percentage increase and decrease",
+      "short": "Change",
+      "intent": "Find the change from the original amount, or use a single multiplier.",
+      "paras": [
+        "An increase of p% uses multiplier 1 + p/100; a decrease uses 1 − p/100. The original amount is the reference unless the question says otherwise.",
+        "Percentage change = change/original × 100%. A 20% increase followed by a 20% decrease uses 1.2 × 0.8 = 0.96, ending at 96% of the start."
+      ],
+      "example": {
+        "title": "£250 with 20% off, then 10% off",
+        "problem": "Apply each multiplier to the current price.",
+        "steps": [
+          "250 × 0.8 = 200.",
+          "200 × 0.9 = 180.",
+          "A single 30% discount would give 175."
+        ],
+        "answer": "£180; total discount 28%, not 30%."
+      },
+      "warning": "The second percentage uses a new base. Do not add successive percentage changes unless they apply to the same unchanged whole.",
+      "practice": [
+        {
+          "id": "5.3.1",
+          "tier": "fluency",
+          "prompt": "Increase 80 by 15% and decrease 80 by 15%.",
+          "answer": "92 and 68.",
+          "reasoning": "Use multipliers 1.15 and 0.85.",
+          "verify": [
+            {
+              "expr": "[80*1.15,80*0.85]",
+              "equals": [
+                92,
+                68
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.3.2",
+          "tier": "fluency",
+          "prompt": "A price rises from 50 to 60. Find the percentage increase.",
+          "answer": "20%.",
+          "reasoning": "Change 10 divided by original 50, times 100.",
+          "verify": [
+            {
+              "expr": "(60-50)/50*100",
+              "equals": 20
+            }
+          ]
+        },
+        {
+          "id": "5.3.3",
+          "tier": "application",
+          "prompt": "Apply 20% off then 10% off to £250. Compare with 30% off.",
+          "answer": "£180 versus £175; the single 30% offer is £5 cheaper.",
+          "reasoning": "250×0.8×0.9 = 180; 250×0.7 = 175.",
+          "verify": [
+            {
+              "expr": "[250*0.8*0.9,250*0.7,250*0.7-250*0.8*0.9]",
+              "equals": [
+                180,
+                175,
+                -5
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.3.4",
+          "tier": "reasoning",
+          "prompt": "Increase £100 by 20%, then decrease the result by 20%. Explain the final amount.",
+          "answer": "£96. The 20% decrease is £24, larger than the original £20 increase.",
+          "reasoning": "The base changed from 100 to 120.",
+          "verify": [
+            {
+              "expr": "100*1.2*0.8",
+              "equals": 96
+            }
+          ]
+        },
+        {
+          "id": "5.3.5",
+          "tier": "reasoning",
+          "prompt": "Does reversing 10% off and 20% off change the final price?",
+          "answer": "No. 0.9×0.8 = 0.8×0.9 = 0.72.",
+          "reasoning": "Multiplication is commutative.",
+          "verify": [
+            {
+              "expr": "[0.9*0.8,0.8*0.9]",
+              "equals": [
+                0.72,
+                0.72
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.3.6",
+          "tier": "challenge",
+          "prompt": "A value falls by 20%. What percentage increase restores the original?",
+          "answer": "25%.",
+          "reasoning": "From 80 back to 100, the increase is 20/80 = 25%.",
+          "verify": [
+            {
+              "expr": "(1/0.8-1)*100",
+              "equals": 25
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "multiplier_flow",
+        "start": 250,
+        "steps": [
+          [
+            0.8,
+            "20% off"
+          ],
+          [
+            0.9,
+            "10% off"
+          ]
+        ],
+        "caption": "Each multiplier acts on the current amount: 250 → 200 → 180."
+      }
+    },
+    {
+      "number": "5.4",
+      "title": "Discounts, taxes, profit and budgets",
+      "short": "Money decisions",
+      "intent": "Separate revenue, costs and profit; apply percentages to the correct line of a budget.",
+      "paras": [
+        "A discount reduces a marked price. A tax or tip usually increases a stated base. Revenue is money received; cost is money spent; profit is revenue minus all relevant costs.",
+        "For a budget, calculate each line, then add. Whole-item purchases may require rounding up. A lower unit price is not automatically a better decision if extra stock cannot be sold."
+      ],
+      "example": {
+        "title": "A market-stall budget",
+        "problem": "Sell 20 honey jars at £8.10, 36 soaps at £3 and 25 jams at £5.",
+        "steps": [
+          "Revenue = 162 + 108 + 125 = £395.",
+          "Goods cost = 20×6 + 36×2.50 + 25×3.20 = £290.",
+          "Fixed costs = 45 + 18 = £63."
+        ],
+        "answer": "Net profit = 395 − 290 − 63 = £42."
+      },
+      "warning": "Gross profit subtracts goods cost only; net profit also subtracts fixed costs. State which profit you mean.",
+      "practice": [
+        {
+          "id": "5.4.1",
+          "tier": "fluency",
+          "prompt": "A £9 item has 10% off. A £4 item has 25% off. Find both sale prices.",
+          "answer": "£8.10 and £3.00.",
+          "reasoning": "Use multipliers 0.9 and 0.75.",
+          "verify": [
+            {
+              "expr": "[9*0.9,4*0.75]",
+              "equals": [
+                8.1,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.4.2",
+          "tier": "application",
+          "prompt": "A meal costs £40 before 10% tax. Find the total.",
+          "answer": "£44.",
+          "reasoning": "Tax £4; total 40×1.1.",
+          "verify": [
+            {
+              "expr": "40*1.1",
+              "equals": 44
+            }
+          ]
+        },
+        {
+          "id": "5.4.3",
+          "tier": "application",
+          "prompt": "Revenue is £395, goods cost £290 and fixed costs £63. Find gross and net profit.",
+          "answer": "Gross £105; net £42.",
+          "reasoning": "Gross = 395−290; net = 105−63.",
+          "verify": [
+            {
+              "expr": "[395-290,395-290-63]",
+              "equals": [
+                105,
+                42
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.4.4",
+          "tier": "reasoning",
+          "prompt": "A shop buys an item for £6 and sells it for £9. Is the profit 50% of cost or of selling price? Calculate both.",
+          "answer": "£3 profit: 50% of cost, 33 1/3% of selling price.",
+          "reasoning": "The denominator changes the percentage.",
+          "verify": [
+            {
+              "expr": "[3/6*100,float(F(3,9)*100)]",
+              "equals": [
+                50,
+                33.333333333333336
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.4.5",
+          "tier": "application",
+          "prompt": "A group needs 23 jars at £6 each. A supplier offers 30 jars at 10% off the £6 cost. Compare total outlay.",
+          "answer": "23 jars cost £138; 30 at £5.40 cost £162, £24 more.",
+          "reasoning": "The lower unit price requires buying 7 extra jars.",
+          "verify": [
+            {
+              "expr": "[23*6,30*6*0.9,30*6*0.9-23*6]",
+              "equals": [
+                138,
+                162,
+                24
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.4.6",
+          "tier": "challenge",
+          "prompt": "Fixed costs of £63 rise by 8%. With revenue £395 and goods cost £290, find the new net profit.",
+          "answer": "£36.96.",
+          "reasoning": "New fixed costs 63×1.08 = £68.04; net = 395−290−68.04.",
+          "verify": [
+            {
+              "expr": "round(395-290-63*1.08,2)",
+              "equals": 36.96
+            }
+          ]
+        }
+      ],
+      "diagram": null
+    }
+  ],
+  "explore": {
+    "title": "Do two discounts add up?",
+    "instruction": "Criterion B. Use multipliers to test a rule, then explain why it holds for every starting price.",
+    "intro": "Offer A: 20% off, then 10% off. Offer B: 30% off. Test both on £250, £40 and £80.",
+    "table": {
+      "headers": [
+        "Start",
+        "A: 20% then 10%",
+        "B: 30%"
+      ],
+      "rows": [
+        [
+          "£250",
+          "",
+          ""
+        ],
+        [
+          "£40",
+          "",
+          ""
+        ],
+        [
+          "£80",
+          "",
+          ""
+        ]
+      ]
+    },
+    "items": [
+      {
+        "id": "B1",
+        "tier": "investigation",
+        "prompt": "Complete the table for £250, £40 and £80.",
+        "answer": "A: £180, £28.80, £57.60. B: £175, £28, £56.",
+        "reasoning": "Use 0.8×0.9 = 0.72 and 0.7.",
+        "verify": [
+          {
+            "expr": "[[round(p*0.72,2),round(p*0.7,2)] for p in [250,40,80]]",
+            "equals": [
+              [
+                180,
+                175
+              ],
+              [
+                28.8,
+                28
+              ],
+              [
+                57.6,
+                56
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B2",
+        "tier": "investigation",
+        "prompt": "What single discount is equivalent to 20% then 10%? Does order matter?",
+        "answer": "28%; order does not matter because 0.8×0.9 = 0.9×0.8.",
+        "reasoning": "The product of multipliers is unchanged by order.",
+        "verify": [
+          {
+            "expr": "[round((1-0.8*0.9)*100,8),0.8*0.9==0.9*0.8]",
+            "equals": [
+              28,
+              true
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B3",
+        "tier": "investigation",
+        "prompt": "Find the combined discount for 25% then 20%.",
+        "answer": "40%.",
+        "reasoning": "0.75×0.8 = 0.60 remains.",
+        "verify": [
+          {
+            "expr": "round((1-0.75*0.8)*100,8)",
+            "equals": 40
+          }
+        ]
+      },
+      {
+        "id": "B4",
+        "tier": "challenge",
+        "prompt": "Is there a distinct unordered pair of whole-number percentage discounts, other than 20% and 10%, giving exactly 28% off? Justify your answer.",
+        "answer": "Yes: 4% then 25% (or 25% then 4%), since 0.96×0.75 = 0.72. The pair 10% and 20% also works but is excluded by the question.",
+        "reasoning": "Solve (100−a)(100−b)=7200; factor pairs in range include 96×75 and 80×90.",
+        "verify": [
+          {
+            "expr": "[(a,b) for a in range(1,100) for b in range(a,100) if (100-a)*(100-b)==7200]",
+            "equals": [
+              [
+                4,
+                25
+              ],
+              [
+                10,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B5",
+        "tier": "investigation",
+        "prompt": "Write a rule for successive discounts a% and b%, and explain the base.",
+        "answer": "Remaining multiplier (1−a/100)(1−b/100); combined discount is 1 minus this product. The second discount uses the reduced price.",
+        "reasoning": "Multiplying multipliers tracks the changing base.",
+        "verify": [
+          {
+            "expr": "round((1-(1-0.2)*(1-0.1))*100,8)",
+            "equals": 28,
+            "contains": [
+              "reduced"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "application": {
+    "title": "The community market stall",
+    "instruction": "Criterion D. Simulated stall data in pounds sterling. Distinguish revenue, goods cost, fixed cost and profit.",
+    "intro": "Expected sales: 20 honey jars, 36 soaps and 25 jams. Fixed costs are £45 for the stall and £18 for transport.",
+    "table": {
+      "headers": [
+        "Product",
+        "Cost each",
+        "Marked price",
+        "Discount",
+        "Expected sales"
+      ],
+      "rows": [
+        [
+          "Honey",
+          "£6.00",
+          "£9.00",
+          "10%",
+          "20"
+        ],
+        [
+          "Soap",
+          "£2.50",
+          "£4.00",
+          "25%",
+          "36"
+        ],
+        [
+          "Jam",
+          "£3.20",
+          "£5.00",
+          "0%",
+          "25"
+        ]
+      ]
+    },
+    "items": [
+      {
+        "id": "D1",
+        "tier": "application",
+        "prompt": "Find each sale price and profit per item.",
+        "answer": "Honey £8.10, profit £2.10; soap £3.00, profit £0.50; jam £5.00, profit £1.80.",
+        "reasoning": "Apply each discount, then subtract cost.",
+        "verify": [
+          {
+            "expr": "[[round(p*(1-d),2),round(p*(1-d)-c,2)] for p,d,c in [(9,0.1,6),(4,0.25,2.5),(5,0,3.2)]]",
+            "equals": [
+              [
+                8.1,
+                2.1
+              ],
+              [
+                3,
+                0.5
+              ],
+              [
+                5,
+                1.8
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D2",
+        "tier": "application",
+        "prompt": "Find total revenue, goods cost, gross profit and net profit.",
+        "answer": "Revenue £395; goods £290; gross £105; net £42.",
+        "reasoning": "Revenue 162+108+125; goods 120+90+80; fixed 63.",
+        "verify": [
+          {
+            "expr": "[20*8.1+36*3+25*5,20*6+36*2.5+25*3.2,395-290,395-290-63]",
+            "equals": [
+              395,
+              290,
+              105,
+              42
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D3",
+        "tier": "challenge",
+        "prompt": "Next time, buy 15% more of each item, rounding up to whole items. Find the new goods cost.",
+        "answer": "23 honey, 42 soap, 29 jam; cost £335.80.",
+        "reasoning": "Ceil(20×1.15)=23, ceil(36×1.15)=42, ceil(25×1.15)=29.",
+        "verify": [
+          {
+            "expr": "round(sum(ceil(n*1.15)*c for n,c in [(20,6),(36,2.5),(25,3.2)]),2)",
+            "equals": 335.8
+          }
+        ]
+      },
+      {
+        "id": "D4",
+        "tier": "reasoning",
+        "prompt": "Should the group accept 30 honey jars at 10% off cost instead of the 23 jars needed? Give a financial reason.",
+        "answer": "Not on cost alone: £162 versus £138, so £24 more is tied up in stock. Accept only if extra demand or storage justifies it.",
+        "reasoning": "Compare total outlay and risk, not just unit price.",
+        "verify": [
+          {
+            "expr": "[30*6*0.9,23*6]",
+            "equals": [
+              162,
+              138
+            ],
+            "contains": [
+              "stock"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "assessment": {
+    "title": "The fair-price card",
+    "instruction": "Criteria A and C. Design a short price card that shows the original price, discount, final price and one check.",
+    "intro": "Choose one item priced at £80. Compare “25% off” with “20% off, then 5% off”.",
+    "items": [
+      {
+        "id": "S1",
+        "tier": "assessment",
+        "prompt": "Calculate both final prices and the better offer.",
+        "answer": "£60 versus £60.80; 25% off is 80p cheaper.",
+        "reasoning": "80×0.75 = 60; 80×0.8×0.95 = 60.8.",
+        "verify": [
+          {
+            "expr": "[80*0.75,round(80*0.8*0.95,2),round(80*0.8*0.95-80*0.75,2)]",
+            "equals": [
+              60,
+              60.8,
+              0.8
+            ]
+          }
+        ]
+      },
+      {
+        "id": "S2",
+        "tier": "assessment",
+        "prompt": "Write the equivalent single discount for 20% then 5%.",
+        "answer": "24%.",
+        "reasoning": "1−0.8×0.95 = 0.24.",
+        "verify": [
+          {
+            "expr": "round((1-0.8*0.95)*100,8)",
+            "equals": 24
+          }
+        ]
+      },
+      {
+        "id": "S3",
+        "tier": "assessment",
+        "prompt": "Give a one-sentence warning that prevents a common percentage error.",
+        "answer": "Sample: “The second discount applies to the reduced price, so 20% and 5% do not combine to 25%.”",
+        "reasoning": "The warning identifies the changing base.",
+        "verify": [
+          {
+            "expr": "round((1-0.8*0.95)*100,8)",
+            "equals": 24,
+            "contains": [
+              "Sample",
+              "reduced"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "diagrams": [
+    {
+      "kind": "percent_grid",
+      "shaded": 37,
+      "caption": "37 of 100 equal squares: 37/100 = 0.37 = 37%."
+    },
+    {
+      "kind": "multiplier_flow",
+      "start": 250,
+      "steps": [
+        [
+          0.8,
+          "20% off"
+        ],
+        [
+          0.9,
+          "10% off"
+        ]
+      ],
+      "caption": "Each multiplier acts on the current amount: 250 → 200 → 180."
+    }
+  ],
+  "notes": [],
+  "groups": [
+    {
+      "id": "ready",
+      "title": "Ready check",
+      "instruction": "Try these without a calculator. They check the ideas this chapter builds on.",
+      "items": [
+        {
+          "id": "R1",
+          "tier": "ready",
+          "prompt": "Find 10% of 90.",
+          "answer": "9.",
+          "reasoning": "Divide by 10.",
+          "verify": [
+            {
+              "expr": "90/10",
+              "equals": 9
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "tier": "ready",
+          "prompt": "Write 1/2 as a decimal and percentage.",
+          "answer": "0.5 and 50%.",
+          "reasoning": "Half of 100 is 50.",
+          "verify": [
+            {
+              "expr": "[0.5,50]",
+              "equals": [
+                0.5,
+                50
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R3",
+          "tier": "ready",
+          "prompt": "Calculate 0.2×50.",
+          "answer": "10.",
+          "reasoning": "One fifth of 50.",
+          "verify": [
+            {
+              "expr": "0.2*50",
+              "equals": 10
+            }
+          ]
+        },
+        {
+          "id": "R4",
+          "tier": "ready",
+          "prompt": "Find 60−12.",
+          "answer": "48.",
+          "reasoning": "Subtract the reduction.",
+          "verify": [
+            {
+              "expr": "60-12",
+              "equals": 48
+            }
+          ]
+        },
+        {
+          "id": "R5",
+          "tier": "ready",
+          "prompt": "Write 75/100 in simplest form.",
+          "answer": "3/4.",
+          "reasoning": "Divide by 25.",
+          "verify": [
+            {
+              "expr": "F(75,100)",
+              "equals": "3/4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p51",
+      "title": "Practice 5.1 · Per cent",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "5.1.1",
+          "tier": "fluency",
+          "prompt": "Write 37%, 5% and 125% as decimals.",
+          "answer": "0.37, 0.05 and 1.25.",
+          "reasoning": "Divide by 100.",
+          "verify": [
+            {
+              "expr": "[37/100,5/100,125/100]",
+              "equals": [
+                0.37,
+                0.05,
+                1.25
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.1.2",
+          "tier": "fluency",
+          "prompt": "Write 3/5, 7/20 and 1/8 as percentages.",
+          "answer": "60%, 35% and 12.5%.",
+          "reasoning": "Multiply each fraction by 100%.",
+          "verify": [
+            {
+              "expr": "[float(F(3,5)*100),float(F(7,20)*100),float(F(1,8)*100)]",
+              "equals": [
+                60,
+                35,
+                12.5
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.1.3",
+          "tier": "fluency",
+          "prompt": "Write 24% and 150% as fractions in simplest form.",
+          "answer": "6/25 and 3/2.",
+          "reasoning": "24/100 and 150/100, then simplify.",
+          "verify": [
+            {
+              "expr": "[F(24,100),F(150,100)]",
+              "equals": [
+                "6/25",
+                "3/2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.1.4",
+          "tier": "reasoning",
+          "prompt": "A student says 0.5% = 0.5. Correct the statement.",
+          "answer": "0.5% = 0.005. 0.5 = 50%.",
+          "reasoning": "Per cent means divide by 100.",
+          "verify": [
+            {
+              "expr": "0.5/100",
+              "equals": 0.005
+            }
+          ]
+        },
+        {
+          "id": "5.1.5",
+          "tier": "application",
+          "prompt": "In a group of 40, 18 choose football. What percentage is that?",
+          "answer": "45%.",
+          "reasoning": "18/40 × 100 = 45.",
+          "verify": [
+            {
+              "expr": "18/40*100",
+              "equals": 45
+            }
+          ]
+        },
+        {
+          "id": "5.1.6",
+          "tier": "challenge",
+          "prompt": "Can a quantity be 120% of a reference amount? Give an example.",
+          "answer": "Yes. If the reference is 50, then 60 is 120% of it.",
+          "reasoning": "Percentages above 100 represent more than the reference whole.",
+          "verify": [
+            {
+              "expr": "60/50*100",
+              "equals": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p52",
+      "title": "Practice 5.2 · Percentage of",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "5.2.1",
+          "tier": "fluency",
+          "prompt": "Find 10%, 25% and 15% of 240.",
+          "answer": "24, 60 and 36.",
+          "reasoning": "Use a tenth, a quarter, and a tenth plus half a tenth.",
+          "verify": [
+            {
+              "expr": "[240*0.1,240*0.25,240*0.15]",
+              "equals": [
+                24,
+                60,
+                36
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.2.2",
+          "tier": "fluency",
+          "prompt": "Find 12.5% of 320 and 1% of 750.",
+          "answer": "40 and 7.5.",
+          "reasoning": "12.5% = 1/8; 1% means divide by 100.",
+          "verify": [
+            {
+              "expr": "[320/8,750/100]",
+              "equals": [
+                40,
+                7.5
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.2.3",
+          "tier": "reasoning",
+          "prompt": "Explain two ways to find 35% of 80.",
+          "answer": "28. Use 0.35×80, or 25% (20) + 10% (8).",
+          "reasoning": "Both methods use the same reference whole.",
+          "verify": [
+            {
+              "expr": "[0.35*80,80/4+80/10]",
+              "equals": [
+                28,
+                28
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.2.4",
+          "tier": "application",
+          "prompt": "A £60 jacket is reduced by 20%. Find the reduction and sale price.",
+          "answer": "Reduction £12; sale price £48.",
+          "reasoning": "20% of 60 is 12; subtract from 60.",
+          "verify": [
+            {
+              "expr": "[60*0.2,60*0.8]",
+              "equals": [
+                12,
+                48
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.2.5",
+          "tier": "reasoning",
+          "prompt": "Is 30% of 50 equal to 50% of 30? Explain.",
+          "answer": "Yes, both are 15. Multiplication can be done in either order.",
+          "reasoning": "30/100×50 = 50/100×30.",
+          "verify": [
+            {
+              "expr": "[0.3*50,0.5*30]",
+              "equals": [
+                15,
+                15
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.2.6",
+          "tier": "challenge",
+          "prompt": "15% of a number is 27. Find the number.",
+          "answer": "180.",
+          "reasoning": "27 ÷ 0.15 = 180.",
+          "verify": [
+            {
+              "expr": "27/0.15",
+              "equals": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p53",
+      "title": "Practice 5.3 · Change",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "5.3.1",
+          "tier": "fluency",
+          "prompt": "Increase 80 by 15% and decrease 80 by 15%.",
+          "answer": "92 and 68.",
+          "reasoning": "Use multipliers 1.15 and 0.85.",
+          "verify": [
+            {
+              "expr": "[80*1.15,80*0.85]",
+              "equals": [
+                92,
+                68
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.3.2",
+          "tier": "fluency",
+          "prompt": "A price rises from 50 to 60. Find the percentage increase.",
+          "answer": "20%.",
+          "reasoning": "Change 10 divided by original 50, times 100.",
+          "verify": [
+            {
+              "expr": "(60-50)/50*100",
+              "equals": 20
+            }
+          ]
+        },
+        {
+          "id": "5.3.3",
+          "tier": "application",
+          "prompt": "Apply 20% off then 10% off to £250. Compare with 30% off.",
+          "answer": "£180 versus £175; the single 30% offer is £5 cheaper.",
+          "reasoning": "250×0.8×0.9 = 180; 250×0.7 = 175.",
+          "verify": [
+            {
+              "expr": "[250*0.8*0.9,250*0.7,250*0.7-250*0.8*0.9]",
+              "equals": [
+                180,
+                175,
+                -5
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.3.4",
+          "tier": "reasoning",
+          "prompt": "Increase £100 by 20%, then decrease the result by 20%. Explain the final amount.",
+          "answer": "£96. The 20% decrease is £24, larger than the original £20 increase.",
+          "reasoning": "The base changed from 100 to 120.",
+          "verify": [
+            {
+              "expr": "100*1.2*0.8",
+              "equals": 96
+            }
+          ]
+        },
+        {
+          "id": "5.3.5",
+          "tier": "reasoning",
+          "prompt": "Does reversing 10% off and 20% off change the final price?",
+          "answer": "No. 0.9×0.8 = 0.8×0.9 = 0.72.",
+          "reasoning": "Multiplication is commutative.",
+          "verify": [
+            {
+              "expr": "[0.9*0.8,0.8*0.9]",
+              "equals": [
+                0.72,
+                0.72
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.3.6",
+          "tier": "challenge",
+          "prompt": "A value falls by 20%. What percentage increase restores the original?",
+          "answer": "25%.",
+          "reasoning": "From 80 back to 100, the increase is 20/80 = 25%.",
+          "verify": [
+            {
+              "expr": "(1/0.8-1)*100",
+              "equals": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p54",
+      "title": "Practice 5.4 · Money decisions",
+      "instruction": "Show a method or explanation that someone else can check.",
+      "items": [
+        {
+          "id": "5.4.1",
+          "tier": "fluency",
+          "prompt": "A £9 item has 10% off. A £4 item has 25% off. Find both sale prices.",
+          "answer": "£8.10 and £3.00.",
+          "reasoning": "Use multipliers 0.9 and 0.75.",
+          "verify": [
+            {
+              "expr": "[9*0.9,4*0.75]",
+              "equals": [
+                8.1,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.4.2",
+          "tier": "application",
+          "prompt": "A meal costs £40 before 10% tax. Find the total.",
+          "answer": "£44.",
+          "reasoning": "Tax £4; total 40×1.1.",
+          "verify": [
+            {
+              "expr": "40*1.1",
+              "equals": 44
+            }
+          ]
+        },
+        {
+          "id": "5.4.3",
+          "tier": "application",
+          "prompt": "Revenue is £395, goods cost £290 and fixed costs £63. Find gross and net profit.",
+          "answer": "Gross £105; net £42.",
+          "reasoning": "Gross = 395−290; net = 105−63.",
+          "verify": [
+            {
+              "expr": "[395-290,395-290-63]",
+              "equals": [
+                105,
+                42
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.4.4",
+          "tier": "reasoning",
+          "prompt": "A shop buys an item for £6 and sells it for £9. Is the profit 50% of cost or of selling price? Calculate both.",
+          "answer": "£3 profit: 50% of cost, 33 1/3% of selling price.",
+          "reasoning": "The denominator changes the percentage.",
+          "verify": [
+            {
+              "expr": "[3/6*100,float(F(3,9)*100)]",
+              "equals": [
+                50,
+                33.333333333333336
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.4.5",
+          "tier": "application",
+          "prompt": "A group needs 23 jars at £6 each. A supplier offers 30 jars at 10% off the £6 cost. Compare total outlay.",
+          "answer": "23 jars cost £138; 30 at £5.40 cost £162, £24 more.",
+          "reasoning": "The lower unit price requires buying 7 extra jars.",
+          "verify": [
+            {
+              "expr": "[23*6,30*6*0.9,30*6*0.9-23*6]",
+              "equals": [
+                138,
+                162,
+                24
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5.4.6",
+          "tier": "challenge",
+          "prompt": "Fixed costs of £63 rise by 8%. With revenue £395 and goods cost £290, find the new net profit.",
+          "answer": "£36.96.",
+          "reasoning": "New fixed costs 63×1.08 = £68.04; net = 395−290−68.04.",
+          "verify": [
+            {
+              "expr": "round(395-290-63*1.08,2)",
+              "equals": 36.96
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explore",
+      "title": "Exploration · Do two discounts add up?",
+      "instruction": "Criterion B. Use multipliers to test a rule, then explain why it holds for every starting price.",
+      "items": [
+        {
+          "id": "B1",
+          "tier": "investigation",
+          "prompt": "Complete the table for £250, £40 and £80.",
+          "answer": "A: £180, £28.80, £57.60. B: £175, £28, £56.",
+          "reasoning": "Use 0.8×0.9 = 0.72 and 0.7.",
+          "verify": [
+            {
+              "expr": "[[round(p*0.72,2),round(p*0.7,2)] for p in [250,40,80]]",
+              "equals": [
+                [
+                  180,
+                  175
+                ],
+                [
+                  28.8,
+                  28
+                ],
+                [
+                  57.6,
+                  56
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B2",
+          "tier": "investigation",
+          "prompt": "What single discount is equivalent to 20% then 10%? Does order matter?",
+          "answer": "28%; order does not matter because 0.8×0.9 = 0.9×0.8.",
+          "reasoning": "The product of multipliers is unchanged by order.",
+          "verify": [
+            {
+              "expr": "[round((1-0.8*0.9)*100,8),0.8*0.9==0.9*0.8]",
+              "equals": [
+                28,
+                true
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B3",
+          "tier": "investigation",
+          "prompt": "Find the combined discount for 25% then 20%.",
+          "answer": "40%.",
+          "reasoning": "0.75×0.8 = 0.60 remains.",
+          "verify": [
+            {
+              "expr": "round((1-0.75*0.8)*100,8)",
+              "equals": 40
+            }
+          ]
+        },
+        {
+          "id": "B4",
+          "tier": "challenge",
+          "prompt": "Is there a distinct unordered pair of whole-number percentage discounts, other than 20% and 10%, giving exactly 28% off? Justify your answer.",
+          "answer": "Yes: 4% then 25% (or 25% then 4%), since 0.96×0.75 = 0.72. The pair 10% and 20% also works but is excluded by the question.",
+          "reasoning": "Solve (100−a)(100−b)=7200; factor pairs in range include 96×75 and 80×90.",
+          "verify": [
+            {
+              "expr": "[(a,b) for a in range(1,100) for b in range(a,100) if (100-a)*(100-b)==7200]",
+              "equals": [
+                [
+                  4,
+                  25
+                ],
+                [
+                  10,
+                  20
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B5",
+          "tier": "investigation",
+          "prompt": "Write a rule for successive discounts a% and b%, and explain the base.",
+          "answer": "Remaining multiplier (1−a/100)(1−b/100); combined discount is 1 minus this product. The second discount uses the reduced price.",
+          "reasoning": "Multiplying multipliers tracks the changing base.",
+          "verify": [
+            {
+              "expr": "round((1-(1-0.2)*(1-0.1))*100,8)",
+              "equals": 28,
+              "contains": [
+                "reduced"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "check",
+      "title": "Checkpoint",
+      "instruction": "Answer, then explain one result to a partner.",
+      "items": [
+        {
+          "id": "C1",
+          "tier": "check",
+          "prompt": "Find 15% of 200.",
+          "answer": "30.",
+          "reasoning": "10% is 20; 5% is 10.",
+          "verify": [
+            {
+              "expr": "200*0.15",
+              "equals": 30
+            }
+          ]
+        },
+        {
+          "id": "C2",
+          "tier": "check",
+          "prompt": "Increase 50 by 12%.",
+          "answer": "56.",
+          "reasoning": "50×1.12.",
+          "verify": [
+            {
+              "expr": "50*1.12",
+              "equals": 56
+            }
+          ]
+        },
+        {
+          "id": "C3",
+          "tier": "check",
+          "prompt": "A price falls from 80 to 60. Find the percentage decrease.",
+          "answer": "25%.",
+          "reasoning": "20/80×100.",
+          "verify": [
+            {
+              "expr": "(80-60)/80*100",
+              "equals": 25
+            }
+          ]
+        },
+        {
+          "id": "C4",
+          "tier": "check",
+          "prompt": "Find the single multiplier for 10% off then 20% off.",
+          "answer": "0.72, equivalent to 28% off.",
+          "reasoning": "0.9×0.8.",
+          "verify": [
+            {
+              "expr": "0.9*0.8",
+              "equals": 0.72
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "application",
+      "title": "Application · The community market stall",
+      "instruction": "Criterion D. Simulated stall data in pounds sterling. Distinguish revenue, goods cost, fixed cost and profit.",
+      "items": [
+        {
+          "id": "D1",
+          "tier": "application",
+          "prompt": "Find each sale price and profit per item.",
+          "answer": "Honey £8.10, profit £2.10; soap £3.00, profit £0.50; jam £5.00, profit £1.80.",
+          "reasoning": "Apply each discount, then subtract cost.",
+          "verify": [
+            {
+              "expr": "[[round(p*(1-d),2),round(p*(1-d)-c,2)] for p,d,c in [(9,0.1,6),(4,0.25,2.5),(5,0,3.2)]]",
+              "equals": [
+                [
+                  8.1,
+                  2.1
+                ],
+                [
+                  3,
+                  0.5
+                ],
+                [
+                  5,
+                  1.8
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "tier": "application",
+          "prompt": "Find total revenue, goods cost, gross profit and net profit.",
+          "answer": "Revenue £395; goods £290; gross £105; net £42.",
+          "reasoning": "Revenue 162+108+125; goods 120+90+80; fixed 63.",
+          "verify": [
+            {
+              "expr": "[20*8.1+36*3+25*5,20*6+36*2.5+25*3.2,395-290,395-290-63]",
+              "equals": [
+                395,
+                290,
+                105,
+                42
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "tier": "challenge",
+          "prompt": "Next time, buy 15% more of each item, rounding up to whole items. Find the new goods cost.",
+          "answer": "23 honey, 42 soap, 29 jam; cost £335.80.",
+          "reasoning": "Ceil(20×1.15)=23, ceil(36×1.15)=42, ceil(25×1.15)=29.",
+          "verify": [
+            {
+              "expr": "round(sum(ceil(n*1.15)*c for n,c in [(20,6),(36,2.5),(25,3.2)]),2)",
+              "equals": 335.8
+            }
+          ]
+        },
+        {
+          "id": "D4",
+          "tier": "reasoning",
+          "prompt": "Should the group accept 30 honey jars at 10% off cost instead of the 23 jars needed? Give a financial reason.",
+          "answer": "Not on cost alone: £162 versus £138, so £24 more is tied up in stock. Accept only if extra demand or storage justifies it.",
+          "reasoning": "Compare total outlay and risk, not just unit price.",
+          "verify": [
+            {
+              "expr": "[30*6*0.9,23*6]",
+              "equals": [
+                162,
+                138
+              ],
+              "contains": [
+                "stock"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment",
+      "title": "Assessment practice · The fair-price card",
+      "instruction": "Criteria A and C. Design a short price card that shows the original price, discount, final price and one check.",
+      "items": [
+        {
+          "id": "S1",
+          "tier": "assessment",
+          "prompt": "Calculate both final prices and the better offer.",
+          "answer": "£60 versus £60.80; 25% off is 80p cheaper.",
+          "reasoning": "80×0.75 = 60; 80×0.8×0.95 = 60.8.",
+          "verify": [
+            {
+              "expr": "[80*0.75,round(80*0.8*0.95,2),round(80*0.8*0.95-80*0.75,2)]",
+              "equals": [
+                60,
+                60.8,
+                0.8
+              ]
+            }
+          ]
+        },
+        {
+          "id": "S2",
+          "tier": "assessment",
+          "prompt": "Write the equivalent single discount for 20% then 5%.",
+          "answer": "24%.",
+          "reasoning": "1−0.8×0.95 = 0.24.",
+          "verify": [
+            {
+              "expr": "round((1-0.8*0.95)*100,8)",
+              "equals": 24
+            }
+          ]
+        },
+        {
+          "id": "S3",
+          "tier": "assessment",
+          "prompt": "Give a one-sentence warning that prevents a common percentage error.",
+          "answer": "Sample: “The second discount applies to the reduced price, so 20% and 5% do not combine to 25%.”",
+          "reasoning": "The warning identifies the changing base.",
+          "verify": [
+            {
+              "expr": "round((1-0.8*0.95)*100,8)",
+              "equals": 24,
+              "contains": [
+                "Sample",
+                "reduced"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mixed",
+      "title": "Mixed practice 5",
+      "instruction": "Connect ideas. Give units and reasons where requested.",
+      "items": [
+        {
+          "id": "M1",
+          "tier": "fluency",
+          "prompt": "Write 0.08 as a percentage.",
+          "answer": "8%.",
+          "reasoning": "Multiply by 100.",
+          "verify": [
+            {
+              "expr": "0.08*100",
+              "equals": 8
+            }
+          ]
+        },
+        {
+          "id": "M2",
+          "tier": "fluency",
+          "prompt": "Find 35% of 60.",
+          "answer": "21.",
+          "reasoning": "0.35×60.",
+          "verify": [
+            {
+              "expr": "0.35*60",
+              "equals": 21
+            }
+          ]
+        },
+        {
+          "id": "M3",
+          "tier": "fluency",
+          "prompt": "Increase 120 by 5%.",
+          "answer": "126.",
+          "reasoning": "120×1.05.",
+          "verify": [
+            {
+              "expr": "120*1.05",
+              "equals": 126
+            }
+          ]
+        },
+        {
+          "id": "M4",
+          "tier": "application",
+          "prompt": "A £50 item has 30% off. Find the sale price.",
+          "answer": "£35.",
+          "reasoning": "50×0.7.",
+          "verify": [
+            {
+              "expr": "50*0.7",
+              "equals": 35
+            }
+          ]
+        },
+        {
+          "id": "M5",
+          "tier": "reasoning",
+          "prompt": "A value rises from 40 to 50. Find the percentage increase.",
+          "answer": "25%.",
+          "reasoning": "10/40×100.",
+          "verify": [
+            {
+              "expr": "(50-40)/40*100",
+              "equals": 25
+            }
+          ]
+        },
+        {
+          "id": "M6",
+          "tier": "reasoning",
+          "prompt": "Explain why 50% off then 50% off is not free.",
+          "answer": "The final price is 25% of the original: 0.5×0.5 = 0.25.",
+          "reasoning": "The second half is taken from the reduced price.",
+          "verify": [
+            {
+              "expr": "0.5*0.5",
+              "equals": 0.25
+            }
+          ]
+        },
+        {
+          "id": "M7",
+          "tier": "application",
+          "prompt": "Revenue £200, costs £145. Find profit and profit as a percentage of revenue.",
+          "answer": "£55; 27.5%.",
+          "reasoning": "55/200×100.",
+          "verify": [
+            {
+              "expr": "[200-145,55/200*100]",
+              "equals": [
+                55,
+                27.5
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M8",
+          "tier": "challenge",
+          "prompt": "After a 10% increase a price is £88. Find the original price.",
+          "answer": "£80.",
+          "reasoning": "88÷1.1.",
+          "verify": [
+            {
+              "expr": "88/1.1",
+              "equals": 80
+            }
+          ]
+        },
+        {
+          "id": "M9",
+          "tier": "challenge",
+          "prompt": "Find the single multiplier for a 10% increase followed by a 10% decrease.",
+          "answer": "0.99, a 1% decrease.",
+          "reasoning": "1.1×0.9.",
+          "verify": [
+            {
+              "expr": "round(1.1*0.9,8)",
+              "equals": 0.99
+            }
+          ]
+        },
+        {
+          "id": "M10",
+          "tier": "application",
+          "prompt": "A group needs 18 bottles. Packs of 6 cost £4.50. Find the minimum cost.",
+          "answer": "£13.50 for 3 packs.",
+          "reasoning": "18÷6 = 3; 3×4.50.",
+          "verify": [
+            {
+              "expr": "ceil(18/6)*4.5",
+              "equals": 13.5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source": {
+    "file": "MYP-Mathematics-1-Student-Coursebook.pdf",
+    "sha256": "131a3a99d14ae5a7613c7e9da24c540e29029d93a1a360abcc8516835798b3f0",
+    "pages": "95–113; answers 225–227",
+    "scope_note": "Rewritten within the verified first-edition chapter scope and embedded planner. No standalone school curriculum overview was present. New classroom contexts are simulated and labelled."
+  }
+}
