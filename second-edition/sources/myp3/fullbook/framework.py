@@ -165,6 +165,24 @@ GLOSSARY = [
     ("y-intercept", "The value of y where a line crosses the y-axis.", 4),
 ]
 
+REFERENCES = [
+    ("Official IB sources", [
+        "IB Middle Years Programme curriculum — https://www.ibo.org/programmes/middle-years-programme/curriculum/ (page states last updated 19 February 2026). Used for: at least 50 hours per subject per year, global contexts, conceptual understanding, approaches to learning and service as action.",
+        "IB MYP mathematics subject page — https://www.ibo.org/programmes/middle-years-programme/curriculum/mathematics/ Used for: the four branches of MYP mathematics, standard and extended mathematics, and the inquiry and application focus.",
+        "IB MYP projects — https://www.ibo.org/programmes/middle-years-programme/curriculum/myp-projects/ (page states last updated 19 February 2026). Used for: the Community Project completed by students finishing MYP in Year 3 or Year 4, the Personal Project completed by Year 5 students, and the student-centred nature of both.",
+        "IB MYP general regulations (2026 assessment procedures) — https://www.ibo.org/globalassets/new-structure/become-an-ib-school/pdfs/myp-2026-general-regulations.pdf Used for: the required use of MYP objectives and assessment criteria, minimum teaching hours, and Year 5 eAssessment eligibility.",
+    ]),
+    ("Principal content reference", [
+        "Pre-rewrite MYP 3 chapter and subtopic audit (second-edition/audit/chapter-audits/myp3-audit.md with the chapter and subtopic registers). Used as the principal content reference for chapter scope, teaching order and the key concepts, related concepts, global contexts and inquiry questions of each chapter.",
+    ]),
+    ("Author-designed material", [
+        "The chapter sequence, investigations, worked examples, practice sets, assessment tasks, project connections, formula bank, glossary and this edition's editorial framework are author-designed material written to serve the programme requirements above. They are not IB publications and carry no IB endorsement.",
+        "All classroom data sets are simulated and are labelled in the text. No claim in this book relies on unverified real-world data.",
+    ]),
+]
+
+
+# ------------------------------------------------------------------- front matter
 FRONT = dict(
     cover=dict(
         kicker="MYP Mathematics · Student coursebook",
@@ -989,7 +1007,7 @@ dict(
                    ["mass of a grain of rice", "0.000025 kg", "2.5 × 10⁻⁵ kg"],
                    ["height of a room", "3 m", "3 × 10⁰ m"],
                    ["distance to the moon", "384 000 000 m", "3.84 × 10⁸ m"],
-                   ["mass of the Earth", "5 970 000 000 000 000 000 000 000 kg", "5.97 × 10²⁴ kg"],
+                   ["mass of the Earth", "a 25-digit number", "5.97 × 10²⁴ kg"],
                    ["speed of light", "300 000 000 m/s", "3 × 10⁸ m/s"]],
             notice=["Ordering by the exponent gives the correct order immediately.",
                     "The product of the smallest and largest had exponent −5 + 24 = 19.",
@@ -1377,7 +1395,7 @@ dict(
             dict(q="A taxi charges 3.50 dollars plus 1.80 dollars per kilometre. Write the cost as "
                    "an expression and find the cost of a 12 km trip.",
                  vis=F("function_machine", [(0, 3.5), (5, 12.5), (12, 25.1)],
-                       "kilometres → cost", "cost = 1.8k + 3.5"),
+                       "kilometres in, cost out", "cost = 1.8k + 3.5"),
                  reasoning="The cost has a fixed part and a variable part, so the expression is a "
                           "linear recipe in the number of kilometres.",
                  steps=["Let k be the number of kilometres.",
@@ -1429,7 +1447,8 @@ dict(
             "A function can be represented as a mapping diagram, a table of values, a graph or a formula. The four representations describe the same relationship, and each one answers a different question about it.",
         ], examples=[
             dict(q="f(x) = 3x − 4. Find f(5), f(−2) and the value of x for which f(x) = 11.",
-                 vis=F("function_machine", [(-2, -10), (5, 11), (3, 5)], "x → 3x − 4"),
+                 vis=F("function_machine", [(-2, -10), (5, 11), (3, 5)], "3x − 4",
+                  title="the rule applied to x"),
                  reasoning="Substitution evaluates the function, and solving a linear equation "
                           "reverses it.",
                  steps=["f(5) = 3 × 5 − 4 = 11.",
@@ -1439,7 +1458,8 @@ dict(
                  interp="Evaluating and solving are opposite operations on the same relationship."),
             dict(q="A function is defined by the rule 'add 6 then divide by 2'. Write it as a "
                    "formula, state a sensible domain, and find its range.",
-                 vis=F("function_machine", [(0, 3), (4, 5), (10, 8)], "x → (x + 6) ÷ 2"),
+                 vis=F("function_machine", [(0, 3), (4, 5), (10, 8)], "(x + 6) ÷ 2",
+                  title="the rule applied to x"),
                  reasoning="Translating a verbal rule into a formula makes the domain and range "
                           "explicit.",
                  steps=["g(x) = (x + 6)/2.",
@@ -1455,7 +1475,7 @@ dict(
                  "grid, and write the formula. Then change the rule to 'multiply by 3, then "
                  "subtract a number of your choice' and repeat.",
             fig=F("function_machine", [(-2, -7), (-1, -4), (0, -1), (1, 2), (2, 5), (3, 8), (4, 11)],
-                  "x → 3x − 1"),
+                  "3x − 1", title="the rule applied to x"),
             table=[["input x", "3x", "3x − 1", "point on the graph"],
                    ["−2", "−6", "−7", "(−2, −7)"],
                    ["−1", "−3", "−4", "(−1, −4)"],
@@ -2523,10 +2543,10 @@ dict(
                  "number line, then solve −2x + 1 < 2x + 5. Record the effect of the negative "
                  "coefficient in each case.",
             fig=F("number_line", -6, 6, 1, [3, -3], "x < 3 and x > −3", ""),
-            table=[["inequality", "steps", "solution"],
-                   ["2x + 1 < 7", "2x < 6, so x < 3", "x ∈ (−∞, 3)"],
-                   ["−2x + 1 < 7", "−2x < 6, so x > −3", "x ∈ (−3, ∞)"],
-                   ["−2x + 1 < 2x + 5", "−4 < 4x, so x > −1", "x ∈ (−1, ∞)"]],
+            table=[["inequality", "steps", "solution set"],
+                   ["2x + 1 < 7", "2x < 6, so x < 3", "(−∞, 3)"],
+                   ["−2x + 1 < 7", "−2x < 6, so x > −3", "(−3, ∞)"],
+                   ["−2x + 1 < 2x + 5", "−4 < 4x, so x > −1", "(−1, ∞)"]],
             notice=["The first two inequalities differ only in the sign of the coefficient of x.",
                     "That sign change reversed the direction of the solution set.",
                     "Both solution sets are infinite, so an inequality rarely has one answer.",
@@ -3072,11 +3092,11 @@ dict(
                  "twice in the same line and describe what happens.",
             fig=F("transform", [(1, 1), (4, 1), (1, 4)], [(-1, 1), (-4, 1), (-1, 4)],
                   mirror="y", title="object and its reflection"),
-            table=[["reflection", "rule", "image of (3, 2)"],
-                   ["in the y-axis", "(x, y) → (−x, y)", "(−3, 2)"],
-                   ["in the x-axis", "(x, y) → (x, −y)", "(3, −2)"],
-                   ["in the line y = x", "(x, y) → (y, x)", "(2, 3)"],
-                   ["twice in the y-axis", "applied twice", "(3, 2) — back to the start"]],
+            table=[["reflection", "image of (x, y)", "image of (3, 2)"],
+                   ["in the y-axis", "(−x, y)", "(−3, 2)"],
+                   ["in the x-axis", "(x, −y)", "(3, −2)"],
+                   ["in the line y = x", "(y, x)", "(2, 3)"],
+                   ["twice in the y-axis", "(x, y) again", "(3, 2) — back to the start"]],
             notice=["Each reflection changed only the coordinate that measures distance from the "
                     "mirror line.",
                     "Reflecting twice in the same line returned the original point.",
@@ -3127,11 +3147,11 @@ dict(
             fig=F("grid", [(2, 1), (5, 1), (2, 4), (-1, 2), (-1, 5), (-4, 2)],
                   ["", "", "", "", "", ""], xmin=-6, xmax=6, ymin=-6, ymax=6,
                   title="four rotations of one triangle"),
-            table=[["rotation", "rule", "image of (2, 1)"],
-                   ["90° anticlockwise", "(x, y) → (−y, x)", "(−1, 2)"],
-                   ["180°", "(x, y) → (−x, −y)", "(−2, −1)"],
-                   ["270° anticlockwise", "(x, y) → (y, −x)", "(1, −2)"],
-                   ["360°", "a full turn", "(2, 1) — back to the start"]],
+            table=[["rotation", "image of (x, y)", "image of (2, 1)"],
+                   ["90° anticlockwise", "(−y, x)", "(−1, 2)"],
+                   ["180°", "(−x, −y)", "(−2, −1)"],
+                   ["270° anticlockwise", "(y, −x)", "(1, −2)"],
+                   ["360°", "(x, y) again", "(2, 1) — back to the start"]],
             notice=["Each rotation preserved the distances from the centre.",
                     "The side lengths and angles of the triangle never changed.",
                     "A rotation of 360° returned the shape to its starting position.",
@@ -5148,6 +5168,560 @@ dict(
                   ("Mathematics", "Correlation, sampling and base rates."),
                   ("Process", "Find the claim, apply the four checks, then state a verdict."),
                   ("Evidence", "The evaluation and the verdict.")],
+    ),
+),
+])
+
+CHAPTERS.extend([
+dict(
+    num=10, title="Probability, sampling and evidence",
+    key="Logic", related=["Quantity", "Models"],
+    context="Identities and relationships",
+    exploration="Beliefs and values",
+    inquiry=("The logic of probability, and the models built from it, allow a quantity of "
+             "uncertainty to be assigned to an event, and that quantity is what allows a decision "
+             "to be justified rather than guessed."),
+    atl=("Communication",
+         "In order for a student to explain a probabilistic result to an audience, students must "
+         "state the model used, express the result as a fraction, a decimal and a percentage, and "
+         "say plainly what the number does and does not mean."),
+    standfirst="Probability is a number between 0 and 1 that measures uncertainty. It is built "
+               "from a model of the outcomes, and the model must be stated before the number "
+               "means anything.",
+    engage="A medical test for a rare condition is 99% accurate. A patient tests positive. How "
+           "likely is it that the patient actually has the condition? The answer surprises most "
+           "people, and the reason is a base rate.",
+    questions=[("Factual", "How is the probability of an event calculated, and what are the "
+                           "addition and multiplication rules?"),
+               ("Conceptual", "Why does the probability of a combined event depend on whether the "
+                              "events are independent, and how does a base rate change the "
+                              "interpretation of a test result?"),
+               ("Debatable", "Should a decision about a person be made on a probability alone?")],
+    application_lede="These tasks use probability models, sample spaces, compound events, "
+                     "experimental probability, sampling and base rates. State the model behind "
+                     "every number you report.",
+    projects_lede="Uncertainty is part of every decision about people. Use probability to size the "
+                  "uncertainty, and say what the number does not tell you.",
+    sections=[
+        dict(id="10.1", title="Outcomes, events and probability",
+             inquiry_q=("How can the likelihood of an event be assigned a number?") 
+                    , teach=[
+            "The sample space is the set of all possible outcomes of an experiment. An event is a subset of the sample space, and the probability of an event measures how much of the sample space it covers.",
+            "When all outcomes are equally likely, P(event) = number of favourable outcomes ÷ total number of outcomes. This is the definition, and it depends on the assumption of equal likelihood.",
+            "Probabilities lie between 0 and 1, and the probabilities of all outcomes sum to 1. The complement rule P(not A) = 1 − P(A) follows directly.",
+            "The model is a choice. A fair die has six equally likely outcomes; a loaded one does not, and no calculation can detect that. The model must be stated and justified.",
+        ], examples=[
+            dict(q="Two fair dice are thrown. Find the probability that the total is 7.",
+                 vis=F("table", [["first die", "second die values giving 7"],
+                                 ["1", "6"],
+                                 ["2", "5"],
+                                 ["3", "4"],
+                                 ["4", "3"],
+                                 ["5", "2"],
+                                 ["6", "1"]],
+                       caption="Six of the thirty-six outcomes give a total of 7."),
+                 reasoning="There are 36 equally likely outcomes, and six of them give a total of "
+                          "7.",
+                 steps=["The sample space has 6 × 6 = 36 equally likely outcomes.",
+                        "The pairs giving 7 are (1,6), (2,5), (3,4), (4,3), (5,2), (6,1): six of "
+                        "them.",
+                        "P(total is 7) = 6/36 = 1/6."],
+                 ans="1/6",
+                 interp="The assumption of equal likelihood is what makes the count of outcomes "
+                        "enough."),
+            dict(q="A bag holds 3 red and 5 blue counters. Find P(red), P(not red) and P(red or "
+                   "blue).",
+                 vis=F("bar_model", 8, [3, 5], [0], "3 red and 5 blue counters"),
+                 reasoning="The sample space has eight equally likely outcomes, and the events are "
+                          "subsets of it.",
+                 steps=["Total counters = 8.",
+                        "P(red) = 3/8.",
+                        "P(not red) = 1 − 3/8 = 5/8.",
+                        "P(red or blue) = 1, because every counter is one or the other."],
+                 ans="P(red) = 3/8, P(not red) = 5/8, P(red or blue) = 1",
+                 interp="The complement rule is faster than counting the blue counters, and it "
+                        "gives the same answer."),
+        ], inv=dict(
+            task="Roll two dice 60 times and record the total each time. Compute the experimental "
+                 "probability of each total, then compare with the theoretical probabilities from "
+                 "the sample space of 36 outcomes.",
+            fig=F("bar_chart", ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+                  [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1], "outcomes giving each total"),
+            table=[["total", "theoretical P", "experimental P (60 rolls)", "difference"],
+                   ["7", "6/36 = 0.167", "11/60 = 0.183", "0.016"],
+                   ["2", "1/36 = 0.028", "1/60 = 0.017", "0.011"],
+                   ["6", "5/36 = 0.139", "9/60 = 0.150", "0.011"],
+                   ["12", "1/36 = 0.028", "0/60 = 0", "0.028"]],
+            notice=["The experimental probabilities were close to the theoretical ones.",
+                    "No total appeared exactly as often as the theory predicts.",
+                    "The most likely total, 7, was also the most frequent in the experiment.",
+                    "The differences would shrink with more rolls."],
+            obs="Experimental probabilities approach theoretical probabilities as the number of "
+                "trials increases, but they do not match exactly in a small sample.",
+            concl="P(event) = favourable outcomes ÷ total equally likely outcomes, and the "
+                  "experimental probability estimates it with an error that shrinks as the number "
+                  "of trials grows.")),
+        dict(id="10.2", title="Compound events: tables, trees and Venn diagrams",
+             inquiry_q=("How can the probability of a combination of events be found?"), teach=[
+            "Two events are independent when the outcome of one does not affect the other. For independent events, P(A and B) = P(A) × P(B).",
+            "Two events are mutually exclusive when they cannot both happen. For mutually exclusive events, P(A or B) = P(A) + P(B).",
+            "The general addition rule is P(A or B) = P(A) + P(B) − P(A and B), and the subtraction removes the outcomes counted twice.",
+            "Sample-space diagrams, tree diagrams and Venn diagrams are three representations of the same logic. The tree makes independence visible; the Venn diagram makes the overlap visible.",
+        ], examples=[
+            dict(q="A fair coin is tossed and a fair die is rolled. Find P(head and 6).",
+                 vis=F("tree", [["H", "T"], ["1", "2", "3", "4", "5", "6"]],
+                       [["1/2", "1/2"], ["1/6", "1/6", "1/6", "1/6", "1/6", "1/6"]],
+                       "a two-stage experiment"),
+                 reasoning="The two events are independent, so their probabilities multiply.",
+                 steps=["P(head) = 1/2 and P(6) = 1/6.",
+                        "The events are independent, so multiply.",
+                        "P(head and 6) = 1/2 × 1/6 = 1/12."],
+                 ans="1/12",
+                 interp="The tree diagram shows twelve equally likely combined outcomes, one of "
+                        "which is head and 6."),
+            dict(q="A card is drawn from a standard pack. Find P(heart or king).",
+                 vis=F("venn", "hearts", "kings", "king of hearts", "12 cards", "3 cards"),
+                 reasoning="The general addition rule removes the card that is both a heart and a "
+                          "king, which would otherwise be counted twice.",
+                 steps=["P(heart) = 13/52 and P(king) = 4/52.",
+                        "P(heart and king) = 1/52.",
+                        "P(heart or king) = 13/52 + 4/52 − 1/52 = 16/52.",
+                        "= 4/13."],
+                 ans="4/13",
+                 interp="The Venn diagram shows the overlap that the subtraction removes."),
+        ], inv=dict(
+            task="Toss two fair coins 80 times. Record whether the results are the same or "
+                 "different, then compute the experimental probabilities. Compare with the "
+                 "theoretical probabilities from a tree diagram, and repeat with a spinner divided "
+                 "into three equal sectors.",
+            fig=F("tree", [["H", "T"], ["H", "T"]],
+                  [["1/2", "1/2"], ["1/2", "1/2"]],
+                  "two tosses of a fair coin"),
+            table=[["outcome", "theoretical P", "experimental P (80)", "difference"],
+                   ["two heads", "1/4 = 0.25", "22/80 = 0.275", "0.025"],
+                   ["one of each", "1/2 = 0.50", "39/80 = 0.488", "0.012"],
+                   ["two tails", "1/4 = 0.25", "19/80 = 0.238", "0.012"],
+                   ["the same", "1/2 = 0.50", "41/80 = 0.513", "0.013"]],
+            notice=["The experimental probabilities were close to the theoretical ones.",
+                    "'One of each' was the most likely outcome, as the theory predicts.",
+                    "The two orderings, head then tail and tail then head, are separate outcomes.",
+                    "Combining them gives P(the same) = 1/2."],
+            obs="The probabilities of combined outcomes follow from multiplying along the branches "
+                "of a tree and adding across the branches that belong to the event.",
+            concl="For independent events P(A and B) = P(A) × P(B), for mutually exclusive events "
+                  "P(A or B) = P(A) + P(B), and the general rule P(A or B) = P(A) + P(B) − P(A and "
+                  "B) covers every case.")),
+        dict(id="10.3", title="From theory to experiment",
+             inquiry_q=("How does an experimental probability compare with a theoretical one?") 
+                    , teach=[
+            "An experimental probability is a relative frequency: the number of times an event occurred divided by the number of trials. It is an estimate, not a definition.",
+            "The theoretical probability comes from a model of the outcomes. When the model is correct, the experimental probability approaches it as the number of trials grows.",
+            "A large difference between the two is evidence that the model is wrong, not that the mathematics failed. A die that never shows 6 in 60 rolls is probably loaded.",
+            "A small difference is expected. The question is always whether the difference is small enough to be explained by chance, which is the beginning of formal statistical testing.",
+        ], examples=[
+            dict(q="A spinner is divided into four equal sectors. In 200 spins it lands on red 46 "
+                   "times. Estimate P(red) and compare with the theoretical value.",
+                 vis=F("pie", [25, 25, 25, 25], ["red", "blue", "green", "yellow"],
+                       "a four-sector spinner"),
+                 reasoning="The experimental probability is a relative frequency and estimates the "
+                          "theoretical value.",
+                 steps=["Experimental P(red) = 46/200 = 0.23.",
+                        "Theoretical P(red) = 1/4 = 0.25.",
+                        "The difference is 0.02, which is small.",
+                        "So the model of four equal sectors is plausible."],
+                 ans="0.23 experimentally, against 0.25 theoretically",
+                 interp="The small difference is what we expect from a fair spinner, and it does "
+                        "not overturn the model."),
+            dict(q="A coin is tossed 100 times and gives 68 heads. Is the coin fair?",
+                 vis=F("bar_chart", ["heads", "tails"], [68, 32], "100 tosses of a coin"),
+                 reasoning="A large departure from the theoretical value is evidence against the "
+                          "model.",
+                 steps=["Experimental P(head) = 68/100 = 0.68.",
+                        "Theoretical P(head) for a fair coin = 0.5.",
+                        "The difference of 0.18 is large for 100 tosses.",
+                        "So there is evidence that the coin is not fair."],
+                 ans="the coin is probably not fair",
+                 interp="The conclusion is about the model, and it is stated as evidence rather "
+                        "than proof."),
+        ], inv=dict(
+            task="Roll a die 120 times and record the frequency of each face. Compute the "
+                 "experimental probability of each face, compare with 1/6, and decide whether the "
+                 "die behaves fairly. Then pool your results with two other groups.",
+            fig=F("bar_chart", ["1", "2", "3", "4", "5", "6"],
+                  [18, 22, 19, 21, 20, 20], "frequencies from 120 rolls"),
+            table=[["face", "theoretical P", "experimental P", "difference"],
+                   ["1", "1/6 = 0.167", "18/120 = 0.150", "0.017"],
+                   ["2", "1/6 = 0.167", "22/120 = 0.183", "0.016"],
+                   ["3", "1/6 = 0.167", "19/120 = 0.158", "0.009"],
+                   ["4", "1/6 = 0.167", "21/120 = 0.175", "0.008"],
+                   ["5", "1/6 = 0.167", "20/120 = 0.167", "0.000"],
+                   ["6", "1/6 = 0.167", "20/120 = 0.167", "0.000"]],
+            notice=["All six frequencies were close to 20, which is 1/6 of 120.",
+                    "The largest difference was 0.017, which is small.",
+                    "Pooling three groups gave 360 rolls and even closer agreement.",
+                    "The evidence supports a fair die, but does not prove it."],
+            obs="Experimental probabilities from a large number of trials agree closely with the "
+                "theoretical value, and pooling trials improves the agreement.",
+            concl="An experimental probability estimates the theoretical probability, and a large "
+                  "difference between them is evidence that the model is wrong rather than that "
+                  "the calculation failed.")),
+        dict(id="10.4", title="Populations, samples and bias",
+             inquiry_q=("How can a sample be chosen so that it represents a population?") 
+                    , teach=[
+            "A population is the whole group a claim is about, and a sample is the part that is measured. A parameter describes the population and a statistic describes the sample.",
+            "A sample is representative when every member of the population has a known, non-zero chance of being selected. Convenience and self-selected samples fail this test.",
+            "Bias is a systematic error in the selection. It cannot be reduced by taking a larger sample, because a bigger biased sample is still biased.",
+            "A random sample removes selection bias, and a larger sample reduces the variability of the estimate. The two effects are different and both matter.",
+        ], examples=[
+            dict(q="A school of 1 200 students is surveyed by asking the first 40 students who "
+                   "arrive. Explain why the sample is biased.",
+                 vis=F("table", [["check", "finding"],
+                                 ["population", "all 1 200 students"],
+                                 ["sample", "the first 40 arrivals"],
+                                 ["selection", "not random — early arrivals differ"],
+                                 ["effect", "a systematic error that size cannot fix"]],
+                       caption="A convenience sample is biased however large it is."),
+                 reasoning="Students who arrive early differ systematically from those who arrive "
+                          "late, so the sample is not representative.",
+                 steps=["The population is all 1 200 students.",
+                        "The sample is the first 40 arrivals, chosen by convenience.",
+                        "Early arrivals are likely to differ from the rest in ways that matter.",
+                        "So the estimate is biased, and taking 400 instead of 40 would not fix it."],
+                 ans="the sample is a convenience sample and is biased",
+                 interp="Bias is about how the sample was chosen, not how big it is."),
+            dict(q="Explain the difference between a population parameter and a sample statistic.",
+                 vis=F("table", [["term", "describes", "example"],
+                                 ["parameter", "the population", "the mean height of all students"],
+                                 ["statistic", "the sample", "the mean height of the 40 measured"]],
+                       caption="A statistic estimates a parameter."),
+                 reasoning="The parameter is fixed but unknown, and the statistic varies from "
+                          "sample to sample.",
+                 steps=["The parameter describes the whole population and cannot usually be "
+                        "computed.",
+                        "The statistic is computed from the sample and varies between samples.",
+                        "The statistic is used as an estimate of the parameter.",
+                        "The quality of the estimate depends on the sampling method."],
+                 ans="a parameter describes the population; a statistic describes the sample",
+                 interp="Confusing the two is what allows a biased sample to be reported as a "
+                        "fact about everyone."),
+        ], inv=dict(
+            task="Estimate the proportion of students in the school who walk to school, using "
+                 "three samples: the first 20 people you meet, 20 people chosen at random from a "
+                 "list, and everyone in one class. Compare the three estimates.",
+            table=[["sampling method", "sample size", "estimate of the proportion", "biased?"],
+                   ["first 20 met", "20", "0.75", "yes — convenience"],
+                   ["random from a list", "20", "0.45", "no — random selection"],
+                   ["one whole class", "30", "0.40", "yes — one group only"],
+                   ["random from a list", "100", "0.47", "no, and less variable"]],
+            notice=["The convenience sample gave the highest estimate, because it met people "
+                    "arriving on foot.",
+                    "The class sample was not representative of the whole school.",
+                    "The two random samples agreed with each other.",
+                    "Doubling the random sample changed the estimate only slightly."],
+            obs="A random sample gives an estimate that does not depend on how the sample was "
+                "reached, and a larger random sample reduces the variability.",
+            concl="A sample represents a population only when selection is random, and bias from a "
+                  "non-random selection is not reduced by increasing the sample size.")),
+        dict(id="10.5", title="Risk, base rates and decisions",
+             inquiry_q=("How should a probability be interpreted when a decision must be made?") 
+                    , teach=[
+            "The base rate is the frequency of an event in the whole population, before any test or indicator is applied. It is the starting point for interpreting a test result.",
+            "A test with high accuracy can still give mostly false positives when the condition is rare, because the number of healthy people is far larger than the number of affected people.",
+            "The posterior probability is found by comparing the true positives with the total positives, and it depends on the base rate as much as on the accuracy.",
+            "A decision based on a probability must also weigh the consequences. The same probability can justify different actions when the costs of being wrong differ.",
+        ], examples=[
+            dict(q="A condition affects 1 in 1 000 people. A test is 99% accurate. A patient tests "
+                   "positive. Find the probability that the patient has the condition.",
+                 vis=F("tree", [["has it", "does not"], ["positive", "negative"]],
+                       [["0.001", "0.999"], ["0.99", "0.01"]],
+                       "a rare condition and a 99% accurate test"),
+                 reasoning="The posterior probability compares the true positives with all "
+                          "positives, and it is dominated by the base rate.",
+                 steps=["Of 100 000 people, 100 have the condition and 99 900 do not.",
+                        "True positives ≈ 0.99 × 100 = 99.",
+                        "False positives ≈ 0.01 × 99 900 = 999.",
+                        "P(condition given positive) = 99/(99 + 999) ≈ 0.09."],
+                 ans="about 9%",
+                 interp="A 99% accurate test still gives mostly false positives when the condition "
+                        "is rare, because the base rate is tiny."),
+            dict(q="A screening programme for a condition affecting 1 in 20 people uses a test "
+                   "that is 95% accurate. Find the probability that a positive result is correct.",
+                 vis=F("tree", [["has it", "does not"], ["positive", "negative"]],
+                       [["0.05", "0.95"], ["0.95", "0.05"]],
+                       "a common condition and a 95% accurate test"),
+                 reasoning="The same calculation with a different base rate gives a very different "
+                          "answer.",
+                 steps=["Of 1 000 people, 50 have the condition and 950 do not.",
+                        "True positives ≈ 0.95 × 50 = 47.5.",
+                        "False positives ≈ 0.05 × 950 = 47.5.",
+                        "P(condition given positive) = 47.5/95 ≈ 0.5."],
+                 ans="about 50%",
+                 interp="The test is only slightly less accurate, but the base rate is fifty times "
+                        "higher, so the result is far more informative."),
+        ], inv=dict(
+            task="Model a screening test for a condition with a base rate you choose. Build a "
+                 "table for 10 000 people, compute the true and false positives, and find the "
+                 "posterior probability. Then change the base rate and repeat.",
+            fig=F("tree", [["affected", "not affected"], ["positive", "negative"]],
+                  [["0.02", "0.98"], ["0.90", "0.10"]],
+                  "a 2% base rate with a 90% accurate test"),
+            table=[["base rate", "affected in 10 000", "true positives", "false positives",
+                    "P(affected given positive)"],
+                   ["1%", "100", "90", "990", "0.083"],
+                   ["2%", "200", "180", "980", "0.155"],
+                   ["10%", "1 000", "900", "900", "0.5"],
+                   ["50%", "5 000", "4 500", "500", "0.9"]],
+            notice=["The posterior probability rose steadily with the base rate.",
+                    "The number of false positives fell as the base rate rose, even though the "
+                    "test's accuracy never changed.",
+                    "At a 1% base rate, more than nine in ten positive results were false.",
+                    "At a 50% base rate, nine in ten positive results were correct."],
+            obs="The probability that a positive result is correct depends far more on the base "
+                "rate than on the accuracy of the test.",
+            concl="A probability must be interpreted against its base rate, because a rare event "
+                  "produces mostly false positives even with an accurate test — and a decision "
+                  "must weigh the consequences as well as the number.")),
+    ],
+    practice=dict(
+        A=[("10.1.1", "A fair die is rolled. Find P(even).",
+            "1/2", "Three of the six outcomes are even.", "F"),
+           ("10.1.2", "A bag holds 4 red and 6 green counters. Find P(red).",
+            "2/5", "4 out of 10.", "F"),
+           ("10.1.3", "Two fair coins are tossed. Find P(two heads).",
+            "1/4", "One of the four equally likely outcomes.", "F"),
+           ("10.1.4", "Find P(not 6) when a fair die is rolled.",
+            "5/6", "1 − 1/6.", "F"),
+           ("10.1.5", "A card is drawn from a pack. Find P(king).",
+            "1/13", "Four kings in 52 cards.", "F"),
+           ("10.1.6", "A spinner has 8 equal sectors, 3 of them gold. Find P(gold).",
+            "3/8", "Three of the eight sectors.", "F"),
+           ("10.1.7", "Two events are independent with P(A) = 0.4 and P(B) = 0.5. Find P(A and B).",
+            "0.2", "Multiply the probabilities.", "F"),
+           ("10.1.8", "Events A and B are mutually exclusive with P(A) = 0.3 and P(B) = 0.45. Find "
+                     "P(A or B).",
+            "0.75", "Add the probabilities.", "F"),
+           ("10.1.9", "P(A) = 0.6, P(B) = 0.5 and P(A and B) = 0.3. Find P(A or B).",
+            "0.8", "0.6 + 0.5 − 0.3.", "F"),
+           ("10.1.10", "A fair coin is tossed three times. Find P(three heads).",
+            "1/8", "(1/2)³.", "F"),
+           ("10.1.11", "A die is rolled twice. Find P(6 then 6).",
+            "1/36", "The two rolls are independent.", "F"),
+           ("10.1.12", "Explain why the probabilities of all outcomes in a sample space sum to 1.",
+            "Because the outcomes cover the whole sample space exactly once.",
+            "One of the outcomes must occur.", "R")],
+        B=[("10.2.1", "Investigate: in 100 rolls of a die, how many sixes would you expect, and "
+                     "would 20 sixes be surprising?",
+            "About 16.7; 20 sixes is more than expected but not impossible",
+            "The expected value is a mean, not a prediction of one outcome.", "R"),
+           ("10.2.2", "Test the claim: if a coin gives five heads in a row, the next toss is more "
+                     "likely to be tails.",
+            "False — the tosses are independent, so P(tails) is still 1/2.",
+            "Independence means the past does not affect the future.", "R"),
+           ("10.2.3", "Investigate whether two dice can be used to model a spinner with 12 equal "
+                     "sectors.",
+            "Yes — the 36 outcomes of two dice map onto 12 sectors if the dice are fair.",
+            "A model needs equally likely outcomes, which two fair dice provide.", "R"),
+           ("10.2.4", "Generalise: when does P(A and B) = P(A) × P(B)?",
+            "When A and B are independent",
+            "Multiplication is the rule for independent events only.", "R"),
+           ("10.2.5", "Investigate the pattern of P(at least one six) when two dice are rolled.",
+            "1 − (5/6)² = 11/36 ≈ 0.306",
+            "The complement rule is easier than counting the favourable outcomes.", "R"),
+           ("10.2.6", "Test the claim: mutually exclusive events cannot be independent.",
+            "True — if they cannot both happen, knowing one occurred tells you the other did not.",
+            "Independence requires the outcome of one to leave the other unchanged.", "R"),
+           ("10.2.7", "Investigate whether P(A or B) can ever exceed 1.",
+            "No — the general addition rule subtracts the overlap, so the result is at most 1.",
+            "The rule removes the double counting.", "R"),
+           ("10.2.8", "Generalise a rule for the expected number of successes in n trials.",
+            "n × P(success)", "Expectation is linear, so it scales with the number of trials.", "R"),
+           ("10.2.9", "Investigate how the experimental probability changes as the number of "
+                     "trials rises from 10 to 1 000.",
+            "It settles closer to the theoretical value",
+            "The law of large numbers describes the convergence.", "R"),
+           ("10.2.10", "Test the claim: a larger sample always gives a less biased estimate.",
+            "False — bias comes from the selection method, and a larger biased sample stays "
+            "biased.",
+            "Size affects variability, not bias.", "R"),
+           ("10.2.11", "Investigate the effect of a base rate on the number of false positives in "
+                      "1 000 tests with 95% accuracy.",
+            "At a 1% base rate there are about 50 false positives; at 10% about 86.",
+            "The false-positive count depends on the number of unaffected people.", "R")],
+        C=[("10.3.1", "Explain in words what a sample space is.",
+            "The set of all possible outcomes of an experiment.",
+            "An event is a subset of the sample space.", "R"),
+           ("10.3.2", "Explain the difference between independent and mutually exclusive events.",
+            "Independent events do not affect each other; mutually exclusive events cannot both "
+            "happen.",
+            "The two ideas describe different relationships.", "R"),
+           ("10.3.3", "Describe when to use the multiplication rule and when to use the addition "
+                     "rule.",
+            "Multiplication for 'and' with independent events; addition for 'or' with mutually "
+            "exclusive events.",
+            "The wording of the question decides the rule.", "R"),
+           ("10.3.4", "Explain the general addition rule and why it subtracts an overlap.",
+            "P(A or B) = P(A) + P(B) − P(A and B), because the overlap is counted twice.",
+            "The subtraction removes the double counting.", "R"),
+           ("10.3.5", "Describe the difference between experimental and theoretical probability.",
+            "Experimental is a measured relative frequency; theoretical comes from a model of the "
+            "outcomes.",
+            "The experiment estimates the theory.", "R"),
+           ("10.3.6", "Explain why a large difference between experiment and theory suggests the "
+                     "model is wrong.",
+            "Because the theory is a consequence of the model, and a large departure means the "
+            "assumptions fail.",
+            "The evidence is against the model, not the arithmetic.", "R"),
+           ("10.3.7", "Describe two representations of a two-stage probability experiment.",
+            "A tree diagram and a sample-space table.",
+            "Both show the combined outcomes, in different arrangements.", "R"),
+           ("10.3.8", "Explain what bias is and why a larger sample does not remove it.",
+            "A systematic error in the selection, which scales with the sample rather than "
+            "shrinking.",
+            "Bias is about the method, not the size.", "R"),
+           ("10.3.9", "Describe the difference between a population and a sample.",
+            "The population is the whole group a claim is about; the sample is the part measured.",
+            "A statistic from a sample estimates a parameter of the population.", "R"),
+           ("10.3.10", "Explain what a base rate is and why it changes the interpretation of a "
+                      "test result.",
+            "The frequency of the event in the whole population, which sets how many false "
+            "positives occur.",
+            "A rare event produces mostly false positives.", "R"),
+           ("10.3.11", "Describe how to find the probability that a positive test result is "
+                      "correct.",
+            "Compare the true positives with all positives, using the base rate to count each.",
+            "The posterior probability depends on both the accuracy and the base rate.", "R"),
+           ("10.3.12", "Explain why a probability alone is not enough to make a decision.",
+            "Because the consequences of being wrong also matter, and they differ between "
+            "situations.",
+            "A decision weighs the number and the cost of an error.", "R")],
+        D=[("10.4.1", "A factory finds 3 defective items in a sample of 250. Estimate the number "
+                     "of defective items in a batch of 20 000.",
+            "240 items", "3/250 × 20 000.", "A"),
+           ("10.4.2", "A test for a condition affecting 1 in 100 people is 98% accurate. Find the "
+                     "probability that a positive result is correct.",
+            "about 33%", "Of 10 000 people, 98 true positives and about 198 false positives, so "
+                        "98/296 ≈ 0.33.", "A"),
+           ("10.4.3", "A school of 900 students is surveyed by asking every tenth student on a "
+                     "list. Explain whether the sample is representative.",
+            "Yes, if the list is not ordered by a relevant characteristic",
+            "Systematic selection from an unordered list approximates random selection.", "R"),
+           ("10.4.4", "A weather forecast gives a 70% chance of rain. Explain what this means and "
+                     "what it does not mean.",
+            "It means rain is expected on about 7 of 10 similar days; it does not mean it will "
+            "rain for 70% of the day.",
+            "A probability is a long-run frequency, not a duration.", "R"),
+           ("10.4.5", "A lottery ticket has a 1 in 14 000 000 chance of winning. Explain why "
+                     "buying two tickets doubles the chance but does not make winning likely.",
+            "The chance becomes 2 in 14 000 000, which is still about 0.000014%.",
+            "Doubling a very small probability leaves it very small.", "R"),
+           ("10.4.6", "A doctor says a test is 99% accurate and the patient is positive. Explain "
+                     "why the patient may still be unlikely to have the condition.",
+            "Because the base rate of the condition is very low, so most positives are false.",
+            "The base rate dominates the posterior probability.", "R"),
+           ("10.4.7", "A survey of 50 people at a football match finds 80% support a new stadium. "
+                     "Explain why this does not represent the town.",
+            "The sample is self-selected and drawn from one group with an interest.",
+            "Attendance at a match is not a random selection from the town.", "R"),
+           ("10.4.8", "Two vaccines are reported as 90% and 95% effective. Explain what "
+                     "information is missing before they can be compared.",
+            "The base rate of the condition, the size of the trials and the definition of "
+            "effectiveness.",
+            "An effectiveness figure is meaningless without the trial details.", "R"),
+           ("10.4.9", "A quality check finds 5 faults in 400 items. Estimate the number of faults "
+                     "in 10 000 items and state the uncertainty.",
+            "about 125 faults, with an uncertainty of roughly ±20 from the sample size",
+            "The estimate inherits the sampling variability.", "A"),
+           ("10.4.10", "Explain whether a decision to close a school should be based on a "
+                      "projection of a declining roll.",
+            "It should also weigh the base rate, the uncertainty of the projection and the "
+            "consequences for the community.",
+            "A probability is one input to a decision, not the decision.", "R"),
+           ("10.4.11", "A screening test for a condition affecting 5 in 100 people is 90% "
+                      "accurate. Find the probability that a negative result is correct.",
+            "about 99.4%", "Of 1 000 people, 50 are affected and 950 are not. False negatives = 0.1 × 50 = 5 "
+                           "and true negatives = 0.9 × 950 = 855, so P(correct negative) = "
+                           "855/860 ≈ 0.994.", "A"),
+           ("10.4.12", "Explain why a rare but serious risk can justify a different decision "
+                      "from a common but minor one.",
+            "Because the expected cost is the probability multiplied by the consequence, and a "
+            "small probability of a large loss can exceed a large probability of a small one.",
+            "Expected value combines probability and consequence.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The screening decision",
+             text="A condition affects 2 in 100 people. A test is 95% accurate. Find the "
+                  "probability that a person who tests positive actually has the condition, using "
+                  "a table for 10 000 people. Then explain what the result means for a decision "
+                  "about treatment.",
+             note="Criteria A and D · justify the calculation with the base rate and comment on "
+                  "the consequences."),
+        dict(title="A2 · The biased survey",
+             text="A company surveys 60 customers who visited its website and reports that 85% "
+                  "are satisfied. Evaluate the claim using the four checks, and describe the "
+                  "sampling method that would support a claim about all customers.",
+             note="Criteria A and C · apply the checks of source, sample, measure and "
+                  "conclusion."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of logic and the related concepts of quantity and models appear "
+        "in your work?",
+        "How is the global context of identities and relationships, and its exploration of beliefs "
+        "and values, visible in the investigations and examples you completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a probability for making a decision about people, and what "
+        "would you still like to ask?",
+    ],
+    review=dict(
+        ideas=["P(event) = favourable outcomes ÷ total equally likely outcomes.",
+               "Probabilities lie between 0 and 1 and sum to 1 over the sample space.",
+               "P(not A) = 1 − P(A).",
+               "For independent events, P(A and B) = P(A) × P(B).",
+               "P(A or B) = P(A) + P(B) − P(A and B).",
+               "An experimental probability estimates the theoretical probability.",
+               "A representative sample requires random selection; bias is not fixed by size.",
+               "A posterior probability depends on the base rate as much as on the accuracy."],
+        vocab=["sample space", "outcome", "event", "equally likely", "complement", "independent",
+               "mutually exclusive", "tree diagram", "Venn diagram", "experimental probability",
+               "theoretical probability", "population", "sample", "bias", "base rate",
+               "posterior probability"],
+        mixed=[("10.R1", "Find P(not a multiple of 3) when a fair die is rolled."),
+               ("10.R2", "Two independent events have probabilities 0.3 and 0.4. Find P(both)."),
+               ("10.R3", "P(A) = 0.5, P(B) = 0.6, P(A and B) = 0.2. Find P(A or B)."),
+               ("10.R4", "In 200 spins a spinner lands on red 52 times. Estimate P(red)."),
+               ("10.R5", "Explain why a convenience sample is biased."),
+               ("10.R6", "A test is 99% accurate for a condition affecting 1 in 50 people. "
+                        "Explain why a positive result is not certain.")],
+    ),
+    projects=dict(
+        service=[("Community need", "Community members make health and safety decisions from "
+                                    "claims they cannot check."),
+                 ("Mathematical connection", "Probability, base rates and the interpretation of "
+                                             "risk."),
+                 ("Proposed action", "Publish a plain-language explanation of one probability "
+                                     "claim that affects the community, with its base rate."),
+                 ("Expected impact", "A decision is made with the uncertainty stated rather than "
+                                     "hidden."),
+                 ("Student reflection", "Record the claim, the base rate and what you explained.")],
+        community=[("Project idea", "A probability explainer for the school community."),
+                   ("Need", "Screening, vaccination and safety claims are circulated without "
+                            "their base rates."),
+                   ("Research question", "What does one commonly quoted probability actually mean "
+                                         "for a person?"),
+                   ("Mathematics", "Base rates, conditional probability and expected value."),
+                   ("Action or outcome", "A one-page explainer with a worked example."),
+                   ("Beneficiaries", "Students, families and staff."),
+                   ("Evidence", "The explainer and the worked calculation.")],
+        personal=[("Personal interest", "Sport, games or travel planning."),
+                  ("Learning goal", "To interpret a probability in a decision you face."),
+                  ("Product or outcome", "A decision analysis with the probabilities stated."),
+                  ("Mathematics", "Probability, expected value and base rates."),
+                  ("Process", "List the outcomes, assign probabilities, then weigh the "
+                              "consequences."),
+                  ("Evidence", "The analysis and the decision with its justification.")],
     ),
 ),
 ])
