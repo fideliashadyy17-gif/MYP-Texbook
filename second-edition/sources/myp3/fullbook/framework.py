@@ -4572,3 +4572,582 @@ dict(
     ),
 ),
 ])
+
+CHAPTERS.extend([
+dict(
+    num=9, title="Bivariate data, correlation and causation",
+    key="Relationships", related=["Models", "Justification"],
+    context="Fairness and development",
+    exploration="Inequality, difference and inclusion",
+    inquiry=("The relationship between two variables can be modelled by a line of best fit, and "
+             "the justification required to treat that relationship as causal rather than merely "
+             "correlated is what separates a mathematical claim from an unsupported one."),
+    atl=("Research",
+         "In order for a student to evaluate a media claim based on data, students must identify "
+         "the source and the sample, check whether the measure supports the conclusion, and "
+         "present the finding with its uncertainty stated."),
+    standfirst="Bivariate data records two measurements of the same subject. A scatter plot shows "
+               "the association, a line of best fit models it, and the gap between association "
+               "and cause is where most claims fail.",
+    engage="A newspaper reports that children who eat breakfast get better exam grades. The data "
+           "are real and the correlation is real. Does the headline follow from the data?",
+    questions=[("Factual", "What is bivariate data, what does a scatter plot show, and how is a "
+                           "line of best fit drawn?"),
+               ("Conceptual", "Why does a strong correlation not establish causation, and what "
+                              "would be needed to justify a causal claim?"),
+               ("Debatable", "Should a policy decision be based on a correlation that has no "
+                             "established mechanism?")],
+    application_lede="These tasks use scatter plots, correlation, lines of best fit, "
+                     "interpolation and extrapolation. State whether your prediction is "
+                     "interpolation or extrapolation, and what it assumes.",
+    projects_lede="Claims about people are made from data every day. Use correlation carefully, "
+                  "and require a mechanism before accepting a cause.",
+    sections=[
+        dict(id="9.1", title="Two variables at once",
+             inquiry_q=("How can two measurements of the same subject be recorded and displayed "
+                        "together?"), teach=[
+            "Bivariate data records two measurements of the same subject: height and weight, study time and score, age and income. Each subject contributes one pair of values.",
+            "A scatter plot places one variable on each axis and plots one point per subject. It is the only display that keeps the pairing intact.",
+            "A scatter plot shows three things at once: the direction of the association, its strength, and any points that do not follow the pattern.",
+            "A point that lies far from the pattern is an outlier. It should be investigated, not deleted, because it may be the most informative point in the data set.",
+        ], examples=[
+            dict(q="Five students record study hours and test scores: (2, 55), (4, 62), (6, 70), "
+                   "(8, 78), (10, 85). Draw a scatter plot and describe the association.",
+                 vis=F("scatter", [(2, 55), (4, 62), (6, 70), (8, 78), (10, 85)],
+                       "hours", "score", 0, 12, 40, 100,
+                       title="study hours against test score"),
+                 reasoning="A scatter plot of paired values shows the direction and strength of the "
+                          "association in one picture.",
+                 steps=["Label the x-axis with study hours and the y-axis with score.",
+                        "Plot one point per student.",
+                        "The points rise from left to right, so the association is positive.",
+                        "They lie close to a straight line, so the association is strong."],
+                 ans="a positive, strong, approximately linear association",
+                 interp="The plot shows the pattern, but it does not explain it."),
+            dict(q="A data set of height and shoe size contains one point far above the pattern. "
+                   "What should be done with it?",
+                 vis=F("scatter", [(160, 38), (165, 39), (170, 41), (175, 42), (180, 43),
+                                   (150, 36), (185, 46)],
+                       "height (cm)", "shoe size", 140, 200, 34, 50,
+                       title="one point above the pattern"),
+                 reasoning="An outlier may be a recording error or a genuine extreme case, and both "
+                          "are informative.",
+                 steps=["Check the point against the original record.",
+                        "If it is a recording error, correct or remove it and say so.",
+                        "If it is genuine, keep it and note its effect on the line of best fit.",
+                        "Never delete a point simply because it is inconvenient."],
+                 ans="investigate the point, then either correct it or keep it and report its "
+                     "effect",
+                 interp="Silently removing an outlier changes the conclusion without saying so."),
+        ], inv=dict(
+            task="Collect paired data from your class on two variables of your choice (for example "
+                 "height and hand span, or practice minutes and a game score). Draw a scatter "
+                 "plot, describe the association, and identify any point that does not follow the "
+                 "pattern.",
+            fig=F("scatter", [(150, 17), (155, 18), (158, 18.5), (162, 19), (165, 20),
+                              (168, 20.5), (172, 21), (175, 22), (178, 22.5), (145, 16)],
+                  "height (cm)", "hand span (cm)", 140, 185, 15, 24,
+                  title="height against hand span"),
+            table=[["student", "height (cm)", "hand span (cm)", "comment"],
+                   ["1", "150", "17", "follows the pattern"],
+                   ["2", "155", "18", "follows the pattern"],
+                   ["3", "162", "19", "follows the pattern"],
+                   ["4", "168", "20.5", "follows the pattern"],
+                   ["5", "178", "22.5", "follows the pattern"],
+                   ["6", "145", "16", "the smallest of both measures"]],
+            notice=["The points rise from left to right, so the association is positive.",
+                    "The points lie close to a straight line, so the association is strong.",
+                    "No point was far enough from the pattern to call an outlier.",
+                    "The plot keeps the pairing, so each point is one person."],
+            obs="A scatter plot keeps the pairing of the two measurements and shows the direction, "
+                "strength and any exceptions of the association.",
+            concl="Bivariate data is displayed as a scatter plot with one point per subject, and "
+                  "that plot shows the direction and strength of the association and any point "
+                  "that departs from it.")),
+        dict(id="9.2", title="Measuring linear association",
+             inquiry_q=("How can the strength and direction of an association be measured?") 
+                    , teach=[
+            "The direction of an association is positive when both variables rise together and negative when one rises as the other falls.",
+            "The strength is measured by how closely the points follow a straight line. The correlation coefficient r takes values from −1 to 1, with the sign giving the direction and the size giving the strength.",
+            "A value of r near 0 means no linear association, though a strong curved association is still possible. The coefficient measures linear association only.",
+            "Correlation is not causation. Two variables can be strongly correlated because both depend on a third variable, or by coincidence.",
+        ], examples=[
+            dict(q="Four data sets give r = 0.95, r = −0.82, r = 0.12 and r = −0.05. Describe each "
+                   "association.",
+                 vis=F("table", [["r", "direction", "strength", "meaning"],
+                                 ["0.95", "positive", "very strong", "points close to a rising line"],
+                                 ["−0.82", "negative", "strong", "points close to a falling line"],
+                                 ["0.12", "positive", "very weak", "almost no linear pattern"],
+                                 ["−0.05", "negative", "essentially none", "no linear pattern"]],
+                       caption="The sign gives the direction and the size the strength."),
+                 reasoning="The sign of r gives the direction and its absolute value gives the "
+                          "strength of the linear association.",
+                 steps=["r = 0.95: positive and very strong.",
+                        "r = −0.82: negative and strong.",
+                        "r = 0.12: positive but very weak.",
+                        "r = −0.05: essentially no linear association."],
+                 ans="0.95 very strong positive; −0.82 strong negative; 0.12 very weak positive; "
+                     "−0.05 none",
+                 interp="A weak correlation is not a small correlation with the sign removed; it "
+                        "is a different kind of result."),
+            dict(q="A study finds r = 0.88 between ice-cream sales and drowning deaths. What can "
+                   "and cannot be concluded?",
+                 vis=F("scatter", [(10, 2), (15, 4), (20, 6), (25, 9), (30, 12), (35, 16)],
+                       "ice-cream sales", "drownings", 0, 40, 0, 20,
+                       title="a strong correlation with no causal link"),
+                 reasoning="A high correlation measures association only; causation requires a "
+                          "mechanism or a controlled study.",
+                 steps=["The correlation is strong and positive.",
+                        "Both variables rise in summer, so a third variable explains both.",
+                        "There is no mechanism by which ice-cream sales cause drowning.",
+                        "So the correlation cannot support a causal claim."],
+                 ans="a strong positive association exists, but no causal conclusion is justified",
+                 interp="The third variable — warm weather — is the explanation for both."),
+        ], inv=dict(
+            task="Compute the correlation coefficient for a small data set by hand: find the mean "
+                 "of each variable, compute the products of the deviations, and compare with the "
+                 "product of the standard deviations. Then check your value against a calculator.",
+            table=[["x", "y", "x − x̄", "y − ȳ", "product"],
+                   ["1", "2", "−2", "−2.4", "4.8"],
+                   ["2", "3", "−1", "−1.4", "1.4"],
+                   ["3", "6", "0", "1.6", "0"],
+                   ["4", "7", "1", "2.6", "2.6"],
+                   ["5", "8", "2", "3.6", "7.2"]],
+            notice=["The products of the deviations were all positive, which indicates a positive "
+                    "correlation.",
+                    "Their sum was 16, and dividing by the product of the standard deviations gave "
+                    "about 0.99.",
+                    "A calculator gave the same value to two decimal places.",
+                    "The sign of the sum of the products is the sign of the correlation."],
+            obs="The correlation coefficient is built from the products of the deviations, so its "
+                "sign records the direction and its size records the strength.",
+            concl="The correlation coefficient r lies between −1 and 1; its sign gives the "
+                  "direction of the linear association and its magnitude gives the strength, and "
+                  "it says nothing about cause.")),
+        dict(id="9.3", title="The line of best fit",
+             inquiry_q=("How can a line be drawn through a scatter so that it represents the whole "
+                        "data set?"), teach=[
+            "A line of best fit is a straight line drawn through the middle of a scatter so that the points are balanced on either side and the gaps are as small as possible.",
+            "The residuals are the vertical gaps between the points and the line. A good fit has residuals that are small, both positive and negative, and show no pattern.",
+            "The line is drawn by eye through the mean point, then adjusted so that the residuals balance. The exact position depends on the method, but any reasonable line gives similar predictions.",
+            "The line is a model, not the data. It summarises a trend, and every point that departs from it is information the model does not carry — which is why such models are checked against their residuals before they are used.",
+        ], examples=[
+            dict(q="Draw a line of best fit for the data (1, 3), (2, 5), (3, 6), (4, 8), (5, 9) and "
+                   "find its equation.",
+                 vis=F("scatter", [(1, 3), (2, 5), (3, 6), (4, 8), (5, 9)],
+                       "x", "y", 0, 6, 0, 12, line=((0, 1.6), (6, 10.4)),
+                       title="a line of best fit by eye"),
+                 reasoning="A line through the mean point with a gradient estimated from two "
+                          "well-placed points on the line gives a reasonable fit.",
+                 steps=["The mean point is (3, 6).",
+                        "Draw a line through (3, 6) that balances the points.",
+                        "Two points on the line are (0, 1.6) and (6, 10.4).",
+                        "Gradient = (10.4 − 1.6)/6 = 1.47, so y = 1.47x + 1.6."],
+                 ans="y ≈ 1.47x + 1.6",
+                 interp="Another student's line will differ slightly, and both are acceptable if "
+                        "the residuals balance."),
+            dict(q="For the line y = 1.5x + 1.5 and the point (4, 8), find the residual.",
+                 vis=F("scatter", [(4, 8)], "x", "y", 0, 6, 0, 12,
+                       line=((0, 1.5), (6, 10.5)), title="the residual at x = 4"),
+                 reasoning="A residual is the vertical distance from the point to the line.",
+                 steps=["Predicted y at x = 4 is 1.5 × 4 + 1.5 = 7.5.",
+                        "Actual y is 8.",
+                        "Residual = 8 − 7.5 = 0.5."],
+                 ans="0.5",
+                 interp="A positive residual means the point lies above the line."),
+        ], inv=dict(
+            task="Draw a line of best fit for the data (1, 4), (2, 6), (3, 5), (4, 9), (5, 8), "
+                 "(6, 11). Compute the residuals for every point, and adjust your line so that "
+                 "they balance.",
+            fig=F("scatter", [(1, 4), (2, 6), (3, 5), (4, 9), (5, 8), (6, 11)],
+                  "x", "y", 0, 7, 0, 13, line=((0, 2.8), (7, 10.6)),
+                  title="a line with balanced residuals"),
+            table=[["x", "y", "predicted", "residual"],
+                   ["1", "4", "3.9", "0.1"],
+                   ["2", "6", "5.1", "0.9"],
+                   ["3", "5", "6.3", "−1.3"],
+                   ["4", "9", "7.5", "1.5"],
+                   ["5", "8", "8.7", "−0.7"],
+                   ["6", "11", "9.9", "1.1"]],
+            notice=["The residuals were both positive and negative.",
+                    "Their sum was about 1.6, close to zero, so the line was reasonably balanced.",
+                    "The largest residual was 1.5, at x = 4.",
+                    "Moving the line up would make the positive residuals larger and the negative "
+                    "ones smaller."],
+            obs="A line of best fit is positioned so that the residuals are small and their sum is "
+                "close to zero.",
+            concl="A line of best fit passes through the middle of a scatter so that the residuals "
+                  "are small, balanced and patternless, and it is a model of the trend rather than "
+                  "a record of the data.")),
+        dict(id="9.4", title="Correlation, cause and consequence",
+             inquiry_q=("When does a correlation justify a causal claim?"), teach=[
+            "A causal claim says that changing one variable produces a change in the other. A correlation only says that the two variables move together.",
+            "Three explanations compete whenever a correlation is found: A causes B, B causes A, or a third variable C causes both. A correlation alone cannot distinguish them.",
+            "A mechanism is a plausible account of how the cause produces the effect. Without one, a causal claim is a hypothesis rather than a conclusion.",
+            "A controlled study, in which the suspected cause is varied while other factors are held constant, is the standard way to test a causal claim. Correlation is not a substitute for it.",
+        ], examples=[
+            dict(q="Data show a strong correlation between the number of firefighters at a fire "
+                   "and the damage caused. Should the number of firefighters be reduced to limit "
+                   "damage?",
+                 vis=F("table", [["explanation", "assessment"],
+                                 ["firefighters cause damage", "no mechanism"],
+                                 ["damage causes more firefighters", "plausible — big fires need more "
+                                  "crew"],
+                                 ["a third variable causes both", "yes — the size of the fire"]],
+                       caption="Three explanations compete whenever a correlation is found."),
+                 reasoning="The third explanation is the correct one, and acting on the correlation "
+                          "would be a mistake.",
+                 steps=["The correlation is strong and positive.",
+                        "Firefighters do not cause damage; there is no mechanism.",
+                        "The size of the fire causes both the number of firefighters and the "
+                        "damage.",
+                        "So reducing the crew would not reduce the damage."],
+                 ans="no — the size of the fire is the common cause",
+                 interp="This is a case where acting on a correlation would make things worse."),
+            dict(q="A trial gives one group a new study method and another group the old method, "
+                   "with students assigned at random. The first group scores higher. What can be "
+                   "concluded?",
+                 vis=F("table", [["feature", "present?", "what it supports"],
+                                 ["random assignment", "yes", "the groups are comparable"],
+                                 ["a varied factor", "yes", "the study method was changed"],
+                                 ["held-constant factors", "yes", "the trial controls them"],
+                                 ["a mechanism", "plausible", "the method changes practice time"]],
+                       caption="A controlled study supports a causal claim."),
+                 reasoning="Random assignment makes the groups comparable, so a difference in "
+                          "outcome can be attributed to the varied factor.",
+                 steps=["The groups were assigned at random, so they are comparable.",
+                        "Only the study method differed.",
+                        "The outcome differed, so the method is a plausible cause.",
+                        "The conclusion is a supported causal claim, not merely a correlation."],
+                 ans="the study method is a supported cause of the higher scores",
+                 interp="The support comes from the design of the study, not from the size of the "
+                        "correlation."),
+        ], inv=dict(
+            task="Find three real claims based on correlation: one where a mechanism is plausible, "
+                 "one where a common cause is likely, and one where the direction may be reversed. "
+                 "For each, state which explanation the data can and cannot distinguish.",
+            table=[["claim", "correlation", "competing explanations", "what the data can support"],
+                   ["exercise and mood", "positive", "exercise improves mood; mood drives exercise; "
+                    "a third factor", "an association only"],
+                   ["shoe size and reading ability in children", "positive", "age causes both", "an "
+                    "association, explained by age"],
+                   ["smoking and lung disease", "positive", "smoking causes disease; disease changes "
+                    "behaviour", "a causal claim, supported by controlled studies"]],
+            notice=["Two of the three claims had an obvious common cause.",
+                    "Only the third had a mechanism and controlled-study support.",
+                    "In every case the correlation itself was the same kind of evidence.",
+                    "The difference was in the justification, not in the number."],
+            obs="A correlation can be explained by A causing B, B causing A, or a common cause, and "
+                "the data alone cannot distinguish them.",
+            concl="A causal claim requires a mechanism and evidence from a controlled study; a "
+                  "correlation, however strong, supports only an association.")),
+        dict(id="9.5", title="Reading claims critically",
+             inquiry_q=("How can a statistical claim be checked before it is believed?"), teach=[
+            "A statistical claim rests on four things: the source, the sample, the measure and the conclusion. Each can be checked independently.",
+            "The sample must represent the population the claim is about. A sample that is self-selected, small, or drawn from one group cannot support a claim about everyone.",
+            "The measure must be the one the conclusion needs. An average hides the spread, and a percentage without a base rate is easy to misread.",
+            "A claim that cannot be checked is not necessarily false, but it is not evidence either. Reporting the uncertainty is part of making the claim honestly.",
+        ], examples=[
+            dict(q="A website reports that 90% of users recommend a product, based on 200 replies "
+                   "out of 50 000 customers. What is wrong with the claim?",
+                 vis=F("table", [["check", "finding"],
+                                 ["source", "the seller's own website"],
+                                 ["sample", "200 of 50 000, self-selected"],
+                                 ["measure", "a percentage without the base rate"],
+                                 ["conclusion", "not supported by the sample"]],
+                       caption="Four checks, four problems."),
+                 reasoning="A self-selected sample from a biased source cannot support a claim "
+                          "about the whole population.",
+                 steps=["The respondents chose to reply, so they are not representative.",
+                        "200 of 50 000 is 0.4% of the customers.",
+                        "The source has an interest in the result.",
+                        "So the claim is not supported by the evidence given."],
+                 ans="the sample is self-selected, small and drawn from a biased source",
+                 interp="The percentage is arithmetically correct and still does not support the "
+                        "conclusion."),
+            dict(q="A hospital reports a higher death rate than a neighbouring hospital. What "
+                   "should be checked before concluding that its care is worse?",
+                 vis=F("table", [["check", "question to ask"],
+                                 ["case mix", "are the patients equally ill?"],
+                                 ["base rate", "how many patients in each hospital?"],
+                                 ["measure", "is the same definition of death used?"],
+                                 ["time period", "do the two periods match?"]],
+                       caption="Comparing rates requires comparable populations."),
+                 reasoning="A rate comparison is only meaningful when the populations and the "
+                          "definitions are comparable.",
+                 steps=["Check the case mix: a hospital treating more serious cases will have a "
+                        "higher rate.",
+                        "Check the base rate: small hospitals have unstable rates.",
+                        "Check the definitions and the time period.",
+                        "Only then is a comparison of the two rates meaningful."],
+                 ans="case mix, base rate, definitions and time period must all be comparable",
+                 interp="The same arithmetic on different populations gives different answers."),
+        ], inv=dict(
+            task="Take three claims from news or advertising. For each, complete the four checks — "
+                 "source, sample, measure, conclusion — and decide what the data actually support.",
+            table=[["claim", "source", "sample", "measure", "what the data support"],
+                   ["'9 out of 10 dentists recommend'", "a manufacturer", "not stated", "a "
+                    "percentage without a base rate", "very little without the sample details"],
+                   ["'test scores rose 5%'", "a school", "all students", "a percentage of an "
+                    "unknown base", "an increase, if the base is stated"],
+                   ["'most people support the change'", "a poll", "1 000 respondents", "a "
+                    "percentage with a margin", "an estimate with a stated uncertainty"]],
+            notice=["Only the third claim stated its sample and its uncertainty.",
+                    "The first claim could not be checked at all.",
+                    "The second claim needed the base rate before it meant anything.",
+                    "The four checks were enough to rank the three claims."],
+            obs="A statistical claim can be checked by examining its source, its sample, its "
+                "measure and its conclusion separately.",
+            concl="A claim is only as strong as the sample that supports it and the measure that "
+                  "expresses it, and the four checks of source, sample, measure and conclusion "
+                  "reveal what the data actually support.")),
+    ],
+    practice=dict(
+        A=[("9.1.1", "State what a scatter plot displays.",
+            "One point per subject, showing the pairing of two measurements",
+            "A scatter plot keeps the pairing intact.", "R"),
+           ("9.1.2", "Describe the association when r = −0.9.",
+            "Strong and negative", "The sign gives the direction and the magnitude the strength.", "F"),
+           ("9.1.3", "Find the residual when the predicted value is 12 and the actual value is 15.",
+            "3", "Residual = actual − predicted.", "F"),
+           ("9.1.4", "State the range of possible values of the correlation coefficient.",
+            "−1 to 1", "The coefficient is bounded by −1 and 1.", "F"),
+           ("9.1.5", "A line of best fit is y = 2x + 3. Predict y when x = 7.",
+            "17", "Substitute x = 7.", "F"),
+           ("9.1.6", "Describe the association when the points lie close to a rising line.",
+            "Strong and positive", "Closeness to a line gives the strength and the direction of "
+                                   "the slope gives the sign.", "F"),
+           ("9.1.7", "A line of best fit passes through (3, 6) and (7, 14). Find its gradient.",
+            "2", "(14 − 6)/(7 − 3) = 2.", "F"),
+           ("9.1.8", "State the difference between interpolation and extrapolation on a scatter "
+                     "plot.",
+            "Interpolation predicts inside the range of the data; extrapolation predicts outside "
+            "it.",
+            "Only interpolation is supported by the data.", "R"),
+           ("9.1.9", "A data set has mean x = 4 and mean y = 10. Where does the line of best fit "
+                     "pass?",
+            "Through the point (4, 10)",
+            "A line of best fit passes through the mean point.", "F"),
+           ("9.1.10", "Find the predicted value from y = 0.5x + 4 when x = 12.",
+            "10", "0.5 × 12 + 4.", "F"),
+           ("9.1.11", "Describe what an outlier is in a scatter plot.",
+            "A point that lies far from the pattern of the other points",
+            "An outlier departs from the general trend.", "R"),
+           ("9.1.12", "State the units of a correlation coefficient.",
+            "It has no units", "The coefficient is a dimensionless number.", "R")],
+        B=[("9.2.1", "Investigate: can a strong correlation exist between two variables with no "
+                     "causal link? Give an example.",
+            "Yes — ice-cream sales and drowning deaths, both driven by warm weather.",
+            "A common cause produces correlation without causation.", "R"),
+           ("9.2.2", "Test the claim: a correlation of 0.1 means there is no relationship at all.",
+            "False — there may be a strong curved relationship that the coefficient does not "
+            "measure.",
+            "The coefficient measures linear association only.", "R"),
+           ("9.2.3", "Investigate whether reversing the two axes of a scatter plot changes the "
+                     "correlation coefficient.",
+            "No — the coefficient is the same in both directions.",
+            "Correlation is symmetric in the two variables.", "R"),
+           ("9.2.4", "Generalise: what does the sum of the residuals of a line of best fit equal, "
+                     "approximately?",
+            "Zero", "A line of best fit balances the residuals.", "R"),
+           ("9.2.5", "Investigate whether an outlier always changes the line of best fit a great "
+                     "deal.",
+            "No — an outlier far from the other points in x has a large effect, while one that "
+            "follows the trend has little.",
+            "The effect depends on the leverage of the point.", "R"),
+           ("9.2.6", "Test the claim: two variables that are correlated must have a linear "
+                     "relationship.",
+            "False — the relationship may be curved while the linear correlation is weak.",
+            "The coefficient measures linear association only.", "R"),
+           ("9.2.7", "Investigate the pattern of residuals for a good line of best fit.",
+            "They are small, both positive and negative, and show no pattern.",
+            "A pattern in the residuals means the model is wrong.", "R"),
+           ("9.2.8", "Generalise: what extra evidence is needed to turn a correlation into a "
+                     "causal claim?",
+            "A mechanism and evidence from a controlled study",
+            "Correlation alone cannot distinguish the three explanations.", "R"),
+           ("9.2.9", "Investigate whether a larger sample always gives a stronger correlation.",
+            "No — sample size affects the reliability of the estimate, not its value.",
+            "A large sample can show a weak correlation precisely.", "R"),
+           ("9.2.10", "Test the claim: a percentage claim is meaningful without its base rate.",
+            "False — 90% of 10 is very different from 90% of 10 000.",
+            "A percentage needs the size of the group it came from.", "R"),
+           ("9.2.11", "Investigate the effect of a single outlier on the mean of a small data set.",
+            "One extreme value can move the mean a long way, while the median moves much less.",
+            "The mean is not resistant to outliers.", "R")],
+        C=[("9.3.1", "Explain in words what bivariate data are.",
+            "Two measurements recorded for the same subject, forming one pair per subject.",
+            "The pairing is what distinguishes bivariate from univariate data.", "R"),
+           ("9.3.2", "Explain the difference between correlation and causation.",
+            "Correlation is an observed association; causation is a claim that changing one "
+            "variable produces the change in the other.",
+            "Only a controlled study with a mechanism supports a causal claim.", "R"),
+           ("9.3.3", "Describe what a residual measures and what a pattern of residuals means.",
+            "The vertical gap between a point and the line; a pattern means the linear model is "
+            "wrong.",
+            "Residuals diagnose the model.", "R"),
+           ("9.3.4", "Explain why a line of best fit passes through the mean point.",
+            "Because the residuals must balance, and balancing them forces the line through the "
+            "centre of the data.",
+            "The mean point is the balance point of the scatter.", "R"),
+           ("9.3.5", "Describe the three explanations that compete when a correlation is found.",
+            "A causes B, B causes A, or a third variable causes both.",
+            "A correlation alone cannot distinguish them.", "R"),
+           ("9.3.6", "Explain why extrapolation is riskier than interpolation.",
+            "Because the trend that held inside the data may not continue outside it.",
+            "The model is only supported where there are data.", "R"),
+           ("9.3.7", "Describe how you would check a claim based on a survey.",
+            "Check the source, the sample, the measure and the conclusion.",
+            "Each can be examined independently.", "R"),
+           ("9.3.8", "Explain why a self-selected sample cannot support a claim about a whole "
+                     "population.",
+            "Because the people who chose to respond differ systematically from those who did "
+            "not.",
+            "The sample is not representative.", "R"),
+           ("9.3.9", "Describe what a base rate is and why it matters.",
+            "The frequency of an event in the whole population, needed to interpret a test result "
+            "or a percentage.",
+            "Without the base rate a percentage cannot be interpreted.", "R"),
+           ("9.3.10", "Explain why a strong correlation with no mechanism is not evidence of "
+                      "cause.",
+            "Because the correlation may come from a common cause or from coincidence.",
+            "A mechanism is part of a causal claim.", "R"),
+           ("9.3.11", "Describe two representations of the same bivariate data set and what each "
+                      "shows.",
+            "A table shows the exact pairs; a scatter plot shows the pattern.",
+            "Different representations answer different questions.", "R"),
+           ("9.3.12", "Explain why reporting the uncertainty of an estimate is part of an honest "
+                      "claim.",
+            "Because the estimate is a range, and reporting a single value hides that.",
+            "Uncertainty is information about the claim.", "R")],
+        D=[("9.4.1", "A line of best fit for study hours against score is y = 4.2x + 38. Predict "
+                     "the score for 6 hours of study and comment on the prediction.",
+            "63.2", "4.2 × 6 + 38 = 63.2, and this is interpolation if 6 hours is inside the "
+                    "collected range.", "A"),
+           ("9.4.2", "A data set of 12 students gives a correlation of 0.91 between practice "
+                     "minutes and game score. A parent claims practice causes the score. Evaluate "
+                     "the claim.",
+            "The correlation supports an association, but a causal claim needs a controlled study "
+            "and a mechanism.",
+            "Correlation is not causation.", "R"),
+           ("9.4.3", "A newspaper reports that school breakfast programmes raise test scores, "
+                     "citing a correlation. What further evidence would be needed?",
+            "A controlled study in which the programme is varied and other factors held constant.",
+            "Only a controlled study supports a causal claim.", "R"),
+           ("9.4.4", "Two neighbourhoods have average incomes differing by 30%. Explain why this "
+                     "does not by itself show unfairness.",
+            "Because the averages hide the spread, the sample sizes and the definitions used.",
+            "A comparison of averages needs comparable populations.", "R"),
+           ("9.4.5", "A poll of 1 200 people finds 54% support with a margin of 3%. Explain what "
+                     "the result means.",
+            "The true support is estimated to lie between 51% and 57%.",
+            "The margin of error gives the uncertainty of the estimate.", "R"),
+           ("9.4.6", "A scatter plot of height against age for children aged 5 to 15 is strongly "
+                     "positive. A claim is made that growing taller makes children older. "
+                     "Evaluate.",
+            "The claim reverses the direction: age causes height, not the other way round.",
+            "The direction of a causal claim is part of what the data must support.", "R"),
+           ("9.4.7", "A company reports that 95% of customers are satisfied, from 40 replies out "
+                     "of 8 000. Explain why the claim is weak.",
+            "The sample is self-selected and tiny, and the source has an interest.",
+            "The claim fails the source and sample checks.", "R"),
+           ("9.4.8", "A line of best fit predicts a plant height of 42 cm at week 10, but the "
+                     "collected data stop at week 6. Explain the status of the prediction.",
+            "It is an extrapolation and assumes the growth rate continues unchanged.",
+            "Extrapolation is an assumption, not a result.", "R"),
+           ("9.4.9", "A study finds a correlation of 0.6 between screen time and sleep quality in "
+                     "1 500 teenagers. Explain what the data support and what they do not.",
+            "They support a moderate negative association across a large sample, but not a causal "
+            "claim in either direction.",
+            "Sample size supports reliability, not causation.", "R"),
+           ("9.4.10", "A hospital has a higher death rate than a neighbour. List four checks "
+                      "before concluding that its care is worse.",
+            "Case mix, base rate, definitions and time period",
+            "A rate comparison needs comparable populations.", "R"),
+           ("9.4.11", "A school claims that a new reading scheme raised scores, comparing this "
+                      "year's class with last year's. Explain what is missing.",
+            "A control group and random assignment, so that other changes are ruled out.",
+            "A before-and-after comparison cannot rule out other causes.", "R"),
+           ("9.4.12", "Explain why an average income figure can hide inequality within a "
+                      "community.",
+            "Because the average says nothing about the spread of the distribution.",
+            "Two communities with the same average can have very different distributions.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The breakfast claim",
+             text="A school finds a correlation of 0.72 between eating breakfast and test scores "
+                  "among 90 students. The head teacher proposes making breakfast compulsory. "
+                  "Analyse the claim: state what the correlation supports, identify the competing "
+                  "explanations, and describe the study that would be needed to justify the "
+                  "policy.",
+             note="Criteria A and D · justify your analysis with the three competing "
+                  "explanations."),
+        dict(title="A2 · The village water use",
+             text="Data for ten households give household size and weekly water use in litres. "
+                  "Draw a scatter plot, draw a line of best fit, find its equation, predict the "
+                  "use for a household of 7, and state whether the prediction is interpolation or "
+                  "extrapolation.",
+             note="Criteria A and C · label the axes with units and state the status of your "
+                  "prediction."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of relationships and the related concepts of models and "
+        "justification appear in your work?",
+        "How is the global context of fairness and development, and its exploration of inequality, "
+        "difference and inclusion, visible in the investigations and examples you completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a correlation for making a decision about people, and what "
+        "would you still like to ask?",
+    ],
+    review=dict(
+        ideas=["Bivariate data records two measurements of the same subject.",
+               "A scatter plot shows direction, strength and outliers.",
+               "The correlation coefficient r lies between −1 and 1 and measures linear "
+               "association only.",
+               "A line of best fit balances the residuals and passes through the mean point.",
+               "A residual is the vertical gap between a point and the line.",
+               "Interpolation is inside the range of the data; extrapolation is outside it.",
+               "A causal claim needs a mechanism and a controlled study.",
+               "A claim is checked through its source, sample, measure and conclusion."],
+        vocab=["bivariate data", "scatter plot", "association", "correlation coefficient",
+               "line of best fit", "residual", "outlier", "interpolation", "extrapolation",
+               "causation", "common cause", "base rate", "sample", "population"],
+        mixed=[("9.R1", "Describe the association when r = 0.85."),
+               ("9.R2", "Find the residual when the predicted value is 20 and the actual is 17."),
+               ("9.R3", "A line of best fit is y = 3x + 2. Predict y when x = 9."),
+               ("9.R4", "Explain why correlation does not imply causation."),
+               ("9.R5", "A line passes through (2, 5) and (6, 13). Find its equation."),
+               ("9.R6", "List the four checks for a statistical claim.")],
+    ),
+    projects=dict(
+        service=[("Community need", "Community decisions are made from claims that nobody has "
+                                    "checked."),
+                 ("Mathematical connection", "Correlation, causation and the critical reading of "
+                                             "claims."),
+                 ("Proposed action", "Check one public claim about the community and publish the "
+                                     "four checks with the verdict."),
+                 ("Expected impact", "A decision is made from a claim that has been examined "
+                                     "rather than repeated."),
+                 ("Student reflection", "Record the claim, the checks and what you found.")],
+        community=[("Project idea", "A claims audit for the school community."),
+                   ("Need", "Posters and announcements make statistical claims without sources."),
+                   ("Research question", "Which claims made in the school are supported by "
+                                         "checkable evidence?"),
+                   ("Mathematics", "Sampling, correlation, base rates and margin of error."),
+                   ("Action or outcome", "A short published audit of three claims."),
+                   ("Beneficiaries", "Everyone who reads the school's announcements."),
+                   ("Evidence", "The audit sheet with the four checks for each claim.")],
+        personal=[("Personal interest", "Sport, gaming or health."),
+                  ("Learning goal", "To check a claim about something you care about before "
+                                    "acting on it."),
+                  ("Product or outcome", "A one-page evaluation of a personal claim."),
+                  ("Mathematics", "Correlation, sampling and base rates."),
+                  ("Process", "Find the claim, apply the four checks, then state a verdict."),
+                  ("Evidence", "The evaluation and the verdict.")],
+    ),
+),
+])
