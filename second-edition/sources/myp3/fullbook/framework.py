@@ -1862,3 +1862,541 @@ dict(
     ),
 ),
 ])
+
+CHAPTERS.extend([
+dict(
+    num=4, title="Linear relationships and graphs",
+    key="Relationships", related=["Change", "Representation"],
+    context="Fairness and development",
+    exploration="Distribution of resources",
+    inquiry=("The relationship between two quantities that change at a constant rate can be "
+             "represented as a straight line, and the equivalence between a table, a graph and an "
+             "equation allows that relationship to be used to predict — and the prediction to be "
+             "judged."),
+    atl=("Communication",
+         "In order for a student to explain a linear relationship to an audience, students must "
+         "choose a representation that suits that audience, label the axes and the units, and "
+         "justify the choice of representation in the explanation."),
+    standfirst="Two quantities that change together at a constant rate produce a straight line. "
+               "The gradient is the rate of change and the intercept is where the line starts.",
+    engage="A village water point is filled by two pumps. Pump A delivers 40 litres a minute and "
+           "pump B delivers 55 litres a minute, starting 5 minutes later. Both graphs are straight "
+           "lines. When does B overtake A, and what does the crossing point mean?",
+    questions=[("Factual", "How do you find the gradient of a line from two points, and how do "
+                           "you write its equation?"),
+               ("Conceptual", "Why does a constant rate of change always produce a straight-line "
+                              "graph, and what does the y-intercept represent in a real situation?"),
+               ("Debatable", "Is a prediction made by extending a straight-line graph beyond the "
+                             "collected data a mathematical fact or an assumption?")],
+    application_lede="These tasks use tables, gradients, equations of lines, direct proportion and "
+                     "linear models. State the representation you used and why it was the "
+                     "clearest one.",
+    projects_lede="Resource distribution is a linear-modelling problem. Use the model to plan, and "
+                  "say plainly where the model stops being valid.",
+    sections=[
+        dict(id="4.1", title="From tables to straight lines",
+             inquiry_q=("How can a table of paired values show that a relationship is linear, and "
+                        "what does the graph add?"), teach=[
+            "A table of values lists matching input and output pairs. If the output changes by the same amount whenever the input changes by the same amount, the relationship is linear.",
+            "Plotting the pairs turns the table into a picture. Linear pairs give points that lie on a straight line, which is the visual signature of a constant rate of change, and this graph representation answers questions the table cannot.",
+            "The graph shows what the table hides: where the line crosses the axes, how steep it is, and where it crosses another line. Those features are answers to questions the table cannot answer directly.",
+            "Reading a graph back into a table is the reverse process, and it is the standard way to check that a plotted line has been drawn correctly.",
+        ], examples=[
+            dict(q="A car hire costs 30 dollars plus 12 dollars a day. Complete the table for 0 to "
+                   "5 days and plot the points.",
+                 vis=F("table", [["days d", "cost C = 30 + 12d"],
+                                 ["0", "30"], ["1", "42"], ["2", "54"], ["3", "66"], ["4", "78"],
+                                 ["5", "90"]],
+                       caption="A constant difference of 12 means the points lie on a straight line."),
+                 reasoning="Each extra day adds the same 12 dollars, so the first differences are "
+                          "constant and the graph is linear.",
+                 steps=["C = 30 + 12d.",
+                        "d = 0 gives 30, and each further day adds 12.",
+                        "The values are 30, 42, 54, 66, 78, 90.",
+                        "Plotted, they lie on a straight line with gradient 12."],
+                 ans="the costs are 30, 42, 54, 66, 78 and 90 dollars",
+                 interp="The constant difference of 12 dollars is the rate of change, and it becomes "
+                        "the gradient of the line."),
+            dict(q="A table gives (1, 5), (2, 8), (3, 11), (4, 14). Is the relationship linear, "
+                   "and what is its rule?",
+                 vis=F("grid", [(1, 5), (2, 8), (3, 11), (4, 14)], ["A", "B", "C", "D"],
+                       xmin=0, xmax=5, ymin=0, ymax=16, title="four points, one line"),
+                 reasoning="Constant first differences mean a linear rule, and the rule can be read "
+                          "from the pattern of the values.",
+                 steps=["The x-values rise by 1 and the y-values rise by 3 each time.",
+                        "A constant difference of 3 means the relationship is linear.",
+                        "The rule is y = 3x + b, and x = 1 gives y = 5, so b = 2.",
+                        "The rule is y = 3x + 2."],
+                 ans="yes, the relationship is linear and the rule is y = 3x + 2",
+                 interp="The graph confirms the rule: four points that lie on one line cannot "
+                        "disagree."),
+        ], inv=dict(
+            task="Measure how far a toy car travels when it is released from ramps of different "
+                 "heights. Record five pairs of values, plot them, and decide whether the "
+                 "relationship is linear. Then use your graph to predict the distance for a ramp "
+                 "height you did not test.",
+            fig=F("grid", [(2, 18), (4, 31), (6, 45), (8, 58), (10, 72)],
+                  ["", "", "", "", ""], xmin=0, xmax=12, ymin=0, ymax=80,
+                  title="ramp height against distance"),
+            table=[["ramp height (cm)", "distance (cm)", "first difference"],
+                   ["2", "18", "—"],
+                   ["4", "31", "13"],
+                   ["6", "45", "14"],
+                   ["8", "58", "13"],
+                   ["10", "72", "14"]],
+            notice=["The first differences are all close to 13 or 14 cm.",
+                    "The points nearly lie on a straight line, so the relationship is approximately "
+                    "linear.",
+                    "Small departures from the line come from measurement error, not from a "
+                    "different rule.",
+                    "Extending the line predicts about 86 cm for a 12 cm ramp."],
+            obs="A roughly constant difference gives points that nearly lie on a straight line, "
+                "which is what real measurement data looks like.",
+            concl="A relationship is linear when equal changes in the input give equal changes in "
+                  "the output, and the graph of such a relationship is a straight line whose "
+                  "gradient is that equal change.")),
+        dict(id="4.2", title="Gradient as a rate of change",
+             inquiry_q=("What does the gradient of a line measure, and how is it computed from two "
+                        "points?"), teach=[
+            "The gradient of a line is the change in y divided by the change in x between any two points on it: m = (y₂ − y₁)/(x₂ − x₁). It is a rate of change.",
+            "A positive gradient rises left to right, a negative gradient falls, and a zero gradient is horizontal. A vertical line has no gradient at all.",
+            "Because the gradient is the same between any two points on a line, it is enough to know two points to draw the line. This is what makes the equation of a line a complete description of it.",
+            "Parallel lines have equal gradients. Perpendicular lines have gradients whose product is −1, which is met formally in MYP 4.",
+        ], examples=[
+            dict(q="Find the gradient of the line through (2, 7) and (6, 19), and interpret it.",
+                 vis=F("grid", [(2, 7), (6, 19)], ["(2, 7)", "(6, 19)"],
+                       xmin=0, xmax=8, ymin=0, ymax=22, title="gradient = 12 ÷ 4 = 3"),
+                 reasoning="The gradient is the change in y over the change in x, which is the rate "
+                          "of change of y with respect to x.",
+                 steps=["Change in y = 19 − 7 = 12.",
+                        "Change in x = 6 − 2 = 4.",
+                        "Gradient = 12/4 = 3.",
+                        "So y rises by 3 units for every 1 unit rise in x."],
+                 ans="the gradient is 3",
+                 interp="The gradient is the rate of change, so it answers 'how fast' rather than "
+                        "'how much'."),
+            dict(q="A line falls from (0, 20) to (8, 4). Find its gradient and say what it means.",
+                 vis=F("grid", [(0, 20), (8, 4)], ["(0, 20)", "(8, 4)"],
+                       xmin=0, xmax=10, ymin=0, ymax=24, title="gradient = −16 ÷ 8 = −2"),
+                 reasoning="A falling line has a negative gradient, because the change in y is "
+                          "negative.",
+                 steps=["Change in y = 4 − 20 = −16.",
+                        "Change in x = 8 − 0 = 8.",
+                        "Gradient = −16/8 = −2.",
+                        "So y falls by 2 units for every 1 unit rise in x."],
+                 ans="the gradient is −2",
+                 interp="The negative sign is the direction of the change, and the 2 is its size."),
+        ], inv=dict(
+            task="Draw four lines on the same grid: one rising, one falling, one horizontal and one "
+                 "vertical. For each, choose two points and compute the gradient. Then draw a line "
+                 "parallel to the rising line and check whether the gradients agree.",
+            fig=F("grid", [(0, 0), (4, 8), (4, 0), (0, 8)], ["", "", "", ""],
+                  xmin=0, xmax=10, ymin=0, ymax=10, title="four lines, four gradients"),
+            table=[["line", "two points", "change in y", "change in x", "gradient"],
+                   ["rising", "(0, 0) and (4, 8)", "8", "4", "2"],
+                   ["falling", "(0, 8) and (4, 0)", "−8", "4", "−2"],
+                   ["horizontal", "(0, 4) and (8, 4)", "0", "8", "0"],
+                   ["vertical", "(4, 0) and (4, 8)", "8", "0", "undefined"]],
+            notice=["The rising line has a positive gradient and the falling line a negative one.",
+                    "The horizontal line has gradient 0 because y does not change.",
+                    "The vertical line has no gradient, because the change in x is zero.",
+                    "The parallel line through (0, 1) and (4, 9) also has gradient 2."],
+            obs="The gradient is the change in y per unit change in x, and it is the same for every "
+                "pair of points on a line.",
+            concl="The gradient of a line is m = (y₂ − y₁)/(x₂ − x₁) for any two points on it, and "
+                  "it measures the rate of change of y with respect to x.")),
+        dict(id="4.3", title="The equation of a straight line",
+             inquiry_q=("How can one equation describe every point on a line?"), teach=[
+            "The equation y = mx + c describes every point on the line with gradient m and y-intercept c. Substituting any x gives the matching y, and every such pair lies on the line.",
+            "The gradient-intercept form is the fastest to write when both are known. The point-gradient form y − y₁ = m(x − x₁) is faster when a point and the gradient are known.",
+            "Two lines with the same gradient never meet. Two lines with different gradients meet exactly once, and the intersection is the point that satisfies both equations.",
+            "The equation is a complete description of the line: drawing it, reading a value from it, and finding where it crosses another line are all consequences of the same two numbers m and c.",
+        ], examples=[
+            dict(q="Find the equation of the line through (1, 4) with gradient −3.",
+                 vis=F("grid", [(1, 4), (2, 1), (0, 7)], ["(1, 4)", "(2, 1)", "(0, 7)"],
+                       xmin=-1, xmax=4, ymin=0, ymax=9, title="y = −3x + 7"),
+                 reasoning="One point and the gradient are enough to fix the line, and substituting "
+                          "the point into y = mx + c gives c.",
+                 steps=["m = −3, so the equation is y = −3x + c.",
+                        "The point (1, 4) lies on it: 4 = −3 × 1 + c.",
+                        "So c = 7.",
+                        "The equation is y = −3x + 7."],
+                 ans="y = −3x + 7",
+                 interp="The intercept 7 is where the line meets the y-axis, and it is the value of "
+                        "y when x = 0."),
+            dict(q="Find where y = 2x + 1 meets y = −x + 7.",
+                 vis=F("grid", [(0, 1), (2, 5), (0, 7), (3, 4)], ["", "", "", ""],
+                       xmin=-1, xmax=5, ymin=0, ymax=9, title="the crossing point (2, 5)"),
+                 reasoning="The intersection satisfies both equations, so solving them together "
+                          "gives the point.",
+                 steps=["2x + 1 = −x + 7.",
+                        "3x = 6, so x = 2.",
+                        "y = 2 × 2 + 1 = 5.",
+                        "The lines meet at (2, 5)."],
+                 ans="the lines meet at (2, 5)",
+                 interp="The crossing point is the only pair of values that makes both equations "
+                        "true at once."),
+        ], inv=dict(
+            task="Take the equation y = 2x − 1. Build a table for x from −2 to 3, plot the points, "
+                 "then change the equation to y = 2x + 3 and repeat on the same grid. Then try "
+                 "y = −2x − 1. Record what changed and what stayed the same.",
+            fig=F("grid", [(-2, -5), (-1, -3), (0, -1), (1, 1), (2, 3), (3, 5)],
+                  ["", "", "", "", "", ""], xmin=-3, xmax=4, ymin=-7, ymax=7,
+                  title="three lines from one gradient"),
+            table=[["equation", "gradient", "y-intercept", "what it shows"],
+                   ["y = 2x − 1", "2", "−1", "rises, crossing y at −1"],
+                   ["y = 2x + 3", "2", "3", "rises the same way, crossing y at 3"],
+                   ["y = −2x − 1", "−2", "−1", "falls, crossing y at −1"]],
+            notice=["Changing the constant moved the line up without changing its steepness.",
+                    "Changing the sign of the gradient turned the rising line into a falling one.",
+                    "The first two lines are parallel because their gradients are equal.",
+                    "All three lines pass through the y-axis at the value of c."],
+            obs="The gradient fixes the steepness and the constant fixes the position, and together "
+                "they fix the line completely.",
+            concl="Every straight line has an equation y = mx + c, where m is the gradient and c is "
+                  "the y-intercept, and two numbers describe the whole line.")),
+        dict(id="4.4", title="Direct proportion",
+             inquiry_q=("When does a linear relationship pass through the origin, and what does "
+                        "that mean?"), teach=[
+            "Direct proportion is the relationship y = kx for a constant k. Its graph is a straight line through the origin, because y = 0 when x = 0.",
+            "The constant k is the constant of proportionality. It is the gradient of the line and the value of y when x = 1.",
+            "A relationship is directly proportional exactly when y/x is the same for every pair. This is the test, and it is a division rather than a subtraction.",
+            "Direct proportion is the model behind unit prices, exchange rates and scale drawings. Recognising it saves work, because one pair of values gives the whole rule.",
+        ], examples=[
+            dict(q="5 identical books weigh 11 kg. Find the weight of 8 books, and the constant of "
+                   "proportionality.",
+                 vis=F("double_number_line", ["5", "10"], ["11", "22"], "books : mass"),
+                 reasoning="Identical items give a directly proportional relationship, so one unit "
+                          "value scales to any number of items.",
+                 steps=["Mass per book = 11 ÷ 5 = 2.2 kg.",
+                        "So the constant of proportionality is 2.2.",
+                        "For 8 books: 8 × 2.2 = 17.6 kg."],
+                 ans="17.6 kg, with a constant of proportionality of 2.2 kg per book",
+                 interp="The graph of mass against number of books is a straight line through the "
+                        "origin."),
+            dict(q="Is y directly proportional to x for the pairs (3, 15), (5, 25), (7, 34)?",
+                 vis=F("table", [["x", "y", "y ÷ x"],
+                                 ["3", "15", "5"],
+                                 ["5", "25", "5"],
+                                 ["7", "34", "4.857…"]],
+                       caption="Direct proportion needs the same quotient every time."),
+                 reasoning="The quotient y/x must be constant, and one different value is enough to "
+                          "rule the relationship out.",
+                 steps=["15 ÷ 3 = 5.",
+                        "25 ÷ 5 = 5.",
+                        "34 ÷ 7 = 4.857…, which is not 5.",
+                        "The quotients are not all equal, so y is not directly proportional to x."],
+                 ans="no, because the quotients are not constant",
+                 interp="The third pair breaks the pattern, which is why the test is a check on "
+                        "every pair."),
+        ], inv=dict(
+            task="Collect five pairs of values for a directly proportional relationship of your own "
+                 "(for example, cost against number of identical items). Compute y ÷ x for each "
+                 "pair, plot the points, and check whether the line passes through the origin. Then "
+                 "add a fixed delivery charge and repeat.",
+            fig=F("grid", [(1, 4), (2, 8), (3, 12), (4, 16), (5, 20)], ["", "", "", "", ""],
+                  xmin=0, xmax=6, ymin=0, ymax=24, title="a line through the origin"),
+            table=[["x", "y (no charge)", "y ÷ x", "y (with 5 charge)", "y ÷ x"],
+                   ["1", "4", "4", "9", "9"],
+                   ["2", "8", "4", "13", "6.5"],
+                   ["3", "12", "4", "17", "5.67"],
+                   ["4", "16", "4", "21", "5.25"],
+                   ["5", "20", "4", "25", "5"]],
+            notice=["Without the charge, y ÷ x was 4 every time and the line passed through the "
+                    "origin.",
+                    "With the charge, the quotients changed and the line crossed the y-axis at 5.",
+                    "The fixed charge is a y-intercept, and it is what breaks direct proportion.",
+                    "Both graphs are straight lines, so both are linear — but only one is "
+                    "proportional."],
+            obs="Direct proportion is the special linear case where the quotient y/x is constant, "
+                "which is why the line passes through the origin.",
+            concl="y is directly proportional to x exactly when y = kx for a constant k, which "
+                  "means the graph passes through the origin and the quotient y/x is the same for "
+                  "every pair.")),
+        dict(id="4.5", title="Linear models, prediction and fairness",
+             inquiry_q=("When is a prediction from a linear model justified, and when is it not?"), teach=[
+            "A linear model assumes that the rate of change stays constant. Inside the range of the collected data this is often reasonable; outside it, the model is an assumption.",
+            "Interpolation is prediction inside the range of the data, and it is usually safe. Extrapolation is prediction outside it, and it can fail badly.",
+            "A good model states its assumptions. 'Cost = 30 + 12 per day for the first 10 days' is honest; 'cost = 30 + 12 per day' is not, because eventually the rate changes.",
+            "Linear models are used to allocate resources, and a model that fits one group can be unfair to another. Checking the residuals — the gaps between the model and the data — is part of judging the model.",
+        ], examples=[
+            dict(q="A plumber's call-out cost follows C = 45 + 38h for the first 4 hours. Predict "
+                   "the cost of a 3-hour job, and comment on using the model for 12 hours.",
+                 vis=F("table", [["hours", "model cost", "comment"],
+                                 ["1", "83", "inside the range"],
+                                 ["3", "159", "inside the range"],
+                                 ["4", "197", "the last reliable value"],
+                                 ["12", "501", "outside the stated range"]],
+                       caption="A model is reliable only where its assumptions hold."),
+                 reasoning="Interpolation inside the stated range is reliable; extrapolation beyond "
+                          "it assumes the rate continues, which the model does not claim.",
+                 steps=["For 3 hours: C = 45 + 38 × 3 = 159 dollars.",
+                        "This is inside the stated range, so the prediction is reliable.",
+                        "For 12 hours: C = 45 + 38 × 12 = 501 dollars.",
+                        "But the model was stated for the first 4 hours only, so this is "
+                        "extrapolation."],
+                 ans="159 dollars for 3 hours; the 12-hour figure of 501 dollars is an extrapolation "
+                     "beyond the model's stated range",
+                 interp="The mathematics is correct in both cases; only the justification differs."),
+            dict(q="Two shops charge for printing. Shop A: C = 2 + 0.10n. Shop B: C = 0.40n. For "
+                   "how many pages are they equal, and which is cheaper below that?",
+                 vis=F("grid", [(0, 2), (10, 3), (0, 0), (10, 4)], ["A", "A", "B", "B"],
+                       xmin=0, xmax=12, ymin=0, ymax=5, title="the crossing point"),
+                 reasoning="The two models are equal where their graphs cross, and the cheaper shop "
+                          "is the one with the lower value at that quantity.",
+                 steps=["2 + 0.10n = 0.40n.",
+                        "2 = 0.30n, so n = 6.67.",
+                        "For fewer than about 7 pages, shop A is cheaper.",
+                        "For more than about 7 pages, shop B is cheaper."],
+                 ans="equal at about 6.67 pages; shop A is cheaper below that and shop B above",
+                 interp="The crossing point is the decision boundary, and it comes from solving two "
+                        "linear models together."),
+        ], inv=dict(
+            task="Model the growth of a plant over six weeks by measuring its height each week. "
+                 "Fit a straight line by eye, use it to predict the height at week 10, and then "
+                 "measure the plant again in a later week if you can. Record how far the prediction "
+                 "was from the measurement.",
+            fig=F("grid", [(1, 4), (2, 7), (3, 11), (4, 15), (5, 18), (6, 22)],
+                  ["", "", "", "", "", ""], xmin=0, xmax=10, ymin=0, ymax=32,
+                  title="height against week"),
+            table=[["week", "height (cm)", "predicted by the line", "residual"],
+                   ["1", "4", "3.8", "0.2"],
+                   ["2", "7", "7.4", "−0.4"],
+                   ["3", "11", "11.0", "0.0"],
+                   ["4", "15", "14.6", "0.4"],
+                   ["5", "18", "18.2", "−0.2"],
+                   ["6", "22", "21.8", "0.2"]],
+            notice=["The residuals are small and both positive and negative, so the line fits well.",
+                    "The predicted height at week 10 was about 37 cm.",
+                    "Real plants stop growing, so the week-10 prediction is an assumption rather "
+                    "than a fact.",
+                    "The residuals are the gaps between the model and the data."],
+            obs="A linear model fits when its residuals are small and balanced, and its predictions "
+                "are only as trustworthy as that fit.",
+            concl="A linear model predicts reliably inside the range of the collected data, and "
+                  "outside that range it states an assumption about the rate of change continuing "
+                  "— which is why the range must be reported with the prediction.")),
+    ],
+    practice=dict(
+        A=[("4.1.1", "Find the gradient of the line through (1, 3) and (5, 15).",
+            "3", "Change in y is 12 and change in x is 4.", "F"),
+           ("4.1.2", "Write the equation of the line with gradient 4 and y-intercept −2.",
+            "y = 4x − 2", "Use y = mx + c.", "F"),
+           ("4.1.3", "Find the gradient of the horizontal line through (2, 7) and (9, 7).",
+            "0", "The change in y is zero.", "F"),
+           ("4.1.4", "A line passes through (0, 5) and (4, 13). Find its equation.",
+            "y = 2x + 5", "The gradient is 8 ÷ 4 = 2 and the intercept is 5.", "F"),
+           ("4.1.5", "Is y directly proportional to x for the pairs (2, 6), (4, 12), (6, 18)?",
+            "Yes — the quotient is 3 throughout",
+            "Direct proportion needs a constant quotient.", "F"),
+           ("4.1.6", "Find the y-intercept of y = −3x + 8.",
+            "8", "The intercept is the constant term.", "F"),
+           ("4.1.7", "Find the equation of the line through (2, 1) with gradient −5.",
+            "y = −5x + 11", "1 = −10 + c gives c = 11.", "F"),
+           ("4.1.8", "A table gives (0, 4), (2, 10), (4, 16). Find the gradient and the equation.",
+            "gradient 3, y = 3x + 4", "Each step of 2 in x gives 6 in y.", "F"),
+           ("4.1.9", "Where do y = x + 1 and y = 5 − x meet?",
+            "(2, 3)", "x + 1 = 5 − x gives x = 2.", "F"),
+           ("4.1.10", "A line has gradient 0.5 and passes through (6, 8). Find its equation.",
+            "y = 0.5x + 5", "8 = 3 + c gives c = 5.", "F"),
+           ("4.1.11", "Find the gradient of the line through (−2, 4) and (3, −6).",
+            "−2", "−10 ÷ 5 = −2.", "F"),
+           ("4.1.12", "Explain why a vertical line has no gradient.",
+            "The change in x is zero, so the quotient is undefined.",
+            "Division by zero is not defined.", "R")],
+        B=[("4.2.1", "Investigate: do the lines y = 2x + 1 and y = 2x − 7 ever meet? Justify.",
+            "No — they have the same gradient, so they are parallel.",
+            "Lines with equal gradients and different intercepts never meet.", "R"),
+           ("4.2.2", "Test the claim: if two lines have the same y-intercept they must meet.",
+            "False — y = 2x and y = 3x both pass through the origin and meet there, but y = 2x + 1 "
+            "and y = 2x + 1 are the same line. A counterexample is y = x and y = x + 1, which do "
+            "not share an intercept at all.",
+            "Sharing an intercept means sharing a point, so the lines do meet there.", "R"),
+           ("4.2.3", "Investigate the gradients of the lines y = 3x, y = 3x + 5 and y = −3x. What "
+                     "do they have in common?",
+            "The first two have the same gradient 3 and are parallel; the third has gradient −3.",
+            "Only the gradient controls steepness.", "R"),
+           ("4.2.4", "Generalise: what is the gradient of the line through (a, b) and (c, d)?",
+            "(d − b)/(c − a)", "The gradient is the change in y over the change in x.", "R"),
+           ("4.2.5", "Investigate whether the points (1, 2), (3, 6) and (5, 10) lie on one line.",
+            "Yes — the gradient is 2 between each consecutive pair.",
+            "A constant gradient between consecutive points means collinearity.", "R"),
+           ("4.2.6", "Test the claim: a line with a negative gradient must have a negative "
+                     "y-intercept.",
+            "False — y = −2x + 5 has gradient −2 and intercept 5.",
+            "The gradient and the intercept are independent.", "R"),
+           ("4.2.7", "Investigate: for what value of k do y = kx and y = x + 4 meet at x = 8?",
+            "k = 1.5", "y = 12 at x = 8, so 8k = 12.", "R"),
+           ("4.2.8", "Generalise a rule for the gradient of a line perpendicular to a line of "
+                     "gradient m.",
+            "−1/m", "The product of the gradients is −1.", "R"),
+           ("4.2.9", "Investigate the pattern 2, 5, 8, 11, … as points (n, term). What is the "
+                     "gradient of the line through them?",
+            "3", "The common difference is the gradient.", "R"),
+           ("4.2.10", "Test the claim: two lines that meet must have different gradients.",
+            "True — equal gradients give parallel lines, which never meet.",
+            "Distinct meeting lines must have different gradients.", "R"),
+           ("4.2.11", "Investigate whether the line through (0, 0) and (3, −9) has the same "
+                      "gradient as the line through (1, 1) and (4, −8).",
+            "Yes — both have gradient −3.",
+            "Equal gradients mean the lines are parallel or identical.", "R")],
+        C=[("4.3.1", "Explain in words what the gradient of a line represents in a real situation.",
+            "The rate of change of the vertical quantity per unit of the horizontal quantity.",
+            "The gradient is a rate, so it carries units.", "R"),
+           ("4.3.2", "Explain the difference between interpolation and extrapolation.",
+            "Interpolation predicts inside the range of the data; extrapolation predicts outside "
+            "it.",
+            "Only the first is supported by the evidence.", "R"),
+           ("4.3.3", "Explain why a straight-line graph through the origin indicates direct "
+                     "proportion.",
+            "Because y = kx gives y = 0 when x = 0.",
+            "The origin corresponds to both quantities being zero.", "R"),
+           ("4.3.4", "Describe two ways to find the equation of a line, and say when each is "
+                     "quickest.",
+            "Use two points for the gradient, or use a point and the gradient directly.",
+            "The choice depends on what information is given.", "R"),
+           ("4.3.5", "Explain what a residual is and what it tells you about a model.",
+            "The gap between the model's prediction and the measured value.",
+            "Small balanced residuals indicate a good fit.", "R"),
+           ("4.3.6", "Explain why the equation y = mx + c is a complete description of a line.",
+            "It fixes both the steepness and the position, which determine the line uniquely.",
+            "Two numbers are enough to fix a straight line.", "R"),
+           ("4.3.7", "A graph of cost against distance has a positive y-intercept. Explain what "
+                     "that means for a customer.",
+            "There is a fixed charge payable even for zero distance.",
+            "The intercept is the value at zero input.", "R"),
+           ("4.3.8", "Explain why parallel lines have equal gradients, using the definition of "
+                     "gradient.",
+            "Equal gradients mean equal rates of change, so the lines can never meet.",
+            "The gradient is the same everywhere on a line.", "R"),
+           ("4.3.9", "Describe how you would check whether three points lie on one straight line.",
+            "Compute the gradient between consecutive pairs and check they are equal.",
+            "A constant gradient between consecutive points means collinearity.", "R"),
+           ("4.3.10", "Explain the difference between a linear relationship and a directly "
+                      "proportional one.",
+            "Direct proportion is the special case whose line passes through the origin.",
+            "A linear relationship may have a non-zero intercept.", "R"),
+           ("4.3.11", "Explain why a model that fits one community's data may not be fair to "
+                      "another.",
+            "The gradient and intercept describe that community's situation, not a universal rule.",
+            "A model inherits the range and the population it was fitted to.", "R"),
+           ("4.3.12", "Describe how you would use a graph to compare two service charges.",
+            "Plot both lines and find the crossing point, which is the break-even quantity.",
+            "The crossing point is the decision boundary.", "R")],
+        D=[("4.4.1", "A school pays 120 dollars for a hall and 7 dollars per chair. Write the cost "
+                     "model and find the cost for 45 chairs.",
+            "C = 120 + 7n; 435 dollars", "120 + 7 × 45 = 435.", "A"),
+           ("4.4.2", "A taxi charges 4 dollars plus 1.60 dollars per kilometre. Find the fare for "
+                     "11 km and the distance that costs 20 dollars.",
+            "21.60 dollars; 10 km", "20 − 4 = 16 and 16 ÷ 1.6 = 10.", "A"),
+           ("4.4.3", "Two phone plans: A costs 10 dollars plus 0.05 dollars a minute, B costs 25 "
+                     "dollars plus 0.02 dollars a minute. Find the number of minutes at which they "
+                     "cost the same.",
+            "500 minutes", "10 + 0.05m = 25 + 0.02m gives 0.03m = 15.", "A"),
+           ("4.4.4", "A water tank is filled at 15 litres a minute and already holds 60 litres. "
+                     "Find the time to reach 360 litres and sketch the graph.",
+            "20 minutes", "360 − 60 = 300 and 300 ÷ 15 = 20.", "A"),
+           ("4.4.5", "A farmer sells maize at 0.35 dollars a kilogram and pays 50 dollars to "
+                     "transport it. Write a model for the profit and find the break-even mass.",
+            "P = 0.35m − 50; about 143 kg", "0.35m = 50 gives m ≈ 142.9.", "A"),
+           ("4.4.6", "Explain whether a model that charges a fixed fee plus a per-minute rate is "
+                     "directly proportional.",
+            "No — the fixed fee gives a non-zero intercept, so the line does not pass through the "
+            "origin.",
+            "Direct proportion requires the line to pass through the origin.", "R"),
+           ("4.4.7", "A cyclist covers 12 km in 40 minutes at a constant speed. Find the speed and "
+                     "the distance covered in 75 minutes.",
+            "18 km/h; 22.5 km", "12 ÷ (40/60) = 18 and 18 × 1.25 = 22.5.", "A"),
+           ("4.4.8", "A printing firm charges 15 dollars setup plus 0.08 dollars per page. Find "
+                     "the number of pages that makes the cost 47 dollars.",
+            "400 pages", "47 − 15 = 32 and 32 ÷ 0.08 = 400.", "A"),
+           ("4.4.9", "A village shares a water allowance in proportion to household size. Model "
+                     "the allocation and comment on whether the model is fair.",
+            "allowance = (household size ÷ total size) × total water; fairness depends on whether "
+            "size is the agreed basis.",
+            "A proportional model is only fair if the basis is agreed.", "R"),
+           ("4.4.10", "A linear model predicts a school roll of 620 in five years. The roll is "
+                      "growing by 20 a year. Find the current roll and comment on the assumption.",
+            "520 now; the assumption is that the growth rate stays at 20 a year",
+            "620 − 5 × 20 = 520.", "R"),
+           ("4.4.11", "Two delivery services charge 8 dollars plus 0.50 dollars a kilogram and 3 "
+                      "dollars plus 0.75 dollars a kilogram. Find the mass at which they cost the "
+                      "same and say which is cheaper above it.",
+            "20 kg; the first service is cheaper above it",
+            "8 + 0.5m = 3 + 0.75m gives 5 = 0.25m.", "A"),
+           ("4.4.12", "Explain why extrapolating a linear model of plant growth beyond the "
+                      "growing season gives an unreasonable answer.",
+            "Plants stop growing, so the constant-rate assumption fails.",
+            "A model is valid only where its assumptions hold.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The two water pumps",
+             text="Pump A delivers 40 litres a minute into an empty tank. Pump B delivers 55 litres "
+                  "a minute but starts 5 minutes later. Model both with linear equations, find when "
+                  "B overtakes A, and sketch both graphs on the same axes.",
+             note="Criteria A and C · label the axes with units and state what the crossing point "
+                  "means."),
+        dict(title="A2 · The shared water allowance",
+             text="A village of 240 households shares 60 000 litres of water a week in proportion "
+                  "to household size. Model the allocation, find the allowance for a household of "
+                  "6, and discuss whether the model is fair to households of 1.",
+             note="Criteria A and D · justify the model and comment on its limits."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of relationships and the related concepts of change and "
+        "representation appear in your work?",
+        "How is the global context of fairness and development, and its exploration of the "
+        "distribution of resources, visible in the investigations and examples you completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a linear model for sharing resources, and what would you still "
+        "like to ask?",
+    ],
+    review=dict(
+        ideas=["A table with constant first differences describes a linear relationship.",
+               "The gradient is the change in y per unit change in x: m = (y₂ − y₁)/(x₂ − x₁).",
+               "Every straight line has an equation y = mx + c.",
+               "Parallel lines have equal gradients.",
+               "Direct proportion is y = kx, a line through the origin.",
+               "The intersection of two lines satisfies both equations.",
+               "Interpolation is reliable; extrapolation states an assumption."],
+        vocab=["gradient", "y-intercept", "rate of change", "linear", "direct proportion",
+               "constant of proportionality", "parallel", "intersection", "interpolation",
+               "extrapolation", "residual", "model"],
+        mixed=[("4.R1", "Find the gradient of the line through (2, 5) and (7, 20)."),
+               ("4.R2", "Write the equation of the line through (0, −3) with gradient 4."),
+               ("4.R3", "Where do y = 3x − 2 and y = x + 4 meet?"),
+               ("4.R4", "Is y directly proportional to x for the pairs (2, 7), (4, 14), (5, 20)?"),
+               ("4.R5", "A line has gradient −2 and passes through (3, 1). Find its equation."),
+               ("4.R6", "Explain the difference between a gradient and a y-intercept.")],
+    ),
+    projects=dict(
+        service=[("Community need", "Water and food distribution in the community is decided "
+                                    "without a shared model, so some households are missed."),
+                 ("Mathematical connection", "Linear models, gradients and direct proportion."),
+                 ("Proposed action", "Build a proportional allocation model for one shared resource "
+                                     "and publish it with its assumptions."),
+                 ("Expected impact", "Allocations become predictable and open to challenge."),
+                 ("Student reflection", "Record the model, the assumptions, and what happened when "
+                                        "it was used.")],
+        community=[("Project idea", "A water-allowance model for the school."),
+                   ("Need", "The school's water allowance is shared by guesswork."),
+                   ("Research question", "What allocation rule is both proportional to need and "
+                                         "agreed by everyone?"),
+                   ("Mathematics", "Linear functions, direct proportion and graph reading."),
+                   ("Action or outcome", "A written allocation rule with a graph of the "
+                                         "allocations."),
+                   ("Beneficiaries", "Every household or class using the supply."),
+                   ("Evidence", "The model, the graph and the agreed rule.")],
+        personal=[("Personal interest", "Travel, sport or a savings goal."),
+                  ("Learning goal", "To use a linear model to make a personal decision."),
+                  ("Product or outcome", "A savings or travel plan with a graph and a prediction."),
+                  ("Mathematics", "Gradients, equations of lines and extrapolation."),
+                  ("Process", "Collect the data, fit a line, then predict and check."),
+                  ("Evidence", "The graph, the model and the prediction.")],
+    ),
+),
+])
