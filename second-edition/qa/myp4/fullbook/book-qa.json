@@ -1,0 +1,109 @@
+{
+  "file": "/home/user/MYP-Texbook/second-edition/exports/myp4/MYP4-Student-Coursebook-Second-Edition.pdf",
+  "pages": 691,
+  "expected_pages": 691,
+  "page_sizes": [
+    [
+      595.0,
+      841.9
+    ]
+  ],
+  "a4": true,
+  "fonts": [
+    "AAAAAA+Inter-Regular",
+    "BAAAAA+Fraunces-SemiBold",
+    "CAAAAA+SourceSerif4-Regular",
+    "DAAAAA+Inter-SemiBold",
+    "EAAAAA+SourceSerif4-SemiBold",
+    "FAAAAA+Fraunces-Regular",
+    "GAAAAA+OpenSans-Regular",
+    "HAAAAA+KaTeX_Main-Regular",
+    "IAAAAA+OpenSans-Bold",
+    "JAAAAA+KaTeX_Math-Italic"
+  ],
+  "fonts_not_embedded": [],
+  "fonts_embedded": true,
+  "replacement_chars": 0,
+  "missing_glyphs": 0,
+  "raw_placeholders": 0,
+  "raw_math": 0,
+  "katex_errors": 0,
+  "cover_pages": [
+    1,
+    13,
+    57,
+    101,
+    145,
+    189,
+    234,
+    278,
+    322,
+    366,
+    410,
+    456,
+    501,
+    544,
+    588,
+    691
+  ],
+  "missing_page_numbers": [],
+  "page_numbers_ok": true,
+  "chapter_start_mismatch": [],
+  "chapter_starts_ok": true,
+  "contents_mismatch": [],
+  "contents_ok": true,
+  "html_questions": 658,
+  "html_answers": 658,
+  "prototype_item_ids": 0,
+  "questions_without_practice_item": [],
+  "duplicate_item_ids": [],
+  "items_not_twice_in_pdf": [],
+  "items_total": 658,
+  "coverage_ok": true,
+  "back_matter_starts": {
+    "answers": 626,
+    "formula": 682,
+    "glossary": 687,
+    "references": 690,
+    "back_cover": 691
+  },
+  "back_matter_answers_ok": true,
+  "back_matter_formula_ok": true,
+  "back_matter_glossary_ok": true,
+  "back_matter_references_ok": true,
+  "back_matter_back_cover_ok": true,
+  "exterior_front_cover": {
+    "title": true,
+    "level": true,
+    "author": true,
+    "edition": true
+  },
+  "exterior_author_credit": {
+    "front_cover": true,
+    "imprint": true,
+    "back_cover": true
+  },
+  "exterior_back_cover": {
+    "collection": true,
+    "five_volumes": true,
+    "current_volume": true,
+    "forthcoming_labelled": true,
+    "no_isbn": true
+  },
+  "exterior_ok": true,
+  "checks": {
+    "page_count": true,
+    "a4": true,
+    "fonts_embedded": true,
+    "no_replacement_chars": true,
+    "no_missing_glyphs": true,
+    "no_placeholders": true,
+    "page_numbers": true,
+    "chapter_starts": true,
+    "contents": true,
+    "coverage": true,
+    "back_matter": true,
+    "exterior": true
+  },
+  "status": "PASS"
+}

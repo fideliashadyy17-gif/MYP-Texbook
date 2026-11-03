@@ -1,0 +1,402 @@
+{
+ "chapters": [
+  {
+   "num": 1,
+   "title": "Polynomials, Factor Theorem and Algebraic Fractions",
+   "items": 47,
+   "flagged": 0,
+   "by_criterion": {
+    "A": {
+     "items": 12,
+     "flagged": 0
+    },
+    "B": {
+     "items": 11,
+     "flagged": 0
+    },
+    "C": {
+     "items": 12,
+     "flagged": 0
+    },
+    "D": {
+     "items": 12,
+     "flagged": 0
+    }
+   }
+  },
+  {
+   "num": 2,
+   "title": "Functions: Transformations, Composites and Inverses",
+   "items": 47,
+   "flagged": 1,
+   "by_criterion": {
+    "A": {
+     "items": 12,
+     "flagged": 1
+    },
+    "B": {
+     "items": 11,
+     "flagged": 0
+    },
+    "C": {
+     "items": 12,
+     "flagged": 0
+    },
+    "D": {
+     "items": 12,
+     "flagged": 0
+    }
+   }
+  },
+  {
+   "num": 3,
+   "title": "Exponential and Logarithmic Functions",
+   "items": 47,
+   "flagged": 2,
+   "by_criterion": {
+    "A": {
+     "items": 12,
+     "flagged": 2
+    },
+    "B": {
+     "items": 11,
+     "flagged": 0
+    },
+    "C": {
+     "items": 12,
+     "flagged": 0
+    },
+    "D": {
+     "items": 12,
+     "flagged": 0
+    }
+   }
+  },
+  {
+   "num": 4,
+   "title": "Sequences and Series",
+   "items": 47,
+   "flagged": 3,
+   "by_criterion": {
+    "A": {
+     "items": 12,
+     "flagged": 1
+    },
+    "B": {
+     "items": 11,
+     "flagged": 0
+    },
+    "C": {
+     "items": 12,
+     "flagged": 2
+    },
+    "D": {
+     "items": 12,
+     "flagged": 0
+    }
+   }
+  },
+  {
+   "num": 5,
+   "title": "Quadratic Inequalities and Linear Programming",
+   "items": 47,
+   "flagged": 0,
+   "by_criterion": {
+    "A": {
+     "items": 12,
+     "flagged": 0
+    },
+    "B": {
+     "items": 11,
+     "flagged": 0
+    },
+    "C": {
+     "items": 12,
+     "flagged": 0
+    },
+    "D": {
+     "items": 12,
+     "flagged": 0
+    }
+   }
+  },
+  {
+   "num": 6,
+   "title": "Circle Geometry and Geometric Proof",
+   "items": 47,
+   "flagged": 0,
+   "by_criterion": {
+    "A": {
+     "items": 12,
+     "flagged": 0
+    },
+    "B": {
+     "items": 11,
+     "flagged": 0
+    },
+    "C": {
+     "items": 12,
+     "flagged": 0
+    },
+    "D": {
+     "items": 12,
+     "flagged": 0
+    }
+   }
+  },
+  {
+   "num": 7,
+   "title": "Sine and Cosine Rules; Trigonometry in Three Dimensions",
+   "items": 47,
+   "flagged": 0,
+   "by_criterion": {
+    "A": {
+     "items": 12,
+     "flagged": 0
+    },
+    "B": {
+     "items": 11,
+     "flagged": 0
+    },
+    "C": {
+     "items": 12,
+     "flagged": 0
+    },
+    "D": {
+     "items": 12,
+     "flagged": 0
+    }
+   }
+  },
+  {
+   "num": 8,
+   "title": "Vectors and Matrices",
+   "items": 47,
+   "flagged": 1,
+   "by_criterion": {
+    "A": {
+     "items": 12,
+     "flagged": 1
+    },
+    "B": {
+     "items": 11,
+     "flagged": 0
+    },
+    "C": {
+     "items": 12,
+     "flagged": 0
+    },
+    "D": {
+     "items": 12,
+     "flagged": 0
+    }
+   }
+  },
+  {
+   "num": 9,
+   "title": "Statistics: Dispersion, Correlation and Regression",
+   "items": 47,
+   "flagged": 0,
+   "by_criterion": {
+    "A": {
+     "items": 12,
+     "flagged": 0
+    },
+    "B": {
+     "items": 11,
+     "flagged": 0
+    },
+    "C": {
+     "items": 12,
+     "flagged": 0
+    },
+    "D": {
+     "items": 12,
+     "flagged": 0
+    }
+   }
+  },
+  {
+   "num": 10,
+   "title": "Probability: Conditional Probability and Counting",
+   "items": 47,
+   "flagged": 2,
+   "by_criterion": {
+    "A": {
+     "items": 12,
+     "flagged": 1
+    },
+    "B": {
+     "items": 11,
+     "flagged": 0
+    },
+    "C": {
+     "items": 12,
+     "flagged": 0
+    },
+    "D": {
+     "items": 12,
+     "flagged": 1
+    }
+   }
+  },
+  {
+   "num": 11,
+   "title": "Capstone: A Mathematical Modelling Project",
+   "items": 47,
+   "flagged": 0,
+   "by_criterion": {
+    "A": {
+     "items": 12,
+     "flagged": 0
+    },
+    "B": {
+     "items": 11,
+     "flagged": 0
+    },
+    "C": {
+     "items": 12,
+     "flagged": 0
+    },
+    "D": {
+     "items": 12,
+     "flagged": 0
+    }
+   }
+  },
+  {
+   "num": 12,
+   "title": "Cumulative Revision and the Transition to DP Mathematics",
+   "items": 47,
+   "flagged": 2,
+   "by_criterion": {
+    "A": {
+     "items": 12,
+     "flagged": 2
+    },
+    "B": {
+     "items": 11,
+     "flagged": 0
+    },
+    "C": {
+     "items": 12,
+     "flagged": 0
+    },
+    "D": {
+     "items": 12,
+     "flagged": 0
+    }
+   }
+  }
+ ],
+ "flagged": [
+  {
+   "chapter": 2,
+   "criterion": "A",
+   "id": "2.1.2",
+   "prompt": "Given f(x) = 4x \u2212 7, find f(3) and f(\u22122).",
+   "answer": "f(3) = 5 and f(\u22122) = \u221215.",
+   "reason": "Substitute and evaluate."
+  },
+  {
+   "chapter": 3,
+   "criterion": "A",
+   "id": "3.1.3",
+   "prompt": "Evaluate 27^(\u22122/3).",
+   "answer": "1/9.",
+   "reason": "Take the cube root, then square, then reciprocate."
+  },
+  {
+   "chapter": 3,
+   "criterion": "A",
+   "id": "3.1.6",
+   "prompt": "Given log 5 \u2248 0.6990, find log 125 and log 0.2.",
+   "answer": "log 125 = 3(0.6990) \u2248 2.097; log 0.2 = \u2212log 5 \u2248 \u22120.6990.",
+   "reason": "125 = 5\u00b3 and 0.2 = 1/5."
+  },
+  {
+   "chapter": 4,
+   "criterion": "A",
+   "id": "4.1.7",
+   "prompt": "Find the sum to infinity of 30 + 10 + 10/3 + \u2026",
+   "answer": "30/(1 \u2212 1/3) = 45.",
+   "reason": "Check |r| < 1 first."
+  },
+  {
+   "chapter": 4,
+   "criterion": "C",
+   "id": "4.3.3",
+   "prompt": "Write a complete solution to evaluating [[math:\\sum_{r=1}^{20}]] (5 \u2212 2r) by splitting the sum.",
+   "answer": "20 \u00d7 5 \u2212 2 \u00d7 (sum of 1 to 20) = 100 \u2212 2 \u00d7 210 = \u2212320.",
+   "reason": "Use the linearity of summation."
+  },
+  {
+   "chapter": 4,
+   "criterion": "C",
+   "id": "4.3.9",
+   "prompt": "Write a complete solution to evaluating [[math:\\sum_{r=1}^{15}]] (4r \u2212 1) by splitting the sum.",
+   "answer": "4 \u00d7 (sum of 1 to 15) \u2212 15 = 4 \u00d7 120 \u2212 15 = 465.",
+   "reason": "Use the linearity of summation."
+  },
+  {
+   "chapter": 8,
+   "criterion": "A",
+   "id": "8.1.4",
+   "prompt": "Given a = (2, 5) and b = (\u22123, 1), find a \u00b7 b.",
+   "answer": "\u22126 + 5 = \u22121.",
+   "reason": "Multiply corresponding components and add."
+  },
+  {
+   "chapter": 10,
+   "criterion": "A",
+   "id": "10.1.10",
+   "prompt": "How many ways can 4 books be arranged on a shelf?",
+   "answer": "4! = 24.",
+   "reason": "Apply the multiplication principle."
+  },
+  {
+   "chapter": 10,
+   "criterion": "D",
+   "id": "10.4.9",
+   "prompt": "A password uses 3 letters followed by 2 digits, with repetition allowed. Find the number of possible passwords.",
+   "answer": "26\u00b3 \u00d7 10\u00b2 = 17 576 \u00d7 100 = 1 757 600.",
+   "reason": "Apply the multiplication principle at each position."
+  },
+  {
+   "chapter": 12,
+   "criterion": "A",
+   "id": "12.1.3",
+   "prompt": "Given f(x) = 4x \u2212 7, find f\u207b\u00b9(x).",
+   "answer": "f\u207b\u00b9(x) = (x + 7)/4.",
+   "reason": "Rearrange and swap."
+  },
+  {
+   "chapter": 12,
+   "criterion": "A",
+   "id": "12.1.11",
+   "prompt": "Find the determinant of [[3, 5], [7, 2]].",
+   "answer": "6 \u2212 35 = \u221229.",
+   "reason": "Use ad \u2212 bc."
+  }
+ ],
+ "totals": {
+  "A": {
+   "items": 144,
+   "flagged": 8
+  },
+  "B": {
+   "items": 132,
+   "flagged": 0
+  },
+  "C": {
+   "items": 144,
+   "flagged": 2
+  },
+  "D": {
+   "items": 144,
+   "flagged": 1
+  }
+ },
+ "items_total": 564,
+ "flagged_total": 11
+}

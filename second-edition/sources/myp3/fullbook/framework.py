@@ -1,0 +1,5727 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Authored editorial framework for the MYP 3 second-edition coursebook.
+
+Content reference: the pre-rewrite MYP 3 chapter and subtopic audit
+(``second-edition/audit/chapter-audits/myp3-audit.md`` and the chapter and
+subtopic registers). Chapter scope and teaching order follow that audit; the
+teaching sequence, investigations, worked examples, practice sets, assessment
+tasks and project connections are author-designed material written for this
+second edition.
+
+Every chapter is built as a complete MYP unit from the start: an official global
+context with its official exploration, a statement of inquiry that names the key
+concept and the related concepts, three question categories derived from the
+same elements, an inquiry question opening every investigation, and Criterion
+A-D practice written to exercise that unit rather than to repeat a drill.
+"""
+import diagrams2
+
+LEVEL = 3
+AUTHOR = "SADIKOU MOUKODDIM"
+
+SERIES = dict(
+    name="MYP Mathematics",
+    line="MYP Mathematics · Student coursebook",
+    edition="Second edition",
+)
+
+# Five-volume collection. MYP 1 and MYP 2 are produced; MYP 3 is the volume in
+# hand; MYP 4 and MYP 5 do not exist yet and are shown as coordinated cover
+# concepts only.
+COLLECTION = [
+    dict(level=1, status="published", theme="Year 1 · number, algebra, shape and data"),
+    dict(level=2, status="published", theme="Year 2 · ratio, algebra, geometry, probability"),
+    dict(level=3, status="this volume", theme="Year 3 · proof, models and evidence"),
+    dict(level=4, status="forthcoming", theme="Year 4 · inquiry, practice, assessment"),
+    dict(level=5, status="forthcoming", theme="Year 5 · modelling, proof, transition"),
+]
+
+PARTS = {
+    1: "Part I · Number and abstraction",
+    2: "Part I · Number and abstraction",
+    3: "Part II · Algebra and models",
+    4: "Part II · Algebra and models",
+    5: "Part II · Algebra and models",
+    6: "Part III · Shape, space and proof",
+    7: "Part III · Shape, space and proof",
+    8: "Part III · Shape, space and proof",
+    9: "Part IV · Data and evidence",
+    10: "Part IV · Data and evidence",
+}
+
+CRITERIA = {
+    "A": ("Knowing and understanding", "a"),
+    "B": ("Investigating patterns", "b"),
+    "C": ("Communicating", "c"),
+    "D": ("Applying mathematics in real-life contexts", "d"),
+}
+
+# ------------------------------------------------------------------ formula bank
+FORMULAS = [
+    ("The real number system", [
+        ("Rational number", "any number that can be written as a/b with integers a, b and b ≠ 0; its decimal either terminates or recurs."),
+        ("Irrational number", "a number that cannot be written as a fraction; its decimal neither terminates nor recurs."),
+        ("Surd", "an exact irrational root, such as √2 or 3√5."),
+        ("Absolute value", "|x| is the distance of x from 0 on a number line."),
+        ("Interval notation", "[a, b] includes both ends; (a, b) excludes both; [a, b) includes a only."),
+        ("Set notation", "A ∪ B is the union, A ∩ B the intersection, A′ the complement."),
+    ]),
+    ("Powers, roots and notation", [
+        ("Product law", "aᵐ × aⁿ = aᵐ⁺ⁿ."),
+        ("Quotient law", "aᵐ ÷ aⁿ = aᵐ⁻ⁿ for a ≠ 0."),
+        ("Power law", "(aᵐ)ⁿ = aᵐⁿ."),
+        ("Zero and negative indices", "a⁰ = 1 for a ≠ 0; a⁻ⁿ = 1/aⁿ."),
+        ("Rational index", "a^(1/n) is the nth root of a; a^(m/n) = (ⁿ√a)ᵐ."),
+        ("Scientific notation", "a × 10ⁿ with 1 ≤ a < 10."),
+        ("Significant figures", "the digits that carry measured meaning, counted from the first non-zero digit."),
+    ]),
+    ("Algebra and functions", [
+        ("Function", "a rule that gives exactly one output for each input in its domain."),
+        ("Domain and range", "the set of permitted inputs and the set of resulting outputs."),
+        ("Expanding", "a(b + c) = ab + ac."),
+        ("Difference of squares", "a² − b² = (a − b)(a + b)."),
+        ("Perfect square", "a² + 2ab + b² = (a + b)²."),
+        ("Rearranging a formula", "apply the same inverse operation to both sides to isolate the wanted letter."),
+        ("nth term", "a linear sequence has term = mn + c; a quadratic sequence has constant second difference."),
+    ]),
+    ("Linear models and systems", [
+        ("Straight line", "y = mx + c, where m is the gradient and c the y-intercept."),
+        ("Gradient", "m = (y₂ − y₁) ÷ (x₂ − x₁), the change in y per unit change in x."),
+        ("Direct proportion", "y = kx, a straight line through the origin."),
+        ("Simultaneous equations", "solve by substitution or elimination; check in both equations."),
+        ("Inequality", "multiplying or dividing by a negative number reverses the inequality sign."),
+    ]),
+    ("Shape, space and trigonometry", [
+        ("Congruence", "SSS, SAS, ASA, RHS for triangles."),
+        ("Similarity", "corresponding angles equal and corresponding sides in the same ratio."),
+        ("Pythagoras", "a² + b² = c² for the hypotenuse c of a right-angled triangle."),
+        ("Trigonometric ratios", "sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse, tan θ = opposite/adjacent."),
+        ("Angles of elevation and depression", "measured from the horizontal, and equal by alternate angles."),
+        ("Prism", "volume = area of cross-section × length; surface area is the sum of the face areas."),
+        ("Cylinder", "volume = πr²h; curved surface area = 2πrh; total surface area = 2πrh + 2πr²."),
+        ("Pyramid", "volume = ⅓ × base area × perpendicular height."),
+        ("Cone", "volume = ⅓πr²h; curved surface area = πrl, where l is the slant height."),
+        ("Sphere", "volume = ⁴⁄₃πr³; surface area = 4πr²."),
+        ("Density", "density = mass ÷ volume."),
+    ]),
+    ("Data, probability and evidence", [
+        ("Bivariate data", "paired measurements of two variables for the same subject."),
+        ("Correlation", "the strength and direction of a linear association, measured by r with −1 ≤ r ≤ 1."),
+        ("Line of best fit", "a line drawn through the middle of a scatter so that the residuals are balanced."),
+        ("Interpolation and extrapolation", "predicting inside or outside the range of the collected data."),
+        ("Causation", "correlation alone never establishes cause; a mechanism or a controlled study is required."),
+        ("Probability of an event", "P(event) = favourable outcomes ÷ total equally likely outcomes."),
+        ("Compound events", "P(A and B) = P(A) × P(B) for independent events; P(A or B) = P(A) + P(B) − P(A and B)."),
+        ("Sample and population", "a sample estimates a population parameter; bias makes the estimate unreliable."),
+        ("Base rate", "the underlying frequency of an event in the whole population, needed to interpret a test result."),
+    ]),
+]
+
+# ---------------------------------------------------------------------- glossary
+GLOSSARY = [
+    ("Absolute value", "The distance of a number from zero on a number line, written |x|.", 1),
+    ("Base rate", "The frequency of an event in the whole population, before any test result is known.", 10),
+    ("Bias", "A systematic error that makes a sample unrepresentative of the population.", 10),
+    ("Bivariate data", "Paired measurements of two variables recorded for the same subject.", 9),
+    ("Causation", "A relationship in which changing one variable produces the change in the other.", 9),
+    ("Complement (probability)", "The set of outcomes that are not in the event; P(not A) = 1 − P(A).", 10),
+    ("Composite solid", "A solid made by joining two or more simpler solids.", 8),
+    ("Congruent", "Identical in shape and size; for triangles, SSS, SAS, ASA or RHS proves it.", 6),
+    ("Conjecture", "A mathematical claim believed to be true but not yet justified.", 1),
+    ("Continuous data", "Numerical data that can take any value in an interval.", 9),
+    ("Correlation", "The strength and direction of a linear association between two variables.", 9),
+    ("Correlation coefficient", "A number r between −1 and 1 that measures linear association.", 9),
+    ("Cross-section", "The shape exposed when a solid is cut parallel to a face.", 8),
+    ("Density", "Mass per unit volume, in g/cm³ or kg/m³.", 8),
+    ("Direct proportion", "A relationship y = kx whose graph is a straight line through the origin.", 4),
+    ("Discrete data", "Numerical data that counts separate values.", 9),
+    ("Domain", "The set of permitted inputs of a function.", 3),
+    ("Elimination", "Solving simultaneous equations by adding or subtracting to remove one variable.", 5),
+    ("Function", "A rule that gives exactly one output for each permitted input.", 3),
+    ("Gradient", "The change in y per unit change in x; the steepness of a line.", 4),
+    ("Interpolation", "Predicting a value inside the range of the collected data.", 9),
+    ("Interval", "A continuous set of numbers between two endpoints, written with square or round brackets.", 1),
+    ("Irrational number", "A number that cannot be written as a fraction; its decimal neither terminates nor recurs.", 1),
+    ("Line of best fit", "A line drawn through the middle of a scatter so that the residuals balance.", 9),
+    ("Mutually exclusive", "Events that cannot both happen, so P(A or B) = P(A) + P(B).", 10),
+    ("nth term", "A rule that gives the term in any position of a sequence.", 3),
+    ("Population", "The whole group a claim is about.", 10),
+    ("Pythagoras' theorem", "In a right-angled triangle, a² + b² = c² for the hypotenuse c.", 7),
+    ("Range (of a function)", "The set of outputs a function can produce.", 3),
+    ("Rational number", "A number that can be written as a fraction of two integers.", 1),
+    ("Sample", "The part of a population that is actually measured.", 10),
+    ("Scatter plot", "A graph of paired data used to look for association.", 9),
+    ("Scientific notation", "A number written as a × 10ⁿ with 1 ≤ a < 10.", 2),
+    ("Significant figures", "The digits of a measurement that carry meaning, counted from the first non-zero digit.", 2),
+    ("Similar", "Same shape, possibly different size: corresponding angles equal, sides in ratio.", 7),
+    ("Simultaneous equations", "Two or more equations that must be true at the same time.", 5),
+    ("Slant height", "The distance from the apex of a cone or pyramid to the edge of its base.", 8),
+    ("Substitution", "Replacing a variable by a value or by an equal expression.", 3),
+    ("Surd", "An exact irrational root left in root form, such as √2.", 1),
+    ("Tessellation", "A covering of the plane by shapes that meet edge to edge with no gaps.", 6),
+    ("Trigonometric ratio", "Sine, cosine or tangent: a ratio of two sides of a right-angled triangle.", 7),
+    ("Union and intersection", "A ∪ B contains what is in either set; A ∩ B only what is in both.", 1),
+    ("y-intercept", "The value of y where a line crosses the y-axis.", 4),
+]
+
+REFERENCES = [
+    ("Official IB sources", [
+        "IB Middle Years Programme curriculum — https://www.ibo.org/programmes/middle-years-programme/curriculum/ (page states last updated 19 February 2026). Used for: at least 50 hours per subject per year, global contexts, conceptual understanding, approaches to learning and service as action.",
+        "IB MYP mathematics subject page — https://www.ibo.org/programmes/middle-years-programme/curriculum/mathematics/ Used for: the four branches of MYP mathematics, standard and extended mathematics, and the inquiry and application focus.",
+        "IB MYP projects — https://www.ibo.org/programmes/middle-years-programme/curriculum/myp-projects/ (page states last updated 19 February 2026). Used for: the Community Project completed by students finishing MYP in Year 3 or Year 4, the Personal Project completed by Year 5 students, and the student-centred nature of both.",
+        "IB MYP general regulations (2026 assessment procedures) — https://www.ibo.org/globalassets/new-structure/become-an-ib-school/pdfs/myp-2026-general-regulations.pdf Used for: the required use of MYP objectives and assessment criteria, minimum teaching hours, and Year 5 eAssessment eligibility.",
+    ]),
+    ("Principal content reference", [
+        "Pre-rewrite MYP 3 chapter and subtopic audit (second-edition/audit/chapter-audits/myp3-audit.md with the chapter and subtopic registers). Used as the principal content reference for chapter scope, teaching order and the key concepts, related concepts, global contexts and inquiry questions of each chapter.",
+    ]),
+    ("Author-designed material", [
+        "The chapter sequence, investigations, worked examples, practice sets, assessment tasks, project connections, formula bank, glossary and this edition's editorial framework are author-designed material written to serve the programme requirements above. They are not IB publications and carry no IB endorsement.",
+        "All classroom data sets are simulated and are labelled in the text. No claim in this book relies on unverified real-world data.",
+    ]),
+]
+
+
+# ------------------------------------------------------------------- front matter
+FRONT = dict(
+    cover=dict(
+        kicker="MYP Mathematics · Student coursebook",
+        edition="Second edition",
+        title="Mathematics",
+        level="3",
+        level_text="Student coursebook",
+        level_note="MYP 3 · Year 3 · ten chapters in four parts",
+        standfirst="A concept-driven inquiry course in number, algebra, shape and space, "
+                   "trigonometry, data and probability. You investigate, justify and prove, "
+                   "then reason, communicate and apply.",
+        topics=["The real number system", "Powers and notation", "Functions and expressions",
+                "Linear models", "Equations and systems", "Transformations and congruence",
+                "Similarity and trigonometry", "Three-dimensional solids", "Bivariate data",
+                "Probability and evidence"],
+        criteria=[("A", "Knowing and understanding"), ("B", "Investigating patterns"),
+                  ("C", "Communicating"), ("D", "Applying mathematics in real-life contexts")],
+        inquiry_label="How this book works",
+        inquiry="Every chapter opens with a task. You investigate, notice a pattern, state a "
+                "mathematical conclusion and justify it before you meet the formal explanation.",
+        author=AUTHOR,
+        series="MYP Mathematics · Volume 3 of 5",
+    ),
+    imprint=dict(
+        title="About this edition",
+        credit="Author",
+        author=AUTHOR,
+        body=[
+            "This is the second edition of the MYP 3 mathematics coursebook. It was rebuilt from the pre-rewrite MYP 3 audit, which recorded the chapter scope, the key and related concepts, the global contexts and the inquiry questions of the earlier edition, and identified where the teaching had to be strengthened.",
+            "The edition keeps that chapter scope and the visual identity of the collection, and rebuilds the teaching sequence around inquiry: engagement, inquiry questions, investigation, observation, mathematical conclusion, formal development, worked examples, extensive visual practice, and application, assessment and reflection.",
+            "Year 3 asks more of Criterion C than Year 2: reasoning must now be organised into a logical structure, and Criterion B moves from recognising and verifying a pattern to justifying a generalisation. The chapters train both explicitly.",
+            "All classroom data sets are simulated and are labelled as such. Real data would require provenance, so no claim in this book rests on unverified statistics.",
+            "No publisher, ISBN, print specification or commercial print-readiness claim is made in this file. The book is produced as an A4 review copy: fonts are embedded, pagination is continuous and every page has been checked for overflow.",
+        ],
+    ),
+    howto=dict(
+        title="How to use this book",
+        intro="Each chapter follows the same sequence, so you always know what is coming next. The "
+              "sequence is deliberate: you investigate before you are told the rule, because a rule "
+              "you have discovered is a rule you can defend — and defending it is what Year 3 asks of you.",
+        steps=[
+            ("Engagement", "A short situation that raises the question the chapter will answer."),
+            ("Inquiry questions", "Factual, conceptual and debatable questions that frame the chapter."),
+            ("Investigation", "A task you complete before the formal teaching: record evidence in a table and look for a pattern."),
+            ("Observation and discovery", "What you noticed, stated in your own words and compared with a partner."),
+            ("Mathematical conclusion", "The rule that the evidence supports, written as a general statement you can justify."),
+            ("Formal development", "The explanation, definitions and notation, with the reasoning made explicit."),
+            ("Worked examples", "Problem, visual representation, mathematical reasoning, step-by-step solution, final answer and interpretation."),
+            ("Practice", "Separated into Criterion A, B, C and D practice, with visual representations throughout."),
+            ("Application, assessment and reflection", "Real-context tasks, criterion-based assessment practice, and a reflection that returns to the statement of inquiry."),
+        ],
+        criteria_title="The four MYP mathematics criteria",
+        criteria=[
+            ("A · Knowing and understanding", "Apply knowledge to familiar and unfamiliar problems, and check results."),
+            ("B · Investigating patterns", "Investigate relationships, describe patterns, formulate a conjecture, test it and justify the generalisation — at Year 3 level a justification is a logical argument, not a list of examples."),
+            ("C · Communicating", "Use correct mathematical language, notation and complete representations, and organise reasoning into a coherent structure that a reader can follow."),
+            ("D · Applying mathematics in real-life contexts", "Apply mathematics to authentic situations, identify relevant information, and comment on the accuracy and sense of the result."),
+        ],
+        notes=[
+            "Practice is separated by criterion so that you can see which skill a task is training. Criterion B practice is additional genuine pattern investigation, not a repeat of the teaching.",
+            "Visuals are part of the mathematics. Where a task supplies a diagram, grid, table, number line or model, use it; where it asks you to sketch, your drawing is part of the answer.",
+            "Answers and student-facing reasoning are collected at the back of the book, with a formula bank, a glossary and references.",
+            "Every chapter ends with project connections: a Service as Action opportunity, a Community Project connection and a Personal Project connection for MYP 5.",
+        ],
+    ),
+    intro=dict(
+        title="MYP mathematics and this coursebook",
+        paras=[
+            "The IB Middle Years Programme asks students to inquire into concepts through global contexts, to develop approaches to learning (ATL) skills, and to act on what they learn through service as action. In mathematics this means more than practising procedures: students investigate patterns, justify generalisations, communicate with precise language and apply mathematics to situations that matter to them.",
+            "MYP mathematics is organised into four branches — number, algebra, geometry and trigonometry, and statistics and probability — and the programme recommends at least 50 hours of teaching per subject each year. This coursebook covers the Year 3 content of those branches across ten chapters, grouped into four parts.",
+            "Year 3 is the level at which justification becomes central. A pattern spotted in three cases is a conjecture; a pattern shown to follow from something already established is a theorem. The chapters in this book keep that distinction visible, and the practice under each criterion says which kind of thinking it is training.",
+            "Assessment in MYP mathematics uses four equally weighted criteria, each with a maximum of 8: A knowing and understanding, B investigating patterns, C communicating, and D applying mathematics in real-life contexts. This book trains each criterion explicitly, and says so on the page where the training happens.",
+        ],
+        projects_title="Projects, service and action",
+        projects=[
+            ("Service as Action", "Each chapter includes a service opportunity with a community need, a mathematical connection, a proposed action, an expected impact and a student reflection. Completing an exercise is not service: service requires action that benefits others and reflection on that action."),
+            ("Community Project", "MYP students completing the programme in Year 3 or Year 4 complete a community project. Each chapter offers a student-led project idea with a research question, the mathematics involved, an action or outcome, beneficiaries and evidence. Follow your school's requirements and supervision."),
+            ("Personal Project (MYP 5)", "Students completing MYP in Year 5 complete a personal project. Each chapter offers an adaptable MYP 5-oriented extension with a personal interest, a learning goal, a product, the mathematics involved, a process and evidence. It is deliberately different from the community project and from service as action."),
+        ],
+        honesty_title="What this book does not claim",
+        honesty=[
+            "Programme requirements quoted here follow the official IB MYP curriculum, mathematics and projects pages and the MYP general regulations. Everything else — the chapter sequence, the investigations, the practice sets and the project ideas — is author-designed material built to serve those requirements, and is not an IB publication.",
+            "No ISBN, publisher, imprint or print specification is claimed. The file is an A4 review copy with embedded fonts and continuous pagination, produced for proofing and classroom review rather than for commercial print production.",
+        ],
+    ),
+    backcover=dict(
+        kicker="MYP Mathematics · Student coursebook",
+        edition="Second edition",
+        heading="About this book",
+        paras=[
+            "Ten chapters that take the real number system, powers and notation, functions, linear models, systems, transformations, similarity, trigonometry, three-dimensional measurement, bivariate data and probability from first ideas to justified use. Each chapter opens with a task: you investigate, notice a pattern, state a mathematical conclusion you can defend, and only then meet the formal explanation — with worked examples that model a complete solution and practice separated into Criterion A, B, C and D sets so you can see which skill each task trains.",
+            "Year 3 reasoning is organised, not just correct: Criterion C tasks ask you to structure an argument, and Criterion B tasks ask you to justify a generalisation rather than to list cases. Every chapter closes with a reflection that returns to the statement of inquiry.",
+            "Every chapter also closes with a Service as Action opportunity, a Community Project connection and a Personal Project extension for MYP 5. The back of the book carries complete student-facing answers with reasoning, a formula bank, a glossary and references.",
+        ],
+        collection_heading="MYP Mathematics · the five-volume collection",
+        collection_note="One inquiry-led course from Year 1 to Year 5. Volumes 1 and 2 are "
+                        "produced; volumes 4 and 5 are in preparation. The covers shown here are "
+                        "coordinated collection designs, not published volumes.",
+        smallprint="Second edition · A4 review copy · embedded fonts · continuous pagination. No ISBN, "
+                   "publisher, print specification or commercial print-readiness claim is made.",
+        author=AUTHOR,
+        foot_right="Second edition · MYP Mathematics",
+    ),
+)
+
+CHAPTERS = []
+
+F = diagrams2.fig
+
+CHAPTERS.extend([
+dict(
+    num=1, title="The real number system",
+    key="Form", related=["Quantity", "Equivalence"],
+    context="Orientation in space and time",
+    exploration="Natural and human landscapes and resources",
+    inquiry=("The form of the real number system, and the equivalence between fractions, "
+             "terminating decimals and recurring decimals, allow any position between two "
+             "reference points to be described exactly, while the logic of proof shows that some "
+             "positions on that line can never be written as a fraction."),
+    atl=("Critical thinking",
+         "In order for a student to evaluate a claim about all numbers, students must test the "
+         "claim on several cases, search for a counterexample, and then decide whether a "
+         "counterexample disproves the claim or widens the definition."),
+    standfirst="Every fraction is a terminating or a recurring decimal. The converse is false, and "
+               "the numbers that escape the fractions are the ones that make the number line "
+               "continuous.",
+    engage="A surveyor measures a plot of land and records 12.7 m, then 12.73 m, then 12.732 m. "
+           "Each measurement is better, and none of them is the true length. What kind of number is "
+           "the true length?",
+    questions=[("Factual", "Which numbers can be written as fractions, and what are the only two "
+                           "decimal forms a fraction can take?"),
+               ("Conceptual", "Why can every fraction be written as a terminating or recurring "
+                              "decimal, and why is the converse false?"),
+               ("Debatable", "When a land boundary is recorded to the nearest centimetre, is the "
+                             "recorded number the same number as the true distance, and does the "
+                             "difference matter?")],
+    application_lede="These tasks use fraction-decimal conversion, ordering, absolute value, "
+                     "intervals, surds and set notation. State whether your answer is exact or a "
+                     "rounded claim.",
+    projects_lede="Land, resource and boundary problems are real-number problems. Use exact forms "
+                  "where they exist, and say when a rounded value is the honest answer.",
+    sections=[
+        dict(id="1.1", title="Rational numbers and decimal form",
+             inquiry_q=("How can every fraction be written as a decimal, and what are the only two "
+                        "forms that decimal can take?"), teach=[
+            "A rational number is any number that can be written as a/b where a and b are integers and b is not zero. Every integer is rational, because n = n/1.",
+            "Dividing the numerator by the denominator gives a decimal that either stops (terminating) or settles into a repeating block (recurring). Nothing else can happen: the remainders in a long division can only take b different values, so one of them must eventually repeat.",
+            "A terminating decimal is a fraction whose denominator has only the prime factors 2 and 5. A recurring decimal comes from any other denominator. This is why 3/8 terminates (8 = 2³) but 1/3 recurs.",
+            "A recurring decimal is converted back to a fraction by multiplying by a power of 10 and subtracting, which cancels the repeating block.",
+        ], examples=[
+            dict(q="Write 5/8 and 7/12 as decimals, and say which one terminates and why.",
+                 vis=F("table", [["fraction", "denominator", "prime factors", "decimal"],
+                                 ["5/8", "8", "2 × 2 × 2", "0.625"],
+                                 ["7/12", "12", "2 × 2 × 3", "0.5833…"]],
+                       caption="Only the prime factors 2 and 5 give a terminating decimal."),
+                 reasoning="A decimal terminates exactly when the denominator in simplest form has no prime factor other than 2 or 5.",
+                 steps=["5/8: 8 = 2³, so 5 ÷ 8 = 0.625, which stops.",
+                        "7/12: 12 = 2² × 3, and the factor 3 forces repetition.",
+                        "7 ÷ 12 = 0.58333… = 0.58·3·, with the digit 3 repeating."],
+                 ans="5/8 = 0.625 terminates; 7/12 = 0.58·3· recurs",
+                 interp="The shape of the denominator decides the shape of the decimal, so the "
+                        "fraction form carries information the decimal form hides."),
+            dict(q="Convert 0.4·5· back to a fraction.",
+                 vis=F("number_line", 0, 1, 0.1, [0.45], "0.45…", ""),
+                 reasoning="Multiplying by a power of 10 shifts the repeating block, and subtracting removes it.",
+                 steps=["Let x = 0.4555….",
+                        "10x = 4.555…, and 100x = 45.555….",
+                        "100x − 10x = 41, so 90x = 41.",
+                        "x = 41/90."],
+                 ans="0.4·5· = 41/90",
+                 interp="Every recurring decimal is rational, so the recurring bar is a claim about "
+                        "exactness, not about approximation."),
+        ], inv=dict(
+            task="Take the fractions 1/2, 1/3, 1/4, 1/6, 1/7, 1/8, 1/9, 1/11 and 1/12. Divide each "
+                 "one out to at least eight decimal places and record whether the decimal stops, "
+                 "repeats a single digit, or repeats a block of several digits. Then look at the "
+                 "denominators.",
+            fig=F("table", [["denominator", "prime factors", "decimal"],
+                            ["2", "2", "0.5 stops"],
+                            ["3", "3", "0.333… repeats"],
+                            ["4", "2 × 2", "0.25 stops"],
+                            ["6", "2 × 3", "0.1666… repeats"]],
+                  caption="Terminating decimals come from denominators built only from 2s and 5s."),
+            table=[["fraction", "decimal", "stops or repeats", "denominator factors"],
+                   ["1/2", "0.5", "stops", "2"],
+                   ["1/3", "0.333…", "repeats one digit", "3"],
+                   ["1/4", "0.25", "stops", "2 × 2"],
+                   ["1/6", "0.1666…", "repeats one digit", "2 × 3"],
+                   ["1/7", "0.142857…", "repeats six digits", "7"],
+                   ["1/8", "0.125", "stops", "2 × 2 × 2"],
+                   ["1/9", "0.111…", "repeats one digit", "3 × 3"],
+                   ["1/11", "0.0909…", "repeats two digits", "11"],
+                   ["1/12", "0.08333…", "repeats one digit", "2 × 2 × 3"]],
+            notice=["Every fraction gave either a stopping decimal or a repeating one — never a "
+                    "decimal that wandered without repeating.",
+                    "The denominators that stop are built only from the primes 2 and 5.",
+                    "1/7 repeats a block of six digits, and 7 − 1 = 6, which is not a coincidence."],
+            obs="Long division of a fraction can only leave a limited number of remainders, so the "
+                "decimal must stop or repeat.",
+            concl="Every fraction can be written as a decimal, and that decimal is either "
+                  "terminating or recurring — a terminating decimal exactly when the denominator "
+                  "in simplest form has no prime factor other than 2 or 5.")),
+        dict(id="1.2", title="Irrational numbers and surds",
+             inquiry_q=("How can we show that a number exists on the number line that is not a "
+                        "fraction?"), teach=[
+            "An irrational number cannot be written as a/b for any integers a and b. Its decimal neither stops nor repeats, so it can never be written down in full — only named exactly (√2) or described (1.41421… to five decimal places).",
+            "The standard proof that √2 is irrational is a proof by contradiction: assume √2 = a/b in simplest form, square both sides, and show that a and b must both be even, which contradicts simplest form.",
+            "The parity argument is the engine of the proof. If a² = 2b² then a² is even, so a is even (because the square of an odd number is odd), so a = 2c, so 4c² = 2b², so b² is even, so b is even too.",
+            "A surd is an exact irrational root left in root form. Keeping √2 as √2 is exact; writing 1.41 is a rounded claim that will not survive being squared.",
+        ], examples=[
+            dict(q="Prove that √2 is irrational.",
+                 vis=F("number_line", 1, 2, 0.1, [1.4142], "√2", ""),
+                 reasoning="Assume the opposite and derive a contradiction; a claim that leads to a "
+                          "contradiction must be false.",
+                 steps=["Suppose √2 = a/b with a and b integers, b ≠ 0, and the fraction in "
+                        "simplest form.",
+                        "Squaring gives 2 = a²/b², so a² = 2b².",
+                        "Then a² is even, so a is even: write a = 2c.",
+                        "Substituting: 4c² = 2b², so b² = 2c², so b² is even and b is even.",
+                        "Both a and b are even, contradicting simplest form."],
+                 ans="√2 is irrational",
+                 interp="The contradiction came from the parity of a square, which is why no "
+                        "fraction can land exactly on √2."),
+            dict(q="Show that √3 is irrational, using the same structure of argument.",
+                 vis=F("number_line", 1, 2, 0.1, [1.732], "√3", ""),
+                 reasoning="The same contradiction argument works with any prime under the root, "
+                          "because a prime dividing a square must divide the number itself.",
+                 steps=["Suppose √3 = a/b in simplest form, so a² = 3b².",
+                        "Then 3 divides a², and since 3 is prime, 3 divides a: write a = 3c.",
+                        "Substituting gives 9c² = 3b², so b² = 3c², so 3 divides b.",
+                        "Both a and b are divisible by 3, contradicting simplest form."],
+                 ans="√3 is irrational",
+                 interp="The argument transfers because the key fact — a prime dividing a square "
+                        "divides the root — holds for every prime."),
+        ], inv=dict(
+            task="Draw a square of side 1 unit on grid paper and draw its diagonal. Use Pythagoras' "
+                 "theorem to find the length of the diagonal, then try to write that length as a "
+                 "fraction by testing denominators up to 20. Record how close each fraction gets.",
+            fig=F("pythagoras", 1, 1, "a unit square and its diagonal"),
+            table=[["fraction a/b", "value", "square of the value", "error against 2"],
+                   ["7/5", "1.4", "1.96", "0.04"],
+                   ["17/12", "1.41666…", "2.00694…", "0.00694…"],
+                   ["41/29", "1.41379…", "1.99881…", "0.00119…"],
+                   ["99/70", "1.41428…", "2.00020…", "0.00020…"],
+                   ["239/169", "1.41420…", "1.99997…", "0.00003…"]],
+            notice=["Every fraction lands close to the diagonal, and then misses it.",
+                    "The errors get smaller, but they never reach zero.",
+                    "The fractions that get close have larger and larger denominators."],
+            obs="Fractions can approach the diagonal as closely as we like without ever landing on "
+                "it, so the length of the diagonal is not a fraction.",
+            concl="A proof by contradiction shows that no fraction can equal the diagonal of a unit "
+                  "square, so √2 exists on the number line and is irrational.")),
+        dict(id="1.3", title="Order, absolute value and intervals",
+             inquiry_q=("How can every position on a line be described, and how does an interval "
+                        "decide which positions are included?"), teach=[
+            "The real numbers fill the number line with no gaps: every point is a real number and every real number is a point. Quantity and order are therefore the same idea on a line: to compare two quantities is to compare their positions. Rational and irrational numbers are both dense — between any two there is another of each kind.",
+            "Absolute value measures distance from zero, so |x| = x when x ≥ 0 and |x| = −x when x < 0. It turns an ordering question into a distance question.",
+            "An interval is the set of numbers between two endpoints. Square brackets include the endpoint, round brackets exclude it, and mixing them gives a half-open interval.",
+            "Interval and set notation are two languages for the same object: [1, 4) is {x : 1 ≤ x < 4}, and the complement of that set is everything outside it.",
+        ], examples=[
+            dict(q="Solve |x − 3| < 2 and write the answer as an interval.",
+                 vis=F("number_line", 0, 6, 1, [3], "|x − 3| < 2", ""),
+                 reasoning="Absolute value measures distance, so |x − 3| < 2 means x is less than 2 "
+                          "units from 3.",
+                 steps=["|x − 3| < 2 means −2 < x − 3 < 2.",
+                        "Add 3 to all three parts: 1 < x < 5.",
+                        "As an interval: (1, 5)."],
+                 ans="x ∈ (1, 5)",
+                 interp="Reading absolute value as distance turns an inequality into a picture of a "
+                        "line segment."),
+            dict(q="Write {x : −3 ≤ x < 2} in interval notation, and describe its complement.",
+                 vis=F("number_line", -4, 3, 1, [-3, 2], "[−3, 2)", ""),
+                 reasoning="A square bracket keeps the endpoint and a round bracket removes it, so "
+                          "the notation records inclusion directly.",
+                 steps=["−3 is included and 2 is excluded, so the interval is [−3, 2).",
+                        "The complement is everything outside: x < −3 or x ≥ 2.",
+                        "In interval notation: (−∞, −3) ∪ [2, ∞)."],
+                 ans="[−3, 2), with complement (−∞, −3) ∪ [2, ∞)",
+                 interp="The two notations disagree only about the endpoints, which is exactly the "
+                        "information a surveyor needs."),
+        ], inv=dict(
+            task="On a number line from −4 to 6, mark the intervals [−3, 1], (−3, 1], [−3, 1) and "
+                 "(−3, 1). For each one, list three numbers that belong to it and one number that "
+                 "does not. Then find two intervals whose union is [−4, 6] and whose intersection is "
+                 "a single number.",
+            fig=F("number_line", -4, 6, 1, [-3, 1], "two endpoints, four intervals", ""),
+            table=[["interval", "includes −3", "includes 1", "an example inside", "an example outside"],
+                   ["[−3, 1]", "yes", "yes", "−3", "1.5"],
+                   ["(−3, 1]", "no", "yes", "0", "−3"],
+                   ["[−3, 1)", "yes", "no", "−2.5", "1"],
+                   ["(−3, 1)", "no", "no", "0.5", "1"]],
+            notice=["The four intervals differ only at the two endpoints.",
+                    "Every interval contains infinitely many numbers, including irrationals.",
+                    "The union of [−3, 1] and (1, 6] is [−3, 6], and their intersection is empty."],
+            obs="Square and round brackets record exactly which endpoints belong, and the union and "
+                "intersection of intervals follow from that.",
+            concl="An interval is the set of numbers between two endpoints, and the bracket type "
+                  "decides inclusion: [a, b] includes both ends, (a, b) excludes both, and the mixed "
+                  "forms include exactly one.")),
+        dict(id="1.4", title="Working with surds",
+             inquiry_q=("How can an irrational quantity be written exactly and still be calculated "
+                        "with?"), teach=[
+            "Surds obey the same rules as powers with fractional indices: √a × √b = √(ab), and √a ÷ √b = √(a/b) for non-negative a and b.",
+            "Simplifying a surd means taking out the largest square factor: √72 = √(36 × 2) = 6√2. The simplified form is unique, which makes it a good form for comparing.",
+            "Rationalising a denominator replaces a surd in a denominator by an integer, by multiplying top and bottom by a conjugate. (1 + √2)(1 − √2) = 1 − 2 = −1, so the surd disappears.",
+            "Adding surds needs like surds: 3√2 + 5√2 = 8√2, but 3√2 + 5√3 cannot be simplified. Treating √2 as if it were √3 is the standard error.",
+        ], examples=[
+            dict(q="Simplify √200 and rationalise 6/√3.",
+                 vis=F("table", [["expression", "square factors", "simplified"],
+                                 ["√200", "200 = 100 × 2", "10√2"],
+                                 ["6/√3", "× √3/√3", "2√3"]],
+                       caption="Take out the largest square factor, then clear the surd denominator."),
+                 reasoning="Simplifying removes square factors, and multiplying by a conjugate "
+                          "clears a surd from a denominator without changing the value.",
+                 steps=["√200 = √(100 × 2) = 10√2.",
+                        "6/√3 = (6 × √3)/(√3 × √3) = 6√3/3.",
+                        "6√3/3 = 2√3."],
+                 ans="√200 = 10√2 and 6/√3 = 2√3",
+                 interp="Both answers are exact; writing 1.732… would lose the ability to check the "
+                        "work by squaring."),
+            dict(q="Show that (2 + √3)(2 − √3) = 1, and use it to rationalise 5/(2 + √3).",
+                 vis=F("table", [["pair", "product"],
+                                 ["2 + √3 and 2 − √3", "4 − 3 = 1"],
+                                 ["5/(2 + √3)", "5(2 − √3) = 10 − 5√3"]],
+                       caption="Conjugate pairs differ only in the sign between the terms."),
+                 reasoning="The product of a conjugate pair is rational, so multiplying by the "
+                          "conjugate is a legitimate way to clear a surd denominator.",
+                 steps=["(2 + √3)(2 − √3) = 4 − 2√3 + 2√3 − 3 = 1.",
+                        "5/(2 + √3) = 5(2 − √3)/((2 + √3)(2 − √3)).",
+                        "= 5(2 − √3)/1 = 10 − 5√3."],
+                 ans="5/(2 + √3) = 10 − 5√3",
+                 interp="The conjugate works because the cross terms cancel, leaving only rational "
+                        "numbers."),
+        ], inv=dict(
+            task="Take the surds √8, √18, √50 and √72. Simplify each one, then add them in pairs. "
+                 "Then try to simplify √2 + √3 and record what happens. Finally, find a fraction "
+                 "with denominator 3 + √2 that has an integer denominator.",
+            table=[["surd", "largest square factor", "simplified"],
+                   ["√8", "4", "2√2"],
+                   ["√18", "9", "3√2"],
+                   ["√50", "25", "5√2"],
+                   ["√72", "36", "6√2"],
+                   ["√2 + √3", "none", "cannot be simplified"]],
+            notice=["All four surds simplify to a multiple of √2.",
+                    "2√2 + 3√2 + 5√2 + 6√2 = 16√2, but only because they are all like surds.",
+                    "√2 + √3 resists simplification because the surds are different.",
+                    "Multiplying 1/(3 + √2) by (3 − √2)/(3 − √2) gives (3 − √2)/7."],
+            obs="Only like surds combine, and a surd denominator can always be cleared by "
+                "multiplying by the conjugate.",
+            concl="A surd can be written exactly and calculated with by taking out square factors, "
+                  "collecting like surds and rationalising with a conjugate — and the simplified "
+                  "form is unique.")),
+        dict(id="1.5", title="Sets, logic and proof",
+             inquiry_q=("How can a claim about all numbers be proved rather than tested?"), teach=[
+            "A set is a collection of objects, described by listing its elements or by a rule. The universal set is everything under discussion, and the complement of A is everything in the universal set that is not in A.",
+            "Union gathers what is in either set; intersection keeps only what is in both. These two operations behave like 'or' and 'and' in logic, and Venn diagrams make the difference visible.",
+            "A universal claim ('every fraction has a recurring or terminating decimal') cannot be proved by examples. It needs an argument that works for all cases, and a single counterexample destroys it.",
+            "Proof by contradiction assumes the claim is false and derives an impossible consequence. It is the tool that proves √2 is irrational, and it is used again in Chapter 7 to prove Pythagoras-related results.",
+        ], examples=[
+            dict(q="A = {x : x is a factor of 12} and B = {x : x is a factor of 18}. List A ∪ B and A ∩ B.",
+                 vis=F("venn", "A", "B", "1", "2, 3, 4, 6, 12", "9, 18"),
+                 reasoning="Union collects everything in either set; intersection keeps only the "
+                          "common elements.",
+                 steps=["A = {1, 2, 3, 4, 6, 12} and B = {1, 2, 3, 6, 9, 18}.",
+                        "A ∪ B = {1, 2, 3, 4, 6, 9, 12, 18}.",
+                        "A ∩ B = {1, 2, 3, 6}."],
+                 ans="A ∪ B = {1, 2, 3, 4, 6, 9, 12, 18}; A ∩ B = {1, 2, 3, 6}",
+                 interp="The intersection is the common structure the two sets share, which is why "
+                        "it is the useful part for comparing."),
+            dict(q="Show that the claim 'the product of two irrational numbers is irrational' is "
+                   "false.",
+                 vis=F("table", [["first number", "second number", "product"],
+                                 ["√2", "√2", "2"],
+                                 ["√2", "2√2", "4"]],
+                       caption="One counterexample is enough to destroy a universal claim."),
+                 reasoning="A universal claim fails if a single case contradicts it, so a "
+                          "counterexample is a complete refutation.",
+                 steps=["The claim says: for all irrational a and b, ab is irrational.",
+                        "Take a = √2 and b = √2. Both are irrational.",
+                        "ab = √2 × √2 = 2, which is rational.",
+                        "So the claim is false."],
+                 ans="False — √2 × √2 = 2",
+                 interp="Finding one counterexample is faster than testing many cases, and it is "
+                        "decisive."),
+        ], inv=dict(
+            task="Test four claims about numbers. For each one, either find a counterexample or "
+                 "write down why you believe it is true for every case: (1) the sum of two rational "
+                 "numbers is rational; (2) the sum of two irrational numbers is irrational; (3) a "
+                 "non-zero rational number times an irrational number is irrational; (4) there is a "
+                 "rational number between any two rational numbers.",
+            table=[["claim", "counterexample or argument", "verdict"],
+                   ["rational + rational is rational", "a/b + c/d = (ad + bc)/bd, a fraction", "true for all"],
+                   ["irrational + irrational is irrational", "√2 + (−√2) = 0", "false"],
+                   ["rational × irrational is irrational", "if qr = s then r = s/q is rational", "true for q ≠ 0"],
+                   ["a rational lies between any two rationals", "(p/q + r/s)/2 is rational and between them", "true for all"]],
+            notice=["Two claims were destroyed by a single counterexample each.",
+                    "Two claims survived because an argument covered every case.",
+                    "The average of two numbers always lies between them, which is why the rationals "
+                    "are dense."],
+            obs="Examples can disprove a universal claim but never prove one; proving requires an "
+                "argument that covers every case.",
+            concl="A universal claim is proved by an argument that works for all cases and "
+                  "disproved by one counterexample, which is why proof and counterexample are "
+                  "complementary tools.")),
+    ],
+    practice=dict(
+        A=[("1.1.1", "Write 7/8, 5/6 and 11/40 as decimals and say which terminate and why.",
+            "0.875 stops; 0.8·3· recurs; 0.275 stops",
+            "Denominators of only 2s and 5s terminate: 8 = 2³ and 40 = 2³ × 5.", "F"),
+           ("1.1.2", "Convert 0.·2·7· into a fraction.",
+            "3/11", "Let x = 0.2727…; 100x − x = 27, so 99x = 27.", "F"),
+           ("1.1.3", "Explain why 1/7 must produce a recurring decimal.",
+            "The remainder in the division can only be 0–6, so one must repeat.",
+            "Only seven remainders are possible, so the decimal cannot go on without repeating.", "R"),
+           ("1.1.4", "A land record gives a boundary as 0.3·7· m. Write this as a fraction.",
+            "37/99 m", "0.3737… = 37/99.", "F"),
+           ("1.1.5", "Is 0.10100100010000… rational? Justify your answer.",
+            "No — the blocks grow, so the decimal never repeats.",
+            "A rational decimal either stops or repeats a fixed block.", "R"),
+           ("1.1.6", "Write 22/7 as a decimal to four places and state whether it is exact.",
+            "3.1429 (rounded); the exact value is 22/7",
+            "22/7 recurs, so any finite decimal is a rounded claim.", "A"),
+           ("1.1.7", "Sort these into rational and irrational: 0.25, √5, 7/3, π, −4, 0.·1·.",
+            "Rational: 0.25, 7/3, −4, 0.·1·; irrational: √5, π",
+            "Recurring and terminating decimals are rational; π and √5 are not fractions.", "F"),
+           ("1.1.8", "Find a fraction between 1/3 and 1/2, and explain how you know it is between them.",
+            "5/12", "1/3 = 4/12 and 1/2 = 6/12, so 5/12 lies between.", "R"),
+           ("1.1.9", "A resource of 3/5 of a hectare is recorded as 0.6 ha. Is this exact?",
+            "Yes — 3/5 = 0.6 exactly",
+            "The denominator 5 gives a terminating decimal.", "A"),
+           ("1.1.10", "Explain the difference between 0.·9· and 0.9999.",
+            "0.·9· = 1 exactly; 0.9999 is a rounded value below 1.",
+            "A recurring decimal is exact, while a finite decimal is a claim about rounding.", "R"),
+           ("1.1.11", "Convert 0.0·4·5· into a fraction.",
+            "1/22",
+            "Let x = 0.04545…; then 100x = 4.5454… and 10x = 0.4545…, so 90x = 4.0909… − 0.4545… "
+            "= 3.6363… = 40/11 and x = 1/22.", "C"),
+           ("1.1.12", "Why is every integer a rational number?",
+            "Because n = n/1", "The definition only requires a quotient of two integers.", "F")],
+        B=[("1.2.1", "Prove that √5 is irrational.",
+            "Assume √5 = a/b in simplest form; then 5 divides a², so 5 divides a, so 5 divides b — a contradiction.",
+            "A prime dividing a square divides the number itself.", "R"),
+           ("1.2.2", "Investigate: is √(2/3) rational or irrational? Justify.",
+            "Irrational", "If √(2/3) were rational, its square 2/3 would have a rational square root, which would make 6 rational after clearing denominators.", "R"),
+           ("1.2.3", "Find a counterexample to 'the square of an irrational number is irrational'.",
+            "√2 × √2 = 2", "One counterexample refutes the claim.", "R"),
+           ("1.2.4", "Investigate the sequence of approximations 1, 1.4, 1.41, 1.414, 1.4142 to √2. What is happening to the error?",
+            "The error falls by roughly a factor of 10 each time, but never reaches zero.",
+            "Each added decimal place improves the approximation tenfold.", "R"),
+           ("1.2.5", "Test the claim: between any two irrational numbers there is a rational number.",
+            "True — take the average of the two numbers and round it to a nearby fraction, or use a decimal truncation of the left-hand number.",
+            "The rationals are dense on the number line.", "R"),
+           ("1.2.6", "Investigate: is 2√3 greater than, equal to or less than 3√2? Justify without a calculator.",
+            "2√3 = √12 and 3√2 = √18, so 2√3 < 3√2.",
+            "Squaring both sides preserves the order for positive numbers.", "R"),
+           ("1.2.7", "Generalise: what can you say about √n when n is not a perfect square?",
+            "√n is irrational", "The contradiction proof works for any non-square integer n.", "R"),
+           ("1.2.8", "Investigate the pattern √4, √9, √16, √25, √36. Write the next two terms and a rule.",
+            "√49 = 7, √64 = 8; the rule is √(n²) = n",
+            "Each term is the square root of a perfect square.", "F"),
+           ("1.2.9", "Find two irrational numbers whose sum is rational, and explain what this shows.",
+            "√2 and −√2, whose sum is 0",
+            "Irrational numbers are not closed under addition.", "R"),
+           ("1.2.10", "Test the claim: if x is irrational then 1/x is irrational.",
+            "True for x ≠ 0 — otherwise 1/x = p/q would make x = q/p rational.",
+            "The rationals are closed under division by a non-zero rational.", "R"),
+           ("1.2.11", "Investigate: how many irrational numbers lie between 1 and 2?",
+            "Infinitely many — for example 1 + √2/n for any positive integer n.",
+            "Adding an irrational to a rational gives an irrational.", "R")],
+        C=[("1.3.1", "Solve |x + 2| ≤ 5 and write the answer as an interval.",
+            "−7 ≤ x ≤ 3, so [−7, 3]",
+            "|x + 2| ≤ 5 means −5 ≤ x + 2 ≤ 5.", "F"),
+           ("1.3.2", "Explain in words what |a − b| measures, and give an example with two towns.",
+            "The distance between a and b on the number line",
+            "Absolute value removes the direction and keeps the size of the gap.", "R"),
+           ("1.3.3", "Write (−∞, 3) ∪ (3, ∞) in set notation and say what is missing.",
+            "{x : x ≠ 3}; the single number 3 is excluded",
+            "Union gathers both sides and the endpoint is in neither.", "F"),
+           ("1.3.4", "Simplify √75 + √12 and explain why the two surds can be collected.",
+            "7√3", "√75 = 5√3 and √12 = 2√3, and both are multiples of √3.", "F"),
+           ("1.3.5", "Rationalise 4/(√5 − 1) and explain the role of the conjugate.",
+            "√5 + 1", "(√5 + 1)(√5 − 1) = 4, so the product clears the surd.", "F"),
+           ("1.3.6", "Explain why √2 + √3 cannot be simplified, using the definition of like surds.",
+            "They are not multiples of the same surd.",
+            "Only like surds combine, in the same way as like terms.", "R"),
+           ("1.3.7", "A survey gives a distance as 3.6 m to one decimal place. Write the interval of "
+                    "possible true distances.",
+            "[3.55, 3.65) m",
+            "Rounding to one decimal place includes the lower bound and excludes the upper.", "A"),
+           ("1.3.8", "Explain the difference between 3.6 m and 3.60 m as a record of measurement.",
+            "3.60 m claims precision to the nearest centimetre; 3.6 m claims only the nearest 10 cm.",
+            "Trailing zeros record the precision of the instrument.", "R"),
+           ("1.3.9", "Draw a Venn diagram for A = {even numbers} and B = {multiples of 3} inside the "
+                     "universal set of the first 12 positive integers, and list A ∩ B.",
+            "{6, 12}",
+            "The intersection holds only the numbers with both properties.", "F"),
+           ("1.3.10", "Explain why a proof by contradiction is not the same as finding a "
+                      "counterexample.",
+            "A counterexample disproves a universal claim; a contradiction proves one by ruling out "
+            "the alternative.",
+            "The two tools work in opposite directions.", "R"),
+           ("1.3.11", "Write the complement of [−2, 5] in interval notation and describe it in words.",
+            "(−∞, −2) ∪ (5, ∞)",
+            "The complement keeps everything outside the interval, excluding both endpoints.", "F"),
+           ("1.3.12", "A resource estimate is given as 4 × 10³ kg to one significant figure. Write the "
+                      "interval of possible true values.",
+            "[3500, 4500) kg",
+            "One significant figure rounds to the nearest thousand, including the lower bound.", "A")],
+        D=[("1.4.1", "A plot of land measures √50 m by √18 m. Find its exact area and a decimal "
+                     "estimate to two places.",
+            "30 m² exactly (√50 × √18 = √900 = 30)",
+            "Multiplying surds multiplies the numbers under the root.", "A"),
+           ("1.4.2", "A boundary is recorded as 12.7 m to the nearest 10 cm. Write the interval of "
+                     "possible true lengths and say how wide it is.",
+            "[12.65, 12.75) m, width 0.1 m",
+            "Rounding to one decimal place gives an interval of width 0.1.", "A"),
+           ("1.4.3", "Two farms measure 0.4·3· km² and 0.43 km². Which is larger, and by how much? "
+                     "Give an exact answer.",
+            "0.4·3· = 43/99 ≈ 0.4343, so it is larger by 1/99 − 0.43 ≈ 0.0043 km²",
+            "Convert the recurring decimal to a fraction before comparing.", "R"),
+           ("1.4.4", "A reservoir holds 3.5 × 10⁶ litres. A second holds 3.5 × 10⁵ litres. How many "
+                     "times larger is the first, and what does this say about reporting?",
+            "10 times larger",
+            "The powers of 10 differ by 1, so the quantities differ by a factor of 10.", "A"),
+           ("1.4.5", "A path is measured as 25 m to the nearest metre. Explain why the true length "
+                     "cannot be known from this record, and state the best interval you can give.",
+            "[24.5, 25.5) m",
+            "The record fixes the length only to within half a metre either side.", "R"),
+           ("1.4.6", "A metal rod is √27 cm long. A slot is 5.1 cm wide to one decimal place. Will "
+                     "the rod fit? Justify with an exact comparison.",
+            "√27 ≈ 5.196 cm, which is greater than 5.1, so it will not fit",
+            "Compare the exact surd with the rounded measurement, and state the uncertainty.", "A"),
+           ("1.4.7", "A field is 0.6·1· hectares. Convert this to a fraction and find the area to "
+                     "the nearest square metre, given 1 ha = 10 000 m².",
+            "61/99 ha ≈ 0.6162 ha ≈ 6162 m²",
+            "Convert the recurring decimal to a fraction, then multiply.", "A"),
+           ("1.4.8", "Explain, with a calculation, why a builder should not order material from a "
+                     "measurement rounded to the nearest metre.",
+            "The error can be up to 0.5 m per measurement, and errors add up over several "
+            "measurements.",
+            "Rounding errors accumulate, so the total can be far from the true amount.", "R"),
+           ("1.4.9", "A map scale is 1 : 25 000. A lake measures √8 cm on the map. Find the real "
+                     "width in exact form and to the nearest metre.",
+            "25000√8 cm = 50000√2 cm ≈ 70 710 cm ≈ 707 m",
+            "Multiply by the scale factor, then convert units and round.", "A"),
+           ("1.4.10", "Two land records give areas 1.4·9· km² and 1.49 km². Show which is larger "
+                      "and find the difference as a fraction.",
+            "1.4·9· = 148/99 ≈ 1.4949, so it is larger by 1/1980 km²",
+            "Write both as fractions over a common denominator before subtracting.", "R"),
+           ("1.4.11", "A water tank holds 2√3 × 10³ litres. A second holds 3000 litres. Which holds "
+                      "more, and by how much, exactly?",
+            "2√3 × 10³ ≈ 3464 litres, so the first holds more by 1000(2√3 − 3) litres",
+            "Compare the exact surd form with the integer, then subtract.", "A"),
+           ("1.4.12", "Explain why an exact surd is preferred to a decimal when a measurement will "
+                      "be used in a further calculation.",
+            "The surd keeps the value exact, while a rounded decimal introduces an error that grows "
+            "through the calculation.",
+            "Rounding before calculating compounds the error.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The boundary of a plot",
+             text="A triangular plot has sides √20 m, √45 m and √80 m. Find the exact perimeter, a "
+                  "decimal estimate to one decimal place, and the interval in which the true "
+                  "perimeter must lie if each side is measured to the nearest 0.1 m.",
+             note="Criteria A and C · state which answers are exact and which are rounded."),
+        dict(title="A2 · The recurring record",
+             text="An archive records a yield as 0.2·7· tonnes per hectare. Convert this to a "
+                  "fraction, then find the yield of 4 hectares exactly and to the nearest tonne.",
+             note="Criteria A and D · show the conversion, and comment on the precision of the "
+                  "original record."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of form and the related concepts of quantity and equivalence "
+        "appear in your work?",
+        "How is the global context of orientation in space and time, and its exploration of natural "
+        "and human landscapes and resources, visible in the investigations and examples you "
+        "completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a measurement that is rounded, and what would you still like "
+        "to ask?",
+    ],
+    review=dict(
+        ideas=["A rational number is a fraction of integers; its decimal stops or recurs.",
+               "A decimal terminates exactly when the denominator has no prime factor but 2 and 5.",
+               "An irrational number cannot be written as a fraction; √2 is proved irrational by "
+               "contradiction.",
+               "Absolute value measures distance from zero, so it turns order into distance.",
+               "An interval records which endpoints are included, using square and round brackets.",
+               "Surds are simplified by taking out square factors and rationalised by multiplying "
+               "by a conjugate.",
+               "A universal claim is proved by an argument for all cases, or disproved by one "
+               "counterexample."],
+        vocab=["rational", "irrational", "terminating decimal", "recurring decimal", "surd",
+               "absolute value", "interval", "union", "intersection", "complement",
+               "proof by contradiction", "counterexample", "conjugate"],
+        mixed=[("1.R1", "Write 5/12 as a decimal and say whether it terminates."),
+               ("1.R2", "Convert 0.·4·5· into a fraction."),
+               ("1.R3", "Simplify √98."),
+               ("1.R4", "Solve |x − 1| < 3 and write the answer as an interval."),
+               ("1.R5", "Is the sum of two irrational numbers always irrational? Justify."),
+               ("1.R6", "Write the complement of (2, 7] in interval notation.")],
+    ),
+    projects=dict(
+        service=[("Community need", "Land and water records in the community are kept to different "
+                                    "precisions, which makes sharing decisions hard to check."),
+                 ("Mathematical connection", "Exact and rounded values, intervals and unit "
+                                             "conversion."),
+                 ("Proposed action", "Re-record one shared resource to an agreed precision and "
+                                     "publish the interval of uncertainty with it."),
+                 ("Expected impact", "Decisions about the resource are made from numbers everyone "
+                                     "can interpret the same way."),
+                 ("Student reflection", "Record the precision you chose, why, and what changed when "
+                                        "the record was made consistent.")],
+        community=[("Project idea", "A precision audit of the school's measurements."),
+                   ("Need", "The field, the hall and the garden are all measured to different "
+                            "precisions."),
+                   ("Research question", "What precision does each use of the school's spaces "
+                                         "actually need?"),
+                   ("Mathematics", "Rounding intervals, significant figures, unit conversion and "
+                                   "error accumulation."),
+                   ("Action or outcome", "A measurement register with an agreed precision and an "
+                                         "uncertainty interval for each space."),
+                   ("Beneficiaries", "Anyone planning events, seating or planting in those spaces."),
+                   ("Evidence", "The register, the method and a photograph of the measuring.")],
+        personal=[("Personal interest", "Mapping, hiking or gardening."),
+                  ("Learning goal", "To record a real measurement honestly, with its uncertainty."),
+                  ("Product or outcome", "A measured plan of a route or a bed, with intervals."),
+                  ("Mathematics", "Scale, surds, rounding and interval notation."),
+                  ("Process", "Measure, convert to a common unit, then state the interval."),
+                  ("Evidence", "The plan, the measurements and the stated uncertainty.")],
+    ),
+),
+])
+
+CHAPTERS.extend([
+dict(
+    num=2, title="Powers, roots and scientific notation",
+    key="Form", related=["Quantity", "Representation", "Patterns"],
+    context="Scientific and technical innovation",
+    exploration="Precision, accuracy and measurement",
+    inquiry=("The form of a number written in index form, and the equivalence between index form "
+             "and root form, allow any quantity to be represented compactly and compared across "
+             "scales, while the pattern in the exponent laws makes those representations safe to "
+             "manipulate."),
+    atl=("Research",
+         "In order for a student to use an index law correctly in an unfamiliar problem, students "
+         "must test the law on small cases, record where it breaks, and state the conditions under "
+         "which the law holds."),
+    standfirst="Index form is a representation that carries the size of a quantity in its shape. "
+               "The exponent laws are patterns in that shape, and they are what make large and "
+               "small numbers calculable.",
+    engage="A drop of seawater contains about 10²² atoms. A red blood cell is about 10⁻⁵ m wide. "
+           "Writing these in full is impossible; writing them in index form is not, and the "
+           "comparison becomes immediate.",
+    questions=[("Factual", "What do the exponent laws say, and how do you write a root as a power?"),
+               ("Conceptual", "Why does multiplying powers of the same base add the indices, and "
+                              "what does that reveal about the form of a number in index notation?"),
+               ("Debatable", "When a measurement is reported to a certain number of significant "
+                             "figures, does the extra precision of a longer decimal make the claim "
+                             "more scientific?")],
+    application_lede="These tasks use index laws, rational indices, scientific notation, orders of "
+                     "magnitude and significant figures. State the precision of every answer you "
+                     "report.",
+    projects_lede="Innovation runs on measurement at very different scales. Use index form to keep "
+                  "the scales visible, and significant figures to keep the claims honest.",
+    sections=[
+        dict(id="2.1", title="Integer exponents and the exponent laws",
+             inquiry_q=("How can the pattern in repeated multiplication be written once, as a rule "
+                        "that works for every case?"), teach=[
+            "An index records repeated multiplication: 2⁵ = 2 × 2 × 2 × 2 × 2. The base is 2 and the index is 5, and the index is a count of factors, not a multiplier.",
+            "Multiplying powers of the same base adds the indices, because the factors simply accumulate: 2³ × 2⁴ = 2⁷. Dividing subtracts them, because division removes factors.",
+            "A power of a power multiplies the indices, because each of the factors is itself a repeated multiplication: (2³)⁴ = 2¹².",
+            "The laws hold for every integer index once a⁰ = 1 and a⁻ⁿ = 1/aⁿ are defined. Those definitions are chosen so the patterns in the exponent laws continue without a break, and the same patterns extend to roots.",
+        ], examples=[
+            dict(q="Simplify (3x⁴)³ ÷ (9x²) and write the answer with positive indices.",
+                 vis=F("table", [["expression", "law used", "result"],
+                                 ["(3x⁴)³", "power of a power", "27x¹²"],
+                                 ["27x¹² ÷ 9x²", "quotient law", "3x¹⁰"]],
+                       caption="Each law changes only the form, never the value."),
+                 reasoning="The power law multiplies the indices inside the bracket, and the quotient "
+                          "law subtracts them, with the coefficients handled separately.",
+                 steps=["(3x⁴)³ = 3³ × (x⁴)³ = 27x¹².",
+                        "27x¹² ÷ 9x² = (27 ÷ 9) × x¹²⁻².",
+                        "= 3x¹⁰."],
+                 ans="3x¹⁰",
+                 interp="The coefficient and the variable part obey different laws, so keeping them "
+                        "separate avoids the commonest error."),
+            dict(q="Evaluate 5⁻² × 5⁵ ÷ 5⁰.",
+                 vis=F("number_line", -3, 6, 1, [], "adding and subtracting indices", ""),
+                 reasoning="Negative and zero indices are defined so that the same laws continue to "
+                          "work, so they can be used in the same calculation.",
+                 steps=["5⁻² × 5⁵ = 5⁻²⁺⁵ = 5³.",
+                        "5⁰ = 1 by definition.",
+                        "5³ ÷ 1 = 125."],
+                 ans="125",
+                 interp="The definitions of a⁰ and a⁻ⁿ are not arbitrary: they are exactly what the "
+                        "pattern in the laws requires."),
+        ], inv=dict(
+            task="Compute 2² × 2³, 2³ × 2⁴, 2⁵ × 2⁵ and 2² × 2⁵ both as products of factors and as "
+                 "single powers of 2. Then do the same for division, and for (2²)³ and (2³)². "
+                 "Record the pattern you see in the indices.",
+            fig=F("table", [["expression", "as repeated factors", "as one power"],
+                            ["2² × 2³", "2 × 2 × 2 × 2 × 2", "2⁵"],
+                            ["2³ × 2⁴", "seven factors of 2", "2⁷"],
+                            ["2⁵ ÷ 2²", "five factors with two removed", "2³"],
+                            ["(2²)³", "three groups of two factors", "2⁶"]],
+                  caption="The index law is a statement about counting factors."),
+            table=[["calculation", "written out", "answer", "what happened to the indices"],
+                   ["2² × 2³", "2×2×2×2×2", "2⁵", "2 + 3 = 5"],
+                   ["2³ × 2⁴", "seven factors", "2⁷", "3 + 4 = 7"],
+                   ["2⁵ ÷ 2²", "five minus two factors", "2³", "5 − 2 = 3"],
+                   ["(2²)³", "three groups of two", "2⁶", "2 × 3 = 6"],
+                   ["(2³)²", "two groups of three", "2⁶", "3 × 2 = 6"],
+                   ["2⁰", "no factors at all", "1", "the pattern needs it to be 1"]],
+            notice=["Multiplying adds the indices, and the reason is that the factors pile up.",
+                    "Dividing subtracts them, because division removes factors.",
+                    "A power of a power multiplies the indices, because each factor is itself a "
+                    "repeated multiplication.",
+                    "2⁵ ÷ 2⁵ must equal 1, and the pattern says 2⁵⁻⁵ = 2⁰, so 2⁰ = 1."],
+            obs="Each law is the same statement about counting factors, written in index form.",
+            concl="aᵐ × aⁿ = aᵐ⁺ⁿ, aᵐ ÷ aⁿ = aᵐ⁻ⁿ and (aᵐ)ⁿ = aᵐⁿ, and these patterns are what force "
+                  "the definitions a⁰ = 1 and a⁻ⁿ = 1/aⁿ.")),
+        dict(id="2.2", title="Roots and rational exponents",
+             inquiry_q=("How can a root be written as a power, and why are the two forms "
+                        "equivalent?"), teach=[
+            "The nth root of a number is the value that, raised to the nth power, gives the number back: ⁿ√a = a^(1/n). The two notations are equivalent because (a^(1/n))ⁿ = a.",
+            "Writing roots as fractional indices lets the exponent laws apply to roots as well: √a × √b = a^(1/2) × b^(1/2) = (ab)^(1/2) = √(ab).",
+            "A rational index a^(m/n) means the nth root raised to the mth power, and the order of the two operations does not matter for non-negative a.",
+            "Negative indices give reciprocals, so a^(−1/2) = 1/√a. Keeping the sign separate from the fraction is what prevents sign errors.",
+        ], examples=[
+            dict(q="Write ³√(8x⁶) using index notation, then simplify.",
+                 vis=F("table", [["expression", "index form", "simplified"],
+                                 ["³√8", "8^(1/3)", "2"],
+                                 ["³√(x⁶)", "(x⁶)^(1/3)", "x²"]],
+                       caption="A root is a fractional index, so the power law applies."),
+                 reasoning="The cube root is the power 1/3, and the power law multiplies indices, "
+                          "so 6 × 1/3 = 2.",
+                 steps=["³√(8x⁶) = (8x⁶)^(1/3).",
+                        "= 8^(1/3) × (x⁶)^(1/3).",
+                        "8^(1/3) = 2 and (x⁶)^(1/3) = x^(6/3) = x²."],
+                 ans="2x²",
+                 interp="Index form turns a root problem into an exponent problem, which is why it "
+                        "is the preferred form for manipulation."),
+            dict(q="Simplify (16/81)^(−3/4).",
+                 vis=F("table", [["step", "law", "result"],
+                                 ["(16/81)^(−3/4)", "negative index", "(81/16)^(3/4)"],
+                                 ["(81/16)^(3/4)", "root then power", "(3/2)³ = 27/8"]],
+                       caption="Handle the sign, then the fraction, then the index."),
+                 reasoning="A negative index inverts the fraction, and a fractional index takes a "
+                          "root before applying the power.",
+                 steps=["(16/81)^(−3/4) = (81/16)^(3/4).",
+                        "(81/16)^(3/4) = (⁴√81 / ⁴√16)³ = (3/2)³.",
+                        "(3/2)³ = 27/8."],
+                 ans="27/8",
+                 interp="Doing the sign first, then the root, then the power keeps each step "
+                        "checkable."),
+        ], inv=dict(
+            task="Take the numbers 4, 8, 27 and 32. Write each as a power of its smallest possible "
+                 "base, then write each root ⁿ√a as a fractional index. Finally, test whether √(ab) "
+                 "= √a × √b holds for a = 9, b = 16 and for a = −9, b = 16, and record what you "
+                 "find.",
+            table=[["number", "as a power", "root as an index"],
+                   ["4", "2²", "√4 = 4^(1/2) = 2"],
+                   ["8", "2³", "³√8 = 8^(1/3) = 2"],
+                   ["27", "3³", "³√27 = 27^(1/3) = 3"],
+                   ["32", "2⁵", "⁵√32 = 32^(1/5) = 2"]],
+            notice=["Every root could be written as a fractional index.",
+                    "√(9 × 16) = √144 = 12, and √9 × √16 = 3 × 4 = 12, so the law holds.",
+                    "√(−9 × 16) is not a real number, so the law cannot be tested there.",
+                    "Writing numbers as powers of the smallest base makes roots easy to see."],
+            obs="A root and a fractional index are two notations for the same operation, so the "
+                "exponent laws apply to roots too.",
+            concl="ⁿ√a = a^(1/n), so a^(m/n) = (ⁿ√a)ᵐ and the exponent laws extend to roots — for "
+                  "non-negative a when n is even.")),
+        dict(id="2.3", title="Scientific notation",
+             inquiry_q=("How can very large and very small quantities be written so that their size "
+                        "is visible at a glance?"), teach=[
+            "Scientific notation writes a number as a × 10ⁿ with 1 ≤ a < 10 and n an integer. The exponent counts how many places the decimal point has moved, so it carries the size of the quantity.",
+            "The form is a representation choice: 6 300 000 and 6.3 × 10⁶ are the same number, but only the second makes the order of magnitude visible.",
+            "Multiplying in scientific notation multiplies the coefficients and adds the exponents. Dividing does the reverse. This is the exponent law applied to a representation.",
+            "The form also prevents a common reporting error. A measurement written as 0.00042 m has hidden its scale; 4.2 × 10⁻⁴ m has not.",
+        ], examples=[
+            dict(q="Write 0.0000042 and 3 500 000 000 in scientific notation, then multiply them.",
+                 vis=F("table", [["number", "scientific notation"],
+                                 ["0.0000042", "4.2 × 10⁻⁶"],
+                                 ["3 500 000 000", "3.5 × 10⁹"]],
+                       caption="The exponent records the position of the decimal point."),
+                 reasoning="Move the decimal point until the coefficient lies between 1 and 10, then "
+                          "count the places moved to fix the exponent.",
+                 steps=["0.0000042: move the point 6 places right → 4.2 × 10⁻⁶.",
+                        "3 500 000 000: move the point 9 places left → 3.5 × 10⁹.",
+                        "Multiply: (4.2 × 3.5) × 10⁻⁶⁺⁹ = 14.7 × 10³.",
+                        "Restore the form: 1.47 × 10⁴."],
+                 ans="4.2 × 10⁻⁶ and 3.5 × 10⁹; their product is 1.47 × 10⁴",
+                 interp="The exponents add exactly as the index law says, and the coefficient is "
+                        "adjusted at the end to keep the form."),
+            dict(q="A red blood cell is 7.5 × 10⁻⁶ m wide and a grain of sand is 2 × 10⁻⁴ m wide. "
+                   "How many times wider is the grain?",
+                 vis=F("table", [["object", "width"],
+                                 ["red blood cell", "7.5 × 10⁻⁶ m"],
+                                 ["grain of sand", "2 × 10⁻⁴ m"]],
+                       caption="Dividing in scientific notation subtracts the exponents."),
+                 reasoning="Dividing divides the coefficients and subtracts the exponents, which "
+                          "gives the comparison directly.",
+                 steps=["(2 × 10⁻⁴) ÷ (7.5 × 10⁻⁶) = (2 ÷ 7.5) × 10⁻⁴⁻⁽⁻⁶⁾.",
+                        "= 0.2666… × 10².",
+                        "= 2.666… × 10¹ ≈ 27."],
+                 ans="about 27 times wider",
+                 interp="The subtraction of exponents gives the factor of 100 immediately, before any "
+                        "coefficient arithmetic."),
+        ], inv=dict(
+            task="Collect six quantities from science or geography at very different scales, write "
+                 "each in scientific notation, and order them from smallest to largest. Then "
+                 "multiply the smallest and the largest, and divide the largest by the smallest, "
+                 "without using a calculator for the exponents.",
+            table=[["quantity", "ordinary form", "scientific notation"],
+                   ["width of a hair", "0.00008 m", "8 × 10⁻⁵ m"],
+                   ["mass of a grain of rice", "0.000025 kg", "2.5 × 10⁻⁵ kg"],
+                   ["height of a room", "3 m", "3 × 10⁰ m"],
+                   ["distance to the moon", "384 000 000 m", "3.84 × 10⁸ m"],
+                   ["mass of the Earth", "a 25-digit number", "5.97 × 10²⁴ kg"],
+                   ["speed of light", "300 000 000 m/s", "3 × 10⁸ m/s"]],
+            notice=["Ordering by the exponent gives the correct order immediately.",
+                    "The product of the smallest and largest had exponent −5 + 24 = 19.",
+                    "The quotient had exponent 24 − (−5) = 29, so the two differ by 29 orders of "
+                    "magnitude.",
+                    "Every coefficient stayed between 1 and 10, which is what makes the form "
+                    "readable."],
+            obs="The exponent carries the size of the quantity, so comparing, multiplying and "
+                "dividing become operations on the exponents.",
+            concl="Scientific notation is a × 10ⁿ with 1 ≤ a < 10, and multiplying or dividing such "
+                  "numbers adds or subtracts the exponents — which is the exponent law applied to a "
+                  "representation.")),
+        dict(id="2.4", title="Orders of magnitude and estimation",
+             inquiry_q=("How can an order of magnitude decide whether a calculation is worth doing "
+                        "in detail?"), teach=[
+            "The order of magnitude of a quantity is the power of 10 nearest to it. Two quantities within a factor of 10 of each other share an order of magnitude.",
+            "Estimation by order of magnitude replaces every number by its leading digit times a power of 10, then works with the exponents. The answer is never exact, but it is always in the right scale.",
+            "An estimate is a check on a calculation. If a calculator answer is not within a factor of a few of the estimate, the calculation is wrong.",
+            "Rounding to one significant figure before calculating is the practical version of this idea, and it is the standard way to check a long computation.",
+        ], examples=[
+            dict(q="Estimate 4.9 × 10⁷ × 6.1 × 10⁻³ ÷ (2.0 × 10²) by order of magnitude, then compare "
+                   "with the calculator value.",
+                 vis=F("table", [["quantity", "rounded to one significant figure"],
+                                 ["4.9 × 10⁷", "5 × 10⁷"],
+                                 ["6.1 × 10⁻³", "6 × 10⁻³"],
+                                 ["2.0 × 10²", "2 × 10²"]],
+                       caption="Round the coefficients, then work with the exponents."),
+                 reasoning="Rounding each quantity to one significant figure keeps the exponent exact "
+                          "and makes the arithmetic mental.",
+                 steps=["Rounded: (5 × 10⁷) × (6 × 10⁻³) ÷ (2 × 10²).",
+                        "Coefficients: 5 × 6 ÷ 2 = 15.",
+                        "Exponents: 7 − 3 − 2 = 2.",
+                        "Estimate: 15 × 10² = 1.5 × 10³.",
+                        "Calculator: 1.4975 × 10³, so the estimate is close."],
+                 ans="about 1.5 × 10³, against a calculator value of 1.4975 × 10³",
+                 interp="The estimate caught no error this time, but it would have caught a decimal "
+                        "point slip of two places."),
+            dict(q="A city of 2.4 × 10⁵ people uses 1.8 × 10¹⁰ litres of water a year. Estimate the "
+                   "use per person.",
+                 vis=F("table", [["quantity", "value"],
+                                 ["population", "2.4 × 10⁵"],
+                                 ["water used", "1.8 × 10¹⁰ litres"]],
+                       caption="Division subtracts the exponents."),
+                 reasoning="Dividing the total by the population gives the per-person value, and the "
+                          "exponents give the scale.",
+                 steps=["(1.8 × 10¹⁰) ÷ (2.4 × 10⁵) = (1.8 ÷ 2.4) × 10⁵.",
+                        "1.8 ÷ 2.4 = 0.75, so the answer is 0.75 × 10⁵.",
+                        "= 7.5 × 10⁴ litres per person per year."],
+                 ans="about 7.5 × 10⁴ litres per person per year",
+                 interp="That is roughly 205 litres a day, which is a plausible order of magnitude "
+                        "for domestic use."),
+        ], inv=dict(
+            task="Estimate each of these without a calculator, then check with one: the number of "
+                 "heartbeats in a year, the number of seconds in a school day, the number of grains "
+                 "of rice in a 1 kg bag, and the number of litres of water a class uses in a week. "
+                 "Record the order of magnitude of each estimate.",
+            table=[["quantity", "estimate", "order of magnitude", "calculator value"],
+                   ["heartbeats in a year", "70 × 60 × 24 × 365", "10⁷", "3.68 × 10⁷"],
+                   ["seconds in a school day", "6 × 60 × 60 × 6", "10⁵", "1.296 × 10⁵"],
+                   ["grains in 1 kg of rice", "1000 g ÷ 0.02 g", "10⁵", "5 × 10⁴ to 1 × 10⁵"],
+                   ["litres used by a class in a week", "30 × 200 × 7", "10⁵", "4.2 × 10⁴"]],
+            notice=["Every estimate landed within a factor of 10 of the true value.",
+                    "Estimating first made the calculator check meaningful.",
+                    "The exponent of the estimate matched the exponent of the true value in three of "
+                    "the four cases.",
+                    "The rice estimate was the least reliable, because the mass of one grain is a "
+                    "guess."],
+            obs="An order-of-magnitude estimate fixes the scale of an answer, which is enough to "
+                "catch most errors.",
+            concl="The order of magnitude of a quantity is the power of 10 nearest to it, and "
+                  "estimating by orders of magnitude gives a value that is right in scale even when "
+                  "it is not right in detail.")),
+        dict(id="2.5", title="Significant figures and precision",
+             inquiry_q=("How many digits of a measurement actually carry meaning?"), teach=[
+            "Significant figures are the digits of a measurement that carry meaning, counted from the first non-zero digit. Leading zeros are placeholders and are never significant; trailing zeros after a decimal point always are.",
+            "The number of significant figures records the precision of the instrument. A length of 3.6 m claims the nearest 10 cm; 3.60 m claims the nearest centimetre.",
+            "Rounding to a given number of significant figures follows the usual rule, but the count starts at the first non-zero digit, which is why 0.00452 to three significant figures is 0.00452 and to two is 0.0045.",
+            "When measurements are combined, the result cannot be more precise than the least precise input. Reporting more digits than the data supports is a false claim of precision.",
+        ], examples=[
+            dict(q="Round 0.0040529 to three significant figures, and 604 512 to two.",
+                 vis=F("table", [["number", "significant figures", "rounded"],
+                                 ["0.0040529", "3", "0.00405"],
+                                 ["604 512", "2", "600 000 = 6.0 × 10⁵"]],
+                       caption="Counting starts at the first non-zero digit."),
+                 reasoning="The count begins at the first non-zero digit, so leading zeros are "
+                          "ignored and the decision digit is the one after the last significant "
+                          "figure.",
+                 steps=["0.0040529: the first non-zero digit is 4, so the three significant "
+                        "figures are 4, 0, 5 and the next digit is 2.",
+                        "2 < 5, so 0.0040529 → 0.00405 to three significant figures.",
+                        "604 512: the first two significant figures are 6 and 0, and the next "
+                        "digit is 4, which does not round up.",
+                        "So 604 512 → 600 000 = 6.0 × 10⁵ to two significant figures."],
+                 ans="0.00405 and 6.0 × 10⁵",
+                 interp="Writing 600 000 loses the claim about precision, so scientific notation is "
+                        "used to keep it."),
+            dict(q="A rectangle measures 4.2 m by 3.65 m. Find the area, reporting it to a sensible "
+                   "precision.",
+                 vis=F("table", [["side", "measurement", "significant figures"],
+                                 ["length", "4.2 m", "2"],
+                                 ["width", "3.65 m", "3"]],
+                       caption="The area cannot be more precise than the least precise side."),
+                 reasoning="Multiplying measurements combines their errors, so the result is "
+                          "reported to the precision of the least precise input.",
+                 steps=["Area = 4.2 × 3.65 = 15.33 m².",
+                        "The least precise side has two significant figures, so report to two.",
+                        "15.33 m² → 15 m² to two significant figures."],
+                 ans="15 m² (to two significant figures)",
+                 interp="Reporting 15.33 m² would claim a precision that neither measurement "
+                        "supports."),
+        ], inv=dict(
+            task="Take the measurements 0.0042 m, 4.20 m, 42 m, 4200 m and 0.042 m. For each one, "
+                 "state the number of significant figures and the interval of possible true values. "
+                 "Then multiply 4.2 by 3.65 and decide how many digits of the answer are "
+                 "meaningful.",
+            table=[["measurement", "significant figures", "interval of true values"],
+                   ["0.0042 m", "2", "[0.00415, 0.00425)"],
+                   ["4.20 m", "3", "[4.195, 4.205)"],
+                   ["42 m", "2", "[41.5, 42.5)"],
+                   ["4200 m", "2 or 4 — ambiguous without a note", "[4150, 4250) if two"],
+                   ["0.042 m", "2", "[0.0415, 0.0425)"]],
+            notice=["Trailing zeros before a decimal point are ambiguous, which is why scientific "
+                    "notation is preferred.",
+                    "0.0042 and 0.042 both have two significant figures, even though one is ten "
+                    "times larger.",
+                    "4.20 has three significant figures and a narrower interval than 4.2.",
+                    "4.2 × 3.65 = 15.33, but only two of those digits are meaningful."],
+            obs="Significant figures count the digits that carry measured meaning, and the interval "
+                "of true values gets narrower as the count rises.",
+            concl="The number of significant figures records the precision of a measurement, and a "
+                  "calculated result cannot honestly be reported to more significant figures than "
+                  "the least precise value that went into it.")),
+    ],
+    practice=dict(
+        A=[("2.1.1", "Simplify 4a³ × 5a⁴.",
+            "20a⁷", "Multiply the coefficients and add the indices.", "F"),
+           ("2.1.2", "Evaluate 2⁻³.",
+            "1/8", "A negative index gives the reciprocal.", "F"),
+           ("2.1.3", "Write 3⁰ and state why the definition is needed.",
+            "1, so that aᵐ ÷ aᵐ = a⁰ continues to work",
+            "The exponent laws require a⁰ = 1.", "R"),
+           ("2.1.4", "Simplify (2x²y)³.",
+            "8x⁶y³", "The power law multiplies every index by 3.", "F"),
+           ("2.1.5", "Evaluate (1/2)⁻².",
+            "4", "A negative index inverts the fraction before squaring.", "F"),
+           ("2.1.6", "Simplify 12x⁵y³ ÷ 4x²y.",
+            "3x³y²", "Divide coefficients and subtract matching indices.", "F"),
+           ("2.1.7", "Write 10⁵ ÷ 10⁻³ as a single power of 10.",
+            "10⁸", "5 − (−3) = 8.", "F"),
+           ("2.1.8", "Explain why (a + b)² is not a² + b², using index laws.",
+            "Squaring is not distributive over addition; (a + b)² = a² + 2ab + b².",
+            "The exponent applies to the whole bracket, not to each term separately.", "R"),
+           ("2.1.9", "Simplify (3² × 3⁵) ÷ 3⁴.",
+            "3³", "2 + 5 − 4 = 3.", "F"),
+           ("2.1.10", "A quantity doubles every hour, starting at 5 units. Write its size after n "
+                      "hours.",
+            "5 × 2ⁿ", "Repeated doubling is a power.", "A"),
+           ("2.1.11", "Simplify x⁰ + x⁻¹ for x = 4.",
+            "1 + 1/4 = 5/4", "x⁰ = 1 and x⁻¹ = 1/x.", "F"),
+           ("2.1.12", "Explain the difference between 2x³ and (2x)³.",
+            "2x³ = 2 × x³; (2x)³ = 8x³",
+            "The bracket changes which parts the index applies to.", "R")],
+        B=[("2.2.1", "Investigate: does aᵐ × bᵐ = (ab)ᵐ hold for negative m? Test with a = 2, b = 3, m = −1.",
+            "Yes: 2⁻¹ × 3⁻¹ = 1/6 and (6)⁻¹ = 1/6.",
+            "The law holds for every integer index.", "R"),
+           ("2.2.2", "Write √(x⁸) as a single power and state the condition on x.",
+            "x⁴, for any real x", "√(x⁸) = (x⁸)^(1/2) = x⁴, and an even power is never negative.", "R"),
+           ("2.2.3", "Investigate the pattern 2¹, 2⁰, 2⁻¹, 2⁻², 2⁻³ and generalise it.",
+            "Each step divides by 2; the rule is 2⁻ⁿ = 1/2ⁿ.",
+            "Extending the pattern backwards forces the negative index rule.", "R"),
+           ("2.2.4", "Test the claim: a^(−1/2) = −√a. Find a counterexample or confirm it.",
+            "False: 4^(−1/2) = 1/2, not −2.",
+            "A negative index gives a reciprocal, not a sign change.", "R"),
+           ("2.2.5", "Investigate: for which values of n is √(xⁿ) equal to x when x is negative?",
+            "None — the square root is not a real number for negative x.",
+            "An even root of a negative number is not real.", "R"),
+           ("2.2.6", "Simplify 8^(2/3) + 27^(2/3) and describe the pattern you used.",
+            "4 + 9 = 13", "Take the cube root first, then square: 2² + 3².", "R"),
+           ("2.2.7", "Investigate: is (x^a)^b = (x^b)^a? Test with x = 2, a = 3, b = 5.",
+            "Yes: both give x^(ab).",
+            "Multiplication of indices is commutative, so the order does not matter.", "R"),
+           ("2.2.8", "Generalise a rule for x^(1/n) × x^(1/m).",
+            "x^((m + n)/nm)", "Adding fractional indices requires a common denominator.", "R"),
+           ("2.2.9", "Investigate whether x⁰ = 1 is true for x = 0, and report what you find.",
+            "0⁰ is undefined, so the law is stated for non-zero bases.",
+            "The division that gives a⁰ is not available when a = 0.", "R"),
+           ("2.2.10", "Find a counterexample to 'a^m ÷ a^n = a^(m÷n)'.",
+            "2⁴ ÷ 2² = 4, but 2^(4÷2) = 4 — try 3⁵ ÷ 3² = 27 while 3^(5÷2) ≈ 15.6.",
+            "Division subtracts indices; it never divides them.", "R"),
+           ("2.2.11", "Investigate the sequence 1, 4, 9, 16, 25 written as powers. State a rule.",
+            "n², so the nth term is the square of n",
+            "Each term is a perfect square.", "F")],
+        C=[("2.3.1", "Write 0.000000047 m in scientific notation.",
+            "4.7 × 10⁻⁸ m", "Move the decimal point 8 places to the right.", "F"),
+           ("2.3.2", "Explain in words why the exponent in scientific notation can be negative.",
+            "It counts places the decimal point moves left, which happens for quantities smaller "
+            "than 1.",
+            "A small quantity has many leading zeros after the point.", "R"),
+           ("2.3.3", "Multiply (2.5 × 10⁶) by (4 × 10⁻⁹) and write the answer in scientific notation.",
+            "1.0 × 10⁻²", "2.5 × 4 = 10 and 6 − 9 = −3, so 10 × 10⁻³ = 1.0 × 10⁻².", "F"),
+           ("2.3.4", "Explain the difference between 4 × 10³ and 4.0 × 10³ as a record of precision.",
+            "4 × 10³ claims one significant figure; 4.0 × 10³ claims two.",
+            "The number of significant digits in the coefficient records precision.", "R"),
+           ("2.3.5", "Divide (9 × 10¹²) by (3 × 10⁻²) and explain the step on the exponents.",
+            "3 × 10¹⁴", "12 − (−2) = 14.", "F"),
+           ("2.3.6", "A cell is 1.2 × 10⁻⁵ m long. Write this in ordinary form and explain the "
+                    "representation.",
+            "0.000012 m", "The exponent −5 moves the point five places left.", "F"),
+           ("2.3.7", "Explain why 6.3 × 10⁶ is a better representation than 6 300 000 for a "
+                     "measurement.",
+            "It shows the order of magnitude and the precision at once.",
+            "The coefficient carries the significant digits and the exponent carries the scale.", "R"),
+           ("2.3.8", "Add (3 × 10⁴) and (4 × 10³) and write the answer in scientific notation.",
+            "3.4 × 10⁴", "Rewrite 4 × 10³ as 0.4 × 10⁴, then add the coefficients.", "F"),
+           ("2.3.9", "Explain why 2.5 × 10⁻³ is not the same as 2.5 × 10³, using the exponent.",
+            "The exponents differ by 6, so the quantities differ by a factor of 10⁶.",
+            "The exponent fixes the position of the decimal point.", "R"),
+           ("2.3.10", "Write the speed of light, 299 792 458 m/s, in scientific notation to three "
+                      "significant figures.",
+            "3.00 × 10⁸ m/s", "Round to three significant figures, keeping the trailing zeros.", "F"),
+           ("2.3.11", "A mass is recorded as 5 × 10⁻⁷ kg. State its order of magnitude and explain "
+                      "what that means.",
+            "10⁻⁷ kg, so it is between 10⁻⁷ and 10⁻⁶ kg",
+            "The order of magnitude is the nearest power of 10.", "R"),
+           ("2.3.12", "Explain how scientific notation makes it possible to compare the mass of an "
+                      "electron with the mass of the Earth.",
+            "Both are written as a × 10ⁿ, so comparing the exponents gives the comparison directly.",
+            "The exponents differ by about 55, so the Earth is about 10⁵⁵ times heavier.", "R")],
+        D=[("2.4.1", "Estimate the number of seconds in a school year of 180 days, 6 hours a day.",
+            "about 3.9 × 10⁶ s",
+            "180 × 6 × 3600 ≈ 3.888 × 10⁶, so about 4 × 10⁶.", "A"),
+           ("2.4.2", "A city of 3 × 10⁵ people each uses 200 litres of water a day. Estimate the "
+                     "daily total.",
+            "6 × 10⁷ litres", "3 × 10⁵ × 2 × 10² = 6 × 10⁷.", "A"),
+           ("2.4.3", "A factory makes 4.5 × 10⁵ bottles a day. Estimate the yearly output.",
+            "about 1.6 × 10⁸ bottles", "4.5 × 10⁵ × 365 ≈ 1.64 × 10⁸.", "A"),
+           ("2.4.4", "Explain how an order-of-magnitude estimate can catch an error in a calculator "
+                     "answer.",
+            "If the calculator answer is not within about a factor of 10 of the estimate, the "
+            "calculation is wrong.",
+            "The estimate fixes the scale, which is where most errors live.", "R"),
+           ("2.4.5", "A spacecraft is 2.4 × 10⁸ km from Earth and travels at 4 × 10⁴ km/h. Estimate "
+                     "the journey time.",
+            "about 6 × 10³ hours", "2.4 × 10⁸ ÷ 4 × 10⁴ = 6 × 10³.", "A"),
+           ("2.4.6", "A phone battery holds 3 × 10³ mAh and a charger delivers 2 × 10⁰ A. Estimate "
+                     "the charging time and comment on its sense.",
+            "about 3 × 10³ hours if the current were 1 A — the sense is wrong, so the units need "
+            "converting: 2 A = 2000 mA gives about 1.5 hours.",
+            "Converting to the same unit before dividing is what makes the answer sensible.", "R"),
+           ("2.4.7", "A lake holds 8.2 × 10⁹ litres and a town draws 1.5 × 10⁷ litres a day. "
+                     "Estimate how many days the lake lasts.",
+            "about 5.5 × 10² days", "8.2 × 10⁹ ÷ 1.5 × 10⁷ ≈ 5.5 × 10².", "A"),
+           ("2.4.8", "Explain why reporting a measurement to more significant figures than the "
+                     "instrument allows is dishonest.",
+            "It claims precision that was never measured, so the extra digits are invented.",
+            "Precision must match the instrument.", "R"),
+           ("2.4.9", "A field measures 42 m by 38 m, both to the nearest metre. Estimate the area "
+                     "and give the interval in which the true area must lie.",
+            "about 1600 m², within roughly 1400 m² and 1800 m²",
+            "Using 41.5 and 37.5 gives the low bound and 42.5 and 38.5 the high one.", "A"),
+           ("2.4.10", "A vaccine dose is 5 × 10⁻⁴ litres. How many doses from 2 × 10⁻¹ litres?",
+            "400 doses", "2 × 10⁻¹ ÷ 5 × 10⁻⁴ = 0.4 × 10³ = 400.", "A"),
+           ("2.4.11", "Two measurements are 3.6 × 10⁴ and 2.4 × 10⁵. Estimate their product and "
+                      "explain the order of magnitude of the answer.",
+            "about 8.6 × 10⁹, of order 10¹⁰",
+            "3.6 × 2.4 ≈ 8.6 and 4 + 5 = 9.", "R"),
+           ("2.4.12", "Explain, with an example, when it is better to round before calculating "
+                      "rather than after.",
+            "For a mental check, rounding first keeps the arithmetic simple and the exponent exact.",
+            "Rounding first is a checking strategy, not a reporting strategy.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The water use audit",
+             text="A school of 1.2 × 10³ students uses 4.5 × 10⁷ litres of water in a year. "
+                  "Estimate the use per student per day, report it to a sensible precision, and "
+                  "explain what the number of significant figures in your answer claims.",
+             note="Criteria A and D · show the calculation in scientific notation and comment on "
+                  "precision."),
+        dict(title="A2 · The two scales",
+             text="A virus is 1.2 × 10⁻⁷ m across and a football pitch is 1.05 × 10² m long. How "
+                  "many viruses fit across the pitch? Report your answer in scientific notation.",
+             note="Criteria A and C · state the order of magnitude of your answer and what it "
+                  "means."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of form and the related concepts of quantity, representation and "
+        "patterns appear in your work?",
+        "How is the global context of scientific and technical innovation, and its exploration of "
+        "precision, accuracy and measurement, visible in the investigations and examples you "
+        "completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a reported measurement, and what would you still like to ask?",
+    ],
+    review=dict(
+        ideas=["An index counts repeated multiplication, so multiplying powers adds indices.",
+               "a⁰ = 1 and a⁻ⁿ = 1/aⁿ are defined so that the exponent laws continue without a break.",
+               "A root is a fractional index: ⁿ√a = a^(1/n).",
+               "Scientific notation a × 10ⁿ with 1 ≤ a < 10 makes the scale of a quantity visible.",
+               "Multiplying or dividing in scientific notation adds or subtracts the exponents.",
+               "The order of magnitude of a quantity is the nearest power of 10.",
+               "Significant figures record precision, counted from the first non-zero digit."],
+        vocab=["index", "base", "exponent law", "zero index", "negative index", "fractional index",
+               "scientific notation", "order of magnitude", "significant figure", "precision"],
+        mixed=[("2.R1", "Simplify (2x³)² × x⁻¹."),
+               ("2.R2", "Write 0.00000082 in scientific notation."),
+               ("2.R3", "Evaluate 27^(2/3)."),
+               ("2.R4", "Round 0.007236 to three significant figures."),
+               ("2.R5", "Estimate (6.1 × 10⁵) × (2.9 × 10⁻³)."),
+               ("2.R6", "Explain why 2⁰ = 1 follows from the exponent laws.")],
+    ),
+    projects=dict(
+        service=[("Community need", "Water and energy meters in the school are read and reported "
+                                    "with inconsistent precision, so savings are hard to prove."),
+                 ("Mathematical connection", "Scientific notation, orders of magnitude and "
+                                             "significant figures."),
+                 ("Proposed action", "Agree a single reporting precision for the school's meter "
+                                     "readings and publish a weekly estimate."),
+                 ("Expected impact", "Savings become visible and checkable instead of disputed."),
+                 ("Student reflection", "Record the precision you chose, why, and what the "
+                                        "published figures changed.")],
+        community=[("Project idea", "A one-week energy audit of the school."),
+                   ("Need", "The school does not know which activities use the most energy."),
+                   ("Research question", "Where does the school's energy actually go, and what "
+                                         "would save the most?"),
+                   ("Mathematics", "Powers, scientific notation, estimation and proportional "
+                                   "reasoning."),
+                   ("Action or outcome", "A ranked list of savings with estimated daily impact."),
+                   ("Beneficiaries", "The whole school community."),
+                   ("Evidence", "Meter readings, the estimates and the ranked list.")],
+        personal=[("Personal interest", "Photography, music or fitness tracking."),
+                  ("Learning goal", "To use index form and precision language to describe a "
+                                    "measurement you care about."),
+                  ("Product or outcome", "A one-page data sheet for a personal measurement."),
+                  ("Mathematics", "Scientific notation, significant figures and estimation."),
+                  ("Process", "Measure, convert, write in scientific notation, then state the "
+                              "precision."),
+                  ("Evidence", "The data sheet and the stated uncertainty.")],
+    ),
+),
+])
+
+CHAPTERS.extend([
+dict(
+    num=3, title="Functions, expressions and algebraic reasoning",
+    key="Relationships", related=["Generalisation", "Equivalence"],
+    context="Identities and relationships",
+    exploration="Relationships and communities",
+    inquiry=("The relationship between two quantities can be generalised as a function, and the "
+             "equivalence of the different algebraic forms of that relationship allows it to be "
+             "rearranged, compared and used to predict."),
+    atl=("Thinking",
+         "In order for a student to select an algebraic strategy for an unfamiliar expression, "
+         "students must identify which form the problem is already in, decide which equivalent "
+         "form the answer needs, and justify the choice."),
+    standfirst="A letter stands for a quantity that changes. A function is the relationship that "
+               "gives each input one output, and equivalent forms of its rule reveal different "
+               "things about that relationship.",
+    engage="A phone plan costs 12 dollars a month plus 0.05 dollars a minute. For one month the "
+           "bill depends entirely on the number of minutes used. What is the relationship, and how "
+           "can it be written once for every month?",
+    questions=[("Factual", "What is a function, what are its domain and range, and how do you "
+                           "expand and factorise a quadratic expression?"),
+               ("Conceptual", "Why do equivalent forms of the same expression reveal different "
+                              "information about the relationship they describe?"),
+               ("Debatable", "Is a formula that has been rearranged a different formula, or the "
+                             "same formula in a different form — and does the difference matter?")],
+    application_lede="These tasks use substitution, function notation, expansion, factorisation, "
+                     "rearranging formulas and sequences. State the form of your answer and why "
+                     "you chose it.",
+    projects_lede="Relationships between quantities govern budgets, plans and schedules. Use "
+                  "algebra to make a relationship explicit enough to act on.",
+    sections=[
+        dict(id="3.1", title="Variables, expressions and substitution",
+             inquiry_q=("How can a changing quantity be represented by a letter, and what does "
+                        "substitution actually do?"), teach=[
+            "A variable is a letter standing for a number that can change. It is not an unknown to be found: it is a quantity that takes different values in different situations.",
+            "An expression is a recipe built from variables, numbers and operations. 3n + 5 is a recipe that takes a number n, triples it and adds 5. The order of operations fixes what the recipe does.",
+            "Substitution replaces a variable by a value and evaluates. It is the point at which a general relationship becomes a specific number.",
+            "Two expressions that give the same value for every substitution are equivalent. Testing a few values suggests equivalence but never proves it; expansion or factorisation proves it.",
+        ], examples=[
+            dict(q="A taxi charges 3.50 dollars plus 1.80 dollars per kilometre. Write the cost as "
+                   "an expression and find the cost of a 12 km trip.",
+                 vis=F("function_machine", [(0, 3.5), (5, 12.5), (12, 25.1)],
+                       "kilometres in, cost out", "cost = 1.8k + 3.5"),
+                 reasoning="The cost has a fixed part and a variable part, so the expression is a "
+                          "linear recipe in the number of kilometres.",
+                 steps=["Let k be the number of kilometres.",
+                        "Cost = 3.50 + 1.80k.",
+                        "For k = 12: cost = 3.50 + 1.80 × 12 = 3.50 + 21.60.",
+                        "= 25.10 dollars."],
+                 ans="C = 3.50 + 1.80k; a 12 km trip costs 25.10 dollars",
+                 interp="The expression works for every trip, not just this one, which is why it is "
+                        "worth writing."),
+            dict(q="Show that 4(x + 3) and 4x + 12 are equivalent.",
+                 vis=F("bar_model", 7, [4, 3], [0], "four groups of (x + 3)"),
+                 reasoning="Expanding the bracket shows the two forms have the same value for every "
+                          "x, which is what equivalence means.",
+                 steps=["4(x + 3) means four copies of (x + 3).",
+                        "Four copies of x give 4x, and four copies of 3 give 12.",
+                        "So 4(x + 3) = 4x + 12.",
+                        "Check with x = 2: 4 × 5 = 20 and 8 + 12 = 20."],
+                 ans="4(x + 3) = 4x + 12 for every value of x",
+                 interp="The expanded form is easier to evaluate; the factorised form is easier to "
+                        "read. Equivalence lets us choose."),
+        ], inv=dict(
+            task="A pattern of tiles has 1 tile in position 1, 4 in position 2, 7 in position 3 and "
+                 "10 in position 4. Write the number of tiles as an expression in the position "
+                 "number n, then test it for n = 10 and n = 100. Then find a second, different "
+                 "expression that gives the same values.",
+            fig=F("staircase", 4, "position 1, 2, 3, 4", cell=20),
+            table=[["position n", "tiles", "3n − 2", "check"],
+                   ["1", "1", "1", "3 × 1 − 2 = 1"],
+                   ["2", "4", "4", "3 × 2 − 2 = 4"],
+                   ["3", "7", "7", "3 × 3 − 2 = 7"],
+                   ["4", "10", "10", "3 × 4 − 2 = 10"],
+                   ["10", "28", "28", "3 × 10 − 2 = 28"],
+                   ["100", "298", "298", "3 × 100 − 2 = 298"]],
+            notice=["The number of tiles rises by 3 each time, so the expression contains 3n.",
+                    "Subtracting 2 makes the expression work from position 1 rather than position 0.",
+                    "The expression 1 + 3(n − 1) gives the same values, and it expands to 3n − 2.",
+                    "Both forms predict the same number of tiles at any position."],
+            obs="A pattern that grows by a constant amount is described by a linear expression, and "
+                "several equivalent expressions can describe it.",
+            concl="A generalisation of a growing pattern is an expression that works for every "
+                  "position, and equivalent expressions are different forms of the same "
+                  "generalisation.")),
+        dict(id="3.2", title="Functions, domain and range",
+             inquiry_q=("How can a rule that gives each input exactly one output be represented, "
+                        "and what are its domain and range?"), teach=[
+            "A function is a rule that gives exactly one output for each permitted input. The input is the independent variable and the output is the dependent variable.",
+            "Function notation f(x) names the rule and the input together: f(x) = 2x + 1 means the rule is double and add one. f(3) = 7 is the value of the function at x = 3.",
+            "The domain is the set of permitted inputs and the range is the set of outputs the rule can produce. The domain is a modelling choice, not a mathematical fact: a rule can be defined for all real numbers but only make sense for positive ones.",
+            "A function can be represented as a mapping diagram, a table of values, a graph or a formula. The four representations describe the same relationship, and each one answers a different question about it.",
+        ], examples=[
+            dict(q="f(x) = 3x − 4. Find f(5), f(−2) and the value of x for which f(x) = 11.",
+                 vis=F("function_machine", [(-2, -10), (5, 11), (3, 5)], "3x − 4",
+                  title="the rule applied to x"),
+                 reasoning="Substitution evaluates the function, and solving a linear equation "
+                          "reverses it.",
+                 steps=["f(5) = 3 × 5 − 4 = 11.",
+                        "f(−2) = 3 × (−2) − 4 = −10.",
+                        "3x − 4 = 11 gives 3x = 15, so x = 5."],
+                 ans="f(5) = 11, f(−2) = −10, and f(x) = 11 when x = 5",
+                 interp="Evaluating and solving are opposite operations on the same relationship."),
+            dict(q="A function is defined by the rule 'add 6 then divide by 2'. Write it as a "
+                   "formula, state a sensible domain, and find its range.",
+                 vis=F("function_machine", [(0, 3), (4, 5), (10, 8)], "(x + 6) ÷ 2",
+                  title="the rule applied to x"),
+                 reasoning="Translating a verbal rule into a formula makes the domain and range "
+                          "explicit.",
+                 steps=["g(x) = (x + 6)/2.",
+                        "The formula is defined for every real x, so the domain is all real numbers.",
+                        "Every real y can be produced, because x = 2y − 6 is real for any y.",
+                        "So the range is also all real numbers."],
+                 ans="g(x) = (x + 6)/2, domain and range both all real numbers",
+                 interp="A formula with no division by a variable and no root usually has the "
+                        "widest possible domain."),
+        ], inv=dict(
+            task="Take the rule 'multiply by 3, then subtract 1'. Build a table of values for "
+                 "inputs −2, −1, 0, 1, 2, 3 and 4, draw the mapping diagram, plot the points on a "
+                 "grid, and write the formula. Then change the rule to 'multiply by 3, then "
+                 "subtract a number of your choice' and repeat.",
+            fig=F("function_machine", [(-2, -7), (-1, -4), (0, -1), (1, 2), (2, 5), (3, 8), (4, 11)],
+                  "3x − 1", title="the rule applied to x"),
+            table=[["input x", "3x", "3x − 1", "point on the graph"],
+                   ["−2", "−6", "−7", "(−2, −7)"],
+                   ["−1", "−3", "−4", "(−1, −4)"],
+                   ["0", "0", "−1", "(0, −1)"],
+                   ["1", "3", "2", "(1, 2)"],
+                   ["2", "6", "5", "(2, 5)"],
+                   ["3", "9", "8", "(3, 8)"],
+                   ["4", "12", "11", "(4, 11)"]],
+            notice=["The outputs rise by 3 each time the input rises by 1.",
+                    "The points lie on a straight line, which is what a linear function looks like.",
+                    "Changing the subtracted number moves the line up or down but does not change "
+                    "its steepness.",
+                    "Every input gave exactly one output, so the rule is a function."],
+            obs="A rule that gives one output per input is a function, and a linear function gives "
+                "outputs that change by a constant amount.",
+            concl="A function assigns exactly one output to each permitted input; its domain is the "
+                  "set of permitted inputs and its range the set of outputs, and both are choices "
+                  "the modeller makes.")),
+        dict(id="3.3", title="Expanding and factorising",
+             inquiry_q=("How can equivalent forms of the same expression reveal different "
+                        "information about it?"), teach=[
+            "Expanding removes brackets by distributing: a(b + c) = ab + ac. It is the form that is easiest to evaluate and to collect like terms in.",
+            "Factorising is the reverse: it puts a common factor or a product of factors back in. The factorised form makes zeros and roots visible, which the expanded form hides.",
+            "Three products are worth knowing by sight: (x + a)(x + b) = x² + (a + b)x + ab, (a + b)² = a² + 2ab + b² and a² − b² = (a − b)(a + b).",
+            "The difference of two squares is the most useful of the three, because it converts an addition into a product and is used again in Chapter 1 to rationalise a denominator.",
+        ], examples=[
+            dict(q="Expand and simplify (x + 5)(x − 3), then factorise x² + 7x + 10.",
+                 vis=F("table", [["form", "expression", "what it shows"],
+                                 ["factorised", "(x + 5)(x − 3)", "the two zeros"],
+                                 ["expanded", "x² + 2x − 15", "the coefficients"],
+                                 ["factorised", "(x + 2)(x + 5)", "the same zeros again"]],
+                       caption="The same relationship, written in two forms."),
+                 reasoning="Expanding distributes each term of one bracket over the other, and "
+                          "factorising looks for two numbers with the right sum and product.",
+                 steps=["(x + 5)(x − 3) = x² − 3x + 5x − 15 = x² + 2x − 15.",
+                        "For x² + 7x + 10, find two numbers with product 10 and sum 7: 2 and 5.",
+                        "x² + 7x + 10 = (x + 2)(x + 5)."],
+                 ans="(x + 5)(x − 3) = x² + 2x − 15 and x² + 7x + 10 = (x + 2)(x + 5)",
+                 interp="The expanded form shows the shape of the quadratic; the factorised form "
+                        "shows where it equals zero."),
+            dict(q="Factorise 6x² + 9x completely, and use the result to solve 6x² + 9x = 0.",
+                 vis=F("bar_model", 15, [6, 9], [0], "the common factor 3x"),
+                 reasoning="Taking out the highest common factor leaves a product, and a product "
+                          "equals zero only when one of its factors does.",
+                 steps=["6x² + 9x = 3x(2x + 3).",
+                        "So 3x(2x + 3) = 0.",
+                        "Either 3x = 0, giving x = 0, or 2x + 3 = 0, giving x = −3/2."],
+                 ans="6x² + 9x = 3x(2x + 3); the solutions are x = 0 and x = −3/2",
+                 interp="The factorised form solved an equation that the expanded form did not make "
+                        "easy."),
+        ], inv=dict(
+            task="Expand (x + 2)(x + 3), (x + 2)(x + 5), (x + 4)(x + 5) and (x + 2)(x − 3). Record "
+                 "the coefficient of x and the constant term in each case, and look for a pattern "
+                 "that connects them to the numbers inside the brackets.",
+            table=[["product", "expanded", "coefficient of x", "constant"],
+                   ["(x + 2)(x + 3)", "x² + 5x + 6", "5", "6"],
+                   ["(x + 2)(x + 5)", "x² + 7x + 10", "7", "10"],
+                   ["(x + 4)(x + 5)", "x² + 9x + 20", "9", "20"],
+                   ["(x + 2)(x − 3)", "x² − x − 6", "−1", "−6"]],
+            notice=["The coefficient of x is always the sum of the two numbers in the brackets.",
+                    "The constant term is always the product of those two numbers.",
+                    "A negative number in a bracket can give a negative coefficient or constant.",
+                    "The pattern works in reverse, which is exactly what factorising does."],
+            obs="The expanded form of a product of two linear factors has coefficients that are the "
+                "sum and product of the bracket numbers.",
+            concl="(x + a)(x + b) = x² + (a + b)x + ab, so the expanded and factorised forms carry "
+                  "the same information in different arrangements, and factorising reads the "
+                  "pattern backwards.")),
+        dict(id="3.4", title="Rearranging formulas",
+             inquiry_q=("How can a formula be rewritten so that a different quantity is the "
+                        "subject?"), teach=[
+            "Rearranging a formula means applying the same operation to both sides until the wanted letter is isolated. Every step must keep the statement true.",
+            "The operations are undone in the reverse of the order they were applied. To undo 'multiply by 3 then add 5', subtract 5 then divide by 3.",
+            "A formula rearranged into a different subject is not a different formula. It is the same relationship in a form that answers a different question.",
+            "Rearranging is the algebraic version of changing perspective: the same relationship, read from the other end.",
+        ], examples=[
+            dict(q="The formula for the area of a trapezium is A = ½(a + b)h. Make h the subject.",
+                 vis=F("table", [["step", "operation", "result"],
+                                 ["A = ½(a + b)h", "multiply by 2", "2A = (a + b)h"],
+                                 ["2A = (a + b)h", "divide by (a + b)", "h = 2A/(a + b)"]],
+                       caption="Undo the operations in the reverse order."),
+                 reasoning="The height is multiplied by (a + b) and by ½, so both are undone by "
+                          "reversing the order.",
+                 steps=["A = ½(a + b)h.",
+                        "Multiply both sides by 2: 2A = (a + b)h.",
+                        "Divide both sides by (a + b): h = 2A/(a + b)."],
+                 ans="h = 2A/(a + b)",
+                 interp="The rearranged formula answers 'how high must it be' instead of 'what is "
+                        "the area', using the same relationship."),
+            dict(q="Make x the subject of y = (3x + 2)/(x − 1).",
+                 vis=F("table", [["step", "operation", "result"],
+                                 ["y = (3x + 2)/(x − 1)", "multiply by (x − 1)", "y(x − 1) = 3x + 2"],
+                                 ["yx − y = 3x + 2", "collect x terms", "yx − 3x = y + 2"],
+                                 ["x(y − 3) = y + 2", "divide by (y − 3)", "x = (y + 2)/(y − 3)"]],
+                       caption="When the wanted letter appears twice, collect it on one side."),
+                 reasoning="Clearing the denominator first, then collecting every term containing "
+                          "x, isolates the wanted letter by factorising.",
+                 steps=["y(x − 1) = 3x + 2.",
+                        "yx − y = 3x + 2.",
+                        "yx − 3x = y + 2.",
+                        "x(y − 3) = y + 2.",
+                        "x = (y + 2)/(y − 3), for y ≠ 3."],
+                 ans="x = (y + 2)/(y − 3)",
+                 interp="The restriction y ≠ 3 appears because x would then be undefined, which the "
+                        "original formula also hides."),
+        ], inv=dict(
+            task="Take the relationship d = 5t + 20, where d is a distance in metres and t is a "
+                 "time in seconds. Make t the subject, then find the time when d = 100. Then make a "
+                 "formula of your own with two letters and rearrange it the other way round.",
+            table=[["form", "expression", "what it answers"],
+                   ["original", "d = 5t + 20", "how far in a given time"],
+                   ["rearranged", "t = (d − 20)/5", "how long for a given distance"],
+                   ["evaluated", "t = (100 − 20)/5 = 16", "the time for 100 m"]],
+            notice=["Rearranging did not change the relationship; it changed the question.",
+                    "Every step was the same operation on both sides.",
+                    "The constant 20 was removed by subtraction, which is the inverse of addition.",
+                    "The rearranged form is easier when the distance is known and the time is not."],
+            obs="Rearranging applies inverse operations to both sides, so the relationship is "
+                "preserved while the subject changes.",
+            concl="A formula can be rearranged into any subject by applying inverse operations to "
+                  "both sides in the reverse of the original order, and the rearranged formula is "
+                  "the same relationship answering a different question.")),
+        dict(id="3.5", title="Sequences, patterns and generalisation",
+             inquiry_q=("How can a pattern in a sequence be written as a rule that works for any "
+                        "term?"), teach=[
+            "A sequence is an ordered list of numbers. The term-to-term rule says how to get from one term to the next; the position-to-term rule gives the term in any position directly.",
+            "A linear sequence has a constant difference, so its nth term is an + b. The difference gives a and substituting one term gives b.",
+            "A quadratic sequence has a constant second difference, so its nth term contains n². The second difference is twice the coefficient of n².",
+            "A generalisation is a claim about every term, not just the ones listed. Checking the first five terms supports a generalisation; it does not prove it, and a counterexample at the sixth term destroys it.",
+        ], examples=[
+            dict(q="Find the nth term of the sequence 7, 11, 15, 19, 23, … and use it to find the "
+                   "50th term.",
+                 vis=F("staircase", 5, "7, 11, 15, 19, 23", cell=18),
+                 reasoning="A constant difference means the rule is linear, so the nth term is an + b.",
+                 steps=["The common difference is 4, so a = 4.",
+                        "The nth term is 4n + b.",
+                        "The first term is 7, so 4 × 1 + b = 7, giving b = 3.",
+                        "The nth term is 4n + 3, and the 50th term is 4 × 50 + 3 = 203."],
+                 ans="the nth term is 4n + 3; the 50th term is 203",
+                 interp="The position-to-term rule gives any term without listing all the previous "
+                        "ones."),
+            dict(q="The nth term of a sequence is n² − 2n. Find the first four terms and the "
+                   "second difference.",
+                 vis=F("table", [["n", "n²", "−2n", "term"],
+                                 ["1", "1", "−2", "−1"],
+                                 ["2", "4", "−4", "0"],
+                                 ["3", "9", "−6", "3"],
+                                 ["4", "16", "−8", "8"]],
+                       caption="A quadratic rule gives a constant second difference."),
+                 reasoning="Substituting each position gives the terms, and the constant second "
+                          "difference confirms the quadratic form.",
+                 steps=["n = 1: 1 − 2 = −1.",
+                        "n = 2: 4 − 4 = 0.",
+                        "n = 3: 9 − 6 = 3.",
+                        "n = 4: 16 − 8 = 8.",
+                        "First differences: 1, 3, 5; second difference: 2."],
+                 ans="the first four terms are −1, 0, 3, 8 and the second difference is 2",
+                 interp="The second difference of 2 matches the coefficient of n², which is the "
+                        "signature of a quadratic."),
+        ], inv=dict(
+            task="Build three sequences from patterns of your own: one with a constant difference, "
+                 "one with a constant second difference, and one that is neither. For each, find "
+                 "the nth term and test it on two terms that were not in your original list.",
+            table=[["sequence", "type", "nth term", "test"],
+                   ["3, 7, 11, 15, 19", "linear", "4n − 1", "n = 6 gives 23"],
+                   ["1, 4, 9, 16, 25", "quadratic", "n²", "n = 7 gives 49"],
+                   ["1, 2, 4, 7, 11", "neither", "differences 1, 2, 3, 4", "n = 6 gives 16 by the "
+                    "difference pattern"]],
+            notice=["The linear sequence had a constant difference of 4.",
+                    "The quadratic sequence had a constant second difference of 2.",
+                    "The third sequence had differences that grew by 1 each time, so it is not "
+                    "linear or quadratic.",
+                    "Each nth term predicted a term that was not in the original list."],
+            obs="The pattern of first and second differences identifies the form of the nth term.",
+            concl="A generalisation is a rule that works for every position, and it is identified by "
+                  "the pattern of differences: a constant first difference gives a linear rule and "
+                  "a constant second difference gives a quadratic one.")),
+    ],
+    practice=dict(
+        A=[("3.1.1", "If f(x) = 4x − 7, find f(3) and f(−1).",
+            "f(3) = 5 and f(−1) = −11", "Substitute each value and evaluate.", "F"),
+           ("3.1.2", "Expand 5(2x − 3).",
+            "10x − 15", "Distribute the 5 over both terms.", "F"),
+           ("3.1.3", "Factorise 12x + 18.",
+            "6(2x + 3)", "Take out the highest common factor.", "F"),
+           ("3.1.4", "Expand and simplify (x + 4)(x − 2).",
+            "x² + 2x − 8", "The coefficient of x is 4 − 2 and the constant is −8.", "F"),
+           ("3.1.5", "Find the nth term of 5, 8, 11, 14, …",
+            "3n + 2", "The common difference is 3 and the first term is 5.", "F"),
+           ("3.1.6", "State the domain of f(x) = 1/(x − 2).",
+            "all real numbers except x = 2",
+            "Division by zero is undefined, so x = 2 is excluded.", "R"),
+           ("3.1.7", "Simplify 3(x + 2) + 2(x − 5).",
+            "5x − 4", "Expand both brackets, then collect like terms.", "F"),
+           ("3.1.8", "Factorise x² − 9.",
+            "(x + 3)(x − 3)", "A difference of two squares.", "F"),
+           ("3.1.9", "If g(x) = x² − 3x, find g(4).",
+            "4", "16 − 12 = 4.", "F"),
+           ("3.1.10", "A sequence has nth term 2n² − 1. Find its first three terms.",
+            "1, 7, 17", "Substitute n = 1, 2, 3.", "F"),
+           ("3.1.11", "Make x the subject of y = 4x + 9.",
+            "x = (y − 9)/4", "Subtract 9, then divide by 4.", "F"),
+           ("3.1.12", "Explain the difference between a term-to-term rule and a position-to-term "
+                      "rule.",
+            "The term-to-term rule links consecutive terms; the position-to-term rule gives any "
+            "term from its position.",
+            "Only the position-to-term rule can jump directly to a distant term.", "R")],
+        B=[("3.2.1", "Investigate: does the sequence 2, 4, 8, 16, 32 have a constant difference or "
+                     "second difference?",
+            "Neither — the first differences are 2, 4, 8, 16.",
+            "The differences themselves grow, so the rule is not linear or quadratic.", "R"),
+           ("3.2.2", "Test the claim: every sequence with a constant second difference is "
+                     "quadratic.",
+            "True — a constant second difference is the signature of an n² term.",
+            "The second difference equals twice the coefficient of n².", "R"),
+           ("3.2.3", "Investigate the sequence 1, 4, 9, 16, 25. Find the nth term and the next "
+                     "term.",
+            "n²; the next term is 36", "The terms are the perfect squares.", "F"),
+           ("3.2.4", "Generalise: what is the nth term of 1, 8, 27, 64?",
+            "n³", "The terms are the perfect cubes.", "R"),
+           ("3.2.5", "Investigate whether 3n + 1 and 4n + 1 ever give the same value.",
+            "No — they differ by n for every n.",
+            "Setting them equal gives n = 0, which is not a position in the sequence.", "R"),
+           ("3.2.6", "Test the claim: the product of three consecutive integers is always "
+                     "divisible by 6.",
+            "True — among any three consecutive integers one is divisible by 3 and at least one is "
+            "even.",
+            "The argument covers every case, not just the ones tested.", "R"),
+           ("3.2.7", "Investigate the pattern of triangular numbers 1, 3, 6, 10, 15 and find the "
+                     "nth term.",
+            "n(n + 1)/2", "Each term adds the next integer, which sums to n(n + 1)/2.", "R"),
+           ("3.2.8", "Find a counterexample to 'a sequence with a constant difference has a "
+                     "positive nth term'.",
+            "−3, −1, 1, 3 has a constant difference of 2 and a negative first term, so the nth "
+            "term is 2n − 5.",
+            "A constant difference fixes the form but not the sign of every term.", "R"),
+           ("3.2.9", "Investigate: is (x + y)² ever equal to x² + y²?",
+            "Only when x = 0 or y = 0, since (x + y)² = x² + 2xy + y².",
+            "The extra 2xy term disappears only when one factor is zero.", "R"),
+           ("3.2.10", "Generalise the pattern 1 × 1, 2 × 3, 3 × 5, 4 × 7 into an nth-term rule.",
+            "n(2n − 1)", "The first factor is n and the second rises by 2 from 1.", "R"),
+           ("3.2.11", "Investigate whether the nth term of 4, 9, 16, 25 is linear.",
+            "No — the differences are 5, 7, 9 and the second difference is constant at 2.",
+            "A constant second difference means the rule is quadratic.", "R")],
+        C=[("3.3.1", "Explain in words why 2(x + 3) and 2x + 6 are the same expression.",
+            "Expanding distributes the 2 over both terms inside the bracket.",
+            "Distribution preserves the value for every x.", "R"),
+           ("3.3.2", "Explain the difference between an equation and an expression, with an "
+                     "example of each.",
+            "An expression is a recipe with no equals sign; an equation states that two "
+            "expressions are equal.",
+            "Only equations have solutions.", "R"),
+           ("3.3.3", "Write f(x) = 2x + 5 in words, and explain what f(0) means.",
+            "Double the input and add 5; f(0) is the value of the function at input 0.",
+            "Function notation names the rule and the input together.", "R"),
+           ("3.3.4", "Explain why a table of values and a formula can describe the same function.",
+            "Each table row is a pair (input, output) that the formula produces.",
+            "The table is a finite sample of the rule.", "R"),
+           ("3.3.5", "Explain why (x + 3)² is not x² + 9.",
+            "The middle term 6x is missing: (x + 3)² = x² + 6x + 9.",
+            "The bracket is multiplied by itself, so every term meets every term.", "R"),
+           ("3.3.6", "A formula is written as C = 2πr. Explain what rearranging it to r = C/(2π) "
+                     "changes.",
+            "Nothing about the relationship; it changes which quantity is the subject.",
+            "Rearranging preserves the relationship and changes the perspective.", "R"),
+           ("3.3.7", "Explain why the domain of 'height of a plant after t days' is not all real "
+                     "numbers.",
+            "Time must be non-negative, and in practice it is limited to the growing season.",
+            "A domain is a modelling choice, not a mathematical fact.", "R"),
+           ("3.3.8", "Describe two representations of the function f(x) = x² and say what each "
+                     "one shows best.",
+            "A table shows values; a graph shows the shape and symmetry.",
+            "Different representations answer different questions.", "R"),
+           ("3.3.9", "Explain why factorising is useful for solving an equation.",
+            "A product equals zero only when a factor is zero, so factorising finds the solutions.",
+            "The expanded form hides the zeros.", "R"),
+           ("3.3.10", "Explain the difference between a conjecture and a generalisation.",
+            "A conjecture is a claim believed to be true; a generalisation is a claim shown to "
+            "hold for every case.",
+            "The difference is the justification, not the wording.", "R"),
+           ("3.3.11", "Write the rule 'subtract 4, then square' as a formula and explain the order "
+                      "of operations.",
+            "f(x) = (x − 4)², and the subtraction happens first because of the brackets.",
+            "Brackets fix the order in which operations are applied.", "R"),
+           ("3.3.12", "Explain why the range of f(x) = x² is not all real numbers.",
+            "A square is never negative, so the range is y ≥ 0.",
+            "The range is limited by the operation, not by the domain.", "R")],
+        D=[("3.4.1", "A plumber charges 40 dollars plus 55 dollars an hour. Write the cost "
+                     "expression and find the cost of a 4.5-hour job.",
+            "C = 40 + 55h; 287.50 dollars",
+            "Substitute h = 4.5: 40 + 247.50.", "A"),
+           ("3.4.2", "A phone plan costs 15 dollars a month plus 0.04 dollars a minute. How many "
+                     "minutes can be used for a 30-dollar bill?",
+            "375 minutes", "0.04m = 15, so m = 375.", "A"),
+           ("3.4.3", "A taxi fare is 3 dollars plus 1.5 dollars per kilometre. Two riders travel 9 "
+                     "km and 14 km. Find the difference in their fares.",
+            "7.50 dollars", "1.5 × (14 − 9) = 7.50.", "A"),
+           ("3.4.4", "A rectangular garden has length (x + 3) m and width (x − 1) m. Find the area "
+                     "in expanded form and its value when x = 6.",
+            "x² + 2x − 3; 45 m²", "36 + 12 − 3 = 45.", "A"),
+           ("3.4.5", "A community group pays 80 dollars to hire a hall and 6 dollars per person "
+                     "for food. Write the total cost for n people and find the cost per person.",
+            "T = 80 + 6n; cost per person = 80/n + 6",
+            "Dividing the total by n gives the per-person cost, which falls as n rises.", "A"),
+           ("3.4.6", "A water tank fills at 12 litres a minute from an initial 50 litres. Write a "
+                     "formula for the volume after t minutes and find when it reaches 350 litres.",
+            "V = 50 + 12t; t = 25 minutes", "350 − 50 = 300 and 300 ÷ 12 = 25.", "A"),
+           ("3.4.7", "A square has side (2x + 1). Find its area and its perimeter, then find x if "
+                     "the perimeter is 30 cm.",
+            "Area = (2x + 1)², perimeter = 8x + 4; x = 13/4",
+            "8x + 4 = 30 gives x = 26/8 = 13/4.", "A"),
+           ("3.4.8", "A delivery charge is 5 dollars plus 0.80 dollars per kilogram. Find the "
+                     "weight that gives a total charge of 21 dollars.",
+            "20 kg", "0.8w = 16, so w = 20.", "A"),
+           ("3.4.9", "Explain whether a service that charges 20 dollars plus 2 dollars per item is "
+                     "ever cheaper than one that charges 4 dollars per item.",
+            "Yes — the fixed charge is recovered once the number of items exceeds 10.",
+            "20 + 2n < 4n gives n > 10.", "R"),
+           ("3.4.10", "A pattern of tiles has 2n + 3 tiles in row n. How many tiles are in rows 1 "
+                      "to 5 altogether?",
+            "45 tiles", "The terms are 5, 7, 9, 11, 13, which sum to 45.", "A"),
+           ("3.4.11", "A savings account pays 5% simple interest on P dollars for t years. Write "
+                      "the formula, make P the subject, and find the amount needed for 100 dollars "
+                      "of interest in 2 years.",
+            "I = 0.05Pt, so P = I/(0.05t); P = 1000 dollars",
+            "100 ÷ (0.05 × 2) = 1000.", "A"),
+           ("3.4.12", "Explain why a linear model of a phone bill is only sensible for a limited "
+                      "range of minutes.",
+            "Plans usually include a monthly allowance, so the fixed part changes once the "
+            "allowance is used up.",
+            "A model is valid only over the range where its assumptions hold.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The community event budget",
+             text="A community event has a fixed cost of 250 dollars and a cost of 8 dollars per "
+                  "attendee. Write the total cost as a formula, make the number of attendees the "
+                  "subject, and find how many can attend if the budget is 1 000 dollars.",
+             note="Criteria A and C · show the rearrangement and state the form of your answer."),
+        dict(title="A2 · The tile pattern",
+             text="A courtyard is tiled with a pattern in which row n has 3n + 2 tiles. Find the "
+                  "number of tiles in row 20, the total for the first 20 rows, and explain whether "
+                  "the pattern can continue indefinitely.",
+             note="Criteria A and D · justify your total and comment on the limits of the model."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of relationships and the related concepts of generalisation and "
+        "equivalence appear in your work?",
+        "How is the global context of identities and relationships, and its exploration of "
+        "relationships and communities, visible in the investigations and examples you completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a linear model of a real relationship, and what would you "
+        "still like to ask?",
+    ],
+    review=dict(
+        ideas=["A variable stands for a changing quantity, and an expression is a recipe built "
+               "from variables.",
+               "A function gives exactly one output for each permitted input.",
+               "The domain is the set of permitted inputs and the range is the set of outputs.",
+               "Expanding and factorising produce equivalent forms of the same expression.",
+               "A difference of two squares factorises: a² − b² = (a − b)(a + b).",
+               "Rearranging applies inverse operations to both sides, preserving the relationship.",
+               "A constant first difference gives a linear rule; a constant second difference gives "
+               "a quadratic rule."],
+        vocab=["variable", "expression", "substitution", "function", "domain", "range",
+               "function notation", "expand", "factorise", "subject of a formula", "sequence",
+               "nth term", "generalisation"],
+        mixed=[("3.R1", "Expand and simplify (x − 3)(x + 7)."),
+               ("3.R2", "Factorise x² − 16."),
+               ("3.R3", "Find the nth term of 6, 10, 14, 18, …"),
+               ("3.R4", "Make t the subject of v = u + at."),
+               ("3.R5", "If h(x) = x² − 4x, find h(6)."),
+               ("3.R6", "Explain why a function cannot give two outputs for one input.")],
+    ),
+    projects=dict(
+        service=[("Community need", "Community groups plan events without a shared way to estimate "
+                                    "costs, so budgets are guessed."),
+                 ("Mathematical connection", "Linear functions, substitution and rearranging "
+                                             "formulas."),
+                 ("Proposed action", "Build a simple cost model for one community event and publish "
+                                     "it as a reusable formula."),
+                 ("Expected impact", "The group can plan within a known budget instead of "
+                                     "discovering the cost afterwards."),
+                 ("Student reflection", "Record the formula, the assumptions it makes, and where "
+                                        "they failed.")],
+        community=[("Project idea", "A cost model for a school fair stall."),
+                   ("Need", "Stall holders set prices without knowing their break-even point."),
+                   ("Research question", "What price covers the costs of a stall, and what does a "
+                                         "profit of a given size require?"),
+                   ("Mathematics", "Linear functions, substitution and rearranging formulas."),
+                   ("Action or outcome", "A one-page cost model and a recommended price."),
+                   ("Beneficiaries", "Stall holders and the groups they raise money for."),
+                   ("Evidence", "The model, the calculation and the recommended price.")],
+        personal=[("Personal interest", "Gaming, sport or music practice."),
+                  ("Learning goal", "To model a personal routine with a formula and use it to "
+                                    "make a decision."),
+                  ("Product or outcome", "A training or practice plan with a cost or time model."),
+                  ("Mathematics", "Linear functions, sequences and substitution."),
+                  ("Process", "Record data, fit a linear rule, then use it to predict."),
+                  ("Evidence", "The data, the formula and the prediction.")],
+    ),
+),
+])
+
+CHAPTERS.extend([
+dict(
+    num=4, title="Linear relationships and graphs",
+    key="Relationships", related=["Change", "Representation"],
+    context="Fairness and development",
+    exploration="Distribution of resources",
+    inquiry=("The relationship between two quantities that change at a constant rate can be "
+             "represented as a straight line, and the equivalence between a table, a graph and an "
+             "equation allows that relationship to be used to predict — and the prediction to be "
+             "judged."),
+    atl=("Communication",
+         "In order for a student to explain a linear relationship to an audience, students must "
+         "choose a representation that suits that audience, label the axes and the units, and "
+         "justify the choice of representation in the explanation."),
+    standfirst="Two quantities that change together at a constant rate produce a straight line. "
+               "The gradient is the rate of change and the intercept is where the line starts.",
+    engage="A village water point is filled by two pumps. Pump A delivers 40 litres a minute and "
+           "pump B delivers 55 litres a minute, starting 5 minutes later. Both graphs are straight "
+           "lines. When does B overtake A, and what does the crossing point mean?",
+    questions=[("Factual", "How do you find the gradient of a line from two points, and how do "
+                           "you write its equation?"),
+               ("Conceptual", "Why does a constant rate of change always produce a straight-line "
+                              "graph, and what does the y-intercept represent in a real situation?"),
+               ("Debatable", "Is a prediction made by extending a straight-line graph beyond the "
+                             "collected data a mathematical fact or an assumption?")],
+    application_lede="These tasks use tables, gradients, equations of lines, direct proportion and "
+                     "linear models. State the representation you used and why it was the "
+                     "clearest one.",
+    projects_lede="Resource distribution is a linear-modelling problem. Use the model to plan, and "
+                  "say plainly where the model stops being valid.",
+    sections=[
+        dict(id="4.1", title="From tables to straight lines",
+             inquiry_q=("How can a table of paired values show that a relationship is linear, and "
+                        "what does the graph add?"), teach=[
+            "A table of values lists matching input and output pairs. If the output changes by the same amount whenever the input changes by the same amount, the relationship is linear.",
+            "Plotting the pairs turns the table into a picture. Linear pairs give points that lie on a straight line, which is the visual signature of a constant rate of change, and this graph representation answers questions the table cannot.",
+            "The graph shows what the table hides: where the line crosses the axes, how steep it is, and where it crosses another line. Those features are answers to questions the table cannot answer directly.",
+            "Reading a graph back into a table is the reverse process, and it is the standard way to check that a plotted line has been drawn correctly.",
+        ], examples=[
+            dict(q="A car hire costs 30 dollars plus 12 dollars a day. Complete the table for 0 to "
+                   "5 days and plot the points.",
+                 vis=F("table", [["days d", "cost C = 30 + 12d"],
+                                 ["0", "30"], ["1", "42"], ["2", "54"], ["3", "66"], ["4", "78"],
+                                 ["5", "90"]],
+                       caption="A constant difference of 12 means the points lie on a straight line."),
+                 reasoning="Each extra day adds the same 12 dollars, so the first differences are "
+                          "constant and the graph is linear.",
+                 steps=["C = 30 + 12d.",
+                        "d = 0 gives 30, and each further day adds 12.",
+                        "The values are 30, 42, 54, 66, 78, 90.",
+                        "Plotted, they lie on a straight line with gradient 12."],
+                 ans="the costs are 30, 42, 54, 66, 78 and 90 dollars",
+                 interp="The constant difference of 12 dollars is the rate of change, and it becomes "
+                        "the gradient of the line."),
+            dict(q="A table gives (1, 5), (2, 8), (3, 11), (4, 14). Is the relationship linear, "
+                   "and what is its rule?",
+                 vis=F("grid", [(1, 5), (2, 8), (3, 11), (4, 14)], ["A", "B", "C", "D"],
+                       xmin=0, xmax=5, ymin=0, ymax=16, title="four points, one line"),
+                 reasoning="Constant first differences mean a linear rule, and the rule can be read "
+                          "from the pattern of the values.",
+                 steps=["The x-values rise by 1 and the y-values rise by 3 each time.",
+                        "A constant difference of 3 means the relationship is linear.",
+                        "The rule is y = 3x + b, and x = 1 gives y = 5, so b = 2.",
+                        "The rule is y = 3x + 2."],
+                 ans="yes, the relationship is linear and the rule is y = 3x + 2",
+                 interp="The graph confirms the rule: four points that lie on one line cannot "
+                        "disagree."),
+        ], inv=dict(
+            task="Measure how far a toy car travels when it is released from ramps of different "
+                 "heights. Record five pairs of values, plot them, and decide whether the "
+                 "relationship is linear. Then use your graph to predict the distance for a ramp "
+                 "height you did not test.",
+            fig=F("grid", [(2, 18), (4, 31), (6, 45), (8, 58), (10, 72)],
+                  ["", "", "", "", ""], xmin=0, xmax=12, ymin=0, ymax=80,
+                  title="ramp height against distance"),
+            table=[["ramp height (cm)", "distance (cm)", "first difference"],
+                   ["2", "18", "—"],
+                   ["4", "31", "13"],
+                   ["6", "45", "14"],
+                   ["8", "58", "13"],
+                   ["10", "72", "14"]],
+            notice=["The first differences are all close to 13 or 14 cm.",
+                    "The points nearly lie on a straight line, so the relationship is approximately "
+                    "linear.",
+                    "Small departures from the line come from measurement error, not from a "
+                    "different rule.",
+                    "Extending the line predicts about 86 cm for a 12 cm ramp."],
+            obs="A roughly constant difference gives points that nearly lie on a straight line, "
+                "which is what real measurement data looks like.",
+            concl="A relationship is linear when equal changes in the input give equal changes in "
+                  "the output, and the graph of such a relationship is a straight line whose "
+                  "gradient is that equal change.")),
+        dict(id="4.2", title="Gradient as a rate of change",
+             inquiry_q=("What does the gradient of a line measure, and how is it computed from two "
+                        "points?"), teach=[
+            "The gradient of a line is the change in y divided by the change in x between any two points on it: m = (y₂ − y₁)/(x₂ − x₁). It is a rate of change.",
+            "A positive gradient rises left to right, a negative gradient falls, and a zero gradient is horizontal. A vertical line has no gradient at all.",
+            "Because the gradient is the same between any two points on a line, it is enough to know two points to draw the line. This is what makes the equation of a line a complete description of it.",
+            "Parallel lines have equal gradients. Perpendicular lines have gradients whose product is −1, which is met formally in MYP 4.",
+        ], examples=[
+            dict(q="Find the gradient of the line through (2, 7) and (6, 19), and interpret it.",
+                 vis=F("grid", [(2, 7), (6, 19)], ["(2, 7)", "(6, 19)"],
+                       xmin=0, xmax=8, ymin=0, ymax=22, title="gradient = 12 ÷ 4 = 3"),
+                 reasoning="The gradient is the change in y over the change in x, which is the rate "
+                          "of change of y with respect to x.",
+                 steps=["Change in y = 19 − 7 = 12.",
+                        "Change in x = 6 − 2 = 4.",
+                        "Gradient = 12/4 = 3.",
+                        "So y rises by 3 units for every 1 unit rise in x."],
+                 ans="the gradient is 3",
+                 interp="The gradient is the rate of change, so it answers 'how fast' rather than "
+                        "'how much'."),
+            dict(q="A line falls from (0, 20) to (8, 4). Find its gradient and say what it means.",
+                 vis=F("grid", [(0, 20), (8, 4)], ["(0, 20)", "(8, 4)"],
+                       xmin=0, xmax=10, ymin=0, ymax=24, title="gradient = −16 ÷ 8 = −2"),
+                 reasoning="A falling line has a negative gradient, because the change in y is "
+                          "negative.",
+                 steps=["Change in y = 4 − 20 = −16.",
+                        "Change in x = 8 − 0 = 8.",
+                        "Gradient = −16/8 = −2.",
+                        "So y falls by 2 units for every 1 unit rise in x."],
+                 ans="the gradient is −2",
+                 interp="The negative sign is the direction of the change, and the 2 is its size."),
+        ], inv=dict(
+            task="Draw four lines on the same grid: one rising, one falling, one horizontal and one "
+                 "vertical. For each, choose two points and compute the gradient. Then draw a line "
+                 "parallel to the rising line and check whether the gradients agree.",
+            fig=F("grid", [(0, 0), (4, 8), (4, 0), (0, 8)], ["", "", "", ""],
+                  xmin=0, xmax=10, ymin=0, ymax=10, title="four lines, four gradients"),
+            table=[["line", "two points", "change in y", "change in x", "gradient"],
+                   ["rising", "(0, 0) and (4, 8)", "8", "4", "2"],
+                   ["falling", "(0, 8) and (4, 0)", "−8", "4", "−2"],
+                   ["horizontal", "(0, 4) and (8, 4)", "0", "8", "0"],
+                   ["vertical", "(4, 0) and (4, 8)", "8", "0", "undefined"]],
+            notice=["The rising line has a positive gradient and the falling line a negative one.",
+                    "The horizontal line has gradient 0 because y does not change.",
+                    "The vertical line has no gradient, because the change in x is zero.",
+                    "The parallel line through (0, 1) and (4, 9) also has gradient 2."],
+            obs="The gradient is the change in y per unit change in x, and it is the same for every "
+                "pair of points on a line.",
+            concl="The gradient of a line is m = (y₂ − y₁)/(x₂ − x₁) for any two points on it, and "
+                  "it measures the rate of change of y with respect to x.")),
+        dict(id="4.3", title="The equation of a straight line",
+             inquiry_q=("How can one equation describe every point on a line?"), teach=[
+            "The equation y = mx + c describes every point on the line with gradient m and y-intercept c. Substituting any x gives the matching y, and every such pair lies on the line.",
+            "The gradient-intercept form is the fastest to write when both are known. The point-gradient form y − y₁ = m(x − x₁) is faster when a point and the gradient are known.",
+            "Two lines with the same gradient never meet. Two lines with different gradients meet exactly once, and the intersection is the point that satisfies both equations.",
+            "The equation is a complete description of the line: drawing it, reading a value from it, and finding where it crosses another line are all consequences of the same two numbers m and c.",
+        ], examples=[
+            dict(q="Find the equation of the line through (1, 4) with gradient −3.",
+                 vis=F("grid", [(1, 4), (2, 1), (0, 7)], ["(1, 4)", "(2, 1)", "(0, 7)"],
+                       xmin=-1, xmax=4, ymin=0, ymax=9, title="y = −3x + 7"),
+                 reasoning="One point and the gradient are enough to fix the line, and substituting "
+                          "the point into y = mx + c gives c.",
+                 steps=["m = −3, so the equation is y = −3x + c.",
+                        "The point (1, 4) lies on it: 4 = −3 × 1 + c.",
+                        "So c = 7.",
+                        "The equation is y = −3x + 7."],
+                 ans="y = −3x + 7",
+                 interp="The intercept 7 is where the line meets the y-axis, and it is the value of "
+                        "y when x = 0."),
+            dict(q="Find where y = 2x + 1 meets y = −x + 7.",
+                 vis=F("grid", [(0, 1), (2, 5), (0, 7), (3, 4)], ["", "", "", ""],
+                       xmin=-1, xmax=5, ymin=0, ymax=9, title="the crossing point (2, 5)"),
+                 reasoning="The intersection satisfies both equations, so solving them together "
+                          "gives the point.",
+                 steps=["2x + 1 = −x + 7.",
+                        "3x = 6, so x = 2.",
+                        "y = 2 × 2 + 1 = 5.",
+                        "The lines meet at (2, 5)."],
+                 ans="the lines meet at (2, 5)",
+                 interp="The crossing point is the only pair of values that makes both equations "
+                        "true at once."),
+        ], inv=dict(
+            task="Take the equation y = 2x − 1. Build a table for x from −2 to 3, plot the points, "
+                 "then change the equation to y = 2x + 3 and repeat on the same grid. Then try "
+                 "y = −2x − 1. Record what changed and what stayed the same.",
+            fig=F("grid", [(-2, -5), (-1, -3), (0, -1), (1, 1), (2, 3), (3, 5)],
+                  ["", "", "", "", "", ""], xmin=-3, xmax=4, ymin=-7, ymax=7,
+                  title="three lines from one gradient"),
+            table=[["equation", "gradient", "y-intercept", "what it shows"],
+                   ["y = 2x − 1", "2", "−1", "rises, crossing y at −1"],
+                   ["y = 2x + 3", "2", "3", "rises the same way, crossing y at 3"],
+                   ["y = −2x − 1", "−2", "−1", "falls, crossing y at −1"]],
+            notice=["Changing the constant moved the line up without changing its steepness.",
+                    "Changing the sign of the gradient turned the rising line into a falling one.",
+                    "The first two lines are parallel because their gradients are equal.",
+                    "All three lines pass through the y-axis at the value of c."],
+            obs="The gradient fixes the steepness and the constant fixes the position, and together "
+                "they fix the line completely.",
+            concl="Every straight line has an equation y = mx + c, where m is the gradient and c is "
+                  "the y-intercept, and two numbers describe the whole line.")),
+        dict(id="4.4", title="Direct proportion",
+             inquiry_q=("When does a linear relationship pass through the origin, and what does "
+                        "that mean?"), teach=[
+            "Direct proportion is the relationship y = kx for a constant k. Its graph is a straight line through the origin, because y = 0 when x = 0.",
+            "The constant k is the constant of proportionality. It is the gradient of the line and the value of y when x = 1.",
+            "A relationship is directly proportional exactly when y/x is the same for every pair. This is the test, and it is a division rather than a subtraction.",
+            "Direct proportion is the model behind unit prices, exchange rates and scale drawings. Recognising it saves work, because one pair of values gives the whole rule.",
+        ], examples=[
+            dict(q="5 identical books weigh 11 kg. Find the weight of 8 books, and the constant of "
+                   "proportionality.",
+                 vis=F("double_number_line", ["5", "10"], ["11", "22"], "books : mass"),
+                 reasoning="Identical items give a directly proportional relationship, so one unit "
+                          "value scales to any number of items.",
+                 steps=["Mass per book = 11 ÷ 5 = 2.2 kg.",
+                        "So the constant of proportionality is 2.2.",
+                        "For 8 books: 8 × 2.2 = 17.6 kg."],
+                 ans="17.6 kg, with a constant of proportionality of 2.2 kg per book",
+                 interp="The graph of mass against number of books is a straight line through the "
+                        "origin."),
+            dict(q="Is y directly proportional to x for the pairs (3, 15), (5, 25), (7, 34)?",
+                 vis=F("table", [["x", "y", "y ÷ x"],
+                                 ["3", "15", "5"],
+                                 ["5", "25", "5"],
+                                 ["7", "34", "4.857…"]],
+                       caption="Direct proportion needs the same quotient every time."),
+                 reasoning="The quotient y/x must be constant, and one different value is enough to "
+                          "rule the relationship out.",
+                 steps=["15 ÷ 3 = 5.",
+                        "25 ÷ 5 = 5.",
+                        "34 ÷ 7 = 4.857…, which is not 5.",
+                        "The quotients are not all equal, so y is not directly proportional to x."],
+                 ans="no, because the quotients are not constant",
+                 interp="The third pair breaks the pattern, which is why the test is a check on "
+                        "every pair."),
+        ], inv=dict(
+            task="Collect five pairs of values for a directly proportional relationship of your own "
+                 "(for example, cost against number of identical items). Compute y ÷ x for each "
+                 "pair, plot the points, and check whether the line passes through the origin. Then "
+                 "add a fixed delivery charge and repeat.",
+            fig=F("grid", [(1, 4), (2, 8), (3, 12), (4, 16), (5, 20)], ["", "", "", "", ""],
+                  xmin=0, xmax=6, ymin=0, ymax=24, title="a line through the origin"),
+            table=[["x", "y (no charge)", "y ÷ x", "y (with 5 charge)", "y ÷ x"],
+                   ["1", "4", "4", "9", "9"],
+                   ["2", "8", "4", "13", "6.5"],
+                   ["3", "12", "4", "17", "5.67"],
+                   ["4", "16", "4", "21", "5.25"],
+                   ["5", "20", "4", "25", "5"]],
+            notice=["Without the charge, y ÷ x was 4 every time and the line passed through the "
+                    "origin.",
+                    "With the charge, the quotients changed and the line crossed the y-axis at 5.",
+                    "The fixed charge is a y-intercept, and it is what breaks direct proportion.",
+                    "Both graphs are straight lines, so both are linear — but only one is "
+                    "proportional."],
+            obs="Direct proportion is the special linear case where the quotient y/x is constant, "
+                "which is why the line passes through the origin.",
+            concl="y is directly proportional to x exactly when y = kx for a constant k, which "
+                  "means the graph passes through the origin and the quotient y/x is the same for "
+                  "every pair.")),
+        dict(id="4.5", title="Linear models, prediction and fairness",
+             inquiry_q=("When is a prediction from a linear model justified, and when is it not?"), teach=[
+            "A linear model assumes that the rate of change stays constant. Inside the range of the collected data this is often reasonable; outside it, the model is an assumption.",
+            "Interpolation is prediction inside the range of the data, and it is usually safe. Extrapolation is prediction outside it, and it can fail badly.",
+            "A good model states its assumptions. 'Cost = 30 + 12 per day for the first 10 days' is honest; 'cost = 30 + 12 per day' is not, because eventually the rate changes.",
+            "Linear models are used to allocate resources, and a model that fits one group can be unfair to another. Checking the residuals — the gaps between the model and the data — is part of judging the model.",
+        ], examples=[
+            dict(q="A plumber's call-out cost follows C = 45 + 38h for the first 4 hours. Predict "
+                   "the cost of a 3-hour job, and comment on using the model for 12 hours.",
+                 vis=F("table", [["hours", "model cost", "comment"],
+                                 ["1", "83", "inside the range"],
+                                 ["3", "159", "inside the range"],
+                                 ["4", "197", "the last reliable value"],
+                                 ["12", "501", "outside the stated range"]],
+                       caption="A model is reliable only where its assumptions hold."),
+                 reasoning="Interpolation inside the stated range is reliable; extrapolation beyond "
+                          "it assumes the rate continues, which the model does not claim.",
+                 steps=["For 3 hours: C = 45 + 38 × 3 = 159 dollars.",
+                        "This is inside the stated range, so the prediction is reliable.",
+                        "For 12 hours: C = 45 + 38 × 12 = 501 dollars.",
+                        "But the model was stated for the first 4 hours only, so this is "
+                        "extrapolation."],
+                 ans="159 dollars for 3 hours; the 12-hour figure of 501 dollars is an extrapolation "
+                     "beyond the model's stated range",
+                 interp="The mathematics is correct in both cases; only the justification differs."),
+            dict(q="Two shops charge for printing. Shop A: C = 2 + 0.10n. Shop B: C = 0.40n. For "
+                   "how many pages are they equal, and which is cheaper below that?",
+                 vis=F("grid", [(0, 2), (10, 3), (0, 0), (10, 4)], ["A", "A", "B", "B"],
+                       xmin=0, xmax=12, ymin=0, ymax=5, title="the crossing point"),
+                 reasoning="The two models are equal where their graphs cross, and the cheaper shop "
+                          "is the one with the lower value at that quantity.",
+                 steps=["2 + 0.10n = 0.40n.",
+                        "2 = 0.30n, so n = 6.67.",
+                        "For fewer than about 7 pages, shop A is cheaper.",
+                        "For more than about 7 pages, shop B is cheaper."],
+                 ans="equal at about 6.67 pages; shop A is cheaper below that and shop B above",
+                 interp="The crossing point is the decision boundary, and it comes from solving two "
+                        "linear models together."),
+        ], inv=dict(
+            task="Model the growth of a plant over six weeks by measuring its height each week. "
+                 "Fit a straight line by eye, use it to predict the height at week 10, and then "
+                 "measure the plant again in a later week if you can. Record how far the prediction "
+                 "was from the measurement.",
+            fig=F("grid", [(1, 4), (2, 7), (3, 11), (4, 15), (5, 18), (6, 22)],
+                  ["", "", "", "", "", ""], xmin=0, xmax=10, ymin=0, ymax=32,
+                  title="height against week"),
+            table=[["week", "height (cm)", "predicted by the line", "residual"],
+                   ["1", "4", "3.8", "0.2"],
+                   ["2", "7", "7.4", "−0.4"],
+                   ["3", "11", "11.0", "0.0"],
+                   ["4", "15", "14.6", "0.4"],
+                   ["5", "18", "18.2", "−0.2"],
+                   ["6", "22", "21.8", "0.2"]],
+            notice=["The residuals are small and both positive and negative, so the line fits well.",
+                    "The predicted height at week 10 was about 37 cm.",
+                    "Real plants stop growing, so the week-10 prediction is an assumption rather "
+                    "than a fact.",
+                    "The residuals are the gaps between the model and the data."],
+            obs="A linear model fits when its residuals are small and balanced, and its predictions "
+                "are only as trustworthy as that fit.",
+            concl="A linear model predicts reliably inside the range of the collected data, and "
+                  "outside that range it states an assumption about the rate of change continuing "
+                  "— which is why the range must be reported with the prediction.")),
+    ],
+    practice=dict(
+        A=[("4.1.1", "Find the gradient of the line through (1, 3) and (5, 15).",
+            "3", "Change in y is 12 and change in x is 4.", "F"),
+           ("4.1.2", "Write the equation of the line with gradient 4 and y-intercept −2.",
+            "y = 4x − 2", "Use y = mx + c.", "F"),
+           ("4.1.3", "Find the gradient of the horizontal line through (2, 7) and (9, 7).",
+            "0", "The change in y is zero.", "F"),
+           ("4.1.4", "A line passes through (0, 5) and (4, 13). Find its equation.",
+            "y = 2x + 5", "The gradient is 8 ÷ 4 = 2 and the intercept is 5.", "F"),
+           ("4.1.5", "Is y directly proportional to x for the pairs (2, 6), (4, 12), (6, 18)?",
+            "Yes — the quotient is 3 throughout",
+            "Direct proportion needs a constant quotient.", "F"),
+           ("4.1.6", "Find the y-intercept of y = −3x + 8.",
+            "8", "The intercept is the constant term.", "F"),
+           ("4.1.7", "Find the equation of the line through (2, 1) with gradient −5.",
+            "y = −5x + 11", "1 = −10 + c gives c = 11.", "F"),
+           ("4.1.8", "A table gives (0, 4), (2, 10), (4, 16). Find the gradient and the equation.",
+            "gradient 3, y = 3x + 4", "Each step of 2 in x gives 6 in y.", "F"),
+           ("4.1.9", "Where do y = x + 1 and y = 5 − x meet?",
+            "(2, 3)", "x + 1 = 5 − x gives x = 2.", "F"),
+           ("4.1.10", "A line has gradient 0.5 and passes through (6, 8). Find its equation.",
+            "y = 0.5x + 5", "8 = 3 + c gives c = 5.", "F"),
+           ("4.1.11", "Find the gradient of the line through (−2, 4) and (3, −6).",
+            "−2", "−10 ÷ 5 = −2.", "F"),
+           ("4.1.12", "Explain why a vertical line has no gradient.",
+            "The change in x is zero, so the quotient is undefined.",
+            "Division by zero is not defined.", "R")],
+        B=[("4.2.1", "Investigate: do the lines y = 2x + 1 and y = 2x − 7 ever meet? Justify.",
+            "No — they have the same gradient, so they are parallel.",
+            "Lines with equal gradients and different intercepts never meet.", "R"),
+           ("4.2.2", "Test the claim: if two lines have the same y-intercept they must meet.",
+            "False — y = 2x and y = 3x both pass through the origin and meet there, but y = 2x + 1 "
+            "and y = 2x + 1 are the same line. A counterexample is y = x and y = x + 1, which do "
+            "not share an intercept at all.",
+            "Sharing an intercept means sharing a point, so the lines do meet there.", "R"),
+           ("4.2.3", "Investigate the gradients of the lines y = 3x, y = 3x + 5 and y = −3x. What "
+                     "do they have in common?",
+            "The first two have the same gradient 3 and are parallel; the third has gradient −3.",
+            "Only the gradient controls steepness.", "R"),
+           ("4.2.4", "Generalise: what is the gradient of the line through (a, b) and (c, d)?",
+            "(d − b)/(c − a)", "The gradient is the change in y over the change in x.", "R"),
+           ("4.2.5", "Investigate whether the points (1, 2), (3, 6) and (5, 10) lie on one line.",
+            "Yes — the gradient is 2 between each consecutive pair.",
+            "A constant gradient between consecutive points means collinearity.", "R"),
+           ("4.2.6", "Test the claim: a line with a negative gradient must have a negative "
+                     "y-intercept.",
+            "False — y = −2x + 5 has gradient −2 and intercept 5.",
+            "The gradient and the intercept are independent.", "R"),
+           ("4.2.7", "Investigate: for what value of k do y = kx and y = x + 4 meet at x = 8?",
+            "k = 1.5", "y = 12 at x = 8, so 8k = 12.", "R"),
+           ("4.2.8", "Generalise a rule for the gradient of a line perpendicular to a line of "
+                     "gradient m.",
+            "−1/m", "The product of the gradients is −1.", "R"),
+           ("4.2.9", "Investigate the pattern 2, 5, 8, 11, … as points (n, term). What is the "
+                     "gradient of the line through them?",
+            "3", "The common difference is the gradient.", "R"),
+           ("4.2.10", "Test the claim: two lines that meet must have different gradients.",
+            "True — equal gradients give parallel lines, which never meet.",
+            "Distinct meeting lines must have different gradients.", "R"),
+           ("4.2.11", "Investigate whether the line through (0, 0) and (3, −9) has the same "
+                      "gradient as the line through (1, 1) and (4, −8).",
+            "Yes — both have gradient −3.",
+            "Equal gradients mean the lines are parallel or identical.", "R")],
+        C=[("4.3.1", "Explain in words what the gradient of a line represents in a real situation.",
+            "The rate of change of the vertical quantity per unit of the horizontal quantity.",
+            "The gradient is a rate, so it carries units.", "R"),
+           ("4.3.2", "Explain the difference between interpolation and extrapolation.",
+            "Interpolation predicts inside the range of the data; extrapolation predicts outside "
+            "it.",
+            "Only the first is supported by the evidence.", "R"),
+           ("4.3.3", "Explain why a straight-line graph through the origin indicates direct "
+                     "proportion.",
+            "Because y = kx gives y = 0 when x = 0.",
+            "The origin corresponds to both quantities being zero.", "R"),
+           ("4.3.4", "Describe two ways to find the equation of a line, and say when each is "
+                     "quickest.",
+            "Use two points for the gradient, or use a point and the gradient directly.",
+            "The choice depends on what information is given.", "R"),
+           ("4.3.5", "Explain what a residual is and what it tells you about a model.",
+            "The gap between the model's prediction and the measured value.",
+            "Small balanced residuals indicate a good fit.", "R"),
+           ("4.3.6", "Explain why the equation y = mx + c is a complete description of a line.",
+            "It fixes both the steepness and the position, which determine the line uniquely.",
+            "Two numbers are enough to fix a straight line.", "R"),
+           ("4.3.7", "A graph of cost against distance has a positive y-intercept. Explain what "
+                     "that means for a customer.",
+            "There is a fixed charge payable even for zero distance.",
+            "The intercept is the value at zero input.", "R"),
+           ("4.3.8", "Explain why parallel lines have equal gradients, using the definition of "
+                     "gradient.",
+            "Equal gradients mean equal rates of change, so the lines can never meet.",
+            "The gradient is the same everywhere on a line.", "R"),
+           ("4.3.9", "Describe how you would check whether three points lie on one straight line.",
+            "Compute the gradient between consecutive pairs and check they are equal.",
+            "A constant gradient between consecutive points means collinearity.", "R"),
+           ("4.3.10", "Explain the difference between a linear relationship and a directly "
+                      "proportional one.",
+            "Direct proportion is the special case whose line passes through the origin.",
+            "A linear relationship may have a non-zero intercept.", "R"),
+           ("4.3.11", "Explain why a model that fits one community's data may not be fair to "
+                      "another.",
+            "The gradient and intercept describe that community's situation, not a universal rule.",
+            "A model inherits the range and the population it was fitted to.", "R"),
+           ("4.3.12", "Describe how you would use a graph to compare two service charges.",
+            "Plot both lines and find the crossing point, which is the break-even quantity.",
+            "The crossing point is the decision boundary.", "R")],
+        D=[("4.4.1", "A school pays 120 dollars for a hall and 7 dollars per chair. Write the cost "
+                     "model and find the cost for 45 chairs.",
+            "C = 120 + 7n; 435 dollars", "120 + 7 × 45 = 435.", "A"),
+           ("4.4.2", "A taxi charges 4 dollars plus 1.60 dollars per kilometre. Find the fare for "
+                     "11 km and the distance that costs 20 dollars.",
+            "21.60 dollars; 10 km", "20 − 4 = 16 and 16 ÷ 1.6 = 10.", "A"),
+           ("4.4.3", "Two phone plans: A costs 10 dollars plus 0.05 dollars a minute, B costs 25 "
+                     "dollars plus 0.02 dollars a minute. Find the number of minutes at which they "
+                     "cost the same.",
+            "500 minutes", "10 + 0.05m = 25 + 0.02m gives 0.03m = 15.", "A"),
+           ("4.4.4", "A water tank is filled at 15 litres a minute and already holds 60 litres. "
+                     "Find the time to reach 360 litres and sketch the graph.",
+            "20 minutes", "360 − 60 = 300 and 300 ÷ 15 = 20.", "A"),
+           ("4.4.5", "A farmer sells maize at 0.35 dollars a kilogram and pays 50 dollars to "
+                     "transport it. Write a model for the profit and find the break-even mass.",
+            "P = 0.35m − 50; about 143 kg", "0.35m = 50 gives m ≈ 142.9.", "A"),
+           ("4.4.6", "Explain whether a model that charges a fixed fee plus a per-minute rate is "
+                     "directly proportional.",
+            "No — the fixed fee gives a non-zero intercept, so the line does not pass through the "
+            "origin.",
+            "Direct proportion requires the line to pass through the origin.", "R"),
+           ("4.4.7", "A cyclist covers 12 km in 40 minutes at a constant speed. Find the speed and "
+                     "the distance covered in 75 minutes.",
+            "18 km/h; 22.5 km", "12 ÷ (40/60) = 18 and 18 × 1.25 = 22.5.", "A"),
+           ("4.4.8", "A printing firm charges 15 dollars setup plus 0.08 dollars per page. Find "
+                     "the number of pages that makes the cost 47 dollars.",
+            "400 pages", "47 − 15 = 32 and 32 ÷ 0.08 = 400.", "A"),
+           ("4.4.9", "A village shares a water allowance in proportion to household size. Model "
+                     "the allocation and comment on whether the model is fair.",
+            "allowance = (household size ÷ total size) × total water; fairness depends on whether "
+            "size is the agreed basis.",
+            "A proportional model is only fair if the basis is agreed.", "R"),
+           ("4.4.10", "A linear model predicts a school roll of 620 in five years. The roll is "
+                      "growing by 20 a year. Find the current roll and comment on the assumption.",
+            "520 now; the assumption is that the growth rate stays at 20 a year",
+            "620 − 5 × 20 = 520.", "R"),
+           ("4.4.11", "Two delivery services charge 8 dollars plus 0.50 dollars a kilogram and 3 "
+                      "dollars plus 0.75 dollars a kilogram. Find the mass at which they cost the "
+                      "same and say which is cheaper above it.",
+            "20 kg; the first service is cheaper above it",
+            "8 + 0.5m = 3 + 0.75m gives 5 = 0.25m.", "A"),
+           ("4.4.12", "Explain why extrapolating a linear model of plant growth beyond the "
+                      "growing season gives an unreasonable answer.",
+            "Plants stop growing, so the constant-rate assumption fails.",
+            "A model is valid only where its assumptions hold.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The two water pumps",
+             text="Pump A delivers 40 litres a minute into an empty tank. Pump B delivers 55 litres "
+                  "a minute but starts 5 minutes later. Model both with linear equations, find when "
+                  "B overtakes A, and sketch both graphs on the same axes.",
+             note="Criteria A and C · label the axes with units and state what the crossing point "
+                  "means."),
+        dict(title="A2 · The shared water allowance",
+             text="A village of 240 households shares 60 000 litres of water a week in proportion "
+                  "to household size. Model the allocation, find the allowance for a household of "
+                  "6, and discuss whether the model is fair to households of 1.",
+             note="Criteria A and D · justify the model and comment on its limits."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of relationships and the related concepts of change and "
+        "representation appear in your work?",
+        "How is the global context of fairness and development, and its exploration of the "
+        "distribution of resources, visible in the investigations and examples you completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a linear model for sharing resources, and what would you still "
+        "like to ask?",
+    ],
+    review=dict(
+        ideas=["A table with constant first differences describes a linear relationship.",
+               "The gradient is the change in y per unit change in x: m = (y₂ − y₁)/(x₂ − x₁).",
+               "Every straight line has an equation y = mx + c.",
+               "Parallel lines have equal gradients.",
+               "Direct proportion is y = kx, a line through the origin.",
+               "The intersection of two lines satisfies both equations.",
+               "Interpolation is reliable; extrapolation states an assumption."],
+        vocab=["gradient", "y-intercept", "rate of change", "linear", "direct proportion",
+               "constant of proportionality", "parallel", "intersection", "interpolation",
+               "extrapolation", "residual", "model"],
+        mixed=[("4.R1", "Find the gradient of the line through (2, 5) and (7, 20)."),
+               ("4.R2", "Write the equation of the line through (0, −3) with gradient 4."),
+               ("4.R3", "Where do y = 3x − 2 and y = x + 4 meet?"),
+               ("4.R4", "Is y directly proportional to x for the pairs (2, 7), (4, 14), (5, 20)?"),
+               ("4.R5", "A line has gradient −2 and passes through (3, 1). Find its equation."),
+               ("4.R6", "Explain the difference between a gradient and a y-intercept.")],
+    ),
+    projects=dict(
+        service=[("Community need", "Water and food distribution in the community is decided "
+                                    "without a shared model, so some households are missed."),
+                 ("Mathematical connection", "Linear models, gradients and direct proportion."),
+                 ("Proposed action", "Build a proportional allocation model for one shared resource "
+                                     "and publish it with its assumptions."),
+                 ("Expected impact", "Allocations become predictable and open to challenge."),
+                 ("Student reflection", "Record the model, the assumptions, and what happened when "
+                                        "it was used.")],
+        community=[("Project idea", "A water-allowance model for the school."),
+                   ("Need", "The school's water allowance is shared by guesswork."),
+                   ("Research question", "What allocation rule is both proportional to need and "
+                                         "agreed by everyone?"),
+                   ("Mathematics", "Linear functions, direct proportion and graph reading."),
+                   ("Action or outcome", "A written allocation rule with a graph of the "
+                                         "allocations."),
+                   ("Beneficiaries", "Every household or class using the supply."),
+                   ("Evidence", "The model, the graph and the agreed rule.")],
+        personal=[("Personal interest", "Travel, sport or a savings goal."),
+                  ("Learning goal", "To use a linear model to make a personal decision."),
+                  ("Product or outcome", "A savings or travel plan with a graph and a prediction."),
+                  ("Mathematics", "Gradients, equations of lines and extrapolation."),
+                  ("Process", "Collect the data, fit a line, then predict and check."),
+                  ("Evidence", "The graph, the model and the prediction.")],
+    ),
+),
+])
+
+CHAPTERS.extend([
+dict(
+    num=5, title="Equations, inequalities and systems",
+    key="Relationships", related=["Equivalence", "Systems"],
+    context="Globalisation and sustainability",
+    exploration="Resources and consumption",
+    inquiry=("The relationship between quantities that must satisfy several conditions at once can "
+             "be represented as a system, and the equivalence of the different methods of solving "
+             "such systems allows the feasible solutions to be identified, checked and justified."),
+    atl=("Self-management",
+         "In order for a student to organise the solution of a multi-step problem, students must "
+         "plan the order of the steps before starting, record each step so it can be checked, and "
+         "review the plan against the answer obtained."),
+    standfirst="An equation is a balance, and every step of a solution must keep it balanced. When "
+               "two conditions must hold at once, the answer is a system.",
+    engage="A co-operative has 40 dollars a head to spend on seed and fertiliser. Seed costs 3 "
+           "dollars a packet and fertiliser 5 dollars a bag, and at least 2 bags of fertiliser are "
+           "needed. How many packets can they buy? The question has more than one answer, and "
+           "inequalities describe them all.",
+    questions=[("Factual", "How do you solve a linear equation, an inequality, and a pair of "
+                           "simultaneous equations?"),
+               ("Conceptual", "Why must every step of a solution keep the equation equivalent to "
+                              "the original, and how does a system of inequalities produce a set "
+                              "of feasible answers rather than one?"),
+               ("Debatable", "When a resource is limited, is a solution that satisfies every "
+                             "constraint automatically the best one?")],
+    application_lede="These tasks use equations, inequalities, simultaneous equations and systems "
+                     "of inequalities. Check every solution in the original conditions before "
+                     "reporting it.",
+    projects_lede="Every shared resource is limited, and limits are inequalities. Use systems to "
+                  "see the feasible choices before choosing among them.",
+    sections=[
+        dict(id="5.1", title="Solving linear equations",
+             inquiry_q=("How can an equation be solved while keeping it equivalent to the "
+                        "original?"), teach=[
+            "An equation states that two expressions are equal. Solving it means finding the values that make the statement true, and every step of the solution must preserve that truth.",
+            "The permitted steps are: add or subtract the same quantity from both sides, multiply or divide both sides by the same non-zero quantity. Each step produces an equation equivalent to the last.",
+            "Multiplying or dividing both sides by a negative number is allowed when solving an equation, because the equality survives. This is the difference between an equation and an inequality.",
+            "Checking is not optional. Substituting the answer back into the original equation is the only way to be sure that a step did not break the equivalence.",
+        ], examples=[
+            dict(q="Solve 3(x − 4) + 5 = 2x + 11.",
+                 vis=F("table", [["step", "operation", "result"],
+                                 ["3(x − 4) + 5 = 2x + 11", "expand", "3x − 7 = 2x + 11"],
+                                 ["3x − 7 = 2x + 11", "subtract 2x", "x − 7 = 11"],
+                                 ["x − 7 = 11", "add 7", "x = 18"]],
+                       caption="Each step keeps the equation balanced."),
+                 reasoning="Expanding first, then collecting the variable terms on one side and the "
+                          "constants on the other, keeps each step equivalent.",
+                 steps=["Expand: 3x − 12 + 5 = 2x + 11, so 3x − 7 = 2x + 11.",
+                        "Subtract 2x from both sides: x − 7 = 11.",
+                        "Add 7 to both sides: x = 18.",
+                        "Check: 3(14) + 5 = 47 and 2(18) + 11 = 47."],
+                 ans="x = 18",
+                 interp="The check confirms that every step preserved the equality, not just the "
+                        "last one."),
+            dict(q="Solve (2x − 1)/3 = (x + 2)/4.",
+                 vis=F("table", [["step", "operation", "result"],
+                                 ["(2x − 1)/3 = (x + 2)/4", "multiply by 12", "4(2x − 1) = 3(x + 2)"],
+                                 ["8x − 4 = 3x + 6", "collect terms", "5x = 10"],
+                                 ["5x = 10", "divide by 5", "x = 2"]],
+                       caption="Clearing the denominators first keeps the arithmetic simple."),
+                 reasoning="Multiplying both sides by the common denominator clears the fractions "
+                          "without changing the solution.",
+                 steps=["Multiply both sides by 12: 4(2x − 1) = 3(x + 2).",
+                        "Expand: 8x − 4 = 3x + 6.",
+                        "Subtract 3x and add 4: 5x = 10.",
+                        "Divide by 5: x = 2."],
+                 ans="x = 2",
+                 interp="Clearing fractions is a legitimate step because it multiplies both sides by "
+                        "the same non-zero number."),
+        ], inv=dict(
+            task="Solve 2(x + 3) = 14 by three different routes: expanding first, dividing first, "
+                 "and using a bar model. Then try to solve 2(x + 3) = 15 the same way and record "
+                 "what happens.",
+            fig=F("bar_model", 14, [2, 2, 2, 2, 2, 2, 2], [0], "seven groups of 2"),
+            table=[["route", "steps", "answer"],
+                   ["expand first", "2x + 6 = 14, so 2x = 8, so x = 4", "x = 4"],
+                   ["divide first", "x + 3 = 7, so x = 4", "x = 4"],
+                   ["bar model", "14 − 6 = 8 shared into two equal parts", "x = 4"]],
+            notice=["All three routes gave the same answer, because each step kept the equation "
+                    "equivalent.",
+                    "Dividing first was the shortest route because it avoided expanding.",
+                    "For 2(x + 3) = 15, dividing first gives x + 3 = 7.5, so x = 4.5.",
+                    "The answer need not be a whole number, and the bar model still works with "
+                    "half-units."],
+            obs="Different routes through an equation give the same answer when every step "
+                "preserves equivalence.",
+            concl="A linear equation is solved by applying inverse operations to both sides, and "
+                  "any sequence of equivalent steps leads to the same solution.")),
+        dict(id="5.2", title="Inequalities and solution sets",
+             inquiry_q=("How does solving an inequality differ from solving an equation, and why "
+                        "is the answer a set?"), teach=[
+            "An inequality states that one expression is greater or less than another. Its solution is usually a set of values, not a single value, so it is written as an interval or with a number line.",
+            "Adding or subtracting the same quantity from both sides preserves the inequality. Multiplying or dividing by a positive number also preserves it.",
+            "Multiplying or dividing both sides by a negative number reverses the inequality sign. This is the one step that behaves differently from an equation, and it is the commonest source of error.",
+            "A compound inequality such as 1 < 2x + 1 ≤ 7 is solved by applying the same operation to all three parts, which keeps the structure intact.",
+        ], examples=[
+            dict(q="Solve 3 − 2x > 11 and show the solution on a number line.",
+                 vis=F("number_line", -6, 4, 1, [-4], "x < −4", ""),
+                 reasoning="Dividing by a negative number reverses the inequality sign, which is "
+                          "the step that differs from solving an equation.",
+                 steps=["3 − 2x > 11.",
+                        "Subtract 3: −2x > 8.",
+                        "Divide by −2 and reverse the sign: x < −4."],
+                 ans="x < −4, or x ∈ (−∞, −4)",
+                 interp="Reversing the sign is not a rule of convenience: it is what keeps the "
+                        "statement true."),
+            dict(q="Solve −2 ≤ (x + 1)/3 < 4.",
+                 vis=F("number_line", -8, 12, 1, [-7, 11], "[−7, 11)", ""),
+                 reasoning="A compound inequality is solved by applying the same operations to all "
+                          "three parts.",
+                 steps=["Multiply all three parts by 3: −6 ≤ x + 1 < 12.",
+                        "Subtract 1 from all three parts: −7 ≤ x < 11.",
+                        "So x ∈ [−7, 11)."],
+                 ans="−7 ≤ x < 11, or x ∈ [−7, 11)",
+                 interp="The square bracket at −7 and the round bracket at 11 record which "
+                        "endpoints are included."),
+        ], inv=dict(
+            task="Solve 2x + 1 < 7 and then −2x + 1 < 7. Draw both solution sets on the same "
+                 "number line, then solve −2x + 1 < 2x + 5. Record the effect of the negative "
+                 "coefficient in each case.",
+            fig=F("number_line", -6, 6, 1, [3, -3], "x < 3 and x > −3", ""),
+            table=[["inequality", "steps", "solution set"],
+                   ["2x + 1 < 7", "2x < 6, so x < 3", "(−∞, 3)"],
+                   ["−2x + 1 < 7", "−2x < 6, so x > −3", "(−3, ∞)"],
+                   ["−2x + 1 < 2x + 5", "−4 < 4x, so x > −1", "(−1, ∞)"]],
+            notice=["The first two inequalities differ only in the sign of the coefficient of x.",
+                    "That sign change reversed the direction of the solution set.",
+                    "Both solution sets are infinite, so an inequality rarely has one answer.",
+                    "The third inequality has the variable on both sides, which is solved by "
+                    "collecting it."],
+            obs="A negative coefficient reverses the inequality sign when it is divided out, so the "
+                "solution set can point the opposite way from an equation's solution.",
+            concl="Solving an inequality follows the same steps as solving an equation, except that "
+                  "multiplying or dividing by a negative number reverses the sign — and the "
+                  "solution is a set, not a value.")),
+        dict(id="5.3", title="Simultaneous equations: graphs and substitution",
+             inquiry_q=("How can two conditions be satisfied at the same time?"), teach=[
+            "A pair of simultaneous equations states two conditions that must both hold. The solution is the pair of values that satisfies both, which is the point where the two graphs cross.",
+            "The graphical method finds the intersection by drawing both lines. It is quick and it shows the structure, but it is limited by the accuracy of the drawing.",
+            "The substitution method solves one equation for one variable and substitutes the result into the other. It is exact and it works whenever one equation is easy to rearrange.",
+            "Both methods answer the same question. The choice between them is about accuracy and convenience, not about correctness.",
+        ], examples=[
+            dict(q="Solve y = 2x + 1 and 3x + y = 11 by substitution.",
+                 vis=F("grid", [(0, 1), (2, 5), (0, 11), (2, 5)], ["", "", "", ""],
+                       xmin=0, xmax=5, ymin=0, ymax=13, title="the crossing point (2, 5)"),
+                 reasoning="One equation already gives y in terms of x, so substituting that "
+                          "expression into the other removes y entirely.",
+                 steps=["Substitute y = 2x + 1 into 3x + y = 11.",
+                        "3x + 2x + 1 = 11.",
+                        "5x = 10, so x = 2.",
+                        "y = 2 × 2 + 1 = 5.",
+                        "Check: 3 × 2 + 5 = 11."],
+                 ans="x = 2 and y = 5",
+                 interp="The check in the second equation confirms the pair satisfies both "
+                        "conditions."),
+            dict(q="Solve x + y = 10 and x − y = 4 by elimination.",
+                 vis=F("table", [["step", "operation", "result"],
+                                 ["x + y = 10", "—", "—"],
+                                 ["x − y = 4", "add the equations", "2x = 14"],
+                                 ["2x = 14", "divide by 2", "x = 7"],
+                                 ["x = 7", "substitute back", "y = 3"]],
+                       caption="Adding the equations cancels y."),
+                 reasoning="Adding the two equations removes y because its coefficients are equal "
+                          "and opposite, leaving one equation in x.",
+                 steps=["Add the equations: (x + y) + (x − y) = 10 + 4.",
+                        "2x = 14, so x = 7.",
+                        "Substitute into x + y = 10: 7 + y = 10, so y = 3.",
+                        "Check: 7 − 3 = 4."],
+                 ans="x = 7 and y = 3",
+                 interp="Elimination was faster here because the y terms were already set up to "
+                        "cancel."),
+        ], inv=dict(
+            task="Solve the pair 2x + 3y = 12 and x − y = 1 three ways: by substitution, by "
+                 "elimination, and by drawing both lines. Record which method you found fastest and "
+                 "why.",
+            fig=F("grid", [(0, 4), (6, 0), (1, 0), (3, 2)], ["", "", "", ""],
+                  xmin=0, xmax=8, ymin=0, ymax=6, title="the crossing point (3, 2)"),
+            table=[["method", "steps", "answer"],
+                   ["substitution", "x = y + 1, so 2(y + 1) + 3y = 12, giving 5y = 10", "x = 3, y = 2"],
+                   ["elimination", "double the second equation and subtract", "x = 3, y = 2"],
+                   ["graph", "draw both lines and read the crossing", "x = 3, y = 2"]],
+            notice=["All three methods gave the same pair, because they all enforce the same two "
+                    "conditions.",
+                    "Substitution was quickest here because x was easy to isolate.",
+                    "The graph showed the crossing but only to the accuracy of the drawing.",
+                    "The check in both equations confirmed the answer."],
+            obs="The solution of a system is the pair that satisfies every equation, and any exact "
+                "method finds it.",
+            concl="Simultaneous equations are solved by substitution or by elimination, and both "
+                  "methods produce the single pair of values that satisfies every equation in the "
+                  "system.")),
+        dict(id="5.4", title="Elimination and special systems",
+             inquiry_q=("How can a system be solved when the coefficients are arranged to cancel, "
+                        "and what happens when they are not?"), teach=[
+            "Elimination multiplies one or both equations by a constant so that one variable has equal and opposite coefficients, then adds or subtracts the equations.",
+            "The multiplier is chosen to make the coefficients match. If the coefficients of x are 2 and 3, multiplying by 3 and 2 makes them 6 and 6, and subtracting removes x.",
+            "A system with exactly one solution has lines that cross once. Parallel lines give no solution, and identical lines give infinitely many.",
+            "Recognising the special cases from the coefficients saves work: if the ratios of the x-coefficients and the y-coefficients are equal but the constants differ, the lines are parallel.",
+        ], examples=[
+            dict(q="Solve 3x + 2y = 16 and 5x − 2y = 8 by elimination.",
+                 vis=F("table", [["equation", "multiply by", "result"],
+                                 ["3x + 2y = 16", "1", "3x + 2y = 16"],
+                                 ["5x − 2y = 8", "1", "5x − 2y = 8"],
+                                 ["add", "—", "8x = 24"]],
+                       caption="The y coefficients already cancel."),
+                 reasoning="The y coefficients are 2 and −2, so adding the equations removes y with "
+                          "no multiplier at all.",
+                 steps=["Add: 8x = 24, so x = 3.",
+                        "Substitute into 3x + 2y = 16: 9 + 2y = 16.",
+                        "2y = 7, so y = 3.5.",
+                        "Check in the second: 15 − 7 = 8."],
+                 ans="x = 3 and y = 3.5",
+                 interp="The answer need not be a pair of integers, and the check still works."),
+            dict(q="Show that 2x + 4y = 10 and x + 2y = 7 have no solution.",
+                 vis=F("grid", [(0, 2.5), (5, 0), (0, 3.5), (7, 0)], ["", "", "", ""],
+                       xmin=0, xmax=8, ymin=0, ymax=6, title="two parallel lines"),
+                 reasoning="If one equation is a multiple of the other in the variable terms but "
+                          "not in the constant, the lines are parallel and never meet.",
+                 steps=["Multiply the second equation by 2: 2x + 4y = 14.",
+                        "Compare with 2x + 4y = 10.",
+                        "The left sides are identical but the right sides differ by 4.",
+                        "So no pair of values can satisfy both."],
+                 ans="there is no solution; the lines are parallel",
+                 interp="Recognising the parallel case from the coefficients avoids a long search "
+                        "for an answer that does not exist."),
+        ], inv=dict(
+            task="Solve these four systems and classify each as having one solution, no solution, "
+                 "or infinitely many: (a) x + y = 5, x − y = 1; (b) 2x + 2y = 6, x + y = 3; (c) "
+                 "x + y = 5, 2x + 2y = 8; (d) 3x − y = 4, 6x − 2y = 8. Record how you decided.",
+            table=[["system", "what elimination gave", "classification"],
+                   ["(a) x + y = 5, x − y = 1", "2x = 6, so x = 3 and y = 2", "one solution"],
+                   ["(b) 2x + 2y = 6, x + y = 3", "0 = 0 after elimination", "infinitely many"],
+                   ["(c) x + y = 5, 2x + 2y = 8", "0 = −2 after elimination", "no solution"],
+                   ["(d) 3x − y = 4, 6x − 2y = 8", "0 = 0 after elimination", "infinitely many"]],
+            notice=["Elimination produced 0 = 0 in two cases and 0 = −2 in one.",
+                    "0 = 0 means the equations say the same thing, so there are infinitely many "
+                    "solutions.",
+                    "0 = −2 is impossible, so the lines are parallel and there is no solution.",
+                    "Only case (a) gave a single pair."],
+            obs="Elimination reveals the type of system: a true statement means infinitely many "
+                "solutions, a false one means none, and a solvable equation means exactly one.",
+            concl="A linear system has exactly one solution when its lines cross, no solution when "
+                  "they are parallel, and infinitely many when they are the same line, and "
+                  "elimination distinguishes the three cases directly.")),
+        dict(id="5.5", title="Systems of inequalities and resource allocation",
+             inquiry_q=("How can several limits at once define a set of feasible choices?"), teach=[
+            "A system of inequalities describes a situation with several limits at once. The solution is the set of points that satisfy every inequality, and it is a region rather than a point.",
+            "Each inequality contributes a half-plane bounded by its line. The feasible region is the intersection of those half-planes.",
+            "The vertices of the feasible region are where two boundary lines cross, and they are usually where the best value of a quantity occurs.",
+            "Inequalities model scarcity honestly: they do not pick an answer, they describe which answers are possible. Choosing among them is a separate, human step.",
+        ], examples=[
+            dict(q="A co-operative has 40 dollars, seed costs 3 dollars a packet and fertiliser 5 "
+                   "dollars a bag, and at least 2 bags of fertiliser are needed. Write the system "
+                   "and find the greatest number of seed packets.",
+                 vis=F("grid", [(0, 8), (13, 0)], ["", ""],
+                       xmin=0, xmax=14, ymin=0, ymax=10,
+                       title="the feasible region for 3x + 5y ≤ 40"),
+                 reasoning="Each condition becomes an inequality, and the feasible region is where "
+                          "all of them hold at once.",
+                 steps=["Let x be seed packets and y be bags of fertiliser.",
+                        "3x + 5y ≤ 40 (the budget) and y ≥ 2 (the minimum fertiliser).",
+                        "With y = 2: 3x + 10 ≤ 40, so 3x ≤ 30, giving x ≤ 10.",
+                        "So the greatest number of seed packets is 10, with 2 bags."],
+                 ans="at most 10 seed packets, with exactly 2 bags of fertiliser",
+                 interp="The budget limit binds at that corner, which is where the best value of x "
+                        "occurs."),
+            dict(q="A farmer plants wheat and barley on at most 100 hectares, with at least 20 "
+                   "hectares of each. Write the system and state its feasible region.",
+                 vis=F("grid", [(20, 80), (80, 20)], ["", ""],
+                       xmin=0, xmax=100, ymin=0, ymax=100,
+                       title="20 ≤ x, 20 ≤ y, x + y ≤ 100"),
+                 reasoning="Each constraint is a half-plane, and the feasible region is their "
+                          "intersection.",
+                 steps=["w + b ≤ 100, w ≥ 20 and b ≥ 20.",
+                        "The third condition gives b ≤ 100 − w.",
+                        "Combining with b ≥ 20 gives 20 ≤ b ≤ 100 − w.",
+                        "So w must satisfy 20 ≤ w ≤ 80."],
+                 ans="20 ≤ w ≤ 80 and 20 ≤ b ≤ 100 − w",
+                 interp="The feasible region is a band of choices, and the farmer still has to "
+                        "choose."),
+        ], inv=dict(
+            task="A school fair stall sells drinks at 2 dollars and snacks at 3 dollars. It has "
+                 "room for at most 60 items, at least 10 of each, and wants to raise at least 150 "
+                 "dollars. Write the system of inequalities, draw the feasible region, and find "
+                 "one combination that meets every condition.",
+            fig=F("grid", [(10, 50), (50, 10), (25, 35)], ["", "", ""],
+                  xmin=0, xmax=70, ymin=0, ymax=70,
+                  title="the feasible region for the stall"),
+            table=[["condition", "inequality"],
+                   ["at most 60 items", "d + s ≤ 60"],
+                   ["at least 10 drinks", "d ≥ 10"],
+                   ["at least 10 snacks", "s ≥ 10"],
+                   ["at least 150 dollars", "2d + 3s ≥ 150"]],
+            notice=["The first three inequalities bound a rectangle of possible stock.",
+                    "The fourth inequality removes the corner where the takings are too low.",
+                    "The feasible region is what remains after every condition is applied.",
+                    "d = 25 and s = 35 gives 2 × 25 + 3 × 35 = 155 dollars with 60 items."],
+            obs="Each inequality removes part of the plane, and the feasible region is what "
+                "survives all of them.",
+            concl="A system of inequalities describes the set of choices that satisfy every "
+                  "condition at once, and that set is a region whose boundaries come from the "
+                  "individual inequalities.")),
+    ],
+    practice=dict(
+        A=[("5.1.1", "Solve 5x − 3 = 22.",
+            "x = 5", "5x = 25, so x = 5.", "F"),
+           ("5.1.2", "Solve 3(x + 4) = 27.",
+            "x = 5", "x + 4 = 9, so x = 5.", "F"),
+           ("5.1.3", "Solve (2x + 1)/3 = 5.",
+            "x = 7", "2x + 1 = 15, so 2x = 14.", "F"),
+           ("5.1.4", "Solve −4x = 20.",
+            "x = −5", "Divide both sides by −4.", "F"),
+           ("5.1.5", "Solve 7 − 2x = 1.",
+            "x = 3", "−2x = −6, so x = 3.", "F"),
+           ("5.1.6", "Solve x/4 − 2 = 3.",
+            "x = 20", "x/4 = 5.", "F"),
+           ("5.1.7", "Solve 3x + 2 = 2x + 9.",
+            "x = 7", "Collect the x terms on the left.", "F"),
+           ("5.1.8", "Solve 2(3x − 1) = 4(x + 2).",
+            "x = 5", "6x − 2 = 4x + 8, so 2x = 10.", "F"),
+           ("5.1.9", "Solve 5x − 8 = 3x + 12.",
+            "x = 10", "2x = 20.", "F"),
+           ("5.1.10", "Solve (x − 2)/5 = (x + 4)/10.",
+            "x = 8", "Multiply by 10: 2(x − 2) = x + 4.", "F"),
+           ("5.1.11", "Solve 4x + 3 = 3x + 8 and check your answer.",
+            "x = 5", "x = 5, and 23 = 23 confirms it.", "F"),
+           ("5.1.12", "Explain why you cannot divide both sides of an equation by x.",
+            "Because x might be zero, and division by zero is undefined.",
+            "The permitted steps require a non-zero divisor.", "R")],
+        B=[("5.2.1", "Investigate: does the equation 2x + 3 = 2x + 5 have a solution? Justify.",
+            "No — subtracting 2x gives 3 = 5, which is false.",
+            "The variable cancels and leaves a false statement.", "R"),
+           ("5.2.2", "Test the claim: every linear equation has exactly one solution.",
+            "False — 2x + 3 = 2x + 3 is true for every x, so it has infinitely many solutions.",
+            "The variable can cancel to a true statement.", "R"),
+           ("5.2.3", "Investigate the system x + y = 4 and 2x + 2y = 9. Classify it.",
+            "No solution — the second equation is not a multiple of the first in the constants.",
+            "Doubling the first gives 2x + 2y = 8, not 9.", "R"),
+           ("5.2.4", "Generalise: when does ax + by = c and kax + kby = kc have infinitely many "
+                     "solutions?",
+            "Always — the second equation is a multiple of the first.",
+            "The two equations state the same condition.", "R"),
+           ("5.2.5", "Investigate whether the system x + y = 3 and x + y = 3 is one equation or "
+                     "two.",
+            "It is one condition written twice, so there are infinitely many solutions.",
+            "The equations are identical.", "R"),
+           ("5.2.6", "Test the claim: if two lines have different gradients they must cross.",
+            "True — different gradients mean different rates of change, so the lines meet exactly "
+            "once.",
+            "The gradient fixes the steepness, and equal steepness with different intercepts gives "
+            "parallel lines.", "R"),
+           ("5.2.7", "Investigate: solve 2x + 3y = 12 for y in terms of x, and describe the set "
+                     "of solutions.",
+            "y = (12 − 2x)/3, and every x gives a y, so there are infinitely many pairs.",
+            "One equation in two unknowns has infinitely many solutions.", "R"),
+           ("5.2.8", "Generalise a rule for classifying a linear system from its coefficients.",
+            "Compare the ratios of the coefficients: equal ratios with unequal constants means no "
+            "solution; equal ratios with equal constants means infinitely many.",
+            "The ratios reveal the geometric relationship of the lines.", "R"),
+           ("5.2.9", "Investigate whether the system 3x + 2y = 6 and 6x + 4y = 12 has one "
+                     "solution.",
+            "No — it has infinitely many, because the second equation is double the first.",
+            "The equations are equivalent.", "R"),
+           ("5.2.10", "Test the claim: a system of three equations in two unknowns always has a "
+                      "solution.",
+            "False — three lines need not pass through one point.",
+            "Each equation adds a condition that may be incompatible.", "R"),
+           ("5.2.11", "Investigate the pattern of solutions to x + y = n for n = 1 to 5.",
+            "Each has infinitely many solutions, one for each choice of x.",
+            "A single equation in two unknowns leaves one degree of freedom.", "R")],
+        C=[("5.3.1", "Explain in words what a solution of a pair of simultaneous equations means.",
+            "The pair of values that makes both equations true at the same time.",
+            "The solution is the intersection of the two conditions.", "R"),
+           ("5.3.2", "Explain the difference between an equation and an inequality in terms of the "
+                     "answer.",
+            "An equation usually has one solution; an inequality has a set of solutions.",
+            "The answer to an inequality is a region or interval.", "R"),
+           ("5.3.3", "Explain why multiplying both sides of an inequality by a negative number "
+                     "reverses the sign.",
+            "Because the order of the numbers reverses when the scale is reflected through zero.",
+            "The inequality is preserved only if the direction is reversed.", "R"),
+           ("5.3.4", "Describe two methods of solving a simultaneous system and say when each is "
+                     "preferred.",
+            "Substitution when one variable is easy to isolate; elimination when the coefficients "
+            "can be made to match.",
+            "The choice depends on the structure of the equations.", "R"),
+           ("5.3.5", "Explain what it means for a system to have no solution.",
+            "The two conditions cannot both hold, which happens when the lines are parallel.",
+            "Incompatible conditions have no common solution.", "R"),
+           ("5.3.6", "Explain why the solution of a system of inequalities is drawn as a region.",
+            "Because infinitely many pairs can satisfy all the inequalities at once.",
+            "The solution set is the intersection of the half-planes.", "R"),
+           ("5.3.7", "Describe how you would check the solution of a simultaneous system.",
+            "Substitute the pair into both original equations and confirm both are true.",
+            "A check in one equation is not enough.", "R"),
+           ("5.3.8", "Explain the difference between a feasible region and a solution.",
+            "The feasible region is the set of allowed choices; a solution is one choice made from "
+            "it.",
+            "The mathematics narrows the choices; the decision is separate.", "R"),
+           ("5.3.9", "Explain why an inequality is the right tool for a budget limit.",
+            "A budget is an upper bound, not an exact amount, so it is naturally written with ≤.",
+            "The limit allows any amount up to the maximum.", "R"),
+           ("5.3.10", "Describe the three possible outcomes of a linear system and how to "
+                      "recognise each.",
+            "One solution, no solution, or infinitely many, recognised from the ratios of the "
+            "coefficients.",
+            "Elimination produces a solvable equation, a false statement or a true one.", "R"),
+           ("5.3.11", "Explain why 0 = 0 after elimination means infinitely many solutions.",
+            "Because the equations state the same condition, so any pair satisfying one satisfies "
+            "both.",
+            "The two equations are equivalent.", "R"),
+           ("5.3.12", "Describe how a vertex of a feasible region is found.",
+            "By solving the two boundary equations of the edges that meet there.",
+            "A vertex is the intersection of two boundary lines.", "R")],
+        D=[("5.4.1", "A co-operative has 50 dollars. Bags of seed cost 4 dollars and fertiliser 6 "
+                     "dollars, and at least 3 bags of fertiliser are needed. Find the greatest "
+                     "number of seed bags.",
+            "8 bags", "With 3 bags of fertiliser at 18 dollars, 32 dollars remain for 8 bags of "
+                      "seed.", "A"),
+           ("5.4.2", "A school orders pencils at 0.30 dollars and notebooks at 1.20 dollars with a "
+                     "60-dollar budget and at least 20 notebooks. Find the greatest number of "
+                     "pencils.",
+            "120 pencils", "20 notebooks cost 24 dollars, leaving 36 dollars for 120 pencils.", "A"),
+           ("5.4.3", "A delivery van carries at most 800 kg. Boxes weigh 12 kg and crates 25 kg, "
+                     "and at least 10 crates are needed. Find the greatest number of boxes.",
+            "45 boxes", "10 crates weigh 250 kg, leaving 550 kg for 45 boxes at 12.2 kg each — "
+                        "45 boxes weigh 540 kg, which fits.", "A"),
+           ("5.4.4", "A farmer has 60 hectares, plants wheat and barley, and needs at least 15 "
+                     "hectares of barley. Write the system and give one feasible plan.",
+            "b ≥ 15 and w + b ≤ 60, so w ≤ 45; for example w = 30 and b = 15",
+            "Any pair inside the region works, and the plan is a choice.", "A"),
+           ("5.4.5", "A charity packs food parcels with a budget of 200 dollars. Rice costs 2 "
+                     "dollars a kilo and beans 3 dollars a kilo, and each parcel needs at least 1 "
+                     "kilo of beans. Write the system for 20 parcels.",
+            "2r + 3b ≤ 200 with b ≥ 20, so 2r ≤ 140 and r ≤ 70",
+            "The bean minimum is a fixed cost that reduces what is left for rice.", "A"),
+           ("5.4.6", "Explain whether a plan that satisfies every constraint is automatically the "
+                     "best plan.",
+            "No — the constraints describe what is possible, not what is best.",
+            "Choosing among feasible options needs an additional criterion.", "R"),
+           ("5.4.7", "Two bus companies charge 3 dollars plus 0.50 dollars a kilometre and 5 "
+                     "dollars plus 0.30 dollars a kilometre. Find the distance at which they cost "
+                     "the same and say which is cheaper below it.",
+            "10 km; the first is cheaper below it",
+            "3 + 0.5d = 5 + 0.3d gives 0.2d = 2.", "A"),
+           ("5.4.8", "A water tank holds at most 500 litres and is filled by two pipes, one at 8 "
+                     "litres a minute for at most 30 minutes and one at 12 litres a minute. Find "
+                     "whether the tank can be filled in 30 minutes.",
+            "Yes — 8 × 30 = 240 and the second pipe supplies the remaining 260 litres in about 22 "
+            "minutes, so both together fill it inside 30 minutes",
+            "240 + 12 × 22 = 504, so about 21.7 minutes of the second pipe is enough.", "A"),
+           ("5.4.9", "A community garden has 40 m of fencing and wants a rectangular plot of area "
+                     "at least 96 m². Find the feasible widths.",
+            "Widths w with w(20 − w) ≥ 96, so 8 ≤ w ≤ 12",
+            "The perimeter gives length 20 − w, and the area condition restricts w.", "R"),
+           ("5.4.10", "A shop sells two teas. Blend A costs 4 dollars a kilo and blend B 6 dollars "
+                      "a kilo. A 10-kilo mixture must cost at most 48 dollars. Find the greatest "
+                      "amount of blend B.",
+            "4 kg", "4a + 6b ≤ 48 with a + b = 10 gives 40 + 2b ≤ 48, so b ≤ 4.", "A"),
+           ("5.4.11", "A school trip costs 8 dollars a student plus a 120-dollar bus. With a "
+                      "500-dollar budget, find the greatest number of students.",
+            "47 students", "500 − 120 = 380 and 380 ÷ 8 = 47.5, so 47 students.", "A"),
+           ("5.4.12", "Explain why a system of inequalities is a better model than an equation "
+                      "for a shared resource.",
+            "A resource has a limit rather than an exact requirement, so ≤ is the honest relation.",
+            "Inequalities describe feasibility; equations describe exact balances.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The seed and fertiliser budget",
+             text="A co-operative has 60 dollars to spend. Seed costs 4 dollars a packet, "
+                  "fertiliser 6 dollars a bag, and at least 3 bags of fertiliser are required. "
+                  "Write the system of inequalities, find the greatest number of seed packets, and "
+                  "state one other feasible plan.",
+             note="Criteria A and C · show the system and justify the greatest value."),
+        dict(title="A2 · The two water carriers",
+             text="Carrier A charges 5 dollars plus 0.40 dollars a litre and carrier B charges 2 "
+                  "dollars plus 0.60 dollars a litre. Find the volume at which the charges are "
+                  "equal, state which is cheaper below that volume, and find the volume that "
+                  "exactly uses a 30-dollar budget with each carrier.",
+             note="Criteria A and D · interpret the crossing point and comment on the sense of "
+                  "your answers."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of relationships and the related concepts of equivalence and "
+        "systems appear in your work?",
+        "How is the global context of globalisation and sustainability, and its exploration of "
+        "resources and consumption, visible in the investigations and examples you completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of an inequality model for sharing a limited resource, and what "
+        "would you still like to ask?",
+    ],
+    review=dict(
+        ideas=["Solving an equation applies inverse operations to both sides.",
+               "Multiplying or dividing an inequality by a negative number reverses the sign.",
+               "The solution of an inequality is a set, written as an interval.",
+               "Simultaneous equations are solved by substitution or elimination.",
+               "A linear system has one solution, no solution, or infinitely many.",
+               "A system of inequalities describes a feasible region.",
+               "Every solution should be checked in the original conditions."],
+        vocab=["equation", "inequality", "solution set", "simultaneous equations", "substitution",
+               "elimination", "no solution", "infinitely many solutions", "feasible region",
+               "constraint", "vertex"],
+        mixed=[("5.R1", "Solve 4x − 7 = 21."),
+               ("5.R2", "Solve −3x > 12."),
+               ("5.R3", "Solve x + y = 7 and x − y = 3."),
+               ("5.R4", "Classify the system 2x + 4y = 8 and x + 2y = 5."),
+               ("5.R5", "Solve −2 ≤ 3x − 1 < 8."),
+               ("5.R6", "Explain why dividing an inequality by a negative number reverses the "
+                        "sign.")],
+    ),
+    projects=dict(
+        service=[("Community need", "Community groups share limited supplies without recording the "
+                                    "limits, so some needs are missed."),
+                 ("Mathematical connection", "Systems of inequalities and feasible regions."),
+                 ("Proposed action", "Write down the limits of one shared supply as inequalities "
+                                     "and publish the feasible options."),
+                 ("Expected impact", "Distribution decisions become transparent and checkable."),
+                 ("Student reflection", "Record the constraints, the feasible region, and the "
+                                        "choice you made.")],
+        community=[("Project idea", "A resource-allocation plan for a school event."),
+                   ("Need", "Budgets and stock limits are decided informally."),
+                   ("Research question", "What combinations of stock meet every limit and still "
+                                         "raise enough money?"),
+                   ("Mathematics", "Linear equations, inequalities and feasible regions."),
+                   ("Action or outcome", "A written allocation plan with its constraints."),
+                   ("Beneficiaries", "Stall holders and the groups they support."),
+                   ("Evidence", "The system of inequalities, the region and the chosen plan.")],
+        personal=[("Personal interest", "Budgeting, cooking or planning a trip."),
+                  ("Learning goal", "To model a personal limit with inequalities and choose within "
+                                    "it."),
+                  ("Product or outcome", "A budget plan with stated constraints."),
+                  ("Mathematics", "Inequalities, feasible regions and linear models."),
+                  ("Process", "List the limits, write the inequalities, then choose a plan."),
+                  ("Evidence", "The system, the feasible region and the plan.")],
+    ),
+),
+])
+
+CHAPTERS.extend([
+dict(
+    num=6, title="Transformations, congruence and symmetry",
+    key="Form", related=["Space", "Justification"],
+    context="Personal and cultural expression",
+    exploration="Artistry, craft, creation and beauty",
+    inquiry=("The form of a shape is preserved by a transformation, and the justification that a "
+             "sequence of transformations maps one shape exactly onto another is what allows "
+             "congruence and symmetry to be used in craft, design and pattern."),
+    atl=("Thinking",
+         "In order for a student to justify a claim about two shapes, students must decide what "
+         "would count as sufficient evidence, test the claim against that standard, and state the "
+         "justification in a form another person can check."),
+    standfirst="A transformation moves a shape without changing it. Congruence is the claim that "
+               "two shapes are related by such a movement, and a proof is what makes that claim "
+               "secure.",
+    engage="A tile maker cuts a triangular tile and needs a second tile that fits the gap exactly. "
+           "Rather than measuring every side again, the maker places the first tile on the second "
+           "and turns it over. What has been done mathematically, and how can it be justified?",
+    questions=[("Factual", "What are the four transformations, and what are the four conditions "
+                           "for triangle congruence?"),
+               ("Conceptual", "Why does a transformation preserve form, and what exactly makes a "
+                              "justification of congruence complete?"),
+               ("Debatable", "Is a drawing that shows two triangles fitting together a proof that "
+                             "they are congruent?")],
+    application_lede="These tasks use transformations, congruence, symmetry and tessellation. "
+                     "Justify every claim with a transformation or a congruence condition, not "
+                     "with an impression.",
+    projects_lede="Craft and design depend on form being preserved. Use transformations and "
+                  "congruence to make something that fits exactly.",
+    sections=[
+        dict(id="6.1", title="Moving shapes without changing them",
+             inquiry_q=("How can a shape be moved without changing it, and what stays the same "
+                        "under every such movement?"), teach=[
+            "A transformation maps every point of a shape to a new point. The original is the object and the result is the image.",
+            "The four transformations are translation, reflection, rotation and enlargement. The first three preserve form exactly; an enlargement changes size but preserves shape.",
+            "What is preserved under all four is called invariance. Lengths, angles and area are invariant under translation, reflection and rotation, which is why they are called isometries and why the position of a shape in space can change without the shape itself changing.",
+            "Because form is preserved, a transformed shape can be used in place of the original: a tile cut once can be placed many times.",
+        ], examples=[
+            dict(q="Describe the transformation that maps triangle A with vertices (1, 1), (4, 1), "
+                   "(1, 4) onto triangle B with vertices (3, 2), (6, 2), (3, 5).",
+                 vis=F("transform", [(1, 1), (4, 1), (1, 4)], [(3, 2), (6, 2), (3, 5)],
+                       mirror="none", title="a translation of 2 right and 1 up"),
+                 reasoning="Every vertex moved by the same amount, which is the signature of a "
+                          "translation.",
+                 steps=["Compare corresponding vertices: (1, 1) → (3, 2).",
+                        "The change is +2 in x and +1 in y.",
+                        "Check the other vertices: (4, 1) → (6, 2) and (1, 4) → (3, 5).",
+                        "Every point moved by the same vector, so the transformation is a "
+                        "translation."],
+                 ans="a translation by the vector (2, 1)",
+                 interp="A single vector describes the whole movement, which is why translations "
+                        "are easy to specify."),
+            dict(q="A shape is rotated 90° clockwise about the origin. Where does the point (3, 1) "
+                   "go?",
+                 vis=F("grid", [(3, 1), (1, -3)], ["(3, 1)", "(1, −3)"],
+                       xmin=-5, xmax=5, ymin=-5, ymax=5, title="90° clockwise about the origin"),
+                 reasoning="A rotation preserves distance from the centre and turns every direction "
+                          "through the same angle.",
+                 steps=["The rule for a 90° clockwise rotation about the origin is (x, y) → (y, −x).",
+                        "Apply it to (3, 1): (1, −3).",
+                        "Check the distance from the origin: √10 before and after."],
+                 ans="(3, 1) maps to (1, −3)",
+                 interp="The distance from the centre is unchanged, which is what makes a rotation "
+                        "an isometry."),
+        ], inv=dict(
+            task="Cut out a triangle from card. Perform a translation, a reflection and a rotation "
+                 "with it, and record the position of the vertices after each movement. Then check "
+                 "which measurements stayed the same: side lengths, angles and area.",
+            fig=F("transform", [(2, 1), (6, 1), (2, 5)], [(2, 6), (6, 6), (2, 10)],
+                  mirror="x", title="object, reflection and translation"),
+            table=[["transformation", "what moved", "side lengths", "angles", "area"],
+                   ["translation", "every point by the same vector", "unchanged", "unchanged",
+                    "unchanged"],
+                   ["reflection", "every point mirrored in a line", "unchanged", "unchanged",
+                    "unchanged"],
+                   ["rotation", "every point turned about a centre", "unchanged", "unchanged",
+                    "unchanged"],
+                   ["enlargement, factor 2", "every point moved away from a centre", "doubled",
+                    "unchanged", "quadrupled"]],
+            notice=["The three isometries left every measurement unchanged.",
+                    "The enlargement doubled the lengths and quadrupled the area, but kept the "
+                    "angles.",
+                    "Each transformation could be described completely by a small amount of "
+                    "information.",
+                    "The transformed triangle fitted exactly into the gap it was moved to."],
+            obs="Translations, reflections and rotations preserve lengths, angles and area, so the "
+                "form of a shape is unchanged.",
+            concl="A transformation maps a shape to its image, and the three isometries preserve "
+                  "form exactly, which is why a shape and its image can be used "
+                  "interchangeably.")),
+        dict(id="6.2", title="Reflecting across a line",
+             inquiry_q=("What is preserved when a shape is reflected, and how is the mirror line "
+                        "described?"), teach=[
+            "A reflection maps every point to the point the same distance from the mirror line, on the opposite side. The mirror line is the perpendicular bisector of every segment joining a point to its image.",
+            "Reflection reverses orientation: a shape and its image are mirror images, and a clockwise order of vertices becomes anticlockwise.",
+            "The mirror line can be described by an equation. Reflection in the y-axis maps (x, y) → (−x, y); reflection in the x-axis maps (x, y) → (x, −y); reflection in y = x maps (x, y) → (y, x).",
+            "Because a reflection preserves lengths and angles, a reflected shape is congruent to the original. The justification is the invariance, not the appearance.",
+        ], examples=[
+            dict(q="Reflect the triangle with vertices (2, 1), (5, 1), (2, 4) in the y-axis.",
+                 vis=F("transform", [(2, 1), (5, 1), (2, 4)], [(-2, 1), (-5, 1), (-2, 4)],
+                       mirror="y", title="reflection in the y-axis"),
+                 reasoning="Reflection in the y-axis changes the sign of every x-coordinate and "
+                          "leaves y unchanged.",
+                 steps=["The rule is (x, y) → (−x, y).",
+                        "(2, 1) → (−2, 1), (5, 1) → (−5, 1) and (2, 4) → (−2, 4).",
+                        "Each image point is the same distance from the y-axis as its object "
+                        "point."],
+                 ans="the image has vertices (−2, 1), (−5, 1) and (−2, 4)",
+                 interp="The y-axis is the perpendicular bisector of every segment joining a vertex "
+                        "to its image."),
+            dict(q="Reflect the point (4, 7) in the line y = x.",
+                 vis=F("grid", [(4, 7), (7, 4)], ["(4, 7)", "(7, 4)"],
+                       xmin=0, xmax=9, ymin=0, ymax=9, title="reflection in y = x"),
+                 reasoning="Reflection in y = x interchanges the coordinates, because the line is "
+                          "the set of points where they are equal.",
+                 steps=["The rule for reflection in y = x is (x, y) → (y, x).",
+                        "So (4, 7) → (7, 4).",
+                        "Both points are the same distance from the line y = x."],
+                 ans="(7, 4)",
+                 interp="Interchanging the coordinates is the algebraic version of swapping the two "
+                        "sides of the line."),
+        ], inv=dict(
+            task="Draw a shape on grid paper and reflect it in the y-axis, then in the x-axis, then "
+                 "in the line y = x. Record the coordinates of each image. Then reflect the shape "
+                 "twice in the same line and describe what happens.",
+            fig=F("transform", [(1, 1), (4, 1), (1, 4)], [(-1, 1), (-4, 1), (-1, 4)],
+                  mirror="y", title="object and its reflection"),
+            table=[["reflection", "image of (x, y)", "image of (3, 2)"],
+                   ["in the y-axis", "(−x, y)", "(−3, 2)"],
+                   ["in the x-axis", "(x, −y)", "(3, −2)"],
+                   ["in the line y = x", "(y, x)", "(2, 3)"],
+                   ["twice in the y-axis", "(x, y) again", "(3, 2) — back to the start"]],
+            notice=["Each reflection changed only the coordinate that measures distance from the "
+                    "mirror line.",
+                    "Reflecting twice in the same line returned the original point.",
+                    "The reflected shape is congruent to the original, so every length and angle "
+                    "was preserved.",
+                    "The orientation of the vertices reversed, which reflection always does."],
+            obs="A reflection preserves lengths and angles and reverses orientation, and reflecting "
+                "twice in the same line is the identity.",
+            concl="A reflection maps each point to the point the same distance from the mirror line "
+                  "on the opposite side, preserving form and reversing orientation.")),
+        dict(id="6.3", title="Rotating about a point",
+             inquiry_q=("How does a rotation preserve form, and what information is needed to "
+                        "describe it?"), teach=[
+            "A rotation turns every point through the same angle about a fixed centre. It needs three pieces of information: the centre, the angle and the direction.",
+            "Distances from the centre are preserved, and so are all lengths and angles, which makes a rotation an isometry.",
+            "The rules for rotations about the origin are: 90° clockwise (x, y) → (y, −x); 90° anticlockwise (x, y) → (−y, x); 180° (x, y) → (−x, −y).",
+            "A rotation of 180° about the origin is the same as a reflection in the origin, and it maps every line through the origin to itself.",
+        ], examples=[
+            dict(q="Rotate the triangle with vertices (1, 0), (3, 0), (1, 2) through 90° "
+                   "anticlockwise about the origin.",
+                 vis=F("grid", [(1, 0), (3, 0), (1, 2), (0, 1), (0, 3), (-2, 1)],
+                       ["", "", "", "", "", ""], xmin=-4, xmax=4, ymin=-4, ymax=4,
+                       title="90° anticlockwise about the origin"),
+                 reasoning="The rule for a 90° anticlockwise rotation about the origin interchanges "
+                          "the coordinates with a sign change.",
+                 steps=["The rule is (x, y) → (−y, x).",
+                        "(1, 0) → (0, 1).",
+                        "(3, 0) → (0, 3).",
+                        "(1, 2) → (−2, 1)."],
+                 ans="the image has vertices (0, 1), (0, 3) and (−2, 1)",
+                 interp="Each image point is the same distance from the origin as its object "
+                        "point, which is the invariance that makes a rotation an isometry."),
+            dict(q="Rotate the point (5, 2) through 180° about the origin and describe the result.",
+                 vis=F("grid", [(5, 2), (-5, -2)], ["(5, 2)", "(−5, −2)"],
+                       xmin=-7, xmax=7, ymin=-7, ymax=7, title="180° about the origin"),
+                 reasoning="A half turn reverses both coordinates, which is the same as reflecting "
+                          "through the origin.",
+                 steps=["The rule for 180° is (x, y) → (−x, −y).",
+                        "So (5, 2) → (−5, −2).",
+                        "The distance from the origin is √29 before and after."],
+                 ans="(−5, −2)",
+                 interp="A half turn about the origin is a point reflection, and it is its own "
+                        "inverse."),
+        ], inv=dict(
+            task="Take a shape and rotate it 90°, 180°, 270° and 360° anticlockwise about the same "
+                 "centre. Record the vertices after each rotation, then describe what a rotation of "
+                 "360° does and what a rotation of 270° anticlockwise is equivalent to.",
+            fig=F("grid", [(2, 1), (5, 1), (2, 4), (-1, 2), (-1, 5), (-4, 2)],
+                  ["", "", "", "", "", ""], xmin=-6, xmax=6, ymin=-6, ymax=6,
+                  title="four rotations of one triangle"),
+            table=[["rotation", "image of (x, y)", "image of (2, 1)"],
+                   ["90° anticlockwise", "(−y, x)", "(−1, 2)"],
+                   ["180°", "(−x, −y)", "(−2, −1)"],
+                   ["270° anticlockwise", "(y, −x)", "(1, −2)"],
+                   ["360°", "(x, y) again", "(2, 1) — back to the start"]],
+            notice=["Each rotation preserved the distances from the centre.",
+                    "The side lengths and angles of the triangle never changed.",
+                    "A rotation of 360° returned the shape to its starting position.",
+                    "A rotation of 270° anticlockwise is the same as 90° clockwise."],
+            obs="A rotation preserves every length and angle and moves every point along a circle "
+                "about the centre.",
+            concl="A rotation turns every point through the same angle about a fixed centre, "
+                  "preserving form, and it is fully described by the centre, the angle and the "
+                  "direction.")),
+        dict(id="6.4", title="Congruence and its criteria",
+             inquiry_q=("How can you justify that two triangles are congruent without measuring "
+                        "every side?"), teach=[
+            "Two shapes are congruent when one can be mapped onto the other by an isometry. Congruent shapes have the same form and the same size.",
+            "For triangles, four conditions are sufficient: SSS (three sides), SAS (two sides and the included angle), ASA (two angles and the included side) and RHS (right angle, hypotenuse and one side).",
+            "These conditions are sufficient because they fix the triangle: no other triangle can be built with the same three measurements, so the shape is determined.",
+            "A drawing is not a justification. Two triangles that look congruent may differ by a small amount that the eye cannot see, which is why the conditions are stated in measurements.",
+        ], examples=[
+            dict(q="Triangle P has sides 5 cm, 7 cm and 9 cm. Triangle Q has sides 9 cm, 5 cm and "
+                   "7 cm. Are they congruent, and which condition applies?",
+                 vis=F("triangle", [(20, 140), (140, 140), (60, 30)],
+                       ["5 cm", "7 cm", "9 cm"], right=(), title="three sides fix the triangle"),
+                 reasoning="Three matching sides are enough to fix a triangle, and the order in "
+                          "which they are listed does not matter.",
+                 steps=["The three sides of P are 5, 7 and 9 cm.",
+                        "The three sides of Q are 9, 5 and 7 cm, which are the same three lengths.",
+                        "So the SSS condition is satisfied.",
+                        "The triangles are congruent."],
+                 ans="yes, congruent by SSS",
+                 interp="Only three measurements are needed, not six, which is why the criteria "
+                        "save work."),
+            dict(q="Two triangles have sides 6 cm and 8 cm with an included angle of 60°, and "
+                   "sides 6 cm and 8 cm with an angle of 60° that is not included. Are they "
+                   "congruent?",
+                 vis=F("triangle", [(30, 150), (110, 150), (60, 60)],
+                       ["6 cm", "8 cm"], right=(), angles=[(60, 60, "60°")],
+                       title="the angle must be included"),
+                 reasoning="SAS requires the angle between the two given sides; an angle elsewhere "
+                          "does not fix the triangle.",
+                 steps=["The first triangle satisfies SAS, because 60° is between the 6 cm and 8 cm "
+                        "sides.",
+                        "The second gives two sides and a non-included angle, which is the "
+                        "ambiguous case.",
+                        "Two different triangles can be built from those measurements.",
+                        "So SAS does not apply and congruence cannot be claimed."],
+                 ans="only the first is determined; congruence cannot be claimed for the second",
+                 interp="The word 'included' is doing real work, and leaving it out changes the "
+                        "claim."),
+        ], inv=dict(
+            task="Build triangles from the following measurements and record how many different "
+                 "triangles are possible each time: (a) 4 cm, 5 cm, 6 cm; (b) 4 cm, 5 cm, 40° with "
+                 "the angle included; (c) 4 cm, 5 cm, 40° with the angle not included; (d) 40°, "
+                 "60°, 5 cm with the side included.",
+            fig=F("triangle", [(20, 150), (120, 150), (70, 50)], ["4 cm", "5 cm", "6 cm"],
+                  right=(), title="one triangle, three sides"),
+            table=[["measurements", "condition", "how many triangles"],
+                   ["4, 5, 6 cm", "SSS", "exactly one"],
+                   ["4 cm, 5 cm, 40° included", "SAS", "exactly one"],
+                   ["4 cm, 5 cm, 40° not included", "SSA — ambiguous", "two"],
+                   ["40°, 60°, 5 cm included", "ASA", "exactly one"]],
+            notice=["Three cases produced exactly one triangle, and one produced two.",
+                    "The ambiguous case is two sides and a non-included angle.",
+                    "Where exactly one triangle is possible, the shape is fixed and congruence is "
+                    "justified.",
+                    "Where two are possible, the measurements do not determine the shape."],
+            obs="Measurements that produce exactly one triangle justify a congruence claim, and "
+                "measurements that produce more than one do not.",
+            concl="SSS, SAS, ASA and RHS are sufficient conditions for triangle congruence because "
+                  "each determines a unique triangle, and a justification of congruence must cite "
+                  "one of them.")),
+        dict(id="6.5", title="Symmetry and tessellation",
+             inquiry_q=("How does symmetry generate a pattern that covers a surface?"), teach=[
+            "A shape has line symmetry if a reflection maps it onto itself, and rotational symmetry if a rotation does. The order of rotational symmetry is the number of times the shape fits onto itself in a full turn.",
+            "A tessellation covers a surface with shapes that meet edge to edge and leave no gaps. Regular tessellations use one regular polygon, and only three exist: triangles, squares and hexagons.",
+            "A shape tessellates if its copies can be arranged so that the angles at every meeting point sum to 360°. This is why the interior angle must divide 360°.",
+            "Symmetry and tessellation are used in craft, tiling and design. The mathematics is the constraint that makes the pattern possible, and the design is the choice inside that constraint.",
+        ], examples=[
+            dict(q="A regular hexagon has interior angle 120°. Does it tessellate, and why?",
+                 vis=F("tiles", 3, 3, [(0, 0), (1, 1), (2, 2)], "a hexagonal tessellation",
+                       cell=26),
+                 reasoning="A shape tessellates if copies meet edge to edge with the angles summing "
+                          "to 360° at every meeting point.",
+                 steps=["The interior angle of a regular hexagon is 120°.",
+                        "360° ÷ 120° = 3, so three hexagons meet at each point.",
+                        "The angles sum to 360° with no gap and no overlap.",
+                        "So the hexagon tessellates."],
+                 ans="yes, because 3 × 120° = 360°",
+                 interp="The division of 360° by the interior angle is the whole test for a "
+                        "regular polygon."),
+            dict(q="Does a regular pentagon tessellate? Justify your answer.",
+                 vis=F("tiles", 3, 3, [(0, 0), (1, 1), (2, 2)], "pentagons leave a gap",
+                       cell=26),
+                 reasoning="If the interior angle does not divide 360°, copies cannot meet without "
+                          "a gap or an overlap.",
+                 steps=["The interior angle of a regular pentagon is 108°.",
+                        "360° ÷ 108° = 3.33…, which is not a whole number.",
+                        "Three pentagons leave a gap of 36°, and four overlap by 72°.",
+                        "So a regular pentagon does not tessellate."],
+                 ans="no, because 108° does not divide 360°",
+                 interp="The failure of the division is a proof, not an observation about one "
+                        "attempt."),
+        ], inv=dict(
+            task="Test which regular polygons tessellate by computing 360° divided by each interior "
+                 "angle. Then take an irregular quadrilateral and check whether it tessellates by "
+                 "tracing copies. Record the angle sum at each meeting point.",
+            fig=F("tiles", 4, 4, [(r, c) for r in range(4) for c in range(4) if (r + c) % 2 == 0],
+                  "a quadrilateral tessellation", cell=22),
+            table=[["polygon", "interior angle", "360° ÷ angle", "tessellates?"],
+                   ["triangle", "60°", "6", "yes"],
+                   ["square", "90°", "4", "yes"],
+                   ["pentagon", "108°", "3.33…", "no"],
+                   ["hexagon", "120°", "3", "yes"],
+                   ["octagon", "135°", "2.67…", "no"],
+                   ["any quadrilateral", "sums to 360°", "4 angles at a point", "yes"]],
+            notice=["Only the triangle, square and hexagon tessellate among the regular polygons.",
+                    "Each works because its interior angle divides 360° exactly.",
+                    "The quadrilateral tessellates because its four angles sum to 360°, so one of "
+                    "each fits around a point.",
+                    "The pattern can be extended indefinitely in every direction."],
+            obs="A shape tessellates when its copies meet edge to edge with the angles at every "
+                "meeting point summing to exactly 360°.",
+            concl="A regular polygon tessellates exactly when its interior angle divides 360°, and "
+                  "any quadrilateral tessellates because its four angles sum to 360°.")),
+    ],
+    practice=dict(
+        A=[("6.1.1", "Translate the point (3, 5) by the vector (−2, 4).",
+            "(1, 9)", "Add the vector to the point.", "F"),
+           ("6.1.2", "Reflect the point (4, 3) in the y-axis.",
+            "(−4, 3)", "Reflection in the y-axis changes the sign of x.", "F"),
+           ("6.1.3", "Reflect the point (4, 3) in the x-axis.",
+            "(4, −3)", "Reflection in the x-axis changes the sign of y.", "F"),
+           ("6.1.4", "Rotate the point (2, 5) through 180° about the origin.",
+            "(−2, −5)", "A half turn changes both signs.", "F"),
+           ("6.1.5", "Rotate the point (3, 1) through 90° clockwise about the origin.",
+            "(1, −3)", "The rule is (x, y) → (y, −x).", "F"),
+           ("6.1.6", "State which measurements are preserved by a translation.",
+            "Lengths, angles and area",
+            "A translation is an isometry, so all lengths and angles are invariant.", "R"),
+           ("6.1.7", "Reflect the point (6, 2) in the line y = x.",
+            "(2, 6)", "Reflection in y = x interchanges the coordinates.", "F"),
+           ("6.1.8", "An enlargement of scale factor 3 maps a side of 4 cm. How long is the image?",
+            "12 cm", "Multiply every length by the scale factor.", "F"),
+           ("6.1.9", "State the order of rotational symmetry of a square.",
+            "4", "A square fits onto itself four times in a full turn.", "F"),
+           ("6.1.10", "Reflect the triangle with vertices (1, 1), (4, 1), (1, 5) in the y-axis.",
+            "(−1, 1), (−4, 1), (−1, 5)",
+            "Change the sign of each x-coordinate.", "F"),
+           ("6.1.11", "Rotate the point (−3, 2) through 90° anticlockwise about the origin.",
+            "(−2, −3)", "The rule is (x, y) → (−y, x).", "F"),
+           ("6.1.12", "Explain the difference between a translation and a rotation.",
+            "A translation moves every point by the same vector; a rotation turns every point "
+            "about a fixed centre.",
+            "Only the rotation has a centre and an angle.", "R")],
+        B=[("6.2.1", "Investigate: does the order of a reflection and a translation matter? Test "
+                     "with the point (2, 3), a reflection in the y-axis and a translation of (1, 0).",
+            "Yes — reflecting first gives (−1, 3), translating first gives (3, 3).",
+            "Transformations generally do not commute.", "R"),
+           ("6.2.2", "Test the claim: two reflections in perpendicular lines give a rotation.",
+            "True — the composition is a rotation of 180° about the intersection of the lines.",
+            "Two perpendicular mirrors produce a half turn.", "R"),
+           ("6.2.3", "Investigate whether a rotation of 90° followed by the same rotation again "
+                     "gives a rotation of 180°.",
+            "Yes — rotations about the same centre add their angles.",
+            "The composition of rotations is a rotation.", "R"),
+           ("6.2.4", "Generalise: what is the result of reflecting twice in the same line?",
+            "The identity — the shape returns to its original position.",
+            "A reflection is its own inverse.", "R"),
+           ("6.2.5", "Investigate whether every triangle has at least one line of symmetry.",
+            "No — only isosceles and equilateral triangles do; a scalene triangle has none.",
+            "A line of symmetry requires two matching halves.", "R"),
+           ("6.2.6", "Test the claim: if two triangles have two equal angles and one equal side "
+                     "they are congruent.",
+            "False — the side must be included for ASA; otherwise the triangles can differ.",
+            "ASA requires the side between the two angles.", "R"),
+           ("6.2.7", "Investigate the minimum information needed to fix a triangle, and justify "
+                     "your answer.",
+            "Three independent measurements, such as SSS, SAS or ASA.",
+            "Each sufficient condition determines a unique triangle.", "R"),
+           ("6.2.8", "Generalise: for what values of n does a regular n-gon tessellate?",
+            "n = 3, 4 and 6 only",
+            "The interior angle (n − 2) × 180°/n must divide 360° exactly.", "R"),
+           ("6.2.9", "Investigate whether an irregular triangle always tessellates.",
+            "Yes — its three angles sum to 180°, so two of each fit around a point.",
+            "The angle sum of a triangle guarantees a tessellation.", "R"),
+           ("6.2.10", "Test the claim: a shape with rotational symmetry must have line symmetry.",
+            "False — the letter S has rotational symmetry of order 2 but no line of symmetry.",
+            "The two kinds of symmetry are independent.", "R"),
+           ("6.2.11", "Investigate the order of rotational symmetry of a regular hexagon.",
+            "6", "It fits onto itself six times in a full turn.", "F")],
+        C=[("6.3.1", "Explain in words what it means for two shapes to be congruent.",
+            "One can be mapped onto the other by an isometry, so they have the same form and size.",
+            "Congruence is a claim about a transformation, not about appearance.", "R"),
+           ("6.3.2", "Explain why a reflection reverses orientation.",
+            "A clockwise order of vertices becomes anticlockwise in the image.",
+            "Reflection turns the shape over.", "R"),
+           ("6.3.3", "Describe the information needed to specify a rotation completely.",
+            "The centre, the angle and the direction.",
+            "Without all three the rotation is not determined.", "R"),
+           ("6.3.4", "Explain why SSS is a sufficient condition for triangle congruence.",
+            "Three sides determine a unique triangle, so no other shape is possible.",
+            "The measurements fix the shape completely.", "R"),
+           ("6.3.5", "Describe the difference between SAS and the ambiguous SSA case.",
+            "In SAS the angle is between the two sides; in SSA it is not, and two triangles may "
+            "result.",
+            "Only the included angle determines a unique triangle.", "R"),
+           ("6.3.6", "Explain why a drawing alone is not a proof of congruence.",
+            "Small differences are invisible in a drawing, so measurements are needed.",
+            "A justification must be checkable by another person.", "R"),
+           ("6.3.7", "Describe two representations of the same reflection and say what each shows.",
+            "A coordinate rule and a diagram: the rule is exact and the diagram shows the "
+            "structure.",
+            "Different representations answer different questions.", "R"),
+           ("6.3.8", "Explain the difference between line symmetry and rotational symmetry.",
+            "Line symmetry is about a reflection; rotational symmetry is about a rotation.",
+            "The two are independent properties.", "R"),
+           ("6.3.9", "Describe why only three regular polygons tessellate.",
+            "Because the interior angle must divide 360°, which happens only for n = 3, 4 and 6.",
+            "The angle condition is a proof, not a search.", "R"),
+           ("6.3.10", "Explain what is preserved by an enlargement and what is not.",
+            "Angles and shape are preserved; lengths and area are multiplied by k and k².",
+            "An enlargement is not an isometry.", "R"),
+           ("6.3.11", "Describe how to check whether two triangles are congruent using ASA.",
+            "Check that two angles match and that the side between them matches.",
+            "The side must be the included one.", "R"),
+           ("6.3.12", "Explain why a tessellation of a craft surface requires edge-to-edge "
+                      "contact.",
+            "Gaps and overlaps would break the surface, so the angles must sum to exactly 360°.",
+            "The condition is about the angles at each meeting point.", "R")],
+        D=[("6.4.1", "A tile pattern uses a triangle rotated 120° about a vertex. Describe the "
+                     "transformation and the angle sum at that vertex.",
+            "A rotation of 120°; three copies give 360°",
+            "Three rotations of 120° complete a full turn.", "A"),
+           ("6.4.2", "A floor is tiled with squares of side 40 cm. A room is 4.8 m by 3.6 m. How "
+                     "many tiles are needed?",
+            "108 tiles", "12 by 9 tiles.", "A"),
+           ("6.4.3", "A mirror tile of side 15 cm is reflected to make a pair. Find the total "
+                     "perimeter of the pair when they share an edge.",
+            "90 cm", "Two squares minus the shared edge: 8 sides of 15 cm.", "A"),
+           ("6.4.4", "A craft pattern uses a regular hexagon of side 6 cm. Find its perimeter and "
+                     "explain why three fit around a point.",
+            "36 cm; the interior angle is 120° and 3 × 120° = 360°",
+            "The angle condition guarantees the tessellation.", "A"),
+           ("6.4.5", "A triangular tile has angles 50°, 60° and 70°. Explain how many fit around "
+                     "a point.",
+            "360° ÷ 50° = 7.2, so the 50° angles cannot tile a point alone; a combination of "
+            "angles is needed.",
+            "Tessellation needs the angles at each point to sum to exactly 360°.", "R"),
+           ("6.4.6", "A logo is designed as a shape and its reflection. Explain how congruence is "
+                     "justified.",
+            "A reflection is an isometry, so the logo and its image are congruent.",
+            "The invariance of lengths and angles is the justification.", "R"),
+           ("6.4.7", "A wall panel is made by rotating a motif 90° four times about one corner. "
+                     "Find the angle at that corner and the number of copies.",
+            "360°; four copies",
+            "Four rotations of 90° complete a full turn.", "A"),
+           ("6.4.8", "Explain whether a photograph of a building and its reflection in water "
+                     "shows congruent shapes.",
+            "They are congruent if the water surface is perfectly flat, because the reflection is "
+            "an isometry.",
+            "Real water distorts the image, so the claim depends on the surface.", "R"),
+           ("6.4.9", "A tiled floor uses two different regular polygons at each vertex. Explain "
+                     "how to find which pairs work.",
+            "Find pairs whose angles sum to 360° at a point, such as 120° and 240° from two "
+            "hexagons and a square.",
+            "The angle sum at each vertex must be exactly 360°.", "R"),
+           ("6.4.10", "A triangular garden bed has sides 3 m, 4 m and 5 m. Explain how to check "
+                      "that a second bed of the same design is congruent without measuring every "
+                      "side.",
+            "Measure two sides and the included angle, or all three sides once, and apply SAS or "
+            "SSS.",
+            "A sufficient condition is shorter than a full measurement.", "R"),
+           ("6.4.11", "A kite design has two lines of symmetry. Explain what each line does.",
+            "Each line reflects the kite onto itself, so the design has two mirror lines.",
+            "A line of symmetry is a reflection that maps the shape to itself.", "R"),
+           ("6.4.12", "Explain why an enlargement of a tile pattern changes the area but not the "
+                      "angles.",
+            "Lengths multiply by the scale factor and areas by its square, while angles are "
+            "unchanged.",
+            "An enlargement preserves shape but not size.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The tiled panel",
+             text="A craft panel is made from copies of one triangular tile rotated about a shared "
+                  "vertex. The tile has angles 40°, 60° and 80°. Explain how many copies can meet "
+                  "at that vertex, whether the panel tiles the plane, and justify your answer with "
+                  "an angle calculation.",
+             note="Criteria A and C · justify with an angle sum, not with a drawing."),
+        dict(title="A2 · The congruent frame",
+             text="A picture frame is a parallelogram with sides 12 cm and 7 cm and an included "
+                  "angle of 65°. A second frame is claimed to be congruent. State the minimum "
+                  "measurements needed to check the claim, and justify the congruence condition "
+                  "you used.",
+             note="Criteria A and B · identify the condition and explain why it is sufficient."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of form and the related concepts of space and justification "
+        "appear in your work?",
+        "How is the global context of personal and cultural expression, and its exploration of "
+        "artistry, craft, creation and beauty, visible in the investigations and examples you "
+        "completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a drawing as a justification of congruence, and what would "
+        "you still like to ask?",
+    ],
+    review=dict(
+        ideas=["A transformation maps an object to an image.",
+               "Translation, reflection and rotation are isometries: they preserve lengths, "
+               "angles and area.",
+               "A reflection reverses orientation; a rotation preserves it.",
+               "Congruent shapes are related by an isometry.",
+               "SSS, SAS, ASA and RHS are sufficient conditions for triangle congruence.",
+               "A shape tessellates if the angles at each meeting point sum to 360°.",
+               "Only three regular polygons tessellate: the triangle, square and hexagon."],
+        vocab=["transformation", "object", "image", "translation", "reflection", "rotation",
+               "enlargement", "isometry", "invariant", "congruent", "SSS", "SAS", "ASA", "RHS",
+               "line symmetry", "rotational symmetry", "tessellation"],
+        mixed=[("6.R1", "Translate (5, −2) by the vector (−3, −4)."),
+               ("6.R2", "Reflect (7, 1) in the line y = x."),
+               ("6.R3", "Rotate (4, 3) through 90° anticlockwise about the origin."),
+               ("6.R4", "State the order of rotational symmetry of a regular pentagon."),
+               ("6.R5", "Which congruence condition applies to two triangles with sides 5, 6, 7?"),
+               ("6.R6", "Explain why a regular octagon does not tessellate.")],
+    ),
+    projects=dict(
+        service=[("Community need", "A community space needs a floor or wall treatment that can be "
+                                    "made and fitted by volunteers."),
+                 ("Mathematical connection", "Transformations, congruence and tessellation."),
+                 ("Proposed action", "Design and cut a tiling pattern from one template and fit it "
+                                     "in a shared space."),
+                 ("Expected impact", "A durable, locally made surface treatment that the community "
+                                     "helped to produce."),
+                 ("Student reflection", "Record the template, the transformation used, and how the "
+                                        "fitting went.")],
+        community=[("Project idea", "A tiling or mural design for a community wall."),
+                   ("Need", "A shared wall is bare and there is no budget for a commercial "
+                            "treatment."),
+                   ("Research question", "What pattern can be cut from one template and fitted "
+                                         "without gaps?"),
+                   ("Mathematics", "Reflection, rotation, congruence and tessellation."),
+                   ("Action or outcome", "A fitted pattern with a reusable template."),
+                   ("Beneficiaries", "Everyone who uses the space."),
+                   ("Evidence", "The template, the plan and a photograph of the fitted work.")],
+        personal=[("Personal interest", "Drawing, textiles or model making."),
+                  ("Learning goal", "To use a transformation to make a design that repeats "
+                                    "exactly."),
+                  ("Product or outcome", "A repeating pattern made from one template."),
+                  ("Mathematics", "Isometries, congruence and tessellation."),
+                  ("Process", "Design the template, apply the transformation, then check the fit."),
+                  ("Evidence", "The template, the pattern and a photograph.")],
+    ),
+),
+])
+
+CHAPTERS.extend([
+dict(
+    num=7, title="Similarity, proof and trigonometry",
+    key="Relationships", related=["Justification", "Measurement"],
+    context="Orientation in space and time",
+    exploration="Natural and human landscapes and resources",
+    inquiry=("The relationship between corresponding lengths in similar figures can be justified "
+             "as a constant ratio, and that justification, combined with the measurement of "
+             "angles, allows indirect measurement of distances and heights that cannot be measured "
+             "directly."),
+    atl=("Research",
+         "In order for a student to justify a general claim about shapes, students must gather "
+         "evidence from several cases, identify what the cases have in common, and express the "
+         "common structure as a statement that can be proved rather than tested."),
+    standfirst="Similar figures have the same shape at different sizes. The scale factor is the "
+               "constant ratio between corresponding lengths, and it is what makes indirect "
+               "measurement possible.",
+    engage="A surveyor needs the height of a cliff. No one can climb it with a tape measure. The "
+           "surveyor measures a shadow, paces a distance and records two angles. What has been "
+           "measured, and what has been inferred?",
+    questions=[("Factual", "What are the conditions for two triangles to be similar, and what are "
+                           "the three trigonometric ratios?"),
+               ("Conceptual", "Why does a constant scale factor justify a claim about every "
+                              "corresponding pair of lengths, and how does Pythagoras' theorem "
+                              "follow from the properties of similar triangles?"),
+               ("Debatable", "Is a measurement taken indirectly with trigonometry as reliable as "
+                             "one taken directly with a tape?")],
+    application_lede="These tasks use similarity, scale factors, Pythagoras' theorem, "
+                     "trigonometric ratios and angles of elevation. State the precision of every "
+                     "measurement you report.",
+    projects_lede="Indirect measurement is how landscapes, buildings and resources are measured. "
+                  "Use it to plan, and report the precision of the result.",
+    sections=[
+        dict(id="7.1", title="Similar figures and scale factors",
+             inquiry_q=("How can you justify that two figures are similar without measuring every "
+                        "angle?"), teach=[
+            "Two figures are similar when their corresponding angles are equal and their corresponding sides are in the same ratio. The ratio is the scale factor.",
+            "For triangles, two conditions are sufficient: AA (two equal angles, which forces the third), and SSS (all three pairs of sides in the same ratio). SAS with the included angle also works.",
+            "The scale factor from figure A to figure B is k, and the scale factor from B to A is 1/k. Lengths multiply by k and areas by k², which is why area scales differently from length.",
+            "Similarity is a claim about every pair of corresponding lengths at once, so it needs a justification that covers all of them. Measuring three pairs is evidence; the angle conditions are the justification.",
+        ], examples=[
+            dict(q="Two triangles have sides 3 cm, 4 cm, 5 cm and 6 cm, 8 cm, 10 cm. Are they "
+                   "similar, and what is the scale factor?",
+                 vis=F("triangle", [(30, 140), (110, 140), (60, 40)], ["3", "4", "5"],
+                       right=(), title="a 3-4-5 triangle"),
+                 reasoning="If all three pairs of sides are in the same ratio, the triangles are "
+                          "similar by the SSS condition.",
+                 steps=["Compare corresponding sides: 6/3 = 2, 8/4 = 2 and 10/5 = 2.",
+                        "All three ratios are equal to 2.",
+                        "So the triangles are similar, with scale factor 2.",
+                        "The angles must also be equal, and indeed both are right-angled."],
+                 ans="yes, similar with scale factor 2",
+                 interp="The scale factor applies to every length, so one number describes the "
+                        "whole relationship."),
+            dict(q="A photograph 8 cm wide is enlarged to 30 cm wide. By what factor does the area "
+                   "increase?",
+                 vis=F("table", [["measurement", "original", "enlarged", "factor"],
+                                 ["width", "8 cm", "30 cm", "3.75"],
+                                 ["area", "A", "3.75² × A", "14.0625"]],
+                       caption="Area scales as the square of the length factor."),
+                 reasoning="Lengths multiply by the scale factor and areas by its square, because "
+                          "area is a product of two lengths.",
+                 steps=["Scale factor = 30 ÷ 8 = 3.75.",
+                        "Area factor = 3.75² = 14.0625.",
+                        "So the area increases by a factor of about 14."],
+                 ans="the area increases by a factor of 14.0625",
+                 interp="A modest change in width produces a large change in area, which matters "
+                        "for printing and for material cost."),
+        ], inv=dict(
+            task="Draw a triangle, then enlarge it by scale factor 2 about a chosen centre using a "
+                 "ruler. Measure all six sides and all six angles, and record the ratios of "
+                 "corresponding sides and the ratio of the two areas.",
+            fig=F("grid", [(1, 1), (5, 1), (2, 4), (2, 2), (8, 2), (4, 7)], ["", "", "", "", "", ""],
+                  xmin=0, xmax=10, ymin=0, ymax=9, title="a triangle and its enlargement"),
+            table=[["measurement", "original", "enlarged", "ratio"],
+                   ["side 1", "4 cm", "8 cm", "2"],
+                   ["side 2", "3.6 cm", "7.2 cm", "2"],
+                   ["side 3", "3 cm", "6 cm", "2"],
+                   ["angle A", "37°", "37°", "1"],
+                   ["angle B", "90°", "90°", "1"],
+                   ["area", "5.4 cm²", "21.6 cm²", "4"]],
+            notice=["Every length ratio was exactly 2, the scale factor.",
+                    "Every angle was unchanged, so the shape was preserved.",
+                    "The area ratio was 4, which is 2².",
+                    "The enlargement could be described by a single number and a centre."],
+            obs="Corresponding lengths are in a constant ratio, corresponding angles are equal, "
+                "and areas are in the square of that ratio.",
+            concl="Two figures are similar when corresponding angles are equal and corresponding "
+                  "sides are in a constant ratio k, with areas in the ratio k².")),
+        dict(id="7.2", title="Similar triangles and indirect measurement",
+             inquiry_q=("How can a height that cannot be measured directly be found?"), teach=[
+            "Two triangles formed by the sun's rays and vertical objects are similar, because the rays are parallel and the objects are both perpendicular to the ground. The angle at each object is equal.",
+            "This gives the shadow method: the ratio of height to shadow length is the same for every object at the same time, so one measurable pair fixes the ratio for all of them.",
+            "Indirect measurement turns an inaccessible quantity into a ratio problem. What is measured is a distance and an angle; what is inferred is a height.",
+            "The reliability of the result depends on the assumptions: that the ground is level, that the object is vertical, and that the light rays are effectively parallel.",
+        ], examples=[
+            dict(q="A 1.5 m pole casts a 2 m shadow. At the same time a tree casts an 18 m "
+                   "shadow. Find the height of the tree.",
+                 vis=F("triangle", [(20, 150), (60, 150), (20, 120)], ["1.5 m", "2 m"],
+                       right=(), title="two similar right-angled triangles"),
+                 reasoning="The triangles are similar because the sun's rays are parallel, so the "
+                          "ratio of height to shadow is the same for both objects.",
+                 steps=["Pole: height/shadow = 1.5/2 = 0.75.",
+                        "Tree: height/18 = 0.75.",
+                        "Height = 18 × 0.75 = 13.5 m."],
+                 ans="13.5 m",
+                 interp="The tree's height was never measured; it was inferred from the ratio."),
+            dict(q="A student 1.6 m tall stands so that her shadow just reaches the base of a "
+                   "flagpole. She is 4 m from the pole and her shadow is 2.5 m long. Find the "
+                   "height of the pole.",
+                 vis=F("triangle", [(20, 150), (50, 150), (20, 125)], ["1.6 m", "2.5 m"],
+                       right=(), title="shadow and distance"),
+                 reasoning="The two triangles are similar, so the ratio of height to horizontal "
+                          "distance is the same for the student and the pole.",
+                 steps=["Student: 1.6/2.5.",
+                        "Pole: h/(4 + 2.5) = h/6.5.",
+                        "1.6/2.5 = h/6.5, so h = 6.5 × 0.64.",
+                        "h = 4.16 m."],
+                 ans="about 4.16 m",
+                 interp="The distance from the student to the pole is added to her shadow because "
+                        "both lie on the same horizontal line."),
+        ], inv=dict(
+            task="On a sunny day, measure the shadow of a partner and the shadow of a tall object "
+                 "such as a tree, a building or a floodlight. Use similarity to estimate the "
+                 "height, then compare with any direct measurement or published figure you can "
+                 "find.",
+            fig=F("triangle", [(20, 150), (80, 150), (20, 110)], ["h", "shadow"],
+                  right=(), title="object, shadow and the similar triangle"),
+            table=[["object", "shadow (m)", "estimated height (m)", "method"],
+                   ["partner", "1.2", "1.55", "measured directly"],
+                   ["tree", "8.4", "1.55 × (8.4/1.2) = 10.85", "similarity ratio"],
+                   ["building", "22.5", "1.55 × (22.5/1.2) = 29.06", "similarity ratio"]],
+            notice=["The ratio height/shadow was the same for every object.",
+                    "The two tall estimates were consistent with the number of storeys.",
+                    "The method needs level ground and vertical objects.",
+                    "The precision is limited by the shadow measurement, not by the mathematics."],
+            obs="Similar triangles convert a measurable shadow into an unmeasurable height, using "
+                "one ratio for every object.",
+            concl="Two objects measured at the same time form similar triangles with their "
+                  "shadows, so the ratio of height to shadow length is constant and one measured "
+                  "pair determines every height.")),
+        dict(id="7.3", title="Pythagoras' theorem",
+             inquiry_q=("How can the relationship between the sides of a right-angled triangle be "
+                        "proved, and why does the proof work?"), teach=[
+            "Pythagoras' theorem states that in a right-angled triangle, a² + b² = c², where c is the hypotenuse. It applies only to right-angled triangles.",
+            "The theorem can be proved by arranging four copies of the triangle inside a square of side a + b in two ways, and comparing the areas that are left over.",
+            "Both arrangements leave the same total area, but one leaves two squares of sides a and b and the other leaves one square of side c. So a² + b² = c².",
+            "The converse is also true: if a² + b² = c² then the triangle is right-angled. This is how the theorem is used to test whether an angle is a right angle.",
+        ], examples=[
+            dict(q="A right-angled triangle has legs 9 cm and 12 cm. Find the hypotenuse.",
+                 vis=F("pythagoras", 9, 12, "squares on the three sides"),
+                 reasoning="The theorem relates the squares of the three sides, and the hypotenuse "
+                          "is the longest side.",
+                 steps=["c² = 9² + 12² = 81 + 144 = 225.",
+                        "c = √225 = 15 cm."],
+                 ans="15 cm",
+                 interp="The answer is exact, and the diagram shows why: the two smaller squares "
+                        "exactly fill the largest one."),
+            dict(q="A ladder 5 m long rests against a wall with its foot 3 m from the wall. How "
+                   "high up the wall does it reach?",
+                 vis=F("pythagoras", 3, 4, "wall, ground and ladder"),
+                 reasoning="The ladder is the hypotenuse, so the height is found by subtracting "
+                          "the square of the known leg.",
+                 steps=["5² = 3² + h².",
+                        "25 = 9 + h², so h² = 16.",
+                        "h = 4 m."],
+                 ans="4 m",
+                 interp="The theorem works in both directions: given the hypotenuse and one leg, "
+                        "the other leg follows."),
+        ], inv=dict(
+            task="Draw a right-angled triangle with legs a and b, then draw squares on all three "
+                 "sides. Count grid squares to estimate each area, and test whether a² + b² = c². "
+                 "Then repeat with two other triangles of your own.",
+            fig=F("pythagoras", 3, 4, "squares of area 9, 16 and 25"),
+            table=[["triangle", "a", "b", "a² + b²", "c²", "c"],
+                   ["1", "3", "4", "25", "25", "5"],
+                   ["2", "6", "8", "100", "100", "10"],
+                   ["3", "5", "12", "169", "169", "13"],
+                   ["4", "1.5", "2", "6.25", "6.25", "2.5"]],
+            notice=["In every case a² + b² equalled c² exactly.",
+                    "The pattern held for integer sides and for decimal sides.",
+                    "Triangles 1 and 2 are similar, and their sides are in the ratio 1:2.",
+                    "The largest square always had the same area as the two smaller squares "
+                    "combined."],
+            obs="The sum of the squares on the two shorter sides always equals the square on the "
+                "hypotenuse.",
+            concl="In a right-angled triangle a² + b² = c², where c is the hypotenuse, and the "
+                  "converse holds: equal sums of squares force a right angle.")),
+        dict(id="7.4", title="Trigonometric ratios",
+             inquiry_q=("How can an angle determine a ratio between two sides of a right-angled "
+                        "triangle?"), teach=[
+            "In a right-angled triangle, the ratio of two sides depends only on the angles, not on the size of the triangle. This is why trigonometry works for triangles of every scale.",
+            "The three ratios are sine, cosine and tangent, defined for an acute angle θ: sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse and tan θ = opposite/adjacent.",
+            "Because similar triangles have the same angles and proportional sides, these ratios are the same for every triangle with the same angles. That is the justification for the whole subject.",
+            "The ratios are used in two directions: given an angle and one side, find another side; given two sides, find the angle with an inverse ratio.",
+        ], examples=[
+            dict(q="In a right-angled triangle, the side opposite a 35° angle is 8 cm and the "
+                   "hypotenuse is h. Find h.",
+                 vis=F("triangle", [(30, 150), (110, 150), (110, 60)], ["8 cm", "h"],
+                       right=[(110, 150, "")], angles=[(110, 150, "35°")],
+                       title="sine relates the opposite side to the hypotenuse"),
+                 reasoning="The sine ratio links the opposite side to the hypotenuse, so it can be "
+                          "solved for the unknown hypotenuse.",
+                 steps=["sin 35° = opposite/hypotenuse = 8/h.",
+                        "0.5736 = 8/h.",
+                        "h = 8 ÷ 0.5736.",
+                        "h ≈ 13.95 cm."],
+                 ans="about 13.95 cm",
+                 interp="The angle fixes the ratio, so the size of the triangle does not affect "
+                        "the method."),
+            dict(q="A right-angled triangle has adjacent side 5 cm and hypotenuse 13 cm. Find the "
+                   "angle.",
+                 vis=F("triangle", [(30, 150), (110, 150), (30, 60)], ["5 cm", "13 cm"],
+                       right=[(30, 150, "")], angles=[(110, 150, "θ")],
+                       title="cosine relates the adjacent side to the hypotenuse"),
+                 reasoning="The cosine ratio links the adjacent side to the hypotenuse, and the "
+                          "inverse cosine recovers the angle.",
+                 steps=["cos θ = 5/13 = 0.3846.",
+                        "θ = cos⁻¹(0.3846).",
+                        "θ ≈ 67.4°."],
+                 ans="about 67.4°",
+                 interp="The inverse ratio turns a pair of lengths into an angle, which is how "
+                        "slopes are measured."),
+        ], inv=dict(
+            task="Draw three right-angled triangles with a 30° angle but different sizes. For "
+                 "each, measure the opposite and hypotenuse, compute opposite ÷ hypotenuse, and "
+                 "record the value. Then repeat with a 45° angle and with a 60° angle.",
+            fig=F("triangle", [(30, 150), (130, 150), (130, 90)], ["opposite", "hypotenuse"],
+                  right=[(130, 150, "")], angles=[(30, 90, "30°")],
+                  title="three triangles, one angle"),
+            table=[["angle", "triangle", "opposite", "hypotenuse", "opposite ÷ hypotenuse"],
+                   ["30°", "small", "2.0", "4.0", "0.500"],
+                   ["30°", "medium", "3.5", "7.0", "0.500"],
+                   ["30°", "large", "5.2", "10.4", "0.500"],
+                   ["45°", "any", "4.2", "5.9", "0.712"],
+                   ["60°", "any", "5.2", "6.0", "0.867"]],
+            notice=["For a 30° angle the ratio was 0.5 in all three triangles, despite their "
+                    "different sizes.",
+                    "For 45° the ratio was about 0.707, and for 60° about 0.866.",
+                    "The ratios depend only on the angle, which is what makes trigonometry "
+                    "possible.",
+                    "The same values appear for every 30° triangle in the world."],
+            obs="The ratio of two sides of a right-angled triangle depends only on the angles, not "
+                "on the size of the triangle.",
+            concl="In a right-angled triangle the ratios sin θ = opposite/hypotenuse, cos θ = "
+                  "adjacent/hypotenuse and tan θ = opposite/adjacent depend only on the angle, "
+                  "because similar triangles have proportional sides.")),
+        dict(id="7.5", title="Angles of elevation and depression",
+             inquiry_q=("How can an angle measured from the ground give a height?"), teach=[
+            "The angle of elevation is measured upward from the horizontal to the line of sight; the angle of depression is measured downward from the horizontal.",
+            "The two angles are equal by alternate angles, which is why a measurement taken from the top of a building gives the same information as one taken from the ground.",
+            "The measurement gives a right-angled triangle: the horizontal distance and the angle determine the height through a trigonometric ratio.",
+            "The height found is the height above the observer's eye, so the observer's own height must be added. This is the step that is most often forgotten.",
+        ], examples=[
+            dict(q="From 40 m away, the angle of elevation to the top of a tree is 28°. Find the "
+                   "height of the tree above eye level.",
+                 vis=F("elevation", 28, 40, "angle of elevation from 40 m"),
+                 reasoning="The horizontal distance and the angle of elevation form a "
+                          "right-angled triangle whose height is found with the tangent ratio.",
+                 steps=["tan 28° = height/40.",
+                        "0.5317 = height/40.",
+                        "height = 40 × 0.5317.",
+                        "height ≈ 21.27 m above eye level."],
+                 ans="about 21.3 m above eye level",
+                 interp="The eye height of the observer must be added to obtain the total height."),
+            dict(q="From the top of a 30 m cliff, the angle of depression to a boat is 18°. How "
+                   "far is the boat from the base of the cliff?",
+                 vis=F("elevation", 18, 30, "angle of depression to the boat"),
+                 reasoning="The angle of depression equals the angle of elevation from the boat, so "
+                          "the same right-angled triangle applies.",
+                 steps=["The angle at the boat is also 18° by alternate angles.",
+                        "tan 18° = 30/distance.",
+                        "distance = 30 ÷ 0.3249.",
+                        "distance ≈ 92.3 m."],
+                 ans="about 92.3 m",
+                 interp="The equality of the two angles means one measurement answers the question "
+                        "from either end."),
+        ], inv=dict(
+            task="Measure the angle of elevation to the top of a tall object using a clinometer "
+                 "made from a protractor, a straw and a plumb line. Record the angle and the "
+                 "horizontal distance, then compute the height. Add your eye height and compare "
+                 "with a direct measurement if one is possible.",
+            fig=F("elevation", 35, 20, "measuring an angle of elevation"),
+            table=[["measurement", "value", "how it was obtained"],
+                   ["angle of elevation", "35°", "clinometer"],
+                   ["horizontal distance", "20 m", "tape or pacing"],
+                   ["height above eye level", "20 × tan 35° = 14.0 m", "tangent ratio"],
+                   ["eye height", "1.55 m", "measured"],
+                   ["total height", "15.55 m", "sum of the two"]],
+            notice=["The angle and the distance gave the height above eye level directly.",
+                    "Adding the eye height was essential, and omitting it understates the result "
+                    "by about 1.5 m.",
+                    "The precision is limited by the angle, which was read to the nearest degree.",
+                    "A one-degree error at this distance changes the height by about 0.4 m."],
+            obs="An angle of elevation and a horizontal distance form a right-angled triangle "
+                "whose height is given by the tangent ratio.",
+            concl="The height of an object is found from the angle of elevation and the horizontal "
+                  "distance using tan θ = height/distance, and the observer's eye height must be "
+                  "added to the result.")),
+    ],
+    practice=dict(
+        A=[("7.1.1", "Two similar triangles have a scale factor of 3. A side of the smaller is "
+                     "4 cm. Find the corresponding side of the larger.",
+            "12 cm", "Multiply by the scale factor.", "F"),
+           ("7.1.2", "Find the hypotenuse of a right-angled triangle with legs 6 cm and 8 cm.",
+            "10 cm", "√(36 + 64) = 10.", "F"),
+           ("7.1.3", "In a right-angled triangle, sin θ = 0.5. What is θ?",
+            "30°", "The angle whose sine is 0.5.", "F"),
+           ("7.1.4", "Find the leg of a right-angled triangle with hypotenuse 13 cm and one leg "
+                     "5 cm.",
+            "12 cm", "√(169 − 25) = 12.", "F"),
+           ("7.1.5", "A rectangle 3 cm by 4 cm is enlarged by scale factor 5. Find the area of the "
+                     "image.",
+            "300 cm²", "Area scales by 5² = 25, and 12 × 25 = 300.", "F"),
+           ("7.1.6", "Write tan θ in terms of the sides of a right-angled triangle.",
+            "opposite ÷ adjacent", "The tangent ratio.", "F"),
+           ("7.1.7", "Find cos θ when the adjacent side is 7 cm and the hypotenuse 25 cm.",
+            "0.28", "7 ÷ 25.", "F"),
+           ("7.1.8", "Two triangles have angles 40°, 60°, 80° and 40°, 60°, 80°. Are they similar?",
+            "Yes — two equal angles force the third, so AA applies.",
+            "Two equal angles are sufficient for similarity of triangles.", "R"),
+           ("7.1.9", "A map has scale 1 : 50 000. A path measures 3.4 cm. Find the real distance.",
+            "1.7 km", "3.4 × 50 000 = 170 000 cm = 1.7 km.", "F"),
+           ("7.1.10", "Find the hypotenuse when the legs are 1 cm and 2 cm.",
+            "√5 cm", "√(1 + 4) = √5.", "F"),
+           ("7.1.11", "An angle of elevation to a tower is 45° from 60 m away. Find the height "
+                      "above eye level.",
+            "60 m", "tan 45° = 1, so the height equals the distance.", "F"),
+           ("7.1.12", "Explain what the scale factor does to lengths and to areas.",
+            "Lengths multiply by k and areas by k².",
+            "Area is a product of two lengths.", "R")],
+        B=[("7.2.1", "Investigate: do all right-angled triangles with a 30° angle have the same "
+                     "side ratios?",
+            "Yes — they are similar, so the ratios are identical.",
+            "Similarity forces proportional sides.", "R"),
+           ("7.2.2", "Test the claim: two triangles with all three pairs of sides in the same "
+                     "ratio are similar.",
+            "True — this is the SSS similarity condition.",
+            "Proportional sides determine the shape.", "R"),
+           ("7.2.3", "Investigate the pattern of Pythagorean triples 3-4-5, 5-12-13, 8-15-17 and "
+                     "find the next one.",
+            "7-24-25, since 49 + 576 = 625",
+            "The pattern follows odd starting values: 3, 5, 7 with the other two from n² − 1 and "
+            "n² + 1 over 2.", "R"),
+           ("7.2.4", "Generalise: if a triangle has sides in the ratio 3:4:5, what kind of "
+                     "triangle is it?",
+            "Right-angled, because 3² + 4² = 5²",
+            "The converse of Pythagoras' theorem.", "R"),
+           ("7.2.5", "Investigate whether a triangle with sides 5, 6 and 10 is right-angled.",
+            "No — 25 + 36 = 61, which is not 100.",
+            "The sum of squares must equal the square of the longest side.", "R"),
+           ("7.2.6", "Test the claim: the altitude to the hypotenuse of a right-angled triangle "
+                     "creates two triangles similar to the original.",
+            "True — all three share the same angles.",
+            "Each smaller triangle has a right angle and shares an acute angle with the original.", "R"),
+           ("7.2.7", "Investigate how the area ratio of two similar figures relates to their "
+                     "length ratio.",
+            "The area ratio is the square of the length ratio.",
+            "Area is a product of two lengths.", "R"),
+           ("7.2.8", "Generalise a rule for the height of an object given the angle of elevation "
+                     "and the distance.",
+            "height = distance × tan(angle of elevation)",
+            "The tangent ratio relates the opposite side to the adjacent side.", "R"),
+           ("7.2.9", "Investigate whether the angle of elevation equals the angle of depression "
+                     "in the same situation.",
+            "Yes — they are alternate angles between parallel horizontals.",
+            "The two horizontals are parallel, so the alternate angles are equal.", "R"),
+           ("7.2.10", "Test the claim: a larger similar triangle has larger trigonometric ratios.",
+            "False — the ratios depend only on the angles, so they are unchanged.",
+            "Similarity preserves angles and scales sides equally.", "R"),
+           ("7.2.11", "Investigate the values of sin θ for θ = 0°, 30°, 45°, 60° and 90°.",
+            "0, 0.5, 0.707, 0.866, 1",
+            "Sine rises from 0 to 1 as the angle goes from 0° to 90°.", "R")],
+        C=[("7.3.1", "Explain in words what it means for two figures to be similar.",
+            "Corresponding angles are equal and corresponding sides are in a constant ratio.",
+            "Similarity preserves shape but not size.", "R"),
+           ("7.3.2", "Explain why the trigonometric ratios are the same for every triangle with "
+                     "the same angle.",
+            "Because such triangles are similar, so their sides are proportional.",
+            "The ratios are quotients of proportional lengths.", "R"),
+           ("7.3.3", "Describe the difference between the angle of elevation and the angle of "
+                     "depression.",
+            "Elevation is measured upward from the horizontal; depression is measured downward.",
+            "The two are equal by alternate angles.", "R"),
+           ("7.3.4", "Explain why the eye height of the observer must be added to a height found "
+                     "by trigonometry.",
+            "The calculation gives the height above the observer's eye, not above the ground.",
+            "The right-angled triangle starts at eye level.", "R"),
+           ("7.3.5", "Describe two ways to prove Pythagoras' theorem.",
+            "By rearranging four copies of the triangle in a square, or by the similar-triangles "
+            "argument on the altitude to the hypotenuse.",
+            "Both compare areas that must be equal.", "R"),
+           ("7.3.6", "Explain the difference between SSS and AA as similarity conditions.",
+            "SSS compares side ratios; AA compares angles.",
+            "Either is sufficient for triangles.", "R"),
+           ("7.3.7", "Describe how you would use a clinometer and a tape to find the height of a "
+                     "building.",
+            "Measure the angle of elevation and the horizontal distance, apply the tangent ratio, "
+            "then add the eye height.",
+            "The two measurements define a right-angled triangle.", "R"),
+           ("7.3.8", "Explain why indirect measurement can be less reliable than direct "
+                     "measurement.",
+            "It relies on assumptions about level ground, verticality and the accuracy of the "
+            "angle.",
+            "Each assumption adds uncertainty.", "R"),
+           ("7.3.9", "Describe what a scale drawing shows and what it does not.",
+            "It shows shape and proportion but not the true size or the accuracy of the "
+            "measurement.",
+            "A drawing is a representation with its own limits.", "R"),
+           ("7.3.10", "Explain why the converse of Pythagoras' theorem is useful.",
+            "It tests whether an angle is a right angle without measuring the angle.",
+            "The side lengths determine the angle.", "R"),
+           ("7.3.11", "Describe how you would check that a corner of a room is square.",
+            "Measure 3 m along one wall and 4 m along the other; if the diagonal is 5 m the corner "
+            "is square.",
+            "A 3-4-5 triangle is right-angled, which is the practical form of the theorem.", "R"),
+           ("7.3.12", "Explain why a one-degree error in an angle of elevation matters more for a "
+                      "distant object.",
+            "The same angular error covers a larger distance when the object is far away.",
+            "Height error ≈ distance² × angular error for small angles.", "R")],
+        D=[("7.4.1", "A tree casts a 15 m shadow while a 2 m stick casts a 2.5 m shadow. Find the "
+                     "height of the tree.",
+            "12 m", "The ratio is 2/2.5 = 0.8, so the height is 15 × 0.8.", "A"),
+           ("7.4.2", "From 25 m away the angle of elevation to a roof is 32°. Find the height "
+                     "above eye level, to one decimal place.",
+            "15.6 m", "25 × tan 32° = 25 × 0.6249.", "A"),
+           ("7.4.3", "A 6 m ladder leans against a wall with its foot 2 m out. How high does it "
+                     "reach?",
+            "√32 ≈ 5.66 m", "√(36 − 4) = √32.", "A"),
+           ("7.4.4", "A map scale is 1 : 20 000. Two towns are 7.5 cm apart on the map. Find the "
+                     "real distance and the walking time at 5 km/h.",
+            "1.5 km; 18 minutes", "7.5 × 20 000 cm = 1.5 km, and 1.5 ÷ 5 = 0.3 h.", "A"),
+           ("7.4.5", "A photograph 10 cm by 15 cm is enlarged so that the longer side is 45 cm. "
+                     "Find the shorter side and the area factor.",
+            "30 cm; area factor 9", "Scale factor 3, so the area factor is 9.", "A"),
+           ("7.4.6", "Explain whether measuring a height by shadow is reliable on a cloudy day.",
+            "No — the method needs a shadow, so it cannot be used without direct sunlight.",
+            "The method depends on parallel light rays.", "R"),
+           ("7.4.7", "A boat is 120 m from the base of a 40 m cliff. Find the angle of depression "
+                     "from the top of the cliff.",
+            "about 18.4°", "tan θ = 40/120, so θ = tan⁻¹(1/3).", "A"),
+           ("7.4.8", "A roof rafter is 4.2 m long and spans 3.6 m. Find the angle the rafter makes "
+                     "with the horizontal.",
+            "about 31°", "cos θ = 3.6/4.2, so θ ≈ 31°.", "A"),
+           ("7.4.9", "A reservoir is surveyed from two points 60 m apart, with angles of elevation "
+                     "45° and 30°. Explain whether the height can be found.",
+            "Yes — the two angles and the baseline determine two similar right-angled triangles, "
+            "so the height follows from the difference in their horizontal distances.",
+            "Two angles and the included side determine the geometry.", "R"),
+           ("7.4.10", "A scale model of a bridge is 1 : 200. A cable on the model is 12 cm. Find "
+                      "the real length and the real length if the model were 1 : 50.",
+            "24 m at 1 : 200; 6 m at 1 : 50",
+            "12 × 200 cm = 24 m and 12 × 50 cm = 6 m.", "A"),
+           ("7.4.11", "A flagpole is held by a 10 m wire fixed 6 m up the pole. Find the angle the "
+                      "wire makes with the ground.",
+            "about 36.9°", "sin θ = 6/10.", "A"),
+           ("7.4.12", "Explain why a surveyor reports the precision of an indirectly measured "
+                      "height.",
+            "Because the result inherits the uncertainty of the angle and the distance, so extra "
+            "digits would be invented.",
+            "Indirect measurement compounds errors.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The height of the water tower",
+             text="From a point 35 m from the base of a water tower, the angle of elevation to the "
+                  "top is 41°. Find the height above eye level, then the total height given an eye "
+                  "height of 1.6 m. State the precision of your answer and what limits it.",
+             note="Criteria A and D · justify the method and comment on the precision."),
+        dict(title="A2 · The similar frame",
+             text="Two triangular supports have sides in the ratio 2:5. The smaller has area 14 "
+                  "cm². Find the area of the larger, and explain why the area ratio is not 2:5.",
+             note="Criteria A and C · justify with the square of the scale factor."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of relationships and the related concepts of justification and "
+        "measurement appear in your work?",
+        "How is the global context of orientation in space and time, and its exploration of "
+        "natural and human landscapes and resources, visible in the investigations and examples "
+        "you completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of indirect measurement, and what would you still like to ask?",
+    ],
+    review=dict(
+        ideas=["Similar figures have equal corresponding angles and proportional corresponding "
+               "sides.",
+               "For triangles, AA and SSS are sufficient similarity conditions.",
+               "Lengths scale by k and areas by k².",
+               "Pythagoras' theorem: a² + b² = c² for a right-angled triangle.",
+               "The converse tests whether a triangle is right-angled.",
+               "sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse, tan θ = "
+               "opposite/adjacent.",
+               "The angle of elevation equals the angle of depression by alternate angles.",
+               "Indirect measurement gives the height above eye level, so the eye height must be "
+               "added."],
+        vocab=["similar", "scale factor", "AA", "SSS similarity", "hypotenuse", "leg",
+               "Pythagoras' theorem", "sine", "cosine", "tangent", "angle of elevation",
+               "angle of depression", "indirect measurement", "clinometer"],
+        mixed=[("7.R1", "Find the hypotenuse when the legs are 7 cm and 24 cm."),
+               ("7.R2", "Find tan θ when the opposite side is 5 and the adjacent 12."),
+               ("7.R3", "Two similar figures have a length ratio of 1:4. Find the area ratio."),
+               ("7.R4", "From 30 m the angle of elevation to a roof is 25°. Find the height above "
+                        "eye level."),
+               ("7.R5", "Is a triangle with sides 8, 15 and 17 right-angled? Justify."),
+               ("7.R6", "Explain why the trigonometric ratios depend only on the angle.")],
+    ),
+    projects=dict(
+        service=[("Community need", "The community needs accurate heights and distances for a "
+                                    "water tank, a ramp or a shade structure, but has no surveying "
+                                    "equipment."),
+                 ("Mathematical connection", "Similarity, Pythagoras' theorem and trigonometry."),
+                 ("Proposed action", "Measure one height or distance indirectly with a "
+                                     "clinometer and publish the method with the result."),
+                 ("Expected impact", "A structure can be planned from a measurement that was "
+                                     "previously guessed."),
+                 ("Student reflection", "Record the method, the assumptions and the uncertainty.")],
+        community=[("Project idea", "A measured plan for a community shade structure."),
+                   ("Need", "A proposed shade structure has no measured dimensions."),
+                   ("Research question", "What height and span will give useful shade at this "
+                                         "site?"),
+                   ("Mathematics", "Angles of elevation, trigonometry and Pythagoras' theorem."),
+                   ("Action or outcome", "A measured plan with a shadow estimate."),
+                   ("Beneficiaries", "Everyone who will use the structure."),
+                   ("Evidence", "The measurements, the plan and the shadow calculation.")],
+        personal=[("Personal interest", "Cycling, hiking or photography."),
+                  ("Learning goal", "To measure a height or distance indirectly and report its "
+                                    "precision."),
+                  ("Product or outcome", "A measured profile of a local route or building."),
+                  ("Mathematics", "Similarity, Pythagoras' theorem and trigonometry."),
+                  ("Process", "Measure an angle and a distance, compute the height, then check "
+                              "the sense of the answer."),
+                  ("Evidence", "The measurements, the calculation and the stated precision.")],
+    ),
+),
+])
+
+CHAPTERS.extend([
+dict(
+    num=8, title="Three-dimensional solids and measurement",
+    key="Form", related=["Measurement", "Models"],
+    context="Globalisation and sustainability",
+    exploration="Human impact on the environment",
+    inquiry=("The form of a three-dimensional solid, and the measurement of its surface area and "
+             "volume, allow the material it requires to be modelled, and those models show how "
+             "design choices change the resources consumed."),
+    atl=("Self-management",
+         "In order for a student to manage a multi-step measurement task, students must select the "
+         "correct formula, set out the substitution so each step can be checked, and review the "
+         "units and the precision of the final result."),
+    standfirst="A solid is described by its faces, edges and vertices. Its net gives the surface "
+               "area, its cross-section gives the volume, and its density connects the two to the "
+               "material it is made from.",
+    engage="A drinks manufacturer must choose between a cylindrical can and a rectangular carton "
+           "of the same 330 ml capacity. Which uses less material? The answer is a comparison of "
+           "surface areas, and the difference is not small.",
+    questions=[("Factual", "What are the formulas for the surface area and volume of prisms, "
+                           "cylinders, pyramids, cones and spheres?"),
+               ("Conceptual", "Why does the volume of a cone equal one third of the cylinder that "
+                              "contains it, and how does the precision of a measurement limit the "
+                              "precision of a volume?"),
+               ("Debatable", "Is a design that minimises material always the better environmental "
+                             "choice?")],
+    application_lede="These tasks use nets, surface area, volume, density and precision. State the "
+                     "units of every answer and the precision you can justify.",
+    projects_lede="Every object made is material taken from somewhere. Use surface area and volume "
+                  "to see how much, and use precision to say how sure you are.",
+    sections=[
+        dict(id="8.1", title="Solids, nets and views",
+             inquiry_q=("How can a three-dimensional solid be represented on a flat surface, and "
+                        "what does each representation preserve?"), teach=[
+            "A solid is described by its faces, edges and vertices. Euler's relation for a polyhedron is V − E + F = 2, which holds for every solid without a hole.",
+            "A net is a flat arrangement of the faces that folds into the solid. It preserves area and shape, which makes it the natural representation for surface area.",
+            "Front, side and plan views each show two dimensions and hide the third. Together they determine the solid, and each alone does not.",
+            "A solid can also be represented by a sketch in oblique or isometric projection. The projection is a drawing convention, not a mathematical property, and it distorts some measurements.",
+        ], examples=[
+            dict(q="A cuboid has 6 faces, 12 edges and 8 vertices. Check Euler's relation.",
+                 vis=F("prism", "cuboid", 4, 3, 2, "a cuboid: 6 faces, 12 edges, 8 vertices"),
+                 reasoning="Euler's relation connects the counts of vertices, edges and faces for "
+                          "any polyhedron.",
+                 steps=["V = 8, E = 12 and F = 6.",
+                        "V − E + F = 8 − 12 + 6.",
+                        "= 2."],
+                 ans="the relation holds",
+                 interp="The relation is a check on a drawing: if it fails, the drawing is wrong."),
+            dict(q="Describe the net of a cube of side 3 cm and find its area.",
+                 vis=F("prism", "cuboid", 3, 3, 3, "six square faces"),
+                 reasoning="The net of a cube is six squares, and its area is the surface area of "
+                          "the cube.",
+                 steps=["A cube has 6 identical square faces.",
+                        "Each face has area 3 × 3 = 9 cm².",
+                        "Total area = 6 × 9 = 54 cm²."],
+                 ans="six squares of area 9 cm² each, total 54 cm²",
+                 interp="The net is the representation that turns a three-dimensional question into "
+                        "a flat one."),
+        ], inv=dict(
+            task="Build the net of a cuboid, a cylinder and a square-based pyramid from card. Fold "
+                 "each one and record the number of faces, edges and vertices, then check Euler's "
+                 "relation for the two polyhedra.",
+            fig=F("prism", "cuboid", 5, 3, 2, "a cuboid and its net"),
+            table=[["solid", "faces", "edges", "vertices", "V − E + F"],
+                   ["cuboid", "6", "12", "8", "2"],
+                   ["square-based pyramid", "5", "8", "5", "2"],
+                   ["cylinder", "3", "2", "0", "not a polyhedron"]],
+            notice=["Both polyhedra satisfied Euler's relation.",
+                    "The cylinder has no vertices or edges in the polyhedral sense, so the relation "
+                    "does not apply.",
+                    "The net of the cylinder is two circles and a rectangle whose length is the "
+                    "circumference.",
+                    "The net of the pyramid is one square and four triangles."],
+            obs="A net flattens a solid without changing the shapes or areas of its faces, and "
+                "Euler's relation checks the counts for any polyhedron.",
+            concl="A solid can be represented by its net, by its views and by a sketch, and the net "
+                  "is the representation that preserves the areas needed for surface area.")),
+        dict(id="8.2", title="Surface area of prisms and cylinders",
+             inquiry_q=("How can the surface area of a solid be found from its net?"), teach=[
+            "The surface area of a prism is the sum of the areas of its faces: two congruent ends plus the lateral faces, which unfold into a rectangle.",
+            "For a cylinder, the two ends are circles of area πr² each and the curved surface unrolls into a rectangle of length 2πr and height h, so the curved area is 2πrh.",
+            "The total surface area of a cylinder is therefore 2πr² + 2πrh, and each term corresponds to a part of the net.",
+            "Reading the formula from the net is more reliable than memorising it, because the net shows where each term comes from.",
+        ], examples=[
+            dict(q="Find the surface area of a cylinder of radius 3 cm and height 10 cm.",
+                 vis=F("prism", "cylinder", 3, 10, 0, "two circles and a rectangle"),
+                 reasoning="The net is two circles and a rectangle whose length is the "
+                          "circumference.",
+                 steps=["Area of the two ends = 2 × π × 3² = 18π cm².",
+                        "Curved area = 2π × 3 × 10 = 60π cm².",
+                        "Total = 18π + 60π = 78π cm².",
+                        "= 245.0 cm² to one decimal place."],
+                 ans="78π cm², or about 245.0 cm²",
+                 interp="The exact answer is left in terms of π, and the decimal is the reporting "
+                        "form."),
+            dict(q="A rectangular prism measures 5 cm by 4 cm by 3 cm. Find its surface area.",
+                 vis=F("prism", "cuboid", 5, 4, 3, "three pairs of identical faces"),
+                 reasoning="A cuboid has three pairs of identical rectangular faces, so the total "
+                          "is twice the sum of the three distinct areas.",
+                 steps=["Face areas: 5 × 4 = 20, 5 × 3 = 15 and 4 × 3 = 12 cm².",
+                        "Each appears twice.",
+                        "Surface area = 2 × (20 + 15 + 12).",
+                        "= 2 × 47 = 94 cm²."],
+                 ans="94 cm²",
+                 interp="Counting the pairs prevents the commonest error of missing a face."),
+        ], inv=dict(
+            task="Make the net of a cylinder from card, measure the rectangle and the two circles, "
+                 "and compute the total area. Then repeat for a cylinder of twice the radius and "
+                 "the same height, and compare the two surface areas.",
+            fig=F("prism", "cylinder", 3, 8, 0, "the net of a cylinder"),
+            table=[["cylinder", "radius", "height", "curved area", "ends", "total"],
+                   ["A", "3 cm", "8 cm", "48π", "18π", "66π cm²"],
+                   ["B", "6 cm", "8 cm", "96π", "72π", "168π cm²"],
+                   ["ratio B/A", "2", "1", "2", "4", "2.55"]],
+            notice=["Doubling the radius doubled the curved area but quadrupled the area of the "
+                    "ends.",
+                    "The total area grew by a factor of about 2.55, not by 4.",
+                    "The curved area depends on the radius linearly, while the ends depend on its "
+                    "square.",
+                    "For the same volume, a wider and shorter cylinder uses less material than a "
+                    "narrow tall one."],
+            obs="The curved area scales with the radius and the height, while the ends scale with "
+                "the square of the radius.",
+            concl="The surface area of a cylinder is 2πr² + 2πrh, read directly from a net of two "
+                  "circles and a rectangle of length 2πr and height h.")),
+        dict(id="8.3", title="Surface area of pyramids and cones",
+             inquiry_q=("How does a slant height differ from a perpendicular height, and which one "
+                        "does each formula use?"), teach=[
+            "A pyramid has a polygonal base and triangular faces that meet at an apex. The perpendicular height is measured from the apex to the base at right angles; the slant height is measured along a face.",
+            "The area of each triangular face is ½ × base × slant height, because the slant height is the height of the triangle in that face.",
+            "For a cone, the curved surface unrolls into a sector of a circle of radius l, the slant height, and its area is πrl. The base is a circle of area πr².",
+            "Confusing the slant height with the perpendicular height is the standard error. The relation between them is Pythagoras' theorem applied to the right-angled triangle inside the solid.",
+        ], examples=[
+            dict(q="A cone has radius 5 cm and slant height 13 cm. Find its curved surface area and "
+                   "total surface area.",
+                 vis=F("cone", 5, 12, "r, h and the slant height l"),
+                 reasoning="The curved surface unrolls into a sector of radius l, so its area is "
+                          "πrl, and the base is a circle.",
+                 steps=["Curved area = πrl = π × 5 × 13 = 65π cm².",
+                        "Base area = πr² = 25π cm².",
+                        "Total = 65π + 25π = 90π cm².",
+                        "= 282.7 cm² to one decimal place."],
+                 ans="90π cm², or about 282.7 cm²",
+                 interp="The slant height, not the perpendicular height, appears in the curved-area "
+                        "formula because the sector has radius l."),
+            dict(q="A square-based pyramid has base side 8 cm and slant height 10 cm. Find its "
+                   "surface area.",
+                 vis=F("prism", "cuboid", 8, 8, 10, "a square base and four triangular faces"),
+                 reasoning="The base is a square and the four faces are congruent triangles whose "
+                          "height is the slant height.",
+                 steps=["Base area = 8 × 8 = 64 cm².",
+                        "Area of one triangular face = ½ × 8 × 10 = 40 cm².",
+                        "Four faces = 160 cm².",
+                        "Total = 64 + 160 = 224 cm²."],
+                 ans="224 cm²",
+                 interp="Each face is a triangle, and the slant height is the height of that "
+                        "triangle."),
+        ], inv=dict(
+            task="Build a cone and a square-based pyramid from card. For each, measure the slant "
+                 "height and the perpendicular height, and check the relation between them using "
+                 "Pythagoras' theorem. Then compute the surface area from the net.",
+            fig=F("cone", 4, 3, "the slant height is the radius of the unrolled sector"),
+            table=[["solid", "r or base", "perpendicular height", "slant height", "check"],
+                   ["cone", "r = 4 cm", "3 cm", "5 cm", "3² + 4² = 5²"],
+                   ["pyramid", "base 6 cm", "4 cm", "5 cm", "4² + 3² = 5²"]],
+            notice=["In both solids the slant height was the hypotenuse of a right-angled triangle "
+                    "inside the solid.",
+                    "Using the perpendicular height in the curved-area formula would have given the "
+                    "wrong answer.",
+                    "The cone's unrolled sector had radius 5 cm and arc length 2π × 4 cm.",
+                    "The pyramid's four faces were congruent because the base was square."],
+            obs="The slant height is the height of a face, and it is related to the perpendicular "
+                "height by Pythagoras' theorem.",
+            concl="The curved surface area of a cone is πrl and the lateral area of a pyramid is "
+                  "½ × perimeter × slant height, and in both cases the slant height is the height "
+                  "of a face rather than the height of the solid.")),
+        dict(id="8.4", title="Volume of prisms and cylinders",
+             inquiry_q=("How can the volume of any prism be found from a single cross-section?"), teach=[
+            "A prism has a constant cross-section parallel to its base. Its volume is the area of that cross-section multiplied by the length perpendicular to it.",
+            "This one rule covers cuboids, triangular prisms, cylinders and any other prism, however irregular the cross-section. The cross-section replaces the formula.",
+            "A cylinder is a prism with a circular cross-section, so its volume is πr²h.",
+            "Volume is measured in cubic units, and the units must be consistent before multiplying. A common error is mixing metres and centimetres.",
+        ], examples=[
+            dict(q="Find the volume of a cylinder of radius 4 cm and height 15 cm.",
+                 vis=F("prism", "cylinder", 4, 15, 0, "a circular cross-section"),
+                 reasoning="A cylinder is a prism with a circular cross-section, so the volume is "
+                          "the cross-section area times the height.",
+                 steps=["Cross-section area = π × 4² = 16π cm².",
+                        "Volume = 16π × 15 = 240π cm³.",
+                        "= 754.0 cm³ to one decimal place."],
+                 ans="240π cm³, or about 754.0 cm³",
+                 interp="The formula is the prism rule applied to a circular cross-section."),
+            dict(q="A triangular prism has a right-angled triangular cross-section with legs 3 cm "
+                   "and 4 cm, and length 10 cm. Find its volume.",
+                 vis=F("prism", "cuboid", 3, 4, 10, "a triangular cross-section"),
+                 reasoning="The volume is the area of the triangular cross-section times the "
+                          "length of the prism.",
+                 steps=["Cross-section area = ½ × 3 × 4 = 6 cm².",
+                        "Volume = 6 × 10 = 60 cm³."],
+                 ans="60 cm³",
+                 interp="The shape of the cross-section does not matter, only its area."),
+        ], inv=dict(
+            task="Fill a cylinder with water and pour it into a rectangular tank to find its "
+                 "volume. Then compute the volume from πr²h and compare. Repeat with a triangular "
+                 "prism made from card.",
+            fig=F("prism", "cylinder", 5, 10, 0, "measuring a cylinder by displacement"),
+            table=[["solid", "measured volume", "computed volume", "difference"],
+                   ["cylinder r = 5, h = 10", "785 cm³", "250π = 785.4 cm³", "0.4 cm³"],
+                   ["triangular prism", "60 cm³", "½ × 3 × 4 × 10 = 60 cm³", "0 cm³"],
+                   ["cuboid 4 × 5 × 6", "120 cm³", "120 cm³", "0 cm³"]],
+            notice=["The measured and computed volumes agreed to within the precision of the "
+                    "measuring cylinder.",
+                    "The prism rule worked for all three solids.",
+                    "Only the cross-section area changed between the three calculations.",
+                    "The agreement is a check on both the measurement and the formula."],
+            obs="The volume of a prism is the area of its cross-section times its length, whatever "
+                "the shape of the cross-section.",
+            concl="A prism has a constant cross-section and its volume is the area of that "
+                  "cross-section multiplied by the perpendicular length, which covers cylinders as "
+                  "well as polyhedra.")),
+        dict(id="8.5", title="Pyramids, cones, spheres and composite solids",
+             inquiry_q=("Why is the volume of a cone one third of the cylinder that contains it?"), teach=[
+            "A pyramid or cone with the same base and height as a prism or cylinder has exactly one third of its volume. This can be shown by filling a cone three times into the matching cylinder.",
+            "The volume of a pyramid or cone is therefore ⅓ × base area × perpendicular height, and for a cone ⅓πr²h.",
+            "A sphere of radius r has volume ⁴⁄₃πr³ and surface area 4πr². Both formulas involve the radius cubed and squared respectively, as dimensions require.",
+            "A composite solid is handled by splitting it into parts whose volumes can be found, then adding or subtracting. The split is a modelling choice, and it must be stated.",
+        ], examples=[
+            dict(q="Find the volume of a cone of radius 6 cm and height 8 cm.",
+                 vis=F("cone", 6, 8, "a cone inside its cylinder"),
+                 reasoning="The cone is one third of the cylinder with the same base and height.",
+                 steps=["Volume of the matching cylinder = π × 6² × 8 = 288π cm³.",
+                        "Cone volume = ⅓ × 288π = 96π cm³.",
+                        "= 301.6 cm³ to one decimal place."],
+                 ans="96π cm³, or about 301.6 cm³",
+                 interp="The factor of ⅓ is the difference between a cone and a cylinder of the "
+                        "same base and height."),
+            dict(q="A sphere of radius 5 cm is placed in a cylindrical tin of radius 5 cm and "
+                   "height 10 cm. Find the volume of the space around it.",
+                 vis=F("sphere", 5, "a sphere inside a cylinder"),
+                 reasoning="A composite volume is found by subtracting the part that is not "
+                          "wanted from the containing solid.",
+                 steps=["Tin volume = π × 5² × 10 = 250π cm³.",
+                        "Sphere volume = ⁴⁄₃π × 5³ = 500π/3 cm³.",
+                        "Space = 250π − 500π/3 = 250π/3 cm³.",
+                        "= 261.8 cm³ to one decimal place."],
+                 ans="250π/3 cm³, or about 261.8 cm³",
+                 interp="The subtraction is legitimate because the sphere sits entirely inside the "
+                        "tin."),
+        ], inv=dict(
+            task="Fill a cone with water and pour it into a cylinder of the same base and height. "
+                 "Record how many fills are needed, then repeat with a pyramid and a prism of the "
+                 "same base and height.",
+            fig=F("cone", 4, 6, "three cone fills fill the cylinder"),
+            table=[["pair", "container volume", "part volume", "number of fills"],
+                   ["cylinder and cone", "96π cm³", "32π cm³", "3"],
+                   ["prism and pyramid", "72 cm³", "24 cm³", "3"],
+                   ["sphere and cylinder", "250π cm³", "500π/3 cm³", "1.5 spheres"]],
+            notice=["Exactly three cone fills filled the cylinder, and three pyramid fills filled "
+                    "the prism.",
+                    "The relationship held for a circular base and for a square base.",
+                    "The sphere filled the cylinder one and a half times, which matches the ratio "
+                    "⁴⁄₃ to 2.",
+                    "The relationship is about the shape, not the size."],
+            obs="A cone or pyramid has exactly one third of the volume of the prism or cylinder "
+                "with the same base and height.",
+            concl="The volume of a pyramid or cone is ⅓ × base area × perpendicular height, which "
+                  "is one third of the containing prism or cylinder.")),
+        dict(id="8.6", title="Measurement, density and precision",
+             inquiry_q=("How does the precision of a measurement limit the precision of a volume?") 
+                    , teach=[
+            "Density is mass per unit volume, so density = mass ÷ volume and volume = mass ÷ density. The units are usually g/cm³ or kg/m³.",
+            "Rearranging between mass, volume and density is the same algebraic skill as rearranging any formula, and it is used constantly in materials work.",
+            "A volume is a product of three lengths, so a small error in each length is multiplied. A 1% error in a radius gives about a 3% error in a volume.",
+            "This is why reported volumes should carry no more significant figures than the measurements support. Extra digits are invented, not measured.",
+        ], examples=[
+            dict(q="A metal block measures 4.0 cm by 3.0 cm by 2.0 cm and has a mass of 190 g. "
+                   "Find its density.",
+                 vis=F("prism", "cuboid", 4, 3, 2, "a block of metal"),
+                 reasoning="Density is mass divided by volume, and the volume comes from the three "
+                          "measurements.",
+                 steps=["Volume = 4.0 × 3.0 × 2.0 = 24 cm³.",
+                        "Density = 190 ÷ 24 = 7.92 g/cm³.",
+                        "The measurements have two significant figures, so report 7.9 g/cm³."],
+                 ans="7.9 g/cm³",
+                 interp="The density suggests the block is made of steel or iron, which is a check "
+                        "on the sense of the answer."),
+            dict(q="A cylinder has radius 5.0 cm and height 12.0 cm. Find its volume and the mass "
+                   "if the material has density 2.7 g/cm³.",
+                 vis=F("prism", "cylinder", 5, 12, 0, "an aluminium cylinder"),
+                 reasoning="The volume is computed first and then converted to a mass using the "
+                          "density.",
+                 steps=["Volume = π × 5.0² × 12.0 = 300π cm³ = 942 cm³.",
+                        "Mass = 942 × 2.7 = 2543 g.",
+                        "The measurements have two significant figures, so report 2.5 kg."],
+                 ans="about 2.5 kg",
+                 interp="The mass follows from the volume, so it inherits the volume's precision."),
+        ], inv=dict(
+            task="Find the density of an irregular object by measuring its mass and its volume by "
+                 "displacement. Then estimate how the density would change if the volume "
+                 "measurement had a 5% error.",
+            fig=F("prism", "cylinder", 5, 10, 0, "volume by displacement"),
+            table=[["measurement", "value", "precision"],
+                   ["mass", "156.0 g", "0.1 g"],
+                   ["initial water level", "200 ml", "1 ml"],
+                   ["final water level", "258 ml", "1 ml"],
+                   ["volume", "58 ml", "2 ml, about 3%"],
+                   ["density", "2.69 g/cm³", "about 3%"]],
+            notice=["The volume came from a difference of two readings, so the errors add.",
+                    "A 2 ml uncertainty in a 58 ml volume is about 3%.",
+                    "The density inherits that uncertainty, so 2.7 g/cm³ is the honest report.",
+                    "The value is close to that of aluminium, which makes the result plausible."],
+            obs="A volume found by displacement carries the uncertainty of two readings, and the "
+                "density inherits it.",
+            concl="Density is mass per unit volume, and because volume is a product of "
+                  "measurements, a small percentage error in each measurement multiplies into the "
+                  "volume and then into the density.")),
+    ],
+    practice=dict(
+        A=[("8.1.1", "Find the surface area of a cube of side 4 cm.",
+            "96 cm²", "6 × 4² = 96.", "F"),
+           ("8.1.2", "Find the volume of a cuboid 5 cm by 4 cm by 3 cm.",
+            "60 cm³", "5 × 4 × 3.", "F"),
+           ("8.1.3", "Find the volume of a cylinder of radius 3 cm and height 7 cm.",
+            "63π cm³", "π × 9 × 7.", "F"),
+           ("8.1.4", "Find the curved surface area of a cylinder of radius 2 cm and height 9 cm.",
+            "36π cm²", "2π × 2 × 9.", "F"),
+           ("8.1.5", "Find the volume of a cone of radius 3 cm and height 4 cm.",
+            "12π cm³", "⅓ × π × 9 × 4.", "F"),
+           ("8.1.6", "Find the surface area of a sphere of radius 6 cm.",
+            "144π cm²", "4πr².", "F"),
+           ("8.1.7", "Find the volume of a sphere of radius 3 cm.",
+            "36π cm³", "⁴⁄₃π × 27.", "F"),
+           ("8.1.8", "A square-based pyramid has base side 6 cm and height 4 cm. Find its volume.",
+            "48 cm³", "⅓ × 36 × 4.", "F"),
+           ("8.1.9", "Find the volume of a triangular prism with cross-section area 12 cm² and "
+                     "length 8 cm.",
+            "96 cm³", "Area × length.", "F"),
+           ("8.1.10", "A block of mass 240 g has volume 30 cm³. Find its density.",
+            "8 g/cm³", "240 ÷ 30.", "F"),
+           ("8.1.11", "Find the curved surface area of a cone of radius 5 cm and slant height "
+                      "13 cm.",
+            "65π cm²", "πrl.", "F"),
+           ("8.1.12", "Explain the difference between volume and surface area.",
+            "Volume measures the space inside and surface area the material of the boundary.",
+            "They have different units and answer different questions.", "R")],
+        B=[("8.2.1", "Investigate: for a fixed volume, does a tall narrow cylinder or a short wide "
+                     "one use less material?",
+            "The short wide one — surface area grows with the radius more slowly than with the "
+            "height for a fixed volume.",
+            "For fixed V, A = 2V/h + 2π(V/(πh))^(2/3) falls as h rises then rises, with a minimum "
+            "when h = 2r.", "R"),
+           ("8.2.2", "Test the claim: doubling the radius of a cylinder doubles its volume.",
+            "False — the volume depends on r², so it quadruples.",
+            "Volume is proportional to the square of the radius.", "R"),
+           ("8.2.3", "Investigate whether a cube of side 2 cm has twice the surface area of a cube "
+                     "of side 1 cm.",
+            "No — it has four times the surface area and eight times the volume.",
+            "Area scales as k² and volume as k³.", "R"),
+           ("8.2.4", "Generalise: what happens to the volume of a sphere when the radius doubles?",
+            "It becomes eight times as large", "Volume is proportional to r³.", "R"),
+           ("8.2.5", "Investigate the ratio of the volume of a cone to the cylinder with the same "
+                     "base and height.",
+            "1 : 3", "The cone is one third of the cylinder.", "R"),
+           ("8.2.6", "Test the claim: every solid has a net that can be drawn without overlap.",
+            "False for some solids, and the net of a sphere cannot be drawn without distortion.",
+            "A sphere's surface cannot be flattened without stretching.", "R"),
+           ("8.2.7", "Investigate how the surface area of a cuboid of fixed volume changes with "
+                     "its shape.",
+            "It is smallest when the cuboid is closest to a cube.",
+            "For a fixed volume, area is minimised when the dimensions are equal.", "R"),
+           ("8.2.8", "Generalise a rule connecting the percentage error in a length to the "
+                     "percentage error in a volume.",
+            "The volume error is about three times the length error.",
+            "Volume is a product of three lengths.", "R"),
+           ("8.2.9", "Investigate whether two objects of the same volume must have the same "
+                     "surface area.",
+            "No — a sphere has the smallest surface area for a given volume.",
+            "Shape affects area even when volume is fixed.", "R"),
+           ("8.2.10", "Test the claim: the slant height of a cone is always longer than its "
+                      "perpendicular height.",
+            "True — the slant height is the hypotenuse of the right-angled triangle inside the "
+            "cone.",
+            "The hypotenuse is the longest side.", "R"),
+           ("8.2.11", "Investigate the pattern of volumes of cubes of side 1, 2, 3, 4.",
+            "1, 8, 27, 64 — the cubes of the side length",
+            "Volume scales as the cube of the linear dimension.", "F")],
+        C=[("8.3.1", "Explain in words what a net of a solid is and what it preserves.",
+            "A flat arrangement of the faces that folds into the solid, preserving the shapes and "
+            "areas of the faces.",
+            "The net turns a surface-area question into a flat one.", "R"),
+           ("8.3.2", "Explain why the curved surface area of a cylinder is 2πrh.",
+            "Because the curved surface unrolls into a rectangle of length 2πr and height h.",
+            "The circumference becomes the length of the rectangle.", "R"),
+           ("8.3.3", "Describe the difference between a slant height and a perpendicular height.",
+            "The slant height is measured along a face; the perpendicular height is measured at "
+            "right angles to the base.",
+            "Only the slant height appears in a face-area formula.", "R"),
+           ("8.3.4", "Explain why the volume of a cone is one third of the matching cylinder.",
+            "Because three cone fills exactly fill the cylinder of the same base and height.",
+            "The relationship is geometric and holds for any size.", "R"),
+           ("8.3.5", "Describe how you would find the volume of a composite solid.",
+            "Split it into parts whose volumes can be computed, then add or subtract.",
+            "The split must be stated so it can be checked.", "R"),
+           ("8.3.6", "Explain why density units are mass per unit volume.",
+            "Because density is defined as mass divided by volume.",
+            "The units follow from the definition.", "R"),
+           ("8.3.7", "Describe two representations of a cylinder and what each is best for.",
+            "A net for surface area and a cross-section for volume.",
+            "Each representation answers a different question.", "R"),
+           ("8.3.8", "Explain why a volume cannot be reported to more precision than its "
+                     "measurements support.",
+            "Because the volume is a product of the measurements and inherits their uncertainty.",
+            "Extra digits would be invented.", "R"),
+           ("8.3.9", "Describe how you would find the volume of an irregular object.",
+            "By displacement of water in a measuring cylinder.",
+            "The displaced volume equals the object's volume.", "R"),
+           ("8.3.10", "Explain why the surface area of a sphere is 4πr² rather than 2πr².",
+            "Because the sphere's curved surface is equivalent to four circles of radius r.",
+            "The formula can be checked against the containing cylinder.", "R"),
+           ("8.3.11", "Describe the units you would use for the density of a liquid and why.",
+            "g/cm³ for small quantities and kg/m³ for large ones.",
+            "The units must match the mass and volume measurements.", "R"),
+           ("8.3.12", "Explain how a design change that reduces surface area reduces material "
+                      "use.",
+            "Material is proportional to surface area for a thin-walled container.",
+            "The surface area is the amount of material in the wall.", "R")],
+        D=[("8.4.1", "A cylindrical tank of radius 0.5 m and height 1.2 m is full of water. Find "
+                     "the mass of the water, given a density of 1000 kg/m³.",
+            "942 kg", "V = π × 0.25 × 1.2 = 0.942 m³, so mass = 942 kg.", "A"),
+           ("8.4.2", "A rectangular box 20 cm by 15 cm by 10 cm is packed with cubes of side 5 cm. "
+                     "How many fit?",
+            "24 cubes", "4 × 3 × 2.", "A"),
+           ("8.4.3", "A cone-shaped cup has radius 3 cm and height 8 cm. How many cups fill a "
+                     "1-litre jug?",
+            "about 13 cups", "Cup volume = 24π ≈ 75.4 cm³, and 1000 ÷ 75.4 ≈ 13.3.", "A"),
+           ("8.4.4", "A spherical ball of radius 4 cm is dropped into a cylinder of radius 5 cm "
+                     "containing water. By how much does the water level rise?",
+            "about 3.4 cm", "Sphere volume = 256π/3 ≈ 268 cm³, and the cylinder's base area is 25π ≈ 78.5 cm², so the rise is 268 ÷ 78.5 ≈ 3.4 cm.", "A"),
+           ("8.4.5", "A storage container is a cuboid 1.2 m by 0.8 m by 0.7 m. Find how many "
+                     "30 cm cubes fit, allowing for packing gaps.",
+            "16 cubes", "Along the sides only 4, 2 and 2 cubes of 30 cm fit, so 4 × 2 × 2 = 16, even though the volume ratio is 24.9.", "A"),
+           ("8.4.6", "Explain whether a spherical tank or a cylindrical tank of the same capacity "
+                     "uses less material.",
+            "The sphere, because it has the smallest surface area for a given volume.",
+            "Shape affects area even when volume is fixed.", "R"),
+           ("8.4.7", "A metal pipe is a cylinder of outer radius 5 cm and inner radius 4 cm, "
+                     "length 2 m. Find the volume of metal.",
+            "about 5655 cm³", "π(5² − 4²) × 200 = 1800π ≈ 5655 cm³.", "A"),
+           ("8.4.8", "A grain silo is a cylinder of radius 3 m and height 8 m with a conical top "
+                     "of height 2 m. Find the total volume.",
+            "78π m³, or about 245.0 m³", "Cylinder π × 3² × 8 = 72π and cone ⅓ × π × 3² × 2 = 6π, giving a total of 78π m³.", "A"),
+           ("8.4.9", "A block of wood measures 10.0 cm by 10.0 cm by 10.0 cm and has mass 620 g. "
+                     "Find its density and comment on its precision.",
+            "0.62 g/cm³; about three significant figures",
+            "620 ÷ 1000, and the measurements support three figures.", "A"),
+           ("8.4.10", "Explain whether a 1% error in the radius of a cylinder matters more or less "
+                      "than a 1% error in its height.",
+            "The same — both are lengths, and both scale the volume linearly.",
+            "Volume is proportional to each length separately.", "R"),
+           ("8.4.11", "A conical tent has base radius 2.5 m and height 3 m. Find the canvas needed "
+                      "for the curved surface, allowing 10% extra for seams.",
+            "about 33.8 m²", "l = √(2.5² + 3²) ≈ 3.91 m, curved area = π × 2.5 × 3.91 ≈ 30.7 m², and 10% extra gives 30.7 × 1.1 ≈ 33.8 m².", "A"),
+           ("8.4.12", "Explain why a designer choosing between containers of equal capacity should "
+                      "compare surface areas.",
+            "Because material use is proportional to surface area for a thin wall.",
+            "Equal capacity fixes the volume, so the area decides the material.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The two containers",
+             text="A drinks company must hold 330 ml in either a cylinder of radius 3.3 cm or a "
+                  "cuboid of square cross-section 4.5 cm. Find the height each container needs, "
+                  "the surface area of each, and recommend one with a justification.",
+             note="Criteria A and D · state which container uses less material and comment on the "
+                  "limits of the comparison."),
+        dict(title="A2 · The irregular block",
+             text="An irregular metal block has a mass of 512 g. It is lowered into a measuring "
+                  "cylinder and the water level rises from 180 ml to 240 ml. Find the density of "
+                  "the metal, state the precision of your answer, and identify a likely material.",
+             note="Criteria A and C · show the displacement calculation and justify the "
+                  "precision."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of form and the related concepts of measurement and models "
+        "appear in your work?",
+        "How is the global context of globalisation and sustainability, and its exploration of "
+        "human impact on the environment, visible in the investigations and examples you "
+        "completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a surface-area comparison when choosing a container, and what "
+        "would you still like to ask?",
+    ],
+    review=dict(
+        ideas=["A prism has a constant cross-section and volume = cross-section area × length.",
+               "A cylinder is a prism with a circular cross-section: V = πr²h, curved area = 2πrh.",
+               "A pyramid or cone has volume ⅓ × base area × perpendicular height.",
+               "The curved surface area of a cone is πrl, where l is the slant height.",
+               "A sphere has volume ⁴⁄₃πr³ and surface area 4πr².",
+               "A composite solid is split into parts whose volumes are added or subtracted.",
+               "Density = mass ÷ volume.",
+               "A percentage error in a length multiplies by three in a volume."],
+        vocab=["face", "edge", "vertex", "net", "cross-section", "prism", "cylinder", "pyramid",
+               "cone", "sphere", "slant height", "perpendicular height", "composite solid",
+               "density", "displacement"],
+        mixed=[("8.R1", "Find the volume of a cylinder of radius 5 cm and height 12 cm."),
+               ("8.R2", "Find the surface area of a cube of side 7 cm."),
+               ("8.R3", "Find the volume of a cone of radius 6 cm and height 9 cm."),
+               ("8.R4", "A mass of 350 g has volume 50 cm³. Find the density."),
+               ("8.R5", "Find the curved surface area of a cone of radius 4 cm and slant height "
+                        "10 cm."),
+               ("8.R6", "Explain why the slant height is used in the curved-area formula for a "
+                        "cone.")],
+    ),
+    projects=dict(
+        service=[("Community need", "Packaging waste in the community is high because containers "
+                                    "are chosen without regard to the material they use."),
+                 ("Mathematical connection", "Surface area, volume and density of materials."),
+                 ("Proposed action", "Compare the material used by two containers of equal "
+                                     "capacity and publish the result with a recommendation."),
+                 ("Expected impact", "A measurable reduction in packaging material for one "
+                                     "product."),
+                 ("Student reflection", "Record the comparison, the recommendation and what was "
+                                        "actually adopted.")],
+        community=[("Project idea", "A packaging audit for the school canteen."),
+                   ("Need", "The canteen does not know how much packaging it uses."),
+                   ("Research question", "Which single change would reduce the packaging material "
+                                         "the most?"),
+                   ("Mathematics", "Surface area, volume and density."),
+                   ("Action or outcome", "A ranked list of packaging changes with estimated "
+                                         "material savings."),
+                   ("Beneficiaries", "The canteen and everyone who uses it."),
+                   ("Evidence", "The measurements, the comparisons and the ranked list.")],
+        personal=[("Personal interest", "Cooking, recycling or model making."),
+                  ("Learning goal", "To measure a real container and decide whether its design "
+                                    "wastes material."),
+                  ("Product or outcome", "A measured comparison of two containers at home."),
+                  ("Mathematics", "Surface area, volume and density."),
+                  ("Process", "Measure, compute the surface area and volume, then compare."),
+                  ("Evidence", "The measurements, the comparison and the conclusion.")],
+    ),
+),
+])
+
+CHAPTERS.extend([
+dict(
+    num=9, title="Bivariate data, correlation and causation",
+    key="Relationships", related=["Models", "Justification"],
+    context="Fairness and development",
+    exploration="Inequality, difference and inclusion",
+    inquiry=("The relationship between two variables can be modelled by a line of best fit, and "
+             "the justification required to treat that relationship as causal rather than merely "
+             "correlated is what separates a mathematical claim from an unsupported one."),
+    atl=("Research",
+         "In order for a student to evaluate a media claim based on data, students must identify "
+         "the source and the sample, check whether the measure supports the conclusion, and "
+         "present the finding with its uncertainty stated."),
+    standfirst="Bivariate data records two measurements of the same subject. A scatter plot shows "
+               "the association, a line of best fit models it, and the gap between association "
+               "and cause is where most claims fail.",
+    engage="A newspaper reports that children who eat breakfast get better exam grades. The data "
+           "are real and the correlation is real. Does the headline follow from the data?",
+    questions=[("Factual", "What is bivariate data, what does a scatter plot show, and how is a "
+                           "line of best fit drawn?"),
+               ("Conceptual", "Why does a strong correlation not establish causation, and what "
+                              "would be needed to justify a causal claim?"),
+               ("Debatable", "Should a policy decision be based on a correlation that has no "
+                             "established mechanism?")],
+    application_lede="These tasks use scatter plots, correlation, lines of best fit, "
+                     "interpolation and extrapolation. State whether your prediction is "
+                     "interpolation or extrapolation, and what it assumes.",
+    projects_lede="Claims about people are made from data every day. Use correlation carefully, "
+                  "and require a mechanism before accepting a cause.",
+    sections=[
+        dict(id="9.1", title="Two variables at once",
+             inquiry_q=("How can two measurements of the same subject be recorded and displayed "
+                        "together?"), teach=[
+            "Bivariate data records two measurements of the same subject: height and weight, study time and score, age and income. Each subject contributes one pair of values.",
+            "A scatter plot places one variable on each axis and plots one point per subject. It is the only display that keeps the pairing intact.",
+            "A scatter plot shows three things at once: the direction of the association, its strength, and any points that do not follow the pattern.",
+            "A point that lies far from the pattern is an outlier. It should be investigated, not deleted, because it may be the most informative point in the data set.",
+        ], examples=[
+            dict(q="Five students record study hours and test scores: (2, 55), (4, 62), (6, 70), "
+                   "(8, 78), (10, 85). Draw a scatter plot and describe the association.",
+                 vis=F("scatter", [(2, 55), (4, 62), (6, 70), (8, 78), (10, 85)],
+                       "hours", "score", 0, 12, 40, 100,
+                       title="study hours against test score"),
+                 reasoning="A scatter plot of paired values shows the direction and strength of the "
+                          "association in one picture.",
+                 steps=["Label the x-axis with study hours and the y-axis with score.",
+                        "Plot one point per student.",
+                        "The points rise from left to right, so the association is positive.",
+                        "They lie close to a straight line, so the association is strong."],
+                 ans="a positive, strong, approximately linear association",
+                 interp="The plot shows the pattern, but it does not explain it."),
+            dict(q="A data set of height and shoe size contains one point far above the pattern. "
+                   "What should be done with it?",
+                 vis=F("scatter", [(160, 38), (165, 39), (170, 41), (175, 42), (180, 43),
+                                   (150, 36), (185, 46)],
+                       "height (cm)", "shoe size", 140, 200, 34, 50,
+                       title="one point above the pattern"),
+                 reasoning="An outlier may be a recording error or a genuine extreme case, and both "
+                          "are informative.",
+                 steps=["Check the point against the original record.",
+                        "If it is a recording error, correct or remove it and say so.",
+                        "If it is genuine, keep it and note its effect on the line of best fit.",
+                        "Never delete a point simply because it is inconvenient."],
+                 ans="investigate the point, then either correct it or keep it and report its "
+                     "effect",
+                 interp="Silently removing an outlier changes the conclusion without saying so."),
+        ], inv=dict(
+            task="Collect paired data from your class on two variables of your choice (for example "
+                 "height and hand span, or practice minutes and a game score). Draw a scatter "
+                 "plot, describe the association, and identify any point that does not follow the "
+                 "pattern.",
+            fig=F("scatter", [(150, 17), (155, 18), (158, 18.5), (162, 19), (165, 20),
+                              (168, 20.5), (172, 21), (175, 22), (178, 22.5), (145, 16)],
+                  "height (cm)", "hand span (cm)", 140, 185, 15, 24,
+                  title="height against hand span"),
+            table=[["student", "height (cm)", "hand span (cm)", "comment"],
+                   ["1", "150", "17", "follows the pattern"],
+                   ["2", "155", "18", "follows the pattern"],
+                   ["3", "162", "19", "follows the pattern"],
+                   ["4", "168", "20.5", "follows the pattern"],
+                   ["5", "178", "22.5", "follows the pattern"],
+                   ["6", "145", "16", "the smallest of both measures"]],
+            notice=["The points rise from left to right, so the association is positive.",
+                    "The points lie close to a straight line, so the association is strong.",
+                    "No point was far enough from the pattern to call an outlier.",
+                    "The plot keeps the pairing, so each point is one person."],
+            obs="A scatter plot keeps the pairing of the two measurements and shows the direction, "
+                "strength and any exceptions of the association.",
+            concl="Bivariate data is displayed as a scatter plot with one point per subject, and "
+                  "that plot shows the direction and strength of the association and any point "
+                  "that departs from it.")),
+        dict(id="9.2", title="Measuring linear association",
+             inquiry_q=("How can the strength and direction of an association be measured?") 
+                    , teach=[
+            "The direction of an association is positive when both variables rise together and negative when one rises as the other falls.",
+            "The strength is measured by how closely the points follow a straight line. The correlation coefficient r takes values from −1 to 1, with the sign giving the direction and the size giving the strength.",
+            "A value of r near 0 means no linear association, though a strong curved association is still possible. The coefficient measures linear association only.",
+            "Correlation is not causation. Two variables can be strongly correlated because both depend on a third variable, or by coincidence.",
+        ], examples=[
+            dict(q="Four data sets give r = 0.95, r = −0.82, r = 0.12 and r = −0.05. Describe each "
+                   "association.",
+                 vis=F("table", [["r", "direction", "strength", "meaning"],
+                                 ["0.95", "positive", "very strong", "points close to a rising line"],
+                                 ["−0.82", "negative", "strong", "points close to a falling line"],
+                                 ["0.12", "positive", "very weak", "almost no linear pattern"],
+                                 ["−0.05", "negative", "essentially none", "no linear pattern"]],
+                       caption="The sign gives the direction and the size the strength."),
+                 reasoning="The sign of r gives the direction and its absolute value gives the "
+                          "strength of the linear association.",
+                 steps=["r = 0.95: positive and very strong.",
+                        "r = −0.82: negative and strong.",
+                        "r = 0.12: positive but very weak.",
+                        "r = −0.05: essentially no linear association."],
+                 ans="0.95 very strong positive; −0.82 strong negative; 0.12 very weak positive; "
+                     "−0.05 none",
+                 interp="A weak correlation is not a small correlation with the sign removed; it "
+                        "is a different kind of result."),
+            dict(q="A study finds r = 0.88 between ice-cream sales and drowning deaths. What can "
+                   "and cannot be concluded?",
+                 vis=F("scatter", [(10, 2), (15, 4), (20, 6), (25, 9), (30, 12), (35, 16)],
+                       "ice-cream sales", "drownings", 0, 40, 0, 20,
+                       title="a strong correlation with no causal link"),
+                 reasoning="A high correlation measures association only; causation requires a "
+                          "mechanism or a controlled study.",
+                 steps=["The correlation is strong and positive.",
+                        "Both variables rise in summer, so a third variable explains both.",
+                        "There is no mechanism by which ice-cream sales cause drowning.",
+                        "So the correlation cannot support a causal claim."],
+                 ans="a strong positive association exists, but no causal conclusion is justified",
+                 interp="The third variable — warm weather — is the explanation for both."),
+        ], inv=dict(
+            task="Compute the correlation coefficient for a small data set by hand: find the mean "
+                 "of each variable, compute the products of the deviations, and compare with the "
+                 "product of the standard deviations. Then check your value against a calculator.",
+            table=[["x", "y", "x − x̄", "y − ȳ", "product"],
+                   ["1", "2", "−2", "−2.4", "4.8"],
+                   ["2", "3", "−1", "−1.4", "1.4"],
+                   ["3", "6", "0", "1.6", "0"],
+                   ["4", "7", "1", "2.6", "2.6"],
+                   ["5", "8", "2", "3.6", "7.2"]],
+            notice=["The products of the deviations were all positive, which indicates a positive "
+                    "correlation.",
+                    "Their sum was 16, and dividing by the product of the standard deviations gave "
+                    "about 0.99.",
+                    "A calculator gave the same value to two decimal places.",
+                    "The sign of the sum of the products is the sign of the correlation."],
+            obs="The correlation coefficient is built from the products of the deviations, so its "
+                "sign records the direction and its size records the strength.",
+            concl="The correlation coefficient r lies between −1 and 1; its sign gives the "
+                  "direction of the linear association and its magnitude gives the strength, and "
+                  "it says nothing about cause.")),
+        dict(id="9.3", title="The line of best fit",
+             inquiry_q=("How can a line be drawn through a scatter so that it represents the whole "
+                        "data set?"), teach=[
+            "A line of best fit is a straight line drawn through the middle of a scatter so that the points are balanced on either side and the gaps are as small as possible.",
+            "The residuals are the vertical gaps between the points and the line. A good fit has residuals that are small, both positive and negative, and show no pattern.",
+            "The line is drawn by eye through the mean point, then adjusted so that the residuals balance. The exact position depends on the method, but any reasonable line gives similar predictions.",
+            "The line is a model, not the data. It summarises a trend, and every point that departs from it is information the model does not carry — which is why such models are checked against their residuals before they are used.",
+        ], examples=[
+            dict(q="Draw a line of best fit for the data (1, 3), (2, 5), (3, 6), (4, 8), (5, 9) and "
+                   "find its equation.",
+                 vis=F("scatter", [(1, 3), (2, 5), (3, 6), (4, 8), (5, 9)],
+                       "x", "y", 0, 6, 0, 12, line=((0, 1.6), (6, 10.4)),
+                       title="a line of best fit by eye"),
+                 reasoning="A line through the mean point with a gradient estimated from two "
+                          "well-placed points on the line gives a reasonable fit.",
+                 steps=["The mean point is (3, 6).",
+                        "Draw a line through (3, 6) that balances the points.",
+                        "Two points on the line are (0, 1.6) and (6, 10.4).",
+                        "Gradient = (10.4 − 1.6)/6 = 1.47, so y = 1.47x + 1.6."],
+                 ans="y ≈ 1.47x + 1.6",
+                 interp="Another student's line will differ slightly, and both are acceptable if "
+                        "the residuals balance."),
+            dict(q="For the line y = 1.5x + 1.5 and the point (4, 8), find the residual.",
+                 vis=F("scatter", [(4, 8)], "x", "y", 0, 6, 0, 12,
+                       line=((0, 1.5), (6, 10.5)), title="the residual at x = 4"),
+                 reasoning="A residual is the vertical distance from the point to the line.",
+                 steps=["Predicted y at x = 4 is 1.5 × 4 + 1.5 = 7.5.",
+                        "Actual y is 8.",
+                        "Residual = 8 − 7.5 = 0.5."],
+                 ans="0.5",
+                 interp="A positive residual means the point lies above the line."),
+        ], inv=dict(
+            task="Draw a line of best fit for the data (1, 4), (2, 6), (3, 5), (4, 9), (5, 8), "
+                 "(6, 11). Compute the residuals for every point, and adjust your line so that "
+                 "they balance.",
+            fig=F("scatter", [(1, 4), (2, 6), (3, 5), (4, 9), (5, 8), (6, 11)],
+                  "x", "y", 0, 7, 0, 13, line=((0, 2.8), (7, 10.6)),
+                  title="a line with balanced residuals"),
+            table=[["x", "y", "predicted", "residual"],
+                   ["1", "4", "3.9", "0.1"],
+                   ["2", "6", "5.1", "0.9"],
+                   ["3", "5", "6.3", "−1.3"],
+                   ["4", "9", "7.5", "1.5"],
+                   ["5", "8", "8.7", "−0.7"],
+                   ["6", "11", "9.9", "1.1"]],
+            notice=["The residuals were both positive and negative.",
+                    "Their sum was about 1.6, close to zero, so the line was reasonably balanced.",
+                    "The largest residual was 1.5, at x = 4.",
+                    "Moving the line up would make the positive residuals larger and the negative "
+                    "ones smaller."],
+            obs="A line of best fit is positioned so that the residuals are small and their sum is "
+                "close to zero.",
+            concl="A line of best fit passes through the middle of a scatter so that the residuals "
+                  "are small, balanced and patternless, and it is a model of the trend rather than "
+                  "a record of the data.")),
+        dict(id="9.4", title="Correlation, cause and consequence",
+             inquiry_q=("When does a correlation justify a causal claim?"), teach=[
+            "A causal claim says that changing one variable produces a change in the other. A correlation only says that the two variables move together.",
+            "Three explanations compete whenever a correlation is found: A causes B, B causes A, or a third variable C causes both. A correlation alone cannot distinguish them.",
+            "A mechanism is a plausible account of how the cause produces the effect. Without one, a causal claim is a hypothesis rather than a conclusion.",
+            "A controlled study, in which the suspected cause is varied while other factors are held constant, is the standard way to test a causal claim. Correlation is not a substitute for it.",
+        ], examples=[
+            dict(q="Data show a strong correlation between the number of firefighters at a fire "
+                   "and the damage caused. Should the number of firefighters be reduced to limit "
+                   "damage?",
+                 vis=F("table", [["explanation", "assessment"],
+                                 ["firefighters cause damage", "no mechanism"],
+                                 ["damage causes more firefighters", "plausible — big fires need more "
+                                  "crew"],
+                                 ["a third variable causes both", "yes — the size of the fire"]],
+                       caption="Three explanations compete whenever a correlation is found."),
+                 reasoning="The third explanation is the correct one, and acting on the correlation "
+                          "would be a mistake.",
+                 steps=["The correlation is strong and positive.",
+                        "Firefighters do not cause damage; there is no mechanism.",
+                        "The size of the fire causes both the number of firefighters and the "
+                        "damage.",
+                        "So reducing the crew would not reduce the damage."],
+                 ans="no — the size of the fire is the common cause",
+                 interp="This is a case where acting on a correlation would make things worse."),
+            dict(q="A trial gives one group a new study method and another group the old method, "
+                   "with students assigned at random. The first group scores higher. What can be "
+                   "concluded?",
+                 vis=F("table", [["feature", "present?", "what it supports"],
+                                 ["random assignment", "yes", "the groups are comparable"],
+                                 ["a varied factor", "yes", "the study method was changed"],
+                                 ["held-constant factors", "yes", "the trial controls them"],
+                                 ["a mechanism", "plausible", "the method changes practice time"]],
+                       caption="A controlled study supports a causal claim."),
+                 reasoning="Random assignment makes the groups comparable, so a difference in "
+                          "outcome can be attributed to the varied factor.",
+                 steps=["The groups were assigned at random, so they are comparable.",
+                        "Only the study method differed.",
+                        "The outcome differed, so the method is a plausible cause.",
+                        "The conclusion is a supported causal claim, not merely a correlation."],
+                 ans="the study method is a supported cause of the higher scores",
+                 interp="The support comes from the design of the study, not from the size of the "
+                        "correlation."),
+        ], inv=dict(
+            task="Find three real claims based on correlation: one where a mechanism is plausible, "
+                 "one where a common cause is likely, and one where the direction may be reversed. "
+                 "For each, state which explanation the data can and cannot distinguish.",
+            table=[["claim", "correlation", "competing explanations", "what the data can support"],
+                   ["exercise and mood", "positive", "exercise improves mood; mood drives exercise; "
+                    "a third factor", "an association only"],
+                   ["shoe size and reading ability in children", "positive", "age causes both", "an "
+                    "association, explained by age"],
+                   ["smoking and lung disease", "positive", "smoking causes disease; disease changes "
+                    "behaviour", "a causal claim, supported by controlled studies"]],
+            notice=["Two of the three claims had an obvious common cause.",
+                    "Only the third had a mechanism and controlled-study support.",
+                    "In every case the correlation itself was the same kind of evidence.",
+                    "The difference was in the justification, not in the number."],
+            obs="A correlation can be explained by A causing B, B causing A, or a common cause, and "
+                "the data alone cannot distinguish them.",
+            concl="A causal claim requires a mechanism and evidence from a controlled study; a "
+                  "correlation, however strong, supports only an association.")),
+        dict(id="9.5", title="Reading claims critically",
+             inquiry_q=("How can a statistical claim be checked before it is believed?"), teach=[
+            "A statistical claim rests on four things: the source, the sample, the measure and the conclusion. Each can be checked independently.",
+            "The sample must represent the population the claim is about. A sample that is self-selected, small, or drawn from one group cannot support a claim about everyone.",
+            "The measure must be the one the conclusion needs. An average hides the spread, and a percentage without a base rate is easy to misread.",
+            "A claim that cannot be checked is not necessarily false, but it is not evidence either. Reporting the uncertainty is part of making the claim honestly.",
+        ], examples=[
+            dict(q="A website reports that 90% of users recommend a product, based on 200 replies "
+                   "out of 50 000 customers. What is wrong with the claim?",
+                 vis=F("table", [["check", "finding"],
+                                 ["source", "the seller's own website"],
+                                 ["sample", "200 of 50 000, self-selected"],
+                                 ["measure", "a percentage without the base rate"],
+                                 ["conclusion", "not supported by the sample"]],
+                       caption="Four checks, four problems."),
+                 reasoning="A self-selected sample from a biased source cannot support a claim "
+                          "about the whole population.",
+                 steps=["The respondents chose to reply, so they are not representative.",
+                        "200 of 50 000 is 0.4% of the customers.",
+                        "The source has an interest in the result.",
+                        "So the claim is not supported by the evidence given."],
+                 ans="the sample is self-selected, small and drawn from a biased source",
+                 interp="The percentage is arithmetically correct and still does not support the "
+                        "conclusion."),
+            dict(q="A hospital reports a higher death rate than a neighbouring hospital. What "
+                   "should be checked before concluding that its care is worse?",
+                 vis=F("table", [["check", "question to ask"],
+                                 ["case mix", "are the patients equally ill?"],
+                                 ["base rate", "how many patients in each hospital?"],
+                                 ["measure", "is the same definition of death used?"],
+                                 ["time period", "do the two periods match?"]],
+                       caption="Comparing rates requires comparable populations."),
+                 reasoning="A rate comparison is only meaningful when the populations and the "
+                          "definitions are comparable.",
+                 steps=["Check the case mix: a hospital treating more serious cases will have a "
+                        "higher rate.",
+                        "Check the base rate: small hospitals have unstable rates.",
+                        "Check the definitions and the time period.",
+                        "Only then is a comparison of the two rates meaningful."],
+                 ans="case mix, base rate, definitions and time period must all be comparable",
+                 interp="The same arithmetic on different populations gives different answers."),
+        ], inv=dict(
+            task="Take three claims from news or advertising. For each, complete the four checks — "
+                 "source, sample, measure, conclusion — and decide what the data actually support.",
+            table=[["claim", "source", "sample", "measure", "what the data support"],
+                   ["'9 out of 10 dentists recommend'", "a manufacturer", "not stated", "a "
+                    "percentage without a base rate", "very little without the sample details"],
+                   ["'test scores rose 5%'", "a school", "all students", "a percentage of an "
+                    "unknown base", "an increase, if the base is stated"],
+                   ["'most people support the change'", "a poll", "1 000 respondents", "a "
+                    "percentage with a margin", "an estimate with a stated uncertainty"]],
+            notice=["Only the third claim stated its sample and its uncertainty.",
+                    "The first claim could not be checked at all.",
+                    "The second claim needed the base rate before it meant anything.",
+                    "The four checks were enough to rank the three claims."],
+            obs="A statistical claim can be checked by examining its source, its sample, its "
+                "measure and its conclusion separately.",
+            concl="A claim is only as strong as the sample that supports it and the measure that "
+                  "expresses it, and the four checks of source, sample, measure and conclusion "
+                  "reveal what the data actually support.")),
+    ],
+    practice=dict(
+        A=[("9.1.1", "State what a scatter plot displays.",
+            "One point per subject, showing the pairing of two measurements",
+            "A scatter plot keeps the pairing intact.", "R"),
+           ("9.1.2", "Describe the association when r = −0.9.",
+            "Strong and negative", "The sign gives the direction and the magnitude the strength.", "F"),
+           ("9.1.3", "Find the residual when the predicted value is 12 and the actual value is 15.",
+            "3", "Residual = actual − predicted.", "F"),
+           ("9.1.4", "State the range of possible values of the correlation coefficient.",
+            "−1 to 1", "The coefficient is bounded by −1 and 1.", "F"),
+           ("9.1.5", "A line of best fit is y = 2x + 3. Predict y when x = 7.",
+            "17", "Substitute x = 7.", "F"),
+           ("9.1.6", "Describe the association when the points lie close to a rising line.",
+            "Strong and positive", "Closeness to a line gives the strength and the direction of "
+                                   "the slope gives the sign.", "F"),
+           ("9.1.7", "A line of best fit passes through (3, 6) and (7, 14). Find its gradient.",
+            "2", "(14 − 6)/(7 − 3) = 2.", "F"),
+           ("9.1.8", "State the difference between interpolation and extrapolation on a scatter "
+                     "plot.",
+            "Interpolation predicts inside the range of the data; extrapolation predicts outside "
+            "it.",
+            "Only interpolation is supported by the data.", "R"),
+           ("9.1.9", "A data set has mean x = 4 and mean y = 10. Where does the line of best fit "
+                     "pass?",
+            "Through the point (4, 10)",
+            "A line of best fit passes through the mean point.", "F"),
+           ("9.1.10", "Find the predicted value from y = 0.5x + 4 when x = 12.",
+            "10", "0.5 × 12 + 4.", "F"),
+           ("9.1.11", "Describe what an outlier is in a scatter plot.",
+            "A point that lies far from the pattern of the other points",
+            "An outlier departs from the general trend.", "R"),
+           ("9.1.12", "State the units of a correlation coefficient.",
+            "It has no units", "The coefficient is a dimensionless number.", "R")],
+        B=[("9.2.1", "Investigate: can a strong correlation exist between two variables with no "
+                     "causal link? Give an example.",
+            "Yes — ice-cream sales and drowning deaths, both driven by warm weather.",
+            "A common cause produces correlation without causation.", "R"),
+           ("9.2.2", "Test the claim: a correlation of 0.1 means there is no relationship at all.",
+            "False — there may be a strong curved relationship that the coefficient does not "
+            "measure.",
+            "The coefficient measures linear association only.", "R"),
+           ("9.2.3", "Investigate whether reversing the two axes of a scatter plot changes the "
+                     "correlation coefficient.",
+            "No — the coefficient is the same in both directions.",
+            "Correlation is symmetric in the two variables.", "R"),
+           ("9.2.4", "Generalise: what does the sum of the residuals of a line of best fit equal, "
+                     "approximately?",
+            "Zero", "A line of best fit balances the residuals.", "R"),
+           ("9.2.5", "Investigate whether an outlier always changes the line of best fit a great "
+                     "deal.",
+            "No — an outlier far from the other points in x has a large effect, while one that "
+            "follows the trend has little.",
+            "The effect depends on the leverage of the point.", "R"),
+           ("9.2.6", "Test the claim: two variables that are correlated must have a linear "
+                     "relationship.",
+            "False — the relationship may be curved while the linear correlation is weak.",
+            "The coefficient measures linear association only.", "R"),
+           ("9.2.7", "Investigate the pattern of residuals for a good line of best fit.",
+            "They are small, both positive and negative, and show no pattern.",
+            "A pattern in the residuals means the model is wrong.", "R"),
+           ("9.2.8", "Generalise: what extra evidence is needed to turn a correlation into a "
+                     "causal claim?",
+            "A mechanism and evidence from a controlled study",
+            "Correlation alone cannot distinguish the three explanations.", "R"),
+           ("9.2.9", "Investigate whether a larger sample always gives a stronger correlation.",
+            "No — sample size affects the reliability of the estimate, not its value.",
+            "A large sample can show a weak correlation precisely.", "R"),
+           ("9.2.10", "Test the claim: a percentage claim is meaningful without its base rate.",
+            "False — 90% of 10 is very different from 90% of 10 000.",
+            "A percentage needs the size of the group it came from.", "R"),
+           ("9.2.11", "Investigate the effect of a single outlier on the mean of a small data set.",
+            "One extreme value can move the mean a long way, while the median moves much less.",
+            "The mean is not resistant to outliers.", "R")],
+        C=[("9.3.1", "Explain in words what bivariate data are.",
+            "Two measurements recorded for the same subject, forming one pair per subject.",
+            "The pairing is what distinguishes bivariate from univariate data.", "R"),
+           ("9.3.2", "Explain the difference between correlation and causation.",
+            "Correlation is an observed association; causation is a claim that changing one "
+            "variable produces the change in the other.",
+            "Only a controlled study with a mechanism supports a causal claim.", "R"),
+           ("9.3.3", "Describe what a residual measures and what a pattern of residuals means.",
+            "The vertical gap between a point and the line; a pattern means the linear model is "
+            "wrong.",
+            "Residuals diagnose the model.", "R"),
+           ("9.3.4", "Explain why a line of best fit passes through the mean point.",
+            "Because the residuals must balance, and balancing them forces the line through the "
+            "centre of the data.",
+            "The mean point is the balance point of the scatter.", "R"),
+           ("9.3.5", "Describe the three explanations that compete when a correlation is found.",
+            "A causes B, B causes A, or a third variable causes both.",
+            "A correlation alone cannot distinguish them.", "R"),
+           ("9.3.6", "Explain why extrapolation is riskier than interpolation.",
+            "Because the trend that held inside the data may not continue outside it.",
+            "The model is only supported where there are data.", "R"),
+           ("9.3.7", "Describe how you would check a claim based on a survey.",
+            "Check the source, the sample, the measure and the conclusion.",
+            "Each can be examined independently.", "R"),
+           ("9.3.8", "Explain why a self-selected sample cannot support a claim about a whole "
+                     "population.",
+            "Because the people who chose to respond differ systematically from those who did "
+            "not.",
+            "The sample is not representative.", "R"),
+           ("9.3.9", "Describe what a base rate is and why it matters.",
+            "The frequency of an event in the whole population, needed to interpret a test result "
+            "or a percentage.",
+            "Without the base rate a percentage cannot be interpreted.", "R"),
+           ("9.3.10", "Explain why a strong correlation with no mechanism is not evidence of "
+                      "cause.",
+            "Because the correlation may come from a common cause or from coincidence.",
+            "A mechanism is part of a causal claim.", "R"),
+           ("9.3.11", "Describe two representations of the same bivariate data set and what each "
+                      "shows.",
+            "A table shows the exact pairs; a scatter plot shows the pattern.",
+            "Different representations answer different questions.", "R"),
+           ("9.3.12", "Explain why reporting the uncertainty of an estimate is part of an honest "
+                      "claim.",
+            "Because the estimate is a range, and reporting a single value hides that.",
+            "Uncertainty is information about the claim.", "R")],
+        D=[("9.4.1", "A line of best fit for study hours against score is y = 4.2x + 38. Predict "
+                     "the score for 6 hours of study and comment on the prediction.",
+            "63.2", "4.2 × 6 + 38 = 63.2, and this is interpolation if 6 hours is inside the "
+                    "collected range.", "A"),
+           ("9.4.2", "A data set of 12 students gives a correlation of 0.91 between practice "
+                     "minutes and game score. A parent claims practice causes the score. Evaluate "
+                     "the claim.",
+            "The correlation supports an association, but a causal claim needs a controlled study "
+            "and a mechanism.",
+            "Correlation is not causation.", "R"),
+           ("9.4.3", "A newspaper reports that school breakfast programmes raise test scores, "
+                     "citing a correlation. What further evidence would be needed?",
+            "A controlled study in which the programme is varied and other factors held constant.",
+            "Only a controlled study supports a causal claim.", "R"),
+           ("9.4.4", "Two neighbourhoods have average incomes differing by 30%. Explain why this "
+                     "does not by itself show unfairness.",
+            "Because the averages hide the spread, the sample sizes and the definitions used.",
+            "A comparison of averages needs comparable populations.", "R"),
+           ("9.4.5", "A poll of 1 200 people finds 54% support with a margin of 3%. Explain what "
+                     "the result means.",
+            "The true support is estimated to lie between 51% and 57%.",
+            "The margin of error gives the uncertainty of the estimate.", "R"),
+           ("9.4.6", "A scatter plot of height against age for children aged 5 to 15 is strongly "
+                     "positive. A claim is made that growing taller makes children older. "
+                     "Evaluate.",
+            "The claim reverses the direction: age causes height, not the other way round.",
+            "The direction of a causal claim is part of what the data must support.", "R"),
+           ("9.4.7", "A company reports that 95% of customers are satisfied, from 40 replies out "
+                     "of 8 000. Explain why the claim is weak.",
+            "The sample is self-selected and tiny, and the source has an interest.",
+            "The claim fails the source and sample checks.", "R"),
+           ("9.4.8", "A line of best fit predicts a plant height of 42 cm at week 10, but the "
+                     "collected data stop at week 6. Explain the status of the prediction.",
+            "It is an extrapolation and assumes the growth rate continues unchanged.",
+            "Extrapolation is an assumption, not a result.", "R"),
+           ("9.4.9", "A study finds a correlation of 0.6 between screen time and sleep quality in "
+                     "1 500 teenagers. Explain what the data support and what they do not.",
+            "They support a moderate negative association across a large sample, but not a causal "
+            "claim in either direction.",
+            "Sample size supports reliability, not causation.", "R"),
+           ("9.4.10", "A hospital has a higher death rate than a neighbour. List four checks "
+                      "before concluding that its care is worse.",
+            "Case mix, base rate, definitions and time period",
+            "A rate comparison needs comparable populations.", "R"),
+           ("9.4.11", "A school claims that a new reading scheme raised scores, comparing this "
+                      "year's class with last year's. Explain what is missing.",
+            "A control group and random assignment, so that other changes are ruled out.",
+            "A before-and-after comparison cannot rule out other causes.", "R"),
+           ("9.4.12", "Explain why an average income figure can hide inequality within a "
+                      "community.",
+            "Because the average says nothing about the spread of the distribution.",
+            "Two communities with the same average can have very different distributions.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The breakfast claim",
+             text="A school finds a correlation of 0.72 between eating breakfast and test scores "
+                  "among 90 students. The head teacher proposes making breakfast compulsory. "
+                  "Analyse the claim: state what the correlation supports, identify the competing "
+                  "explanations, and describe the study that would be needed to justify the "
+                  "policy.",
+             note="Criteria A and D · justify your analysis with the three competing "
+                  "explanations."),
+        dict(title="A2 · The village water use",
+             text="Data for ten households give household size and weekly water use in litres. "
+                  "Draw a scatter plot, draw a line of best fit, find its equation, predict the "
+                  "use for a household of 7, and state whether the prediction is interpolation or "
+                  "extrapolation.",
+             note="Criteria A and C · label the axes with units and state the status of your "
+                  "prediction."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of relationships and the related concepts of models and "
+        "justification appear in your work?",
+        "How is the global context of fairness and development, and its exploration of inequality, "
+        "difference and inclusion, visible in the investigations and examples you completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a correlation for making a decision about people, and what "
+        "would you still like to ask?",
+    ],
+    review=dict(
+        ideas=["Bivariate data records two measurements of the same subject.",
+               "A scatter plot shows direction, strength and outliers.",
+               "The correlation coefficient r lies between −1 and 1 and measures linear "
+               "association only.",
+               "A line of best fit balances the residuals and passes through the mean point.",
+               "A residual is the vertical gap between a point and the line.",
+               "Interpolation is inside the range of the data; extrapolation is outside it.",
+               "A causal claim needs a mechanism and a controlled study.",
+               "A claim is checked through its source, sample, measure and conclusion."],
+        vocab=["bivariate data", "scatter plot", "association", "correlation coefficient",
+               "line of best fit", "residual", "outlier", "interpolation", "extrapolation",
+               "causation", "common cause", "base rate", "sample", "population"],
+        mixed=[("9.R1", "Describe the association when r = 0.85."),
+               ("9.R2", "Find the residual when the predicted value is 20 and the actual is 17."),
+               ("9.R3", "A line of best fit is y = 3x + 2. Predict y when x = 9."),
+               ("9.R4", "Explain why correlation does not imply causation."),
+               ("9.R5", "A line passes through (2, 5) and (6, 13). Find its equation."),
+               ("9.R6", "List the four checks for a statistical claim.")],
+    ),
+    projects=dict(
+        service=[("Community need", "Community decisions are made from claims that nobody has "
+                                    "checked."),
+                 ("Mathematical connection", "Correlation, causation and the critical reading of "
+                                             "claims."),
+                 ("Proposed action", "Check one public claim about the community and publish the "
+                                     "four checks with the verdict."),
+                 ("Expected impact", "A decision is made from a claim that has been examined "
+                                     "rather than repeated."),
+                 ("Student reflection", "Record the claim, the checks and what you found.")],
+        community=[("Project idea", "A claims audit for the school community."),
+                   ("Need", "Posters and announcements make statistical claims without sources."),
+                   ("Research question", "Which claims made in the school are supported by "
+                                         "checkable evidence?"),
+                   ("Mathematics", "Sampling, correlation, base rates and margin of error."),
+                   ("Action or outcome", "A short published audit of three claims."),
+                   ("Beneficiaries", "Everyone who reads the school's announcements."),
+                   ("Evidence", "The audit sheet with the four checks for each claim.")],
+        personal=[("Personal interest", "Sport, gaming or health."),
+                  ("Learning goal", "To check a claim about something you care about before "
+                                    "acting on it."),
+                  ("Product or outcome", "A one-page evaluation of a personal claim."),
+                  ("Mathematics", "Correlation, sampling and base rates."),
+                  ("Process", "Find the claim, apply the four checks, then state a verdict."),
+                  ("Evidence", "The evaluation and the verdict.")],
+    ),
+),
+])
+
+CHAPTERS.extend([
+dict(
+    num=10, title="Probability, sampling and evidence",
+    key="Logic", related=["Quantity", "Models"],
+    context="Identities and relationships",
+    exploration="Beliefs and values",
+    inquiry=("The logic of probability, and the models built from it, allow a quantity of "
+             "uncertainty to be assigned to an event, and that quantity is what allows a decision "
+             "to be justified rather than guessed."),
+    atl=("Communication",
+         "In order for a student to explain a probabilistic result to an audience, students must "
+         "state the model used, express the result as a fraction, a decimal and a percentage, and "
+         "say plainly what the number does and does not mean."),
+    standfirst="Probability is a number between 0 and 1 that measures uncertainty. It is built "
+               "from a model of the outcomes, and the model must be stated before the number "
+               "means anything.",
+    engage="A medical test for a rare condition is 99% accurate. A patient tests positive. How "
+           "likely is it that the patient actually has the condition? The answer surprises most "
+           "people, and the reason is a base rate.",
+    questions=[("Factual", "How is the probability of an event calculated, and what are the "
+                           "addition and multiplication rules?"),
+               ("Conceptual", "Why does the probability of a combined event depend on whether the "
+                              "events are independent, and how does a base rate change the "
+                              "interpretation of a test result?"),
+               ("Debatable", "Should a decision about a person be made on a probability alone?")],
+    application_lede="These tasks use probability models, sample spaces, compound events, "
+                     "experimental probability, sampling and base rates. State the model behind "
+                     "every number you report.",
+    projects_lede="Uncertainty is part of every decision about people. Use probability to size the "
+                  "uncertainty, and say what the number does not tell you.",
+    sections=[
+        dict(id="10.1", title="Outcomes, events and probability",
+             inquiry_q=("How can the likelihood of an event be assigned a number?") 
+                    , teach=[
+            "The sample space is the set of all possible outcomes of an experiment. An event is a subset of the sample space, and the probability of an event measures how much of the sample space it covers.",
+            "When all outcomes are equally likely, P(event) = number of favourable outcomes ÷ total number of outcomes. This is the definition, and it depends on the assumption of equal likelihood.",
+            "Probabilities lie between 0 and 1, and the probabilities of all outcomes sum to 1. The complement rule P(not A) = 1 − P(A) follows directly.",
+            "The model is a choice. A fair die has six equally likely outcomes; a loaded one does not, and no calculation can detect that. The model must be stated and justified.",
+        ], examples=[
+            dict(q="Two fair dice are thrown. Find the probability that the total is 7.",
+                 vis=F("table", [["first die", "second die values giving 7"],
+                                 ["1", "6"],
+                                 ["2", "5"],
+                                 ["3", "4"],
+                                 ["4", "3"],
+                                 ["5", "2"],
+                                 ["6", "1"]],
+                       caption="Six of the thirty-six outcomes give a total of 7."),
+                 reasoning="There are 36 equally likely outcomes, and six of them give a total of "
+                          "7.",
+                 steps=["The sample space has 6 × 6 = 36 equally likely outcomes.",
+                        "The pairs giving 7 are (1,6), (2,5), (3,4), (4,3), (5,2), (6,1): six of "
+                        "them.",
+                        "P(total is 7) = 6/36 = 1/6."],
+                 ans="1/6",
+                 interp="The assumption of equal likelihood is what makes the count of outcomes "
+                        "enough."),
+            dict(q="A bag holds 3 red and 5 blue counters. Find P(red), P(not red) and P(red or "
+                   "blue).",
+                 vis=F("bar_model", 8, [3, 5], [0], "3 red and 5 blue counters"),
+                 reasoning="The sample space has eight equally likely outcomes, and the events are "
+                          "subsets of it.",
+                 steps=["Total counters = 8.",
+                        "P(red) = 3/8.",
+                        "P(not red) = 1 − 3/8 = 5/8.",
+                        "P(red or blue) = 1, because every counter is one or the other."],
+                 ans="P(red) = 3/8, P(not red) = 5/8, P(red or blue) = 1",
+                 interp="The complement rule is faster than counting the blue counters, and it "
+                        "gives the same answer."),
+        ], inv=dict(
+            task="Roll two dice 60 times and record the total each time. Compute the experimental "
+                 "probability of each total, then compare with the theoretical probabilities from "
+                 "the sample space of 36 outcomes.",
+            fig=F("bar_chart", ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+                  [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1], "outcomes giving each total"),
+            table=[["total", "theoretical P", "experimental P (60 rolls)", "difference"],
+                   ["7", "6/36 = 0.167", "11/60 = 0.183", "0.016"],
+                   ["2", "1/36 = 0.028", "1/60 = 0.017", "0.011"],
+                   ["6", "5/36 = 0.139", "9/60 = 0.150", "0.011"],
+                   ["12", "1/36 = 0.028", "0/60 = 0", "0.028"]],
+            notice=["The experimental probabilities were close to the theoretical ones.",
+                    "No total appeared exactly as often as the theory predicts.",
+                    "The most likely total, 7, was also the most frequent in the experiment.",
+                    "The differences would shrink with more rolls."],
+            obs="Experimental probabilities approach theoretical probabilities as the number of "
+                "trials increases, but they do not match exactly in a small sample.",
+            concl="P(event) = favourable outcomes ÷ total equally likely outcomes, and the "
+                  "experimental probability estimates it with an error that shrinks as the number "
+                  "of trials grows.")),
+        dict(id="10.2", title="Compound events: tables, trees and Venn diagrams",
+             inquiry_q=("How can the probability of a combination of events be found?"), teach=[
+            "Two events are independent when the outcome of one does not affect the other. For independent events, P(A and B) = P(A) × P(B).",
+            "Two events are mutually exclusive when they cannot both happen. For mutually exclusive events, P(A or B) = P(A) + P(B).",
+            "The general addition rule is P(A or B) = P(A) + P(B) − P(A and B), and the subtraction removes the outcomes counted twice.",
+            "Sample-space diagrams, tree diagrams and Venn diagrams are three representations of the same logic. The tree makes independence visible; the Venn diagram makes the overlap visible.",
+        ], examples=[
+            dict(q="A fair coin is tossed and a fair die is rolled. Find P(head and 6).",
+                 vis=F("tree", [["H", "T"], ["1", "2", "3", "4", "5", "6"]],
+                       [["1/2", "1/2"], ["1/6", "1/6", "1/6", "1/6", "1/6", "1/6"]],
+                       "a two-stage experiment"),
+                 reasoning="The two events are independent, so their probabilities multiply.",
+                 steps=["P(head) = 1/2 and P(6) = 1/6.",
+                        "The events are independent, so multiply.",
+                        "P(head and 6) = 1/2 × 1/6 = 1/12."],
+                 ans="1/12",
+                 interp="The tree diagram shows twelve equally likely combined outcomes, one of "
+                        "which is head and 6."),
+            dict(q="A card is drawn from a standard pack. Find P(heart or king).",
+                 vis=F("venn", "hearts", "kings", "king of hearts", "12 cards", "3 cards"),
+                 reasoning="The general addition rule removes the card that is both a heart and a "
+                          "king, which would otherwise be counted twice.",
+                 steps=["P(heart) = 13/52 and P(king) = 4/52.",
+                        "P(heart and king) = 1/52.",
+                        "P(heart or king) = 13/52 + 4/52 − 1/52 = 16/52.",
+                        "= 4/13."],
+                 ans="4/13",
+                 interp="The Venn diagram shows the overlap that the subtraction removes."),
+        ], inv=dict(
+            task="Toss two fair coins 80 times. Record whether the results are the same or "
+                 "different, then compute the experimental probabilities. Compare with the "
+                 "theoretical probabilities from a tree diagram, and repeat with a spinner divided "
+                 "into three equal sectors.",
+            fig=F("tree", [["H", "T"], ["H", "T"]],
+                  [["1/2", "1/2"], ["1/2", "1/2"]],
+                  "two tosses of a fair coin"),
+            table=[["outcome", "theoretical P", "experimental P (80)", "difference"],
+                   ["two heads", "1/4 = 0.25", "22/80 = 0.275", "0.025"],
+                   ["one of each", "1/2 = 0.50", "39/80 = 0.488", "0.012"],
+                   ["two tails", "1/4 = 0.25", "19/80 = 0.238", "0.012"],
+                   ["the same", "1/2 = 0.50", "41/80 = 0.513", "0.013"]],
+            notice=["The experimental probabilities were close to the theoretical ones.",
+                    "'One of each' was the most likely outcome, as the theory predicts.",
+                    "The two orderings, head then tail and tail then head, are separate outcomes.",
+                    "Combining them gives P(the same) = 1/2."],
+            obs="The probabilities of combined outcomes follow from multiplying along the branches "
+                "of a tree and adding across the branches that belong to the event.",
+            concl="For independent events P(A and B) = P(A) × P(B), for mutually exclusive events "
+                  "P(A or B) = P(A) + P(B), and the general rule P(A or B) = P(A) + P(B) − P(A and "
+                  "B) covers every case.")),
+        dict(id="10.3", title="From theory to experiment",
+             inquiry_q=("How does an experimental probability compare with a theoretical one?") 
+                    , teach=[
+            "An experimental probability is a relative frequency: the number of times an event occurred divided by the number of trials. It is an estimate, not a definition.",
+            "The theoretical probability comes from a model of the outcomes. When the model is correct, the experimental probability approaches it as the number of trials grows.",
+            "A large difference between the two is evidence that the model is wrong, not that the mathematics failed. A die that never shows 6 in 60 rolls is probably loaded.",
+            "A small difference is expected. The question is always whether the difference is small enough to be explained by chance, which is the beginning of formal statistical testing.",
+        ], examples=[
+            dict(q="A spinner is divided into four equal sectors. In 200 spins it lands on red 46 "
+                   "times. Estimate P(red) and compare with the theoretical value.",
+                 vis=F("pie", [25, 25, 25, 25], ["red", "blue", "green", "yellow"],
+                       "a four-sector spinner"),
+                 reasoning="The experimental probability is a relative frequency and estimates the "
+                          "theoretical value.",
+                 steps=["Experimental P(red) = 46/200 = 0.23.",
+                        "Theoretical P(red) = 1/4 = 0.25.",
+                        "The difference is 0.02, which is small.",
+                        "So the model of four equal sectors is plausible."],
+                 ans="0.23 experimentally, against 0.25 theoretically",
+                 interp="The small difference is what we expect from a fair spinner, and it does "
+                        "not overturn the model."),
+            dict(q="A coin is tossed 100 times and gives 68 heads. Is the coin fair?",
+                 vis=F("bar_chart", ["heads", "tails"], [68, 32], "100 tosses of a coin"),
+                 reasoning="A large departure from the theoretical value is evidence against the "
+                          "model.",
+                 steps=["Experimental P(head) = 68/100 = 0.68.",
+                        "Theoretical P(head) for a fair coin = 0.5.",
+                        "The difference of 0.18 is large for 100 tosses.",
+                        "So there is evidence that the coin is not fair."],
+                 ans="the coin is probably not fair",
+                 interp="The conclusion is about the model, and it is stated as evidence rather "
+                        "than proof."),
+        ], inv=dict(
+            task="Roll a die 120 times and record the frequency of each face. Compute the "
+                 "experimental probability of each face, compare with 1/6, and decide whether the "
+                 "die behaves fairly. Then pool your results with two other groups.",
+            fig=F("bar_chart", ["1", "2", "3", "4", "5", "6"],
+                  [18, 22, 19, 21, 20, 20], "frequencies from 120 rolls"),
+            table=[["face", "theoretical P", "experimental P", "difference"],
+                   ["1", "1/6 = 0.167", "18/120 = 0.150", "0.017"],
+                   ["2", "1/6 = 0.167", "22/120 = 0.183", "0.016"],
+                   ["3", "1/6 = 0.167", "19/120 = 0.158", "0.009"],
+                   ["4", "1/6 = 0.167", "21/120 = 0.175", "0.008"],
+                   ["5", "1/6 = 0.167", "20/120 = 0.167", "0.000"],
+                   ["6", "1/6 = 0.167", "20/120 = 0.167", "0.000"]],
+            notice=["All six frequencies were close to 20, which is 1/6 of 120.",
+                    "The largest difference was 0.017, which is small.",
+                    "Pooling three groups gave 360 rolls and even closer agreement.",
+                    "The evidence supports a fair die, but does not prove it."],
+            obs="Experimental probabilities from a large number of trials agree closely with the "
+                "theoretical value, and pooling trials improves the agreement.",
+            concl="An experimental probability estimates the theoretical probability, and a large "
+                  "difference between them is evidence that the model is wrong rather than that "
+                  "the calculation failed.")),
+        dict(id="10.4", title="Populations, samples and bias",
+             inquiry_q=("How can a sample be chosen so that it represents a population?") 
+                    , teach=[
+            "A population is the whole group a claim is about, and a sample is the part that is measured. A parameter describes the population and a statistic describes the sample.",
+            "A sample is representative when every member of the population has a known, non-zero chance of being selected. Convenience and self-selected samples fail this test.",
+            "Bias is a systematic error in the selection. It cannot be reduced by taking a larger sample, because a bigger biased sample is still biased.",
+            "A random sample removes selection bias, and a larger sample reduces the variability of the estimate. The two effects are different and both matter.",
+        ], examples=[
+            dict(q="A school of 1 200 students is surveyed by asking the first 40 students who "
+                   "arrive. Explain why the sample is biased.",
+                 vis=F("table", [["check", "finding"],
+                                 ["population", "all 1 200 students"],
+                                 ["sample", "the first 40 arrivals"],
+                                 ["selection", "not random — early arrivals differ"],
+                                 ["effect", "a systematic error that size cannot fix"]],
+                       caption="A convenience sample is biased however large it is."),
+                 reasoning="Students who arrive early differ systematically from those who arrive "
+                          "late, so the sample is not representative.",
+                 steps=["The population is all 1 200 students.",
+                        "The sample is the first 40 arrivals, chosen by convenience.",
+                        "Early arrivals are likely to differ from the rest in ways that matter.",
+                        "So the estimate is biased, and taking 400 instead of 40 would not fix it."],
+                 ans="the sample is a convenience sample and is biased",
+                 interp="Bias is about how the sample was chosen, not how big it is."),
+            dict(q="Explain the difference between a population parameter and a sample statistic.",
+                 vis=F("table", [["term", "describes", "example"],
+                                 ["parameter", "the population", "the mean height of all students"],
+                                 ["statistic", "the sample", "the mean height of the 40 measured"]],
+                       caption="A statistic estimates a parameter."),
+                 reasoning="The parameter is fixed but unknown, and the statistic varies from "
+                          "sample to sample.",
+                 steps=["The parameter describes the whole population and cannot usually be "
+                        "computed.",
+                        "The statistic is computed from the sample and varies between samples.",
+                        "The statistic is used as an estimate of the parameter.",
+                        "The quality of the estimate depends on the sampling method."],
+                 ans="a parameter describes the population; a statistic describes the sample",
+                 interp="Confusing the two is what allows a biased sample to be reported as a "
+                        "fact about everyone."),
+        ], inv=dict(
+            task="Estimate the proportion of students in the school who walk to school, using "
+                 "three samples: the first 20 people you meet, 20 people chosen at random from a "
+                 "list, and everyone in one class. Compare the three estimates.",
+            table=[["sampling method", "sample size", "estimate of the proportion", "biased?"],
+                   ["first 20 met", "20", "0.75", "yes — convenience"],
+                   ["random from a list", "20", "0.45", "no — random selection"],
+                   ["one whole class", "30", "0.40", "yes — one group only"],
+                   ["random from a list", "100", "0.47", "no, and less variable"]],
+            notice=["The convenience sample gave the highest estimate, because it met people "
+                    "arriving on foot.",
+                    "The class sample was not representative of the whole school.",
+                    "The two random samples agreed with each other.",
+                    "Doubling the random sample changed the estimate only slightly."],
+            obs="A random sample gives an estimate that does not depend on how the sample was "
+                "reached, and a larger random sample reduces the variability.",
+            concl="A sample represents a population only when selection is random, and bias from a "
+                  "non-random selection is not reduced by increasing the sample size.")),
+        dict(id="10.5", title="Risk, base rates and decisions",
+             inquiry_q=("How should a probability be interpreted when a decision must be made?") 
+                    , teach=[
+            "The base rate is the frequency of an event in the whole population, before any test or indicator is applied. It is the starting point for interpreting a test result.",
+            "A test with high accuracy can still give mostly false positives when the condition is rare, because the number of healthy people is far larger than the number of affected people.",
+            "The posterior probability is found by comparing the true positives with the total positives, and it depends on the base rate as much as on the accuracy.",
+            "A decision based on a probability must also weigh the consequences. The same probability can justify different actions when the costs of being wrong differ.",
+        ], examples=[
+            dict(q="A condition affects 1 in 1 000 people. A test is 99% accurate. A patient tests "
+                   "positive. Find the probability that the patient has the condition.",
+                 vis=F("tree", [["has it", "does not"], ["positive", "negative"]],
+                       [["0.001", "0.999"], ["0.99", "0.01"]],
+                       "a rare condition and a 99% accurate test"),
+                 reasoning="The posterior probability compares the true positives with all "
+                          "positives, and it is dominated by the base rate.",
+                 steps=["Of 100 000 people, 100 have the condition and 99 900 do not.",
+                        "True positives ≈ 0.99 × 100 = 99.",
+                        "False positives ≈ 0.01 × 99 900 = 999.",
+                        "P(condition given positive) = 99/(99 + 999) ≈ 0.09."],
+                 ans="about 9%",
+                 interp="A 99% accurate test still gives mostly false positives when the condition "
+                        "is rare, because the base rate is tiny."),
+            dict(q="A screening programme for a condition affecting 1 in 20 people uses a test "
+                   "that is 95% accurate. Find the probability that a positive result is correct.",
+                 vis=F("tree", [["has it", "does not"], ["positive", "negative"]],
+                       [["0.05", "0.95"], ["0.95", "0.05"]],
+                       "a common condition and a 95% accurate test"),
+                 reasoning="The same calculation with a different base rate gives a very different "
+                          "answer.",
+                 steps=["Of 1 000 people, 50 have the condition and 950 do not.",
+                        "True positives ≈ 0.95 × 50 = 47.5.",
+                        "False positives ≈ 0.05 × 950 = 47.5.",
+                        "P(condition given positive) = 47.5/95 ≈ 0.5."],
+                 ans="about 50%",
+                 interp="The test is only slightly less accurate, but the base rate is fifty times "
+                        "higher, so the result is far more informative."),
+        ], inv=dict(
+            task="Model a screening test for a condition with a base rate you choose. Build a "
+                 "table for 10 000 people, compute the true and false positives, and find the "
+                 "posterior probability. Then change the base rate and repeat.",
+            fig=F("tree", [["affected", "not affected"], ["positive", "negative"]],
+                  [["0.02", "0.98"], ["0.90", "0.10"]],
+                  "a 2% base rate with a 90% accurate test"),
+            table=[["base rate", "affected in 10 000", "true positives", "false positives",
+                    "P(affected given positive)"],
+                   ["1%", "100", "90", "990", "0.083"],
+                   ["2%", "200", "180", "980", "0.155"],
+                   ["10%", "1 000", "900", "900", "0.5"],
+                   ["50%", "5 000", "4 500", "500", "0.9"]],
+            notice=["The posterior probability rose steadily with the base rate.",
+                    "The number of false positives fell as the base rate rose, even though the "
+                    "test's accuracy never changed.",
+                    "At a 1% base rate, more than nine in ten positive results were false.",
+                    "At a 50% base rate, nine in ten positive results were correct."],
+            obs="The probability that a positive result is correct depends far more on the base "
+                "rate than on the accuracy of the test.",
+            concl="A probability must be interpreted against its base rate, because a rare event "
+                  "produces mostly false positives even with an accurate test — and a decision "
+                  "must weigh the consequences as well as the number.")),
+    ],
+    practice=dict(
+        A=[("10.1.1", "A fair die is rolled. Find P(even).",
+            "1/2", "Three of the six outcomes are even.", "F"),
+           ("10.1.2", "A bag holds 4 red and 6 green counters. Find P(red).",
+            "2/5", "4 out of 10.", "F"),
+           ("10.1.3", "Two fair coins are tossed. Find P(two heads).",
+            "1/4", "One of the four equally likely outcomes.", "F"),
+           ("10.1.4", "Find P(not 6) when a fair die is rolled.",
+            "5/6", "1 − 1/6.", "F"),
+           ("10.1.5", "A card is drawn from a pack. Find P(king).",
+            "1/13", "Four kings in 52 cards.", "F"),
+           ("10.1.6", "A spinner has 8 equal sectors, 3 of them gold. Find P(gold).",
+            "3/8", "Three of the eight sectors.", "F"),
+           ("10.1.7", "Two events are independent with P(A) = 0.4 and P(B) = 0.5. Find P(A and B).",
+            "0.2", "Multiply the probabilities.", "F"),
+           ("10.1.8", "Events A and B are mutually exclusive with P(A) = 0.3 and P(B) = 0.45. Find "
+                     "P(A or B).",
+            "0.75", "Add the probabilities.", "F"),
+           ("10.1.9", "P(A) = 0.6, P(B) = 0.5 and P(A and B) = 0.3. Find P(A or B).",
+            "0.8", "0.6 + 0.5 − 0.3.", "F"),
+           ("10.1.10", "A fair coin is tossed three times. Find P(three heads).",
+            "1/8", "(1/2)³.", "F"),
+           ("10.1.11", "A die is rolled twice. Find P(6 then 6).",
+            "1/36", "The two rolls are independent.", "F"),
+           ("10.1.12", "Explain why the probabilities of all outcomes in a sample space sum to 1.",
+            "Because the outcomes cover the whole sample space exactly once.",
+            "One of the outcomes must occur.", "R")],
+        B=[("10.2.1", "Investigate: in 100 rolls of a die, how many sixes would you expect, and "
+                     "would 20 sixes be surprising?",
+            "About 16.7; 20 sixes is more than expected but not impossible",
+            "The expected value is a mean, not a prediction of one outcome.", "R"),
+           ("10.2.2", "Test the claim: if a coin gives five heads in a row, the next toss is more "
+                     "likely to be tails.",
+            "False — the tosses are independent, so P(tails) is still 1/2.",
+            "Independence means the past does not affect the future.", "R"),
+           ("10.2.3", "Investigate whether two dice can be used to model a spinner with 12 equal "
+                     "sectors.",
+            "Yes — the 36 outcomes of two dice map onto 12 sectors if the dice are fair.",
+            "A model needs equally likely outcomes, which two fair dice provide.", "R"),
+           ("10.2.4", "Generalise: when does P(A and B) = P(A) × P(B)?",
+            "When A and B are independent",
+            "Multiplication is the rule for independent events only.", "R"),
+           ("10.2.5", "Investigate the pattern of P(at least one six) when two dice are rolled.",
+            "1 − (5/6)² = 11/36 ≈ 0.306",
+            "The complement rule is easier than counting the favourable outcomes.", "R"),
+           ("10.2.6", "Test the claim: mutually exclusive events cannot be independent.",
+            "True — if they cannot both happen, knowing one occurred tells you the other did not.",
+            "Independence requires the outcome of one to leave the other unchanged.", "R"),
+           ("10.2.7", "Investigate whether P(A or B) can ever exceed 1.",
+            "No — the general addition rule subtracts the overlap, so the result is at most 1.",
+            "The rule removes the double counting.", "R"),
+           ("10.2.8", "Generalise a rule for the expected number of successes in n trials.",
+            "n × P(success)", "Expectation is linear, so it scales with the number of trials.", "R"),
+           ("10.2.9", "Investigate how the experimental probability changes as the number of "
+                     "trials rises from 10 to 1 000.",
+            "It settles closer to the theoretical value",
+            "The law of large numbers describes the convergence.", "R"),
+           ("10.2.10", "Test the claim: a larger sample always gives a less biased estimate.",
+            "False — bias comes from the selection method, and a larger biased sample stays "
+            "biased.",
+            "Size affects variability, not bias.", "R"),
+           ("10.2.11", "Investigate the effect of a base rate on the number of false positives in "
+                      "1 000 tests with 95% accuracy.",
+            "At a 1% base rate there are about 50 false positives; at 10% about 86.",
+            "The false-positive count depends on the number of unaffected people.", "R")],
+        C=[("10.3.1", "Explain in words what a sample space is.",
+            "The set of all possible outcomes of an experiment.",
+            "An event is a subset of the sample space.", "R"),
+           ("10.3.2", "Explain the difference between independent and mutually exclusive events.",
+            "Independent events do not affect each other; mutually exclusive events cannot both "
+            "happen.",
+            "The two ideas describe different relationships.", "R"),
+           ("10.3.3", "Describe when to use the multiplication rule and when to use the addition "
+                     "rule.",
+            "Multiplication for 'and' with independent events; addition for 'or' with mutually "
+            "exclusive events.",
+            "The wording of the question decides the rule.", "R"),
+           ("10.3.4", "Explain the general addition rule and why it subtracts an overlap.",
+            "P(A or B) = P(A) + P(B) − P(A and B), because the overlap is counted twice.",
+            "The subtraction removes the double counting.", "R"),
+           ("10.3.5", "Describe the difference between experimental and theoretical probability.",
+            "Experimental is a measured relative frequency; theoretical comes from a model of the "
+            "outcomes.",
+            "The experiment estimates the theory.", "R"),
+           ("10.3.6", "Explain why a large difference between experiment and theory suggests the "
+                     "model is wrong.",
+            "Because the theory is a consequence of the model, and a large departure means the "
+            "assumptions fail.",
+            "The evidence is against the model, not the arithmetic.", "R"),
+           ("10.3.7", "Describe two representations of a two-stage probability experiment.",
+            "A tree diagram and a sample-space table.",
+            "Both show the combined outcomes, in different arrangements.", "R"),
+           ("10.3.8", "Explain what bias is and why a larger sample does not remove it.",
+            "A systematic error in the selection, which scales with the sample rather than "
+            "shrinking.",
+            "Bias is about the method, not the size.", "R"),
+           ("10.3.9", "Describe the difference between a population and a sample.",
+            "The population is the whole group a claim is about; the sample is the part measured.",
+            "A statistic from a sample estimates a parameter of the population.", "R"),
+           ("10.3.10", "Explain what a base rate is and why it changes the interpretation of a "
+                      "test result.",
+            "The frequency of the event in the whole population, which sets how many false "
+            "positives occur.",
+            "A rare event produces mostly false positives.", "R"),
+           ("10.3.11", "Describe how to find the probability that a positive test result is "
+                      "correct.",
+            "Compare the true positives with all positives, using the base rate to count each.",
+            "The posterior probability depends on both the accuracy and the base rate.", "R"),
+           ("10.3.12", "Explain why a probability alone is not enough to make a decision.",
+            "Because the consequences of being wrong also matter, and they differ between "
+            "situations.",
+            "A decision weighs the number and the cost of an error.", "R")],
+        D=[("10.4.1", "A factory finds 3 defective items in a sample of 250. Estimate the number "
+                     "of defective items in a batch of 20 000.",
+            "240 items", "3/250 × 20 000.", "A"),
+           ("10.4.2", "A test for a condition affecting 1 in 100 people is 98% accurate. Find the "
+                     "probability that a positive result is correct.",
+            "about 33%", "Of 10 000 people, 98 true positives and about 198 false positives, so "
+                        "98/296 ≈ 0.33.", "A"),
+           ("10.4.3", "A school of 900 students is surveyed by asking every tenth student on a "
+                     "list. Explain whether the sample is representative.",
+            "Yes, if the list is not ordered by a relevant characteristic",
+            "Systematic selection from an unordered list approximates random selection.", "R"),
+           ("10.4.4", "A weather forecast gives a 70% chance of rain. Explain what this means and "
+                     "what it does not mean.",
+            "It means rain is expected on about 7 of 10 similar days; it does not mean it will "
+            "rain for 70% of the day.",
+            "A probability is a long-run frequency, not a duration.", "R"),
+           ("10.4.5", "A lottery ticket has a 1 in 14 000 000 chance of winning. Explain why "
+                     "buying two tickets doubles the chance but does not make winning likely.",
+            "The chance becomes 2 in 14 000 000, which is still about 0.000014%.",
+            "Doubling a very small probability leaves it very small.", "R"),
+           ("10.4.6", "A doctor says a test is 99% accurate and the patient is positive. Explain "
+                     "why the patient may still be unlikely to have the condition.",
+            "Because the base rate of the condition is very low, so most positives are false.",
+            "The base rate dominates the posterior probability.", "R"),
+           ("10.4.7", "A survey of 50 people at a football match finds 80% support a new stadium. "
+                     "Explain why this does not represent the town.",
+            "The sample is self-selected and drawn from one group with an interest.",
+            "Attendance at a match is not a random selection from the town.", "R"),
+           ("10.4.8", "Two vaccines are reported as 90% and 95% effective. Explain what "
+                     "information is missing before they can be compared.",
+            "The base rate of the condition, the size of the trials and the definition of "
+            "effectiveness.",
+            "An effectiveness figure is meaningless without the trial details.", "R"),
+           ("10.4.9", "A quality check finds 5 faults in 400 items. Estimate the number of faults "
+                     "in 10 000 items and state the uncertainty.",
+            "about 125 faults, with an uncertainty of roughly ±20 from the sample size",
+            "The estimate inherits the sampling variability.", "A"),
+           ("10.4.10", "Explain whether a decision to close a school should be based on a "
+                      "projection of a declining roll.",
+            "It should also weigh the base rate, the uncertainty of the projection and the "
+            "consequences for the community.",
+            "A probability is one input to a decision, not the decision.", "R"),
+           ("10.4.11", "A screening test for a condition affecting 5 in 100 people is 90% "
+                      "accurate. Find the probability that a negative result is correct.",
+            "about 99.4%", "Of 1 000 people, 50 are affected and 950 are not. False negatives = 0.1 × 50 = 5 "
+                           "and true negatives = 0.9 × 950 = 855, so P(correct negative) = "
+                           "855/860 ≈ 0.994.", "A"),
+           ("10.4.12", "Explain why a rare but serious risk can justify a different decision "
+                      "from a common but minor one.",
+            "Because the expected cost is the probability multiplied by the consequence, and a "
+            "small probability of a large loss can exceed a large probability of a small one.",
+            "Expected value combines probability and consequence.", "R")],
+    ),
+    assessment=[
+        dict(title="A1 · The screening decision",
+             text="A condition affects 2 in 100 people. A test is 95% accurate. Find the "
+                  "probability that a person who tests positive actually has the condition, using "
+                  "a table for 10 000 people. Then explain what the result means for a decision "
+                  "about treatment.",
+             note="Criteria A and D · justify the calculation with the base rate and comment on "
+                  "the consequences."),
+        dict(title="A2 · The biased survey",
+             text="A company surveys 60 customers who visited its website and reports that 85% "
+                  "are satisfied. Evaluate the claim using the four checks, and describe the "
+                  "sampling method that would support a claim about all customers.",
+             note="Criteria A and C · apply the checks of source, sample, measure and "
+                  "conclusion."),
+    ],
+    reflection=[
+        "Write the statement of inquiry for this chapter in your own words.",
+        "Which mathematical ideas from this chapter did you use to understand it? Name at least two.",
+        "How did the key concept of logic and the related concepts of quantity and models appear "
+        "in your work?",
+        "How is the global context of identities and relationships, and its exploration of beliefs "
+        "and values, visible in the investigations and examples you completed?",
+        "Use evidence from an investigation or a worked example to justify your answer.",
+        "Has your understanding of the statement of inquiry changed since the start of the chapter? "
+        "Explain how.",
+        "What are the limitations of a probability for making a decision about people, and what "
+        "would you still like to ask?",
+    ],
+    review=dict(
+        ideas=["P(event) = favourable outcomes ÷ total equally likely outcomes.",
+               "Probabilities lie between 0 and 1 and sum to 1 over the sample space.",
+               "P(not A) = 1 − P(A).",
+               "For independent events, P(A and B) = P(A) × P(B).",
+               "P(A or B) = P(A) + P(B) − P(A and B).",
+               "An experimental probability estimates the theoretical probability.",
+               "A representative sample requires random selection; bias is not fixed by size.",
+               "A posterior probability depends on the base rate as much as on the accuracy."],
+        vocab=["sample space", "outcome", "event", "equally likely", "complement", "independent",
+               "mutually exclusive", "tree diagram", "Venn diagram", "experimental probability",
+               "theoretical probability", "population", "sample", "bias", "base rate",
+               "posterior probability"],
+        mixed=[("10.R1", "Find P(not a multiple of 3) when a fair die is rolled."),
+               ("10.R2", "Two independent events have probabilities 0.3 and 0.4. Find P(both)."),
+               ("10.R3", "P(A) = 0.5, P(B) = 0.6, P(A and B) = 0.2. Find P(A or B)."),
+               ("10.R4", "In 200 spins a spinner lands on red 52 times. Estimate P(red)."),
+               ("10.R5", "Explain why a convenience sample is biased."),
+               ("10.R6", "A test is 99% accurate for a condition affecting 1 in 50 people. "
+                        "Explain why a positive result is not certain.")],
+    ),
+    projects=dict(
+        service=[("Community need", "Community members make health and safety decisions from "
+                                    "claims they cannot check."),
+                 ("Mathematical connection", "Probability, base rates and the interpretation of "
+                                             "risk."),
+                 ("Proposed action", "Publish a plain-language explanation of one probability "
+                                     "claim that affects the community, with its base rate."),
+                 ("Expected impact", "A decision is made with the uncertainty stated rather than "
+                                     "hidden."),
+                 ("Student reflection", "Record the claim, the base rate and what you explained.")],
+        community=[("Project idea", "A probability explainer for the school community."),
+                   ("Need", "Screening, vaccination and safety claims are circulated without "
+                            "their base rates."),
+                   ("Research question", "What does one commonly quoted probability actually mean "
+                                         "for a person?"),
+                   ("Mathematics", "Base rates, conditional probability and expected value."),
+                   ("Action or outcome", "A one-page explainer with a worked example."),
+                   ("Beneficiaries", "Students, families and staff."),
+                   ("Evidence", "The explainer and the worked calculation.")],
+        personal=[("Personal interest", "Sport, games or travel planning."),
+                  ("Learning goal", "To interpret a probability in a decision you face."),
+                  ("Product or outcome", "A decision analysis with the probabilities stated."),
+                  ("Mathematics", "Probability, expected value and base rates."),
+                  ("Process", "List the outcomes, assign probabilities, then weigh the "
+                              "consequences."),
+                  ("Evidence", "The analysis and the decision with its justification.")],
+    ),
+),
+])

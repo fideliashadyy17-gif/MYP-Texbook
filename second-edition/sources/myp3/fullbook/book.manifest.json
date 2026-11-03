@@ -1,0 +1,25 @@
+{
+  "pages": 455,
+  "level": 3,
+  "chapters": {
+    "1": 11,
+    "2": 50,
+    "3": 89,
+    "4": 128,
+    "5": 167,
+    "6": 206,
+    "7": 245,
+    "8": 284,
+    "9": 328,
+    "10": 367
+  },
+  "back_matter": {
+    "answers": 406,
+    "formula": 446,
+    "glossary": 452,
+    "references": 454,
+    "back_cover": 455
+  },
+  "items": 470,
+  "answer_pages": 40
+}
