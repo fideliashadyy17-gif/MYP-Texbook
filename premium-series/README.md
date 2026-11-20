@@ -2,13 +2,14 @@
 
 **Author: SADIKOU MOUKODDIM**
 
-**Status: editorial development.** This directory contains three seven-page MYP1 chapter proofs and personal-page layout proofs for all five levels, not finished coursebooks. MYP1 chapters 4–10 and the MYP2–MYP5 teaching chapters have not been produced. The chapter proofs use the root first-edition PDF as its curricular source; no rejected-edition text, template, assets or QA records were used.
+**Status: editorial development.** This directory contains four MYP1 chapter proofs and personal-page layout proofs for all five levels, not finished coursebooks. MYP1 chapters 5–10 and the MYP2–MYP5 teaching chapters have not been produced. The chapter proofs use the root first-edition PDF as its curricular source; no rejected-edition text, template, assets or QA records were used.
 
 - [Audit, reference review and benchmark](docs/editorial-evidence.md)
 - [Source inventory](docs/source-inventory.json)
 - [First-edition curriculum coverage registers for all five levels](docs/curriculum/)
 - [MYP1 chapter 2 source](myp1/chapter-02.typ) · [PDF](myp1/output/MYP1-Chapter-02-Proof.pdf) · [Internal review](docs/chapter-02-review.md)
-- [MYP1 chapter 3 source](myp1/chapter-03.typ) · [PDF](myp1/output/MYP1-Chapter-03-Proof.pdf)
+- [MYP1 chapter 3 source](myp1/chapter-03.typ) · [PDF](myp1/output/MYP1-Chapter-03-Proof.pdf) · [Internal review](docs/chapter-03-review.md)
+- [MYP1 chapter 4 source](myp1/chapter-04.typ) · [PDF](myp1/output/MYP1-Chapter-04-Proof.pdf)
 - [MYP1 chapter 1 source](myp1/chapter-01.typ) · [Vector figure](myp1/assets/number-line.svg) · [PDF proof](myp1/output/MYP1-Chapter-01-Proof.pdf)
 
 ## Build and validation

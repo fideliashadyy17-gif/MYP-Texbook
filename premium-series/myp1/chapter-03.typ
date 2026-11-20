@@ -52,7 +52,7 @@ A number is *divisible* by a positive whole number if division leaves no remaind
 
 #example([Worked example / Explain the digit sum], [In 4,572, every place-value unit is one more than a multiple of 9: $1,000 = 999 + 1$, $100 = 99 + 1$, $10 = 9 + 1$. So subtracting $4 + 5 + 7 + 2 = 18$ leaves a multiple of 9. Since 18 is divisible by 9, so is 4,572. The same reasoning works for 3 because every multiple of 9 is also a multiple of 3.])
 
-For 8, any thousands contribute multiples of $1,000 = 8 times 125$. For 4, any hundreds contribute multiples of 100, and $100 = 4 times 25$. Only the final two digits can affect the remainder. The test for 6 works because a multiple of 3 has the form $3k$; if it is also even, then $k$ must be even, so $3k$ is a multiple of 6.
+For 8, any thousands contribute multiples of $1,000 = 8 times 125$. For 4, any hundreds contribute multiples of 100, and $100 = 4 times 25$. When dividing by 4, only the final two digits can affect the remainder. The test for 6 works because a multiple of 3 has the form $3k$; if it is also even, then $k$ must be even, so $3k$ is a multiple of 6.
 
 == Practice 3.2
 + Which of 2, 3, 4, 5, 6, 8, 9 and 10 divide 540? For each, show the relevant part of the test.
@@ -116,7 +116,7 @@ A sports day has 96 cones, 72 batons and 60 bibs. Organisers want the greatest p
 + Decide how many stations can receive a kit and list the contents of each kit. Show why an extra identical kit is impossible under the stated rules.
 + Decide whether both activities can reach their first joint finish and clear the venue on time. Use a timeline or a table and include units.
 + The organisers can start earlier or shorten the baton cycle by changing a drill. Find the latest viable shared start if the trial times stay the same. Alternatively, find a shorter whole-minute baton cycle of at least eight minutes that allows the original start. Compare the practical trade-offs.
-+ A test run shows transitions sometimes take an extra minute. Explain which assumptions your recommendation uses, and suggest one observation that would help decide whether to keep it.
++ A test run shows packing up sometimes takes five minutes rather than four. Explain which assumptions your recommendation uses, and suggest one observation that would help decide whether to keep it.
 
 == Mixed review
 + Explain the direction of both claims: “11 is a factor of 77” and “77 is a multiple of 11”.

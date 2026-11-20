@@ -1,4 +1,5 @@
 """Compile the chapter proof and verify basic PDF invariants."""
+from fractions import Fraction as F
 from itertools import permutations
 from math import gcd, lcm
 from pathlib import Path
@@ -69,8 +70,17 @@ assert gcd(96, 72, 60) == 12
 assert lcm(8, 12) + 4 == 28
 assert [k for k in range(8, 12) if lcm(8, k) + 4 <= 25] == [8]
 
+# Chapter 4 proof: exact rational arithmetic for selected decisions.
+assert [d for d in range(1, 25) if F(1, 2) < F(3, d) < F(3, 4)] == [5]
+assert [n for n in range(1, 21) if F(1, 10) < F(1, n) < F(1, 5)] == [6, 7, 8, 9]
+milk, water = F(3, 4)*F(12, 8), F(2, 5)*F(12, 8)
+assert (milk, water) == (F(9, 8), F(3, 5))
+assert abs(milk-F(22, 20)) == abs(milk-F(23, 20)) == F(1, 40) > F(1, 50)
+assert F(1) + F(1, 10) + F(1, 40) == milk
+assert F(23, 20)*F(2, 5)/F(3, 4) == F(46, 75)
+
 if __name__ == '__main__':
-    for n in (1, 2, 3):
-        build(1, f'chapter-{n:02d}', f'MYP1-Chapter-{n:02d}-Proof.pdf', 7, 200)
+    for n in (1, 2, 3, 4):
+        build(1, f'chapter-{n:02d}', f'MYP1-Chapter-{n:02d}-Proof.pdf', 8 if n == 4 else 7, 200)
     for n in range(1, 6):
         build(n, 'personal-pages', f'MYP{n}-Personal-Pages-Proof.pdf', 3, 80)

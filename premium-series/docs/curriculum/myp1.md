@@ -38,12 +38,12 @@ Printed page numbers are the anchors from the original contents; PDF page number
 
 | Section | Source topic | Printed page | Contents PDF page | Reconstruction |
 |---|---|---:|---:|---|
-| 4.1 | Equivalent fractions and simplest form | 77 | 4 | Not drafted |
-| 4.2 | Comparing and ordering fractions | 79 | 5 | Not drafted |
-| 4.3 | Adding and subtracting fractions | 81 | 5 | Not drafted |
-| 4.4 | Multiplying and dividing fractions | 82 | 5 | Not drafted |
-| 4.5 | Decimals: place value, ordering and calculation | 85 | 5 | Not drafted |
-| 4.6 | Fractions, decimals and the same number | 87 | 5 | Not drafted |
+| 4.1 | Equivalent fractions and simplest form | 77 | 4 | Chapter proof |
+| 4.2 | Comparing and ordering fractions | 79 | 5 | Chapter proof |
+| 4.3 | Adding and subtracting fractions | 81 | 5 | Chapter proof |
+| 4.4 | Multiplying and dividing fractions | 82 | 5 | Chapter proof |
+| 4.5 | Decimals: place value, ordering and calculation | 85 | 5 | Chapter proof |
+| 4.6 | Fractions, decimals and the same number | 87 | 5 | Chapter proof |
 
 ## Chapter 5
 
