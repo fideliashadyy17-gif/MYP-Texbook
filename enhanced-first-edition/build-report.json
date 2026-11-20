@@ -49,8 +49,9 @@
     "lowest_exercise_cursor_pt": 109.3
   },
   "3": {
-    "original_pages": 274,
-    "output_pages": 339,
+    "restored_original_links": 484,
+    "original_pages": 281,
+    "output_pages": 346,
     "practice_pages": 52,
     "worked_answer_pages": 12,
     "exercises": 61,
@@ -63,7 +64,7 @@
       "venn": 1,
       "xy": 12
     },
-    "original_render_samples": 24,
+    "original_render_samples": 25,
     "source_empty_pdf_pages": [],
     "original_render_blank_pages": [],
     "filename": "MYP3-Student-Coursebook-Enhanced-Original-First-Edition.pdf",

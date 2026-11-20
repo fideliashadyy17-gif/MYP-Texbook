@@ -27,7 +27,7 @@ ROOT = HOME.parent
 SOURCES = {
     1: ('MYP-Mathematics-1-Student-Coursebook.pdf', '131a3a99d14ae5a7613c7e9da24c540e29029d93a1a360abcc8516835798b3f0'),
     2: ('MYP-Mathematics-2-Student-Coursebook.pdf', '565ed7876b3cf2e16d0a7c9607fe9cf93a8edc40d599ce8772ad70ca76baa30e'),
-    3: ('enhanced-first-edition/source/MYP-Mathematics-3-Student-Coursebook.pdf', '5e5e050cb194fe05d76e531567bd9a5ee2122502ae65f3ae87f158c98e6e5767'),
+    3: ('MYP-Mathematics-3-Student-Coursebook.pdf', '3cb3bb8071713cd453da62972451dada54c2a63f5266b00b7970bb8239c519ed'),
     4: ('MYP_Mathematics_4_Student_Coursebook.pdf', '4e0e8a32776f43f8565966edb54f9f30c6f45e7858259bd9799931e89197c393'),
     5: ('MYP_Mathematics_5_Student_Coursebook.pdf', '5f2e8001623ce1e26c72a94755127ee0828c4b0756fcc6c5bc0604e223d3274f'),
 }
@@ -529,19 +529,41 @@ def sha(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def original_dests(original, out, original_pages):
+def myp3_named_pages(spec):
+    """Resolve anchors missing from the uploaded MYP3 PDF's catalog.
+
+    All destinations are the one-based printed pages of the original contents.
+    """
+    pages = dict(how=7, framework=9, criteria=12, map=14, notation=16,
+                 cumulative=231, answers=239, formulas=269, glossary=271,
+                 index=273, references=274)
+    pages.update((f'ch-{ch}', row['start']) for ch,row in spec['chapters'].items() if ch.isdigit())
+    pages.update(('sec-'+row['id'].replace('.', '-'), row['start'])
+                 for row in spec['sections'] if row['id'][0].isdigit())
+    for ch, triple in enumerate([(32,32,34),(48,48,51),(65,65,68),(85,85,88),
+                                 (104,104,107),(128,128,131),(149,150,152),
+                                 (174,174,177),(199,200,202),(225,225,228)], 1):
+        pages.update((f'sec-{ch}-{name}', page) for name,page in zip(('inv','app','summary'),triple))
+    return {name: page-1 for name,page in pages.items()}
+
+
+def original_dests(original, out, original_pages, named_pages):
     """PyMuPDF only copies intra-document links inside each consecutive inserted run.
 
     Restore original internal page links across runs, using the preserved page mapping.
-    The checked originals currently have no cross-run internal page links.
     """
     for index,new in original_pages.items():
         for link in original[index].get_links():
-            if link['kind']==pdf.LINK_GOTO and link.get('page',-1) in original_pages:
-                dest=original_pages[link['page']]
+            target = None
+            if link['kind']==pdf.LINK_GOTO:
+                target=link.get('page',-1)
+            elif link['kind']==pdf.LINK_NAMED and named_pages:
+                target=named_pages[link['nameddest']]
+            if target in original_pages:
+                dest=original_pages[target]
                 if not any(l['kind']==pdf.LINK_GOTO and l.get('page')==dest and l['from']==link['from'] for l in out[new].get_links()):
-                    entry={k:v for k,v in link.items() if k not in ('id','xref')}; entry['page']=dest
-                    out[new].insert_link(entry)
+                    out[new].insert_link({'kind':pdf.LINK_GOTO,'from':link['from'],
+                                         'page':dest,'to':link.get('to',pdf.Point(0,0))})
 
 
 def build(year,spec,export,verify_only=False):
@@ -567,7 +589,7 @@ def build(year,spec,export,verify_only=False):
         original.close()
         return result
     out=pdf.open(); original_pages={}; practice_pages={}; labels=[]
-    solution_after = len(original)-(1 if year in (1,2) else 0)
+    solution_after = len(original)-(1 if year in (1,2,3) else 0)
     boundaries=sorted({1,solution_after,len(original),*insertions})
     prev=0
     for after in boundaries:
@@ -590,7 +612,7 @@ def build(year,spec,export,verify_only=False):
             solutions,places=solution_leaves(year,sections,practice,size)
             labels.append(dict(startpage=len(out),prefix='S',style='D',firstpagenum=1))
             out.insert_pdf(solutions); solutions.close()
-    original_dests(original,out,original_pages)
+    original_dests(original,out,original_pages,myp3_named_pages(spec) if year==3 else {})
     bookmarks=[[1,'Reader’s guide',2]]
     for ch,row in spec['chapters'].items():
         bookmarks.append([1,f'{ch} · {row["title"]}',original_pages[row['start']+offset-1]+1])
@@ -601,6 +623,8 @@ def build(year,spec,export,verify_only=False):
                 bookmarks.append([3,f'P{sid} · Added practice',practice_pages[sid]+1])
     original_reference={1:216,2:222,3:239,4:363,5:245}[year]
     bookmarks.append([1,'Original reference material',original_pages[original_reference+offset-1]+1])
+    if year == 3:
+        bookmarks.append([1,'Original MYP3 supplementary section',original_pages[274]+1])
     bookmarks.append([1,'Worked answers · Added practice',solution_start+1])
     last=None
     for sid,(index,y) in places.items():
@@ -610,7 +634,7 @@ def build(year,spec,export,verify_only=False):
         page_out=solution_start+index
         out[practice_pages[sid]].insert_link(dict(kind=pdf.LINK_GOTO,**{'from':pdf.Rect(M,height-76,M+128,height-59)},page=page_out,to=pdf.Point(0,max(0,y-23))))
         out[page_out].insert_link({'kind':pdf.LINK_GOTO,'from':pdf.Rect(M,y-2,width-M,y+16),'page':practice_pages[sid],'to':pdf.Point(0,0)})
-    if year in (1,2):
+    if year in (1,2,3):
         bookmarks.append([1,'Original back cover',original_pages[len(original)-1]+1])
     out.set_toc(bookmarks,collapse=2); out.set_page_labels(labels)
     out.set_metadata({**{k:v for k,v in original.metadata.items() if k not in ('format','encryption')},'title':f'MYP{year} Mathematics Student Coursebook — Enhanced Original First Edition','author':'Sadikou Moukoddim','subject':'Original first-edition pages with integrated section practice and worked answers','creator':'Enhanced first edition interleaving workflow'})
@@ -677,7 +701,21 @@ def inspect_pdf(year,original,out,spec,practice,insertions):
         target=out[p].get_links()[0]['page']; ty=out[p].get_label()
         validate(target in solutions and ty in out[target].get_text() and
                  any(l.get('page')==p for l in out[target].get_links()), f'Broken reciprocal navigation: MYP{year} {ty}')
-    return dict(original_pages=len(original), output_pages=len(out), practice_pages=len(practice),
+    restored_links=0
+    if year==3:
+        names=myp3_named_pages(spec)
+        for idx,dest in enumerate(copied):
+            actual=out[dest].get_links()
+            for source in original[idx].get_links():
+                if source['kind']!=pdf.LINK_NAMED:
+                    continue
+                page=copied[names[source['nameddest']]]
+                validate(any(link['kind']==pdf.LINK_GOTO and link['from']==source['from'] and
+                             link.get('page')==page for link in actual),
+                         f'Missing restored MYP3 anchor: {source["nameddest"]} from page {idx+1}')
+                restored_links+=1
+    return dict(**({'restored_original_links':restored_links} if year==3 else {}),
+                original_pages=len(original), output_pages=len(out), practice_pages=len(practice),
                 worked_answer_pages=len(solutions), exercises=sum(len(s['tasks']) for s in practice.values()),
                 exercise_parts=sum(len(t['parts']) for s in practice.values() for t in s['tasks']),
                 visuals=dict(sorted(visual_counts.items())),original_render_samples=len(sample),
