@@ -2,11 +2,13 @@
 
 **Author: SADIKOU MOUKODDIM**
 
-**Status: editorial development.** This directory contains a seven-page MYP1 chapter proof, not a finished coursebook. MYP1’s remaining chapters and the MYP2–MYP5 books have not been produced. The proof uses the root first-edition PDF as its curricular source; no rejected-edition text, template, assets or QA records were used.
+**Status: editorial development.** This directory contains two seven-page MYP1 chapter proofs and personal-page layout proofs for all five levels, not finished coursebooks. MYP1 chapters 3–10 and the MYP2–MYP5 teaching chapters have not been produced. The chapter proofs use the root first-edition PDF as its curricular source; no rejected-edition text, template, assets or QA records were used.
 
 - [Audit, reference review and benchmark](docs/editorial-evidence.md)
 - [Source inventory](docs/source-inventory.json)
-- [Editable proof](myp1/chapter-01.typ) · [Vector figure](myp1/assets/number-line.svg) · [PDF proof](myp1/output/MYP1-Chapter-01-Proof.pdf)
+- [First-edition curriculum coverage registers for all five levels](docs/curriculum/)
+- [MYP1 chapter 2 source](myp1/chapter-02.typ) · [PDF](myp1/output/MYP1-Chapter-02-Proof.pdf) · [Internal review](docs/chapter-02-review.md)
+- [MYP1 chapter 1 source](myp1/chapter-01.typ) · [Vector figure](myp1/assets/number-line.svg) · [PDF proof](myp1/output/MYP1-Chapter-01-Proof.pdf)
 
 ## Build and validation
 
@@ -17,6 +19,7 @@ python -m venv .venv
 .venv/bin/python -m pip install -r premium-series/tools/requirements.txt
 .venv/bin/python premium-series/tools/build.py
 .venv/bin/python premium-series/tools/inventory.py > premium-series/docs/source-inventory.json
+.venv/bin/python premium-series/tools/curriculum_index.py
 ```
 
-The build checks page count, A4 dimensions, author metadata, page text presence and text-block bounds. It independently checks selected rounding cases and the two stock decisions. These checks do not certify the entire chapter mathematically or replace visual review. The author’s dedication, acknowledgements and biography are reserved for front/back matter and have not been written.
+The build checks page count, A4 dimensions, author metadata, page text presence and text-block bounds. It independently checks selected rounding cases and the two stock decisions. These checks do not certify the entire chapter mathematically or replace visual review. Each `mypN/personal-pages.typ` invokes the shared [personal-page template](shared/personal-pages.typ). Dedication and Acknowledgements are separate pages, followed by an About the Author layout. Pass approved content as `dedication`, `acknowledgements`, and `biography` when it is supplied; until then the output is explicitly a proof with placeholders only.

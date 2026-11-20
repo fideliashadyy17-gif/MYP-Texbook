@@ -1,4 +1,6 @@
-# Editorial evidence and production status
+# Editorial evidence and chapter 1 proof
+
+For later work, see the [curriculum registers](curriculum/) and the [chapter 2 review](chapter-02-review.md).
 
 ## Repository audit
 
