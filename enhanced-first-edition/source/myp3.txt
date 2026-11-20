@@ -1,0 +1,207 @@
+1.1|3A
+A|Reading a repeating gauge|A gauge reports 0.272727… and 0.135 exactly.|Convert each to a fraction in simplest form.|Use multiplication and subtraction to justify the repeating conversion.|Find the difference as one fraction. Explain why rounding first loses exactness.
+= 3/11 and 27/200.~For x = 0.272727…, 100x − x = 27, giving 27/99.~303/2200. A rounded approximation changes the input before subtraction.
+B|A denominator experiment|Study multiples of one eleventh.|Write 1/11, 2/11 and 3/11 to at least six decimal places.|Predict the repeating block for 7/11.|Verify by multiplying your proposed decimal by 11.|Explain why the block for 10/11 still uses two digits.
+= 0.090909…, 0.181818…, 0.272727….~63.~0.636363… = 63/99; multiplying by 11 gives 7.~10 × 9 = 90, so the block is 90, not 9.
+1.2|3B
+A|Locate exact lengths|Two unit squares are joined side by side. Use the marked diagonal of one square for √2 and the long diagonal for √5.|Use consecutive integer squares to locate each length between integers.|Compare √5 with 2.2 and 2.3 by squaring.|A display reads 2.236. Decide whether this is √5 exactly and justify.
+@shape 0,0 A|2,0 B|2,1 C|0,1 D|0,0;1,0|1,1;0,0|1,1;0,0|2,1
+= 1 < √2 < 2; 2 < √5 < 3.~4.84 < 5 < 5.29, so 2.2 < √5 < 2.3.~No: 2.236 is rational and its square is 4.999696, not 5.
+C|Find a rational between two surds|Choose a terminating decimal between √3 and √4, without using decimal approximations of the roots.|Give one candidate and prove both comparisons by squaring.|Would 1.7 work? Explain.|Explain why the fact that a number lies between √3 and √4 does not decide whether it is rational.
+= 1.8 works since 3<3.24<4.~No, 1.7²=2.89<3.~For example 1.8 is rational but √(7/2) in that interval is irrational (√14/2 with 14 nonsquare).
+1.3|3A
+C|Tolerance around a reading|A reading x is accepted if its distance from −2 is at most 3. A stricter reader also requires x > −4.|Translate the first condition into an absolute-value inequality.|Write the first accepted interval and represent it on the scale.|Write the stricter interval and explain exactly which endpoints are allowed.|Test −4 and 1 explicitly against both conditions.
+@line -6|3|
+= |x + 2| ≤ 3.~[−5,1]; filled endpoints.~(−4,1]; −4 is excluded by >, but 1 satisfies both.~−4 passes only the first condition; 1 passes both.
+1.4|3B
+A|Exact frame lengths|Three cuts measure √72, √50 and √8 centimetres.|Simplify each surd.|Find the exact total length and the difference between the longest and shortest.|A learner claims √72 + √50 = √122. Disprove this with exact forms or squaring.
+= 6√2, 5√2, 2√2.~13√2 cm and 4√2 cm.~The left side is 11√2 and squares to 242, not 122.
+C|An apparent integer|A rectangle has sides 2√3 and √12 centimetres.|Simplify both lengths and classify the rectangle.|Find exact perimeter and area.|Explain how the area can be an integer even with irrational side lengths.
+= Both are 2√3, so square.~8√3 cm and 12 cm².~The product uses (√3)² = 3.
+1.5|3B
+C|When a converse fails|Claim: If an integer n is divisible by 6, it is divisible by 3.|Write a direct proof using n = 6k.|Write the converse precisely and disprove it.|Replace 3 in the converse by a condition that is sufficient for divisibility by 6 and explain it.
+= n = 3(2k).~If divisible by 3, then divisible by 6; counterexample 9.~E.g. divisible by 12, since 12k = 6(2k). Another sufficient condition is divisible by both 2 and 3.
+2.1|3A
+A|Signs in indices|Let x be a nonzero real number.|Simplify x⁴x⁻⁶, (x⁻²)³ and x⁻²/x⁻⁵ using only positive exponents in the answers.|Evaluate the three expressions at x = 2.|Explain why x⁻² is positive for every nonzero real x, although the exponent is negative.|Which expression can be negative? Give an example.
+= 1/x², 1/x⁶ and x³.~1/4, 1/64 and 8.~It is a reciprocal of x² > 0.~x³, for example −8 for x = −2.
+2.2|3B
+A|Back from a rational exponent|Three calculations use 64^(1/3), 64^(2/3) and 64^(−2/3).|Evaluate each using an explicit root step.|Find a positive a giving a^(3/2) = 125.|Explain why treating the exponent as “divide by 2 then multiply by 3” applied to the base is invalid.
+= 4, 16, 1/16.~a = 25 because √a = 5.~The denominator indicates a root, the numerator an exponent; these are not scalar operations on the base.
+2.3|3A
+D|Counting sensor messages|A network sends 2.4 × 10⁵ messages per day. Each message uses 8 × 10² bytes and operation is constant for 30 days.|Calculate daily and monthly traffic in scientific notation.|Compare the result to a 6 × 10⁹ byte cap.|Find the largest number of full operating days allowed. State one limitation of the model.
+= 1.92 × 10⁸ and 5.76 × 10⁹ bytes.~2.4 × 10⁸ bytes below the cap.~31 full days. E.g. messages may grow in size or number.
+A|Estimate before moving the decimal|A learner claims (6 × 10⁻⁴)(4 × 10⁶)=2.4 × 10².|Multiply the coefficients and powers separately.|Write the corrected product in scientific notation.|Without recalculating every step, say how the answer changes if the second factor is divided by 100.
+= 6 × 4=24; 10⁻⁴ × 10⁶=10².~24 × 10²=2.4 × 10³.~It is divided by 100, becoming 2.4 × 10¹.
+2.4|3B
+A|Quick archive estimate|An archive contains about 3.1 × 10⁴ clips of average size 4.8 × 10⁶ bytes.|Estimate total size by rounding each coefficient to one significant figure.|Compare with a limit of 10¹¹ bytes.|Would rounding both factors down to powers of ten give the same decision? Explain.
+= About 3 × 10⁴ × 5 × 10⁶ = 1.5 × 10¹¹ bytes.~Likely above the limit; multiplying the supplied values gives 1.488 × 10¹¹.~No, 10⁴ × 10⁶ = 10¹⁰ would suggest below. The estimate discards too much information.
+2.5|3A
+C|A threshold after rounding|Three measured masses are 0.04864 g, 0.04906 g and 0.04945 g.|Round each to two and to three significant figures (round an exact halfway value up).|Which results pass a 0.0490 g threshold if the rule is “at least” and the unrounded measurements are used?|Repeat using the values to two significant figures. Explain the risk.
+= To 2 s.f. all 0.049; to 3 s.f. 0.0486, 0.0491, 0.0495.~Second and third.~All three; rounding near a decision boundary can introduce false passes.
+3.1|3B
+A|Substitute with signs|Let F = 2a² − 3ab + b. Compare pairs (a,b) = (−2,3) and (2,3).|Calculate F for each pair with explicit brackets.|Which term changes and why?|Choose b so that the output is the same for a and −a for every a. Justify.
+= 8 + 18 + 3 = 29; 8 − 18 + 3 = −7.~−3ab changes sign; a² and b do not.~b = 0 removes the only term affected by changing a to −a.
+3.2|2B
+C|A repeated output|A machine has domain {−2, −1, 0, 1, 2, 3} and rule f(x) = x² − 1.|Complete the table and write the range as a set.|List all inputs producing 3.|Explain why a repeated output does not disqualify a rule from being a function.
+@table x~−2~−1~0~1~2~3;f(x)~—~—~—~—~—~—
+= 3, 0, −1, 0, 3, 8; range {−1,0,3,8}.~−2 and 2.~A function requires one output per input, not one input per output.
+3.3|3A
+A|An area identity|A rectangular board has dimensions (x + 5) and (x + 2) units, x > 0.|Expand the product by splitting each side at x, using the diagram.|Factor x² + 7x + 10 without the diagram.|A second design has area x² + 7x + 12. Find integer-offset dimensions and compare the constant terms.
+@shape 0,0|6,0|6,4|0,4|0,0;3,0|3,4;0,2.7|6,2.7;1.5,-.3 x;4.5,-.3 5;-.3,1.3 x;-.3,3.4 2
+= x² + 2x + 5x + 10 = x² + 7x + 10.~(x + 5)(x + 2).~(x + 3)(x + 4); both offsets sum to 7 but their products are 12 versus 10.
+3.4|3B
+A|Recover a measurement|A trapezium has A = h(a + b)/2.|Make b the subject.|Find b for A = 54 cm², h = 6 cm and a = 7 cm.|What assumption about h allows your rearrangement? Check by substitution.
+= b = 2A/h − a.~11 cm.~h ≠ 0, physically h > 0. Substitution gives 6(7 + 11)/2 = 54.
+3.5|5A
+B|An increasing border|A single square tile has 4 exposed edges. Placing each new tile edge-to-edge in a straight row changes the total.|Find the exposed edges for rows of 1 through 4 tiles.|Derive a rule for n tiles by counting the two long edges and two ends.|Find the first row with more than 50 exposed edges. Verify with neighbouring rows.
+@net 0,0:A 1,0:B 2,0:C 3,0:D
+= 4, 6, 8, 10.~2n + 2.~25 tiles; 24 gives 50 and 25 gives 52.
+4.1|2B
+C|Find and fix an error|A table is claimed to represent one straight line.|Calculate the change in y per step of one x for the first two intervals.|Identify the suspect final value and replace it.|Plot the corrected points and explain how the graph supports your revision.
+@table x~0~1~2~3;y~5~8~11~16
+@xy 0 4 0 16|x|y|
+= Both changes are 3.~Replace 16 by 14 if the first three entries are correct.~The four points are collinear with constant slope 3.
+4.2|2A
+D|Two drains|The graph shows water remaining in two tanks measured from the start of draining.|Read initial volumes and calculate both gradients.|Interpret both gradients with units.|Which reaches 0 first if its line continues? Check by equation or equal steps.
+@xy 0 12 0 60|Time (min)|Water (L)|P:0,60 10,20;Q:0,48 12,12
+= P starts 60 and drops 4 L/min; Q starts 48 and drops 3 L/min.~The minus sign indicates a loss; magnitude is litres removed each minute.~P after 15 min; Q after 16 min.
+4.3|2B
+A|One line, three forms|A road profile goes through (−2,7) and (4,−2).|Find its gradient and an equation in slope-intercept form.|Rewrite it with integer coefficients as ax + by = c.|Find the x-intercept and distinguish it from the y-intercept.
+@xy -3 5 -3 8|x|y|d:-2,7 4,-2
+= Gradient −3/2; y = −3x/2 + 4.~3x + 2y = 8.~x-intercept (8/3,0); y-intercept (0,4).
+4.4|2A
+A|Expected yield|The table gives a directly proportional model relating length of fabric to production mass.|Find its constant of proportionality with units.|Complete the missing entry and find the length producing 9 kg.|Why would a fixed cutting loss change the simple proportional model?
+@table Length (m)~2~5~8;Mass (kg)~1.2~3.0~—
+= 0.6 kg/m.~4.8 kg; 15 m.~A constant nonzero offset would generally prevent a constant ratio or a line through the origin.
+4.5|2B
+D|Compare two fee models|Studio A charges 500 FCFA plus 350 per session; studio B charges 1 100 plus 250 per session.|Write both equations and find the predicted equal-cost session count.|Recommend a plan for 4 and for 9 sessions.|The studio closes after 8 sessions this month. Explain how this changes interpretation, not the algebra.
+= A = 500 + 350n, B = 1 100 + 250n; equal at n = 6.~A for 4 (1 900 vs 2 100); B for 9 (3 350 vs 3 650).~Nine is outside the feasible domain this month; the 9-session cost is an extrapolation not an available purchase.
+5.1|3B
+A|An equation with fractions|Consider (x − 2)/3 + (x + 1)/2 = 8.|Solve the equation.|Show a single line that clears both denominators.|Check your solution in the original equation.|A learner multiplies only the left side by 6. Explain why that does not preserve solutions.
+= x = 49/5.~2(x − 2) + 3(x + 1) = 48, then 5x − 1 = 48.~(39/5)/3 + (54/5)/2 = 13/5 + 27/5 = 8.~Multiplying only one side changes the equality.
+5.2|3A
+C|Which side is safe?|A rule is 9 − 2x ≥ 3.|Solve and show the solution set on the scale.|Test the boundary and a value on each side.|Correct the proposed solution x ≥ 3 and explain the source of the error.
+@line -2|7|
+= x ≤ 3; solid at 3, shade left.~3 gives 3, 2 gives 5, 4 gives 1.~Division by a negative reverses the comparison.
+5.3|2B
+A|Intersect and check|Two service plans are given by y = 2x + 1 and y = 10 − x on the grid.|Estimate their intersection from the graph.|Find the exact solution by substitution.|For integer x from 0 to 5, where does the first plan exceed the second?
+@xy 0 5 0 12|x|y|A:0,1 5,11;B:0,10 5,5
+= About (3,7).~2x + 1 = 10 − x gives x = 3, y = 7.~x = 4 or 5.
+C|Read an intersection, interpret the axes|A forecast says stock S=28−3t, and a target line says stock S=8+t, where t counts whole days after a delivery.|Solve for t and S, then state the result with units.|Find the first whole day stock is below the target.|Explain why switching t and S in the reported ordered pair changes its meaning.
+= t=5 days, S=13 units.~Day 6: stock 10 and target 14.~(5,13) is (time,stock); (13,5) would mean 5 units after 13 days and is not the intersection.
+5.4|3B
+C|Three types of systems|Keep 2x + 3y = 12. Pair it in turn with 4x + 6y = 24, 4x + 6y = 25, and 4x + 5y = 19.|Use elimination to describe the solution set in each case.|Verify the single solution found.|Explain how you could recognise the first two cases without a graph.
+= Identity, contradiction, and y = 5 so x = −3/2.~2(−3/2)+3(5)=12; 4(−3/2)+5(5)=19.~Coefficients double; constant also doubles for the same line, but not for inconsistent parallel lines.
+5.5|5C
+D|Assembly choices|A team makes x standard and y premium displays. It can use at most 12 stands and 18 hours; standard uses 1 hour and premium uses 2 hours. Each display uses one stand.|Write four inequalities including non-negativity; shade the allowed region.|Check (6,6), (7,6) and (4,7).|If exactly 12 displays are made, find the maximum number of premiums and justify.
+@xy 0 18 0 12|Standard displays|Premium displays|x + y = 12:0,12 12,0;x + 2y = 18:0,9 18,0
+= x,y ≥ 0; x+y ≤ 12, x+2y ≤ 18. Shade below both lines in the first quadrant.~(6,6) and (4,7) allowed; (7,6) fails both resource limits.~6; with x+y = 12, the hours are 12 + y.
+6.1|3A
+A|A rigid move|Triangle A(−3,1), B(−1,1), C(−2,3) is on the grid. A′ is at (0,−1) after a translation.|Find the full translation and plot B′ and C′.|Compare the orientation and length of AB with A′B′.|Can the same translation fix any point? Explain.
+@xy -4 5 -3 5|x|y|ABC:-3,1 -1,1 -2,3 -3,1;d:0,-1
+= (+3,−2); B′(2,−1), C′(1,1).~Both point right and measure 2.~No; each point moves by a nonzero vector.
+6.2|3B
+C|Mirror along a diagonal|A(−2,1), B(1,3) and C(2,2) are reflected in y = x.|Plot the images and give coordinates.|Check that A and its image have midpoint on the mirror and their joining segment is perpendicular to it.|Which vertex stays fixed and why?
+@xy -4 4 -4 4|x|y|y = x:-4,-4 4,4;ABC:-2,1 1,3 2,2 -2,1
+= A′(1,−2), B′(3,1), C′(2,2).~Midpoint (−0.5,−0.5); segment slope −1 against mirror slope 1.~C lies on y = x.
+6.3|3A
+A|Rotate around a pin|Take O = (1,1). Rotate P(3,2), Q(4,2), R(3,4) by 90° clockwise about O.|Give the vectors from O before the turn.|Plot and state the three image coordinates.|Check one radius and explain why rotating about the origin instead changes the result.
+@xy -4 5 -3 5|x|y|PQR:3,2 4,2 3,4 3,2;d:1,1
+= (2,1), (3,1), (2,3).~(2,−1), (2,−2), (4,−1).~OP² = 5 = OP′². The vector rotated would be measured from a different origin.
+6.4|3B
+C|What the side marks can prove|Triangle ABC has AB = 6, AC = 8 and included angle BAC = 55°. Triangle PQR has PQ = 8, PR = 6 and QPR = 55°.|Give the correspondence and a congruence criterion.|Which angle corresponds to ABC?|If the equal 55° angles were not included, explain why the same proof would fail.
+@shape 0,0 A|3,0 B|2.29,3.28 C|0,0;5,0 P|9,0 Q|6.72,2.46 R|5,0
+= ABC corresponds to PRQ; SAS.~PRQ, angle at R.~SAS requires the angle between the two given sides; a non-included angle alone does not in general fix the triangle.
+A|A test for right triangles|Two right triangles have hypotenuse 13 cm and one leg 5 cm each. In a separate pair, the hypotenuses are 13 cm and one acute angle in each is 35°.|Name a direct congruence criterion for the first pair and find the missing leg.|Find a congruence argument for the second pair by identifying a second angle.|Why “two lengths and an angle” is not a sufficiently precise description of your first proof?
+= RHS; other leg 12 cm.~Both also have a right angle; their remaining angles are 55° each, and the side between the two acute angles is the matching hypotenuse (ASA).~The specified side must be the hypotenuse and the angle at the right vertex; general SSA data do not suffice.
+6.5|3A
+B|Two tiling candidates|Test regular hexagons and regular octagons for tiling on their own, edge to edge, with only one polygon type at a vertex.|Find each polygon’s interior angle.|For each type, test whether a whole number meet around one point.|Explain how to fill the gap left by two octagons and check the angles for the new vertex.
+= 120° and 135°.~Three hexagons work; neither two nor three octagons give 360°.~A square fills the 90° gap: 135°+135°+90° = 360°.
+7.1|3B
+A|Scale evidence|Triangles have sides (4,6,9) and (6,9,13.5). Another triangle has sides (6,8,13.5).|Identify the similar pair and give the scale factor from the small triangle.|Compare the corresponding perimeters.|Why do the matching shortest and longest lengths of the third triangle not establish similarity?
+= First and second, factor 1.5.~28.5 versus 19, factor 1.5.~The third middle length 8 does not equal 6 × 1.5.
+7.2|3B
+D|Measuring across a courtyard|On level ground at the same moment a 1.5 m staff casts a 2 m shadow and a vertical pole casts a 9.4 m shadow.|Sketch corresponding right triangles using the models in the figure and explain their similarity.|Estimate the pole height.|Explain the direction of bias if the pole’s true shadow were longer than recorded.
+@shape 0,0|2,0|0,1.5|0,0;3,0|12.4,0|3,7.05|3,0;0.9,-.45 2 m;7.5,-.45 9.4 m
+= Both have right angles; rays at the same elevation give a second equal angle.~7.05 m.~The model multiplies shadow length by a positive constant, so underreading shadow underestimates height.
+7.3|3A
+A|A brace with a tolerance|A rectangular frame is 1.2 m by 1.6 m. A supplier offers a nominal 2.0 m diagonal brace.|Find the exact diagonal and justify the method.|If one side is changed to 1.65 m, compute the revised diagonal to the nearest centimetre.|Would an unadjustable 2.0 m brace fit the revised frame corner to corner? Explain.
+@shape 0,0|4,0|4,3|0,3|0,0;0,0|4,3;2,-.35 1.6 m;-.65,1.5 1.2 m
+= √(1.44+2.56) = 2 m, using the right corner.~√4.1625 ≈ 2.04 m.~No; short by about 4 cm.
+7.4|3B
+A|Selecting the ratio|A right triangle has legs 7 and 24 and hypotenuse 25. Angle θ is opposite the 7-side.|Give sin θ, cos θ and tan θ.|Find θ to the nearest degree.|If the triangle is enlarged by factor 3, explain why θ does not change.
+@shape 0,0|7.2,0|7.2,2.1|0,0;3.6,-.3 24;7.65,1.05 7;4,1.4 25;1.25,.13 θ
+= 7/25, 24/25, 7/24.~16° (about 16.26°).~Each ratio is unchanged when both lengths are multiplied by 3.
+D|Check a trolley ramp|A 3.5 m long ramp rises 0.55 m above level ground. The design guide specifies an angle to horizontal at most 8°.|Choose a ratio to estimate that angle.|Decide if the design meets the guide.|To keep the same rise, find the minimum sloping length to the nearest centimetre (round upward to preserve compliance).
+= sin θ=0.55/3.5, so θ≈9.04°.~No, greater than 8°.~Length ≥0.55/sin8°≈3.9519 m, so choose at least 3.96 m in centimetre increments.
+7.5|3A
+D|Camera above the path|A camera is 5 m above horizontal ground. A point on the path is seen at a 32° angle of depression.|Identify the equal angle of elevation in the figure and justify.|Find horizontal distance to the point, nearest tenth of a metre.|If the camera were raised while the point stayed fixed, would the angle of depression grow or shrink? Explain.
+@shape 0,0 B|8,0 P|0,5 C|0,0;0,5|8,5;4,4.55 32°;-.45,2.5 5 m
+= The angle at P between PB and PC is 32° by alternate interior angles.~5/tan 32° ≈ 8.0 m.~It grows; the vertical rise over a fixed horizontal distance increases.
+8.1|2B
+C|Three views of a stepped model|A floor plan shows stack heights in unit cubes. “Front” is viewed from south; “side” is viewed from east.|Find the total number of cubes.|Give the silhouette heights across the west and east front columns.|Give the side heights in order south to north.|Explain why the front silhouette alone does not give the cube total.
+@table Row~West~East;North~1~3;South~2~0
+= 6.~West 2, east 3.~South 2, north 3.~It gives maxima along viewing lines rather than all stack heights.
+8.2|3B
+A|Paint only exposed faces|A closed cylinder has radius 4 cm and height 9 cm. A rectangular prism beside it measures 8 by 8 by 9 cm.|Compute both external surface areas.|Remove the bottom paint allowance for both. Compare areas again.|Explain why matching heights and widths does not give equal side area.
+= Cylinder 104π cm²; prism 416 cm².~88π and 352 cm²; prism still larger.~Cylinder uses circumference 8π while prism uses perimeter 32.
+8.3|3A
+A|A canopy and a model|A right cone has radius 6 cm and vertical height 8 cm. A square pyramid has base side 12 cm and vertical height 8 cm.|Use Pythagoras to find each slant height (for the pyramid, to a side’s midpoint).|Find both lateral areas.|A student substitutes vertical heights into both lateral formulas. Explain which edges of the diagram those formulas actually need.
+@shape 0,0|6,0|0,8|0,0;-.6,4 8 cm;3,-.55 6 cm
+= Each is √(6²+8²) = 10 cm.~Cone 60π cm²; pyramid 4 × 12 × 10/2 = 240 cm².~They use the slanted surface distance from apex to base rim or side midpoint, not the internal vertical segment.
+8.4|2A
+D|A sealed supply case|Compare a 16 × 12 × 10 cm cuboid with a cylinder of diameter 12 cm and height 16 cm.|Calculate each volume in litres.|Which can hold 1.8 L? Use π ≈ 3.142.|Explain why volume alone does not tell you whether a rigid 1.8 L object will fit.
+= 1.92 L and 576π/1 000 ≈ 1.810 L.~Both by nominal liquid capacity.~A rigid object must also fit the opening and interior dimensions; wall thickness may reduce available space.
+8.5|3A
+A|A two-piece hopper|A cylindrical body of radius 3 m and height 4 m joins a cone of the same radius and height 2 m. Their interiors connect.|Find the two component volumes exactly.|Find the total volume and the fraction occupied by the cone.|Replace the cone with a hemisphere of radius 3 m and compare the new total with the old.
+= 36π and 6π m³.~42π m³ and 1/7.~Hemisphere 18π; total 54π m³, an increase of 12π m³.
+8.6|3B
+D|A density decision|A cuboid sample has mass 186 g and dimensions 5.0 cm, 4.0 cm and 2.0 cm. A buyer requires at least 4.7 g/cm³.|Compute volume and density using the given values.|Decide if it qualifies under these nominal readings.|If the scale underreads by 3 g, reconsider and explain whether the decision is robust.
+= 40 cm³ and 4.65 g/cm³.~No.~189/40 = 4.725 g/cm³; it would qualify, so the decision is sensitive to the measurement error.
+9.1|5C
+C|Read the paired measurements|A workshop records paired practice time and finished pieces for six trainees.|Identify the explanatory and response variables in the plotted graph.|Read the two observations at 30 minutes.|Explain why an average of those two counts is not a new observed point.
+@xy 0 60 0 12|Practice time (min)|Pieces|d:10,3 20,4 30,5 30,8 40,8 50,10
+= Practice time and number of pieces respectively.~5 and 8 pieces.~6.5 summarises two outcomes; neither trainee is observed making 6.5 pieces.
+9.2|5C
+C|Direction is not strength|Compare datasets A and B on the same scales.|Describe the direction and relative strength of linear association in each.|Which dataset is closer to a straight line? Name one coordinate that supports your decision.|Is correlation necessarily zero if the relation is not exact? Explain.
+@xy 0 6 0 10|x|A · y|d:1,2 2,3 3,5 4,6 5,8
+@xy 0 6 0 10|x|B · y|d:1,4 2,2 3,7 4,5 5,8
+= A strong positive, B weaker positive.~A; e.g. x=2 and x=4 continue the rise, whereas B dips from (3,7) to (4,5).~No; a strong trend can have scatter and still yield positive correlation.
+9.3|4A
+D|A model for drying time|Trial times are plotted with a proposed straight-line model P. x is the number of moisture units and y is the drying time in minutes.|Read two points on P and find the line’s equation.|Predict the time at x = 7 and give the residual at x = 6 (observed minus predicted).|Evaluate a prediction at x = 25.|Interpret the slope with units.
+@xy 0 10 0 22|Moisture units|Minutes|P:0,4 9,22;d:2,7 4,13 6,15 8,21
+= y = 2x + 4.~18 minutes; 15 − 16 = −1 minute.~Unreliable extrapolation far beyond x = 2 to 8.~About 2 extra minutes per added moisture unit.
+9.4|4B
+C|A third variable|On hotter days a kiosk sells more cold drinks and the park hires out more sunshades.|Suggest an explanatory variable influencing both measured quantities.|Explain why forcing drink sales up need not raise sunshade hire.|Describe a comparison that would help test whether drink sales add explanatory value beyond the third variable.
+= Temperature is plausible.~The association may be due to heat driving both; changing one is not the same as changing heat.~Compare sales and hires among days of similar temperature, while noting other potential differences such as weekend traffic.
+9.5|4C
+D|A selective headline|A flier reports “Our coaching doubles performance.” See the small observational dataset.|Calculate the median scores in both groups.|Check the numerical meaning of “doubles”.|Give two reasons the data do not demonstrate the effect of assigning coaching, and propose one improvement.
+@table Group~Scores;Coached~7, 8, 9, 10, 11;Uncoached~4, 5, 5, 6, 10
+= 9 and 5.~9/5 = 1.8, not 2; one uncoached score also exceeds some coached scores.~Small samples and self-selection or prior differences. E.g. randomly assign a larger group and compare starting and ending scores.
+C|Two reporting choices|A tutoring report lists mean scores 68 and 70 out of 100. One author says “up two points”, another “up nearly 3% relative to the first mean”.|Calculate the exact point difference and the relative percentage improvement.|Explain why both expressions can be correct yet create different impressions.|Give one reason not to round the latter to “up 3 percentage points”.
+= 2 points; 100×2/68≈2.94%.~First uses the original 100-point scale, second uses first mean 68 as denominator.~Percentage points compare positions on the same percentage scale, so 68% to 70% is precisely 2 percentage points.
+10.1|2A
+A|One draw and several events|Cards 1 through 12 are equally likely. A is a multiple of 3; B is an even number.|List A and B and find both probabilities.|Find the probability of a multiple of 3 that is not even.|Which is more likely: A or not B? Give the difference in probability.
+= A {3,6,9,12}, P = 1/3; B {2,4,6,8,10,12}, P = 1/2.~2/12 = 1/6.~Not B by 1/6.
+10.2|2B
+C|Two routes to the same probability|A survey records club membership and cycling. A respondent is chosen uniformly.|Find the probabilities of cycling and of cycling and membership.|Draw a Venn model from the table; find P(cycles or member) by regions.|Check your result using a complement and identify exactly which outcome it excludes.
+@table ~Cycles~Does not cycle;Member~12~8;Not a member~10~10
+@venn Cycles|Member|—|—|—|—
+= 22/40 and 12/40.~Cycling only 10, both 12, member only 8, neither 10; union 30/40.~1 − 10/40 = 30/40, excluding nonmembers who do not cycle.
+10.3|2A
+B|How quickly does the evidence settle?|A fair token has theoretical P(mark) = 0.5. The table shows cumulative results of one simulation.|Calculate all relative frequencies and their distances from 0.5.|Did each additional block move the cumulative estimate closer? Verify numerically.|Explain why one simulation run is not a proof of monotonic convergence.
+@table Trials~10~40~100~200;Marked~6~22~58~103
+= 0.60, 0.55, 0.58, 0.515; distances 0.10, 0.05, 0.08, 0.015.~No, the 100-trial estimate moved away.~Successive random blocks can vary; greater sample size does not guarantee each observed change is toward theory.
+A|Pool trials, not rates|Run X has 12 successes in 20 trials. Run Y has 45 successes in 100 trials on the same system.|Find both relative frequencies.|Find the pooled frequency. Compare with the simple mean of the two frequencies.|Which estimator treats each trial equally? Explain the discrepancy.
+= 0.60 and 0.45.~57/120=0.475; simple mean 0.525.~The pooled frequency weights each trial equally; the simple mean would give each 20-trial run as much weight as the 100-trial run.
+10.4|4C
+D|The queue sample|A school wants the average lunch wait for all year groups. Only volunteers near the front of the queue on Monday were surveyed.|Identify the population and the obtained sample.|Explain two possible sources of bias and likely directions where defensible.|Propose a feasible data collection design over five days, including how to select respondents.
+= Population is pupils who use the school lunch queue during the period of interest; sample is Monday front-of-queue volunteers.~Front location risks underestimating waits for late arrivals; volunteering and the day may skew results in unknown directions.~Sample systematically or randomly across different arrival windows throughout all five days, recording actual waiting times and year groups.
+10.5|2B
+D|What a flag means|A stock check tests 1 000 items. Use the observed table.|Calculate the fraction flagged and the fraction of defective items flagged.|Among flagged items, what fraction are really defective?|Explain how a high detection rate and many false alarms can coexist.
+@table ~Defective~Good;Flagged~18~90;Not flagged~2~890
+= 108/1 000 and 18/20 = 90%.~18/108 = 1/6.~Defects are rare; a modest false-flag rate applied to 980 good items yields far more flags than the defective group does.
+E.1|3A,3B
+D|A competing estimate of a tank’s fill|A cylindrical tank has radius 0.5 m and usable capacity 900 L. A depth probe reads 0.40 m initially and 0.64 m after 12 min. Assume depth rises linearly and 1 m³=1 000 L.|Find the model for depth d in metres after t minutes. Interpret the slope.|Use the cylinder model to predict litres at t=20 and test the prediction against capacity.|If a second probe reports 0.78 m at t=20, calculate its difference from the depth prediction and state one reason to investigate before revising the model.
+@table Time (min)~0~12~20;Depth (m)~0.40~0.64~—
+= d=0.40+0.02t; depth increases 0.02 m per minute.~d(20)=0.80 m, so volume 0.25π×0.80=0.20π m³≈628 L, below capacity.~Observed minus predicted is −0.02 m. Check that the second probe is calibrated and measured at 20 min, or check whether the filling rate is steady.

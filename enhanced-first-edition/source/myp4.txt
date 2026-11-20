@@ -1,0 +1,269 @@
+1.1|3B
+C|A closure claim|An argument says “Adding two irrational numbers always gives an irrational number.” Compare √5 with −√5, then √5 with 2√5.|Classify both sums and explain why the first pair disproves the claim.|If r and s are rational, write them as a/b and c/d, with nonzero denominators; prove that r+s is rational.|Could the sum of a rational and an irrational be rational? Argue by contradiction.
+= 0 is rational; 3√5 is irrational (dividing a rational by 3 would make √5 rational).~(ad+bc)/(bd) is a ratio of integers, denominator nonzero.~No. If the sum were rational, subtracting the rational addend would make the irrational addend rational.
+1.2|3A
+A|Recover the base|Let t be positive and real.|Simplify t^(5/2) ÷ t^(−1/2) and (t^(3/2))^(−2).|Explain why the results are reciprocals.|Find t for which the first result is 64.|Find t for which the second result is 8. Show why t = 0 is excluded.
+= t³ and 1/t³.~Their product is 1.~t = 4.~t = 1/2. A negative exponent leads to division by a power of t, undefined at zero.
+1.3|3B
+D|A data collection limit|A counter sends 3.8 × 10⁴ records hourly, with 2.6 × 10³ bytes per record.|Estimate data per hour by rounding each coefficient to the nearest whole number.|Compute exact weekly traffic for 168 hours in standard form.|A 1.6 × 10¹⁰ byte drive is available. Compare estimate and exact calculation.|Find the last full hour the drive can support at this rate.
+= About 1.2 × 10⁸ bytes per hour.~9.88 × 10⁷ per hour, so 1.65984 × 10¹⁰ bytes per week.~Both exceed capacity, but the estimate is high.~161 full hours (162 uses 1.60056 × 10¹⁰ bytes).
+1.4|3A
+A|Three exact distances|Compare d₁ = √98 − √8, d₂ = √32 and d₃ = 15/√2.|Simplify the first two and rationalise the third.|Order the lengths without a calculator and justify.|Find the exact difference between the greatest and least lengths.|Explain why rationalising the denominator does not make d₃ rational.
+= 5√2, 4√2 and 15√2/2.~d₂ < d₁ < d₃ by comparing positive coefficients of √2.~7√2/2.~It merely rewrites the same irrational value with a rational denominator.
+1.5|4B
+D|Will the panels fit?|A recess measures 58 cm and a panel measures 19 cm, both rounded to the nearest centimetre; assume conventional half-up rounding and three panels of equal actual width.|Give both measurement intervals.|Find the possible extremes for the total width of three panels.|Can three always fit side by side? Can they sometimes fit? Give valid dimensions for both cases.|Which reading should be checked more precisely if 19 cm errors recur for all three panels? Justify.
+= [57.5,58.5) and [18.5,19.5).~[55.5,58.5) cm.~Not always: 3 × 19.4 > 57.5. Sometimes: 3 × 19 = 57 ≤ 58.~Panel width: its shared error is multiplied by three, so its contribution to uncertainty is larger.
+C|From instrument reading to percent error|A length reported as 2.40 m is rounded to the nearest 0.01 m. Compare the greatest possible absolute error with 1 cm.|Give the error bound in metres and centimetres.|Using 2.40 m as the reference, express the error bound as a percentage.|Does “2.4 m” communicate the same precision? Explain when trailing zeros matter.
+= At most 0.005 m or 0.5 cm, less than 1 cm.~100×0.005/2.40≈0.2083%.~Not necessarily; if 2.4 m is rounded to the nearest tenth its bound is 0.05 m, ten times larger. The displayed precision indicates the rounding place here.
+2.1|5A
+C|Which design grows faster?|Two builders model the number of squares with (n+2)(n+4) and (n+3)² for integer n ≥ 1.|Expand both rules and compare their coefficients.|Which builder always needs more squares, and by how many?|A learner tests n = 1 and n = 2 only. Give a general reason the result holds beyond those values.
+= n² + 6n + 8 and n² + 6n + 9.~Second, by one.~The n² and 6n terms cancel in the difference, leaving constant 1.
+2.2|5A
+A|Grouping with a missing term|Grouping can reveal a shared binomial.|Factor 12x³y − 8x²y² and x² + 4x + 3x + 12.|Check both by expansion.|Replace 3x in the second expression with 5x and choose a new constant so that x² + 4x and 5x + □ share a factor by grouping. Show the full factorisation.
+= 4x²y(3x−2y); (x+3)(x+4).~Distribution gives the supplied terms.~20; x(x+4)+5(x+4)=(x+5)(x+4).
+2.3|5A
+B|One coefficient, competing pairs|Look for factorizations of x² + bx + 24 with positive integer offsets.|List all positive unordered offset pairs and resulting b values.|Identify the smallest b. Explain why testing only 1 and 24 would miss it.|Now factor 2x² + 11x + 12 by splitting the middle term; verify.
+= (1,24),(2,12),(3,8),(4,6) give b = 25,14,11,10.~10 from the closest pair; 1 and 24 give the largest sum.~(2x+3)(x+4); cross terms 8x+3x=11x.
+A|A leading coefficient changes the search|Consider the quadratic 3x²−14x+8.|Factor it over the integers.|Find the two middle-term coefficients using product and sum conditions.|Show the grouping and verify by expansion.|A learner chooses (3x−8)(x−1). Identify exactly which coefficient fails.
+= (3x−2)(x−4).~−12 and −2 multiply to 24 and sum to −14.~3x(x−4)−2(x−4); expansion gives 3x²−12x−2x+8.~They get middle coefficient −3−8=−11; leading and constant terms match but that is insufficient.
+2.4|5A
+C|No need for long multiplication|Both calculations are near 100.|Use identities to evaluate 103 × 97 and 101² − 99² mentally.|Write the identities explicitly and check the signs.|A learner says (a−b)² = a²−b². Show when this equality does happen for real a,b and why it is not an identity.
+= 9 991 and 400.~(100+3)(100−3)=100²−3²; (101−99)(101+99)=2×200.~a²−2ab+b²=a²−b² gives 2b(b−a)=0, so b=0 or b=a only.
+2.5|5A
+C|A cancelled factor, a forbidden value|Consider (x²−9)/(x²+5x+6).|Factor and simplify while stating every excluded value.|Evaluate the simplified form at x = 0 and check in the original.|Why is x = −3 still excluded even though the new denominator is nonzero there?|Subtract 1 from the expression and simplify without changing its domain.
+= (x−3)/(x+2), x ≠ −2, −3.~−3/2 in both.~The original denominator was zero.~−5/(x+2), with both restrictions unchanged.
+2.6|5C
+A|Rearranging a mixing rule|A mixture has concentration C = (aV + bW)/(V+W), where V and W are positive volumes and a,b are stock concentrations.|Make W the subject.|For a = 2, b = 8, V = 3 and C = 5, calculate W and verify.|What happens to the algebra when C = b? Explain why a≠b makes that target impossible for finite positive V,W.
+= W = (a−C)V/(C−b).~W = 3; (6+24)/6=5.~Then C−b = 0; (a−b)V would need to be zero, contrary to a≠b and V>0.
+3.1|2B
+A|A calibrated counter|A calibration requires (3x−2)/4 − (x+1)/6 = 5.|Clear denominators and solve.|Verify in the original equation.|A student drops the minus sign before x+1 when clearing. Write the correct expansion.
+= 9x−6−2x−2 = 60, so x = 68/7.~The two fractions become 95/14 and 25/14; difference 5.~Subtract 2(x+1), which expands to −2x−2.
+3.2|3A
+C|An overlap of restrictions|A reading must satisfy 4 − 3x < 10 and 2x + 5 ≤ 13.|Solve both and sketch them on the number line.|Write the combined interval in symbols.|List allowed integer readings and justify each endpoint type.
+@line -4|6|
+= x > −2 and x ≤ 4.~(−2,4].~−1,0,1,2,3,4. Strict at −2, inclusive at 4.
+3.3|2A
+A|Graph and exact point|Lines P and Q have equations y = 3x−2 and y = 8−2x.|Read the approximate solution on the graph.|Recover its exact coordinates by substitution.|If each line represented a price, which is cheaper to the right of the intersection? Explain without relying on colour.
+@xy 0 4 -2 10|x|y|P:0,-2 4,10;Q:0,8 4,0
+= (2,4).~3x−2=8−2x gives x=2, y=4.~Q; it decreases while P increases after the crossing.
+3.4|3B
+C|Read the coefficients first|Pair 3x−2y = 7 with each of 6x−4y = 14, 6x−4y = 15, and 6x+y = 9.|Use elimination to classify all three systems.|Find and verify a solution in the third case.|Explain the geometric reason for the first two outcomes.
+= Infinitely many; none; one.~Subtract twice the first from the third to get 5y=−5; y=−1, x=5/3. Both original equations check.~First two have proportional left sides; exactly proportional constants give the same line, otherwise distinct parallels.
+3.5|2B
+D|Buying combined passes|At a museum, three group passes and two single passes total 8 400 FCFA; two group and four single passes total 9 600 FCFA. Assume a fixed price per type.|Define variables and build a system.|Solve and check both totals.|Plan the costs of four group passes and three singles under a budget of 12 000 FCFA.|Name a real tariff rule which could make your forecast invalid.
+= 3g+2s=8 400; 2g+4s=9 600.~g=1 800; s=1 500. Totals 5 400+3 000 and 3 600+6 000.~11 700 FCFA, leaving 300.~E.g. a bulk discount or an extra booking fee.
+4.1|5C
+C|Do identical outputs break a function?|A controller allows integer inputs −2 to 3 and uses f(x)=x²−2x.|Fill the table and give the domain and range.|Find all inputs mapping to 0.|Someone claims the relation is not a function because two inputs share a result. Explain the actual functional test.
+@table x~−2~−1~0~1~2~3;f(x)~—~—~—~—~—~—
+= 8,3,0,−1,0,3. Domain {−2,−1,0,1,2,3}; range {−1,0,3,8}.~0 and 2.~Each allowed input must have exactly one output; different inputs may share an output.
+4.2|3A
+A|Locating a midpoint on a map|The endpoints of a straight path are A(−3,5) and B(5,−1), in metres.|Find AB exactly and verify by a right triangle on the grid.|Find the midpoint and its distance to A.|If B is changed to (5,−3), how do both the midpoint and distance change?
+@xy -4 6 -4 6|East (m)|North (m)|AB:-3,5 5,-1
+= √(8²+6²)=10 m.~(1,2), 5 m from A.~Midpoint (1,1), distance AB becomes 8√2 m.
+4.3|2B
+A|A repair from two anchor readings|Points (−2,9) and (4,0) lie on the graph of a linear model.|Find the gradient and equation.|Write the equation as ax+by=c with integer coefficients.|Use it to predict x when y=3. Verify in both forms.
+@xy -3 6 -2 10|x|y|d:-2,9 4,0
+= m=−3/2, y=−3x/2+6.~3x+2y=12.~x=2; both give y=3.
+4.4|3B
+C|Two lines through one point|A line L has equation 2x−3y=9. Parallel line P and perpendicular line Q pass through (4,1).|Write slope-intercept forms of all three lines.|Test the parallel and perpendicular slope conditions.|Find the intersection of L and Q and verify both equations there.
+@xy -1 8 -4 5|x|y|
+= L: y=2x/3−3; P: y=2x/3−5/3; Q: y=−3x/2+7.~mL=mP=2/3; (2/3)(−3/2)=−1.~At (60/13,1/13); both y expressions evaluate to 1/13.
+4.5|2A
+D|A mobile charging model|A charger reading is 26% after 5 minutes and 50% after 15 minutes. Use a linear model over this interval.|Find the rate and the predicted initial reading.|Estimate when the charge first reaches 74%.|Does the model support a prediction at 50 minutes? Explain using a physical limit and a modelling assumption.
+@table Time (min)~5~15;Charge (%)~26~50
+= 2.4 percentage points/min, initial 14%.~(74−14)/2.4 = 25 min, if the rate remains constant.~At 50 it predicts 134%, impossible; charging often slows near capacity.
+5.1|5A
+C|Expression, equation or identity?|Compare x²+7x+10, (x+5)(x+2)=0, and x²+7x+10=(x+5)(x+2).|Classify each and justify using its role.|Show that x=−2 solves the equation and evaluate the expression at x=1.|Explain why substituting just one value cannot establish an identity.
+= Expression, equation with specific solutions, identity.~Product is 0 at −2; expression gives 18 at 1.~An identity must hold for all allowed inputs, established here by expansion.
+5.2|5A
+A|Keep both factors|Factor each quadratic before dividing by any variable.|Solve x²−9x+20=0 and 3x²=15x.|Verify all solutions by substitution or products.|Explain why dividing the second equation by x without a restriction loses a solution.|Give a quadratic with integer leading coefficient 2 whose roots are the first equation’s roots.
+= (x−4)(x−5)=0 gives 4,5; 3x(x−5)=0 gives 0,5.~Each root makes the indicated product zero, and the rearrangements are equivalent.~x=0 cannot be used as a divisor but is a valid root.~2(x−4)(x−5)=0.
+5.3|5C
+A|Read the minimum from the square|Consider the expression x²−10x+21.|Complete the square.|Use the result to solve x²−10x+21=0.|Find the minimum value and its location.|Explain why adding 25 inside a square must be balanced elsewhere.
+= (x−5)²−4.~(x−5)²=4 so x=3 or 7.~−4 at x=5.~(x−5)² includes +25, so subtract 25 before restoring the original +21.
+5.4|5A
+B|A family with a moving constant|Consider 2x²−8x+k=0.|Write its discriminant in terms of k and find when there is exactly one real solution.|Classify k=5 and use the formula for both exact roots.|Verify the two roots using their sum and product, or substitution.
+= Δ=64−8k; one at k=8, x=2.~Positive Δ=24 gives x=2±√6/2.~Sum 4; product 4−6/4=5/2, matching the equation divided by 2.
+C|A condition before solving|A learner says any quadratic with a negative constant has two real roots.|Prove this for ax²+bx+c=0 with a>0 and c<0 using the discriminant.|Give a counterexample if a may be negative; verify its discriminant.|Explain why the sign condition on ac is more informative than c alone.
+= With ac<0, Δ=b²−4ac>b²≥0, giving two distinct real roots.~−x²−1=0 has a=c=−1, b=0, Δ=−4.~If ac<0 the discriminant is positive regardless of b; c alone does not determine ac.
+5.5|5A
+D|A planted border|A rectangular bed has width w and length w+3 metres. A 1 m border lies entirely outside it on all four sides. The outer rectangle covers 70 m².|Model the total area and solve for w.|Find the bed’s dimensions and the border’s area.|Explain why the other algebraic solution is not admissible.
+@shape 0,0|10,0|10,7|0,7|0,0;1,1|9,1|9,6|1,6|1,1;5,3.5 Bed
+= (w+2)(w+5)=70; w²+7w−60=(w+12)(w−5)=0.~5 by 8 m; border 70−40=30 m².~w=−12 is not a physical width.
+6.1|5C
+C|Features from a graph|The plotted curve is y=(x−2)²−4.|Read its intercepts, vertex and axis of symmetry.|Explain how the axis relates to the two x-intercepts.|Distinguish the y-intercept from the lowest point, with coordinates.
+@curve -1 5 -5 6|x|y|1,-4,0
+= x-intercepts (0,0),(4,0); y-intercept (0,0); vertex (2,−4); axis x=2.~2 is the midpoint of 0 and 4.~The y-intercept is where x=0. The minimum at (2,−4) is on the symmetry axis, not the y-axis.
+6.2|5A
+A|Build a second parabola|Start with y=x². Reflect it in the x-axis, stretch vertically by factor 2, and shift three units right and one up.|Write the transformed rule in vertex form.|State the vertex, direction and y-intercept.|Use the grid to plot the vertex and two symmetric pairs. Show the symmetry algebraically.
+@xy 0 6 -8 2|x|y|
+= y=−2(x−3)²+1.~(3,1), opens down, y-intercept (0,−17).~(2,−1),(4,−1),(1,−7),(5,−7). Inputs 3±d each give 1−2d².
+6.3|5C
+C|Where is the curve positive?|The curve is y=x²−2x−3.|Factor to find the zeroes and check them on the graph.|Solve x²−2x−3 < 0; explain why the endpoints are excluded.|Solve x²−2x−3 ≥ 0 and express both rays in interval notation.
+@curve -3 5 -5 13|x|y|1,-2,-3
+= (x−3)(x+1); roots −1 and 3.~−1 < x < 3, curve below axis; zero does not satisfy strict <.~(−∞,−1] ∪ [3,∞).
+6.4|5C
+D|Optimising a notice panel|A rectangular sign uses 28 m of framing. Let x be its width and assume all framing is used around its boundary.|Write the area model and its feasible domain.|Find the maximum area by completing the square.|If the width cannot exceed 6 m, find the new maximum and explain why the original vertex no longer works.
+= A=x(14−x), 0<x<14.~49−(x−7)², maximum 49 m² at x=7.~48 m² at x=6; the expression increases up to 7 and the vertex is outside the revised domain.
+6.5|5C
+C|Two designs, same observations|A model of signed height above a marker uses h=6−x; another uses h=6−x²/2. Observations are (2,4) and (4,2) with the second observation suspected.|Check which predictions reproduce the first observation. Check the second.|Find where the predictions next agree besides x=2.|Recommend what to measure next, including an x-value that separates the models in the domain 0 ≤ x ≤ 5.
+@table x~2~4;Observed h~4~2
+= Both give 4 at 2; first gives 2 at 4, second gives −2.~Equality gives x²−2x=0, so the other agreement is x=0.~E.g. repeat x=4: the predictions differ by 4 units (2 versus −2), so a repeat measurement could resolve the suspected reading.
+7.1|5C
+B|Growing a rectangular array|An n by (n+2) array of paving blocks is built at stage n.|Find the first four totals and consecutive differences.|Predict stage 5 from the differences and verify by the dimensions.|By counting the extra row and column, explain why the differences themselves increase by 2.
+@table Stage~1~2~3~4~5;Dimensions~1×3~2×4~3×5~4×6~5×7;Total~—~—~—~—~—
+= 3,8,15,24, differences 5,7,9.~35; 5×7=35.~From n by n+2, extend by a row of n+2 and a column of n+1; together 2n+3.
+7.2|5A
+B|The missing stage number|An arithmetic pattern has term 4 equal to 18 and term 9 equal to 43.|Recover the common difference and first term.|Find an explicit rule and verify both given values.|Decide whether 199 occurs; explain how an integer check settles it.
+= Difference (43−18)/5=5; first 3.~uₙ=5n−2. It gives 18 and 43 at 4 and 9.~No; 5n=201 does not give an integer n.
+7.3|5C
+B|Read the second differences|A pattern begins 4, 9, 18, 31, 48. Assume a quadratic nth term.|Find the first and second differences.|Use the second difference to obtain the coefficient of n²; determine the remaining coefficients.|Predict terms 6 and 10 and verify term 5.
+@table n~1~2~3~4~5;Term~4~9~18~31~48
+= First 5,9,13,17; second 4,4,4.~Coefficient 2; subtract 2n² to get 2,1,0,−1,−2, so uₙ=2n²−n+3.~69 and 193; term 5 is 50−5+3=48.
+C|The starting index changes the formula|A pattern is modelled as 3n²+2n+1 with the first displayed term at n=0.|Find the first four displayed values and their second differences.|Write the same sequence with the first displayed term at m=1.|Explain which coefficient remains invariant and why.
+= 1,6,17,34; first differences 5,11,17, second differences 6,6.~Substitute n=m−1, giving 3m²−4m+2.~The leading coefficient stays 3; a horizontal shift only alters lower-degree terms and does not change second differences.
+7.4|5A
+C|A spreadsheet with order-of-operations trouble|Row 2 stores 80 in B2. Each next row should retain 90% of the previous total and then add 12. Keep decimals until the end.|Write a formula for B3 that can be filled down.|Find B3, B4 and B5.|Compare the erroneous formula =(B2+12)*0.9 for B3. Explain the discrepancy.|Find a value the correct formula leaves unchanged.
+@table Row~2~3~4~5;Column B~80~—~—~—
+= =0.9*B2+12.~84, 87.6, 90.84.~82.8; it discounts the new 12 as well as the old balance.~120, from 0.9u+12=u.
+7.5|5A
+D|A cash reserve forecast|A club starts month 1 with 17 000 FCFA and adds 3 200 at the start of every following month.|Write an explicit model and forecast month 8.|Find the earliest month the model reaches 50 000 FCFA.|A 6 400 FCFA repair is paid immediately after month 5’s deposit. Recalculate the first month reaching the target and explain the model change.
+= uₙ=17 000+3 200(n−1); 39 400.~Month 12 (52 200; month 11 is 49 000).~Subtract 6 400 from the month 5 and subsequent end-of-deposit-and-repair forecasts; the target moves two months to month 14.
+8.1|5A
+A|Alternating percentages|A price of 24 000 FCFA rises 15% and then falls 12%.|Calculate both stages using multipliers.|Find the overall percentage change.|If the order of changes is reversed, compare the final value and intermediate value.|What decrease after the 15% rise would exactly undo it, to two decimal places?
+= 27 600 then 24 288 FCFA.~+1.2%.~Same final value by commutativity; intermediate becomes 21 120 FCFA.~100(1−1/1.15)≈13.04%.
+8.2|5A
+D|Interest credited annually|Deposit 80 000 FCFA at 4% annual compound interest with no deposits or fees for three years.|Build a formula and calculate the balance at year 3 to the nearest franc.|Compare with simple interest at the same annual rate.|Explain why the difference is not 4% of the initial deposit each year.
+= 80 000(1.04)^3=89 989.12, about 89 989 FCFA.~Simple interest gives 89 600, so compound gives about 389 more.~Only accumulated interest earns the additional return beyond simple interest.
+8.3|5A
+A|Reverse a price history|A sensor loses 18% of its value each year. After two years it is valued at 134 480 FCFA under the model.|Find its original value.|Calculate its value after one more year to the nearest franc.|A student multiplies 134 480 by 1.18 twice to reverse the change. Explain the error and give the correct yearly inverse multiplier.
+= 134 480/0.82² = 200 000 FCFA.~110 274 FCFA (unrounded 110 273.6).~Use 1/0.82, not 1.18; the 18% loss is measured from the earlier, larger value.
+8.4|5A
+D|A rate with a fee|Two offers accept 150 000 FCFA for two years. A earns 4% compounded annually, then deducts a one-time 1 000 FCFA fee at withdrawal. B earns 3.8% compounded with no fee.|Calculate and compare withdrawal amounts.|Find the maximum fee at which A is at least as good as B.|Explain one reason your recommendation might change for a different deposit amount.
+= A 161 240; B 161 616.60 FCFA.~623.40 FCFA.~The interest advantage is proportional to deposit; the flat fee is not.
+C|Make a defensible offer comparison|Offer P grows 6% once in year 1 and 2% once in year 2. Offer Q grows 4% each year. Start with 50 000 FCFA; no fees or extra deposits.|Compare after year 1 and year 2.|Check the claim that equal arithmetic means of the rates imply equal final values.|Use the multipliers to explain the difference.
+= Year 1: P 53 000, Q 52 000; year 2: P 54 060, Q 54 080 FCFA.~False: Q wins by 20 despite both pairs averaging 4%.~(1.04+0.02)(1.04−0.02)=1.04²−0.02², which is smaller than 1.04².
+8.5|5A
+D|Account for maintenance|A device saving 9 000 FCFA each month costs 42 000 FCFA to buy and 1 500 FCFA per month to maintain. Assume end-of-month cash flows.|Find net monthly savings and write net benefit after n months.|Find the first full month with a positive benefit.|If savings fall 20% but maintenance is unchanged, redo the decision.|State a feature real maintenance bills might have which your model ignores.
+= 7 500/month; 7 500n−42 000.~Month 6.~Net 5 700/month; first positive at month 8.~Irregular repairs or downtime, for example.
+9.1|3A
+C|One motion or two?|Triangle ABC has A(−3,1), B(−1,1), C(−3,4); the image has A′(3,1), B′(1,1), C′(3,4).|Identify and verify a single transformation taking ABC to A′B′C′.|Explain why this is not a translation.|Compare signed orientation and the lengths of AB, AC with their images.
+@xy -5 5 -1 5|x|y|ABC:-3,1 -1,1 -3,4 -3,1;Image:3,1 1,1 3,4 3,1
+= Reflection in the y-axis: (x,y)→(−x,y).~The horizontal moves are 6 and 2 for A and B, not a common vector.~Orientation reverses; corresponding lengths remain 2 and 3 units.
+9.2|3B
+D|A measurement through similar triangles|A vertical 1.8 m pole casts a 2.4 m shadow. At the same moment a vertical tower on the same level ground casts an 18 m shadow.|Explain similarity with two named angle relationships.|Estimate the tower height.|A raised platform makes a later comparison’s shadow end 0.6 m above the ground at the tower base. Explain why direct scaling of horizontal distances would then no longer model the full tower height.
+@shape 0,0|2.4,0|0,1.8|0,0;4,0|22,0|4,13.5|4,0;1,-.65 2.4 m;12,-.65 18 m
+= Both have right angles and the sun rays give equal acute elevation angles.~18×1.8/2.4=13.5 m.~The vertical leg to the elevated plane is height minus 0.6 m, not full height.
+9.3|3A
+A|Enlargement across the centre|Use centre O(1,0) and scale factor −2 on A(2,1), B(4,1), C(2,2).|Plot and state the images.|Use A and A′ to check the factor including its sign.|Compare AB and A′B′ and explain why a length ratio is positive despite the negative factor.
+@xy -6 5 -5 4|x|y|ABC:2,1 4,1 2,2 2,1;d:1,0
+= (−1,−2),(−5,−2),(−1,−4).~OA=(1,1), OA′=(−2,−2), so factor −2.~Lengths 2 and 4: length scales by absolute magnitude; sign gives the opposite ray.
+9.4|3B
+C|Does order matter?|Starting with P(2,1), compare “reflect in x-axis then translate up 3” with “translate up 3 then reflect in x-axis”.|Find each image on the grid.|Write the two composite rules for a general (x,y).|For any point, how far apart are the two images and why?
+@xy -2 5 -5 5|x|y|d:2,1
+= (2,2) and (2,−4).~(x,3−y) and (x,−3−y).~Same x and vertical difference 6, independent of y.
+9.5|3B
+A|Same shape, three scales|Two similar containers have outside areas 216 cm² and 486 cm². The smaller inside capacity is 240 mL. Assume all corresponding interior and exterior lengths scale by the same factor.|Find the linear scale factor from the smaller to the larger.|Find the larger capacity.|Would multiplying capacity by the area ratio be correct? Quantify the error.
+= √(486/216)=1.5.~240×1.5³=810 mL.~No; 240×2.25=540 mL, an underestimate of 270 mL.
+10.1|3A
+C|Reverse the theorem where appropriate|Compare triples (8,15,17), (9,12,16) and (6,8,9). Each describes side lengths of a triangle.|Use squared lengths to test the first for a right angle.|Test the other two and label their largest angles acute or obtuse using squared-length comparison.|Explain why using the shortest side alone as the possible hypotenuse cannot work.
+= 64+225=289, so right.~9²+12²=225<256, so obtuse; 6²+8²=100>81, so acute (compare cosine or the right-angle reference).~The hypotenuse is opposite the largest angle and must be longest.
+10.2|3B
+A|Two distances inside a box|A rectangular equipment case measures 12 cm wide, 9 cm deep and 8 cm high.|Find the base diagonal.|Find the full space diagonal and write the calculation as a single square root.|A 16.9 cm rod is thin and rigid. Can it fit fully along the longest straight segment? Use the exact comparison.
+@cuboid 12 cm|9 cm|8 cm
+= 15 cm.~√(12²+9²+8²)=17 cm.~Yes in the idealised internal dimensions; 16.9<17.
+10.3|3A
+A|Rename the ratio, not the side|Triangle ABC is right-angled at B, AB=12, BC=5 and AC=13.|Write sine, cosine and tangent of A exactly.|Repeat for C and explain why the sine and cosine trade roles.|Find A and C to the nearest degree and verify their sum.
+@shape 0,0 A|6,0 B|6,2.5 C|0,0;3,-.3 12;6.4,1.2 5;2.7,1.55 13
+= 5/13, 12/13 and 5/12.~12/13, 5/13, 12/5; opposite and adjacent legs trade roles.~A ≈23°, C ≈67°; sum 90°.
+10.4|3B
+D|Can the cable reach?|A cable rises from a ground anchor at 38° above horizontal to the top of a mast 9 m horizontally away.|Find the vertical rise and the straight cable length.|Allow 0.3 m at each end for fastening. Is a 12 m length enough?|If the anchor moves 1 m closer but mast height stays fixed, explain how the angle changes.
+@shape 0,0 Anchor|9,0|9,7.03 Mast|0,0;4.5,-.4 9 m;1.6,.95 38°
+= 9tan38°≈7.03 m; 9/cos38°≈11.42 m.~No; about 12.02 m is needed. Do not round the cable length to 11 m before adding allowances.~Angle increases because rise/run increases.
+A|Correct the inverse-ratio choice|A right triangle has a known angle θ=52° and hypotenuse length 12 cm. A learner uses 12/tan52° for the opposite leg.|Find both legs correctly, to two decimal places.|Check their squares against the hypotenuse, allowing for rounding.|Explain which two sides their tangent ratio would refer to.
+= Opposite is 12sin52°≈9.46 cm; adjacent is 12cos52°≈7.39 cm.~9.46²+7.39²≈144.10, close to 144.~tan θ is opposite/adjacent; the known 12 is neither leg.
+10.5|3A
+D|A navigation aid|A survey boat travels 600 m due east from a marker, then 800 m north.|Find the straight distance back to the marker.|Find the three-figure bearing of the marker from the boat’s final point, nearest degree.|Explain why reversing the trip changes the direct bearing by 180° rather than negating it.
+@shape 0,0 Marker|6,0 Turn|6,8 Boat;0,0|6,8;6,8|6,9.2 N;3,-.5 600 m;6.65,4 800 m
+= 1 000 m.~217°, from 180°+arctan(600/800).~The reverse direction is opposite, half a turn from the original direction; use a clockwise angle from north in both cases.
+11.1|3B
+D|Two models for a water tank|A closed cylinder has internal radius 0.5 m and height 1.2 m. A closed square-based prism has internal side 1 m and height 1.2 m. Ignore wall thickness.|Find both volumes in litres and external areas in square metres.|Which designs hold a 900 L load?|If the cylinder height is adjusted to hold exactly 900 L, find the minimum height and explain whether the curved wall area increases or decreases.
+= Cylinder 300π≈942.5 L, surface 1.7π m²; prism 1 200 L, 6.8 m².~Both hold 900 L.~Required height 0.9/(0.25π)≈1.146 m, which is shorter; less curved wall material is needed.
+11.2|3A
+A|Cones and pyramids at equal height|A cone has base radius 5 cm and vertical height 12 cm; a right square pyramid has base side 10 cm and vertical height 12 cm.|Explain why the cone’s slant height and the pyramid’s face height are the same.|Find their lateral surface areas.|Find their volumes and compare the ratio of volumes with the ratio of lateral areas.
+@shape 0,0|5,0|0,12|0,0;-.55,6 12;2.5,-.5 5
+= Both use √(5²+12²)=13 cm.~65π and 260 cm².~100π and 400 cm³; both cone-to-pyramid ratios are π/4.
+11.3|3A
+A|A capsule model|A capsule consists of a cylinder of radius 2 cm and straight length 6 cm, with a hemisphere of that radius at each end.|Find the volume as a sum of cylinder and equivalent sphere.|Find the outer surface area and identify the internal surfaces not counted.|A label covers only the straight barrel. What fraction of outer area does that cover?
+@capsule 2|6
+= 24π+32π/3=104π/3 cm³.~24π+16π=40π cm²; the two circular joins are internal.~24π/40π=3/5.
+11.4|3B
+B|Changing a model scale|An object of area 48 cm² and volume 32 cm³ is enlarged by factors 1.5, 2 and 2.5 in turn.|Table the new areas and volumes.|Which enlargement multiplies volume by exactly 8? What happens to the area there?|Derive a rule for the area-to-volume ratio of the enlarged shape in terms of scale factor k>0.
+@table k~1.5~2~2.5;Area (cm²)~—~—~—;Volume (cm³)~—~—~—
+= Areas 108,192,300; volumes 108,256,500.~k=2; area quadruples.~(48k²)/(32k³)=1.5/k cm⁻¹.
+11.5|5A
+D|Packaging with a footprint limit|Design a closed cuboid of volume 216 cm³ from one of three options: 6×6×6, 9×6×4 or 12×6×3 cm, with fixed height given by the last dimension.|Find the total material area for each.|A shelf allows footprints of at most 55 cm² and height at most 5 cm. Recommend a feasible box.|A supplier charges 0.8 FCFA/cm². Calculate the cost difference between the feasible design and the smallest-area design.
+= 216, 228 and 252 cm².~9×6×4 is feasible (footprint 54, height 4); cube too tall, third too wide in footprint.~(228−216)×0.8=9.6 FCFA.
+12.1|4A
+D|Audit the water station|A school wants to reduce water left running during handwashing. The team records tap ID, seconds running and whether soap was used, but observes only the nearest tap after one lesson.|Classify each variable and suggest a suitable seconds plot.|Identify a sampling limitation and repair it in a repeatable protocol.|Write a conclusion the original data can support and a stronger conclusion they cannot support.
+= ID and soap use categorical; seconds continuous measurement (recording may round it). Histogram or dot plot depending volume and resolution.~Use a predefined sample of different taps, days and lesson times; record each selected observation by the same timing rule.~Can describe the observed tap/session only; cannot estimate school-wide waste reliably or infer why a tap ran longer.
+C|Read a stem-and-leaf display|The display records eleven daily response times, in minutes, for a desk.|Use the key to write the smallest and largest times and find the median.|Recategorise the data using [10,20), [20,30), [30,40).|Explain what the grouped counts now hide.
+@stem Stem~Leaves;1~2 4 4 8;2~0 1 5 7;3~0 2 8|Key: 2 / 5 represents 25 minutes
+= Minimum 12, maximum 38, sixth value (median) 21.~Counts 4,4,3.~The exact times within each interval are lost, including repeated exact values such as 14.
+12.2|4B,4C
+C|Make area mean frequency|Delivery times are grouped below. All intervals include their left endpoint and exclude their right.|Compute class widths and frequency densities.|Which bin contains the most orders, and which has the tallest histogram bar?|Draw the correct histogram in your notebook; use the labelled axes in the next task as a scale guide. Calculate the fraction of orders taking under 15 min.|Explain the error of plotting frequencies as heights when class widths differ.
+@table Minutes~0–5~5–15~15–30;Orders~10~15~15
+= Widths 5,10,15; densities 2,1.5,1.~Second and third tie on frequency; first tallest.~Bars 0–5 height 2, 5–15 height 1.5, 15–30 height 1; fraction 25/40=5/8.~Areas must represent counts; unequal widths would otherwise distort the relative frequencies.
+A|Interpret an unequal-bin histogram|The histogram shows delayed shipments grouped by minutes. Every bar starts at density zero.|Recover the three class frequencies using areas.|Find which class has the most shipments and which is densest.|Are there enough data to give the exact number over 24 minutes? Explain.
+@hist 0 40 0 3|Delay (min)|Shipments per min|0,10,1;10,20,2.5;20,40,1.5
+= 10×1=10, 10×2.5=25, 20×1.5=30.~[20,40) has most; [10,20) densest.~No; the last class does not distinguish values above 24 from lower values in the same class.
+12.3|4A,4C
+C|From accumulations to a box|The plotted line is a grouped cumulative-frequency estimate for 80 service times. Read quartiles by linear interpolation; the measured minimum and maximum are 0 and 40 min.|Estimate Q₁, median and Q₃.|Put the five-number summary on the blank scale as a box plot and find IQR.|Estimate the number of waits in [20,30) and explain why interpolated quartiles are not exact raw values.
+@xy 0 40 0 80|Service time (min)|Cumulative count|CF:0,0 10,20 20,50 30,70 40,80
+@line 0|40|10:10,20:20,30:30
+= Q₁=10, median≈16.7, Q₃=25 min.~0,10,16.7,25,40; IQR 15 min.~70−50=20. Grouping hides individual positions between boundaries.
+12.4|4B
+B|Shift one value, then shift all|Start with sorted values 4,5,6,8,9,10,11,12,13; for quartiles exclude the median.|Find the mean, median and IQR.|Replace 13 by 31. Recalculate and use the 1.5×IQR upper fence to identify any high outlier.|Instead add 18 to every original value. Predict and verify how the three summaries change.
+= Mean 78/9, median 9, Q₁=5.5 and Q₃=11.5, IQR=6.~Mean 96/9, median 9, IQR 6. Upper fence 20.5, so 31 is an outlier.~Mean and median rise by 18; both quartiles rise by 18 and IQR stays 6.
+C|One data point, two kinds of spread|Two populations both have mean 12. P has data 8,11,12,13,16; Q has 10,10,12,14,14.|Compute the two population variances using squared deviations.|Compare the resulting standard deviations and ranges.|Explain why the common mean is not enough to choose the more consistent population.
+= P: (16+1+0+1+16)/5=6.8; Q: (4+4+0+4+4)/5=3.2.~P SD √6.8≈2.61, range 8; Q SD √3.2≈1.79, range 4.~Mean measures centre only; Q is more tightly clustered by both measures.
+12.5|4A,4C
+D|Which delivery service meets the brief?|Two services’ same-scale box plots show minutes from dispatch to arrival. A buyer prioritises typical delivery under 22 min and consistency, but sometimes requires delivery within 30 min.|Compare median, IQR and maximum.|Recommend a service for typical performance and explain the observed risk for the 30-minute jobs.|Can you estimate the exact proportion past 30 minutes for either service from the diagrams? Explain.
+@box 0|48|Minutes|A:8,13,18,24,43;B:11,16,21,23,29
+= A median 18, IQR 11, max 43; B median 21, IQR 7, max 29.~B meets the typical threshold, has smaller IQR and all observed deliveries under 30. A has the lower median but some observed deliveries took longer than 30.~B’s observed proportion is zero; A’s exact proportion cannot be read because 30 lies between Q₃ and its maximum.
+C|Compare two shifts at one reading|These back-to-back stems record delivery times in minutes; the smaller units are leaves.|Find each group’s median and range, ordering the left-hand data correctly.|Compare their typical times and spreads, with units.|Explain why reading the left row in printed order as an increasing list is an error.
+@stem Early shift~Stem~Late shift;9 3 1~1~4 6;6 3~2~0 1 8;0~3~2|Key: 9 on the left of stem 1 is 19 min; 4 on the right is 14 min.
+= Early values 11,13,19,23,26,30: median 21, range 19. Late values 14,16,20,21,28,32: median 20.5, range 18.~Late shift’s sample is typically 0.5 min faster and has a 1 min smaller range. These are slight differences for samples of six.~Left leaves are written with the smallest nearest the stem, so read each left row from right to left for increasing order.
+13.1|2A
+A|Double draws of fair digits|A fair four-sided die labelled 1–4 is rolled twice. The table shows the sums.|Find P(sum=5) and P(sum≥6).|Find the complement of “sum at least 6” and its probability.|Define an event of probability 1/4 different from “sum=5”. Explain your count.
+@table First + second~1~2~3~4;1~2~3~4~5;2~3~4~5~6;3~4~5~6~7;4~5~6~7~8
+= 4/16 and 6/16.~Sum≤5, probability 10/16.~E.g. first roll is 1; four second-roll outcomes out of 16 ordered outcomes.
+13.2|2B
+C|Translate between two displays|From 60 students, 28 take music, 25 take art and 17 take neither.|Complete both displays using the same four cell counts.|Find P(music or art) and P(exactly one).|Explain how the “both” count can be checked by subtracting the union from the sum of the two marginal totals.
+@venn Music|Art|—|—|—|17
+@table ~Art~Not art;Music~—~—;Not music~—~17
+= Union 43, both 10, music-only 18, art-only 15, neither 17.~43/60 and 33/60.~The overlap is included twice in 28+25 and once in 43, so the difference is exactly 10.
+13.3|2A
+A|Paint counters without replacement|A bag holds 3 blue and 2 white counters. Draw two without replacement. Use the tree skeleton.|Fill all six branch probabilities.|Find P(two blue) and P(one of each).|Check that the four path probabilities sum to 1 and explain why one-of-each needs two paths.
+@tree B|W|—|—|—|—|—|—
+= First B 3/5, W 2/5. After B: B 2/4, W 2/4. After W: B 3/4, W 1/4.~3/10 and 3/5.~BB, BW, WB, WW give 3/10,3/10,3/10,1/10. Mixed outcomes occur in both orders.
+C|Check a tree by the total|Two independent tests each pass with probability 0.7.|Find the path probabilities for PP, PF, FP and FF.|Find P(at least one pass) by two methods.|Explain what would change in the tree if passing the first test made a second pass more likely.
+= 0.49,0.21,0.21,0.09.~0.49+0.21+0.21=0.91; or 1−0.09.~The second-stage probabilities would depend on the first result, so the two pass branches would not both be 0.7.
+13.4|2B
+C|Is the second colour affected?|An urn has 5 yellow and 3 black counters. Compare two draws with and without replacing the first counter.|Calculate the second-draw probability of yellow given first yellow under both rules.|Calculate P(two yellow) for each.|Which procedure gives independent colours and how do the conditional probabilities show it?
+= With replacement 5/8; without 4/7.~25/64 and 5/14.~With replacement, the distribution of draw two remains 5/8 yellow whichever colour came first. Without replacement it changes.
+13.5|2B
+D|Fair on average?|A fair wheel with eight equal sectors pays 500 FCFA on one sector, 200 on two sectors and nothing on five. It costs 120 FCFA to play.|Find expected numbers of each prize over 400 plays.|Calculate expected net proceeds for the organiser over 400 plays.|Find the break-even price and explain why that price does not guarantee break-even in practice.
+@spinner 500,200,200,0,0,0,0,0
+= 50, 100, 250.~Expected prize payout 45 000; revenue 48 000; net +3 000 FCFA.~112.5 FCFA (ignoring monetary units for rounding). Actual counts fluctuate.
+C.1|4C
+D|From “adequate shelter” to a testable plan|A school wants a canopy for 24 seats with at least 1.2 m² of measured shaded area per seat at lunch. Two designs are proposed.|Compute the area target and check each design against it at both measured times.|Assume lunch covers both times and shaded area changes linearly between them. Recommend a design and name the weakest assumption.|Describe a validation measurement before committing to a purchase.
+@table Design~Shade at 12:00 (m²)~Shade at 13:00 (m²);A~32~26;B~30~29
+= 28.8 m². A passes at 12 only; B passes both.~B would remain above 28.8 under linear interpolation because both endpoints pass. Assuming linear change or equivalent weather on future days may fail.~Measure the footprint of usable shade at several intervening times and on representative days or seasons; include shade placement relative to seats.
+C.2|4A,4B
+D|Size a collection barrel from a brief|A 40 m² roof collects a stated 75% of rainfall into a barrel initially containing 200 L. A forecast gives 18 mm, rounded to the nearest millimetre. One millimetre on 1 m² is 1 L.|Estimate the final volume before overflow.|Find the possible final volumes from rounding alone, assuming fixed capture efficiency and no losses beyond that efficiency.|Decide whether a 750 L barrel always suffices under those assumptions; name a data uncertainty the calculation leaves out.
+= Added 40×18×0.75=540 L; final estimate 740 L.~Rainfall in [17.5,18.5) mm gives volumes in [725,755) L.~No, e.g. 18.4 mm predicts 752 L. Unmodelled uncertainties include variation in capture efficiency or initial volume.
+C.3|4C
+C|A constrained trade-off to report|A paved usable area must be at least 42 m². A budget cap of 140 000 FCFA applies after a 10% contingency. The options are shown.|Apply both requirements and identify any feasible option.|Calculate its headroom under the budget and area targets.|Write a two-sentence recommendation and name a stated assumption which, if it changed, would invalidate the decision.
+@table Option~Usable area (m²)~Quoted cost (FCFA);X~40~110 000;Y~44~125 000;Z~53~131 000
+= X costs 121 000 but fails area; Y costs 137 500 and meets both; Z costs 144 100 and exceeds budget.~Y has 2 500 FCFA and 2 m² of headroom.~E.g. choose Y; it meets both brief constraints, unlike the cheaper proposal and the larger proposal. An increase in total cost after contingency of more than 2 500 FCFA or loss of more than 2 m² usable space would require revision.

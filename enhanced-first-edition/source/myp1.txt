@@ -1,0 +1,253 @@
+# section | original exercise-reference design lens (see REFERENCE-REVIEW.md)
+1.1|3A
+A|Above and below|On the number line, P, Q and R show three water levels in centimetres relative to a marker.|Read the three levels and order them from lowest to highest.|After rain each rises by 2 cm. Give the new levels.|Which level finishes closest to the marker? Explain using distances.
+@line -5|5|-4:P,-1:Q,3:R
+= −4, −1, 3 in increasing order.~−2, 1 and 5.~Q: its distance is 1 cm, compared with 2 cm and 5 cm.
+C|Between ticks|Tomi marked −2 and 1 on a number line and says there are exactly two numbers between them.|List the integers strictly between the marks.|Give two fractions or decimals between the marks that are not integers.|Rewrite Tomi’s statement so it is true.
+= −1 and 0.~For example, −1.5 and 0.5.~There are exactly two integers strictly between −2 and 1.
+1.2|2A
+A|Rebuilding a meter display|A water meter displays 507 040. One digit is smudged in a second reading: 50□ 040.|State the place and value of the 7 in the first reading.|Which digit would make the second reading 2 000 larger than the first?|Explain how many places the 4 would move if the original reading were multiplied by 100.
+= Thousands; 7 000.~9: the new reading is 509 040.~Two places toward the left, from tens to thousands; its value becomes 4 000.
+C|Zero is not blank space|A label printer accidentally removes every zero from 406 205.|Write the resulting number.|Compare the value of the 6 before and after printing.|Explain why inserting a zero at the front of 4625 does not undo the error.
+= 4 625.~6 000 before; 600 afterward.~A leading zero does not change the positions of the existing digits.
+1.3|2A
+A|Same number, different bundles|A workshop has 2 crates of 1 000 beads, 14 bags of 100, 3 tubes of 10 and 6 loose beads.|Write the total as an expanded sum using the given bundles.|Regroup into a number with one digit for each place.|Give a different expanded sum using exactly 4 more tubes of 10 and no additional crates.
+= 2 000 + 1 400 + 30 + 6.~3 436.~One valid regrouping is 2 000 + 1 300 + 70 + 66. There are 7 tubes and 66 loose beads.
+C|A missing place|A student writes 60 905 = 6 × 10 000 + 9 × 100 + 5 × 10.|Compute the number actually represented on the right.|Repair the expression without changing the 6 or the 9.|Explain how expanded form can leave out zero terms without changing the number.
+= 60 950.~Use 5 × 1 in place of 5 × 10.~Zero contributes nothing to a sum; the remaining multipliers identify the places.
+1.4|3B
+A|Close readings|Four sensors report the values 24.47, 24.074, 24.7 and 24.407.|Order the readings, smallest first.|Round them separately to the nearest tenth.|Which values become indistinguishable after rounding?
+= 24.074, 24.407, 24.47, 24.7.~In that order: 24.1, 24.4, 24.5 and 24.7.~None; all four rounded values differ.
+C|The sign on the door|A sign shows 350 visitors, rounded to the nearest ten. The actual count is a whole number; round halfway values up.|Give the smallest and largest possible actual counts.|A second sign also shows 350. How far apart could the two counts be?|Draw a number line showing the possible counts and explain why 355 is excluded.
+@line 344|356|345:345,350:350,355:355
+= 345 and 354.~At most 9.~Mark each integer 345 through 354; 355 rounds up to 360.
+1.5|2B
+A|Packing breakfast|For 197 guests a team budgets 3 cups of water per guest and 42 cups for cleaning.|Estimate the total by rounding 197 and 42 to convenient tens.|Calculate the exact total. Is the estimate high or low?|Would 630 cups be enough? Show why an estimate alone could mislead here.
+= 200 × 3 + 40 = 640 cups.~633 cups, so the estimate is high.~No; 3 cups short. A rough figure does not tell you how far the true value is from the cutoff.
+D|An order that must fit|A stall has 7 000 FCFA. It wants 18 notebooks at 295 FCFA each and 8 pencils at 185 FCFA each.|Use rounded prices that are both above the actual prices to make a quick budget check.|Calculate the true cost and the money left.|Explain when rounding prices down would be unhelpful for a budget check.
+= For instance, 18 × 300 + 8 × 190 = 6 920 FCFA, safely within budget.~6 790 FCFA; 210 FCFA left.~A low estimate could make an unaffordable purchase appear affordable.
+2.1|3A
+A|Different products, same value|The LED tests use 3 × 3 × 3 × 3 and 9 × 9 flashes.|Write each product as one power; name its base and exponent.|Evaluate each power.|Write 81 as a power with exponent 1. Why does that not mean it equals 1?
+= 3⁴: base 3, exponent 4; 9²: base 9, exponent 2.~Both equal 81.~81¹; one factor of 81 is 81.
+B|An exponent puzzle|Consider 2², 2³, 2⁴ and 2⁵.|List their values. Describe how to obtain each value from the previous one.|Use your rule to find the first of these powers greater than 60, continuing the list if needed.|Explain why adding 2 at each step does not generate the powers.
+= 4, 8, 16, 32; double.~2⁶ = 64.~Raising the exponent by 1 appends another factor of 2, so the value doubles rather than increasing by 2.
+2.2|3B
+A|Archive codes|An archive stores each record number both in digits and as a sum using powers of ten.|Write 904 018 as such a sum.|Decode 5 × 10⁵ + 8 × 10² + 3 × 10¹.|Which digits separate the 5 and the 8 in the ordinary numeral, and why?
+= 9 × 10⁵ + 4 × 10³ + 1 × 10¹ + 8.~500 830.~Two zeros: there are no ten-thousands or thousands.
+C|Move the place, not the digit|A label starts at 7 × 10². Each time it is copied its value becomes ten times the previous value.|Write the first four labels in power notation.|A student says the fourth label is 7 × 10⁶. Identify the error.|Find the difference between the second and third labels in ordinary notation.
+= 7 × 10², 7 × 10³, 7 × 10⁴, 7 × 10⁵.~Three copy steps raise the exponent by three, not four.~70 000 − 7 000 = 63 000.
+2.3|3A
+A|Square mosaic and cube stack|A square mosaic has 81 tiles. A solid cube stack uses 125 unit cubes.|Find the side length of each model in units.|Could 83 tiles make a solid square without gaps or leftover tiles? Justify with consecutive squares.|A cube stack has side length 6. How many more cubes does it use than the stack of side 5?
+= 9 and 5.~No, 9² < 83 < 10².~6³ − 5³ = 91 cubes.
+B|The border grows|Start with square arrays of side 2, then 3, then 4 unit tiles. To grow a square by one, attach a new row and a new column.|List the totals for sides 2 through 5.|Find the differences between neighbouring totals. Predict the next difference.|Explain the prediction by counting the new border and its corner.
+= 4, 9, 16, 25.~5, 7, 9; next 11.~A side-5 square needs a row of 5, a column of 5 and one corner to become side 6.
+2.4|3B
+A|Pausing a checkout calculator|A class enters 18 − 2 × 4 + 3² on a basic calculator.|Show the calculation in the agreed order of operations.|Add one pair of brackets so the result is 73.|Why does multiplying before subtracting make a difference here?
+= 18 − 8 + 9 = 19.~(18 − 2) × 4 + 3² = 73.~Without grouping, 4 multiplies only 2, not the result of 18 − 2.
+C|Which shortcut works?|Two results are written for 48 ÷ 6 × 2: 4 and 16.|Identify the correct result and show the steps.|Add brackets to make the other result correct.|Explain why “division always goes before multiplication” is not a useful rule.
+= 16: (48 ÷ 6) × 2.~48 ÷ (6 × 2) = 4.~Multiplication and division have the same priority; without brackets, work left to right.
+2.5|2B
+A|A points machine|A puzzle machine returns 2n² + 1 for an input n.|Find its output for n = 3 and n = 5.|A student squares 2n before adding 1. Find their result for n = 3.|Write the expression the student actually evaluated, using brackets.
+= 19 and 51.~37.~(2n)² + 1.
+B|Matching outputs|Game A gives n² + 4 points and Game B gives 3n + 4 points, for a whole-number input from 0 to 5.|Make a table of both scores.|For which inputs are the scores equal?|When does A first score more than B? Explain using the rows of your table.
+@table n~0~1~2~3~4~5;Game A~—~—~—~—~—~—;Game B~—~—~—~—~—~—
+= A: 4, 5, 8, 13, 20, 29. B: 4, 7, 10, 13, 16, 19.~0 and 3.~4; A is at most B in all preceding rows and 20 > 16 at 4.
+3.1|2B
+A|Display trays|A vendor has 36 identical boxes to arrange into a solid rectangle, using all the boxes.|Find all side-length pairs; count rotations only once.|Which arrangement has the shortest boundary, in box-edge units?|Give one even number between 36 and 44 with exactly two distinct factor pairs.
+= (1,36), (2,18), (3,12), (4,9), (6,6).~6 by 6: boundary 24, compared with 74, 40, 30 and 26.~38 = 1 × 38 = 2 × 19.
+C|The common shelf|Three labels read 8, 16 and 24. A student says they are consecutive multiples of 4.|Check whether each is a multiple of 4.|Explain the problem with the word consecutive.|Name the largest whole number of which all three are multiples.
+= Yes: 4 × 2, 4 × 4, 4 × 6.~12 and 20, also multiples of 4, are skipped.~8; the common factor cannot exceed 8.
+3.2|3B
+A|A missing digit|A label reads 47□.|List the digits that make the number divisible by 3.|Which of those digits also make it divisible by 2?|Is any of those even numbers divisible by 9? Justify with digit sums.
+= 1, 4, 7 (digit sums 12, 15, 18).~Only 4.~No, the sum for 474 is 15.
+C|Test the test|Mira says “If a number is divisible by 2 and 4, it must be divisible by 8.”|Check 124 using tests or exact division.|Use 124 to decide whether the statement is true.|Write a correct statement starting “If a number is divisible by 8, then …” and explain it.
+= 124 ÷ 2 = 62, 124 ÷ 4 = 31, 124 ÷ 8 = 15 remainder 4.~False; 124 is a counterexample.~It is divisible by 4 and 2, since each group of 8 can be split into groups of either size.
+3.3|2B
+A|Prime check|Test the numbers 49, 53, 57 and 61.|For each composite number give a factor pair that is not 1 and the number itself.|Identify the primes; show a systematic check for one of them.|Explain why 1 is not in the list of primes.
+= 49 = 7 × 7; 57 = 3 × 19.~53 and 61; for 61 test 2, 3, 5 and 7; if both factors were at least 8 their product would be at least 64.~1 has only one positive factor, not two.
+B|Two apart|Start with the primes 3 and 5.|Find all pairs of primes from 3 through 30 whose difference is 2.|Compare their middle numbers. What do you notice about the middle numbers after the pair 3 and 5?|Explain why the middle number of any two odd numbers 2 apart is even.
+= (3,5), (5,7), (11,13), (17,19).~6, 12, 18; they are multiples of 6.~Moving one step from any odd number gives an even number.
+3.4|3A
+A|Two routes to the same product|Two learners start factoring 90 with 9 × 10 and 6 × 15.|Complete both routes down to primes.|Write the answer using index notation.|Use the prime list to decide if 90 is divisible by 12 without dividing.
+= Both give 2 × 3 × 3 × 5.~2 × 3² × 5.~No; 12 needs two factors of 2 but 90 contains only one.
+C|Repair a factor tree|A learner’s final leaves for 168 are 2, 2, 6 and 7.|Check whether the leaves multiply to 168.|Explain why a correct product does not make this a finished prime factorisation.|Fix the tree at the relevant branch and write the prime product.
+= Yes.~6 is composite.~Split 6 into 2 and 3, giving 2³ × 3 × 7.
+3.5|2B
+A|One number, two questions|A caretaker has 42 green and 56 blue tags to divide into identical sets. Separately, two bells ring every 42 and 56 seconds, starting together.|Find the greatest number of identical sets and the contents of each.|When will the bells next ring together?|Explain why the first question uses a common factor and the second a common multiple.
+= 14 sets, 3 green and 4 blue each.~168 seconds.~The set count must divide both totals; the ringing time must be reached by whole cycles of both periods.
+B|Construct the pair|Choose different whole numbers greater than 1 with highest common factor 6.|Find a pair for which the least common multiple is 30.|Find a different pair with the same HCF and LCM if possible; justify if not.|Explain how the HCF and the LCM constrain each possible number.
+= 6 and 30.~No different unordered pair: multiples of 6 that divide 30 are 6 and 30 only.~6 must divide each candidate, and each candidate must divide 30.
+4.1|2A
+A|Strip certificates|The strips are the same length. Shading shows the part already painted.|Read the fraction painted in each strip.|Explain the equivalence by grouping adjacent pieces.|If a third strip is cut into 18 equal pieces, how many should be shaded?
+@strips 6:4,9:6
+= 4/6 and 6/9.~Group the first strip in twos and the second in threes; each has 2 of 3 groups painted.~12.
+C|A multiplier, not an add-on|Dara claims 5/8 = 10/13 because adding 5 to both numbers is fair.|Use cross-products or a common denominator to check the claim.|Make a correct equivalent fraction with numerator 10.|Explain what operation preserves the fraction.
+= 5 × 13 = 65 but 8 × 10 = 80, so not equal.~10/16.~Multiply numerator and denominator by the same nonzero number (here 2).
+4.2|2B
+A|Who has finished more?|Three readers have completed 5/8, 2/3 and 7/12 of the same novel.|Place them in order from least to most complete using denominator 24.|Which two readers differ by the least? Explain.|Place 3/4 in your ordering.
+= 7/12 < 5/8 < 2/3 (14/24, 15/24, 16/24).~Two ties: neighbouring pairs each differ by 1/24.~3/4 is greatest (18/24).
+C|Compare without a long calculation|A student sorts 9/20, 7/13, 11/24 and 3/5. First sort them by whether they are above or below 1/2.|Identify the two below 1/2.|Determine which of those two is nearer 1/2.|Explain one benefit of using a benchmark first.
+= 9/20 and 11/24.~11/24; its gap is 1/24 versus 1/20.~It places all below-half fractions before all above-half fractions without computing a common denominator for every pair.
+4.3|2A
+A|Preparing a mural|A wall is 3/10 blue and 1/4 white. The rest is unpainted.|Find the fraction already painted.|How much more must be painted to reach 4/5 of the wall?|If all of that amount is white, what fraction is now white?
+= 11/20.~16/20 − 11/20 = 1/4.~1/2 of the wall.
+C|A fraction gap|A learner calculates 5/6 − 1/4 = 4/2.|Explain why 4/2 cannot be right even before you calculate.|Find the correct answer.|Give a different pair of fractions with denominators 6 and 4 that has the same positive difference.
+= The result must be less than 5/6, while 4/2 = 2.~10/12 − 3/12 = 7/12.~A valid choice is 8/6 − 3/4 = 7/12. Here 8/6 is an improper fraction.
+4.4|2A
+A|Serving soup|A kitchen has 3 3/4 L of soup. One standard portion uses 3/8 L.|Find the number of standard portions.|Five guests each want half a standard portion. How many litres do they use?|How many standard portions can be served from the remainder, and how much is left?
+= 15/4 ÷ 3/8 = 10.~5 × 3/16 = 15/16 L.~7 portions, leaving 3/16 L.
+C|A quotient can grow|A learner says division always gives a smaller answer.|Compute 2/3 ÷ 1/6 and interpret it as a count of sixths.|Find a positive fraction you could divide 2/3 by to get 2.|Explain why both results exceed 2/3.
+= 4; there are four sixths in two thirds.~1/3.~The divisors are less than 1, so asking how many fit gives a larger result than division by 1.
+4.5|2B
+A|Measured ribbon|Three ribbons measure 2.08 m, 2.8 m and 0.875 m.|Order the measures, largest first.|Find the total length exactly.|Round the total to the nearest tenth of a metre and compare with summing the three individually rounded lengths.
+= 2.8, 2.08, 0.875.~5.755 m.~5.8 m either way in this case: 2.8 + 2.1 + 0.9 = 5.8.
+C|Align by place value|A student obtains 0.74 + 3.6 = 1.10 after lining up the final digits.|Find the exact sum and write the addition with the places correctly aligned.|Check it with an estimate using 0.7 and 3.6.|Explain why 3.60 and 3.6 are equal but 3.06 and 3.6 are not.
+= 0.74 + 3.60 = 4.34.~About 4.3, consistent with 4.34.~3.60 adds zero hundredths; in 3.06 the 6 is in the hundredths place instead of the tenths.
+4.6|3A
+A|Checking a fill gauge|A device displays either a fraction or a decimal for the filled part of a bottle.|Express 0.375 and 0.65 as fractions in simplest form.|Express 7/8 as a decimal.|Which reading is closest to 3/4? Use differences, not the length of the decimal.
+= 3/8 and 13/20.~0.875.~0.65: its gap is 0.10 versus 0.125 and 0.375.
+B|Tenths and twentieths|Record decimal forms of 1/20, 3/20, 5/20 and 7/20.|Describe how the decimals change when the numerator rises by 2.|Use the pattern to predict 19/20 and verify it with a fraction over 100.|Explain how to get a decimal for any fraction over 20.
+= 0.05, 0.15, 0.25, 0.35; increase of 0.10.~0.95 = 95/100.~Multiply top and bottom by 5, then write that many hundredths.
+5.1|2A
+A|A hundred squares|The grid represents a full tray. A shaded square marks one filled cell.|Read the number of filled cells and give the percentage.|Write the same amount as a decimal and as a simplified fraction.|How many more cells would need filling to reach 45%?
+@hundred 28
+= 28 cells; 28%.~0.28 and 7/25.~17 more.
+C|Not a count of people|At club A, 6 of 20 members walk to school. At club B, 9 of 30 members walk.|Express each fraction as a percentage.|Which club contributes more walkers?|Explain why both answers can be true at once.
+= Both are 30%.~B; 9 versus 6.~A percentage measures a share of each club, not the number of people.
+5.2|2B
+A|An attendance check|A coach plans for 240 spectators. Of these, 15% are expected to arrive by bicycle.|Find 15% by combining 10% and 5%.|At a different game 180 spectators came and 20% cycled. How do the numbers compare?|Find 12.5% of 240 by converting the percentage to a fraction.
+= 24 + 12 = 36.~Both 36.~12.5% = 1/8, so 30.
+D|A target for sorting|Of 160 recycling items, a team correctly sorts 75%. To reach its target it must correctly sort 90% of the original 160.|Find the starting and target counts.|How many incorrectly sorted items must the team fix?|Can the team hit the target by fixing half of its incorrectly sorted items? Explain.
+= 120 and 144.~24 items.~No; half of 40 is 20, which gives 140 rather than 144.
+5.3|2B
+A|A changing library stock|A library had 320 books on one shelf. It increased the count by 25%, then moved 10% of the new count elsewhere.|Find the count after each change.|By how many books did the count increase overall?|Find the overall percentage change from 320.
+= 400, then 360.~40 books.~12.5% increase.
+C|Undoing a percentage change|A student says a 20% increase and a 20% decrease cancel.|Test the claim on 150 units.|Starting with the increased value, calculate how many units must be removed to restore 150.|Explain why that removal is less than 20% of the new value.
+= 150 → 180 → 144, so false.~30 units.~20% of 180 is 36; the 20% rise was measured against the smaller base of 150.
+5.4|2B
+A|At the till|A bag costs 8 000 FCFA. A 15% discount is applied first, then a 5% service charge is calculated on the discounted price.|Find the discounted price.|Find the final price.|What would the bill be if the cashier incorrectly calculated the service charge on the original price?
+= 6 800 FCFA.~7 140 FCFA.~7 200 FCFA.
+D|Plan within the cap|A team has 10 000 FCFA. It can buy a model kit for 9 200 FCFA plus 10% tax, or pay 9 900 FCFA all-inclusive at a different shop.|Compare the two final prices and recommend one.|A delivery fee of 200 FCFA is added only to the cheaper option. Is your recommendation still within budget?|Find the largest fee the cheaper shop could add without exceeding the budget.
+= 10 120 FCFA vs 9 900 FCFA; only the all-inclusive offer fits.~No, it becomes 10 100 FCFA.~100 FCFA.
+6.1|5C
+A|A row of garden markers|The table shows how many markers are needed as a display grows.|Describe the step from one stage to the next.|Find the missing counts at stages 4 and 8.|Give a rule that finds the count from the stage number directly.
+@table Stage~1~2~3~4~8;Markers~7~11~15~—~—
+= Add 4 each time.~19 and 35.~4n + 3 for stage n.
+B|Which continuation?|The beginning of a pattern is 2, 4, 6.|Write a rule that gives 8 next.|Write a different rule agreeing with the first three terms but giving 2 next.|Explain why the first three terms are not enough to prove a single rule.
+= Add 2 each time.~Repeat the cycle 2, 4, 6.~Both rules fit every given term but predict different fourth terms.
+6.2|2A
+A|Packing orders|A store packs p packs of 6 cups plus 4 spare cups.|Write an expression for the total and evaluate it when p = 7.|Explain what 6(p + 4) would mean instead.|For p = 7, find how much the incorrect expression overcounts.
+= 6p + 4; 46.~Four extra packs of 6, not four extra cups.~66 − 46 = 20 cups.
+C|Prices in letters|A student buys three items at x FCFA each and two at y FCFA each. They write 5xy.|Replace 5xy with an expression matching the description.|Evaluate both expressions when x = 200 and y = 50.|Explain why counting five items does not allow multiplying both prices together.
+= 3x + 2y.~700 FCFA; 5xy = 50 000.~Each group has its own unit price; add the two costs.
+6.3|2B
+A|Designing a label|A border estimate is 3(a + 4) + 2a units.|Expand and simplify the expression.|Evaluate both forms for a = 5.|Correct a claim that the expansion is 5a + 4.
+= 5a + 12.~Both 37.~The 3 multiplies both a and 4, so the constant is 12.
+B|Always or sometimes?|Consider 2(b + 3) + b and 3(b + 2).|Test the two expressions when b is 0 and when b is 4.|Simplify both to decide whether they are always equal.|Write a different bracket expression equivalent to 3b + 6, and justify.
+= Both give 6 and both give 18 respectively.~Both simplify to 3b + 6.~Example: 2(b + 3) + b gives 2b + 6 + b.
+6.4|2A
+A|Tickets from a formula|The cost C of n rides is C = 200 + 150n FCFA.|Find the cost of 5 rides.|Use an equation to find the rides bought for 1 400 FCFA.|Check your solution by substitution and explain the meaning of the 200.
+= 950 FCFA.~150n = 1 200, so n = 8.~200 + 150 × 8 = 1 400; 200 FCFA is the fixed cost.
+C|Two errors in one line|A learner starts 4x + 3 = 19 and writes x = 19 − 3 ÷ 4.|Under the order of operations, what value does their right-hand side give?|Solve with balanced steps and check the result.|Add brackets to the learner’s line so it matches the balanced steps.
+= 18.25.~4x = 16 so x = 4; 4 × 4 + 3 = 19.~x = (19 − 3) ÷ 4.
+7.1|3A
+A|Crossing rails|Straight rails AC and BD cross at O. The indicated acute angle ∠AOB is 48°.|Find ∠BOC.|Find ∠COD and ∠DOA.|Decide whether any pair of the adjacent angles can have the same measure in this diagram.
+@shape 0,1 A|6,1 C;1,3.22 B|5,-1.22 D;3,1 O|3,1;1.85,1.47 48°
+= 132° (straight line).~48° and 132°.~No. All adjacent pairs are 48° and 132°.
+C|A broken angle argument|Two angles around a point are 135° and 80°. They and a third angle make a full turn.|Calculate the third angle.|A learner calls it acute. Correct the classification.|What would the third angle be if the 80° angle were increased by 25°?
+= 145°.~Obtuse.~120°.
+7.2|3B
+A|A triangle between parallel tracks|The horizontal lines in the figure are parallel. Triangle ABC has ∠ABC = 45° and ∠BCA = 63°.|Find ∠BAC.|Copy the upper line and find the acute angle between AB and that line.|Find the corresponding acute angle for AC and explain how you know.
+@shape 0,0|7,0;0,3|7,3;1,0 B|4,3 A|5.53,0 C|1,0
+= 72°.~45°, by alternate interior angles.~63°, by the same parallel-line relationship on AC.
+C|Plausible is not enough|A student reports a triangle with two angles of 78° each and a third angle of 34°.|Test whether these angles can form a triangle.|Find the correct third angle if the two equal angles were measured exactly.|Classify the corrected triangle by sides and by angles.
+= 78 + 78 + 34 = 190°, so no.~24°.~Isosceles and acute.
+7.3|2B
+A|A garden plot|A pentagonal plot has four interior angles of 90°, 110°, 120° and 105°.|Use a triangulation from a single vertex to find the sum of the interior angles.|Find the fifth interior angle.|If a second pentagon is regular, explain why the two plots cannot have the same five angles.
+@shape 0,0 A|5,0 B|6,2 C|3.5,4 D|0,2 E|0,0;0,0|6,2;0,0|3.5,4
+= Three triangles, so 540°.~115°.~All angles of a regular pentagon are 108°, not the unequal measures given.
+B|One more side|Make a table of side counts 4, 5, 6 and 7 for convex polygons.|Record the number of triangles formed from one vertex for each polygon.|Predict the interior angle sum of a 10-sided polygon.|Explain why the triangle count grows by one each time a side is added.
+= 2, 3, 4, 5 respectively.~(10 − 2) × 180° = 1 440°.~A triangulation from one vertex gains one triangle for an added side; equivalently there are n − 2 triangles.
+7.4|3B
+A|A fair point on a lane|A and B are two entrances on the straight lane shown. Copy AB at any convenient length and retain all construction arcs.|Construct its perpendicular bisector using a ruler and compass.|Mark a point P on the bisector that is not on AB. Compare PA and PB.|What goes wrong if each compass arc has radius less than half of AB?
+@shape 0,0 A|7,0 B
+= Use equal radii greater than half of AB from A and B; join the two arc intersections.~The distances PA and PB are equal; intersections are equidistant and the line through them is the perpendicular bisector.~The arcs do not meet.
+C|Bisecting an angle|Copy the two rays meeting at O in the figure. A learner measures the angle with a protractor instead of constructing a bisector.|Describe a compass construction for the bisector, then carry it out.|Explain why using the same compass radius from both arc marks is important.|Write one measurement you could make afterward to check the result without using the protractor to construct it.
+@shape 0,0 O|6,0 B;0,0|3,3 A
+= Strike one arc from O across both rays; strike equal-radius arcs from those marks; join O to their intersection.~Equal radii give a point equally distant from the ray marks and make the two triangles to O congruent.~Measure the two angles adjacent to the bisector: they should agree.
+8.1|2B
+A|Sorting a code list|Let M = {2, 4, 6, 8} and N = {2, 6}.|Decide which are true: 4 ∈ M, 4 ∈ N, N ⊆ M, M ⊆ N.|List all two-element subsets of M that contain 2.|Explain the difference between 2 ∈ M and {2} ⊆ M.
+= True, false, true, false.~{2,4}, {2,6}, {2,8}.~2 is an element; {2} is a set all of whose elements belong to M.
+C|What is missing?|A learner lists the subsets of {p, q} as {p}, {q}, {p, q}.|Add the missing subset.|Explain why {p, p} is not another new subset.|Write a set containing precisely the two single-element subsets.
+= The empty set ∅.~Repeating an element does not make a different set; {p,p} = {p}.~{{p}, {q}}.
+8.2|2A
+A|Music and art|In the Venn diagram M represents music and A represents art. The entries are counts of students.|Find n(M ∩ A).|Find n(M ∪ A) and the total number surveyed.|Describe M′ in words and calculate its size.
+@venn M|A|8|5|6|3
+= 5.~19; total 22.~Students not in music, whether in art or not: 9.
+C|Check a double count|For a survey n(S) = 14, n(T) = 17 and n(S ∩ T) = 6, with 30 responses in total.|Fill the four regions of the empty diagram.|Explain why 14 + 17 cannot equal n(S ∪ T).|How many respondents belong to exactly one set?
+@venn S|T|—|—|—|—
+= S only 8, both 6, T only 11, neither 5.~The overlap is counted twice; the union is 25.~19.
+8.3|3A
+A|Number family cards|The cards show −5, 3/4, √9, 0.15 and −2/2.|Which values are integers? Simplify any that need it.|Locate the five values on the number line.|Explain why there is no conflict in calling one of the values both an integer and a rational number.
+@line -5|3|
+= −5, 3 and −1.~Left to right: −5, −1, 0.15, 0.75, 3.~Every integer n is also rational because n = n/1.
+C|A set within a set|M is the set of integers strictly between −3 and 4; N is the set of positive integers in M.|List M and N.|Write the elements of M that are not in N.|Explain why −3 is not included and 0 is in only one of the lists M and N.
+= M = {−2, −1, 0, 1, 2, 3}; N = {1, 2, 3}.~−2, −1 and 0.~Strictly between excludes endpoints; zero is not positive.
+8.4|2B
+A|After-school choices|Of 32 students, 18 signed up for sport, 14 for music and 7 for both.|Complete the diagram.|How many chose neither?|Which is larger, the group choosing exactly one or the group choosing both, and by how many?
+@venn Sport|Music|—|—|—|—
+= 11 sport only, 7 both, 7 music only, 7 neither.~7.~Exactly one, 18 vs 7, by 11.
+D|Enough chairs?|At an open day, 21 guests join a tour and 19 join a demo; 11 do both. Each distinct guest who joins at least one session needs one chair.|Calculate how many chairs are needed.|A volunteer brings 35 chairs. Find the surplus or shortage.|If 46 guests attended, explain whether your total includes guests who did neither.
+= 21 + 19 − 11 = 29.~Surplus of 6.~No. The 17 who did neither are outside the union.
+9.1|2A
+A|An L-shaped bed|The grid shows a garden bed. Each square is 1 m by 1 m.|Find the area by subtracting a missing rectangle.|Find the perimeter by tracing the six sides.|Check the area by splitting the shape into two rectangles.
+@xy 0 7 0 6|m|m|p:0,0 6,0 6,2 3,2 3,5 0,5 0,0
+= 6 × 5 − 3 × 3 = 21 m².~6 + 2 + 3 + 3 + 3 + 5 = 22 m.~6 × 2 + 3 × 3 = 21 m².
+D|Choosing a pen|Two rectangular pens use 24 m of fence. Plan A is 8 m long and plan B is 7 m long.|Find the other side and area of each.|Which provides more space? By how much?|Find a square option using the same fence. Compare its area.
+= A: 4 m, 32 m²; B: 5 m, 35 m².~B by 3 m².~6 m sides; 36 m², 1 m² more than B.
+9.2|2A
+A|Paint a sign|The design is a rectangle 8 cm wide, 5 cm high with a semicircle on its top edge. Leave answers involving π exact.|Find the semicircle radius and its area.|Find the total area of the sign.|Calculate the outside perimeter and explain why the top edge is not included.
+@cap 8|5
+= Radius 4 cm, area 8π cm².~40 + 8π cm².~18 + 4π cm. The diameter is an internal shared edge.
+C|Radius or diameter?|A circular badge has diameter 10 cm. A student writes its area as 100π cm².|Find the correct area.|Calculate the circumference.|Explain why the error scales area by a factor of four, not two.
+= 25π cm².~10π cm.~Using diameter doubles the input to the square, multiplying area by 2².
+9.3|2B
+A|Read a cube net|Each cell shown is one square face of side 3 cm. The labels identify the faces.|Find the outside area of the folded cube.|Which face is opposite C? Explain using a fold.|Which face is opposite E?
+@net 0,1:A 1,1:B 2,1:C 3,1:D 1,2:E 1,0:F
+= 6 × 9 = 54 cm².~A; folding the strip A–B–C–D around makes A and C nonadjacent and opposite.~F.
+C|Packaging allowance|A cuboid box is 6 cm by 4 cm by 3 cm. A supplier reports 72 cm² as its surface area.|List the areas of the three distinct pairs of faces.|Calculate the total and explain what the 72 might actually measure.|How much card is needed if the net also needs 8 cm² of overlap tabs?
+= Pairs: 48, 36 and 24 cm².~108 cm²; 72 is the volume in cm³ (also happens to be the sum of the largest and smallest pairs).~116 cm².
+9.4|2B
+A|Water for seedlings|A rectangular container measures 25 cm by 16 cm internally.|Find its base area.|Find the volume at depths 4 cm and 10 cm. Give both answers in litres (1 000 cm³ = 1 L).|If the base stays the same, find the depth that gives exactly 3.2 L.
+= 400 cm².~1 600 cm³ = 1.6 L and 4 000 cm³ = 4 L.~3 200 ÷ 400 = 8 cm.
+D|Will it spill?|A triangular trough has end cross-section of base 18 cm and perpendicular height 10 cm. Its length is 40 cm.|Find the cross-sectional area and capacity.|A volunteer pours in 3.2 L. How much more can be added without overflowing?|Explain why using 18 × 10 for the cross-section would mislead the volunteer.
+@shape 0,3 A|5.4,3 B|2.7,0 C|0,3;2.7,0|2.7,3;2.6,3.45 18 cm;3,1.5 10 cm
+= 90 cm²; 3 600 cm³ or 3.6 L.~0.4 L.~It doubles the true cross-section and therefore doubles the claimed capacity.
+10.1|4A
+A|Reading a log|The numbers of items borrowed on 12 visits were 0, 2, 1, 2, 3, 1, 0, 2, 4, 1, 3, 2.|Complete the frequency table and check the total.|Which count is most frequent? How many visits had at least 2 items?|Classify the variable as categorical or numerical, and state what one row means.
+@table Items~0~1~2~3~4;Frequency~—~—~—~—~—
+= Frequencies 2, 3, 4, 2, 1; total 12.~2 items; 7 visits.~Numerical (a discrete count); e.g. the frequency row gives visits for each count in the first row.
+C|Which question made these data?|A chart lists 4, 7, 2 and 5 beside art, sport, coding and drama.|Name the categorical variable and state what extra information is needed to interpret the numbers.|Write a survey question that would allow a single response from each person.|Can you conclude from the chart alone that 18 distinct people responded? Explain.
+@bar 0 8|Count|Art:4,Sport:7,Coding:2,Drama:5
+= Activity; we need to know what is counted, e.g. first-choice votes.~“Which one of these four activities is your first choice?”~Only with one response per person; multiple choices could count someone more than once.
+10.2|2B
+A|From bars to sectors|A group voted for the first activity at a camp. Each person voted once.|Read the counts and total number of votes.|Calculate the sector angle for each choice.|A draft pie chart gives drama a right angle. Decide if this matches the votes.
+@bar 0 12|Votes|Games:10,Art:6,Drama:4
+= 10, 6 and 4; total 20.~180°, 108° and 72°.~No, 4/20 is one fifth, not one quarter.
+C|Two groups, two totals|In group X, 8 of 20 voted for cycling; in group Y, 9 of 30 voted for it.|Find the percentage supporting cycling in each group.|Which group would have the larger cycling sector in a pie chart?|Explain why comparing bar heights showing raw counts could suggest the opposite.
+= 40% and 30%.~X; 144° vs 108°.~Y has 9 votes vs 8, but also has more people overall.
+10.3|4B
+A|Waits at a reading desk|The dot plot shows whole-minute waits from one session.|Find the mode, median and range.|Find the mean, treating each dot as a wait.|Replace the greatest wait with 13 minutes. Which of mode, median and mean changes?
+@dots 0|8|Minutes|1:1,2:2,3:3,4:2,7:1
+= Mode 3, median 3, range 6.~29/9 minutes (about 3.22).~Only mean: it rises by 6/9 minute.
+C|A histogram cannot give exact raw values|The bars show grouped journey times with equal four-minute widths; intervals include the left endpoint, not the right.|Read the number of journeys in each interval.|Identify the interval with the most journeys.|A student claims the longest journey was 12 min. Can the chart establish that?
+@hist 0 12 0 6|Minutes|Frequency|0,4,2;4,8,6;8,12,3
+= 2, 6 and 3.~4 ≤ t < 8 min.~No; the greatest journey is in 8 ≤ t < 12, and the precise value is unknown.
+10.4|4C
+A|Scale changes the impression|Two charts describe the same collection totals. Chart B deliberately starts its scale at 70.|Read both totals and calculate their difference.|Calculate the height of each visible bar in chart B, in item units above the baseline.|Explain which chart better shows the relative size of totals.
+@bar 0 100|A · items|Mon:75,Tue:85
+@bar 70 100|B · items|Mon:75,Tue:85
+= 75 and 85; difference of 10.~5 and 15 above the baseline.~A; B makes the visible bars look three times as tall even though 85 is only about 1.13 times 75.
+C|Trend or exception?|A kiosk records the numbers below. All but one day were dry; Friday was rainy.|Describe the pattern from Monday to Thursday.|A poster says “Sales fell all week.” Explain what is wrong.|Can you infer how many would have sold on a dry Friday? Give a reason.
+@table Day~Mon~Tue~Wed~Thu~Fri;Sales~21~24~28~30~18
+= Each day increased, from 21 to 30.~Only Thursday to Friday fell; the earlier days rose.~No; the table lacks a dry Friday and does not isolate weather from other influences.

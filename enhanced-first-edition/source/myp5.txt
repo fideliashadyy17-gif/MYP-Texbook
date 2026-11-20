@@ -1,0 +1,229 @@
+1.1|5C
+C|Read the factors before sketching|P(x)=−2(x+1)²(x−3).|Find degree, leading coefficient, roots and their multiplicities.|State the end behaviour and at which root the graph touches without crossing.|Find P(0) and use the supplied graph to check all key features.|Explain how the sign of P changes if the leading coefficient is made positive.
+@cubic -3 4 -40 40|x|P(x)|-2,2,10,6
+= Degree 3, leading coefficient −2; root −1 multiplicity 2, root 3 multiplicity 1.~As x→−∞, P→∞; as x→∞, P→−∞; touches at −1.~P(0)=6; the plot has (0,6) and the specified behaviour.~Every nonzero output changes sign (reflection in the x-axis for leading coefficient +2); the zeros stay fixed.
+1.2|5C
+A|A missing term matters|Divide P(x)=2x³−7x+5 by x−2.|Show the quotient and remainder, retaining the zero x² coefficient in your method.|Multiply back and check the remainder by evaluating P(2).|If only the constant in P could change, find the new constant for exact division.
+= Quotient 2x²+4x+1, remainder 7.~(x−2)(2x²+4x+1)+7=2x³−7x+5; P(2)=16−14+5=7.~Add −7 to the old constant; new constant −2.
+1.3|5C
+B|Design the roots|Let P(x)=x³+ax²+bx−6. Require x−1 and x+2 to be factors.|Use the factor theorem to obtain two conditions on a,b.|Solve and find the third root.|Verify by multiplying the three linear factors and explain why checking P(1)=0 alone is insufficient.
+= a+b=5 and 4a−2b=14.~a=4,b=1; third root −3.~(x−1)(x+2)(x+3)=x³+4x²+x−6; a+b=5 alone leaves infinitely many coefficient pairs.
+C|A remainder with a parameter|For R(x)=x³−kx+4, the remainder on division by x+2 is 10.|Find k without doing polynomial division.|With that k, find the remainder on division by x−2.|Explain why the two remainders need not be opposites even though the inputs are opposites.
+= R(−2)=−8+2k+4=10 gives k=7.~R(2)=8−14+4=−2.~The cubic and linear terms change signs but the constant 4 does not; in fact R(−2)+R(2)=8.
+1.4|5C
+C|The simplification keeps its restrictions|Consider F(x)=(x²−16)/(x²−3x−4).|Simplify and state exclusions from the original expression.|Write F(x)−1 as one simplified fraction with the same domain.|At x=4, the simplified formula takes a finite value. Explain why the original expression still has no value there.
+= F=(x+4)/(x+1), x≠4,−1.~3/(x+1) with exclusions unchanged.~Cancellation was division by x−4, valid only away from zero; the original has 0/0 at 4.
+1.5|5C
+D|Two pipes, one target|Pump B takes 3 hours longer than pump A to fill a tank alone. Together they take 2 hours at constant rates into an empty tank.|Let A’s time be t hours; write a rate equation and its physical domain.|Solve and verify the times.|Explain why adding fill times instead of rates does not model parallel operation.
+= 1/t + 1/(t+3)=1/2 with t>0.~t²−t−6=0, t=3 or −2. Use 3; B takes 6, and 1/3+1/6=1/2.~Volumes per hour add; elapsed durations do not add when both operate simultaneously.
+2.1|5C
+C|Two restrictions, one range|Let f(x)=√(x+2) with x additionally restricted to at most 7.|State the domain and range using intervals.|Find all inputs producing 2 and decide whether −1 is a possible output.|Explain the difference between imposing x≤7 and imposing f(x)≤7.
+= Domain [−2,7]; range [0,3].~x=2; −1 is not an output of the principal square root.~f(x)≤7 instead permits x up to 47, which is a weaker cap on inputs.
+2.2|5C
+C|Match graph moves to coordinates|The base diagram is y=∣x∣. Construct g(x)=−∣x−2∣+3 on the same scale.|Describe a sequence of transformations and trace the vertex.|Find the x-intercepts of g and verify by substitution.|Explain how g(2+d) and g(2−d) show symmetry.
+@xy -3 6 -3 6|x|y|base:-3,3 0,0 6,6
+= Shift right 2, reflect in x-axis, translate up 3; vertex (2,3).~x=−1 or 5 because |x−2|=3. Each output is 0.~Both outputs equal 3−|d|.
+2.3|5C
+A|What changes when you reverse the order?|Let f(x)=2x−3 and g(x)=x².|Find both g(f(x)) and f(g(x)), simplified.|At x=0 compare the outputs. Explain which action occurs first in each composite.|Find one real x at which the outputs agree, or prove there is none.
+= g∘f=4x²−12x+9; f∘g=2x²−3.~9 and −3. In g∘f apply f first; in f∘g apply g first.~x=3±√3 solves x²−6x+6=0; either works.
+2.4|5C
+C|The branch matters|Consider f(x)=(x−1)² on x≥1.|Find its range and inverse with the inverse’s domain and range.|Verify both compositions, including the nonnegative square-root condition.|What would fail if f were defined on all real inputs? Give a pair of inputs illustrating it.
+= Range [0,∞); inverse 1+√x, domain [0,∞), range [1,∞).~f(1+√x)=x for x≥0. 1+√((x−1)²)=1+|x−1|=x for x≥1.~It is no longer injective; for example 0 and 2 both give 1.
+A|Test an inverse claim numerically and generally|Let g(x)=(3x+1)/(x−2) for x≠2. A learner claims g⁻¹(x)=1/g(x).|Disprove the claim with a substitution where both quantities are defined.|Find the inverse algebraically and state its excluded input.|Explain why an inverse function is not a reciprocal.
+= g(0)=−1/2 so g⁻¹(−1/2)=0; 1/g(−1/2)=5, not 0.~g⁻¹(x)=(2x+1)/(x−3), x≠3.~An inverse swaps input and output; a reciprocal replaces the output by its multiplicative inverse at the same input.
+2.5|5C
+D|Calibrate a height profile|A model arch of width 4 m has profile y=4−x² for −2≤x≤2. A planned copy should be twice as wide and 1.5 times as high, with centre over x=3.|Write the new rule including its domain.|Find the two footings and maximum height.|Check clearance of a point 2 m to the right of centre at height 4.7 m. State one modelling limitation.
+@curve -2 2 0 5|Offset (m)|Height (m)|-1,0,4
+= y=1.5[4−((x−3)/2)²], −1≤x≤7.~At x=−1 and 7; maximum 6 m at x=3.~At x=5 the height is 4.5 m, so no. Actual dimensions may differ from a perfect parabola.
+3.1|5A
+D|A repeatable decay model|A coating retains 88% of its protective capacity each month. Let 100 represent initial capacity.|Write an exponential model and find capacity after 4 months.|Use a table of whole months to identify the first reading below 50%.|Why is subtracting 12 percentage points monthly not equivalent?|State a practical limitation of a constant retention factor.
+@table Months~0~1~2~3~4~5~6;Capacity (%)~100~—~—~—~—~—~—
+= 100(0.88)^n; month 4 about 59.97%.~100,88,77.44,68.15,59.97,52.77,46.44; first below at 6.~The loss is 12% of the current amount, not 12% of original every month.~Wear and chemical exposure may vary with use and weather, for example.
+3.2|5A
+A|Compare growth conventions|Two accounts start at 5 000; A compounds 6% once yearly, B compounds continuously at nominal rate 0.06 per year.|Write both balance formulas and give the balances at t=4 to two decimal places.|Find B’s effective one-year percentage rate.|Explain why that effective rate exceeds the nominal rate.
+= A=5 000(1.06)^t, 6 312.38; B=5 000e^(0.06t), 6 356.25.~100(e^0.06−1)≈6.18%.~Interest is earned continuously on already credited interest rather than waiting until year end.
+3.3|5C
+C|A domain check before logarithm laws|Take logarithms to base 10. Compare log(x−2)+log(x+2) and log(x²−4).|Find the real domain of each expression.|Show when the logarithm law makes them equal.|Solve log(x−2)+log(x+2)=1 exactly; explain why a second algebraic candidate is rejected.
+= Left x>2; right x<−2 or x>2.~Equal for x>2 where both factors are positive.~x²−4=10, so x=√14 only: −√14 is outside the left domain.
+3.4|5C
+A|A factor hides the exponential|Consider 3·2^(x+1)−2^x = 37.|Rewrite 2^(x+1) as a product.|Reduce the left side to one multiple of 2^x.|Write the exact logarithmic solution and a two-decimal approximation.|Why is taking a logarithm across the two terms before factoring not allowed?
+= 2^(x+1)=2·2^x.~3·2·2^x−2^x=5·2^x.~log₂(7.4)≈2.89.~The log laws turn products, quotients and powers into simpler expressions; they do not distribute over sums or differences.
+3.5|5A
+D|Reaching a light threshold|A filter transmits 72% of incoming light at each identical layer. Ten watts reach the first layer; the target is no more than 1.5 W transmitted.|Model output after n layers and solve the inequality using logarithms.|State the minimum whole number of layers and verify at it and one fewer.|Explain why dividing by ln(0.72) reverses the comparison.|Give one experimentally checkable assumption.
+= 10(0.72)^n≤1.5; n≥ln(0.15)/ln(0.72)≈5.78.~6 layers: about 1.39 W, versus 1.93 W at 5.~ln(0.72)<0.~E.g. each layer has the same transmission fraction regardless of the incoming intensity.
+A|Two different exponential time scales|A quantity doubles every 8 h in model U and grows by 6% per hour in model V; both start at one unit.|Write both models.|Find the time for each to reach 3 units, to the nearest tenth of an hour.|Explain why comparing 8 hours with 6% directly would not make sense.
+= U=2^(t/8); V=1.06^t.~U: 8 ln3/ln2≈12.7 h; V: ln3/ln1.06≈18.9 h.~One is a duration and the other is a proportional increase per hour. A common growth factor or elapsed time is needed.
+4.1|5A,5C
+B|Recover a timetable|An arithmetic sequence satisfies u₄=29 and u₁₁=64.|Find the first term and common difference.|Derive uₙ and test whether 201 occurs.|A second sequence starts at the same first term with half the difference. Find the first index where their gap exceeds 30.
+= d=5, first 14.~uₙ=5n+9; (201−9)/5 is not integer.~Gap 2.5(n−1)>30 gives n>13, first n=14.
+C|Explicit and recursive rules|The sequence is 7, 3, −1, −5, …, starting at n=1.|Write both an explicit rule and a recursive definition, including the initial value.|Verify the tenth term both using the rule and by counting decreases.|Explain how the recurrence must change if 7 is defined instead as term 0.
+= uₙ=11−4n; u₁=7 and uₙ₊₁=uₙ−4.~u₁₀=−29; nine decreases of 4 give 7−36.~Set u₀=7 with the same step for n≥0 (the direct rule becomes 7−4n).
+4.2|5A
+A|Summation with a shifted start|A schedule awards 7, 11, 15, … points, starting at round 1.|Write the sum for rounds 4 through 15 in sigma notation and find its value.|Find the fewest opening rounds needed to earn at least 500 points.|Check both sides of the crossing using exact partial sums.
+= Σ from k=4 to 15 of (4k+3) = 12(19+63)/2=492.~Sₙ=n(2n+5); first n=15.~S₁₄=462 and S₁₅=525.
+C|Diagnose a sum with the wrong term count|For 13+18+23+…+78, a learner calculates (78−13)/5=13 and treats that as the number of terms.|Find the actual number of terms and explain how the learner counted gaps rather than terms.|Find the exact sum with arithmetic-series pairing.|Express the same sum in sigma notation starting at k=0.
+= 14 terms: 13 steps plus the initial term.~14(13+78)/2=637.~Σ from k=0 to 13 of (13+5k).
+4.3|5A,5C
+B|Signs are part of the pattern|A real geometric sequence has u₂=−6 and u₄=−54.|Find all possible real common ratios and corresponding first terms.|List the first five terms for both rules.|Can u₅ alone distinguish the rules? Explain using odd/even indices or direct calculation.
+= r²=9; r=3 gives u₁=−2, and r=−3 gives u₁=2.~(−2,−6,−18,−54,−162) and (2,−6,18,−54,162).~Yes; signs differ for odd-indexed terms, while the given even-indexed terms agree.
+D|Compare repairs and replacement|A tracking device loses 16% of resale value yearly. At purchase it is valued at 250 000 FCFA; compare with a fixed annual loss of 40 000 FCFA instead.|Write both value sequences using n=0 at purchase.|Compare their values after three years to the nearest franc.|Explain why the two models agree after one year but not after three.|Which model eventually gives a negative value, and why is that a limitation?
+= 250 000·0.84^n and 250 000−40 000n.~148 176 and 130 000 FCFA.~Both give 210 000 at year 1. Later, geometric losses are 16% of a smaller balance, so they become smaller than the fixed loss.~The fixed-loss model first goes negative at n=7, which would not describe ordinary resale prices.
+4.4|5A
+C|Why stopping terms does not stop the sum|Compare geometric series beginning 12 with common ratios 1/3 and −1/3.|Find both sums to infinity and state the convergence test.|Find the first four terms of the alternating series and its four-term sum.|Is this partial sum above or below its limit? Find the exact error.
+= 18 and 9; in each case |r|<1.~12,−4,4/3,−4/9; S₄=80/9.~Below by 1/9; the remaining tail is positive.
+B|An upper estimate without adding every term|A series begins 6 and each term is 1/2 of the preceding one.|Find its total to infinity and the partial sum through n terms.|Find the first n giving a partial sum within 0.05 of the limit.|Explain why adding one more term halves the remaining error.
+= Limit 12; Sₙ=12(1−(1/2)^n).~n=8: 12/256≈0.046875; at 7 the error is 0.09375.~Error after n terms is 12(1/2)^n; multiplying by 1/2 gives the next error.
+4.5|5A
+D|A deposit timing comparison|A club deposits 20 000 FCFA at the end of each year for four years at 5% annual compound interest. Compare with deposits at the beginning of each year, measuring both balances just after the end of year 4 interest is credited (and any final end deposit is made).|List growth exponents for all deposits in each plan.|Find both balances to the nearest franc.|Explain why multiplying the first balance by 1.05 gives the second.|Give one financial assumption affecting the comparison.
+= End: 3,2,1,0; beginning: 4,3,2,1.~End 86 203 FCFA (86 202.50 before rounding); beginning 90 513 FCFA (90 512.625).~Every deposit has exactly one extra year of growth.~Constant 5% with no fee, tax or missed deposit; a change could alter amounts.
+5.1|5C
+C|Negative leading coefficient|A graph shows y=−2x²+4x+6.|Factor the quadratic.|Solve −2x²+4x+6≥0, mark the interval, and justify both endpoints.|Solve the strict opposite inequality and explain the role of the negative coefficient in the signs.
+@curve -3 5 -10 10|x|y|-2,4,6
+= −2(x−3)(x+1).~x∈[−1,3]; the endpoints make the expression 0 and ≥ is inclusive.~x<−1 or x>3; outside the roots the factor product is positive, so multiplying by −2 gives a negative value.
+5.2|5C
+C|Two boundary rules|Consider y>2x−3 and y≤5−x. The plotted lines show the boundaries.|Distinguish open and closed boundaries and shade the intersection.|Find the intersection of the lines.|Test whether that intersection or any point with x=3 is allowed, and justify algebraically.
+@xy -1 6 -4 7|x|y|~y = 2x − 3:0,-3 5,7;+y = 5 − x:-1,6 6,-1
+= Above first boundary (draw dashed), at or below second (solid).~(8/3,7/3).~Intersection excluded because y>2x−3. For x=3 the requirements y>3 and y≤2 conflict.
+5.3|5C
+A|Vertices without guessing|The constraints are x,y≥0, x+2y≤10 and 3x+y≤12.|Shade the feasible region on the grid.|Find all vertices by solving intersections and checking the other inequalities.|Explain why (4,5) is not a feasible vertex.
+@xy 0 10 0 7|x|y|x + 2y = 10:0,5 10,0;3x + y = 12:1.6666667,7 4,0
+= Shade in the first quadrant below both lines.~(0,0),(4,0),(14/5,18/5),(0,5).~It combines two different intercepts as though they were independent; violates both inequalities.
+5.4|5C
+D|Time-and-material allocation|Let x,y be daily quantities of two kits with x,y≥0, x+y≤8 and x+3y≤12. Profit is 300x+500y in FCFA.|Find all feasible vertices and evaluate profit there.|Choose a production plan and state which resources are fully used.|If profit for kit Y rises to 900 FCFA, explain why more than one solution is optimal in the continuous model.
+@xy 0 12 0 8|Kit X|Kit Y|x + y = 8:0,8 8,0;x + 3y = 12:0,4 12,0
+= (0,0),(8,0),(6,2),(0,4) give 0,2 400,2 800,2 000.~6 of X and 2 of Y; both resource limits bind.~Objective becomes 300(x+3y); feasible edge from (0,4) to (6,2) has the same maximum 3 600 throughout.
+5.5|5C
+D|When fractional kits are impossible|A shop makes x display stands and y carriers, whole and nonnegative. Limits are 2x+y≤9 and x+2y≤8. Profit is 500x+400y FCFA.|Solve the continuous problem using vertices.|Find the best integer plan using a table of possible x and greatest feasible y for each.|Show why simply rounding both continuous coordinates to their nearest integers fails to find the best plan.|Name one constraint the model does not include.
+@xy 0 7 0 7|Stands|Carriers|2x + y = 9:1,7 4.5,0;x + 2y = 8:0,4 7,.5
+= Vertices (0,0),(4.5,0),(10/3,7/3),(0,4); continuous maximum 2 600 FCFA at (10/3,7/3).~x=0,…,4 allows respective y=4,3,3,2,1; profits 1 600,1 700,2 200,2 300,2 400. Best (4,1).~Nearest gives (3,2), feasible but not optimal (2 300).~For example, minimum order sizes or a demand limit per product.
+6.1|3B
+A|Two views of one chord|A and B lie on a circle centred at O with minor angle AOB=100°. C lies on the major arc AB; D lies on the minor arc AB.|Find ∠ACB and explain which arc it intercepts.|Find ∠ADB. Explain why halving 100° again would be wrong.|Explain the relation between the two inscribed angles.
+@circle 40:A 140:B 270:C 90:D|OA OB AC BC AD BD
+= 50°; it intercepts the minor arc AB.~130°; it intercepts the major arc of measure 260°.~They sum to 180° as they halve arcs whose measures add to 360°.
+C|A changing observation point|Keep chord AB fixed. A point moves along the major arc from C toward A without reaching A.|What happens to the angle subtended by AB at the moving point? Explain.|If the point is put on the minor arc instead, how does the angle change in the 100° example above?|Explain why the theorem does not supply an angle at A itself.
+= It stays constant, because the same intercepted arc determines it.~It changes from 50° on the major arc to 130° on the minor arc.~At A the segment from the observation point to A has zero length and no direction, so the angle is undefined.
+6.2|3A
+C|Can four angle labels fit a circle?|ABCD is cyclic; its opposite angles at A and C are given by 3t+15° and 2t+5° respectively (t measured in degrees). Angle B is 74°.|Find t and all four angles.|If B increases to 84° while A and C do not change, find the required D.|Explain why a quadrilateral with the same A,B,C but D=99° cannot preserve the second set of angle values.
+= 5t+20=180, t=32; A=111°, B=74°, C=69°, D=106°.~D=96°.~B+D would be 183°, not 180°; the total would also be 363°.
+6.3|3B
+A|Two paths to a point outside the circle|A tangent from P touches the circle at T; the centre is O. OT=6 cm and OP=10 cm.|State the angle at T and justify.|Find PT exactly.|If U is the other tangent point from P, prove PT=PU using a right-triangle congruence criterion.
+@shape 0,0 O|3.6,4.8 T|10,0 P|3.6,-4.8 U|0,0;0,0|10,0
+= 90° because the tangent is perpendicular to the radius at contact.~√(10²−6²)=8 cm.~Triangles OTP and OUP have right angles, common hypotenuse OP, equal radii OT and OU, so RHS gives equality.
+6.4|3A
+C|A chord from a tangent angle|A tangent touches at A; chord AB makes a 38° acute angle with the tangent ray on B’s side. C is on the major arc AB.|Find ∠ACB using the alternate segment theorem.|Find the minor central angle AOB with reasons.|If M is the midpoint of AB and OA=5, find OM in terms of a trig ratio.
+@circle -90:A -14:B 110:C|AB AC BC OA OB|A
+= 38°, the angle in the alternate segment.~76°, twice the angle at C subtended by the same minor arc.~OM=5cos38°, from the perpendicular bisector and half of angle AOB.
+6.5|3B
+C|A perpendicular diameter proof|A diameter with endpoints P and Q crosses chord AB at its midpoint M. Assume AB is not a diameter. The centre is O.|Prove that triangles OMA and OMB are congruent.|Use congruence to prove the lines are perpendicular.|Write a converse and give a short proof, making clear why equal radii matter.
+@circle 35:A 145:B 90:P 270:Q|AB PQ OA OB
+= OM common, AM=BM, OA=OB as radii; SSS.~∠OMA and ∠OMB are equal and supplementary along AB, hence 90°.~A diameter perpendicular to a chord bisects it: use RHS for OMA and OMB, with equal radius hypotenuses and common OM (if M=O the chord is itself a diameter and is already bisected by O).
+7.1|3B
+A|One reading, two triangles|In triangle ABC, A=35°, a=7 cm and b=10 cm, where lowercase sides oppose uppercase angles.|Use the sine rule to find sin B.|Find both possible B angles to the nearest tenth and test their sums with A.|Find both corresponding C angles and explain the source of the ambiguity.
+= sin B=10sin35°/7≈0.8194.~B≈55.0° or 125.0°; both leave room for C.~C≈90.0° or 20.0°. Sine agrees at supplementary angles, so the SSA data allow two triangles.
+7.2|3A
+A|A crossing loop|Two trails leave one junction with included angle 120°. Their lengths to the next two markers are 6 km and 8 km.|Calculate the straight distance between markers in exact and approximate form.|Explain why Pythagoras gives a smaller distance here.|Find the cosine of the angle opposite the 8 km side.
+@shape 0,0 J|8,0 P;0,0| -3,5.196 Q|8,0;4,-.5 8 km;-2.05,2.45 6 km;1.15,1.62 120°
+= √(36+64+48)=√148≈12.17 km.~cos120° is negative, so subtracting 2abcos C increases the squared distance above 100.~(6²+148−8²)/(2·6·√148)=10/√148.
+7.3|3B
+D|Area with two possible corner angles|A triangular garden has fixed sides 8 m and 10 m enclosing an angle θ, 0°<θ<180°.|Find its area at θ=45° in exact form.|Find both possible θ values for an area of 20 m².|If the plot must have the shortest possible third side among those two, select an angle and justify using cosine.
+= 40sin45°=20√2 m².~sin θ=1/2 gives 30° and 150°.~30°; cos30°>cos150°, so the cosine-rule subtraction is larger and the opposite side shorter.
+7.4|3B
+D|Return bearing after a detour|A crew travels 4 km on bearing 030° and then 3 km due east.|Resolve the total displacement into north and east components.|Find the direct distance and bearing from the start, to two decimals and nearest degree respectively.|Give the return bearing and explain the direction reference.
+@shape 0,0 S|2,3.464 A|5,3.464 B;0,0|0,4 N;0,0|5,3.464;3.5,3.8 3 km
+= North = 4cos30°=2√3 km, east = 2+3=5 km.~Distance √37≈6.08 km; bearing arctan(5/(2√3))≈055°.~235°, the opposite direction; bearings are measured clockwise from north.
+7.5|3A
+A|Angle against a floor|A cuboid has base 9 m by 12 m and height 8 m. A straight brace joins one floor corner to the opposite ceiling corner.|Find its horizontal projection length and the brace length.|Find the angle between brace and floor to one decimal place.|Explain why using only the 9 m side as the horizontal distance overestimates the angle.
+@cuboid 12 m|9 m|8 m
+= Base diagonal 15 m, brace length 17 m.~arctan(8/15)≈28.1°.~The actual projection is longer than 9 m, so the rise divided by its true run is smaller.
+8.1|5C
+A|Recover two displacements|Use vectors a=(3,−2), b=(−1,4).|Compute 2a+b and a−b on the printed grid.|Find the magnitude of a−b exactly.|Find k such that a+kb has zero horizontal component; give the resulting vector.
+@xy -2 7 -7 6|x|y|
+= (5,0) and (4,−6).~√52=2√13.~k=3; (0,10).
+8.2|3A
+C|A segment divided internally|Let A=(1,−2), B=(7,4), and let P be two-thirds of the way from A to B.|Compute AB as a displacement and find P.|Find AP and PB as vectors to confirm their ratio.|Prove with a vector equation that P remains on AB for any endpoints when OP=(OA+2OB)/3.
+@xy 0 8 -3 5|x|y|AB:1,-2 7,4
+= AB=(6,6); P=(5,2).~AP=(4,4), PB=(2,2); ratio of magnitudes 2:1, same direction.~Subtract OA to get AP=2(OB−OA)/3, a scalar multiple of AB between A and B.
+8.3|3B
+A|Offset in three dimensions|A=(2,−1,1), B=(−1,3,13), C=(5,−5,−11).|Compute AB and AC and show their relationship.|Describe A’s position on BC and verify by coordinates.|Find AB and BC as distances, not displacements.
+= (−3,4,12) and (3,−4,−12) are opposites.~A is midpoint; (B+C)/2=(2,−1,1).~AB=13, BC=26.
+8.4|3A
+C|Transformation order on a grid|Use A=diag(2,1) to stretch x and B, the anticlockwise quarter-turn matrix with rows (0,−1) and (1,0). Treat points as column vectors.|Compute BA and AB and describe which operation happens first in each.|Apply both to (1,2) and plot the two images.|Explain why the two products are unequal without relying on matrix arithmetic alone.
+@xy -5 3 -1 5|x|y|d:1,2
+= BA has rows (0,−1),(2,0): stretch first. AB has rows (0,−2),(1,0): rotate first.~BA gives (−2,2); AB gives (−4,1).~A rotation exchanges which input component contributes to the horizontal direction, so stretching only horizontally depends on whether the turn has occurred.
+8.5|5C
+A|Find the singular case|Matrix M has rows (2,3) and (k,6).|Find det M and the value of k making it singular.|For k=1, find the inverse and verify one full matrix product.|Explain geometrically what happens to the unit square when k has the singular value.
+= 12−3k; singular at k=4.~Inverse is 1/9 times the matrix with rows (6,−3),(−1,2); product gives rows (1,0),(0,1).~Both columns lie on the line y=2x, so area collapses to zero and the image is a segment.
+9.1|4C
+C|Detect sensitivity to a single reading|Times in minutes are 8,9,10,10,11,12,13,14. Compare with a version replacing 14 by 30. Use median of each half for quartiles.|Find both ranges, IQRs and medians.|Which summary changes most here and why?|Give a different one-value change, preserving order, that changes the IQR.
+= Original range 6, Q₁=9.5, median 10.5, Q₃=12.5, IQR 3; revised range 22, rest unchanged.~Range increases by 16 because it depends on the maximum.~E.g. change 13 to 14 (ties allowed); Q₃ becomes 13, IQR 3.5.
+9.2|4A,4B
+A|Use midpoints, not class endpoints|Masses are grouped as shown. Use population standard deviation and the midpoint approximation.|Find estimated mean and variance, showing the weighted sum of squared deviations.|Find the estimated standard deviation to two decimals.|Why could no calculator recover the exact raw standard deviation from this table alone?
+@table Class (g)~[0,10)~[10,20)~[20,30);Frequency~2~6~2
+= Mean 15 g; squared deviations sum to 2·100+6·0+2·100=400 g²; variance 40 g².~√40≈6.32 g.~Individual values within a class may vary and are not given, so different raw datasets can share the table.
+B|Scale and shift the whole population|A population has mean 15 and variance 40. Every value x is replaced with y=2x−3.|Predict the new mean and variance.|Justify using what happens to each deviation from its own mean.|What happens to the standard deviation under y=−2x+3 instead, and why?
+= Mean 27 and variance 160.~y−27=2(x−15); squares therefore quadruple in the average.~It still doubles: multiplying by −2 also quadruples squared deviations, then take the positive square root.
+9.3|4B,4C
+D|A claim about consistency|The box plots show sample cycle times. A manager wants typical time no greater than 12 minutes and the most consistent middle half.|Read and compare medians, IQRs and ranges.|Make a recommendation using the stated criteria.|Explain why the selected process is not necessarily the best if the longest jobs carry heavy penalties.
+@box 0|36|Minutes|A:5,8,10,13,30;B:7,10,12,13,18
+= A: median 10, IQR 5, range 25; B: median 12, IQR 3, range 11.~Both meet the median threshold; B has the smaller IQR.~B also has the smaller observed maximum, but the samples do not guarantee future maxima; a penalty-based decision needs more tail data and costs.
+9.4|5C
+C|One influential point|The plot shows hours of practice and score gains. The point (10,2) is from a different activity and may not be comparable.|Describe the association for the first five points.|Explain how including (10,2) affects the strength and interpretation of a linear association.|Should the point be removed solely because it weakens the relationship? Give a rule for making the decision.
+@xy 0 11 0 12|Hours|Score gain|d:1,3 2,5 3,6 4,9 5,11 10,2
+= Strong positive linear association over hours 1 to 5.~The high-x point goes against the pattern and makes a single positive linear description much weaker.~No; check eligibility and recording quality by a rule independent of desired correlation; report results with/without it if provenance is uncertain.
+9.5|5C
+D|Predict and report a residual|A regression fitted to 4–12 hours of training predicts score y=48+2.5x. One learner recorded (8,65). The plotted line shows the fitted interval only.|Predict the score at x=8 and calculate observed minus predicted.|Interpret the slope with units.|Explain why predicting x=30 is especially problematic if scores are capped at 100.|Explain why the fitted value is not a guaranteed score for one learner.
+@xy 0 14 45 82|Hours|Score|Fit:4,58 12,78;d:8,65
+= 68, residual −3 points.~About 2.5 additional predicted score points per extra training hour over the fitted data range.~Outside the observed range, and 123 exceeds the possible maximum.~A fit summarises a trend; observations can deviate due to individual variation and omitted variables.
+10.1|2A
+A|Three probabilities from the same table|A participant is sampled uniformly from the data below.|Find P(cycles), P(near and cycles) and P(near or cycles).|Find P(neither near nor cycles) directly and as a complement.|Use the counts to fill a Venn diagram and identify which people were counted twice in the naive union sum.
+@table ~Cycles~Does not cycle;Near~24~16;Far~9~31
+@venn Near|Cycles|—|—|—|31
+= 33/80,24/80,49/80.~31/80=1−49/80.~Near only 16, both 24, cycles only 9, neither 31; the 24 in the intersection are counted twice in the naive sum.
+10.2|2B
+C|Conditioning on a warning|A verifier checks 500 files. Use the observed counts below.|Find P(warning given error) and P(error given warning).|Explain how these probabilities differ in their reference populations.|If all warning files are reviewed, how many reviewed files are error-free and what share is that?
+@table ~Error~No error;Warning~36~54;No warning~4~406
+= 36/40=0.9 and 36/90=0.4.~First starts with the 40 errors; second starts with all 90 warning files.~54 of 90, or 60%.
+10.3|2A
+C|Independence is not mutual exclusion|Out of 100 observations, 40 record A, 30 record B, and 12 record both.|Test whether A and B are independent in this observed distribution using a product and a conditional check.|Are they mutually exclusive? Explain using the counts.|If exactly 10 instead recorded both, holding the marginal counts fixed, redo both checks.
+= P(A)P(B)=0.12=P(A∩B); P(A given B)=12/30=0.4=P(A).~No; the overlap contains 12 observations.~With 10, 0.10≠0.12 and 10/30≠0.4, so not independent; still not mutually exclusive.
+10.4|2B
+D|Which line produced a flaw?|Line A makes 60% of units with flaw probability 2%. Line B makes the rest with flaw probability 5%. A unit is sampled uniformly.|Complete the tree, including complements.|Find the overall flaw probability.|Find P(B given flawed) and explain why comparing 5% and 2% alone is not enough to get it.
+@tree A|B|0.6|0.4|0.02|—|0.05|—|Flaw|No flaw
+= Second branches A: 0.02,0.98; B: 0.05,0.95.~0.6·0.02+0.4·0.05=0.032.~0.020/0.032=0.625. Line shares affect how many flawed units each contributes.
+C|Conditioning changes the mixture|In another factory, lines A and B make 80% and 20% of units. A’s flaw rate is 1%, B’s flaw rate is 4%.|Compute the two contributions to the overall flaw rate.|Predict among flawed units the fraction from B.|Explain why the line making fewer units can contribute equally many flaws.
+= 0.8×0.01=0.008 and 0.2×0.04=0.008.~0.008/0.016=1/2.~B makes a quarter as many units but has four times the flaw rate, offsetting the smaller production share.
+10.5|5A
+A|Choose first, then assign|A committee needs four of nine students. Two selected students will be chair and deputy; no student fills both roles.|Count committees before assigning roles.|Count the complete outcomes with the roles assigned.|Calculate the same number by choosing role holders first and explain the equivalence.
+= C(9,4)=126.~126×4×3=1 512.~9×8×C(7,2)=1 512. Each outcome specifies two role holders and an unordered pair of other members either way.
+11.1|5A,5C
+D|Plan a forecast you can test|A student group wants to predict water demand for a one-day event. Last event used 162 L for 120 guests plus a measured 18 L for cleaning, included in the 162 L. Next event expects 150 guests.|Define variables and build a first model separating fixed and guest-related use.|Use the model to obtain a forecast plus 10% safety stock.|Give a measurable validation plan and say when you would revise the model.
+= 162−18=144 L guest use; model 18+1.2n litres.~198 L forecast, 217.8 L with buffer.~Log total use, cleaning use and headcounts at comparable events; revise coefficients or assumptions if predicted totals systematically miss, e.g. across hotter days.
+11.2|5C
+D|Turn a vague brief into constraints|A library wants to “serve more users without making everyone wait”. It has two desks and may reassign one existing employee at peak times.|Write a quantitative question that can be answered with data, specifying a population and a time window.|Define a success metric, a comparison group or baseline and a capacity constraint.|Name one source of variation to record; explain why a daily total alone is insufficient.
+= Example: does reassigning a worker reduce the median wait of borrowers arriving 12:00–13:00 on weekdays?~Compare matched days with and without reassignment; record arrival-to-service waits. At most two staffed desks and no additional employee.~Record arrival rate in five-minute intervals, day of week or transaction type; the same daily count can hide different peak queues.
+11.3|5C
+D|Find where a model misses|A team models container fill as V=4+2t litres after t minutes. Measurements are shown.|Compute each residual (observed minus predicted).|Does the residual pattern support a constant filling rate over the full window? Explain.|Propose one revised approach and a measurement that could evaluate it.
+@table Time (min)~0~2~4~6~8;Observed L~4~8~12~15~17
+= 0,0,0,−1,−3 L.~The negative residuals grow in magnitude late, suggesting the rate slowed or the model misses systematically.~Try a piecewise linear model or saturation curve; test on independent observations at intermediate and later times and monitor the pump rate.
+11.4|5C
+D|Sensitivity near a best decision|A planning model gives benefit B(x)=120−2(x−6)² units for integer staffing x from 1 to 8. A scenario adds an extra cost of 6 units per staff member.|Find the base optimum.|Write the scenario’s net benefit, complete the square and compare the nearest feasible integers.|Explain how you would communicate sensitivity before choosing a plan.
+= x=6, benefit 120.~B−6x=88.5−2(x−4.5)², so x=4 and 5 tie at 88.~Report that the best modelled staffing falls from 6 to 4 or 5 under the stated cost; check whether the 6-unit assumption matches actual costs and discuss non-modelled service constraints.
+11.5|4C,5C
+C|Defend a recommendation with limits|A team trials two kiosk layouts with mean waits as shown; the client prioritises short waits at peak hours.|Write a two-sentence recommendation explicitly citing evidence from both layouts.|Suggest a fairer comparison and one visual that would communicate it.|Give a limitation to state beside the visual so it cannot be mistaken for proof of causation.
+@table Layout~Morning mean (min)~Peak mean (min)~Peak users;A~3~8~12;B~4~6~35
+= Recommend testing B further: observed peak mean 6 vs 8 min, although A’s morning mean is 3 vs 4. Peak groups are different sizes and may differ otherwise.~Repeat both layouts under similar peak arrival conditions; e.g. same-scale box plots of individual waits with sample sizes.~Nonrandom allocation, different peak traffic or unmeasured staff effects limit causal claims.
+12.1|5A,5C
+C|Combine factoring and an inverse|Let f(x)=x²−6x+5 with x≥3.|Find the zeros meeting the domain and express f in completed-square form.|Find the inverse and its domain.|Solve f(x)≥5 on the restricted domain and compare with the unrestricted result.
+@curve -1 8 -6 16|x|Unrestricted quadratic|1,-6,5
+= Zeros of full quadratic 1 and 5; only 5 allowed. f=(x−3)²−4.~Inverse 3+√(x+4), domain [−4,∞).~Restricted x≥6; unrestricted x≤0 or x≥6.
+12.2|3B
+D|Choose a method on a sloping route|Two straight paths leave a junction at an included 60° angle, with endpoints 30 m and 40 m away. A lookout sits vertically 12 m above the first endpoint.|Find horizontal distance between endpoints.|Find the direct three-dimensional distance from the second endpoint to the lookout.|Find the elevation angle from the second endpoint and justify the two methods used.
+@shape 0,0 J|4,0 B;0,0|1.5,2.598 A|4,0;2,-.25 40 m;.48,1.4 30 m;1,.65 60°
+= √(900+1600−1200)=√1300 m.~√(1300+144)=38 m.~arctan(12/√1300)≈18.4°. Cosine rule handles the nonright horizontal triangle; perpendicular vertical rise permits right-triangle trig.
+12.3|4B
+D|A flagged delivery|Half of deliveries use Route A and half B. Late rates are 8% and 16%. For late deliveries, delays on A have median 6 min and IQR 3 min, while B has median 5 min and IQR 8 min.|Find the overall late probability and P(B given late).|Compare typical late delay and consistency, explicitly distinguishing these from probability of lateness.|Recommend a route if avoiding any lateness is the first priority. State a limitation of the summaries.
+@tree A|B|0.5|0.5|0.08|0.92|0.16|0.84|Late|On time
+= 0.12; 0.08/0.12=2/3.~B’s median delay among late arrivals is 1 min lower; A’s IQR is 5 min smaller. These summaries condition on being late, unlike 8% and 16%.~A because 8%<16%; medians and IQRs do not reveal worst-case delays or guarantee future outcomes.
+12.4|5C
+B|Two shapes with equal cost but different area|Consider whole-metre rectangles with perimeter 40 m. A designer says a 1 m increase in width reduces area by a fixed amount once the rectangle is wider than it is long.|Write an area rule in terms of width w and list the areas for w=10,11,12,13.|Describe and prove the actual pattern of successive losses.|Explain the geometrical meaning of w and 20−w giving the same area, and why only one width is a maximum.
+= A=w(20−w); 100,99,96,91.~Losses 1,3,5,…: write A=100−(w−10)² and use (d+1)²−d²=2d+1.~The pair swaps length and width. The squared distance from 10 is zero only at w=10.

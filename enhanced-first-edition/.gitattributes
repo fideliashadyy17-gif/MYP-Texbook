@@ -1,0 +1,2 @@
+# Keep the source and distribution PDFs byte-for-byte.
+*.pdf binary

@@ -1,0 +1,142 @@
+{
+  "1": {
+    "original_pages": 240,
+    "output_pages": 306,
+    "practice_pages": 45,
+    "worked_answer_pages": 20,
+    "exercises": 90,
+    "exercise_parts": 270,
+    "visuals": {
+      "bar": 4,
+      "cap": 1,
+      "dots": 1,
+      "hist": 1,
+      "hundred": 1,
+      "line": 3,
+      "net": 1,
+      "shape": 6,
+      "strips": 1,
+      "table": 4,
+      "venn": 3,
+      "xy": 1
+    },
+    "original_render_samples": 21,
+    "source_empty_pdf_pages": [],
+    "original_render_blank_pages": [],
+    "filename": "MYP1-Student-Coursebook-Enhanced-Original-First-Edition.pdf",
+    "lowest_exercise_cursor_pt": 103.6
+  },
+  "2": {
+    "original_pages": 260,
+    "output_pages": 321,
+    "practice_pages": 42,
+    "worked_answer_pages": 18,
+    "exercises": 84,
+    "exercise_parts": 252,
+    "visuals": {
+      "box": 2,
+      "line": 2,
+      "net": 1,
+      "shape": 5,
+      "spinner": 1,
+      "table": 8,
+      "xy": 8
+    },
+    "original_render_samples": 23,
+    "source_empty_pdf_pages": [],
+    "original_render_blank_pages": [],
+    "filename": "MYP2-Student-Coursebook-Enhanced-Original-First-Edition.pdf",
+    "lowest_exercise_cursor_pt": 109.3
+  },
+  "3": {
+    "original_pages": 274,
+    "output_pages": 339,
+    "practice_pages": 52,
+    "worked_answer_pages": 12,
+    "exercises": 61,
+    "exercise_parts": 189,
+    "visuals": {
+      "line": 2,
+      "net": 1,
+      "shape": 8,
+      "table": 9,
+      "venn": 1,
+      "xy": 12
+    },
+    "original_render_samples": 24,
+    "source_empty_pdf_pages": [],
+    "original_render_blank_pages": [],
+    "filename": "MYP3-Student-Coursebook-Enhanced-Original-First-Edition.pdf",
+    "lowest_exercise_cursor_pt": 174.6
+  },
+  "4": {
+    "original_pages": 458,
+    "output_pages": 545,
+    "practice_pages": 69,
+    "worked_answer_pages": 17,
+    "exercises": 80,
+    "exercise_parts": 253,
+    "visuals": {
+      "box": 1,
+      "capsule": 1,
+      "cuboid": 1,
+      "curve": 2,
+      "hist": 1,
+      "line": 2,
+      "shape": 6,
+      "spinner": 1,
+      "stem": 2,
+      "table": 12,
+      "tree": 1,
+      "venn": 1,
+      "xy": 9
+    },
+    "original_render_samples": 38,
+    "source_empty_pdf_pages": [],
+    "original_render_blank_pages": [
+      181,
+      203,
+      231,
+      291,
+      325,
+      373
+    ],
+    "filename": "MYP4-Student-Coursebook-Enhanced-Original-First-Edition.pdf",
+    "lowest_exercise_cursor_pt": 94.7
+  },
+  "5": {
+    "original_pages": 340,
+    "output_pages": 415,
+    "practice_pages": 59,
+    "worked_answer_pages": 15,
+    "exercises": 69,
+    "exercise_parts": 215,
+    "visuals": {
+      "box": 1,
+      "circle": 3,
+      "cubic": 1,
+      "cuboid": 1,
+      "curve": 3,
+      "shape": 4,
+      "table": 6,
+      "tree": 2,
+      "venn": 1,
+      "xy": 10
+    },
+    "original_render_samples": 29,
+    "source_empty_pdf_pages": [],
+    "original_render_blank_pages": [
+      55,
+      101,
+      121,
+      163,
+      185,
+      207,
+      229,
+      257,
+      331
+    ],
+    "filename": "MYP5-Student-Coursebook-Enhanced-Original-First-Edition.pdf",
+    "lowest_exercise_cursor_pt": 234.9
+  }
+}

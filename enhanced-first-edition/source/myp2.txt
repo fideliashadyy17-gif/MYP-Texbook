@@ -1,0 +1,237 @@
+1.1|2A
+A|Colours in a batch|A maker uses 12 gold, 18 green and 6 blue beads.|Give the gold-to-green and blue-to-total ratios in simplest form.|What fraction of the batch is green?|Why are the green-to-gold ratio and the green fraction different?
+= 2:3 and 1:6.~1/2.~The first compares 18 to 12; the second compares 18 to all 36.
+C|An ambiguous label|A sign says “3:2” for two types of seed, but does not say which comes first.|Give two possible batches of 25 consistent with the sign.|Rewrite the sign to identify the batch with more millet than sorghum.|Explain why the fraction 3/2 is not the millet share in that batch.
+= 15 and 10 in either order.~Millet:sorghum = 3:2.~The share is 3/(3+2) = 3/5; 3/2 compares the two parts.
+1.2|2B
+A|Match the mixes|Three recipes use concentrate and water in ratios 14:21, 18:30 and 22:33.|Simplify all three ratios.|Select the two mixes with the same strength.|Change only the water in the remaining recipe to match that strength.
+= 2:3, 3:5, 2:3.~First and third.~18:27; use 27 parts of water.
+B|How many batches?|Use the ratio 5:8. A batch must have more than 25 and fewer than 60 total parts.|Find all whole-number versions of the ratio that fit.|Describe the pattern in the totals.|Why can no batch of exactly 50 parts fit?
+= 10:16, 15:24, 20:32.~Totals 26, 39, 52, multiples of 13.~50 is not a multiple of 13.
+1.3|2B
+A|Double number line|Four metres of cord cost 700 FCFA at a constant rate.|Complete the missing entries in the aligned table.|Find the length that costs 1 575 FCFA.|Explain the step used to get from 4 m to 9 m.
+@table Length (m)~0~2~4~8~—;Cost (FCFA)~0~—~700~—~1 575
+= 350 and 1 400, and 9 m in the last column.~9 m.~Use 8 m for 1 400 plus 1 m for 175, or multiply the 4 m cost by 9/4.
+C|Which column breaks the pattern?|A recipe card has the entries below.|Identify the incorrect water entry and repair it.|Explain why adding the same volume to both numbers does not preserve the taste.|Give a correct column with 25 cups of water.
+@table Juice (cups)~2~4~6~8;Water (cups)~5~10~13~20
+= Replace 13 by 15.~The ratio is maintained by a common factor, not a common additive change.~10 cups juice, 25 water.
+1.4|2A
+A|Reward tokens|A club divides 132 tokens among drawing, games and drama in the ratio 3:4:5.|Find each share.|After games gives 6 tokens to drawing, give the new ratio in simplest form.|Is drama still the only group with the largest share?
+= 33, 44, 55.~39:38:55, already simplest.~Yes; 55 remains greatest.
+D|Sharing water fairly|Teams of 8 and 12 share 35 L in proportion to their numbers.|Calculate both volumes.|They have 2 L containers; how many completely full containers and how much leftover does each team receive?|Explain why giving equal numbers of containers would not give equal water per person.
+= 14 L and 21 L.~7 and none; 10 and 1 L.~Teams differ in size; the larger team needs 1.5 times the volume.
+2.1|2B
+A|Same step, different relationship|Two receipts agree at 3 items but start differently.|Find the cost per item at 1, 2 and 3 items for each shop.|Which relationship is proportional?|Why is a straight line not enough evidence for proportionality?
+@table Items~0~1~2~3;Shop A (FCFA)~0~300~600~900;Shop B (FCFA)~300~500~700~900
+= A: 300 each time; B: 500, 350, 300.~A only.~A straight graph need not pass through (0,0); proportionality needs a constant ratio.
+C|Reading two graphs|The graph shows volumes filled from starting time for tanks P and Q. P starts empty.|Read both volumes at 4 minutes.|Which tank’s volume is proportional to time? Give two graph features.|Find and interpret the fill rate for the other tank.
+@xy 0 6 0 18|Time (min)|Volume (L)|P:0,0 6,18;Q:0,6 6,12
+= P 12 L, Q 10 L.~P is straight and through the origin.~1 L/min, the increase per minute; initial volume is 6 L.
+2.2|2A
+A|Plan a larger batch|A dye recipe needs 350 mL of water for 7 samples.|Find the water for 18 samples.|Only 1.25 L is available. How many whole samples can be made?|Explain whether your answer changes if preparation loses 100 mL.
+= 900 mL.~25.~Yes, only 23 from 1 150 mL.
+D|Printing leaflets|Three identical printers produce 252 leaflets in 6 minutes at constant rates.|Find the output of one printer in one minute.|How long will two printers need for 350 leaflets?|Explain an assumption needed to apply this method to the first minute after switch-on.
+= 14 leaflets per minute.~12.5 min, provided production can be modelled at a continuous constant rate.~No warm-up or delays, and all printers work at the stated rate immediately.
+2.3|2B
+A|A route at scale|A plan uses 1 cm for 3 m. From the entrance to the fountain is 4 cm east, then 2.5 cm north to the kiosk.|Find the real distances of the two legs.|Find the total distance walked.|Draw the same route at 1 cm for 2 m and state both drawing lengths.
+@shape 0,0 E|4,0 F|4,2.5 K;1.8,-.32 4 cm;4.55,1.25 2.5 cm
+= 12 m and 7.5 m.~19.5 m.~6 cm east and 3.75 cm north, meeting at a right angle.
+C|Wrong units, wrong map|A 7.2 cm map distance represents 360 m. A classmate gives a scale of 1:50.|Express both lengths in centimetres and state the true scale.|Find the ground distance represented by 3.5 cm.|Explain what the classmate’s 50 actually means.
+= 7.2 cm and 36 000 cm; 1:5 000.~175 m.~50 metres per map centimetre, not 50 centimetres.
+3.1|2A
+A|A reading tally|Kossi reads 54 pages in 45 minutes; Lila reads 68 pages in 50 minutes.|Find each rate in pages per minute.|Estimate the pages each reads in a 75-minute session at the same rate.|Explain why the faster reader cannot be identified simply by comparing session lengths.
+= 1.2 and 1.36 pages/min.~90 and 102 pages.~A rate accounts for both output and time.
+C|A rate changes its number|A tap runs steadily at 12 L per minute.|Express its rate in litres per second.|How many seconds to collect one litre?|Explain why 0.2 and 5 can both describe the same tap.
+= 0.2 L/s.~5 s.~The units reverse: litres per second versus seconds per litre.
+3.2|2B
+A|Price tags|A 750 g rice bag costs 1 350 FCFA and a 1.2 kg bag costs 2 040 FCFA.|Compare their cost per kilogram.|Find the saving per kilogram of the better rate.|If you must buy at least 1.4 kg in unopened bags and store all leftovers, compare two small bags with one of each.
+= 1 800 vs 1 700 FCFA/kg.~100 FCFA/kg.~Two small: 1.50 kg, 2 700 FCFA; one of each: 1.95 kg, 3 390 FCFA. Two small has the lower total.
+D|A transport fee matters|A club needs exactly ten 1 L cartons. Shop X charges 700 FCFA per carton plus 850 delivery. Shop Y charges 780 per carton with free delivery.|Compare total outlays.|Compute each effective price per litre.|Find the smallest number of cartons for which X costs less than Y, assuming unchanged prices.
+= 7 850 vs 7 800 FCFA; Y.~785 vs 780 FCFA/L.~11: X saves 80 per carton before the fee and 11 × 80 > 850.
+3.3|2B
+A|Part of the journey|A bike messenger rides 6 km in 20 min and then 9 km in 25 min.|Find the speed on each leg in km/h.|Find the average speed over the whole ride.|Explain why the simple average of the two leg speeds is not exact.
+= 18 km/h and 21.6 km/h.~15 ÷ 0.75 = 20 km/h.~Leg times are unequal; total distance must be divided by total time.
+D|Filling a storage tank|Pump A supplies 18 L/min, and B supplies 12 L/min. A runs alone for 4 min and then both run for 6 min into a 280 L tank, initially empty.|Find the volume added in each stage.|Find how much room remains after both stages.|Can both pumps run for a further whole minute without overflow? Explain quantitatively.
+= 72 L then 180 L.~28 L.~No; they add 30 L and overflow by 2 L.
+4.1|3A
+A|Distance from zero|A lift display uses negative floors for basements. Four stops are −4, +2, 0 and −2.|Order the stops from lowest to highest.|Which two distinct stops are equally far from street level?|Which stop is farthest from street level and how do you know?
+@line -5|4|
+= −4, −2, 0, 2.~−2 and +2, each 2 levels away.~−4; its absolute value is greatest.
+C|A confusing minus sign|A learner writes −7 > −3 because 7 > 3.|Repair the inequality and show a number-line argument.|Compare the absolute values of −7 and −3 in words.|Give two distinct integers with the same absolute value, neither used above.
+= −7 < −3; on the line −7 is to the left.~Distance 7 from zero is greater than distance 3.~E.g. −5 and 5.
+4.2|2A
+A|A ledger|A ledger records changes from an opening balance of 6 points: −9, +4 and −7.|Write the balance after each change.|What fourth change would return the balance to zero?|How would changing the order of the first three entries affect the final balance and the intermediate balances?
+= −3, 1, −6.~+6.~Same final sum, but intermediate balances may change.
+C|Change versus reading|At dawn a thermometer shows −6°C; by noon it shows +5°C.|Write and evaluate an expression for the change.|Then it falls 9°C. Find the final reading.|Explain why 5 − 6 is not the change from dawn to noon.
+= 5 − (−6) = 11°C.~−4°C.~The starting reading is −6, and subtracting it crosses zero.
+4.3|2B
+A|A repeated correction|Each trial loses 6 points. There are seven trials.|Write the total change as a product.|If five identical losses total −45 points, find one loss.|Evaluate 12 − 3 × (−4) and explain the sign of the second term before subtraction.
+= 7 × (−6) = −42.~−9 points.~24; 3 × (−4) = −12, then subtract −12.
+B|A missing multiplier|Start with multiplier 4 and step down one at a time, multiplying each by −3.|Complete the table.|Describe how outputs change as multipliers decrease by 1.|Explain why (−3) × (−3) must be positive to continue the same pattern.
+@table Multiplier~4~3~2~1~0~−1~−2~−3;Product~−12~−9~—~—~—~—~—~—
+= −12, −9, −6, −3, 0, 3, 6, 9.~Increase by 3 per step.~The row continues past zero, and at multiplier −3 it has advanced three steps of +3.
+4.4|2B
+D|An overnight alert|A station reports −3°C at 18:00. Over the next three hours it falls 2°C per hour, then rises 1°C per hour for four hours.|Find the readings at 21:00 and 01:00.|A frost alert applies at or below −7°C. At which whole-hour readings does the rule trigger?|How could recording only the start and end miss the event?
+= −9°C and −5°C.~20:00, 21:00, 22:00 and 23:00.~Both endpoints exceed −7°C, but the intervening readings do not.
+C|Compare stations|On Monday Station A registered −2°C and B registered 3°C. On Tuesday A was −6°C and B was 1°C.|Find the overnight change at each station.|Calculate their difference on each day.|Explain why the gap can grow even though both temperatures fall.
+= A: −4°C; B: −2°C.~5°C, then 7°C.~A drops 2°C more, so it moves 2°C farther below B.
+5.1|2A
+A|Translating receipts|A school buys four identical folders at f FCFA each, a pen at p FCFA, and receives a discount of 150 FCFA.|Write a cost expression and identify its constant term.|Evaluate at f = 300 and p = 250.|If only f rises by 20 FCFA, find the change in the total without recomputing both totals.
+= 4f + p − 150; constant −150.~1 300 FCFA.~4 × 20 = 80 FCFA.
+C|A letter is not a label|A list records x adult tickets and twice as many youth tickets. A learner writes “x + 2”.|Write the expression for the youth tickets and for all tickets.|Use x = 7 to show where the learner’s expression goes wrong.|Give a ticket description that would actually match x + 2.
+= 2x and 3x.~Twice 7 is 14, not 9.~For example, two more youth tickets than adult tickets.
+5.2|2B
+A|Two frame formulas|Two designers write 4(t + 2) + 3t and 7t + 8 for the length of the same trim.|Expand and show whether they agree for all t.|Find the length for t = 6.|Factor 7t + 14 and explain why it is different.
+= Both are 7t + 8.~50 units.~7(t + 2); its constant is 14 rather than 8.
+C|One match is not a proof|A student claims 3(x + 3) = 4x + 6 because both give 18 at x = 3.|Check the substitution.|Provide a counterexample.|Use expansion to explain why the formulas are not equivalent.
+= Both give 18 at 3.~At 0 they give 9 and 6.~3x + 9 differs in both coefficients from 4x + 6.
+5.3|2B
+A|A prepaid card|A card still holds 900 FCFA after a setup fee of 300 FCFA and four equal ride charges were taken from 2 200 FCFA.|Form a linear equation in the charge per ride.|Solve and check it.|Find the balance if one more ride is taken.
+= 2 200 − 300 − 4r = 900.~r = 250 FCFA; 2 200 − 300 − 1 000 = 900.~650 FCFA.
+C|Balance means both sides|A learner goes from 4x − 7 = 2x + 9 to 4x = 2x + 2.|Identify the incorrect change.|Solve using balanced steps.|Explain how substitution detects the learner’s error.
+= They subtracted 7 on the right rather than adding 7 to both sides.~4x = 2x + 16, then x = 8.~The wrong line gives x = 1, for which the original sides are −3 and 11.
+5.4|2A
+D|Two rehearsal plans|Room P charges 2 400 FCFA plus 600 per hour. Room Q charges 900 per hour. Both charge for whole hours only.|Find the charge for six hours under each plan.|Find the exact break-even duration by equation.|Recommend a plan for nine hours and explain why the choice changes with duration.
+= P 6 000, Q 5 400 FCFA.~8 h.~P costs 7 800 vs 8 100 FCFA. Its fixed fee matters early, but its hourly rate is lower.
+C|A budget is not a use prediction|Two plans cost 1 000 + 300n and 500n FCFA for n sessions.|Find their break-even count.|Find which is cheaper at 3 and 7 sessions.|Explain why knowing only a 4 000 FCFA budget does not tell you which plan will be cheaper.
+= 5 sessions.~At 3, the second (1 500 vs 1 900); at 7, the first (3 100 vs 3 500).~Both fit the budget for some counts on both sides of break-even; expected usage matters.
+6.1|5A
+A|A temperature sequence|A model gives the sequence 17, 12, 7, 2, … in degrees Celsius.|State the term-to-term rule and write the next three values.|Which is the first negative term, by position?|Explain whether any term can equal 0 under this rule.
+= Subtract 5; −3, −8, −13.~Term 5.~No; the step from 2 to −3 skips it and the sequence keeps decreasing.
+B|Two matching starts|Rules P and Q both start at 4. P adds 4 each time; Q doubles each time.|List the first five terms of both.|At what positions do the two sequences match among these terms?|Explain why the same initial values do not imply the same term-to-term rule.
+= P: 4, 8, 12, 16, 20; Q: 4, 8, 16, 32, 64.~Positions 1 and 2.~Adding 4 and doubling agree when applied to 4, but not when applied to 8.
+6.2|5C
+A|Seat numbers|A row-number pattern starts at 11 and increases by 6.|Give the next three terms and an nth-term expression with n starting at 1.|Use your rule to find term 24.|Decide whether 145 is in the sequence and show your test.
+= 17, 23, 29; 6n + 5.~149.~No; (145 − 5)/6 is not an integer.
+B|A shared term|Two patterns are 4n + 3 and 6n − 5, n = 1, 2, …|Make a table for the first five terms of both.|Find the position where they have the same value at the same stage.|Explain why there cannot be a second position where they coincide.
+= 7,11,15,19,23 and 1,7,13,19,25.~n = 4, value 19.~The second gains 2 per stage on the first, so the signed gap crosses zero only once.
+6.3|2B
+A|Two graph machines|The drawn lines represent machines A and B. Read output from the vertical axis.|For input 2, read both outputs.|Write a rule for each and check input 5.|Find an input at which they give equal outputs.
+@xy 0 6 0 12|Input|Output|A:0,2 5,12;B:0,6 6,12
+= A 6, B 8.~A: 2x + 2, output 12; B: x + 6, output 11.~4; both output 10.
+C|Intercept versus starting point|A machine is defined by y = 3x + 1 for inputs 1 through 5 only, all whole numbers.|Complete a coordinate table and plot the allowed pairs.|Should points be connected for this machine? Explain.|A learner calls (0,1) an output of the machine. Explain the mistake.
+@xy 0 5 0 16|Input|Output|
+= (1,4),(2,7),(3,10),(4,13),(5,16).~No; intermediate x-values are not allowed.~The formula extends to 0 but the machine’s allowed inputs exclude 0.
+6.4|5C
+D|A side-light budget|A display uses 7 lights at stage 1 and then 4 extra lights at each stage. The team has 52 lights.|Write a rule for the count at stage n.|Find the largest buildable stage and the unused lights.|If the team needs to keep 6 lights as spares, find the new limit.
+= 4n + 3.~Stage 12 uses 51, leaving 1.~Stage 10 uses 43; stage 11 needs 47 > 46.
+B|Two readings of a pattern|A maker lists 9, 15, 21. She wants the value at stage 31, where 9 was stage 1.|Compare using 30 additions of 6 with using a direct rule.|Compute the value both ways.|What would the direct rule become if 9 were stage 0 instead?
+= Direct rule 6n + 3; repeated rule adds 6 per stage.~189.~6n + 9.
+7.1|3A
+A|Two crossing paths|At the crossing, the indicated angle is 64°. Both paths continue straight.|Find its vertically opposite angle.|Calculate each adjacent angle.|Would making the marked angle 5° larger make the adjacent angles 5° larger too? Explain.
+@shape 0,1 A|6,1 C;2,-1.05 D|4,3.05 B;3,1 O|3,1;3.85,1.45 64°
+= 64°.~116° each.~No, they each become 111° because they supplement the marked angle.
+C|A full-turn check|Angles around a point are represented by x, x + 20°, 2x and 100°, with x measured in degrees.|Write the sum equation and solve.|Give the four sizes.|Which angles are acute, and how can you check every value is possible?
+= 4x + 120 = 360, hence x = 60.~60°, 80°, 120°, 100°.~60°, 80°; all are positive and the sum is 360°.
+7.2|3B
+A|Triangle with an exterior angle|In triangle ABC, AB = AC and BC is extended through C to D. The exterior angle ACD is 116°.|Find the two base angles.|Find the vertex angle.|Use the vertex angle and the other base angle to check the exterior angle.
+@shape 0,0 B|3,4 A|6,0 C|8,0 D;0,0|6,0
+= Both are 64°.~52°.~52° + 64° = 116°.
+C|An insufficient clue|A learner claims any triangle with a 60° angle must be equilateral.|Provide two different angle triples with a 60° angle.|Classify your triples by sides.|What additional angle information would make the claim true?
+= E.g. (60°,60°,60°) and (60°,50°,70°).~Equilateral and scalene.~A second 60° angle forces the third to be 60° too.
+7.3|2A
+A|An adjustable frame|ABCD is a parallelogram. Angle A is 68°.|Find B, C and D with reasons.|What would have to change for the shape to become a rectangle?|Does giving the frame four equal sides force it to be a square? Explain.
+@shape 0,0 A|6,0 B|7.6,4 C|1.6,4 D|0,0
+= B and D are 112°, C is 68° (adjacent supplementary, opposite equal).~A must become 90°, forcing all the others to 90°.~No; a rhombus may have nonright angles.
+C|Find the impossible set|Three consecutive angles of a claimed quadrilateral are 105°, 95° and 105°.|Find the fourth angle.|Does that disprove a quadrilateral? Does it disprove a parallelogram?|Give the smallest change to just the 95° angle to allow a parallelogram while the two 105° angles stay.
+= 55°.~A quadrilateral is possible; opposite angles 95° and 55° rule out a parallelogram.~Reduce 95° to 75°; now both opposite pairs agree.
+7.4|2B
+A|Re-cutting a mat|A 9 m by 6 m rectangle loses a 3 m by 2 m corner as shown.|Find the new area.|Find the new perimeter, noting which lengths replaced the two removed edges.|If the same cut is made in the middle of a long side instead, compare the perimeters.
+@xy 0 10 0 7|m|m|p:0,0 9,0 9,4 6,4 6,6 0,6 0,0
+= 48 m².~30 m; a new 3 m and 2 m edge replace equal lengths.~The notch in the middle adds two 2 m edges, giving 34 m.
+D|Same area, different fence|A rectangular garden must have area 48 m² and whole-metre side lengths.|Find every unordered side-length pair.|Choose the least fencing needed.|A 2 m gate replaces part of the fence. How much fencing is needed now?
+= (1,48),(2,24),(3,16),(4,12),(6,8).~28 m for 6 m by 8 m.~26 m.
+7.5|2B
+D|Two paving materials|A 9 m by 7 m courtyard has a rectangular 3 m by 2 m planting bed. Ordinary tiles cost 1 800 FCFA/m²; permeable tiles cost 2 400 FCFA/m². Exactly 12 m² of the paved area must be permeable.|Find the paved area and each tile area.|Calculate the cost without waste.|Add 10% to each area for waste, rounding purchases up to the next whole square metre. Is 125 000 FCFA enough?
+= 57 m² paved, 12 permeable and 45 ordinary.~109 800 FCFA.~14 m² and 50 m² cost 123 600 FCFA; enough by 1 400 FCFA.
+C|Where is the extra edge?|A 4 m by 3 m bed is fully inside a paved plot. A contractor quotes 7 m for edging.|Check that quote if all sides are edged.|If one long edge lies directly against a wall and is not edged, find the new length.|Explain why an area calculation would not answer the question.
+= 14 m.~10 m.~Edging measures boundary length, not the size of the region inside.
+8.1|2B
+A|Folding a marked net|The marked net folds into a cube.|Identify the face opposite D and the face opposite F.|How many faces meet at each vertex?|If face G is added to complete a seventh cell, explain why the result is not a cube net.
+@net 0,1:A 1,1:B 2,1:C 3,1:D 2,2:E 2,0:F
+= Opposite D is B; opposite F is E.~3.~A cube has six faces; the extra cell cannot produce a seventh distinct cube face.
+C|Counting edges without double-counting|A triangular prism has two triangular faces and three rectangular faces.|Sum the number of edges listed separately on its five faces.|Use that count to find the number of actual edges.|Explain why the same method works for a closed cuboid.
+= 2 × 3 + 3 × 4 = 18.~9; each edge is counted twice.~Every cuboid edge also joins exactly two faces; 6 × 4 ÷ 2 = 12.
+8.2|2A
+A|A triangular gift box|The two ends of a 12 cm long prism are right triangles with legs 6 cm and 8 cm and hypotenuse 10 cm.|Find the area of both ends together.|Find the combined area of the three rectangular faces.|Add a 12 cm² overlap tab and find the card used.
+@shape 0,0 A|4,0 B|0,3 C|0,0;2,-.35 8 cm;-.55,1.5 6 cm;2.35,1.7 10 cm
+= 48 cm².~12(6 + 8 + 10) = 288 cm².~348 cm².
+C|Surface area is not base times length|A cuboid is 9 cm long, 4 cm wide and 2 cm high. Someone writes 72 cm² for its surface area.|Calculate each pair of face areas and the total.|Identify the quantity 72 actually measures.|State how much surface is left to paint if one of the 9 by 4 faces is covered.
+= 72, 36, 16; total 124 cm².~Its volume, 72 cm³.~88 cm².
+8.3|2B
+A|The label around a can|A closed can has diameter 8 cm and height 11 cm. Leave answers involving π exact.|Give the dimensions of the rectangular label covering the curved surface without overlap.|Find the label area and total external area.|A 1 cm wide vertical overlap is added to the label. How much extra area is needed?
+= 8π cm by 11 cm.~88π cm²; including ends, 120π cm².~11 cm².
+C|Same material, no lid|An open tin has radius 5 cm and height 7 cm.|Find curved area and base area in terms of π.|Calculate the area for the open tin.|Explain why subtracting 25π from the curved area is not the right method.
+= 70π and 25π cm².~95π cm².~The curved area has no lid to subtract; the base must instead be added.
+8.4|2A
+A|Two container shapes|A cuboid has a base 12 cm by 10 cm. A cylinder has radius 5 cm. Both have usable height 9 cm.|Find both capacities in cm³, taking π ≈ 3.14.|Which can hold a full litre (1 000 cm³)?|Find the smallest fill depth that gives at least one litre if you can mark only tenths of a centimetre.
+= 1 080 cm³ and about 706.5 cm³.~Only the cuboid.~Threshold 1 000/120 = 8.333… cm; use 8.4 cm to hold at least one litre.
+D|Rain collection|A cylindrical rain gauge with base area 90 cm² and usable height 20 cm is initially filled to 12 cm.|Find the current volume and leftover capacity.|A storm adds 0.75 L. Does it overflow? By how much?|Give one physical effect this simple calculation ignores.
+= 1 080 cm³; 720 cm³ left.~Yes, by 30 cm³ (30 mL).~For example, splashing out or evaporation.
+8.5|2B
+A|Storage with a raised section|A container consists of a 12 × 8 × 5 cm cuboid joined face-to-face on top to a 6 × 8 × 3 cm cuboid, with the common face fully open inside and no walls between.|Calculate each part’s volume and total capacity.|If only the larger part fills initially, what share of the capacity is then filled?|Explain why no overlap is subtracted in the volume total.
+= 480 and 144 cm³; total 624 cm³.~480/624 = 10/13.~They share a face, not a region of positive volume.
+D|Protective sleeve|A rectangular 20 × 10 × 6 cm box slides into a sleeve open at both 10 × 6 ends.|Calculate the minimum sleeve material with no tabs.|Compare it to the material for a closed outer box of the same dimensions.|A sleeve gains a joining strip of 2 cm × 20 cm. How much material does it save now?
+= 640 cm².~Closed box 760 cm²; sleeve saves 120 cm².~640 + 40 = 680 cm², so 80 cm² saved.
+9.1|3A
+A|Move the flag|Triangle ABC is plotted on the grid. Translate A(−2,1), B(1,1), C(0,3) 3 units right and 2 units down.|Give the image coordinates and plot them.|Check the length of AB before and after.|Find a translation that takes the image back to the original.
+@xy -4 5 -4 4|x|y|ABC:-2,1 1,1 0,3 -2,1
+= (1,−1), (4,−1), (3,1).~3 units in both cases.~3 left and 2 up.
+C|Same movement for every point|A moves from (−1,4) to (2,0) and B moves from (3,−1) to (6,−4).|Find both changes in coordinates.|Decide whether this is one translation.|Correct B’s image so that the movement matches A’s.
+= A (+3,−4); B (+3,−3).~No, the vertical changes differ.~(6,−5).
+9.2|3B
+A|A mirror at x = 1|Reflect the plotted triangle with A(0,0), B(−2,2), C(1,3) across x = 1.|Plot and label the image vertices.|Which point is fixed? Explain.|Find the distance from B to its image.
+@xy -4 5 -1 4|x|y|ABC:0,0 -2,2 1,3 0,0;x = 1:1,-1 1,4
+= A′(2,0), B′(4,2), C′(1,3).~C lies on the mirror.~6 units; it is 3 on either side.
+C|Not every same-size outline is a mirror image|A learner reflects (2,3) to (−2,−3) across the y-axis.|Give the correct image.|Show how the reflection preserves distance to the y-axis.|Name the extra change made in the wrong image.
+= (−2,3).~Both are 2 units from the y-axis on opposite sides.~It also negates y, as if subsequently reflected in the x-axis.
+9.3|3A
+A|Quarter turn|Rotate P(1,1), Q(3,1), R(1,2) 90° anticlockwise about O = (0,0).|Plot and give the image coordinates.|Compare the distance from O to Q and Q′.|Rotate the image another 90° anticlockwise and state the total rotation.
+@xy -4 4 -4 4|x|y|PQR:1,1 3,1 1,2 1,1
+= (−1,1),(−1,3),(−2,1).~Same (√10 units, or compare a one-by-three right-angle path).~(−1,−1),(−3,−1),(−1,−2); total 180°.
+C|Specify the centre|A student says “a 90° turn sends (2,0) to (0,2)”.|State a centre and direction that make this true.|Find the image for a 90° anticlockwise turn about (1,0).|Explain why giving just the angle does not specify a rotation.
+= Origin, anticlockwise.~(1,1).~Both the centre and the direction can change the image.
+9.4|2B
+A|Enlarge from a fixed point|Enlarge P(1,1), Q(3,1), R(1,2) from P with scale factor 2.|Plot and give all image coordinates.|Compare the perimeter with the original perimeter.|Compare the areas, using the two perpendicular edges.
+@xy 0 6 0 4|x|y|PQR:1,1 3,1 1,2 1,1
+= P′(1,1), Q′(5,1), R′(1,3).~Double.~Original 1 square unit, image 4 square units.
+C|Same factor for every length?|A 6 by 10 rectangle is changed into an 8 by 12 rectangle by adding 2 to each dimension.|Compare the horizontal and vertical factors.|Decide if it is an enlargement.|Keep the longer new side at 12; what shorter side would give similarity?
+= 8/6 = 4/3, and 12/10 = 6/5.~No, the factors differ.~6 × 1.2 = 7.2 units.
+10.1|2A
+A|Two choices|One of hats R, B, G and one of scarves Y, P are selected. Each pair is equally likely.|Complete the two-way list of possible pairs.|List the event “R or P, but not both”.|How many outcomes have either R or P or both?
+@table Hat × scarf~Y~P;R~RY~—;B~—~—;G~—~—
+= RY, RP, BY, BP, GY, GP.~RY, BP, GP.~4: add RP to that list.
+C|Outcomes and events|A card numbered 1 to 8 is drawn. Event A is “even”; event B is “greater than 5”.|List A and B.|Find A ∩ B and A ∪ B.|Explain why A and B are events rather than individual outcomes.
+= A = {2,4,6,8}, B = {6,7,8}.~{6,8}; {2,4,6,7,8}.~Each is a collection of possible outcomes.
+10.2|2B
+A|A museum wheel|A fair wheel has eight equal sectors: three stars, two moons and three blank sectors.|Calculate P(star), P(not moon), and P(star or moon).|If one blank changes to a moon, recalculate P(not moon).|What stays unchanged and why?
+@spinner ★,★,★,M,M,–,–,–
+= 3/8, 6/8 = 3/4, 5/8.~5/8.~P(star) remains 3/8 since neither star count nor sector count changes.
+C|Counting the wrong complement|A bag holds 4 black, 7 white and 5 striped counters. One is selected with all counters equally likely.|Find the complement of “white” and its probability.|Find P(neither black nor white).|Explain why the two probabilities are different.
+= Black or striped, 9/16.~5/16.~Neither black nor white excludes black as well as white.
+10.3|2A
+A|Two runs of a simulation|A team records prize outcomes for two runs of a spinner. Use the data shown.|Find each relative frequency and the pooled relative frequency.|If the theoretical probability is 1/4, say which estimate is closest by distance.|Why does the larger run not have to match the theory exactly?
+@table Run~Trials~Prizes;A~40~12;B~120~27
+= 0.30, 0.225 and 39/160 = 0.24375.~Pooled; gap 0.00625.~Random variation remains possible in every finite run.
+B|Design a fair proxy|You have a fair die and want to simulate a 2/3 chance of a successful attempt.|Allocate the die outcomes to success or failure.|For rolls 1, 6, 2, 5, 4, 3, 3, 2, calculate relative frequency using your allocation.|If your frequency differs from 2/3, explain what you would do before judging the model.
+= Example: 1–4 success, 5–6 failure.~With this allocation, 6/8 = 3/4.~Repeat many independent trials and compare pooled frequency and typical variation with the theoretical probability.
+11.1|4A
+A|Book counts by week|A group logs how many books each visitor borrowed.|Find the mode, median and mean from the frequency table.|Consider one extra visitor who borrows 10 books. Recalculate the mean.|Which of the three summaries changes? Justify the median with positions.
+@table Books~0~1~2~3~4;Frequency~2~3~5~3~1
+= Mode 2, median 2, mean 26/14 = 13/7.~36/15 = 2.4.~Mean only; the 8th of 15 still equals 2 and the modal count still occurs most.
+C|A chart that answers a question|A survey stores school transport mode and travel minutes.|Name one suitable chart for each variable.|Explain why averaging the transport labels makes no sense.|Write one claim the travel-minute data could support and one they cannot support without more evidence.
+= Bar chart for modes; dot plot or histogram, depending on the timing data.~Modes are unordered categories, not numerical measurements.~E.g. typical time in the sample; they cannot establish that the choice of transport caused a difference.
+11.2|4B
+A|Five numbers at a glance|Weekly running times in minutes are 8, 10, 12, 12, 14, 17, 19, 22, 26. Exclude the median when finding the quartiles.|Find the five-number summary and IQR.|Draw the box plot on the provided scale.|Compare the widths of the two parts of the box and interpret them.
+@line 6|28|8:8,12:12,16:16,20:20,24:24,28:28
+= 8, 11, 14, 20.5, 26; IQR 9.5.~Whiskers at 8 and 26, box 11 to 20.5, median at 14.~Upper half of box spreads over 6.5 min vs 3, so the upper middle quarter is more spread out.
+C|One unit on both boxes|Two routes have the five-number summaries shown in the box plots, in minutes.|Find each IQR and range.|Which route is more consistent in the middle half? Which has the smaller median?|Explain why neither measure proves that one route is faster every day.
+@box 0|32|Minutes|X:4,8,12,17,30;Y:7,9,13,14,20
+= X: 9, 26; Y: 5, 13.~Y more consistent by IQR; X lower median.~The distributions overlap. Summaries do not pair times for individual days.
+11.3|4C
+D|An equipment recommendation|Daily calibration errors are shown in the table. The technician values a low typical error and no error above 8 units.|Compare the medians and ranges.|Recommend one device using the requirement and a summary measure.|State one limitation of using only these recordings to make a purchase.
+@table Device~Daily errors (units);M~1, 2, 2, 3, 12;N~2, 3, 3, 4, 6
+= M median 2, range 11; N median 3, range 4.~N meets the hard limit in every observed test and has the smaller range; M fails once.~Only five observations per device; other operating conditions or future errors are untested.
+C|A claim about overlap|The times below come from two practice groups. Compare the summaries on the same scale.|Read and compare the median and IQR.|Is it possible someone in Group A took longer than a person in B? Support with values.|Explain why overlapping boxes do not tell you how many such pairs there are.
+@box 0|40|Minutes|A:5,10,15,23,37;B:9,18,24,29,34
+= A median 15, IQR 13; B median 24, IQR 11.~Yes: A’s maximum 37 exceeds B’s minimum 9 (and maximum 34).~Boxplots do not report individual values or relative ranks within each quartile.
