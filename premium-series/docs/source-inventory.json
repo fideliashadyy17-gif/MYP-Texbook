@@ -1,0 +1,128 @@
+[
+  {
+    "path": "GRADE 9 version C.pdf",
+    "role": "exercise-reference",
+    "pages": 2,
+    "bytes": 377572,
+    "sha256": "281720c18d3ff42ad2e1b75a3796ec94613ecc5426059d34db123d3e44e3e929",
+    "creator": "",
+    "outline_entries": 0
+  },
+  {
+    "path": "GRade 10 version C.pdf",
+    "role": "exercise-reference",
+    "pages": 2,
+    "bytes": 605879,
+    "sha256": "86a3d4c7c9b82dbf7fbc120865fe6cf9ad2f53062ad7c3be8338c3ac46b1ff4f",
+    "creator": "",
+    "outline_entries": 0
+  },
+  {
+    "path": "Grade_10_MYP_5_Mathematics_Summative_Assessment.pdf",
+    "role": "exercise-reference",
+    "pages": 2,
+    "bytes": 1136005,
+    "sha256": "b4f25a266db47aa779f1f02b3ef3fb6cd58715d84d8fcdcded4e18a42c73daf9",
+    "creator": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/142.0.0.0 Safari/537.36",
+    "outline_entries": 0
+  },
+  {
+    "path": "Grade_8_MYP_3_Mathematics_Summative_Assessment.pdf",
+    "role": "exercise-reference",
+    "pages": 2,
+    "bytes": 789819,
+    "sha256": "cff244dde02fd4482b2d9ec1f64537f50804693f83e0830edb30d0d91c1a7e77",
+    "creator": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/142.0.0.0 Safari/537.36",
+    "outline_entries": 0
+  },
+  {
+    "path": "Grade_8_MYP_3_Mathematics_Summative_Assessment_Version_B.pdf",
+    "role": "exercise-reference",
+    "pages": 2,
+    "bytes": 811375,
+    "sha256": "7f563bdaed5834df6ceb474a674d3d569fef4e179abaa9b96f4a17e33d505172",
+    "creator": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/142.0.0.0 Safari/537.36",
+    "outline_entries": 0
+  },
+  {
+    "path": "Grade_9_MYP_4_Mathematics_Summative_Assessment.pdf",
+    "role": "exercise-reference",
+    "pages": 2,
+    "bytes": 1070444,
+    "sha256": "5b2630db556aa621eb0dd62c2a062ccc223e821eb4f52f105b5326f91343f08a",
+    "creator": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/142.0.0.0 Safari/537.36",
+    "outline_entries": 0
+  },
+  {
+    "path": "Grade_9_MYP_4_Mathematics_Summative_Assessment_Version_B.pdf",
+    "role": "exercise-reference",
+    "pages": 2,
+    "bytes": 1100196,
+    "sha256": "9ba9fc3fb9e32479867d9547bc2df02418b1562164a15b787dfe8185c580c4a7",
+    "creator": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/142.0.0.0 Safari/537.36",
+    "outline_entries": 0
+  },
+  {
+    "path": "MYP-Mathematics-1-Student-Coursebook.pdf",
+    "role": "first-edition",
+    "pages": 240,
+    "bytes": 16777029,
+    "sha256": "131a3a99d14ae5a7613c7e9da24c540e29029d93a1a360abcc8516835798b3f0",
+    "creator": "Original HTML/CSS print pipeline",
+    "outline_entries": 0
+  },
+  {
+    "path": "MYP-Mathematics-2-Student-Coursebook.pdf",
+    "role": "first-edition",
+    "pages": 260,
+    "bytes": 15079740,
+    "sha256": "565ed7876b3cf2e16d0a7c9607fe9cf93a8edc40d599ce8772ad70ca76baa30e",
+    "creator": "Original HTML/CSS print pipeline",
+    "outline_entries": 0
+  },
+  {
+    "path": "MYP-Mathematics-3-Student-Coursebook.pdf",
+    "role": "first-edition",
+    "pages": 281,
+    "bytes": 22612237,
+    "sha256": "3cb3bb8071713cd453da62972451dada54c2a63f5266b00b7970bb8239c519ed",
+    "creator": "Original HTML/CSS print pipeline",
+    "outline_entries": 0
+  },
+  {
+    "path": "MYP2 1st Term examination B.pdf",
+    "role": "exercise-reference",
+    "pages": 2,
+    "bytes": 516652,
+    "sha256": "a017aabd05c004d6bb84b9b14fc3546d117e66e9c8447a593d1862a2a5d849aa",
+    "creator": "Chromium",
+    "outline_entries": 0
+  },
+  {
+    "path": "MYP2 1st Term examination.pdf",
+    "role": "exercise-reference",
+    "pages": 2,
+    "bytes": 357808,
+    "sha256": "de7320b707aa148a118ade74e4dee118aaf1e63fc9f9c11ebb78fea2947d3f1b",
+    "creator": "Chromium",
+    "outline_entries": 0
+  },
+  {
+    "path": "MYP_Mathematics_4_Student_Coursebook.pdf",
+    "role": "first-edition",
+    "pages": 458,
+    "bytes": 11462227,
+    "sha256": "4e0e8a32776f43f8565966edb54f9f30c6f45e7858259bd9799931e89197c393",
+    "creator": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "outline_entries": 0
+  },
+  {
+    "path": "MYP_Mathematics_5_Student_Coursebook.pdf",
+    "role": "first-edition",
+    "pages": 340,
+    "bytes": 11276894,
+    "sha256": "5f2e8001623ce1e26c72a94755127ee0828c4b0756fcc6c5bc0604e223d3274f",
+    "creator": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+    "outline_entries": 0
+  }
+]
