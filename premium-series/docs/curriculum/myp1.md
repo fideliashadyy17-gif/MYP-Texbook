@@ -28,11 +28,11 @@ Printed page numbers are the anchors from the original contents; PDF page number
 
 | Section | Source topic | Printed page | Contents PDF page | Reconstruction |
 |---|---|---:|---:|---|
-| 3.1 | Factors, multiples and factor pairs | 56 | 4 | Not drafted |
-| 3.2 | Divisibility tests | 58 | 4 | Not drafted |
-| 3.3 | Prime and composite numbers | 60 | 4 | Not drafted |
-| 3.4 | Prime factorisation | 62 | 4 | Not drafted |
-| 3.5 | Highest common factor and lowest common multiple | 64 | 4 | Not drafted |
+| 3.1 | Factors, multiples and factor pairs | 56 | 4 | Chapter proof |
+| 3.2 | Divisibility tests | 58 | 4 | Chapter proof |
+| 3.3 | Prime and composite numbers | 60 | 4 | Chapter proof |
+| 3.4 | Prime factorisation | 62 | 4 | Chapter proof |
+| 3.5 | Highest common factor and lowest common multiple | 64 | 4 | Chapter proof |
 
 ## Chapter 4
 

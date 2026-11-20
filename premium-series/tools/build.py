@@ -1,5 +1,6 @@
 """Compile the chapter proof and verify basic PDF invariants."""
 from itertools import permutations
+from math import gcd, lcm
 from pathlib import Path
 
 import pymupdf
@@ -57,8 +58,19 @@ storage = [(60-k)*(400**2+200)+k*(600**2+200) for k in range(61)]
 assert (storage[0], storage[-1], storage[51], storage[52]) == (9612000, 21612000, 19812000, 20012000)
 assert max(k for k, size in enumerate(storage) if size <= 2*10**7) == 51
 
+# Chapter 3 proof: independent bounded searches and timeline checks.
+assert [d for d in range(10) if (470 + d) % 6 == 0] == [4]
+assert (234 % 8, 432 % 8) == (2, 0)
+assert min(int(''.join(p)) for p in permutations('1236') if int(''.join(p)) % 4 == 0) == 1236
+assert [n for n in range(3500, 3600) if n % 45 == 0] == [3510, 3555]
+assert [(a, b) for a in range(1, 73) for b in range(a, 73)
+        if gcd(a, b) == 6 and lcm(a, b) == 72] == [(6, 72), (18, 24)]
+assert gcd(96, 72, 60) == 12
+assert lcm(8, 12) + 4 == 28
+assert [k for k in range(8, 12) if lcm(8, k) + 4 <= 25] == [8]
+
 if __name__ == '__main__':
-    for n in (1, 2):
+    for n in (1, 2, 3):
         build(1, f'chapter-{n:02d}', f'MYP1-Chapter-{n:02d}-Proof.pdf', 7, 200)
     for n in range(1, 6):
         build(n, 'personal-pages', f'MYP{n}-Personal-Pages-Proof.pdf', 3, 80)
