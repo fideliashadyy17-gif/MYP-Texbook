@@ -8,12 +8,12 @@ Printed page numbers are the anchors from the original contents; PDF page number
 
 | Section | Source topic | Printed page | Contents PDF page | Reconstruction |
 |---|---|---:|---:|---|
-| 1.1 | Polynomials and their behaviour | 3 | 5 | Not drafted |
-| 1.2 | Dividing polynomials | 6 | 5 | Not drafted |
-| 1.3 | The remainder and factor theorems | 9 | 5 | Not drafted |
-| 1.4 | Algebraic fractions | 11 | 5 | Not drafted |
-| 1.5 | Rational equations and applications | 14 | 5 | Not drafted |
-| 1.6 | Investigation: factors, roots and sign | 17 | 5 | Not drafted |
+| 1.1 | Polynomials and their behaviour | 3 | 5 | Chapter proof |
+| 1.2 | Dividing polynomials | 6 | 5 | Chapter proof |
+| 1.3 | The remainder and factor theorems | 9 | 5 | Chapter proof |
+| 1.4 | Algebraic fractions | 11 | 5 | Chapter proof |
+| 1.5 | Rational equations and applications | 14 | 5 | Chapter proof |
+| 1.6 | Investigation: factors, roots and sign | 17 | 5 | Chapter proof |
 
 ## Chapter 2
 

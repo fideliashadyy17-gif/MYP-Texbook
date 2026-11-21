@@ -8,11 +8,11 @@ Printed page numbers are the anchors from the original contents; PDF page number
 
 | Section | Source topic | Printed page | Contents PDF page | Reconstruction |
 |---|---|---:|---:|---|
-| 1.1 | Rational numbers and decimal form | 22 | 4 | Not drafted |
-| 1.2 | Irrational numbers and surds | 24 | 4 | Not drafted |
-| 1.3 | Order, absolute value and intervals | 26 | 4 | Not drafted |
-| 1.4 | Working with surds | 28 | 4 | Not drafted |
-| 1.5 | Sets, logic and proof | 30 | 4 | Not drafted |
+| 1.1 | Rational numbers and decimal form | 22 | 4 | Chapter proof |
+| 1.2 | Irrational numbers and surds | 24 | 4 | Chapter proof |
+| 1.3 | Order, absolute value and intervals | 26 | 4 | Chapter proof |
+| 1.4 | Working with surds | 28 | 4 | Chapter proof |
+| 1.5 | Sets, logic and proof | 30 | 4 | Chapter proof |
 
 ## Chapter 2
 

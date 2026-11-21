@@ -49,7 +49,7 @@ def main():
             if chapter != current:
                 current = chapter
                 text += ([''] if current > 1 else []) + [f'## Chapter {chapter}', '', '| Section | Source topic | Printed page | Contents PDF page | Reconstruction |', '|---|---|---:|---:|---|']
-            status = 'Chapter proof' if (level == 1 and chapter <= 5) or (level == 2 and chapter == 1) else 'Not drafted'
+            status = 'Chapter proof' if (level == 1 and chapter <= 5) or (level == 2 and chapter <= 2) or (level >= 3 and chapter == 1) else 'Not drafted'
             text.append(f'| {id_} | {title.replace("|", "&#124;")} | {page} | {toc} | {status} |')
         out.write_text('\n'.join(text) + '\n')
 

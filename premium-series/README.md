@@ -2,7 +2,7 @@
 
 **Author: SADIKOU MOUKODDIM**
 
-**Status: editorial development.** The current teaching drafts span MYP1 Chapters 1–5 and MYP2 Chapter 1. No volume is ready for release. All mathematics is based on the root first-edition PDFs, not the rejected edition.
+**Status: editorial development.** The current teaching drafts span MYP1 Chapters 1–5, MYP2 Chapters 1–2, and Chapter 1 of MYP3, MYP4 and MYP5. No volume is ready for release. All mathematics is based on the root first-edition PDFs, not the rejected edition.
 
 - [Audit, reference review and benchmark](docs/editorial-evidence.md)
 - [Source inventory](docs/source-inventory.json)

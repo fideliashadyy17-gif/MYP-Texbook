@@ -19,11 +19,11 @@ Printed page numbers are the anchors from the original contents; PDF page number
 
 | Section | Source topic | Printed page | Contents PDF page | Reconstruction |
 |---|---|---:|---:|---|
-| 2.1 | Recognising proportional relationships | 38 | 5 | Not drafted |
-| 2.2 | Solving proportional problems | 41 | 5 | Not drafted |
-| 2.3 | Scale drawings, maps and similar figures | 43 | 5 | Not drafted |
-| 2.4 | Investigation · A plan that fits | 45 | 5 | Not drafted |
-| 2.5 | Summary, revision and reflection | 47 | 5 | Not drafted |
+| 2.1 | Recognising proportional relationships | 38 | 5 | Chapter proof |
+| 2.2 | Solving proportional problems | 41 | 5 | Chapter proof |
+| 2.3 | Scale drawings, maps and similar figures | 43 | 5 | Chapter proof |
+| 2.4 | Investigation · A plan that fits | 45 | 5 | Chapter proof |
+| 2.5 | Summary, revision and reflection | 47 | 5 | Chapter proof |
 
 ## Chapter 3
 

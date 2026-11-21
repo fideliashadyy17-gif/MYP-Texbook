@@ -8,12 +8,12 @@ Printed page numbers are the anchors from the original contents; PDF page number
 
 | Section | Source topic | Printed page | Contents PDF page | Reconstruction |
 |---|---|---:|---:|---|
-| 1.1 | Number systems and proof | 3 | 5 | Not drafted |
-| 1.2 | Integer and rational exponents | 8 | 5 | Not drafted |
-| 1.3 | Standard form and estimation | 11 | 5 | Not drafted |
-| 1.4 | Surds and exact values | 14 | 5 | Not drafted |
-| 1.5 | Accuracy, bounds and error | 19 | 5 | Not drafted |
-| 1.6 | Investigation: how exact is exact? | 24 | 5 | Not drafted |
+| 1.1 | Number systems and proof | 3 | 5 | Chapter proof |
+| 1.2 | Integer and rational exponents | 8 | 5 | Chapter proof |
+| 1.3 | Standard form and estimation | 11 | 5 | Chapter proof |
+| 1.4 | Surds and exact values | 14 | 5 | Chapter proof |
+| 1.5 | Accuracy, bounds and error | 19 | 5 | Chapter proof |
+| 1.6 | Investigation: how exact is exact? | 24 | 5 | Chapter proof |
 
 ## Chapter 2
 
