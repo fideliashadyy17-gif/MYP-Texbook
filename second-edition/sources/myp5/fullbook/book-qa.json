@@ -1,7 +1,7 @@
 {
   "file": "/home/user/MYP-Texbook/second-edition/exports/myp5/MYP5-Student-Coursebook-Second-Edition.pdf",
-  "pages": 648,
-  "expected_pages": 648,
+  "pages": 651,
+  "expected_pages": 651,
   "page_sizes": [
     [
       595.0,
@@ -31,19 +31,19 @@
   "katex_errors": 0,
   "cover_pages": [
     1,
-    13,
-    62,
-    111,
-    160,
-    209,
-    258,
-    307,
-    356,
-    405,
-    454,
-    503,
-    547,
-    648
+    16,
+    65,
+    114,
+    163,
+    212,
+    261,
+    310,
+    359,
+    408,
+    457,
+    506,
+    550,
+    651
   ],
   "missing_page_numbers": [],
   "page_numbers_ok": true,
@@ -60,11 +60,11 @@
   "items_total": 564,
   "coverage_ok": true,
   "back_matter_starts": {
-    "answers": 591,
-    "formula": 639,
-    "glossary": 644,
-    "references": 647,
-    "back_cover": 648
+    "answers": 594,
+    "formula": 642,
+    "glossary": 647,
+    "references": 650,
+    "back_cover": 651
   },
   "back_matter_answers_ok": true,
   "back_matter_formula_ok": true,

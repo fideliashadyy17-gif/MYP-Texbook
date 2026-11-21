@@ -302,7 +302,7 @@ def _plate_myp5():
     a('<path d="M210 270 L312 216" stroke="%s" stroke-width="1.4" fill="none" opacity=".9"/>' % GOLD)
     a('<path d="M210 270 A118 118 0 0 0 312 216" stroke="%s" stroke-width="1.3" fill="none" '
       'opacity=".7"/>' % GOLD)
-    a('<path d="M330 190 L344 258" stroke="%s" stroke-width="1.5" fill="none" opacity=".9"/>' % GOLD)
+    a('<path d="M296 186 L328 246" stroke="%s" stroke-width="1.5" fill="none" opacity=".9"/>' % GOLD)
     a('<circle cx="210" cy="270" r="3.2" fill="%s"/>' % GOLD)
     a(_label(60, 120, "UNIT CIRCLE"))
     a('<path d="M60 700 H360" stroke="%s" stroke-width="1.1" fill="none" opacity=".45"/>' % GOLD)

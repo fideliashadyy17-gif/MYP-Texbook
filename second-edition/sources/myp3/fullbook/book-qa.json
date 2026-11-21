@@ -1,7 +1,7 @@
 {
   "file": "/home/user/MYP-Texbook/second-edition/exports/myp3/MYP3-Student-Coursebook-Second-Edition.pdf",
-  "pages": 455,
-  "expected_pages": 455,
+  "pages": 458,
+  "expected_pages": 458,
   "page_sizes": [
     [
       595.0,
@@ -30,17 +30,17 @@
   "katex_errors": 0,
   "cover_pages": [
     1,
-    11,
-    50,
-    89,
-    128,
-    167,
-    206,
-    245,
-    284,
-    328,
-    367,
-    455
+    14,
+    53,
+    92,
+    131,
+    170,
+    209,
+    248,
+    287,
+    331,
+    370,
+    458
   ],
   "missing_page_numbers": [],
   "page_numbers_ok": true,
@@ -57,11 +57,11 @@
   "items_total": 470,
   "coverage_ok": true,
   "back_matter_starts": {
-    "answers": 406,
-    "formula": 446,
-    "glossary": 452,
-    "references": 454,
-    "back_cover": 455
+    "answers": 409,
+    "formula": 449,
+    "glossary": 455,
+    "references": 457,
+    "back_cover": 458
   },
   "back_matter_answers_ok": true,
   "back_matter_formula_ok": true,

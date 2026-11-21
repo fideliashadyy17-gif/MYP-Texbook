@@ -357,7 +357,7 @@ def glossary_pages():
     for i in range(0, len(terms), per):
         chunk = terms[i:i + per]
         dl = "".join('<dt>%s <span class="ch">ch. %s</span></dt><dd>%s</dd>'
-                     % (esc(t), esc(t[2]), esc(t[1])) for t in chunk)
+                     % (esc(t[0]), esc(t[2]), esc(t[1])) for t in chunk)
         pages.append(make_page('<div class="glossary"><h2>Glossary (%d of %d)</h2><dl>%s</dl></div>'
                                % (i // per + 1, (len(terms) + per - 1) // per, dl),
                                "glossary-%d" % (i // per + 1), running_left=RUNNING,
@@ -394,6 +394,27 @@ def front_matter():
            "".join("<p>%s</p>" % esc(p) for p in im["body"])),
         "imprint", running_left=RUNNING, running_right="About this edition")
 
+    dedication = make_page(
+        '<div class="kicker">MYP 2 · Student coursebook</div><h2>Dedication</h2>'
+        '<p>This page is reserved for the author\u2019s dedication. '
+        'It will be completed by the author.</p>',
+        "dedication", running_left=RUNNING, running_right="Dedication")
+
+    acknowledgements = make_page(
+        '<div class="kicker">MYP 2 · Student coursebook</div><h2>Acknowledgements</h2>'
+        '<p>This page is reserved for the author\u2019s acknowledgements. '
+        'It will be completed by the author.</p>',
+        "acknowledgements", running_left=RUNNING, running_right="Acknowledgements")
+
+    about_author = make_page(
+        '<div class="kicker">MYP 2 · Student coursebook</div>'
+        '<div class="credit"><div class="credit-label">%s</div>'
+        '<div class="credit-name">%s</div></div><h2>About the Author</h2>'
+        '<p>This page is reserved for the author\u2019s biography. '
+        'It will be completed by the author.</p>'
+        % (esc(im["credit"]), esc(im["author"])),
+        "about-author", running_left=RUNNING, running_right="About the Author")
+
     h = FRONT["howto"]
     steps = "".join("<li><strong>%s.</strong> %s</li>" % (esc(k), esc(v)) for k, v in h["steps"])
     crit = "".join('<div class="card"><h3>%s</h3><p>%s</p></div>' % (esc(k), esc(v))
@@ -423,7 +444,8 @@ def front_matter():
         % (esc(intro["title"]), esc(intro["projects_title"]), proj,
            esc(intro["honesty_title"]), "".join("<li>%s</li>" % esc(x) for x in intro["honesty"])),
         "intro-2", running_left=RUNNING, running_right="Introduction")
-    return [cover, imprint, howto1, howto2, intro1, intro2]
+    return [cover, imprint, dedication, acknowledgements, about_author,
+            howto1, howto2, intro1, intro2]
 
 
 def contents_rows(chapter_start, marks):
@@ -434,8 +456,11 @@ def contents_rows(chapter_start, marks):
                 '<span class="dots"></span><span class="p">%d</span></li>'
                 % (esc(num), esc(label), page))
 
-    rows.append(li("How to use this book", 3))
-    rows.append(li("MYP mathematics and this coursebook", 5))
+    rows.append(li("Dedication", 3))
+    rows.append(li("Acknowledgements", 4))
+    rows.append(li("About the Author", 5))
+    rows.append(li("How to use this book", 6))
+    rows.append(li("MYP mathematics and this coursebook", 8))
     rows.append(li("Answers and reasoning", marks["answers"]))
     rows.append(li("Formula bank", marks["formula"]))
     rows.append(li("Glossary", marks["glossary"]))

@@ -83,7 +83,7 @@ report["chapter_start_mismatch"] = bad_starts
 report["chapter_starts_ok"] = not bad_starts
 
 # ---- contents accuracy ----------------------------------------------------
-toc_text = norm(texts[6])
+toc_text = norm(" ".join(texts[9:chapter_pages[1] - 1]))
 bad_toc = []
 for ch, start in chapter_pages.items():
     if not re.search(r"%d\.\s+%s" % (ch, re.escape(norm(titles[ch])[:16])), toc_text):

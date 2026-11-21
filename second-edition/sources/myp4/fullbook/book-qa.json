@@ -1,7 +1,7 @@
 {
   "file": "/home/user/MYP-Texbook/second-edition/exports/myp4/MYP4-Student-Coursebook-Second-Edition.pdf",
-  "pages": 691,
-  "expected_pages": 691,
+  "pages": 694,
+  "expected_pages": 694,
   "page_sizes": [
     [
       595.0,
@@ -30,21 +30,21 @@
   "katex_errors": 0,
   "cover_pages": [
     1,
-    13,
-    57,
-    101,
-    145,
-    189,
-    234,
-    278,
-    322,
-    366,
-    410,
-    456,
-    501,
-    544,
-    588,
-    691
+    16,
+    60,
+    104,
+    148,
+    192,
+    237,
+    281,
+    325,
+    369,
+    413,
+    459,
+    504,
+    547,
+    591,
+    694
   ],
   "missing_page_numbers": [],
   "page_numbers_ok": true,
@@ -61,11 +61,11 @@
   "items_total": 658,
   "coverage_ok": true,
   "back_matter_starts": {
-    "answers": 626,
-    "formula": 682,
-    "glossary": 687,
-    "references": 690,
-    "back_cover": 691
+    "answers": 629,
+    "formula": 685,
+    "glossary": 690,
+    "references": 693,
+    "back_cover": 694
   },
   "back_matter_answers_ok": true,
   "back_matter_formula_ok": true,

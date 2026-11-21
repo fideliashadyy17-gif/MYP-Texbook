@@ -352,17 +352,17 @@ figcaption{font-family:var(--label); font-size:7.5pt; color:#5c6b68; margin-top:
 .premium-cover .pc-standfirst{font-family:'Source Serif 4',serif;font-style:italic;font-size:11pt;line-height:1.5;
   color:rgba(251,246,236,.86);margin:8mm 0 0;max-width:80mm}
 .pc-rule{width:26mm;border-top:.6mm solid var(--gold);margin:7mm 0 5mm}
-.pc-topics{font-family:Inter,sans-serif;font-size:7.2pt;line-height:1.85;letter-spacing:.05em;
+.pc-topics{font-family:Inter,sans-serif;font-size:7.2pt;line-height:1.6;letter-spacing:.05em;
   text-transform:uppercase;color:rgba(251,246,236,.5)}
 .pc-topics .t{white-space:nowrap}
 .pc-topics .t::after{content:' ·';color:rgba(215,165,93,.75)}
 .pc-topics .t:last-child::after{content:''}
-.pc-inquiry{margin-top:8mm;border-left:.6mm solid var(--rust);padding-left:4.5mm;max-width:80mm}
+.pc-inquiry{margin-top:5mm;border-left:.6mm solid var(--rust);padding-left:4.5mm;max-width:80mm}
 .pc-inquirylabel{font-family:Inter,sans-serif;font-size:7pt;letter-spacing:.18em;text-transform:uppercase;
   color:var(--gold);margin-bottom:1.6mm}
 .pc-inquiry p{font-family:'Source Serif 4',serif;font-size:9.6pt;line-height:1.45;margin:0;
   color:rgba(251,246,236,.82)}
-.pc-criteria{margin-top:9mm;max-width:80mm}
+.pc-criteria{margin-top:5mm;max-width:80mm}
 .pc-criteriahead{font-family:Inter,sans-serif;font-size:6.6pt;letter-spacing:.2em;text-transform:uppercase;
   color:rgba(215,165,93,.85);margin-bottom:2.6mm}
 .pc-criteriagrid{display:grid;grid-template-columns:auto 1fr;gap:1.5mm 4mm;align-items:baseline}

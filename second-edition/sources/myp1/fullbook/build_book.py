@@ -485,6 +485,27 @@ def front_matter():
            "".join("<p>%s</p>" % esc(p) for p in im["body"])),
         "imprint", running_left="MYP Mathematics 1 · Student coursebook", running_right="About this edition")
 
+    dedication = make_page(
+        '<div class="kicker">MYP 1 · Student coursebook</div><h2>Dedication</h2>'
+        '<p>This page is reserved for the author\u2019s dedication. '
+        'It will be completed by the author.</p>',
+        "dedication", running_left="MYP Mathematics 1 · Student coursebook", running_right="Dedication")
+
+    acknowledgements = make_page(
+        '<div class="kicker">MYP 1 · Student coursebook</div><h2>Acknowledgements</h2>'
+        '<p>This page is reserved for the author\u2019s acknowledgements. '
+        'It will be completed by the author.</p>',
+        "acknowledgements", running_left="MYP Mathematics 1 · Student coursebook", running_right="Acknowledgements")
+
+    about_author = make_page(
+        '<div class="kicker">MYP 1 · Student coursebook</div>'
+        '<div class="credit"><div class="credit-label">%s</div>'
+        '<div class="credit-name">%s</div></div><h2>About the Author</h2>'
+        '<p>This page is reserved for the author\u2019s biography. '
+        'It will be completed by the author.</p>'
+        % (esc(im["credit"]), esc(im["author"])),
+        "about-author", running_left="MYP Mathematics 1 · Student coursebook", running_right="About the Author")
+
     h = FRONT["howto"]
     steps = "".join("<li><strong>%s.</strong> %s</li>" % (esc(k), esc(v)) for k, v in h["steps"])
     crit = "".join('<div class="card"><h3>%s</h3><p>%s</p></div>' % (esc(k), esc(v))
@@ -514,11 +535,15 @@ def front_matter():
            esc(intro["honesty_title"]), "".join("<li>%s</li>" % esc(x) for x in intro["honesty"])),
         "intro-2", running_left="MYP Mathematics 1 · Student coursebook", running_right="Introduction")
 
-    return [cover, imprint, howto1, howto2, intro1, intro2]
+    return [cover, imprint, dedication, acknowledgements, about_author,
+            howto1, howto2, intro1, intro2]
 
 
-def contents_page(chapter_pages):
-    """Build the contents page; chapter_pages maps chapter -> 1-based page number."""
+CONTENTS_PER_PAGE = 14
+
+
+def contents_rows(chapter_pages):
+    """Build the contents rows; chapter_pages maps chapter -> 1-based page number."""
     rows = []
 
     def li(label, page, sub=False, num=""):
@@ -526,8 +551,11 @@ def contents_page(chapter_pages):
                 '<span class="dots"></span><span class="p">%d</span></li>'
                 % ("sub" if sub else "", esc(num), esc(label), page))
 
-    rows.append(li("How to use this book", 3, num="\u2014"))
-    rows.append(li("MYP mathematics and this coursebook", 5, num="\u2014"))
+    rows.append(li("Dedication", 3, num="\u2014"))
+    rows.append(li("Acknowledgements", 4, num="\u2014"))
+    rows.append(li("About the Author", 5, num="\u2014"))
+    rows.append(li("How to use this book", 6, num="\u2014"))
+    rows.append(li("MYP mathematics and this coursebook", 8, num="\u2014"))
     rows.append(li("Answers and reasoning", chapter_pages["answers"], num="\u2014"))
     rows.append(li("Formula bank", chapter_pages["formula"], num="\u2014"))
     rows.append(li("Glossary", chapter_pages["glossary"], num="\u2014"))
@@ -540,14 +568,25 @@ def contents_page(chapter_pages):
             current_part = part
         data = load_chapter(ch)
         rows.append(li("%d. %s" % (ch, data["title"]), chapter_pages[ch], num="%02d" % ch))
-    body = ('<div class="kicker">MYP 1 · Student coursebook</div><h2>Contents</h2>'
-            '<div class="toc"><ol>%s</ol></div>'
-            '<p class="small muted" style="margin-top:5mm">Every chapter follows the same sequence: '
+    return rows
+
+
+def contents_pages(rows):
+    note = ('<p class="small muted" style="margin-top:5mm">Every chapter follows the same sequence: '
             'engagement, inquiry questions, investigation, observation, mathematical conclusion, formal '
             'development, worked examples, Criterion A\u2013D practice, application, assessment and reflection, '
-            'and project connections.</p>' % "".join(rows))
-    return make_page(body, "contents", running_left="MYP Mathematics 1 · Student coursebook",
-                     running_right="Contents")
+            'and project connections.</p>')
+    chunks = [rows[i:i + CONTENTS_PER_PAGE] for i in range(0, len(rows), CONTENTS_PER_PAGE)] or [[]]
+    out = []
+    for n, chunk in enumerate(chunks):
+        last = (n == len(chunks) - 1)
+        body = ('<div class="kicker">MYP 1 · Student coursebook</div><h2>Contents%s</h2>'
+                '<div class="toc"><ol>%s</ol></div>%s'
+                % (" (continued)" if n else "", "".join(chunk), note if last else ""))
+        out.append(make_page(body, "contents-%d" % (n + 1),
+                             running_left="MYP Mathematics 1 · Student coursebook",
+                             running_right="Contents"))
+    return out
 
 
 # ------------------------------------------------------------------- back matter
@@ -677,7 +716,11 @@ def symbols_to_math(html):
 def main():
     pages = front_matter()
     toc_index = len(pages)
-    pages.append(None)                       # placeholder for the contents page
+    # reserve the contents slots first: the row count does not depend on page numbers
+    _zero = {ch: 0 for ch in CHAPTERS}
+    _zero.update({k: 0 for k in ("answers", "formula", "glossary", "references")})
+    n_toc = max(1, -(-len(contents_rows(_zero)) // CONTENTS_PER_PAGE))
+    pages.extend([None] * n_toc)
 
     chapter_start = {}
     for ch in CHAPTERS:
@@ -699,7 +742,8 @@ def main():
     marks["back_cover"] = len(pages) + 1
     pages.append(covers.back_cover_page())
 
-    pages[toc_index] = contents_page({**chapter_start, **marks})
+    pages[toc_index:toc_index + n_toc] = contents_pages(
+        contents_rows({**chapter_start, **marks}))
 
     # give every page a stable data-page-id for QA
     for i, pg in enumerate(pages, start=1):
