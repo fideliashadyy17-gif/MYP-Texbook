@@ -1,7 +1,7 @@
 """Compile the chapter proof and verify basic PDF invariants."""
 from fractions import Fraction as F
 from itertools import permutations
-from math import gcd, lcm
+from math import ceil, gcd, lcm
 from pathlib import Path
 
 import pymupdf
@@ -79,8 +79,22 @@ assert abs(milk-F(22, 20)) == abs(milk-F(23, 20)) == F(1, 40) > F(1, 50)
 assert F(1) + F(1, 10) + F(1, 40) == milk
 assert F(23, 20)*F(2, 5)/F(3, 4) == F(46, 75)
 
+# Cross-volume batch: independently enumerate discounts and purchase decisions.
+assert [(a, b) for a in range(1,20) for b in range(a,20)
+        if (100-a)*(100-b) == 7650] == [(10,15)]
+assert [n for n in range(25) if F(65,2) <= F(100*n,24) < F(75,2)] == [8]
+shop_a = lambda boxes: 5720*boxes + 2000
+shop_b = lambda boxes: 6200*boxes + (800 if 6200*boxes < 35000 else 0)
+assert [tuple(max(n for n in range(5,20) if shop(n) <= budget) for shop in (shop_a,shop_b))
+        for budget in (34000,36500)] == [(5,5),(6,5)]
+for volume, expected in [(F(13), (2,4,21000)), (F(29,2), (3,4,25500))]:
+    blue = ceil(volume*F(2,7)/2)
+    white = ceil(volume*F(5,7)/3)
+    assert (blue,white,4500*blue+3000*white) == expected
+
 if __name__ == '__main__':
-    for n in (1, 2, 3, 4):
-        build(1, f'chapter-{n:02d}', f'MYP1-Chapter-{n:02d}-Proof.pdf', 8 if n == 4 else 7, 200)
+    for n in (1, 2, 3, 4, 5):
+        build(1, f'chapter-{n:02d}', f'MYP1-Chapter-{n:02d}-Proof.pdf', {4: 8, 5: 6}.get(n, 7), 200)
+    build(2, 'chapter-01', 'MYP2-Chapter-01-Proof.pdf', 6, 200)
     for n in range(1, 6):
         build(n, 'personal-pages', f'MYP{n}-Personal-Pages-Proof.pdf', 3, 80)

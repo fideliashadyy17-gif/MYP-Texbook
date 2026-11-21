@@ -8,12 +8,12 @@ Printed page numbers are the anchors from the original contents; PDF page number
 
 | Section | Source topic | Printed page | Contents PDF page | Reconstruction |
 |---|---|---:|---:|---|
-| 1.1 | Understanding ratio language | 22 | 5 | Not drafted |
-| 1.2 | Equivalent ratios and simplest form | 24 | 5 | Not drafted |
-| 1.3 | Ratio tables and double number lines | 26 | 5 | Not drafted |
-| 1.4 | Sharing and comparing with ratios | 28 | 5 | Not drafted |
-| 1.5 | Investigation · The lemonade stand | 30 | 5 | Not drafted |
-| 1.6 | Summary, revision and reflection | 33 | 5 | Not drafted |
+| 1.1 | Understanding ratio language | 22 | 5 | Chapter proof |
+| 1.2 | Equivalent ratios and simplest form | 24 | 5 | Chapter proof |
+| 1.3 | Ratio tables and double number lines | 26 | 5 | Chapter proof |
+| 1.4 | Sharing and comparing with ratios | 28 | 5 | Chapter proof |
+| 1.5 | Investigation · The lemonade stand | 30 | 5 | Chapter proof |
+| 1.6 | Summary, revision and reflection | 33 | 5 | Chapter proof |
 
 ## Chapter 2
 

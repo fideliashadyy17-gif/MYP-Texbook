@@ -49,10 +49,10 @@ Printed page numbers are the anchors from the original contents; PDF page number
 
 | Section | Source topic | Printed page | Contents PDF page | Reconstruction |
 |---|---|---:|---:|---|
-| 5.1 | Per cent: a proportion of 100 | 98 | 5 | Not drafted |
-| 5.2 | Finding a percentage of a quantity | 100 | 5 | Not drafted |
-| 5.3 | Increasing and decreasing by a percentage | 102 | 5 | Not drafted |
-| 5.4 | Discounts, taxes and budgets | 104 | 5 | Not drafted |
+| 5.1 | Per cent: a proportion of 100 | 98 | 5 | Chapter proof |
+| 5.2 | Finding a percentage of a quantity | 100 | 5 | Chapter proof |
+| 5.3 | Increasing and decreasing by a percentage | 102 | 5 | Chapter proof |
+| 5.4 | Discounts, taxes and budgets | 104 | 5 | Chapter proof |
 
 ## Chapter 6
 
